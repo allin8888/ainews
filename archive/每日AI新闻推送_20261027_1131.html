@@ -177,7 +177,7 @@ details[open] > summary.fold-summary { color: #e6edf3; }
 <nav class="toc">
 <a class="toc-item" href="#entry-1">1. 百度开源 Unlimited OCR 2：SR-SWA 固定工作引用集，有限上下文窗口内实现无界长文档解析</a>
 </nav>
-<details class="card priority-1" id="entry-1" data-tags="基础架构与开源 多模态文档理解" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="百度开源 Unlimited OCR 2：SR-SWA 固定工作引用集，有限上下文窗口内实现无界长文档解析" data-link="https://github.com/baidu/Unlimited-OCR">复制</button><summary class="fold-summary">去重说明（审计明细，点击展开）</summary>
+<div class="card priority-1" id="entry-1" data-tags="基础架构与开源 多模态文档理解" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="百度开源 Unlimited OCR 2：SR-SWA 固定工作引用集，有限上下文窗口内实现无界长文档解析" data-link="https://github.com/baidu/Unlimited-OCR">复制</button>
   <h2>1. 百度开源 Unlimited OCR 2：SR-SWA 固定工作引用集，有限上下文窗口内实现无界长文档解析 <span class="src">（百度官方 GitHub/X | 2026-10-27）</span></h2>
   <h3>事件概述</h3>
   <p>百度发布并开源 Unlimited OCR 2，以 SR-SWA（Sparse Reference Sliding Window Attention，稀疏参考滑窗注意力）把文本-视觉注意力交互压缩为固定大小的工作引用集（如 512 token），在有限上下文窗口内实现几十到上百页文档的「一次性整档解析」，同步开放 HF 权重与 Transformers / SGLang 双推理链路。官方发布动作全部落窗：官方 X @Baidu_Inc 公告 02:41:42 UTC（北京 10:41）、GitHub README Release 条目标注 2026/10/27、仓库窗口内提交 02:27:45 / 02:47:32 UTC（README logo 与性能图调整，发布日收尾动作）；HF 权重 baidu/Unlimited-OCR-2 于前一日 03:57 UTC 静默上传，今日随公告正式释出。</p>
@@ -193,11 +193,11 @@ details[open] > summary.fold-summary { color: #e6edf3; }
   </ul>
   <p class="muted">部署实测环境：NVIDIA A800-80GB / torch 2.13.0 / transformers 4.52.1；SGLang <a href="https://0.5.20.dev" target="_blank" rel="noopener">0.5.20.dev</a> 定制 wheel。</p>
   <p><span class="tag" style="color:#8b949e;border-color:#8b949e">#基础架构与开源</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#多模态文档理解</span></p>
-</div></details>
+</div>
 
 <hr class="divider">
 
-<div class="section-title">去重说明</div>
+<details class="excl"><summary class="fold-summary">去重说明（审计明细，点击展开）</summary>
 
 <div class="excl">
   <p><b>7 天扫描</b>：工作区 10-20 ~ 10-27 期间共 12 份报告（第 98–109 跑，含 10-24 22:12 / 22:30 双版）合计 50+ 条标题纳入已报道集合；O: 盘网盘今日另一实例仅 <code>每日AI新闻推送_20261027_0028</code>（Hermes 48h 标准，5 条第一方时刻均在 10-20/21，已被第 109 跑处置）与第 109 跑产出 <code>_20261027_1020</code>，无新增跨实例排除项。</p>
@@ -219,35 +219,19 @@ details[open] > summary.fold-summary { color: #e6edf3; }
     <li>信源健康 ok=3 / warn=0 / error=0（aihot_items 0.4h 新鲜、dailies 2026-10-27、arXiv 公告批次 Mon 26 Oct 2026）；国内媒体 RSS 四源本轮不可达（量子位 403、InfoQ 451、36氪/机器之心空），以官方仓库/API/官方账号与 AI HOT 官方信源检索为主。</li>
     <li>arXiv 下一公告批次为周二（预计北京 10-28 约 08:00）落窗口外，窗口内 arXiv 学术首发 0 条；本窗口对应美东周日晚间（10-26 22:20 – 23:31 ET），属周末 + 超短增量双重低供给；具身智能 / 世界模型 / RSI 方向窗口内合规首发 0 条（结构性空缺如实披露；Fern 属 RSI 主题但第一信源在窗口外）。</li>
   </ul>
-</div>
+</div></details>
 
 <hr class="divider">
 
 <div class="section-title">待核实</div>
 
-<details class="excl"><summary class="fold-summary">归档状态说明（运维信息，点击展开）</summary>
+<div class="excl">
   <ul>
     <li><b>1. 百度 Unlimited OCR 2 基准分值</b>：MPDocBench / MarathonDocBench「SOTA」具体分数官方仅以 leaderboard 图呈现、正文未给数字，且为自述数据，未见第三方复现；OCR 2 独立技术报告为仓库内 PDF，未见 arXiv 收录。缺：官方文本化基准表 + 第三方复测。</li>
     <li><b>2. Mirendil Fern 全部指标</b>（近失条目追踪）：RULER@10M（每任务仅 20 样本）、DeepSWE v1.1 44.2 / Terminal Bench 4.0 6.1 等均为官方自述；「单人 3.5 个月、&lt;$10M 算力」「Base-Large 训练 80%+ / Base-XL 20%+」为官方自述；$200M seed / $1B 估值 / a16z + KP 领投 / NVIDIA 参投为媒体转述。缺：权重/API 开放后的第三方评测与融资一手文件。</li>
     <li><b>3. BabelArena「8 倍工具调用膨胀」</b>：实验口径、任务集与阈值定义未核实（arXiv:2609.23490 未核全文）；仓库 9 stars、10-22 创建，「官宣」与仓库公开时序未确认。缺：论文正文核读。</li>
     <li><b>4. alexeath 推文内容</b>：X 正文不可达，无法确认是否涉及 AI 领域实质发布。缺：正文取证。</li>
     <li><b>5. 豆包引用抖音权重 10.79%→31.8%</b>：出自「报告称」，原始报告机构、统计口径与样本期未核实。缺：原始报告。</li>
-  </ul>
-</div></details>
-
-<hr class="divider">
-
-<div class="section-title">归档状态说明</div>
-
-<div class="archive-box">
-  <ul>
-    <li><b>工作区 Markdown</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261027_1131.md</code></li>
-    <li><b>工作区 HTML</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261027_1131.html</code></li>
-    <li><b>网盘归档</b>：<code>O:/quark/automation/每日 AI 新闻推送/</code>（同步写入上述同名文件）</li>
-    <li><b>GitHub 发布</b>：<span class="link">https://<a href="https://github.com/allin8888/ainews" target="_blank" rel="noopener">github.com/allin8888/ainews</a></span>（main 分支，经 tools/git_publish.sh）</li>
-    <li><b>Cloudflare Pages</b>：<span class="link">https://<a href="https://ainews-3rw.pages.dev" target="_blank" rel="noopener">ainews-3rw.pages.dev</a></span>（git_publish.sh 末尾自动触发 tools/cf_publish.sh 直传）</li>
-    <li><b>执行状态</b>：<span style="color:var(--green);font-weight:600;">✅ 成功</span>（首轮归档 archived 2 / failed 0 / skipped 0、probe 清理受阻为已知环境约束；guardian post 首轮检出「条数&lt;3 未声明」措辞问题，修正为精确短语「今日新闻不足3条」后经 rename 避让网盘 v1 重归档并复检通过；本地与网盘 md5 逐字节一致）</li>
-    <li><b>收尾固化</b>：5 ok / 0 failed / 0 skipped（KB 重建 / RSS 刷新 / 归档总索引 / 待核实追踪 backlog added 4、open 202 / 信源健康 ok=3 warn=0 error=0）</li>
   </ul>
 </div>
 
