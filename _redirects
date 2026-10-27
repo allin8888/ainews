@@ -1,0 +1,5 @@
+# Cloudflare Pages 旧路径重定向（2026-10-27 结构重组：历史文件移入 archive/）
+/每日AI新闻推送_*	/archive/每日AI新闻推送_:splat	301
+/site/*	/archive/site/:splat	301
+/ai_news_rss.xml	/archive/ai_news_rss.xml	301
+/待核实追踪.md	/archive/待核实追踪.md	301
