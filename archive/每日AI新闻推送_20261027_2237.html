@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-10-27</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --card2: #1c2129;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --blue: #58a6ff;
+    --green: #3fb950;
+    --orange: #d29922;
+    --red: #f85149;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    line-height: 1.75;
+    padding: 24px 16px 64px;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; }
+  header.hero {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+  }
+  header.hero h1 { font-size: 1.7em; margin-bottom: 14px; color: var(--text); }
+  header.hero h1 span { color: var(--blue); }
+  .meta { display: flex; flex-wrap: wrap; gap: 10px 22px; color: var(--muted); font-size: 0.95em; }
+  .meta b { color: var(--text); font-weight: 600; }
+  .section-title {
+    font-size: 1.25em;
+    margin: 30px 0 14px;
+    padding-left: 12px;
+    border-left: 4px solid var(--blue);
+    color: var(--text);
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+  }
+  .card h2 { font-size: 1.2em; color: var(--blue); margin-bottom: 12px; line-height: 1.5; }
+  .src { color: var(--muted); font-size: 0.88em; font-weight: 400; }
+  .card h3 { font-size: 1.0em; color: var(--green); margin: 16px 0 6px; }
+  .card p { margin: 8px 0; }
+  .card ul { margin: 8px 0 8px 22px; }
+  .card li { margin: 6px 0; }
+  .card li b { color: var(--text); }
+  .muted { color: var(--muted); font-size: 0.92em; }
+  code {
+    background: var(--card2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.88em;
+    color: var(--orange);
+    word-break: break-all;
+  }
+  .tag {
+    display: inline-block;
+    background: rgba(88, 166, 255, 0.12);
+    border: 1px solid rgba(88, 166, 255, 0.4);
+    color: var(--blue);
+    border-radius: 999px;
+    padding: 2px 12px;
+    font-size: 0.82em;
+    margin-right: 8px;
+  }
+  .excl {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 26px;
+    margin-bottom: 20px;
+    font-size: 0.95em;
+  }
+  .excl h4 { color: var(--orange); margin: 12px 0 6px; }
+  .excl ul { margin-left: 22px; }
+  .excl li { margin: 6px 0; }
+  .archive-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 26px;
+    font-size: 0.93em;
+  }
+  .archive-box ul { margin-left: 22px; }
+  .archive-box li { margin: 5px 0; }
+  .divider { border: none; border-top: 1px dashed var(--border); margin: 28px 0; }
+  footer { text-align: center; color: var(--muted); font-size: 0.85em; margin-top: 40px; }
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1>每日 AI 前沿技术精选 <span>2026-10-27</span></h1>
+  <div class="meta">
+    <span>日期：<b>2026-10-27</b></span>
+    <span>时间：<b>22:37</b></span>
+    <span>精选条数：<b>3 条</b></span>
+    <span>时效窗口：<b>2026-10-27 11:31 – 2026-10-27 22:37</b></span>
+  </div>
+</header>
+
+<div class="section-title">今日精选</div>
+
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="AI Coding">AI Coding</button>
+<button class="filter-chip" data-tag="评测基准">评测基准</button>
+<button class="filter-chip" data-tag="企业级迁移">企业级迁移</button>
+<button class="filter-chip" data-tag="基础架构与开源">基础架构与开源</button>
+<button class="filter-chip" data-tag="长上下文">长上下文</button>
+<button class="filter-chip" data-tag="Agent">Agent</button>
+<button class="filter-chip" data-tag="端侧推理">端侧推理</button>
+<button class="filter-chip" data-tag="Web标准">Web标准</button>
+<button class="filter-chip" data-tag="基础设施">基础设施</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. IBM×Kaggle 上线 ScarfBench 企业 Java 迁移榜单：204 任务实测「行为保真而非编译」——72% 失败为运行时差异</a><a class="toc-item" href="#entry-2">2. 蚂蚁开源 Ling-3.1-flash-1019：560B-A25B 混合线性 MoE、1M 上下文，AA 智能指数 41→44</a><a class="toc-item" href="#entry-3">3. Opera 发布 WebAI 网页标准提案：网站经 API 调用设备本地模型，首发支持 Gemma 与 Apple 端侧基础模型</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="AI Coding 评测基准 企业级迁移" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="IBM×Kaggle 上线 ScarfBench 企业 Java 迁移榜单：204 任务实测「行为保真而非编译」——72% 失败为运行时差异" data-link="https://research.ibm.com/blog/ibm-and-kaggle-launch-leaderboard-for-java-framework-migration">复制</button>
+  <h2>1. IBM×Kaggle 上线 ScarfBench 企业 Java 迁移榜单：204 任务实测「行为保真而非编译」——72% 失败为运行时差异 <span class="src">（IBM Research 官方博客 | 2026-10-27）</span></h2>
+  <h3>事件概述</h3>
+  <p>IBM Research 于 10-27 12:00 UTC（北京 20:00）官方博客宣布与 Kaggle 联合上线 ScarfBench（Self-Contained Application Refactoring Benchmark）公开排行榜：测的是 coding agent 能否把企业 Java 应用在 Jakarta EE / Quarkus / Spring 三大框架间完成迁移且迁移后应用可用。榜单排名对象是「模型 + agent harness」组合而非裸模型；Kaggle 独立复现全部跑分、赞助算力并长期维护榜单。方法论文（arXiv:2605.06754，v1 今年 5 月）与 HF 数据集早已公开，本次窗口内动作是榜单正式上线官宣。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：204 个迁移任务，指标为 smoke-test %（按测试套规模加权的部分得分）、all-pass % 与 mean %；除编译外还检查迁移后应用能否构建、启动并行为如常。首批 10 个模型×harness 组合排名：Gemini 4 Argon + Antigravity 以 75.2% smoke-test 居首；Claude Opus 5.5 + Claude Code 70.5% smoke / 72.1% all-pass（all-pass 全场最高）；Claude Opus 5 + Claude Code 69.8%。剔除 4 个全员失败任务的敏感性分析不改变前三排序（79.4 / 74.5 / 73.7）。</li>
+    <li><b>实际影响</b>：745 个分类失败中约 72% 为运行时行为失败（丢失路由、HTTP 404/405、残留源框架接线），而多数配置编译通过率 97%+——「编译通过」与「迁移成功」之间的巨大缺口把 agent 验证层推向一等位置，与第 109 跑 OpenAI 三项科学发现的外部专家核查、第 102 跑 Anthropic 形式化验证同向；「model + harness 捆绑排名」延续 HERD（第 102 跑）/ sandbox-runtime（第 104 跑）以来 harness 一等公民化趋势。遗留系统改造是企业 AI Coding 落地成本最高的一段，「公开榜单 + 独立复现」首次给采购方提供可引用的横评基线。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>迁移任务数</td><td>204</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>Gemini 4 Argon + Antigravity smoke-test</td><td>75.2%</td><td></td><td><span class="badge third">第三方</span></td></tr><tr><td>Claude Opus 5.5 + Claude Code all-pass</td><td>72.1%</td><td></td><td><span class="badge third">第三方</span></td></tr><tr><td>运行时行为失败占比（745 分类失败）</td><td>72%</td><td></td><td><span class="badge third">第三方</span></td></tr><tr><td>多数配置编译通过率</td><td>97%+</td><td></td><td><span class="badge third">第三方</span></td></tr></table></div>
+  <ul>
+    <li><b>评测/性能</b>：首批 10 组合完整榜单见官方博客与 Kaggle；全部跑分经 Kaggle 独立复现（第三方），其余组合分数摘要未披露</li>
+    <li><b>代码/论文</b>： 官方博客 <a href="https://research.ibm.com/blog/ibm-and-kaggle-launch-leaderboard-for-java-framework-migration" target="_blank" rel="noopener">https://research.ibm.com/blog/ibm-and-kaggle-launch-leaderboard-for-java-framework-migration</a> 、HF 数据集 https://huggingface.co/datasets/ibm-research/ScarfBench 、方法博客 https://huggingface.co/blog/ibm-research/scarfbench 、论文 <a href="https://arxiv.org/abs/2605.06754" target="_blank" rel="noopener">https://arxiv.org/abs/2605.06754</a> </li>
+  </ul>
+  <p><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#评测基准</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#企业级迁移</span></p>
+</div>
+
+<div class="card priority-2" id="entry-2" data-tags="基础架构与开源 长上下文 Agent" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="蚂蚁开源 Ling-3.1-flash-1019：560B-A25B 混合线性 MoE、1M 上下文，AA 智能指数 41→44" data-link="https://huggingface.co/inclusionAI/Ling-3.1-flash-1019">复制</button>
+  <h2>2. 蚂蚁开源 Ling-3.1-flash-1019：560B-A25B 混合线性 MoE、1M 上下文，AA 智能指数 41→44 <span class="src">（蚂蚁 inclusionAI 官方 HF/X | 2026-10-27）</span></h2>
+  <h3>事件概述</h3>
+  <p>蚂蚁集团 inclusionAI 在 HuggingFace 开源 Ling-3.1-flash-1019（Ling-3.1-flash 升级版检查点）：HF createdAt 2026-10-27 05:46:51 UTC（北京 13:46）落窗，官方 X @AntLingAGI 于北京 20:44 宣传，MIT 协议，权重为 54 个 fp8 safetensors 分片；ModelScope 同步上架，OpenRouter 已提供 ling-3.1-flash 服务。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：总参 560B / 每 token 激活 25B，1M token 上下文；BailingMoeV3 混合线性架构 = 63 层 KDA 线性注意力 + 9 层 Gated MLA（7:1 混合）+ 4 层 dense，512 路由专家（激活 8）+ 1 共享专家，hidden size 4096、词表 157184。工程侧提供 day-0 SGLang 镜像（lmsysorg/sglang:dev-ling-3.1-flash），内置 MTP（NEXTN）投机解码与 Hopper decode 优化（8×H200 TP8+EP8 / 4×GB300 TP4+EP4），可选 FP8 block GEMV 与 fused KDA output quant 开关（batch-1 解码约 10% 提升，官方自述）。</li>
+    <li><b>实际影响</b>：KDA+MLA 混合线性注意力进入 560B 档开源权重，1M 上下文叠加 agent 基准显著提升，指向「开源长上下文 agent 底座」路线；与第 110 跑百度 Unlimited OCR 2（超长文档固定工作引用集）在长上下文工程上互补——一个从注意力机制侧压缩状态，一个从交互侧压缩注意力。AA 智能指数 44 亦提示开源阵营与闭源中档模型（第 109 跑 GPT-6.1 Terra）差距进一步收敛（跨榜单粗参照，待核实）。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>总参数/激活参数</td><td>560B / 25B</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>上下文窗口</td><td>1M token</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>AA Intelligence Index v4.3.2</td><td>41→44</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>AA-Briefcase Elo</td><td>约1400→1524</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>AutomationBench-AA</td><td>62%→68%</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <ul>
+    <li><b>评测/性能</b>：AA-Briefcase 约 1400→1524 Elo、AutomationBench-AA 62%→68%、CritPt 18%→26%、SciCode 54%→57%、Artificial Analysis Intelligence Index v4.3.2 41→44（均为厂商 README 引用，AA 榜单值待官网复核，自述数据，未见第三方复现）</li>
+    <li><b>代码/论文</b>： HF 权重 https://huggingface.co/inclusionAI/Ling-3.1-flash-1019 、官方 X <a href="https://x.com/AntLingAGI" target="_blank" rel="noopener">https://x.com/AntLingAGI</a> 、ModelScope <a href="https://modelscope.cn/organization/inclusionAI" target="_blank" rel="noopener">https://modelscope.cn/organization/inclusionAI</a> </li>
+  </ul>
+  <p><span class="tag" style="color:#8b949e;border-color:#8b949e">#基础架构与开源</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#长上下文</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#Agent</span></p>
+</div>
+
+<details class="card priority-3" id="entry-3" data-tags="端侧推理 Web标准 基础设施" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Opera 发布 WebAI 网页标准提案：网站经 API 调用设备本地模型，首发支持 Gemma 与 Apple 端侧基础模型" data-link="https://next.opera.com/blog/web-ai-local-ai/">复制</button><summary class="fold-summary">去重说明（审计明细，点击展开）</summary>
+  <h2>3. Opera 发布 WebAI 网页标准提案：网站经 API 调用设备本地模型，首发支持 Gemma 与 Apple 端侧基础模型 <span class="src">（Opera 官方博客 | 2026-10-27）</span></h2>
+  <h3>事件概述</h3>
+  <p>Opera 发布 WebAI 网页标准提案，并在 Opera One 上线预览特性：网站与浏览器扩展可通过 WebAI API 调用用户设备本地运行的 AI 模型——首发支持 Google Gemma，Mac 端支持 Apple on-device foundation model；全程本地推理、数据不出设备、无需订阅、按站点授权。配套发布 HTML-in-Canvas（把真实可交互网页嵌入 2D/3D 场景，按钮/表单保持可用）。官方博客 <a href="https://next.opera.com" target="_blank" rel="noopener">next.opera.com</a>（本机不可达，经 TechCrunch 与 9to5mac 于 13:00 UTC = 北京 21:00 双源交叉取证），Opera GX 与 Opera Neon 将跟进。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：model-agnostic 设计——同一 WebAI API 屏蔽底层模型差异，网站开发者无需自建推理基础设施或按请求付费；据 9to5mac 转述，标准获 Google、Microsoft 等公司参与背书（待官方原文核实）。能力面覆盖文本生成、内容分类与信息关系识别，官方扩展示例为标签整理、标题党识别与职位信息聚合。</li>
+    <li><b>实际影响</b>：把推理能力从云 API 下沉到浏览器端侧，与第 104 跑 NVIDIA Nemotron 3.5 Bolt E4B（4GB 端侧智能体）同向；「标准提案 + 浏览器首发实现 + 站点级权限」组合若被 Chromium 阵营跟进，本地模型分发将从 App 安装转向 Web 标准引用，对隐私敏感场景的 agent 落地是关键基础设施补全。</li>
+  </ul>
+  <h3>关键指标/资源</h3>
+  <ul>
+    <li><b>评测/性能</b>：无定量基准（标准提案 + 预览特性），以官方博客与双源报道为准</li>
+    <li><b>代码/论文</b>： 官方博客 <a href="https://next.opera.com/blog/web-ai-local-ai/" target="_blank" rel="noopener">https://next.opera.com/blog/web-ai-local-ai/</a> 、TechCrunch <a href="https://techcrunch.com/2026/10/27/opera-introduces-a-new-web-standard-to-let-users-deploy-ai-locally-in-their-browser/" target="_blank" rel="noopener">https://techcrunch.com/2026/10/27/opera-introduces-a-new-web-standard-to-let-users-deploy-ai-locally-in-their-browser/</a> 、9to5mac <a href="https://9to5mac.com/2026/10/27/opera-one-now-lets-mac-users-run-apples-foundation-model-directly-in-the-browser/" target="_blank" rel="noopener">https://9to5mac.com/2026/10/27/opera-one-now-lets-mac-users-run-apples-foundation-model-directly-in-the-browser/</a> </li>
+  </ul>
+  <p><span class="tag" style="color:#8b949e;border-color:#8b949e">#端侧推理</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#Web标准</span><span class="tag" style="color:#e3b341;border-color:#e3b341">#基础设施</span></p>
+</div></details>
+
+<hr class="divider">
+
+<div class="section-title">去重说明</div>
+
+<div class="excl">
+  <p><b>7 天扫描</b>：工作区 10-20 ~ 10-27 共 13 份报告（第 98–110 跑）合计 50+ 条标题纳入已报道集合；O: 盘网盘跨实例两份——<code>每日AI新闻推送_20261027_0028</code>（Hermes 48h，第 109 跑已处置）与 <code>每日AI新闻推送_20261027_1227</code>（Hermes 48h，本跑新扫：5 条第一方时刻均在窗外——Opus 5 实为 <a href="https://anthropic.com" target="_blank" rel="noopener">anthropic.com</a> 2026-07-24 旧闻、context-mode 10-22、HackerNoon 49 skills 10-21、OpenAI 人形机器人 10-26、Musk 言论 10-23），无同主体同动作重叠。</p>
+  <p><b>实体去重（dedup_check.py）</b>：3 条入选候选逐条判定 is_dup:false（jaccard 均 0.0，无匹配）。本期无「同主体不同动作」保留披露项。</p>
+  <h4>时间戳纪律排除（第一信源时刻在窗口外，禁止以转载/推广时间入选）</h4>
+  <ul>
+    <li><b>AuthorizationBench</b>（LLM agent 授权对齐基准，约 19.2% 轨迹超授权）：论文 arXiv:2610.27548 v1 提交 10-21 06:31 UTC、GitHub 仓库 peach-research-lab/authorizationbench 创建 10-20（COLM'26 HAIPS 荣誉提名）；窗口内 Rohan Paul 推文（北京 22:04）为再传播，arXiv v2 更新（北京 22:17）差异未核实 → 排除，列待核实。</li>
+    <li><b>Mirendil Fern 0.1</b>：官方首发 10-26 23:00（北京），第 110 跑已列近失追踪；窗口内 MarkTechPost 报道（北京 20:57）为迟报 → 排除。</li>
+    <li><b>OpenAI 外部专家核查数学/CS/物理证明</b>（The Decoder，北京 20:37）：第 109 跑已官宣三项科学发现 shepherd 机制的二次报道 → 排除。</li>
+    <li><b>Apple iWork（Pages/Keynote/Numbers）AI 助手</b>：MacRumors 10-22 已报；The Verge 今日文章（北京 21:50）若含 MCP 新增动作则属窗口内，未取证 → 列待核实。</li>
+    <li><b>Claude Opus 5</b>：<a href="https://anthropic.com" target="_blank" rel="noopener">anthropic.com</a> 官方页 Published Jul 24, 2026；网盘跨实例 20261027_1227 转引 VentureBeat 误作「10 月下旬」新发布 → 三个月前旧闻排除。</li>
+    <li><b>Anthropic S-1 永不投放广告承诺</b>（IT之家 北京 19:37 / Decoder 19:20）：S-1 资本类第 109 跑已排除，本条为二次报道；WSJ「630 亿美元芯片融资经 Broadcom CEO 促成」同为资本类 → 排除。</li>
+    <li><b>Kling 4.0 上线 PixVerse</b>（北京 22:13）：可灵 4.0 第 103 跑已报全量上线，本条为渠道生态接入 → 排除。</li>
+    <li><b>Hi3D v1.0</b>（image-to-3D，前身 Sparc3D；X 推广 北京 20:23）：3D 生成属创意类超焦点 → 排除。</li>
+    <li><b>政策/公司动态</b>：荷兰 AI 填补 2.5 万岗位缺口、GMO 云桌面数据泄露、Metis Reasoning 创办（前 DeepMind Graepel）、Ben Horowitz 解析 Databricks 长文 → 超焦点排除。</li>
+  </ul>
+  <h4>门槛/焦点排除</h4>
+  <ul>
+    <li>n8n 3.0 Beta 官方博客（北京 19:53，今日首发但内容为可靠性/稳定性/安全重构，无 AI/agent 焦点增量）；codex 0.166.0-alpha.2 / 0.165.0-alpha.1.2（GitHub releases 窗口内，alpha 版本流水）；Trail of Bits 呼吁回移安全修复（通用软件供应链安全，超焦点）；Lovable Enterprise 废弃项目清理（产品小功能）；General Compute 1 亿美元 A 轮（资本类）；Glasser 按次付费 agent 数据服务（TestingCatalog 转述，官方未取证，列待核实）；NVIDIA×Meta Muse/Vera Rubin 合作扩大（TestingCatalog/Decoder 转述，官方联合声明未取证，列待核实）。</li>
+  </ul>
+  <h4>结构性说明</h4>
+  <ul>
+    <li>信源健康 ok=3 / warn=0 / error=0（aihot_items 0.4h 新鲜、dailies 2026-10-27、arXiv 公告批次 Tue 27 Oct 2026 138 entries）；窗口 11h06m（北京周二白天→晚间 = 美东周一深夜→周二日间）；arXiv 周二公告批次预计北京明日约 08:00 发布（窗口外），窗口内 arXiv 学术首发 0 条。</li>
+    <li>AI HOT items 窗口内 45 条（limit=50，UTC 03:31–14:37 过滤），官方首发入选 3 条；GitHub 12 仓 releases 窗口内仅 codex alpha 流水；HN 窗口内 18 条 &gt;35 分无 AI 焦点条目（Apple M6 硬件、LWN Python JIT、Roblox 版权争议等）；HF hf-mirror 窗口内新模型无其他显著条目（Ling-3.1-flash-1019 经 API 定向取证）。</li>
+    <li><span class="pill-warn">具身智能 / 世界模型 / RSI 方向窗口内合规首发 0 条（结构性空缺如实披露）</span>；Opera 官方域名链路（<a href="https://blogs.opera.com" target="_blank" rel="noopener">blogs.opera.com</a> 与 <a href="https://next.opera.com" target="_blank" rel="noopener">next.opera.com</a>）本机不可达（重定向 download-restricted），按第 107 跑先例以双源交叉取证并披露。</li>
+  </ul>
+</div>
+
+<hr class="divider">
+
+<div class="section-title">待核实</div>
+
+<details class="excl"><summary class="fold-summary">归档状态说明（运维信息，点击展开）</summary>
+  <ul>
+    <li><b>1. Opera WebAI 标准细节</b>：官方博客原文本机不可达；「Google、Microsoft 等公司参与背书」出自 9to5mac 转述；API 技术面（模型清单、与 W3C WebNN / Chrome 内置 AI 提案的关系）、站点授权粒度待官方原文核实。缺：官方博客直达取证。</li>
+    <li><b>2. 蚂蚁灵光 2.0 Personal Agent</b>：接入 15 个国民级 App（米家/钉钉/支付宝等）说法出自 X 推广账号（北京 21:21/21:22），首个传播点为北京 10:05（早于本窗口起点）；蚂蚁官方首发渠道、能力边界与上架范围未取证。缺：官方公告。</li>
+    <li><b>3. NVIDIA×Meta 合作扩大</b>（Muse 模型 + Vera Rubin 部署、30 亿美元股权投资）：TestingCatalog（北京 20:10）与 The Decoder（北京 17:58）转述，官方联合声明未取证。缺：官方声明。</li>
+    <li><b>4. Glasser 按次付费 agent 数据服务</b>（聚合 80+ 供应商 2000+ 付费 API）：TestingCatalog 转述（北京 19:31），官方站点与定价页未取证。缺：官方页面。</li>
+    <li><b>5. Apple iWork MCP 支持是否为今日新增</b>：MacRumors 10-22 已报 Intelligent Assistant；The Verge 今日文章（北京 21:50）的 MCP 表述若为新动作则落窗。缺：Apple 官方新闻稿比对。</li>
+    <li><b>6. AuthorizationBench arXiv v2 更新内容</b>：v1 10-21（北京 14:31）、10-27 22:17（北京）显示 updated，v2 差异未核实；「19.2% 轨迹超授权」口径（模型/任务覆盖）未核全文。缺：v2 diff 与论文正文核读。</li>
+  </ul>
+</div></details>
+
+<hr class="divider">
+
+<div class="section-title">归档状态说明</div>
+
+<div class="archive-box">
+  <ul>
+    <li><b>工作区 Markdown</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261027_2237.md</code></li>
+    <li><b>工作区 HTML</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261027_2237.html</code></li>
+    <li><b>网盘归档</b>：<code>O:/quark/automation/每日 AI 新闻推送/</code>（同步写入上述同名文件）</li>
+    <li><b>GitHub 发布</b>：<span class="link">https://<a href="https://github.com/allin8888/ainews" target="_blank" rel="noopener">github.com/allin8888/ainews</a></span>（main 分支，经 tools/git_publish.sh）</li>
+    <li><b>Cloudflare Pages</b>：<span class="link">https://<a href="https://ainews-3rw.pages.dev" target="_blank" rel="noopener">ainews-3rw.pages.dev</a></span>（git_publish.sh 末尾自动触发 tools/cf_publish.sh 直传）</li>
+    <li><b>执行状态</b>：<span style="color:var(--green);font-weight:600;">✅ 成功</span>（v1 首轮归档 archived 2 / failed 0 / skipped 0、probe 写入并清理成功；guardian post ok:true、issues 0、window_source=snapshot；回填两行状态后 rename 避让网盘 v1 为 <code>_superseded_每日AI新闻推送_20261027_2237_v1.{md,html}</code> 重归档 v2 并复检通过；本地与网盘 md5 逐字节一致）</li>
+    <li><b>收尾固化</b>：5 ok / 0 failed / 0 skipped（KB 重建 / RSS 刷新 / 归档总索引 / 待核实追踪 backlog added 4、open 206 / 信源健康 ok=3 warn=0 error=0）</li>
+  </ul>
+</div>
+
+<footer>每日 AI 前沿技术精选 · 自动化生成 · 2026-10-27 22:37</footer>
+
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
