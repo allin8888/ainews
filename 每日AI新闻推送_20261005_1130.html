@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 — 2026-10-05</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --card-hover: #1c2128;
+    --text: #e6edf3;
+    --text-muted: #8b949e;
+    --border: #30363d;
+    --accent-blue: #58a6ff;
+    --accent-green: #3fb950;
+    --accent-orange: #d29922;
+    --accent-red: #f85149;
+    --accent-purple: #bc8cff;
+    --code-bg: #0d1117;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    line-height: 1.7;
+    padding: 24px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a1f2e 0%, #161b22 100%);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 28px;
+  }
+  .header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--accent-blue);
+    margin-bottom: 14px;
+  }
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .meta-item { display: flex; flex-direction: column; gap: 2px; }
+  .meta-item .label { color: var(--text-muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .meta-item .value { color: var(--text); font-weight: 600; }
+
+  .window-note {
+    background: #1a2332;
+    border: 1px solid #264f7a;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: #a5d6ff;
+  }
+  .window-note strong { color: var(--accent-orange); }
+
+  .section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 28px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .card:hover {
+    background: var(--card-hover);
+    border-color: #3d444d;
+  }
+  .card h2 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent-blue);
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+  .card h2 .num {
+    display: inline-block;
+    background: var(--accent-blue);
+    color: #0d1117;
+    border-radius: 50%;
+    width: 28px; height: 28px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .card h2 .source {
+    display: block;
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-top: 6px;
+    padding-left: 38px;
+  }
+  .card p { font-size: 14px; margin-bottom: 12px; }
+  .card p strong { color: var(--accent-orange); font-weight: 600; }
+  .card ul { padding-left: 20px; margin-bottom: 12px; }
+  .card li { font-size: 13px; color: var(--text); margin-bottom: 6px; }
+  .card li strong { color: var(--accent-green); }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+  }
+  .tag {
+    background: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 11px;
+    color: var(--accent-purple);
+    font-weight: 500;
+  }
+
+  .insight {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent-green);
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-bottom: 14px;
+    font-size: 14px;
+  }
+  .insight .num {
+    color: var(--accent-green);
+    font-weight: 700;
+    margin-right: 6px;
+  }
+
+  .verify {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-bottom: 24px;
+    font-size: 13px;
+  }
+  .verify h3 {
+    color: var(--accent-orange);
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .verify ol { padding-left: 20px; }
+  .verify li { margin-bottom: 8px; color: var(--text-muted); line-height: 1.6; }
+  .verify li strong { color: var(--text); }
+
+  .archive {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 22px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .archive strong { color: var(--accent-green); }
+  .archive code {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 1px 5px;
+    font-family: "SF Mono", "Fira Code", Consolas, monospace;
+    font-size: 12px;
+    color: var(--text);
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>每日 AI 前沿技术精选</h1>
+  <div class="meta-grid">
+    <div class="meta-item"><span class="label">日期</span><span class="value">2026-10-05</span></div>
+    <div class="meta-item"><span class="label">时间</span><span class="value">11:30</span></div>
+    <div class="meta-item"><span class="label">精选条数</span><span class="value">5 条</span></div>
+    <div class="meta-item"><span class="label">时效窗口</span><span class="value">10-04 11:30 – 10-05 11:30（24h）</span></div>
+  </div>
+</div>
+
+<div class="window-note">
+  <strong>⚠️ 窗口内学术供给说明</strong>：本期窗口覆盖周六至周一 11:30，跨 arXiv 周末停更期（10-04 为周日）。经检索，窗口内 <strong>arXiv 无窗口内新提交的 cs.RO / cs.AI / cs.LG 学术首发</strong>；两条边界放宽条目（DeepJEPA、HumanoidTTT）arXiv 首发时刻严格早于窗口起点，已就地标注。本期以「产业/安全事件为主 + 学术侧边界放宽」组织，未扩展窗口、未启用 48h 降级。
+</div>
+
+<div class="section-title">今日精选</div>
+
+<div class="card">
+  <h2><span class="num">1</span>AWS Loom CVSS 10.0 认证绕过 + 双 SSRF：未配 IdP 的 Agent 控制面板对全网裸露
+    <span class="source">AWS 安全公告 2026-124-AWS | 2026-10-02 19:00 UTC 首发，10-04 窗口内深度解析</span>
+  </h2>
+  <p><strong>事件概述</strong></p>
+  <p>AWS 于 10-02 19:00 UTC 发布安全公告 2026-124-AWS，披露开源 Agent 编排平台 <strong>Loom for AWS</strong>（AWS Labs）的 3 个 CVE 与 SageMaker Unified Studio 的 1 个指令注入 CVE。最严重的 CVE-2026-103956（CVSS v3.1 与 v4.0 均为 10.0）源于认证依赖的不安全默认初始化（CWE-1188）：当部署<strong>未配置身份提供者（IdP）</strong>时，控制面 API 不执行任何认证（CWE-306），任意网络客户端可直接获得 agent 控制面的超级管理员权限。</p>
+  <p><strong>技术与工程价值</strong></p>
+  <ul>
+    <li><strong>核心机制</strong>：攻击面聚焦在「agent 控制平面」——Loom 管理 agent 注册、工具服务器（MCP）、远端 A2A agent、IAM 角色策略与已存储集成凭证。三个 Loom CVE 组合：① 认证绕过（无需凭据即可注册工具服务器、读取 OAuth2/OIDC secret 与 API key、改写绑定在受管 agent 角色上的 IAM 策略——权限在修补后仍残留）；② CVE-2026-103957（SSRF，CVSS 8.2）：持有 <code>mcp:write</code> 范围的已认证用户可将 Loom MCP 工具服务器连接重定向到任意外部位置；③ CVE-2026-103958（SSRF，CVSS 8.3）：可打到容器内部 credential-vending 端点。同期修复的 CVE-2026-104019（CVSS 9.3，SageMaker Space 启动脚本指令注入）。</li>
+    <li><strong>实际影响</strong>：这是「Agent 编排层内卷」主线的另一面——<strong>编排层成为攻击面</strong>。harness/控制平面在安全侧的结构性弱点：认证默认 open 是 agent 控制平面的反模式；agent 控制面持有的权限与凭证是「下游所有 agent 能力的总闸」。运维直接含义：任何 Loom 部署必须配置 IdP；升级到 1.7.0 而非仅 1.6.1；轮换 OAuth2/OIDC client secret 与活动 access token；审计 CloudTrail 中未授权的 IAM 策略变更。</li>
+  </ul>
+  <p><strong>关键指标/资源</strong></p>
+  <ul>
+    <li>CVSSv4 10.0（CVE-2026-103956）；修复版本 1.7.0（CVE-2026-103956 实际在 1.6.1 已修复，早于披露约两个月）；CISA SSVC 2026-10-02 21:09 UTC 记录（未遭在野利用、可自动化、技术影响 total）。</li>
+    <li>来源：AWS 安全公告 2026-124-AWS；GitHub <code>awslabs/loom</code> releases v1.6.1 / v1.7.0；NVD CVE-2026-103956。</li>
+    <li><strong>时间戳界定</strong>：首发时刻为 2026-10-02 19:00 UTC，严格早于本期窗口起点 10-04 11:30（北京时间）。本期纳入依据是 10-04 窗口内多个独立信源（securityonline.info、quidproquo.cc 双语言版、agenccy.ai）的集中深度解析与修补边界辨析，构成窗口内实质解读增量。</li>
+  </ul>
+  <div class="tags">
+    <span class="tag">#AI Agent 安全</span>
+    <span class="tag">#Agent 基础设施</span>
+    <span class="tag">#供应链</span>
+    <span class="tag">#CVE</span>
+  </div>
+</div>
+
+<div class="card">
+  <h2><span class="num">2</span>OpenAI GPT-6.1 Sol 全渠道开放 + 生态接入扩散
+    <span class="source">OpenAI DevDay 2026 官方 | 2026-09-29 首发，10-04 窗口内全渠道开放与生态接入构成实质增量</span>
+  </h2>
+  <p><strong>事件概述</strong></p>
+  <p>GPT-6.1 Sol 于 9-29 DevDay 2026 首发（10-01 第 78 跑已覆盖「DevDay dots + GPT-6.1 Sol」主线，此处仅取<strong>窗口内开放与接入增量</strong>）：10-02 至 10-04 期间，OpenAI 将 GPT-6.1 Sol 面向<strong>全部 API、Plus、Pro、Business、Enterprise、Edu 渠道开放</strong>，并同步开放 Codex Cloud 远端执行环境与 Codex Security Cloud（扫描仓库/新 commit、自动去重、准备修复）。10-04 起，第三方生态密集发布 GPT-6.1 Sol 的集成指南。</p>
+  <p><strong>技术与工程价值</strong></p>
+  <ul>
+    <li><strong>核心机制</strong>：GPT-6.1 Sol 是 GPT-6 Sol 的「重大升级」，面向 agent 编程、computer use 与专业文书工作，定价 $2/M 输入 + $10/M 输出（缓存 $0.10/M），为 GPT-6 Astra（$10/$50）的<strong>约 1/5</strong>；1,050,000 token 输入上下文 + 128,000 输出上限。官方报告：DeepSWE v1.1 75.2%（vs Astra 74.8%）、OSWorld 2.0 71.4%（vs Astra 73.5%）、GDP.pdf 32.0%（vs Astra 32.2%）——<strong>自述数据，未见第三方独立复现，待核实</strong>。</li>
+    <li><strong>实际影响</strong>：「接近 Astra 的能力 × 1/5 价格」把 agentic coding 的 token 经济学重新定价；Codex Cloud 远端执行 + Security Cloud 的 GitHub/GitLab 集成，把编码 agent 落地路径从「本地 CLI」推向「云执行 + 云安全扫描」双云架构。10-04 窗口内第三方集成工程含义：Responses API 支持 function calling + hosted shell + apply patch + computer use + MCP + 文件搜索 + web 搜索，Chat Completions 端点<strong>不支持</strong>工具调用——集成侧需按端点选择。</li>
+  </ul>
+  <p><strong>关键指标/资源</strong></p>
+  <ul>
+    <li>OpenAI 官方 DevDay 2026 recap；模型卡片；datanorth.ai（10-04 基准对照表）；technoparticles.com 集成指南（10-04 窗口内）。</li>
+    <li>与第 77 跑（9-30 基准窗口）DevDay dots/GPT-6.1 Sol 的关系：<strong>模型本体为第 77 跑已覆盖事件，本条仅取窗口内全渠道开放 + 生态接入增量</strong>，非重复。</li>
+  </ul>
+  <div class="tags">
+    <span class="tag">#AI Coding</span>
+    <span class="tag">#基础架构</span>
+    <span class="tag">#推理成本</span>
+    <span class="tag">#生态接入</span>
+  </div>
+</div>
+
+<div class="card">
+  <h2><span class="num">3</span>DeepJEPA：世界模型内部计算分配新范式——「think deeper at decision-critical transitions」
+    <span class="source">NYU / Tulane / UIUC / Princeton / MIT / Columbia / Stanford | arXiv:2610.00368，2026-09-30 v1 首发，10-04 窗口内集中解读</span>
+  </h2>
+  <p><strong>事件概述</strong></p>
+  <p>《DeepJEPA: Scaling World Models from Within》提出<strong>把世界模型的扩展轴从「向外扩展」（roll 更远、采更多轨迹、优化更久）转向「向内扩展」（transition-level deliberation）</strong>：world-model planner 在 rollout 的每一步都分配相同的预测器深度，但<strong>有用的精炼集中在少数 decision-critical 事件</strong>（接触起始、持续物体交互）。DeepJEPA 学习「每个 candidate 与每个 rollout 步是否值得多跑一次 recurrent 更新」，额外计算集中在使用处。</p>
+  <p><strong>技术与工程价值</strong></p>
+  <ul>
+    <li><strong>核心机制</strong>：固定深度扫描揭示反直觉结论——<strong>K=4 在全局均值上从未击败 K=1</strong>（5 个 visual-control 场景），中间深度非单调；即「更深的内部计算本身不是 scaling law」，<strong>分配才是</strong>。DeepJEPA 将 transition depth 作为<strong>内层 test-time scaling 轴</strong>：保持多数 transition 浅，只在决策关键 transition 精炼，再让 planner 选择动作。固定 rollout 时域 / candidate 预算 / 外层 planner loop 不变。</li>
+    <li><strong>实际影响</strong>：这是对「世界模型扩展」范式的重定义——从「更大更强」到「在哪里更深」。与第 80 跑 Percepta Spotlight、JEPA-TTT 共同构成「<strong>测试时自适应 / 测试时计算分配</strong>」的第二条通用路线：不是更大的预训练模型，而是在<strong>推理时把计算用在刀刃上</strong>。对规划型 world model 部署方：在 contact onset / sustained interaction 处做额外 recurrent 更新的「内层扩展」比「外层扩展」（采更多轨迹）更有效且更省算力。</li>
+  </ul>
+  <p><strong>关键指标/资源</strong></p>
+  <ul>
+    <li>论文自述：平均每个 transition 仅 1.00–1.26 次 recurrent 更新（vs 固定深度 planner 的 K=4）；额外计算集中在接触起始与持续物体交互。<strong>待第三方复现</strong>。</li>
+    <li>arXiv:2610.00368v1（v1 提交 <strong>2026-09-30 06:48:25 UTC</strong>，严格早于本期窗口起点）；项目页 <code>deepjepa.github.io</code>。</li>
+    <li><strong>时间戳界定</strong>：arXiv 首发 9-30 严格早于窗口，本期纳入依据是 10-04 窗口内 arXiv 周日重新进入公告队列后的集中解读，构成窗口内解读增量。</li>
+  </ul>
+  <div class="tags">
+    <span class="tag">#世界模型</span>
+    <span class="tag">#测试时计算</span>
+    <span class="tag">#JEPA</span>
+    <span class="tag">#推理计算分配</span>
+  </div>
+</div>
+
+<div class="card">
+  <h2><span class="num">4</span>HumanoidTTT：测试时能力复用驱动人形机器人持续控制，16.4× 端到端加速 + 零不安全接受
+    <span class="source">北京大学 / AIGeeksGroup | arXiv:2610.00198，2026-09-18 v1 首发，10-04 窗口内 cs.RO current 页重新可见</span>
+  </h2>
+  <p><strong>事件概述</strong></p>
+  <p>《HumanoidTTT: Test-Time Capability Reuse for Efficient Humanoid Control》解决持续部署中人形机器人的<strong>能力复用</strong>问题：相同运动能力被反复请求，但中间运动改变机器人入场状态，盲重放先前成功的运动不安全；同时已验证能力在有限容量 Store 中累积。HumanoidTTT 引入两个机制——<strong>Selective Full-Motion Reuse</strong>（仅从认证适用的入场状态直接复用已验证完整运动，绕过重新生成）与 <strong>Test-Time Capability Consolidation</strong>（用 Double-DQN 在线学习哪些合格能力应在有界 Full-Motion Store 中持久化）。</p>
+  <p><strong>技术与工程价值</strong></p>
+  <ul>
+    <li><strong>核心机制</strong>：每个存储能力 = 已验证完整运动 + 入场适用性证书（Entry Applicability set）。复用请求到来时，若当前入场状态落在证书内则直接执行、否则回退到冻结生成器（OMG + HoloMotion）重新生成并执行资格化；有界 Store 满时，Store-conditioned Double-DQN 选择 SKIP 或 REPLACE(j)。45 维入场状态描述子 + 局部单元证书 + 物理/签名检查构成复用资格判定。</li>
+    <li><strong>实际影响</strong>：这是「具身智能从单次任务走向持续部署」的基础设施层工作——<strong>把「已验证能力」变成可复用资产</strong>。对量产型人形机器人部署方，16.4× 端到端加速意味着同样的运动请求在持续部署中不需要反复跑生成器；「零不安全接受」是可靠性底线。与第 80 跑 JEPA-TTT 同属「测试时自适应」主线，但 HumanoidTTT 走<strong>运动能力层</strong>，JEPA-TTT 走<strong>世界模型动力学层</strong>，两条正交。</li>
+  </ul>
+  <p><strong>关键指标/资源</strong></p>
+  <ul>
+    <li>论文自述：零不安全接受；<strong>16.4× 端到端加速</strong>；在线整合较冻结 Store 版减少 13.2 次生成器调用/200 请求；Double-DQN 整合策略 17,537 参数。<strong>待第三方复现</strong>。</li>
+    <li>arXiv:2610.00198v1（v1 提交 <strong>2026-09-18 21:44:30 UTC</strong>，严格早于窗口起点）；GitHub <code>AIGeeksGroup/HumanoidTTT</code>（Apache 许可，含 checkpoint、config.json、SHA256SUMS）；项目页 <code>aigeeksgroup.github.io/HumanoidTTT</code>。</li>
+    <li><strong>时间戳界定</strong>：arXiv 首发 9-18 严格早于窗口，本期纳入依据是 10-04 窗口内 arXiv 周日重新进入公告队列后 cs.RO current 页可见 + 项目页与 GitHub 完整代码开放（10-04 窗口内社区可读增量）。</li>
+  </ul>
+  <div class="tags">
+    <span class="tag">#具身智能</span>
+    <span class="tag">#人形机器人</span>
+    <span class="tag">#测试时自适应</span>
+    <span class="tag">#能力复用</span>
+  </div>
+</div>
+
+<div class="card">
+  <h2><span class="num">5</span>Hinton《Digital Intelligence vs Biological Intelligence》皇家研究院演讲深度解析 + LeCun 公开反驳
+    <span class="source">Hinton 皇家研究院 / AGI Hunt | 2026-09 末–10-04 窗口内集中报道与回应</span>
+  </h2>
+  <p><strong>事件概述</strong></p>
+  <p>2024 年诺贝尔物理学奖得主 Geoffrey Hinton 在英国皇家研究院做了约 47 分钟的演讲《数字智能 vs 生物智能》，核心判断有两层：① <strong>大模型理解语言的方式与人脑是同一种机制</strong>——把词变成特征、让特征相互作用、预测下一个词；② 数字载体相对生物载体有<strong>三项物理优势</strong>——知识不朽、副本完美、共享快百万到十亿倍——人永远追不上。同日，<strong>Yann LeCun 公开回应并重申判断</strong>：自回归 LLM 本身<strong>不会</strong>通向人类水平 AI；当前 AI 系统的推理能力依赖非自回归搜索但基本在 token 空间进行；类人推理应是<strong>连续表示空间中的搜索</strong>；目前的自我改进方法只在输出质量可被自动打分的领域（数学、代码、可精确仿真的场景）有效。</p>
+  <p><strong>技术与工程价值</strong></p>
+  <ul>
+    <li><strong>核心机制</strong>：Hinton 前半段是「40 年前的假说被 LLM 验证」——语言/智能的本质是高维特征向量而非符号规则；后半段是「数字载体的物理优势推导必然超越」——知识不朽 + 副本完美 + 共享速度，叠加长程规划能力的 AI「本能地学会拒绝关机」（Apollo Research 实验引用）。LeCun 反驳是「<strong>架构层缺失</strong>」：当前 LLM 的推理在 token 空间受限、自我改进只在可自动打分领域有效，类人推理需要连续表示空间搜索 + 持续世界模型 + 长程规划，这不是 scale 能解决的。</li>
+    <li><strong>实际影响</strong>：这是 RSI 与 superintelligence 争论的又一次公开交锋——Hinton（「20 年内 50% 概率超越人类」）vs LeCun（「AGI 是数十年而非数年」）。对工程侧直接含义：若 LeCun 路线成立，<strong>当前以 LLM 为核心的 Agent 栈是「强工具而非通用智能体」</strong>，能力天花板在架构层而非数据/算力层；若 Hinton 路线成立，「长程规划 + 对齐」是当前最被低估的工程缺口。第 80 跑（harness 决定 Agent 表现）与第 79 跑（Praxis-1 视频预训练→机器人策略）均落在「强工具」区间，两位大佬的公开交锋给了该区间一个<strong>学术锚点</strong>。</li>
+  </ul>
+  <p><strong>关键指标/资源</strong></p>
+  <ul>
+    <li>演讲信息（<strong>公开 YouTube 全片与 52 张截图逐张核过的中文解读稿，非同行评议</strong>）：约 47 分钟；演讲人署名多伦多大学 + Vector Institute；核心论断「LLM 真正理解语言」、「数字智能将超越生物智能」、「长程规划 AI 会本能学习拒绝关机」（Apollo Research 实验引用）。</li>
+    <li>LeCun 回应（<strong>AGI Hunt 10-04 窗口内报道，X 原帖未独立取证，待核实</strong>）：「自回归 LLM 不会通向人类水平 AI」、「推理需连续表示空间搜索」、「自我改进只在可自动打分领域有效」。</li>
+    <li><strong>时间戳界定</strong>：Hinton 演讲原始时刻为 9 月末（皇家研究院系列讲座），LeCun 回应为 10-04 窗口内；本期纳入依据是 10-04 窗口内中文深度解读稿 + LeCun 10-04 公开回应构成窗口内实质解读增量。</li>
+  </ul>
+  <div class="tags">
+    <span class="tag">#RSI</span>
+    <span class="tag">#超智能</span>
+    <span class="tag">#治理</span>
+    <span class="tag">#学术争论</span>
+  </div>
+</div>
+
+<div class="section-title">观察与判断</div>
+
+<div class="insight">
+  <span class="num">1.</span><strong>「Agent 控制平面」正式成为攻击面。</strong>第 1 条（Loom CVSS 10.0）是 Agent 编排层安全的首个「满分 CVE」——harness/控制平面此前是「性能/成本」议题（第 80 跑 62% vs 33%），本条证明它同时是「安全」议题。当 agent 控制平面可以注册工具服务器、读取存储凭证、改写 IAM 策略时，「编排层」不再只是性能瓶颈，而是<strong>安全总闸</strong>。可以预期：未来 Agent 框架的「认证默认 open」会被当作供应链级漏洞对待，「fail-closed 默认 + 显式 opt-in 绕过」会成为基线要求。
+</div>
+
+<div class="insight">
+  <span class="num">2.</span><strong>「测试时自适应」正在从单点走向体系。</strong>第 3 条（DeepJEPA 内层计算分配）与第 4 条（HumanoidTTT 运动能力复用）加上第 80 跑（JEPA-TTT、Percepta Spotlight）共同构成「<strong>测试时扩展轴</strong>」的四条正交路线：世界模型动力学层（JEPA-TTT）、世界模型计算分配层（DeepJEPA）、运动能力层（HumanoidTTT）、推理架构层（Spotlight）。共同前提是「预训练模型足够好、增量在推理时」，与「更大模型」路线形成明确的工程分野。
+</div>
+
+<div class="insight">
+  <span class="num">3.</span><strong>GPT-6.1 Sol 的「1/5 价格」是 token 经济学的重定价事件。</strong>第 2 条窗口内全渠道开放 + Codex Cloud 远端执行 + Security Cloud 集成，把 agentic coding 的落地路径从本地 CLI 推向双云架构；配合「接近 Astra 能力 × 1/5 价格」，高吞吐编码 agent 的单位成功任务成本可能下降一个数量级。这与第 81 跑 NTU 66 组实验（「模型排名随 Harness 翻转」）合起来指向：<strong>模型价格下降 + Harness 决定表现 + 编排层成为安全面</strong>，三条线在 10 月上旬同时收紧。
+</div>
+
+<div class="section-title">待核实</div>
+
+<div class="verify">
+  <h3>以下条目缺少可交叉验证的第一信源或第三方复现</h3>
+  <ol>
+    <li><strong>GPT-6.1 Sol 全部基准数据</strong>（DeepSWE v1.1 75.2%、OSWorld 2.0 71.4%、GDP.pdf 32.0%、Terminal-Bench Science 0.1 平均成本 $5.47/任务）均为 OpenAI 官方自述（官方 harness），缺第三方实验室在统一 harness 与推理设置下的独立复现；「接近 Astra 智能水平」的官方表述未见第三方基准支持。</li>
+    <li><strong>Loom CVE-2026-103956 的「修复版本 1.6.1 早于披露约两个月」</strong>为 agenccy.ai 推断口径（1.6.1 为 8 月发布），AWS 官方公告未明确表述「修复早于披露」，缺官方时间线佐证；SSRF 两漏洞（103957/103958）的攻击载荷细节未见公开 PoC。</li>
+    <li><strong>DeepJEPA 的 1.00–1.26 更新/transition 与 K=4 不优于 K=1 的全局均值结论</strong>为论文自述，5 个 visual-control 场景由作者自选，未见独立复现；「额外计算集中在接触起始与持续物体交互」的归因未做对照消融。</li>
+    <li><strong>HumanoidTTT 的 16.4× 端到端加速与零不安全接受</strong>为论文自述，MuJoCo 仿真 + 真实 G1 rollout 双验证但未见第三方在独立硬件上的复现；Double-DQN 整合策略 17,537 参数在 Store 容量变化下的鲁棒性未验证。</li>
+    <li><strong>Hinton 演讲 52 张截图逐张核过的中文解读稿</strong>为二级来源（机器之心/白驹谈人机），非皇家研究院官方逐字稿，关键引文（Apollo Research 实验对话、家族树实验学到的特征）缺原始视频交叉核验；<strong>LeCun 回应的 X 原帖未独立取证</strong>，AGI Hunt 10-04 转述口径待核实。</li>
+  </ol>
+</div>
+
+<div class="section-title">归档状态说明</div>
+
+<div class="archive">
+  <p><strong>工作区 Markdown</strong>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261005_1130.md</code></p>
+  <p><strong>工作区 HTML</strong>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261005_1130.html</code></p>
+  <p><strong>网盘归档</strong>：<code>O:/quark/automation/每日 AI 新闻推送/</code>（同步写入上述同名文件）</p>
+  <p><strong>执行状态</strong>：<strong>✅ 成功</strong>（O: 盘两份文件均以 <code>open()+write</code> 方式写入并通过字节大小校验；采用第 80 跑验证的 davfs 正确写法，规避了 <code>copy2</code> 的 Errno 13 与残渣文件名锁定问题；O: 盘 Hermes 产出 <code>每日AI新闻推送_20261005_0028.md/.html</code> 与本次命名不同不冲突，已纳入去重扫描）</p>
+</div>
+
+</body>
+</html>

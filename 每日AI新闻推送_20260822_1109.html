@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日 AI 前沿技术精选 - 2026-08-22</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface-2: #232733;
+      --border: #2e3347;
+      --text: #e4e6f0;
+      --text-muted: #8b8fa8;
+      --accent: #6366f1;
+      --accent-2: #818cf8;
+      --green: #22c55e;
+      --yellow: #eab308;
+      --red: #ef4444;
+      --cyan: #06b6d4;
+      --orange: #f97316;
+      --pink: #ec4899;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+    .container { max-width: 860px; margin: 0 auto; }
+    .header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .header h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+    .meta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .meta span { display: flex; align-items: center; gap: 0.3rem; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.15rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .badge-count { background: var(--accent); color: #fff; }
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+    .section-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.2rem;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.2rem;
+      transition: border-color 0.2s;
+    }
+    .card:hover { border-color: var(--accent); }
+    .card-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-right: 0.6rem;
+      flex-shrink: 0;
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: flex-start;
+    }
+    .card-source {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+      padding-left: 2.9rem;
+    }
+    .card-body p {
+      font-size: 0.92rem;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+    }
+    .card-body h4 {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent-2);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 0.8rem 0 0.4rem;
+    }
+    .card-body ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0.6rem;
+    }
+    .card-body li {
+      font-size: 0.9rem;
+      padding-left: 1rem;
+      position: relative;
+      margin-bottom: 0.3rem;
+      color: var(--text);
+    }
+    .card-body li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.8rem;
+      padding-left: 0;
+    }
+    .tag {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      background: var(--surface-2);
+    }
+    .tag-coding { border-color: var(--accent); color: var(--accent-2); background: rgba(99,102,241,0.1); }
+    .tag-embodied { border-color: var(--cyan); color: var(--cyan); background: rgba(6,182,212,0.1); }
+    .tag-infra { border-color: var(--orange); color: var(--orange); background: rgba(249,115,22,0.1); }
+    .tag-robot { border-color: var(--green); color: var(--green); background: rgba(34,197,94,0.1); }
+    .tag-open { border-color: var(--pink); color: var(--pink); background: rgba(236,72,153,0.1); }
+    .tag-ma { border-color: var(--yellow); color: var(--yellow); background: rgba(234,179,8,0.1); }
+    .footer-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 1rem;
+    }
+    .footer-section h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.8rem;
+    }
+    .footer-section p, .footer-section li {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+    .footer-section ul { padding-left: 1.2rem; margin: 0.4rem 0; }
+    .status-ok { color: var(--green); font-weight: 600; }
+    .status-warn { color: var(--yellow); font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>每日 AI 前沿技术精选</h1>
+      <div class="meta">
+        <span>📅 2026-08-22</span>
+        <span>🕐 11:09</span>
+        <span class="badge badge-count">5 条精选</span>
+      </div>
+    </div>
+
+    <div class="section-title">今日精选</div>
+
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="card-title">
+        <span class="card-num">1</span>
+        OpenAI 全面开源 Codex Harness，Agent 运行时成为新战场
+      </div>
+      <div class="card-source">格隆汇 / OpenAI 官方博客 | 2026-08-21</div>
+      <div class="card-body">
+        <p>OpenAI 宣布将驱动 Codex App、CLI 与 IDE 扩展的底层执行框架 Codex Harness 以 Apache-2.0 协议全面开源，仓库 github.com/openai/codex 截至当日已累计约 10.7 万 Star、1.6 万 Fork。</p>
+        <h4>核心机制</h4>
+        <ul>
+          <li>开源三层接口：codex exec（CI/脚本）、Codex SDK（TypeScript/Python 编程式调用）、app-server（持久会话/事件流/人工审批，JSON-RPC 协议）</li>
+          <li>Harness 负责上下文维护、工具调用、沙箱执行、权限审批等"脏活"，不做推理</li>
+        </ul>
+        <h4>实际影响</h4>
+        <ul>
+          <li>仅 Harness 侧调整即让 GPT-5.6 Sol 在 ARC-AGI-3 上得分从 13.3% 升至 38.3%，输出 Token 减少约六倍</li>
+          <li>落地案例：Thrive Holdings 税务申报流程（7000 份申报表，准备时间 -33%）；思科云控制平台自然语言 App Builder</li>
+        </ul>
+        <h4>关键指标</h4>
+        <ul>
+          <li>10.7 万 GitHub Star / 1.6 万 Fork</li>
+          <li>ARC-AGI-3：13.3% → 38.3%（仅 Harness 调整）</li>
+        </ul>
+        <div class="tags">
+          <span class="tag tag-coding">#AI Coding</span>
+          <span class="tag tag-open">#开源</span>
+          <span class="tag tag-infra">#Agent基础设施</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="card-title">
+        <span class="card-num">2</span>
+        DeepSeek Harness 一周三更，把 Claude Code 与 Codex 收编为子代理
+      </div>
+      <div class="card-source">新京报 / 数据猿 | 2026-08-19–21</div>
+      <div class="card-body">
+        <p>DeepSeek Harness 于 8 月 13 日开放 MIT 协议开发者预览后，一周内完成三次版本迭代（RC.7 → RC.8 → 0.1.0），将 Claude Code 和 Codex 正式纳入插件式子代理体系。</p>
+        <h4>核心机制</h4>
+        <ul>
+          <li>v0.1.0-rc.8 新增 DeepSeek-V4-Flash-Vision-Exp 多模态选项，支持原生图片请求与图文混合输入</li>
+          <li>Profile Bundle 机制：Claude Code/Codex 作为可按需安装的子代理加载</li>
+          <li>reportDelivery 唤醒：子代理完成任务后主动回传唤醒父任务，不再依赖轮询</li>
+          <li>工具层视觉：对无视觉模型，通过 OCR/颜色统计/像素扫描将图片转成结构化信息</li>
+        </ul>
+        <h4>实际影响</h4>
+        <ul>
+          <li>开发者可在单一框架内灵活切换不同模型和工具链，根据任务类型自动选择最优 Agent 执行</li>
+          <li>发布 24 小时内收获超 200 颗 GitHub Star</li>
+        </ul>
+        <div class="tags">
+          <span class="tag tag-coding">#AI Coding</span>
+          <span class="tag tag-open">#开源</span>
+          <span class="tag tag-coding">#多模态</span>
+          <span class="tag tag-infra">#Agent编排</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <div class="card-title">
+        <span class="card-num">3</span>
+        Generalist AI 发布 GEN-1.5 机器人基础模型，被类比为"具身智能的 GPT-3 时刻"
+      </div>
+      <div class="card-source">新智元 / 东方财富 | 2026-08-20</div>
+      <div class="card-body">
+        <p>硅谷 Generalist AI 发布新一代机器人基础模型 GEN-1.5，仅需看 3-12 秒人类演示即可零代码执行新任务，10 项操作 one-shot 平均成功率 59%（少样本微调后提升至 83%），李飞飞、英伟达等参投。</p>
+        <h4>核心机制</h4>
+        <ul>
+          <li>物理提示（Physical Prompting）：将感知运动示例放入上下文窗口，类比 LLM 的 Prompt Engineering</li>
+          <li>单次示范学习：3-12 秒演示 → 几秒内学会新任务</li>
+          <li>物理提示串联：将不同示范串联为更长行为序列</li>
+          <li>梯度下降少样本自适应：1-5 分钟数据 / 10-50 次演示 → 1-10 个梯度步骤微调</li>
+        </ul>
+        <h4>策略涌现</h4>
+        <ul>
+          <li>用簸箕代替刷子把积木铲进碗里（训练数据中未见该工具组合）</li>
+          <li>自发切换双手拧瓶盖 / 用另一只手拨掉粘在指尖的乐高积木</li>
+        </ul>
+        <h4>关键指标</h4>
+        <ul>
+          <li>one-shot 平均成功率 59% / few-shot 83%</li>
+          <li>30 秒记忆窗口 / 100Hz 动作轨迹生成频率</li>
+          <li>多模态 + 本体感知 + 传感器融合架构</li>
+        </ul>
+        <div class="tags">
+          <span class="tag tag-embodied">#具身智能</span>
+          <span class="tag tag-robot">#机器人</span>
+          <span class="tag tag-embodied">#世界模型</span>
+          <span class="tag tag-coding">#多模态</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card">
+      <div class="card-title">
+        <span class="card-num">4</span>
+        NVIDIA 60 亿美元获 Poolside AI 模型授权并拟吸纳其员工
+      </div>
+      <div class="card-source">财联社 / 彭博 | 2026-08-22</div>
+      <div class="card-body">
+        <p>英伟达同意支付 60 亿美元获得 Poolside AI 模型使用许可，并向其 100 多名员工发出聘用邀请，另以 120 亿美元估值追加 10 亿美元战略投资。Poolside 将继续独立运营。</p>
+        <h4>核心机制</h4>
+        <ul>
+          <li>复合结构：许可费 60 亿 + 股权投资 10 亿 + 人才引进</li>
+          <li>规避传统并购审查的"许可替代收购"模式（与此前收购 Groq 结构相似）</li>
+        </ul>
+        <h4>实际影响</h4>
+        <ul>
+          <li>Poolside 专注计算机编程自动化 AI 模型，尤其针对政府及国防软件领域</li>
+          <li>反映英伟达从芯片供应商向 AI 全栈生态加速转型</li>
+          <li>已引发立法者质疑，认为实质上绕过了反垄断审查机制</li>
+        </ul>
+        <div class="tags">
+          <span class="tag tag-infra">#AI基础设施</span>
+          <span class="tag tag-ma">#并购</span>
+          <span class="tag tag-infra">#英伟达</span>
+          <span class="tag tag-ma">#资金动向</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card">
+      <div class="card-title">
+        <span class="card-num">5</span>
+        第二届世界人形机器人运动会北京开幕，16 国 666 支队伍 2056 台机器人参赛
+      </div>
+      <div class="card-source">北京青年报 / 新华网 | 2026-08-22</div>
+      <div class="card-body">
+        <p>第二届世界人形机器人运动会于 8 月 22 日在国家速滑馆"冰丝带"正式开幕，16 国 666 支队伍、2056 台机器人参赛，设 51 个项目 1301 场比赛，队伍数较首届增长 138%。</p>
+        <h4>核心机制</h4>
+        <ul>
+          <li>首次设立专属"奥运村"：充电/存储/维修区，"一机一码"系统调度上千台机器人</li>
+          <li>中国联通 5G-A 机器人专网、具身智能管理平台等三大"黑科技"护航</li>
+        </ul>
+        <h4>同期 WRC 2026 亮点</h4>
+        <ul>
+          <li>无界动力 MWA™ 隐空间世界模型用于咖啡屋场景（处理人流/光线变化/实时避障）</li>
+          <li>北京人形机器人创新中心"硅基 001 号员工"红外测温仪检定机器人：黑灯状态 7×24 小时作业</li>
+          <li>他山科技 × 萨顿教授团队"机器人幼儿园"概念首发：强化学习 + 触觉感知，让机器人在真实物理世界试错成长</li>
+        </ul>
+        <div class="tags">
+          <span class="tag tag-robot">#具身智能</span>
+          <span class="tag tag-embodied">#人形机器人</span>
+          <span class="tag tag-robot">#产业落地</span>
+          <span class="tag tag-embodied">#世界机器人大会</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Footer -->
+    <div class="footer-section">
+      <h3>归档状态说明</h3>
+      <ul>
+        <li><strong>Markdown 路径</strong>：每日AI新闻推送_20260822_1109.md</li>
+        <li><strong>HTML 路径</strong>：每日AI新闻推送_20260822_1109.html</li>
+        <li><strong>执行状态</strong>：<span class="status-ok">✅ 成功</span></li>
+      </ul>
+    </div>
+
+    <div class="footer-section" style="margin-top: 1rem;">
+      <h3>编辑点评</h3>
+      <p><strong style="color: var(--accent-2);">本期主线："Agent 基础设施层定价战 + 具身智能 GPT-3 时刻"</strong></p>
+      <p style="margin-top: 0.5rem;">两大信号交织：</p>
+      <ul>
+        <li><strong>AI Coding 竞争重心从模型能力下沉到运行时层</strong>：OpenAI 开源 Codex Harness（10.7 万 Star）与 DeepSeek Harness 一周三更收编 Claude Code/Codex 为子代理，标志 Agent 基础设施层进入"谁先开放谁占位"的卡位战。数据猿分析指出，仅调整 Harness 即让 GPT-5.6 Sol 在 ARC-AGI-3 上得分从 13.3% 跳升至 38.3%，说明编排层优化比模型放大更直接有效。</li>
+        <li><strong>具身智能出现 Scaling Law 拐点迹象</strong>：Generalist AI GEN-1.5 被研究者类比为"机器人 GPT-3 时刻"——单次演示学习 + 策略涌现 + 李飞飞/英伟达参投，标志具身智能从"示范数据驱动"转向"物理世界自进化"。WRC 2026 与第二届人形机器人运动会（2056 台机器人参赛）同步释放产业验证信号。</li>
+      </ul>
+      <p style="margin-top: 0.8rem; color: var(--yellow);"><strong>待核实</strong>：GEN-1.5 one-shot 59% 成功率（厂商自述，独立复现待补充）/ Poolside 60 亿许可费对英伟达 chip 业务的实质影响（未披露细节）/ WRC 人形出货量数据来自厂商披露。</p>
+    </div>
+
+  </div>
+</body>
+</html>

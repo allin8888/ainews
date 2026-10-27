@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 新闻精选 — 2026-08-18</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-card: #161b22;
+    --bg-code: #1f2937;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-green: #3fb950;
+    --accent-orange: #d29922;
+    --accent-red: #f85149;
+    --tag-bg: #1f6feb22;
+    --tag-text: #58a6ff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.7;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+  header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--accent), #a371f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .meta {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+  }
+  .meta span { margin-right: 1rem; }
+  .tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-right: 0.35rem;
+  }
+  .tag-coding { background: #1f6feb22; color: var(--accent); }
+  .tag-embodied { background: #23863622; color: var(--accent-green); }
+  .tag-model { background: #9e6a0322; color: var(--accent-orange); }
+  .news-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+    transition: border-color 0.2s;
+  }
+  .news-card:hover { border-color: var(--accent); }
+  .news-rank {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-right: 0.6rem;
+    flex-shrink: 0;
+  }
+  .news-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: flex-start;
+  }
+  .news-body { margin-left: 3.35rem; }
+  .news-body p { margin-bottom: 0.6rem; }
+  .news-body strong { color: var(--accent); font-weight: 600; }
+  .source {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+  }
+  .source a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .source a:hover { text-decoration: underline; }
+  .editor-note {
+    background: var(--bg-card);
+    border-left: 3px solid var(--accent);
+    padding: 1rem 1.25rem;
+    margin: 2rem 0;
+    border-radius: 0 8px 8px 0;
+  }
+  .editor-note h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+  }
+  .editor-note p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+  .verify-note {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  .verify-note h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: var(--accent-orange);
+  }
+  .verify-note ul {
+    list-style: none;
+    padding: 0;
+  }
+  .verify-note li {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    padding: 0.3rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+  .verify-note li::before {
+    content: '⚠';
+    position: absolute;
+    left: 0;
+    font-size: 0.75rem;
+  }
+  footer {
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+    margin-top: 2rem;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>📰 每日 AI 新闻精选</h1>
+    <div class="meta">
+      <span>📅 2026-08-18</span>
+      <span>🔍 筛选时段：8/16 – 8/18</span>
+    </div>
+  </header>
+
+  <!-- 新闻 1 -->
+  <div class="news-card">
+    <div class="news-title">
+      <span class="news-rank">1</span>
+      <div>
+        <span class="tag tag-coding">AI Coding</span>
+        Stripe 超 70 亿美元收购 OpenRouter，支付巨头收编 AI 模型路由层
+      </div>
+    </div>
+    <div class="news-body">
+      <p><strong>事件：</strong>2026年8月16日 Stripe 与 OpenRouter 签署收购协议，交易价格超 70 亿美元，较 OpenRouter 同年 5 月 13 亿美元的 B 轮融资估值增长逾 5 倍。OpenRouter 成立于 2023 年，定位 AI 统一 API 网关，连接 80+ 供应商、500+ 模型，全球用户超 1000 万，每月处理超 200 万亿 token，按调用量收取约 5.5% 平台费。</p>
+      <p><strong>为何值得关注：</strong>Stripe 自身支付 take rate 约 0.36%，而 OpenRouter 的推理调用 take rate 约 5.5%——Stripe 正在将结算基础设施延伸至 AI 推理调用层，抢占多模型环境下连接开发者、供应商与 AI 支付的「交易层」。中国开源模型（DeepSeek、Qwen）已占 OpenRouter 企业流量 30%+，年中一度达 46%。</p>
+      <div class="source">来源：<a href="https://www.donews.com/news/detail/4/6675057.html" target="_blank">DoNews</a> · <a href="https://startupfortune.com/stripe-buys-ai-model-router-openrouter-for-more-than-7-billion" target="_blank">Startup Fortune</a></div>
+    </div>
+  </div>
+
+  <!-- 新闻 2 -->
+  <div class="news-card">
+    <div class="news-title">
+      <span class="news-rank">2</span>
+      <div>
+        <span class="tag tag-coding">AI Coding</span>
+        OpenAI Codex 百万 token 上下文向 ChatGPT 账号开放
+      </div>
+    </div>
+    <div class="news-body">
+      <p><strong>事件：</strong>2026年8月18日，OpenAI 工程师 Tibo 在 X 平台宣布，Codex 中 GPT-5.6 Sol 模型的 100 万 token 上下文窗口已从仅限 API 密钥扩展至 ChatGPT 账号场景。Plus/Pro 订阅用户可手动配置启用接近 105 万 token 的完整上下文窗口。</p>
+      <p><strong>为何值得关注：</strong>前沿模型能力向订阅用户下放的标志性事件。百万 token 上下文对大型代码库重构、复杂调试与长时会话尤为关键。但用户需自行决定启用，且订阅额度消耗显著加快——官方明确提醒「默认配置已是性能与成本综合调优的结果」。</p>
+      <div class="source">来源：<a href="https://news.qq.com/rain/a/20260818A0299F00" target="_blank">DoNews/腾讯新闻</a></div>
+    </div>
+  </div>
+
+  <!-- 新闻 3 -->
+  <div class="news-card">
+    <div class="news-title">
+      <span class="news-rank">3</span>
+      <div>
+        <span class="tag tag-coding">AI Coding</span>
+        Anthropic 年化营收突破 650 亿美元，Claude Code 成增长核心
+      </div>
+    </div>
+    <div class="news-body">
+      <p><strong>事件：</strong>2026年8月17日，Anthropic 披露截至 7 月底 ARR 突破 650 亿美元，较 2025 年底约 90 亿美元增长逾七倍。二季度初步营收超 115 亿美元，调整后营业利润转正。34.4% 的美国企业已为 Anthropic 付费，首次超越 OpenAI 的 32.3%。</p>
+      <p><strong>为何值得关注：</strong>Claude Code 是增长核心变量——模型调用从单次对话变为持续运行、大量消耗 token 的工作流。企业 LLM 份额达 32% vs OpenAI 25%，推理毛利率从 38% 升至 70%-85%，规模效应开始显现。</p>
+      <div class="source">来源：<a href="https://36kr.com/p/3944190132223365" target="_blank">36氪</a> · <a href="https://new.qq.com/rain/a/20260818A0238400" target="_blank">腾讯新闻</a></div>
+    </div>
+  </div>
+
+  <!-- 新闻 4 -->
+  <div class="news-card">
+    <div class="news-title">
+      <span class="news-rank">4</span>
+      <div>
+        <span class="tag tag-embodied">具身智能</span>
+        共生知行发布人形机器人卡丁车驾驶 Demo，端到端感控一体化
+      </div>
+    </div>
+    <div class="news-body">
+      <p><strong>事件：</strong>2026年8月17日，具身智能初创公司共生知行发布双足人形机器人驾驶卡丁车 Demo。机器人进入驾驶位后双手接触方向盘、双脚进入踏板区域，在封闭赛道上完成车辆行驶，需同时协调视觉感知、多接触点平衡、手眼脚协同与精细力控。核心成员来自智源研究院、港科大、小米、达摩院、蚂蚁、清华等机构。</p>
+      <p><strong>为何值得关注：</strong>国内首家以端到端感控一体化方案公开演示全身智能的公司，打穿了当前主流具身智能「大脑+小脑」割裂架构。卡丁车场景本质是全身智能压力测试，比单一行走/抓取更能检验模型跨模态物理交互能力。</p>
+      <div class="source">来源：<a href="https://www.163.com/dy/article/L4K1NB2G05118DFD.html" target="_blank">36氪</a> · <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_0826a82f59633852" target="_blank">腾讯新闻</a></div>
+    </div>
+  </div>
+
+  <!-- 新闻 5 -->
+  <div class="news-card">
+    <div class="news-title">
+      <span class="news-rank">5</span>
+      <div>
+        <span class="tag tag-embodied">具身智能</span>
+        2026 世界机器人大会明日开幕，300+ 企业参展、150+ 新品首秀
+      </div>
+    </div>
+    <div class="news-body">
+      <p><strong>事件：</strong>2026世界机器人大会（WRC2026）将于 8 月 19 日至 23 日在北京亦庄举行，参展企业 300 余家（同比+36%），展品超 2000 件，首发新品 150 余件（同比+21%）。宇树科技董事长王兴兴将亮相 8/20 主论坛，国资委将在大会期间揭牌成立中央企业机器人创新联合体。</p>
+      <p><strong>为何值得关注：</strong>2026 年上半年全球人形机器人出货量 1.91 万台（同比+272%），中国厂商占全球 97%+ 份额，工业与商业应用已占上半年出货 70%+。大会标志着人形机器人从「展会样机」正式走向「交付元年」，央企采购、产线验证、量产爬坡成为主题。</p>
+      <div class="source">来源：<a href="https://hdzx.bjhd.gov.cn/2019/zxyx/szxw/202608/t20260818_4825656.shtml" target="_blank">北京亦庄官网</a> · <a href="https://en.people.cn/n3/2026/0818/c90000-20489679.html" target="_blank">人民网</a></div>
+    </div>
+  </div>
+
+  <!-- 编辑点评 -->
+  <div class="editor-note">
+    <h3>✍️ 编辑点评</h3>
+    <p>本期主线：<strong>「基础设施层被定价，具身智能开始交付」</strong>。Stripe 收购 OpenRouter 是把 AI 推理调用层纳入支付基础设施的标志性事件——当 token 成为按量计费的新标的，结算层与路由层的边界开始模糊。Codex 百万 token 开放与 Anthropic ARR 破 650 亿互为印证：Coding Agent 已从实验工具变为真实工作流，收入结构与使用模式同步重塑。具身侧，共生知行的端到端 Demo 和 WRC2026 的「交付元年」叙事，标志着人形机器人从技术验证走向产线部署的关键转折。</p>
+  </div>
+
+  <!-- 待核实项 -->
+  <div class="verify-note">
+    <h3>⚠️ 待核实项</h3>
+    <ul>
+      <li>Stripe 收购 OpenRouter 整合方案尚未披露，OpenRouter 是否会保持模型路由中立性待观察</li>
+      <li>Codex 百万 token 上下文为手动启用，实际性能与成本权衡以用户实测为准</li>
+      <li>Anthropic ARR 数据为内部披露，口径与 OpenAI 可能存在差异</li>
+      <li>共生知行 Demo 为阶段性演示，模型架构与评测方式尚未公开</li>
+      <li>WRC2026 产能数据来自厂商披露，实际量产节奏以 Q3-Q4 交付为准</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>生成时间：2026-08-18 12:41 (北京时间) · 数据源：WebSearch 交叉核验 + AI HOT v1 API</p>
+  </footer>
+</div>
+</body>
+</html>

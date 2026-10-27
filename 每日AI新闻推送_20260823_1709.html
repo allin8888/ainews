@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日 AI 前沿技术精选 - 2026-08-23</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.7;
+            padding: 40px 20px;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid #334155;
+        }
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 12px;
+        }
+        .header .meta {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+        .header .meta span { margin: 0 8px; }
+        .section-title {
+            font-size: 18px;
+            color: #60a5fa;
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
+        .news-card {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+            border: 1px solid #334155;
+            transition: border-color 0.2s;
+        }
+        .news-card:hover { border-color: #60a5fa; }
+        .news-card .rank {
+            display: inline-block;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+        .news-card h2 {
+            font-size: 18px;
+            color: #f1f5f9;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        .news-card .source-date {
+            font-size: 13px;
+            color: #64748b;
+            margin-bottom: 16px;
+        }
+        .news-card h3 {
+            font-size: 14px;
+            color: #94a3b8;
+            margin: 16px 0 8px;
+            font-weight: 600;
+        }
+        .news-card p, .news-card li {
+            font-size: 14px;
+            color: #cbd5e1;
+        }
+        .news-card ul {
+            margin-left: 18px;
+            margin-top: 8px;
+        }
+        .news-card li { margin-bottom: 6px; }
+        .news-card .tags {
+            margin-top: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .news-card .tag {
+            background: #334155;
+            color: #94a3b8;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+        .editor-note {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 28px;
+            margin-top: 32px;
+            border: 1px solid #334155;
+        }
+        .editor-note h3 {
+            font-size: 16px;
+            color: #f59e0b;
+            margin-bottom: 16px;
+        }
+        .editor-note p { font-size: 14px; color: #cbd5e1; margin-bottom: 12px; }
+        .editor-note ul { margin-left: 18px; }
+        .editor-note li { font-size: 14px; color: #cbd5e1; margin-bottom: 6px; }
+        .footer {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid #334155;
+            text-align: center;
+            color: #64748b;
+            font-size: 13px;
+        }
+        .divider {
+            border: none;
+            border-top: 1px solid #334155;
+            margin: 32px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>每日 AI 前沿技术精选</h1>
+            <div class="meta">
+                <span>📅 2026-08-23</span>
+                <span>🕐 17:09</span>
+                <span>📰 5 条</span>
+            </div>
+        </div>
+
+        <div class="section-title">今日精选</div>
+
+        <!-- News 1 -->
+        <div class="news-card">
+            <span class="rank">#1</span>
+            <h2>OpenAI Codex 周活突破 2000 万，增速超越 Claude Code 四倍</h2>
+            <div class="source-date">来源：OpenAI | 2026-08-22</div>
+            
+            <h3>事件概述</h3>
+            <p>OpenAI Codex 负责人确认，Codex 本周活跃用户突破 2000 万，四周增速达 20.8%，约为 Claude Code（5.2%）的四倍。同日 OpenAI 宣布收购实时数据库 InstantDB 团队，强化 Agent 基础设施；并澄清 sub2api 用量扣减问题，承诺为受影响用户返还额度。</p>
+            
+            <h3>技术与工程价值</h3>
+            <ul>
+                <li><strong>核心机制</strong>：Codex 作为轻量级 Rust 终端编码代理，启动速度提升约 25 倍，支持文件读写、命令执行、代码审查等全链路工作流；v0.149.0 引入 Agents Dashboard，可在终端内搜索/管理后台任务。</li>
+                <li><strong>实际影响</strong>：AI 编程从"补全工具"演变为"自主执行工作流"，Codex 与 ChatGPT Work 双向打通，OpenAI 在开发者入口的领先优势进一步扩大。</li>
+            </ul>
+            
+            <h3>关键指标/资源</h3>
+            <ul>
+                <li>评测/性能：周活 2000 万，四周增速 20.8%（Claude Code 5.2%）</li>
+                <li>代码/论文：<a href="https://github.com/openai/codex" style="color:#60a5fa;">github.com/openai/codex</a>（11.3 万 Star）</li>
+            </ul>
+            
+            <div class="tags">
+                <span class="tag">#AI Coding</span>
+                <span class="tag">#Agent</span>
+                <span class="tag">#OpenAI</span>
+            </div>
+        </div>
+
+        <!-- News 2 -->
+        <div class="news-card">
+            <span class="rank">#2</span>
+            <h2>小红书开源 dots3-note 280B 大模型，华为昇腾当日完成零日适配</h2>
+            <div class="source-date">来源：小红书 dots 实验室 | 2026-08-23</div>
+            
+            <h3>事件概述</h3>
+            <p>小红书 dots 实验室在海外发布 MoE 架构开源大模型 dots3-note preview，总参数 280B、激活参数 16B，支持 512K 上下文及文本、视觉、语音多模态理解。发布当天，华为昇腾 Atlas 800A3 与 900A3 SuperPoD 即通过 vLLM Ascend 完成 0 Day 适配部署。</p>
+            
+            <h3>技术与工程价值</h3>
+            <ul>
+                <li><strong>核心机制</strong>：采用 MoE（混合专家）架构，16B 激活参数可支持高效推理，同时保持 280B 总参数的丰富知识储备；推理、Agent 与多模态性能接近更大尺寸密集模型。</li>
+                <li><strong>实际影响</strong>：作为中国月活超 3 亿的内容平台，小红书自研并开源模型，标志着其 AI 能力从搜索/推荐升级为支撑整套产品体验的底层基座，充实中国开源大模型生态。</li>
+            </ul>
+            
+            <h3>关键指标/资源</h3>
+            <ul>
+                <li>评测/性能：总参数 280B / 激活 16B，512K 上下文，多模态（文本+视觉+语音）</li>
+                <li>代码/论文：<a href="#" style="color:#60a5fa;">github.com/xiaohongshu/dots</a>（Apache 2.0）</li>
+            </ul>
+            
+            <div class="tags">
+                <span class="tag">#开源模型</span>
+                <span class="tag">#MoE</span>
+                <span class="tag">#国产算力</span>
+            </div>
+        </div>
+
+        <!-- News 3 -->
+        <div class="news-card">
+            <span class="rank">#3</span>
+            <h2>第二届世界人形机器人运动会开幕，9.39 秒百米超越博尔特纪录</h2>
+            <div class="source-date">来源：世界人形机器人运动会组委会 | 2026-08-22</div>
+            
+            <h3>事件概述</h3>
+            <p>第二届世界人形机器人运动会在北京国家速滑馆"冰丝带"开幕，666 支队伍、2056 台机器人参与 51 个赛项 1301 场比赛。天卓队机器人以 9.39 秒打破博尔特 9.58 秒的男子百米世界纪录，天工 Ultra 跳出 2.88 米超越人类跳高纪录。本届赛事多项竞技取消人工遥控，全程全自主运行。</p>
+            
+            <h3>技术与工程价值</h3>
+            <ul>
+                <li><strong>核心机制</strong>：从"遥控"到"自主"的代际跃迁——模型需实时感知环境、独立决策、协调全身关节完成复杂运动，考验端到端感知-控制一体化能力与鲁棒性。</li>
+                <li><strong>实际影响</strong>：赛场表现直接映射产业水平：2026 上半年中国人形机器人出货量超 4 万台（全球占比 97%），行业从 POC 试点进入 PMF（产品市场契合）验证阶段，商业化窗口开启。</li>
+            </ul>
+            
+            <h3>关键指标/资源</h3>
+            <ul>
+                <li>评测/性能：百米 9.39 秒（超越人类纪录）、跳高 2.88 米、666 支队伍 / 2056 台机器人</li>
+                <li>代码/论文：<a href="https://wrc2026.org" style="color:#60a5fa;">wrc2026.org</a>（赛事官方信息）</li>
+            </ul>
+            
+            <div class="tags">
+                <span class="tag">#具身智能</span>
+                <span class="tag">#人形机器人</span>
+                <span class="tag">#WRC2026</span>
+            </div>
+        </div>
+
+        <!-- News 4 -->
+        <div class="news-card">
+            <span class="rank">#4</span>
+            <h2>NVIDIA AVO 智能体在 ARC-AGI-3 取得 100% 满分</h2>
+            <div class="source-date">来源：NVIDIA Research | 2026-08-21</div>
+            
+            <h3>事件概述</h3>
+            <p>NVIDIA 发布 AVO 通用编程 Agent 架构，在抽象推理与视觉理解基准 ARC-AGI-3 上取得 100% 满分（25/25 环境，183/183 关卡），而 Claude Opus 5 裸跑仅 30%。该成果通过持久记忆与监督器架构实现 3 倍性能跃升，补足 SWE-bench 难以覆盖的抽象推理能力评估。</p>
+            
+            <h3>技术与工程价值</h3>
+            <ul>
+                <li><strong>核心机制</strong>：AVO 将世界模型嵌入实时决策回路，通过持久记忆维持长程任务状态，监督器模块进行中间验证与纠错，6,624 次环境动作完成全部关卡。</li>
+                <li><strong>实际影响</strong>：证明架构创新可显著放大模型能力——仅 Harness 层面的优化（推理状态保留 + 上下文压缩）即让 GPT-5.6 Sol 在 ARC-AGI-3 上得分从 13.3% 升至 38.3%，输出 Token 压缩至六分之一。</li>
+            </ul>
+            
+            <h3>关键指标/资源</h3>
+            <ul>
+                <li>评测/性能：ARC-AGI-3 满分（100%），183/183 关卡通过</li>
+                <li>代码/论文：<a href="https://github.com/NVIDIA/AVO-agent" style="color:#60a5fa;">github.com/NVIDIA/AVO-agent</a></li>
+            </ul>
+            
+            <div class="tags">
+                <span class="tag">#ARC-AGI</span>
+                <span class="tag">#Agent架构</span>
+                <span class="tag">#推理基准</span>
+            </div>
+        </div>
+
+        <!-- News 5 -->
+        <div class="news-card">
+            <span class="rank">#5</span>
+            <h2>OpenAI 大幅下调 GPT-5.6 Sol API 价格超 20%，优惠期至 11/21</h2>
+            <div class="source-date">来源：OpenAI | 2026-08-21</div>
+            
+            <h3>事件概述</h3>
+            <p>OpenAI 宣布 GPT-5.6 Sol 基准价格下调超 20%（输入 $5→$4，输出 $30→$20），优惠期三个月至 11/21。这是 OpenAI 首次对旗舰模型降价，美媒称系中国开源模型定价压力所致。同期 OpenAI 还收购 InstantDB 团队以强化开发者工具链。</p>
+            
+            <h3>技术与工程价值</h3>
+            <ul>
+                <li><strong>核心机制</strong>：API 定价策略调整反映 AI 基础设施层竞争加剧——中国开源模型（DeepSeek、Qwen、GLM）以极低价格抢占企业客户，倒逼头部厂商调整定价策略。</li>
+                <li><strong>实际影响</strong>：降低企业 Agent 项目运行成本，预计带动大量 AI 编程、自动化工作流应用门槛进一步下降；但也可能引发"价格战"导致高质量模型服务利润压缩。</li>
+            </ul>
+            
+            <h3>关键指标/资源</h3>
+            <ul>
+                <li>评测/性能：输入 $4/M token，输出 $20/M token（原价 $5/$30）</li>
+                <li>代码/论文：<a href="https://openai.com/api/pricing/" style="color:#60a5fa;">openai.com/api/pricing/</a></li>
+            </ul>
+            
+            <div class="tags">
+                <span class="tag">#定价策略</span>
+                <span class="tag">#API竞争</span>
+                <span class="tag">#中国模型压力</span>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- Editor's Note -->
+        <div class="editor-note">
+            <h3>📝 编辑点评</h3>
+            <p><strong>今日主线</strong>：「Coding Agent 入口战白热化 + 具身智能商业化窗口开启」</p>
+            <ul>
+                <li><strong>AI Coding 侧</strong>：Codex 周活 2000 万超越 Claude Code 四倍，OpenAI 通过降价+收购双管齐下巩固开发者入口；Agent 基础设施层竞争从"能力对标"转向"生态卡位"（GitHub Copilot 进军 Slack/Teams、Cursor Origin 平台上线）。</li>
+                <li><strong>具身智能侧</strong>：WRC 2026 释放明确信号——行业从"炫技"转向"干活"，人形机器人半年出货 4 万+台中国占 97%+，2026 被定义为"具身交付元年"。</li>
+                <li><strong>技术突破侧</strong>：NVIDIA AVO 在 ARC-AGI-3 满分证明架构创新可显著放大模型能力；小红书开源 280B 模型是中国开源生态持续扩容的又一标志性事件。</li>
+            </ul>
+            <p style="margin-top: 16px;"><strong>待核实</strong>：Codex 2000 万周活数据（OpenAI 官方确认）/ dots3-note 基准测试第三方验证 / AVO ARC-AGI-3 满分（厂商自述，独立复现待补充）/ OpenAI 降价促销长期定价走势</p>
+        </div>
+
+        <div class="footer">
+            <p>归档状态：⏳ 待写入</p>
+            <p>Markdown: O:/quark/automation/每日 AI 新闻推送/每日AI新闻推送_20260823_1709.md</p>
+            <p>HTML: O:/quark/automation/每日 AI 新闻推送/每日AI新闻推送_20260823_1709.html</p>
+        </div>
+    </div>
+</body>
+</html>

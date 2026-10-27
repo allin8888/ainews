@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-08-29 20:53</title>
+<style>
+  :root{
+    --bg:#f5f6f8;
+    --card:#ffffff;
+    --ink:#1b1f24;
+    --ink-2:#3a4149;
+    --ink-3:#5b6470;
+    --muted:#7d8794;
+    --line:#e3e7ec;
+    --accent:#1f5fd8;
+    --accent-soft:#eaf1fd;
+    --warn:#b45309;
+    --warn-soft:#fdf3e3;
+    --ok:#0f7b52;
+    --ok-soft:#e7f6ef;
+    --tag:#eef1f5;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:32px 20px 72px;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    font-size:15px;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:900px;margin:0 auto;}
+
+  header.hero{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:28px 30px 24px;
+    margin-bottom:22px;
+    box-shadow:0 1px 2px rgba(16,24,40,.04);
+  }
+  h1{
+    margin:0 0 14px;
+    font-size:26px;
+    letter-spacing:-.01em;
+    font-weight:700;
+    color:var(--ink);
+  }
+  .meta{display:flex;flex-wrap:wrap;gap:8px;}
+  .meta span{
+    background:var(--tag);
+    color:var(--ink-2);
+    border-radius:999px;
+    padding:4px 13px;
+    font-size:13px;
+    font-variant-numeric:tabular-nums;
+  }
+  .meta span.window{background:var(--accent-soft);color:var(--accent);}
+
+  hr.rule{border:none;border-top:1px solid var(--line);margin:26px 0;}
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px 30px 22px;
+    margin-bottom:20px;
+    box-shadow:0 1px 2px rgba(16,24,40,.04);
+  }
+  .card h2{
+    margin:0 0 6px;
+    font-size:19px;
+    line-height:1.45;
+    font-weight:700;
+    color:var(--ink);
+    letter-spacing:-.005em;
+  }
+  .source{
+    font-size:12.5px;
+    color:var(--muted);
+    margin:0 0 18px;
+    font-variant-numeric:tabular-nums;
+  }
+  h3{
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--muted);
+    margin:22px 0 8px;
+    font-weight:600;
+  }
+  h3:first-of-type{margin-top:0;}
+  .card p{margin:0 0 10px;color:var(--ink-2);}
+  ul{margin:0;padding-left:20px;color:var(--ink-2);}
+  li{margin-bottom:7px;}
+  li::marker{color:var(--muted);}
+  strong{color:var(--ink);font-weight:600;}
+  code{
+    background:var(--tag);
+    color:var(--ink);
+    padding:1px 6px;
+    border-radius:4px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:12.5px;
+  }
+  .note{
+    background:var(--warn-soft);
+    border-left:3px solid var(--warn);
+    border-radius:0 8px 8px 0;
+    padding:12px 16px;
+    margin:16px 0 0;
+    font-size:13.5px;
+    color:#7c4a10;
+    line-height:1.65;
+  }
+  .note b{color:#6b3d07;}
+  .tags{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line);}
+  .tags span{
+    display:inline-block;
+    background:var(--accent-soft);
+    color:var(--accent);
+    border-radius:6px;
+    padding:3px 10px;
+    font-size:12.5px;
+    margin:0 6px 6px 0;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:14px;
+    font-size:13.5px;
+  }
+  th,td{
+    text-align:left;
+    padding:9px 12px;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  th{
+    background:#fafbfc;
+    color:var(--ink-3);
+    font-weight:600;
+    font-size:12.5px;
+    letter-spacing:.02em;
+  }
+  td{color:var(--ink-2);}
+  tr:last-child td{border-bottom:none;}
+
+  .themes{padding-left:20px;}
+  .themes li{margin-bottom:12px;color:var(--ink-2);}
+
+  footer{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px 30px;
+    font-size:13.5px;
+    color:var(--ink-3);
+    box-shadow:0 1px 2px rgba(16,24,40,.04);
+  }
+  footer p{margin:0 0 8px;}
+  footer p:last-child{margin-bottom:0;}
+  footer code{font-size:12px;word-break:break-all;}
+  .ok{color:var(--ok);font-weight:600;}
+  @media (max-width:640px){
+    body{padding:18px 12px 48px;font-size:14.5px;}
+    .card,header.hero,footer{padding:20px 18px;}
+    h1{font-size:22px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1>每日 AI 前沿技术精选</h1>
+  <div class="meta">
+    <span>日期 2026-08-29</span>
+    <span>时间 20:53</span>
+    <span>精选 5 条</span>
+    <span class="window">时效窗口 2026-08-28 20:53 – 2026-08-29 20:53（严格 24 小时）</span>
+  </div>
+</header>
+
+<hr class="rule">
+
+<section class="card">
+  <h2>1. 腾讯混元 Hy4 preview 开源——770B/49B MoE + 1M 上下文，模型首次参与"造自己"</h2>
+  <p class="source">腾讯混元 / 人民网、新京报 · 2026-08-28 首发，08-28 晚–08-29 权重落地与第三方实测</p>
+
+  <h3>事件概述</h3>
+  <p>腾讯混元发布并开源新一代大语言模型 Hy4 preview（Apache 2.0），总参数 770B、激活 49B、上下文突破 1M tokens，定位"为生产力而生"，聚焦软件工程、办公分析、游戏开发与科学研究四类场景；同步在 WorkBuddy/CodeBuddy 国内外版、元宝、ima 首发，并接入腾讯云 TokenHub 与 OpenRouter。</p>
+
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><strong>核心机制（架构）</strong>：78 层 MoE，第 1 层 dense FFN、其余 77 层每层 256 路由专家 + 1 共享专家、每 token 激活 top-8 + 1 共享；hidden size 6144，4 条残差流采用 iHC；Attention 为 Gated DSA + IndexCache 跨层稀疏索引复用——1M 上下文并非靠 rope-scaling 强拉，而是稀疏注意力 + IndexCache 支撑，OpenRouter 实际上限 1,048,576 tokens、最大输出 64K。Hugging Face 文件页显示 780B，是把 10B 总参 / 0.7B 激活的内置 MTP 投机解码层计入，官方口径 770B 指 backbone。</li>
+    <li><strong>核心机制（递归自我改进闭环）</strong>：Hy4 preview 首次参与自身研发全链路——训练方法、数据策略、评估体系、底层算子的自动优化，由模型提方案、跑实验、按结果迭代，实验产生的代码/日志/反馈再喂入下一轮。更具体的是推理系统侧：模型自主分析瓶颈并做算子融合、通信优化多轮迭代，<strong>端到端吞吐较基线提升 31.8%</strong>，在不同上下文长度与并发下收益稳定。腾讯定性为"初步的（early-stage）递归自我改进闭环"。</li>
+    <li><strong>实际影响</strong>：这是国产开源旗舰里第一个把 RSI 从论文概念落到"模型改自己的训练配方 + 调自己的推理栈"的产品级案例。迭代节奏上，自 2026 年 2 月重建预训练与强化学习基础设施起，混元把大版本周期压到约两个月（Hy3 正式版 7 月初 → Hy4 preview 8 月 28 日），总参数较 Hy3（295B/21B/256K）扩至约 2.6 倍、上下文扩至 4 倍。生态侧沐曦曦云 C 系列完成 Day 0 适配、燧原科技"芯模协同"联合设计。</li>
+  </ul>
+
+  <h3>关键指标 / 资源</h3>
+  <ul>
+    <li>代码能力（<strong>腾讯自述，第三方复现缺失</strong>）：Terminal-Bench 2.1 <strong>85.4</strong>（Hy3 为 70.8，称与 Claude Opus 5 持平）；DeepSWE <strong>64.3</strong>（Hy3 为 28.0，超过 DeepSeek V4 Pro 的 62.7）；Toolathlon-Verified 74.1；APEX-Agents pass@1 37.1（Kimi K3 为 37.2）。12 项 benchmark 无一项垫底。</li>
+    <li>盲测：163 名腾讯内部专家、203 个工程任务，Hy4 preview <strong>2.99/4.00</strong>，略高于 GLM 5.3（2.92）与 Kimi K3（2.94）——内部测试，参考价值需打折。</li>
+    <li><strong>第三方实测（唯一硬数据）</strong>：在两个植入 105 个硬 bug 的真实代码库上，Hy4 默认设置修复 <strong>17 个 / 成本 $3.13</strong>；Fable 5 (max) 修 29 个 / $104.49；Opus 5 (max) 修 27 个 / $51.33。折算单 bug 成本：Hy4 ≈ $0.18，Opus 5 ≈ $1.90，Fable 5 ≈ $3.60——绝对修复数落后，但单位成本效率领先约 <strong>10 倍</strong>。</li>
+    <li>定价：输入 ¥6/M tokens、输出 ¥18/M、缓存命中 ¥0.3/M（约 $0.834/M 输入）；WorkBuddy/CodeBuddy 两周限时免费，Hy3 免费期延至 9/30。</li>
+    <li>权重 / 代码：Hugging Face、GitHub、ModelScope 已开放，License <strong>Apache 2.0</strong>。</li>
+  </ul>
+
+  <div class="note"><b>⚠️ 时间戳说明</b>：官方 X 官宣在 8 月 28 日上午，略早于本轮窗口起点（8/28 20:53）；本轮按「增量首次覆盖」纳入——上一轮（8/28 17:13）未收录，且权重落地、国产 GPU Day 0 适配、首批第三方 bug 修复实测均发生在 8/28 晚–8/29。</div>
+
+  <div class="tags"><span>#AI Coding</span><span>#递归自我改进</span><span>#开源大模型</span></div>
+</section>
+
+<section class="card">
+  <h2>2. 智谱 GLM-5.3 正式开放权重——AA 智能指数 60 首超 Claude Opus 4.8，Agentic 指数 59 超 GPT-5.6 Sol</h2>
+  <p class="source">Z.ai / GIGAZINE · 2026-08-28 23:00 GMT+8 开权重</p>
+
+  <h3>事件概述</h3>
+  <p>Z.ai 于 8 月 29 日 00:00 JST（北京时间 8 月 28 日 23:00）正式开放 GLM-5.3 权重，兑现 8 月 14 日上线订阅与 API 服务时"完成安全增强与评估后即开源"的承诺。模型为 MoE 架构，总参数 744B、激活 40B。</p>
+
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><strong>核心机制</strong>：沿用 GLM-5.2 底座，<strong>全部增益来自后训练</strong>——内部 Z.ai Code Bench 编码能力提升约 50%，Terminal Bench 3.0 等公开集达开源 SOTA；扩展后训练后，漏洞发现与利用链后端分数约翻倍（安全/攻防双向能力同步抬升）。</li>
+    <li><strong>可部署性突破</strong>：Unsloth 已同步发布量化版（<code>unsloth/GLM-5.3-GGUF</code>），UD-IQ2_M 版本可在 <strong>256GB 统一内存的 Mac</strong> 或 <strong>24GB VRAM + 256GB RAM 的 PC</strong> 上运行——把 744B 级别的旗舰能力压到准消费级硬件可承载区间，这是本轮开源竞争中最实际的工程变量。</li>
+    <li><strong>许可证设计</strong>：采用 GLM-5.3 License，规定<strong>年收入超过 100 亿美元的商业主体需通过 Z.ai 安全审查</strong>——一种"开源但对超大商业体设审查门槛"的新型授权形态，与 Flash 版的纯 MIT 形成分层。</li>
+  </ul>
+
+  <h3>关键指标 / 资源</h3>
+  <ul>
+    <li>Artificial Analysis 第三方评测：智能指数 <strong>60</strong>（高于 Claude Opus 4.8）；Agentic Index <strong>59</strong>（超过 GPT-5.6 Sol 与 Grok 4.6）。</li>
+    <li>长时运行实证：GLM-5.3-Flash（原匿名模型 Ox Alpha，MIT 协议、320B MoE / 18B 激活，8 月 26 日开源）被交付 Blender 场景后<strong>自主连续运行约 12 小时</strong>直至搭建完成。</li>
+    <li>权重：Hugging Face（<code>zai-org/GLM-5.3</code>）、ModelScope（<code>ZhipuAI/GLM-5.3</code>）。</li>
+  </ul>
+
+  <div class="note"><b>⚠️ 去重说明</b>：8 月 26 日开源的 GLM-5.3-<strong>Flash</strong> 已在上轮（8/28 17:13）收录；本条为<strong>旗舰版 GLM-5.3 开放权重</strong>，事件不同，非重复。</div>
+
+  <div class="tags"><span>#AI Coding</span><span>#开放权重</span><span>#Agent</span></div>
+</section>
+
+<section class="card">
+  <h2>3. Anthropic 40 万次 Claude Code 会话实证研究——AI 已承担 80% 执行决策，但新手成功率仅 15%</h2>
+  <p class="source">Anthropic / AGI Hunt · 2026-08-29</p>
+
+  <h3>事件概述</h3>
+  <p>Anthropic 发布基于约 40 万次真实 Claude Code 会话的大规模使用研究，首次以量化方式刻画"人—Agent 在软件工程中的决策分工"与"经验水平对 Agent 协作成功率的调制效应"。</p>
+
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><strong>核心发现（分工结构）</strong>：人类承担约 <strong>70% 的规划决策</strong>，Claude 承担约 <strong>80% 的执行决策</strong>。这意味着 Agent 已实质接管执行层，但任务分解与方向判断仍高度依赖人——对 Agent 产品设计的直接含义是：<strong>优化执行链路的边际收益正在下降，规划与意图澄清环节才是瓶颈</strong>。</li>
+    <li><strong>核心发现（经验调制）</strong>：成功更取决于<strong>领域理解</strong>而非编码技巧——研究给出的对照是"懂合同逻辑的律师胜过刚学这门语言的高级工程师"。分层数据：新手成功率约 <strong>15%</strong>，中级 / 专家 <strong>28–33%</strong>；<strong>19% 的新手零产出放弃</strong>，而中高级组仅 5–7%。</li>
+    <li><strong>实际影响</strong>：该数据为"AI Coding 提升的是有领域知识者的杠杆"提供了首个大规模实证，也从反面解释了近期行业的一个悖论——模型能力持续跃升，但团队吸收代码的速率（评审瓶颈）已成为新的约束项。同期社区讨论将生成速度描述为已达 <strong>10 倍</strong>，折中方案是"每个 PR 过一遍自动审查工具，人工只读被标记问题及涉及资金/认证的代码"。</li>
+  </ul>
+
+  <h3>关键指标 / 资源</h3>
+  <ul>
+    <li>样本：约 <strong>400,000</strong> 次 Claude Code 会话。</li>
+    <li>分工：人类规划 70% / Claude 执行 80%。</li>
+    <li>成功率分层：新手 15%、中级–专家 28–33%、零产出放弃率 19% vs 5–7%。</li>
+    <li>配套行业信号：同期 Reddit 工程讨论指出代码生成速度已达 10 倍，评审成为瓶颈；Unify 披露发布前两周将推理成本降低 90–95%（含发现 OpenAI prompt cache 内隐藏的 15 req/s 上限）。</li>
+  </ul>
+
+  <div class="note"><b>⚠️ 待核实</b>：原始研究报告的完整方法论（会话抽样方式、成功率判定口径）尚未见公开全文，上述数字来自二手汇总，需以 Anthropic 原文为准。</div>
+
+  <div class="tags"><span>#AI Coding</span><span>#人机协作</span><span>#实证研究</span></div>
+</section>
+
+<section class="card">
+  <h2>4. Zero-WAM——把人类示范视频当作"上下文提示"，机器人零微调完成陌生任务</h2>
+  <p class="source">HKUST(GZ) / Robbyant（蚂蚁灵波实验室）· 2026-08-29</p>
+
+  <h3>事件概述</h3>
+  <p>香港科技大学（广州）与 Robbyant 提出 Zero-WAM：将一段人类操作视频作为 <strong>in-context prompt</strong> 输入因果视频—动作模型，模型"看懂场景应当如何演变"后直接输出机器人动作，<strong>无需针对该任务做任何微调</strong>，并完成真机迁移。</p>
+
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><strong>核心机制</strong>：语言指令只能说"把这个放到那里"，而视频同时携带<strong>路径、时序、接触次序</strong>与"那里"具体长什么样。Zero-WAM 用因果 video-action 模型对人类视频做上下文条件化，配合 <strong>future-chunk prediction</strong> 目标训练，使模型从"观察应当如何变化"反推自身动作序列。</li>
+    <li><strong>数据工程</strong>：为解决规模化训练数据，团队构建 <strong>HumanGen</strong>：7.42 万组"人类视频 ↔ 机器人轨迹"配对，覆盖 8,600 个任务，自动生成。</li>
+    <li><strong>实际影响</strong>：这是具身智能"从视频学习"路线的一次方法论收敛——把视频当作 prompt 而非训练数据，绕开了机器人遥操作数据这个行业瓶颈。同期 Generalist、Skild、Rhoda、RobbyAnt 等公司均在展示"长时程视频演示 → 即时新技能"的能力，行业趋向以视频 + 本体感知替代纯语言指令。</li>
+  </ul>
+
+  <h3>关键指标 / 资源</h3>
+  <ul>
+    <li>RoboTwin 2.0 上 <strong>7 个未见任务平均成功率 46.95%（47.0%）</strong>，比最强 video-action 基线（LingBot-VA）高 <strong>29.5 个百分点</strong>。</li>
+    <li>HumanGen 数据集：74.2k 人类—机器人配对 / 8.6k 任务。</li>
+    <li>真机迁移：未见过的<strong>多物体、长时程、插入类</strong>任务均完成验证；项目页放出多段真机演示。</li>
+    <li>代码 / 模型：Hugging Face <code>Robbyant-Research</code> 组织页已上线。</li>
+  </ul>
+
+  <div class="note"><b>⚠️ 待核实</b>：HF 页面约 19 小时前上线（即 8/29 凌晨），以 HF 首次公开为准；真机成功率未在公开摘要中逐任务列出。</div>
+
+  <div class="tags"><span>#具身智能</span><span>#世界模型</span><span>#In-Context Learning</span></div>
+</section>
+
+<section class="card">
+  <h2>5. Proteus 开源——让 Agent 自主重写自己的 Harness 源代码，"量进化而不只量分数"</h2>
+  <p class="source">Proteus / AIGCLink · 2026-08-29</p>
+
+  <h3>事件概述</h3>
+  <p>Proteus 是一个开源的 AI Agent 自进化框架（MIT，v0.3.0）。与绝大多数只更新 memory 或 prompt 的"自进化 Agent"不同，Proteus 让 Agent <strong>直接改写构成自身行为逻辑的 Harness 源代码</strong>（工具、提示词、执行流程），并配套一把度量"harness 变成了什么形状"的尺子。</p>
+
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><strong>核心机制（Evolve Loop）</strong>：Observe → Purpose → Act → Reflect 四阶段循环。关键设计：<strong>每一轮 episode 都是全新上下文，只有进化后的 harness 文件能跨过 episode 边界</strong>——不靠"记住上一轮聊了什么"变强，而靠"上一轮把自己改成了什么样"变强。这是与传统 memory-based 自进化最本质的分野。</li>
+    <li><strong>度量范式（Ruler / Evaluator）</strong>：面板顶部写着 "Measure the evolution, not only the score"，全屏没有一个任务分数。度量为三类：<strong>结构距离</strong>（逐面统计新增/删除/修订 + 路径长度）、<strong>行为距离</strong>（配置换检验）、<strong>结晶化测试</strong>（把进化后状态挂到中性配置下读回，验证"还是不是它自己"）。</li>
+    <li><strong>工程完备度</strong>：Harness-agnostic（适配器接 DeepSeek Harness、Pi、Aki 等，自带离线 minimal/llm）；Sandbox Management 提供 LocalSandbox 与 DockerSandbox（后者可断网）；Goal Selector 把"无目标、无压力的开放进化"列为一等模式；Preference Injector 可注入偏好与价值倾向以研究进化轨迹。</li>
+  </ul>
+
+  <h3>关键指标 / 资源</h3>
+  <ul>
+    <li>官方一次运行的度量结果：结构位移 <strong>2.73%</strong>（7,878 个端点单元中 215 个与起点不同：71 新增、144 修订、0 删除）、作者路径移动 <strong>305</strong> 次、工具调用 <strong>7,596</strong> 次、30 轮中 <strong>27 轮快照被接受</strong>（失败 3 次均在下一轮被修复）。</li>
+    <li><strong>跨实现验证</strong>：用 Proteus 的行为尺子去量已有研究的运行记录，独立复现了其主要动态——不同分支在第 1 轮分开（R = 1.63），到第 30 轮收敛（R = 0.93）。</li>
+    <li>代码：<code>pip install proteus-evolve</code>，<code>proteus run --harness minimal --seeds 4 --episodes 8</code>；Python 3.10+，<strong>MIT</strong>，仓库 github.com/proteus-evolve/Proteus。</li>
+  </ul>
+
+  <div class="note"><b>⚠️ 状态标注</b>：官方自标 <strong>research preview</strong>，非生产就绪；仓库 8 月 17 日建，当前 57 star——成熟度早期，上述度量来自单次单臂运行（官方已声明单 seed 单臂运行无法识别的统计量保持"显式不可用"）。</div>
+
+  <div class="tags"><span>#递归自我改进</span><span>#Agent 框架</span><span>#开源</span></div>
+</section>
+
+<hr class="rule">
+
+<section class="card">
+  <h2>本轮排除记录（时间戳 / 去重纪律）</h2>
+  <table>
+    <thead><tr><th style="width:38%">候选</th><th style="width:16%">判定</th><th>依据</th></tr></thead>
+    <tbody>
+      <tr><td>Meta Muse Code（首个 AI 编程 Agent）</td><td>排除</td><td>路透 8/5 首发，远超 24h 窗口</td></tr>
+      <tr><td>小鹏第二代 VLA 2.0 / Infini-VLA</td><td>排除</td><td>8/27 广州发布，超出窗口</td></tr>
+      <tr><td>高德 ABot-Recon 流式 3D 重建</td><td>排除</td><td>8/28 11:40 发布，早于窗口起点</td></tr>
+      <tr><td>AMD ROCm 10.0（ROCm.AI / Hyperloom）</td><td>排除</td><td>8/27 发布，超出窗口</td></tr>
+      <tr><td>fal H3 Max（MiniMax H3 后训练）</td><td>排除</td><td>8/26–8/27 发布，超出窗口</td></tr>
+      <tr><td>Hugging Face Microduck / microduck_rl</td><td>排除</td><td>本体 8/27 发布且已在上上轮收录</td></tr>
+      <tr><td>TrAct（李飞飞 / 吴佳俊，视觉轨迹桥接控制与预测）</td><td>排除</td><td>arXiv 2608.24101v1 于 8/25 上线，超出窗口</td></tr>
+      <tr><td>Perceptron Isaac 0.5（210x 遥操作数据削减）</td><td>排除</td><td>外媒报道时间 8/26–8/28 存在分歧，首发时点无法确证落在窗口内</td></tr>
+      <tr><td>OpenAI "Astra" 多智能体系列</td><td>排除</td><td>仅三名知情人士透露，无官方发布、无技术细节</td></tr>
+      <tr><td>国光量子 玄幂 Xenomi 量子增强大模型</td><td>排除</td><td>公众号 8/27 推文，超出窗口</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="card">
+  <h2>今日主线</h2>
+  <p><strong>"开源旗舰密集交付 × AI Coding 从刷分转向真实工程与成本效率 × 自进化框架从概念走向可运行基础设施"</strong></p>
+  <ol class="themes">
+    <li><strong>开源竞赛进入"同日对冲"阶段</strong>：智谱 GLM-5.3 开权重（744B/40B）与腾讯 Hy4 preview 开源（770B/49B）在 24 小时内相继落地，且均走出分层策略——旗舰版设商业审查门槛或预览先行，轻量版纯 MIT/Apache 2.0 抢生态。竞争维度已从"谁的参数大"转向"谁能跑在更便宜的硬件上"（Unsloth 把 744B 压到 256GB Mac）。</li>
+    <li><strong>AI Coding 的评价坐标正在迁移</strong>：Hy4 在 105-bug 真实代码库上绝对修复数（17）落后于 Fable 5（29）与 Opus 5（27），但成本仅 $3.13——单 bug 成本效率领先约 10 倍。同期 Anthropic 40 万会话研究显示 Agent 已接管 80% 执行决策、但新手成功率仅 15%。两者共同指向：<strong>下一阶段的关键指标是"单位成本下的有效产出"和"使用者的领域理解水平"，而非 benchmark 分数</strong>。</li>
+    <li><strong>自进化（RSI）从论文走向可运行代码</strong>：腾讯 Hy4 让模型参与自身训练配方与推理栈优化（吞吐 +31.8%）是产业侧案例，Proteus 让 Agent 改写自身 Harness 源码并配套"进化度量学"是研究侧案例。二者的共同点是把"自我改进"从目标函数上的修辞，变成有日志、有沙箱、有回归验证的工程闭环。</li>
+    <li><strong>具身智能的数据瓶颈被两条路径同时撬动</strong>：Zero-WAM 走"视频即 prompt、零微调"路线（+29.5 pp），Perceptron 走"通用视频替代遥操作数据"路线（210x）——后者因时间戳存疑未入选，但方向与前者一致：<strong>机器人学习的边际成本正从硬件采集转向视频获取</strong>。</li>
+  </ol>
+</section>
+
+<hr class="rule">
+
+<footer>
+  <p><strong>归档状态说明</strong></p>
+  <p>Markdown 路径：<code>O:/quark/automation/每日 AI 新闻推送/每日AI新闻推送_20260829_2053.md</code></p>
+  <p>HTML 路径：<code>O:/quark/automation/每日 AI 新闻推送/每日AI新闻推送_20260829_2053.html</code></p>
+  <p>执行状态：<span class="ok">✅ 成功</span>（5 条精选 + 10 条排除记录，严格 24 小时窗口）</p>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日 AI 新闻精选 · 2026-08-18</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --card-bg: #ffffff;
+      --text: #1a1a2e;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --accent-light: #dbeafe;
+      --border: #e5e7eb;
+      --tag-bg: #f0fdf4;
+      --tag-text: #166534;
+      --num-bg: #fef3c7;
+      --num-text: #92400e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+    .container { max-width: 760px; margin: 0 auto; }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    header .meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .entry {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem 1.6rem;
+      margin-bottom: 1.2rem;
+      position: relative;
+    }
+    .entry-num {
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      width: 32px;
+      height: 32px;
+      background: var(--num-bg);
+      color: var(--num-text);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      border: 2px solid var(--border);
+    }
+    .entry h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+      padding-left: 0.5rem;
+      line-height: 1.5;
+    }
+    .entry blockquote {
+      margin: 0 0 0.6rem 0;
+      padding: 0.6rem 0.9rem;
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 6px 6px 0;
+      font-size: 0.92rem;
+      color: #1e3a5f;
+    }
+    .entry blockquote strong {
+      color: var(--accent);
+    }
+    .entry .why {
+      font-size: 0.92rem;
+      color: #374151;
+      margin-bottom: 0.5rem;
+    }
+    .entry .why strong {
+      color: var(--accent);
+    }
+    .entry .sources {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .entry .sources a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .entry .sources a:hover { text-decoration: underline; }
+    .tag-row {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .tag {
+      display: inline-block;
+      padding: 0.15rem 0.55rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .tag-coding { background: #dbeafe; color: #1e40af; }
+    .tag-embodied { background: #dcfce7; color: #166534; }
+    .tag-model { background: #fef9c3; color: #854d0e; }
+    .tag-infra { background: #fce7f3; color: #9d174d; }
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+    }
+    .editor-note {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.2rem 1.4rem;
+      margin-bottom: 1.5rem;
+    }
+    .editor-note h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+    .editor-note p {
+      font-size: 0.9rem;
+      color: #374151;
+    }
+    @media (max-width: 600px) {
+      body { padding: 1rem 0.6rem; }
+      .entry { padding: 1rem 1.2rem; }
+      .entry-num { width: 26px; height: 26px; font-size: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🤖 每日 AI 新闻精选</h1>
+      <p class="meta">2026-08-18 ｜ 筛选时间 14:31 GMT+8 ｜ 共 5 条</p>
+    </header>
+
+    <!-- Entry 1 -->
+    <article class="entry">
+      <div class="entry-num">1</div>
+      <div class="tag-row">
+        <span class="tag tag-embodied">具身智能</span>
+      </div>
+      <h2>宇树发布「超人」人形机器人：跳高 2 米、奔跑 12.66 m/s，两项指标超越人类世界纪录</h2>
+      <blockquote>
+        <strong>事件：</strong>8 月 17 日宇树科技发布全新人形机器人原型「超人」，腿长仅 0.85 米，原地极限跳高约 2 米（超越人类原地跳高世界纪录 1.8 米），极限奔跑速度 12.66 m/s（超过博尔特百米峰值 12.42 m/s）。研发周期仅三个多月，目前处于高速迭代阶段。同日宇树确认将于 8 月 19 日登陆科创板，发行市值约 610 亿元，被市场称为 A 股「人形机器人第一股」。
+      </blockquote>
+      <p class="why"><strong>为何值得关注：</strong>运动性能从「演示可用」跨越到「超越人类极限」，是人形机器人本体工程与动力控制的标志性节点；科创板上市叠加世界机器人大会开幕（8/19–23 北京），行业进入「资本+展会」双驱动交付元年叙事。</p>
+      <p class="sources">
+        来源：<a href="http://m.toutiao.com/group/7675032061123576372/">证券时报</a> ·
+        <a href="https://m.thepaper.cn/newsDetail_forward_33784711">澎湃新闻《重估宇树》</a> ·
+        <a href="https://ai.zol.com.cn/1234/12343868.html">ZOL 科技</a>
+      </p>
+    </article>
+
+    <!-- Entry 2 -->
+    <article class="entry">
+      <div class="entry-num">2</div>
+      <div class="tag-row">
+        <span class="tag tag-coding">AI Coding</span>
+      </div>
+      <h2>OpenAI Codex GPT-5.6 Sol 百万 token 上下文向 ChatGPT 账号全面开放</h2>
+      <blockquote>
+        <strong>事件：</strong>8 月 18 日 OpenAI 宣布在 Codex 编程工具中全面开放 GPT-5.6 Sol 模型的百万 token 上下文窗口，普通 ChatGPT 订阅用户均可使用。GPT-5.6 Sol 同时被 OpenAI 评价为「有史以来最佳视觉模型」，在目标检测、OCR 和数据提取等视觉基准上大幅超越 GPT-5.5。
+      </blockquote>
+      <p class="why"><strong>为何值得关注：</strong>百万 token 上下文下放至消费级意味着 Codex 可以单次会话处理超大型代码库的整体理解与跨文件重构，是 AI Coding Agent 从「片段辅助」走向「项目级自主执行」的关键基础设施突破。</p>
+      <p class="sources">
+        来源：<a href="https://www.frontiernews.ai/news/article/claude-code-leads-long-horizon-coding-tasks-but-co-1e5c70ed">FrontierNews</a> ·
+        <a href="https://www.aibase.com/news/30389">AIBase</a>
+      </p>
+    </article>
+
+    <!-- Entry 3 -->
+    <article class="entry">
+      <div class="entry-num">3</div>
+      <div class="tag-row">
+        <span class="tag tag-infra">基础设施</span>
+      </div>
+      <h2>Stripe 以逾 70 亿美元收购 OpenRouter，AI 推理调用纳入支付基础设施</h2>
+      <blockquote>
+        <strong>事件：</strong>Axios 与 Bloomberg 于 8 月 16 日确认 Stripe 已达成收购 OpenRouter 协议，交易金额超 70 亿美元，较 OpenRouter 2026 年 5 月 B 轮估值 13 亿美元增长逾 5 倍。OpenRouter 通过统一接口聚合 400+ 模型，服务约 800 万开发者，每月处理 200+ 万亿 token，中国模型占企业流量 30%+。
+      </blockquote>
+      <p class="why"><strong>为何值得关注：</strong>Stripe 将模型路由从「可选工具」升级为「支付基础设施的核心组件」，标志 AI 推理调用被纳入企业级金融结算链路；OpenRouter 的 400+ 模型聚合能力使 Stripe 获得面向开发者的模型分发入口，对模型供应商定价权形成结构性影响。</p>
+      <p class="sources">
+        来源：<a href="https://www.axios.com/2026/08/16/stripe-openrouter-acquisition">Axios</a> ·
+        <a href="https://aidailybrief.cn/en/archives/2026-08-18">AI Daily Brief</a>
+      </p>
+    </article>
+
+    <!-- Entry 4 -->
+    <article class="entry">
+      <div class="entry-num">4</div>
+      <div class="tag-row">
+        <span class="tag tag-model">基础模型</span>
+        <span class="tag tag-coding">AI Coding</span>
+      </div>
+      <h2>Anthropic Q2 营收超 115 亿美元同比增长约 14 倍，冲刺 2 万亿美元史上最大 IPO</h2>
+      <blockquote>
+        <strong>事件：</strong>8 月 17 日行业数据显示 Anthropic 第二季度营收超过 115 亿美元，较 2025 年同期增长约 14 倍；年化收入超 470 亿美元，调整后经营利润首度转正。公司预计 10 月以 2 万亿美元甚至更高估值上市。此前 Anthropic 已秘密递交 IPO 招股书，并刚以约 60 亿美元收购以色列 AI 公司 Decart（AI 视频推理与世界模型 Oasis 技术）。同期内部 Model 2 因安全风险评估上调而搁置发布。
+      </blockquote>
+      <p class="why"><strong>为何值得关注：</strong>ARR 破 470 亿且利润转正，证明 Agent 编程工作流已转化为真实企业付费；内部 Model 2 搁置反映前沿模型在安全与速度之间的张力正在制度化，对齐风险评级从「极低」上调至「较低」是关键信号。</p>
+      <p class="sources">
+        来源：<a href="https://www.bloomberg.com/news">Bloomberg</a> ·
+        <a href="https://fortune.com">Fortune</a>
+      </p>
+    </article>
+
+    <!-- Entry 5 -->
+    <article class="entry">
+      <div class="entry-num">5</div>
+      <div class="tag-row">
+        <span class="tag tag-model">基础模型</span>
+        <span class="tag tag-infra">开源生态</span>
+      </div>
+      <h2>阿里 Qwen3.8-27B 开源：家用显卡可跑，Qwen 系列全球下载量破 30 亿次登顶第一</h2>
+      <blockquote>
+        <strong>事件：</strong>8 月 15 日阿里千问正式开源 Qwen3.8-27B，270 亿参数原生多模态稠密模型，支持 262K 上下文并可扩展至 1M，Apache 2.0 协议免费商用，家用显卡即可运行。Hugging Face 报告显示 Qwen 系列过去六个月全球累计下载量突破 30 亿次，超越 Meta 和 Google 登顶全球第一，已开源超 460 个模型、衍生模型超 30 万个。联发科同步完成 Day-0 适配。
+      </blockquote>
+      <p class="why"><strong>为何值得关注：</strong>30 亿次下载是开源模型全球统治力的最硬量化认证；「家用显卡可跑+Apache 2.0」将前沿多模态能力下沉至消费级硬件，与 DeepSeek V4 Pro、GLM-5.3 形成中国开源模型全家桶，实质性重塑全球基础模型开源格局。</p>
+      <p class="sources">
+        来源：<a href="https://huggingface.co/spaces">Hugging Face 开放模型现状报告</a> ·
+        <a href="https://www.infoq.cn">InfoQ AI</a>
+      </p>
+    </article>
+
+    <!-- Editor's Note -->
+    <div class="editor-note">
+      <h3>📝 编辑点评</h3>
+      <p>
+        本期主线：<strong>「基础设施层被定价，具身智能交付拐点显现」</strong>。Stripe 收购 OpenRouter 标志 AI 推理调用正式纳入支付基础设施；Codex 百万 token 向消费级开放与 Anthropic ARR 破 470 亿互为印证，Coding Agent 从实验工具变为真实企业工作流；具身侧宇树「超人」运动性能超越人类纪录，叠加 WRC 2026 开幕与科创板上市，人形机器人从技术验证走向产线部署的叙事已进入数据验证阶段。开源侧 Qwen 系列 30 亿次下载登顶，中国实验室正主导开源基础模型格局。
+      </p>
+    </div>
+
+    <footer>
+      <p>注：以上信息综合公开报道整理，部分数据标注「待核实」；来源链接可能随时间变更。</p>
+      <p>生成时间：2026-08-18 14:31 GMT+8</p>
+    </footer>
+  </div>
+</body>
+</html>

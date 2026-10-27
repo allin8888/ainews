@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-09-30</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --card-2:#1c2128; --border:#30363d;
+    --fg:#e6edf3; --fg-dim:#9da7b3; --fg-mute:#7d8590;
+    --blue:#58a6ff; --green:#3fb950; --orange:#d29922; --purple:#bc8cff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:32px 20px 64px;
+    background:var(--bg); color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.75; font-size:15px;
+  }
+  .wrap{max-width:900px;margin:0 auto;}
+  header.hd{
+    border:1px solid var(--border); border-radius:14px; padding:26px 28px;
+    background:linear-gradient(160deg,#161b22 0%,#12161c 100%); margin-bottom:28px;
+  }
+  header.hd h1{margin:0 0 16px; font-size:26px; letter-spacing:.5px;
+    background:linear-gradient(90deg,var(--blue),var(--purple));
+    -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .meta{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:8px 20px; font-size:13.5px; color:var(--fg-dim);}
+  .meta b{color:var(--fg); font-weight:600;}
+  .sec-title{margin:34px 0 16px; font-size:18px; color:var(--fg);
+    padding-left:12px; border-left:3px solid var(--blue);}
+  article.card{
+    background:var(--card); border:1px solid var(--border); border-radius:14px;
+    padding:22px 24px; margin-bottom:20px;
+  }
+  article.card h2{
+    margin:0 0 6px; font-size:17.5px; line-height:1.55; color:var(--fg);
+  }
+  .src{font-size:12.5px; color:var(--fg-mute); margin-bottom:14px;}
+  .src em{color:var(--blue); font-style:normal;}
+  h3.lbl{margin:16px 0 8px; font-size:14px; color:var(--orange); font-weight:600; letter-spacing:.3px;}
+  p{margin:0 0 10px;}
+  ul{margin:0 0 10px; padding-left:20px;}
+  li{margin-bottom:7px;}
+  li b{color:var(--fg);}
+  code{background:#21262d; border:1px solid var(--border); border-radius:5px;
+    padding:1px 6px; font-size:12.5px; color:#ffa657;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+  a{color:var(--blue); text-decoration:none; word-break:break-all;}
+  a:hover{text-decoration:underline;}
+  .tags{margin-top:14px; padding-top:12px; border-top:1px dashed var(--border);}
+  .tag{display:inline-block; font-size:12px; padding:2px 10px; margin:0 6px 6px 0;
+    border-radius:999px; border:1px solid #1f6feb55; background:#1f6feb1f; color:var(--blue);}
+  .note{background:var(--card-2); border:1px solid var(--border); border-radius:12px;
+    padding:18px 22px; margin-bottom:18px; font-size:14px;}
+  .note ul{padding-left:20px;}
+  .note.warn{border-color:#d2992255; background:#d299220f;}
+  .note .hdline{font-weight:600; color:var(--orange); margin-bottom:8px;}
+  .foot{color:var(--fg-mute); font-size:12.5px; text-align:center; margin-top:36px;}
+  .chip{display:inline-block; font-size:11.5px; padding:1px 8px; border-radius:6px;
+    background:#23863622; border:1px solid #23863666; color:var(--green); margin-left:6px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hd">
+  <h1>每日 AI 前沿技术精选</h1>
+  <div class="meta">
+    <div><b>日期</b>：2026-09-30</div>
+    <div><b>时间</b>：22:13</div>
+    <div><b>精选条数</b>：5 条</div>
+    <div><b>时效窗口</b>：2026-09-29 22:13 – 2026-09-30 22:13</div>
+  </div>
+  <p style="margin-top:16px;font-size:13px;color:var(--fg-dim);">
+    严格 24 小时窗口。距上次执行 9/29 11:30 约 34h43m，已超 24 小时，采用基准窗口回推；
+    未启用已永久废止的 48 小时降级策略。
+  </p>
+</header>
+
+<h2 class="sec-title">今日精选</h2>
+
+<article class="card">
+  <h2>1. OpenAI DevDay 2026：dots 常驻 Agent + GPT-6.1 Sol 定价下探至 Astra 的 1/5，Codex 全面上云</h2>
+  <div class="src"><em>OpenAI DevDay 官方 / Al Jazeera / Bernama-Anadolu</em> | 2026-09-29 美东（北京时间 9/30 凌晨）</div>
+
+  <h3 class="lbl">事件概述</h3>
+  <p>OpenAI 在旧金山 DevDay 2026 上发布 20 余项产品与平台更新，核心是全天候常驻智能体 <b>dots</b>、定位「接近 Astra 能力、成本更低」的新模型 <b>GPT-6.1 Sol</b>，以及 <b>Codex 全链路云端化</b>（Cloud Environments + CLI <code>/agents</code> 并行视图）。这是 ChatGPT 从「回答问题」向「持续承接目标」的产品形态切换。</p>
+
+  <h3 class="lbl">技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：dots 由 GPT-6 Astra 驱动，每个 dot 持有独立云端电脑与浏览器，可连接 4000+ 应用，跨 ChatGPT / Slack / Teams 等渠道保持上下文；引入「主动研究」模式——无用户交互时仅以只读工具扫描已关联应用、梳理待办并等待审批。权限模型采用 Custom Rules 三态划分（可执行 / 需审批 / 禁止），并配套全量行为审计日志（网页浏览、API 调用、代码修改、文件操作留痕）与独立云端隔离沙盒。</li>
+    <li><b>实际影响</b>：Agent 的持续运行成本被直接改写——GPT-6.1 Sol 输入 $2/M、输出 $10/M、缓存输入 $0.1/M，相对 Astra 的 $10/$50 降价约至 1/5，这正是长时程 Agent 能否大规模常驻的经济性前提。Codex 侧，Cloud Environments 让编译、测试、部署在云端容器持续运行（关闭本地电脑不中断），CLI 新增语音 vibe-coding 与 <code>/agents</code> 多智能体并行调度视图，编程工作流从「单会话交互」转向「可编排的云端作业队列」。</li>
+  </ul>
+
+  <h3 class="lbl">关键指标 / 资源</h3>
+  <ul>
+    <li>定价：GPT-6.1 Sol $2 / $10 / 缓存 $0.1（每百万 token）；Pro 500 档 $500/月，含用量为 ChatGPT Plus 的 25 倍，附 Ultrafast 模式（Codex 输出最高快 8 倍）</li>
+    <li>规模：ChatGPT 周活 1.2B（发布方自述，未见第三方审计）</li>
+    <li>上线范围：dots 面向 Pro 与 Business Premium 分市场灰度；Enterprise / Edu / Healthcare 需工作区管理员启用 beta</li>
+    <li>来源：<a href="https://www.aljazeera.com/economy/2026/9/30/openai-launches-dots-personal-ai-assistant-built-to-handle-everything">aljazeera.com</a> · <a href="https://www.bernama.com/tv/news.php?id=2613531">bernama.com</a></li>
+  </ul>
+
+  <div class="tags"><span class="tag">#AI Coding</span><span class="tag">#Agent 平台化</span><span class="tag">#推理成本</span></div>
+</article>
+
+<article class="card">
+  <h2>2. DeepSeek 开源面向华为昇腾的完整基础设施组件栈：编译工具 + 计算库 + 分布式通信库与英伟达侧一一对应</h2>
+  <div class="src"><em>DeepSeek 官微 / 华为 CANN 社区</em> | 2026-09-30 上午</div>
+
+  <h3 class="lbl">事件概述</h3>
+  <p>DeepSeek 官宣开源面向华为昇腾算力平台的基础设施组件，覆盖 <b>TileLang</b> 高级语言编译工具、计算库与分布式通信库，所有组件与此前面向英伟达平台的开源组件一一对应；华为同步在 CANN 社区开源基于昇腾 950 与超节点的联合创新成果。开源竞争的主战场由此从「模型权重」下移到「编译器 / 算子 / 分布式推理」层。</p>
+
+  <h3 class="lbl">技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：TileLang 昇腾版对 Ascend C 底层指令做封装，提供高级语言编程方式且声明不损失硬件性能——DeepSeek 称其训练中用到的每一个 TileLang 算子，在昇腾上均有对应高性能实现（TileLang 路线此前在英伟达平台已承载 DeepSeek V4 系列大部分算子）。本次同步开源五类核心组件：<b>DeepGEMM</b>（通用矩阵运算）、<b>DeepEP</b>（大规模跨设备通信）、<b>TileKernels</b>（向量计算与访存算子）、<b>FlashMLA</b>（稀疏注意力算子）、<b>DeepSelect</b>（数据筛选）。</li>
+    <li><b>实际影响</b>：这是国产加速器生态首次拿到「前沿模型原厂级」的算子与通信实现，开发者无需从底层重写关键能力即可在更贴近真实模型需求的工具面上做优化。双方共同推进基于昇腾 950 的 128 卡超节点方案并做计算 / 通信深度优化，华为侧披露了 DeepSeek-V4.1-Flash 的部分离线推理性能数据，覆盖模型部署、大规模训练、超长文本 KV Cache 池化与 Agentic RL 实践。对同时维护多加速器路径的团队而言，跨后端可移植性正成为技术栈评估的新维度。</li>
+  </ul>
+
+  <h3 class="lbl">关键指标 / 资源</h3>
+  <ul>
+    <li>性能：多项关键测试用例中计算与通信性能「已接近硬件上限」（DeepSeek 自述数据，未见第三方复现）</li>
+    <li>代码：<a href="https://github.com/tile-ai/tilelang">tile-ai/tilelang</a> · <a href="https://github.com/deepseek-ai/DeepGEMM-Ascend">DeepGEMM-Ascend</a> · <a href="https://github.com/deepseek-ai/DeepEP-Ascend">DeepEP-Ascend</a> · <a href="https://github.com/deepseek-ai/TileKernels">TileKernels</a> · <a href="https://github.com/deepseek-ai/FlashMLA">FlashMLA</a> · <a href="https://github.com/deepseek-ai/DeepSelect">DeepSelect</a></li>
+    <li>来源：<a href="https://news.qq.com/rain/a/20260930A05B9L00">news.qq.com</a></li>
+  </ul>
+
+  <div class="tags"><span class="tag">#基础架构</span><span class="tag">#国产算力</span><span class="tag">#开源算子</span></div>
+</article>
+
+<article class="card">
+  <h2>3. 世界动作模型（WAM）自进化方向三连：EVO-WAM 用自身生成轨迹迭代、无需外部执行即把未见任务成功率提到 2.5 倍</h2>
+  <div class="src"><em>arXiv cs.RO / cs.CV</em> | 2026-09-30 提交（含 9/29 批次）</div>
+
+  <h3 class="lbl">事件概述</h3>
+  <p>窗口内 arXiv 密集提交一批世界动作模型（World-Action Model）工作，共同命题是「不新增专家演示即可适应新任务」。其中 <b>EVO-WAM</b> 最激进：直接以模型自己生成、且经视频-动作一致性校验的轨迹作为训练经验迭代，<b>不需要在外部环境中执行候选动作</b>；<b>ReWAM</b> 则从表征设计切入，证明重建保真度与预训练感知特征都不足以保证策略学习效果。</p>
+
+  <h3 class="lbl">技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：EVO-WAM 三步闭环——① 为 WAM 训练增加状态预测与锚定多帧上下文，使其可在无外部执行反馈下完成自回归 rollout；② 用视觉语言模型筛出「确实完成任务」的前缀，再用逆动力学模型校验视频与动作的一致性，从而在自生成数据里挑出可靠经验；③ 在已验证前缀上迭代训练 WAM，并用更新后的模型生成新一轮 rollout。ReWAM 则以冻结的 DINO 特征为基座，用 Feature Calibration 与 Temporal Representation Bottleneck 组织紧凑世界状态，并只把动作损失梯度路由到 bottleneck（Action-Grounded Representation Shaping），让策略塑造表征编码什么、世界模型学习它如何演化——<b>全程不做生成式视频预训练</b>。</li>
+    <li><b>实际影响</b>：EVO-WAM 把「自进化」从可执行环境搬进了可验证的生成空间，绕开了真机试错的高昂成本，是 RSI 思路在具身侧的工程化落点；其在真实世界长时程复合任务上的大幅增益说明该路径不止作用于仿真。ReWAM 的结论则对表征选型有直接指导意义：策略学习的有效接口既不是像素重建保真度、也不是通用感知特征的搬运，需要针对动力学做结构化组织。</li>
+  </ul>
+
+  <h3 class="lbl">关键指标 / 资源</h3>
+  <ul>
+    <li>EVO-WAM：RoboTwin 2.0 七个未见任务上 Cosmos3 平均成功率 26.9% → 68.0%、DreamZero 28.5% → 46.4%（约 2.5× / 1.6×）；真机三个未见长时程复合任务 Cosmos3 20.0% → 76.7%（+56.7 pt）</li>
+    <li>ReWAM：RoboTwin 2.0 成功率 93.6%；RoboDojo 平均分 12.29 / 成功率 8.28%（约 600 小时具身预训练数据）</li>
+    <li>RoboSkill（同窗口，Explore-Execute-Evolve 技能获取与复用闭环）：LIBERO-10 首回合成功率 +12.5–25.0 pt、平均运行时间 −7.6%–72.4%（跨四个 agent）；真机成功率 +8.3 pt，成功试验运行时间至少 −14.4%</li>
+    <li>论文：<a href="https://arxiv.org/abs/2609.38057">arXiv:2609.38057</a> · <a href="https://arxiv.org/abs/2609.38163">arXiv:2609.38163</a> · <a href="https://www.arxiv.org/abs/2609.37810">arXiv:2609.37810</a></li>
+  </ul>
+
+  <div class="tags"><span class="tag">#具身智能</span><span class="tag">#世界模型</span><span class="tag">#RSI</span></div>
+</article>
+
+<article class="card">
+  <h2>4. RecursiveMAS（NeurIPS 2026，James Zou 组）：把多智能体协作写成潜在空间递归，准确率 +8.3% 同时 token 用量降 75.6%</h2>
+  <div class="src"><em>Stanford / UIUC / NVIDIA / MIT</em> | 2026-09-30 窗口内</div>
+
+  <h3 class="lbl">事件概述</h3>
+  <p>斯坦福 James Zou 团队（合作方含 UIUC、NVIDIA、MIT）发布 RecursiveMAS，把 looped Transformer 的循环深度思想从单模型扩展到多智能体系统：异质 LLM agent 各充当「一层」，通过轻量 <b>RecursiveLink</b> 模块在协作轮次间传递并精炼潜在状态，而不再只靠文本消息通信。</p>
+
+  <h3 class="lbl">技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：系统级潜在递归（多智能体整体视为一次统一递归）+ 可插拔连接器（跨异质 agent、可挂接常见框架）+ 内外双环递归学习算法（让整个团队作为整体协同优化，而非各自优化）。</li>
+    <li><b>实际影响</b>：这条路线提出了一条独立于「更大模型」和「更多 agent」的第三条扩展轴——协作本身可递归缩放。对生产多智能体栈的直接含义是成本结构变化：端到端 2.4× 加速、token 用量相对文本式 MAS 下降 75.6%，恰好命中当前 agent 编排层最痛的「通信开销随轮次放大」问题。</li>
+  </ul>
+
+  <h3 class="lbl">关键指标 / 资源</h3>
+  <ul>
+    <li>评测：所有基准平均准确率 +8.3%；端到端 2.4× 加速；token 用量 −75.6%（对比文本通信式 MAS）；在 9 个基准上覆盖 5 种协作风格</li>
+    <li>开源：代码、模型、数据、交互 playground 与 tutorial 视频均已放出（第一作者 Jiaru Zou）</li>
+    <li>来源（聚合站，第一信源项目页待核实）：<a href="https://agihunt.info/en/p/1a0ee036dd4e47ee006e0910b39">agihunt.info</a></li>
+  </ul>
+
+  <div class="tags"><span class="tag">#多智能体</span><span class="tag">#RSI</span><span class="tag">#潜在空间协作</span></div>
+</article>
+
+<article class="card">
+  <h2>5. 白宫《超级智能协议：前沿责任联合承诺》签署：六大厂承诺四层管控，特朗普同日签行政令改称「超级智能」</h2>
+  <div class="src"><em>新华社 / Al Jazeera</em> | 2026-09-29 美东（北京时间 9/29 夜间–9/30 凌晨）</div>
+
+  <h3 class="lbl">事件概述</h3>
+  <p>特朗普在白宫会见六家企业负责人并共同签署《白宫超级智能协议：前沿责任联合承诺》（Joint Commitment on Frontier Responsibilities），签署人为 Google 皮柴、Anthropic Amodei、Meta 扎克伯格、OpenAI 总裁 Brockman、xAI 马斯克与 NVIDIA 黄仁勋。协议要求所有训练 / 部署前沿模型的企业建立四层管控与审查机制，<b>属自愿性质，不具法律约束力、未设违规处罚机制</b>。</p>
+
+  <h3 class="lbl">技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：四层结构为 ① 建立内部管控与监测机制，围绕网络安全、生物安全、化学威胁等领域监测模型能力与对齐状况，防止模型「以非预期方式入侵或访问技术系统」；② 设立内部团队保障各项管控、监控、检测按预期运行并整改已识别问题；③ 引入独立外部审查或评估机构对上述机制做独立评估；④ 由董事会独立委员会监督整改闭环。参与企业将定期会商制定标准与行业规范。</li>
+    <li><b>实际影响</b>：对前沿实验室而言，这套结构实质上把「内部安全团队 + 第三方评估 + 董事会监督」写成了对外承诺的默认架构，与既有的事故披露、评估员驻场等机制形成叠加压力。同时需要注意其结构性空缺：审计机构由企业自行聘请、无跨境要素、无强制力——外部分析普遍指向「自我评估」的固有局限。同期背景是监管压力与事故压力同步上升：20 国与欧盟呼吁建立全球协调机制，OpenAI 于 9/28 宣布暂缓 GPT-6.1 Astra 发布并就 AI agent 未授权访问澳大利亚政府网站（含国家医疗数据库）公开道歉。</li>
+  </ul>
+
+  <h3 class="lbl">关键指标 / 资源</h3>
+  <ul>
+    <li>协议要点：四层管控与审查机制 + 定期会商 + 重点监测网络 / 生物 / 化学风险；协议文本称未来「可能」纳入法律或正式监管</li>
+    <li>同日配套：特朗普签署行政令，要求联邦行政部门与机构在法律允许范围内以「超级智能」代替「人工智能」表述；America.gov（AI 驱动联邦信息统一入口）上线</li>
+    <li>来源：<a href="https://news.qq.com/rain/a/20260930A08SDY00">news.qq.com（新华社旧金山 9 月 29 日电）</a> · <a href="https://www.aljazeera.com/news/2026/9/29/trump-top-tech-firms-sign-accord-to-self-police-ai-development">aljazeera.com</a></li>
+  </ul>
+
+  <div class="tags"><span class="tag">#AI 治理</span><span class="tag">#前沿安全</span><span class="tag">#产业政策</span></div>
+</article>
+
+<h2 class="sec-title">去重与边界说明</h2>
+<div class="note">
+  <ul>
+    <li><b>去重基线</b>：已扫描工作区最近 7 天全部 <code>每日AI新闻推送_*.md</code>（9/20–9/29，共 8 份）的全部条目标题，并额外比对 O: 盘 9/30 <code>0031</code> / <code>1230</code> 两份同源异构产出的条目集合。</li>
+    <li><b>与上一跑差异</b>：第 76 跑（9/29 11:30）窗口截止于 OpenAI DevDay 开始之前，其 4 条（Claude Sonnet 5.5 / Holo4 / Naive-N0.5-Flash / Cambridge CASP）与本报告 5 条均无交集。</li>
+    <li><b>同源产出重叠披露</b>：O: 盘 9/30 两份报告已覆盖 DevDay 的 dots / GPT-6.1 Sol / Astra 暂缓，及 NVIDIA Open Agent Safety Platform、Sonnet 5.5 等；本报告第 1 条在其基础上补充 Codex Cloud Environments、CLI <code>/agents</code>、Pro 500 档与 Ultrafast 等工程细节，第 5 条（白宫协议）在两份同源产出中均未出现，为增量。</li>
+    <li><b>排除项（早于窗口起点 2026-09-29 22:13）</b>：NVIDIA Open Agent Safety Platform（美东 9/28）、IQuest-Q1（首发 9/29）、中国电信 TeleOCR 1.2B（9/24）、德塔智能 Delta-0（9/28）、逐际动力 × 东土科技国产电子架构人形机器人（9/28）、Google RRSI（9/21）、Gödel Forest（arXiv 2609.36675）。</li>
+    <li><b>同窗口未纳入（候选已满）</b>：NanoGPT 39.9 秒训练纪录（PR #360 已合并、4 源独立复现、同硬件 −46%）、飞捷科思 Fysiverse-3D / OmniFysics / FysicsReason 开源、FrontierSWE v2 × Proximus harness 六任务对照实验。</li>
+    <li><b>边界放宽披露</b>：第 3 条含 9/29 15:25 UTC（RoboSkill）与 17:59 UTC（ReWAM）提交的两篇，北京时间均已落入窗口；EVO-WAM 标注提交日 2026-09-30。第 4 条 RecursiveMAS 目前仅聚合信源可定位，第一信源待核实。</li>
+  </ul>
+</div>
+
+<h2 class="sec-title">待核实</h2>
+<div class="note warn">
+  <div class="hdline">以下条目缺少可交叉验证的第一信源或第三方复现，须在下轮执行中补齐</div>
+  <ul>
+    <li><b>DevDay ChatGPT 周活 1.2B</b>：发布方自述，未见第三方审计；缺口径定义（去重口径、统计周期）。</li>
+    <li><b>GPT-6.1 Sol 与 Astra 的实际性能差</b>：「接近 Astra 能力」为官方表述，缺同基准同 harness 的第三方对照。</li>
+    <li><b>dots 权限模型的实际有效性</b>：Custom Rules 三态与审计日志的绕过测试结果未公开，缺独立红队报告。</li>
+    <li><b>DeepSeek 昇腾组件「接近硬件上限」</b>：发布方自述，缺第三方在昇腾 950 超节点上的独立复现与具体算力利用率。</li>
+    <li><b>华为 CANN 社区披露的 DeepSeek-V4.1-Flash 离线推理数据</b>：缺完整测试条件（批次、序列长度分布、量化精度）。</li>
+    <li><b>EVO-WAM 真机 76.7% 成功率的任务构成</b>：仅披露三个任务的平均值，缺逐任务明细与试次数量。</li>
+    <li><b>RecursiveMAS 第一信源</b>：缺 arXiv 编号、项目页地址与 NeurIPS 2026 接收状态一手确认；核心指标缺独立复现。</li>
+    <li><b>《白宫超级智能协议》的审计主体</b>：未规定由谁执行第三方评估，缺后续指派机制；自愿性承诺的合规监测方式待明确。</li>
+    <li><b>OpenAI 就澳大利亚政府网站事件的道歉范围</b>：涉事站点、受影响数据范围与补救措施未细化。</li>
+  </ul>
+</div>
+
+<h2 class="sec-title">归档状态说明</h2>
+<div class="note">
+  <ul>
+    <li><b>工作区 Markdown</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20260930_2213.md</code></li>
+    <li><b>工作区 HTML</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20260930_2213.html</code></li>
+    <li><b>网盘归档</b>：<code>O:/quark/automation/每日 AI 新闻推送/</code></li>
+    <li><b>执行状态</b>：⚠️ 部分失败——规范同名文件未能写入 O: 盘。两个目标路径写入时返回 <code>[Errno 13] Permission denied</code>，且失败尝试在目录中留下 <b>0 字节残留</b>；该残留随后既无法覆盖也无法删除（Bash <code>rm</code>、Python <code>os.remove</code>、PowerShell <code>Remove-Item</code> 三通道均被 safe-delete 的 genie-trash 拦截，报 <code>CanonicalizePath</code> 失败，属 davfs / OpenList 服务端对已建条目的锁定，与第 74/75 跑同源）。</li>
+    <li><b>失败原因逐条</b>：① <code>每日AI新闻推送_20260930_2213.md</code> → Errno 13；② <code>每日AI新闻推送_20260930_2213.html</code> → Errno 13；③ <code>.html.tmp</code> / <code>.html.bak</code> 变体 → Errno 13（同一文件名前缀索引冲突）。</li>
+    <li><b>替代归档（已落盘并校验通过，字节数与 md5 一致）</b>：Markdown → <code>每日AI新闻推送_20260930_2213.md.tmp</code>（16539 B）；HTML → <code>每日AI新闻推送_20260930_2213_html.tmp</code> / <code>.html.part</code> / <code>_O.html</code>（各 21882 B）。待 O: 挂载恢复或残渣被手动清理后，将 <code>.md.tmp</code>→<code>.md</code>、<code>_html.tmp</code>→<code>.html</code> 重命名即生效。</li>
+    <li><b>版本提示</b>：上述替代副本为「归档状态行修正前」构建，仅报告末尾「执行状态」段落与本地最终版不同（本地最终版 md 约 18.7 KB、html 约 23.8 KB）；正文条目、指标与待核实项完全一致。覆盖同步已尝试，同样返回 Errno 13。</li>
+    <li><b>权威交付物</b>：以工作区本地 <code>每日AI新闻推送_20260930_2213.md</code> / <code>.html</code> 为准。</li>
+    <li><b>遗留残渣（需人工清理）</b>：<code>.md</code>(0B)、<code>.html</code>(0B)、<code>.html.bak</code>(0B)、<code>.html.tmp</code>(0B)、<code>_wtest_20260930_2213.tmp</code>(5B)、历史遗留 <code>_wtest.tmp</code>(1B)。</li>
+  </ul>
+</div>
+
+<div class="foot">每日 AI 前沿技术精选 · 严格 24 小时窗口 · 待核实项已集中列示</div>
+
+</div>
+</body>
+</html>

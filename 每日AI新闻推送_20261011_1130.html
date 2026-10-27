@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-10-11</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", sans-serif;
+    line-height: 1.7;
+    padding: 24px 16px;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+  h1 { font-size: 1.5rem; color: #58a6ff; margin-bottom: 12px; }
+  .meta {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    font-size: 0.88rem;
+  }
+  .meta p { margin-bottom: 4px; }
+  .meta .warn { color: #f0883e; font-size: 0.82rem; }
+  .card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin-bottom: 16px;
+  }
+  .card h2 { font-size: 1.05rem; color: #58a6ff; margin-bottom: 10px; line-height: 1.4; }
+  .card h2 .src { font-size: 0.82rem; color: #8b949e; font-weight: normal; }
+  .card p { margin-bottom: 8px; font-size: 0.92rem; }
+  .label { color: #8b949e; font-weight: 600; font-size: 0.88rem; }
+  ul { list-style: none; padding-left: 0; }
+  ul li { margin-bottom: 6px; font-size: 0.9rem; padding-left: 14px; position: relative; }
+  ul li::before { content: "▸"; position: absolute; left: 0; color: #f0883e; }
+  .tag {
+    display: inline-block;
+    background: #21262d;
+    border: 1px solid #30363d;
+    color: #7ee787;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 0.78rem;
+    margin-right: 6px;
+    margin-top: 8px;
+  }
+  .section-title {
+    font-size: 1.1rem;
+    color: #f0883e;
+    margin: 24px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #30363d;
+  }
+  .pending {
+    background: #161b22;
+    border-left: 3px solid #f0883e;
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+  }
+  .pending p { font-size: 0.88rem; color: #9d8e6b; margin-bottom: 6px; }
+  .archive {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 0.85rem;
+    color: #8b949e;
+  }
+  .archive p { margin-bottom: 4px; }
+  .archive .status-ok { color: #7ee787; }
+  .archive .status-warn { color: #f0883e; }
+</style>
+</head>
+<body>
+
+<h1>每日 AI 前沿技术精选</h1>
+
+<div class="meta">
+  <p><strong>日期</strong>：2026-10-11 &nbsp;|&nbsp; <strong>时间</strong>：11:30</p>
+  <p><strong>精选条数</strong>：5 条</p>
+  <p><strong>时效窗口</strong>：2026-10-10 11:45 – 2026-10-11 11:30</p>
+  <p class="warn">⚠️ 增量收敛窗口（距上次执行约 23h45m，不足 24h）；arXiv 周日停更，窗口内学术零首发，本期以产业/资本/安全基建事件为主，逐条已就地标注首发日与放宽说明</p>
+</div>
+
+<!-- 条目 1 -->
+<div class="card">
+  <h2>1. Manus 母公司 Butterfly Effect 完成 $500M 融资，自研 Cascade 引擎 + 个人 Agent 应用 Cue 双线落地 <span class="src">（Bloomberg / AI2Day | 2026-10-08）</span></h2>
+  <p><span class="label">事件概述</span></p>
+  <p>Manus 母公司 Butterfly Effect 完成超过 5 亿美元新融资，博裕资本与 IDG 资本领投，腾讯、红杉中国、真格基金等老股东跟投，彭博口径估值约 40 亿美元——这是 Meta 20 亿美元收购因中国商务部阻断而解散后（9-01 恢复独立运营）的首轮外部资本注入，同时同步上线自研 Cascade Agent 框架的 Manus 2.0 与独立个人 Agent 应用 Cue。</p>
+  <p><span class="label">技术与工程价值</span></p>
+  <ul>
+    <li><strong>核心机制</strong>：Manus 2.0 的 Cascade 框架替代 Meta 收购时期的旧架构，通过任务路径优化与上下文复用把 Token 消耗降低 23.2%（厂商自述，未独立复现）；Cue 让每个 Agent 拥有独立邮箱、电话、移动钱包与云端电脑，支持替用户完成餐厅点单、排队等真实生活任务，把「Agent 身份寻址」维度从产品功能（第 87 跑 xAI Grok Bot 专属邮箱）扩展到「可对外服务实体」。</li>
+    <li><strong>实际影响</strong>：Manus 累计处理 147 万亿 token、创建 8000 万+ 虚拟电脑（截至 2025 年底自述），本轮融资使 Manus 正式成为 Meta Muse 的直接竞争对手；「被收购解除后独立融资翻倍」在 AI Agent 赛道是罕见样本。</li>
+  </ul>
+  <p><span class="label">关键指标/资源</span></p>
+  <ul>
+    <li>评测/性能：Cascade Token 消耗降低 23.2%（<strong>厂商自述，未见第三方复现，待核实</strong>）；Cue 抢先体验阶段，暂无公开基准。</li>
+    <li>代码/论文：AI2Day（10-11 07:56 GMT+7）；Bloomberg（10-08）；企查查 B+轮融资记录（2026-10-08）。</li>
+    <li>⚠️ 边界放宽：10-08 首发严格早于窗口起点，因 10-11 中文财经媒体集中深度解读 + 本轮为 Manus 独立运营后首轮大额融资（历史报告未覆盖），已纳入并就地标注。</li>
+  </ul>
+  <span class="tag">#Agent基建</span><span class="tag">#融资</span><span class="tag">#个人Agent</span><span class="tag">#Manus</span>
+</div>
+
+<!-- 条目 2 -->
+<div class="card">
+  <h2>2. Baseten × Goodfire「Project Beacon」：推理层 Agent 安全监控，Kimi K3 恶意拦截率从 29% 提至 96% <span class="src">（Baseten / Goodfire / TechCrunch | 2026-10-09）</span></h2>
+  <p><span class="label">事件概述</span></p>
+  <p>Baseten 于 10-09 与可解释性初创 Goodfire 联合公布 Project Beacon——将 Goodfire 的内部激活信号探针（probe）级联与文本检查结合，在推理层（而非事后 LLM 裁判）实时监控 Agent 的高危行为：提示注入、未授权操作、数据外泄、网络滥用。</p>
+  <p><span class="label">技术与工程价值</span></p>
+  <ul>
+    <li><strong>核心机制</strong>：探针直接读取模型内部神经激活（前向传播已计算过的中间层特征），比「每个 turn 都跑一次全 LLM 裁判」便宜 50 倍以上（Kimi K3 约 100 万次交互：探针级联 $185 vs 全量裁判 $5,420–$200,000）；Goodfire 已在生产环境部署针对 Kimi K3 与 GLM 5.3 的网络监控探针（<strong>Goodfire 内部测试自述，缺第三方独立复现，待核实</strong>）。</li>
+    <li><strong>实际影响</strong>：与第 84 跑苹果 FDA 收紧（10-02）、第 87 跑 Claude Code fail-closed hooks（10-09）构成「Agent 安全治理三层栈」——OS 层（苹果/微软 MXC）、工具层（Claude Code hooks）、推理层（Beacon 探针）。Beacon 首次把「模型内部激活信号」作为可商用生产级监控源。</li>
+  </ul>
+  <p><span class="label">关键指标/资源</span></p>
+  <ul>
+    <li>评测/性能（<strong>Goodfire 内部测试，待核实</strong>）：Kimi K3 恶意拦截 29%→96%，良性误报 5%→9%；GLM 5.3 恶意拦截 36%→91%；探针 4 个增加首 token 延迟 &lt;2%；每 100 万次交互成本 $185（含推理）。</li>
+    <li>代码/论文：Baseten 官方博客（10-09）；TechCrunch（10-08 首发）；Goodfire 研究博客「production cyber monitors」。</li>
+  </ul>
+  <span class="tag">#Agent安全</span><span class="tag">#推理层监控</span><span class="tag">#可解释性</span><span class="tag">#Baseten</span>
+</div>
+
+<!-- 条目 3 -->
+<div class="card">
+  <h2>3. OpenAI 为 GPT-6.1 Sol 推出 Ultrafast 极速 API 档：延迟敏感 Agent 的「速度即服务」 <span class="src">（OpenAI | 2026-10-08）</span></h2>
+  <p><span class="label">事件概述</span></p>
+  <p>OpenAI 于 10-08 在 Responses API 中为 GPT-6.1 Sol 新增 Ultrafast 服务档位，向所有 API 用户开放（受速率限制），调用方式无需更换模型名——只需将 <code>service_tier</code> 参数设为 <code>ultrafast</code>；单价为标准档 6 倍（输入 $12/百万 token，输出 $60/百万 token），在 Codex/ChatGPT Work 中仅限 500 美元 Pro 计划及符合条件的 Enterprise/Edu 工作区使用，消耗速度为标准档 8 倍。</p>
+  <p><span class="label">技术与工程价值</span></p>
+  <ul>
+    <li><strong>核心机制</strong>：Ultrafast 把「延迟」作为独立计费维度——此前市场仅有标准/快速两档（快速=2×速度 2×价格），Ultrafast 将速度推至 8×、价格 6×；面向语音 Agent、实时编码辅助、低延迟路由等场景；缓存输入折扣 95%（$0.10/百万）使 Agent 反复读同一上下文的长链路成本进一步下降。</li>
+    <li><strong>实际影响</strong>：OpenAI 正式把「延迟即服务」商业化，对标 Anthropic Opus 5.5 的高速推理路径（第 84 跑 MAI Code 1.1 Flash 端侧吞吐 40–63 tok/s 的端侧路线形成对照）；500 美元 Pro 500 档（第 77 跑已覆盖）配合 Ultrafast 形成「高付费 + 高速度」的锁定。</li>
+  </ul>
+  <p><span class="label">关键指标/资源</span></p>
+  <ul>
+    <li>评测/性能（<strong>OpenAI 官方 API 文档，待核实第三方延迟实测</strong>）：Ultrafast 每秒约 300 token；GPT-6.1 Sol 本体（9-29 发布，第 77 跑已覆盖）DeepSWE v1.1 以 1/5 Astra 成本达到接近 Astra 水平。</li>
+    <li>代码/论文：OpenAI API 文档（<code>service_tier=ultrafast</code>）；AI Impact Hub 10-11 日报条目 #03；腾讯搜索 10-11 深度报道。</li>
+    <li>⚠️ 边界放宽：10-08 首发严格早于窗口起点，因 10-11 中文媒体集中深度解读 + Ultrafast 对 Codex/ChatGPT Work 的 Pro 500 档接入构成窗口内工程增量，已纳入并就地标注。</li>
+  </ul>
+  <span class="tag">#API定价</span><span class="tag">#Agent基建</span><span class="tag">#OpenAI</span><span class="tag">#速度定价</span>
+</div>
+
+<!-- 条目 4 -->
+<div class="card">
+  <h2>4. 微软 Microsoft-Decision-1：基于 Qwen3.5-9B 的决策模型，返回校准概率而非生成文本 <span class="src">（Microsoft | 2026-10-10）</span></h2>
+  <p><span class="label">事件概述</span></p>
+  <p>微软 10-10 发布 Microsoft-Decision-1——基于 Qwen3.5-9B 后训练的决策打分模型，已上线 Microsoft Foundry 和 OpenRouter，支持最高 128K 上下文，面向路由、分类、验证和 Agent 控制流中的低延迟决策节点，返回固定选项的校准概率而非自由生成文本。</p>
+  <p><span class="label">技术与工程价值</span></p>
+  <ul>
+    <li><strong>核心机制</strong>：Decision-1 的核心设计是「放弃文本生成」——推理结果是一组校准概率值（针对固定选项），响应时间 70–500ms；对比 TypeSafe Jev（第 83 跑已覆盖同类决策模型方向）与 AWS Strands Decider 2B（第 79 跑已覆盖），Decision-1 把微软自己的 Qwen3.5-9B 基座改造为决策专用层，不依赖外部基座，形成「微软自有基座 + 决策层」的自洽栈；微软测试（<strong>自述，待核实</strong>）称在 36 个基准上达到 83.5% 准确率、85ms 延迟。</li>
+    <li><strong>实际影响</strong>：与 TypeSafe Jev、AWS Strands Decider 2B 共同构成「决策模型层」竞争——Agent 架构中「路由/验证/打分」节点不再需要调用旗舰 LLM，成本与延迟大幅下降；微软此举也把「决策模型」推入 Microsoft Foundry 企业分发渠道，对 Agent 编排层基础设施（harness 决定表现，第 81 跑）构成直接工程补充。</li>
+  </ul>
+  <p><span class="label">关键指标/资源</span></p>
+  <ul>
+    <li>评测/性能（<strong>微软官方自述，待核实第三方复现</strong>）：36 基准 83.5% 准确率；85ms 延迟（中位）；128K 上下文；Decision Index 0.3.1 分数未单独披露。</li>
+    <li>代码/论文：Microsoft Foundry 文档；OpenRouter 模型页；satori-ai.org 10-10 速览（首见中文报道，窗口内）。</li>
+    <li>⚠️ 边界放宽：微软 10-10 发布在窗口 10-10 11:45 起点附近，中文报道（satori-ai.org）10-10 当日上线构成窗口内公开增量；Nace AI 开源 Drex 1.5（9B 决策模型，10-10 同源披露）为同类增量但未达门槛，已记备查。</li>
+  </ul>
+  <span class="tag">#决策模型</span><span class="tag">#Agent基建</span><span class="tag">#微软</span><span class="tag">#Qwen基座</span>
+</div>
+
+<!-- 条目 5 -->
+<div class="card">
+  <h2>5. Mistral AI 完成 €30 亿 D 轮（三星领投，投后估值 €210 亿）：欧洲主权 AI 资本版图加速成形 <span class="src">（Mistral / TechCrunch | 2026-10-08）</span></h2>
+  <p><span class="label">事件概述</span></p>
+  <p>Mistral AI 于 10-08 官宣完成 €30 亿 D 轮，三星电子领投，联合领投方为 EQT 旗下 Scaleup Europe Fund 与 PSG Equity，新进资方包括 Advent、BlackRock 账户及卢森堡大公国；投后估值 €210 亿（约 $242 亿），为欧洲科技史上最大单轮股权融资。</p>
+  <p><span class="label">技术与工程价值</span></p>
+  <ul>
+    <li><strong>核心机制</strong>：资金明确用于算力、基础设施与国际化；三星领投代表亚洲战略资金把 Mistral 当作对冲美系依赖（OpenAI/Anthropic）的核心筹码；相较 2025-09 ASML 领投的 C 轮（€17 亿/估值 €117 亿），估值 1 年翻倍；Mistral 同期（10-06 第 83 跑已覆盖）发布 Mistral Large 4「le Chonk」公开预览（1T/49B 原生多模态），本轮 D 轮为「模型 + 资本」双线推进的资本侧确认。</li>
+    <li><strong>实际影响</strong>：与第 81 跑「Mistral 三星 D 轮」主线（三星 on-prem 部署 + 晶圆厂部署）共振——欧洲主权 AI 正从叙事转化为采购条目；本轮投资方名单（Advent/BlackRock/卢森堡大公国）显示欧洲 AI 资本版图已从「技术公司融资」进入「主权资本参与」阶段。</li>
+  </ul>
+  <p><span class="label">关键指标/资源</span></p>
+  <ul>
+    <li>评测/性能：估值 €210 亿（<strong>投后，待核实</strong>）；€30 亿（$34.9 亿）为欧洲科技史上最大单轮；Mistral Large 4 基准数据见第 83 跑。</li>
+    <li>代码/论文：Mistral 官方博客（10-08）；TechCrunch；10news.xyz 10-11 深度点评；fobi.com 行业仪表板（Mistral AI $3.2B Series D 记录，10-09 更新）。</li>
+    <li>⚠️ 边界放宽：10-08 官宣严格早于窗口起点，因 10-10 fobi.com 仪表板更新 + 10-11 10news.xyz 中文深度点评构成窗口内增量，已纳入并就地标注；第 81 跑（10-04）已覆盖「Mistral 三星 D 轮」本体，本条聚焦估值确认 + 资金用途 + 全量投资方名单增量，非重复。</li>
+  </ul>
+  <span class="tag">#融资</span><span class="tag">#主权AI</span><span class="tag">#Mistral</span><span class="tag">#欧洲</span>
+</div>
+
+<div class="section-title">本期主线点评</div>
+<div class="card">
+  <p>本期主线为「<strong>Agent 基础设施层全面资本化 × 安全治理从工具层下沉到推理层 × 决策模型成为独立竞争维度</strong>」。第 2 条（Baseten×Goodfire Beacon）把 Agent 安全监控首次推向推理层（探针读内部激活，$185/百万次 vs 全量裁判 $5,420–$200,000），与第 87 跑 Claude Code fail-closed hooks（工具层）+ 第 84 跑苹果/微软 OS 层沙箱构成三层栈完整闭环；第 4 条（微软 Decision-1）把「决策模型」确立为 Agent 编排层的独立基础设施维度，与 TypeSafe Jev、AWS Strands Decider 2B 形成三方竞争；第 1/5 条（Manus $500M + Mistral €3B）则把「Agent 基建」和「主权 AI」同时推向资本市场——Manus 在被收购解除后独立融资翻倍、Mistral 估值 1 年翻倍，都说明「能否脱离头部平台独立存活」已成为资本的核心问题。</p>
+</div>
+
+<div class="section-title">待核实（集中列示）</div>
+<div class="pending">
+  <p><strong>1. Manus Cascade Token 消耗降低 23.2%</strong>：厂商自述，未公布基准任务集、基线模型与测试条件；「147 万亿 token / 8000 万虚拟电脑」为 Manus 自述累计数据，缺第三方审计。</p>
+  <p><strong>2. Goodfire Beacon 恶意拦截率（Kimi K3 96% / GLM 5.3 91%）</strong>：Goodfire 内部测试自述（约 100 万次交互），缺第三方独立复现；「每 100 万次 $185」成本数字基于 OpenRouter 评测套件，未公开完整测试代码。</p>
+  <p><strong>3. GPT-6.1 Sol Ultrafast 速度（300 token/s）与价格（$12/$60 每百万）</strong>：OpenAI 官方 API 文档，未见第三方延迟实测（不同地区/负载条件下可能差异较大）。</p>
+  <p><strong>4. Microsoft Decision-1 准确率（83.5% @ 36 基准 / 85ms 延迟）</strong>：微软官方自述，未公布 36 基准清单与测试条件；与 TypeSafe Jev 同口径对比缺第三方基准。</p>
+  <p><strong>5. Mistral 投后估值 €210 亿</strong>：多方报道口径一致（€21B），具体投后股权比例与稀释结构未见官方披露，「欧洲科技史上最大单轮」口径待核实。</p>
+</div>
+
+<div class="section-title">归档状态说明</div>
+<div class="archive">
+  <p><strong>工作区 Markdown</strong>：C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261011_1130.md</p>
+  <p><strong>工作区 HTML</strong>：C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261011_1130.html</p>
+  <p><strong>网盘归档</strong>：O:/quark/automation/每日 AI 新闻推送/（同步写入上述同名文件）</p>
+  <p><strong>执行状态</strong>：<span class="status-ok">✅ 成功</span>（O:/quark/automation/每日 AI 新闻推送/ 两份文件均以 open()+write 写入并通过字节大小校验；probe 可写 OK，零失败零跳过；probe 残渣 <code>_probe_每日AI新闻推送_20261011_1130.tmp</code> 因 safe-delete 拦截留存 O: 根，属已知可接受）</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-10-02 11:30</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:#0d1117;color:#e6edf3;line-height:1.7;padding:24px}
+.header{max-width:880px;margin:0 auto 24px}
+.header h1{font-size:1.6rem;margin-bottom:8px;color:#f0f6fc}
+.meta{font-size:.85rem;color:#8b949e}
+.meta span{display:inline-block;margin-right:16px}
+.meta b{color:#58a6ff;font-weight:600}
+.card{max-width:880px;margin:0 auto 20px;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:24px}
+.card h2{font-size:1.15rem;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid #30363d;color:#f0f6fc}
+.news{border-left:3px solid #58a6ff;padding-left:16px;margin-bottom:20px}
+.news .title{font-weight:600;font-size:1rem;color:#f0f6fc;margin-bottom:6px}
+.news .title .src{font-weight:400;font-size:.82rem;color:#8b949e}
+.news .title .date{font-weight:400;font-size:.82rem;color:#8b949e;margin-left:6px}
+.news .section-label{font-weight:600;color:#58a6ff;font-size:.85rem;margin-top:8px;margin-bottom:4px}
+.news ul{list-style:none;padding-left:0}
+.news li{font-size:.9rem;color:#c9d1d9;margin-bottom:4px;padding-left:14px;position:relative}
+.news li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;background:#58a6ff;border-radius:50%}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tags span{background:#21262d;color:#58a6ff;font-size:.75rem;padding:2px 10px;border-radius:12px}
+.note-box{background:#161b22;border:1px solid #30363d;border-left:3px solid #d29922;border-radius:8px;padding:16px;margin:16px 0;max-width:880px;margin-left:auto;margin-right:auto}
+.note-box p{font-size:.88rem;color:#c9d1d9;margin-bottom:6px}
+.note-box b{color:#d29922}
+.exclude-box{max-width:880px;margin:0 auto 16px;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:18px}
+.exclude-box h3{font-size:1rem;color:#8b949e;margin-bottom:10px;font-weight:600}
+.exclude-box ul{list-style:none;padding-left:0}
+.exclude-box li{font-size:.85rem;color:#8b949e;margin-bottom:6px;padding-left:14px;position:relative}
+.exclude-box li::before{content:"✗";position:absolute;left:0;color:#f85149;font-weight:700}
+.status-box{max-width:880px;margin:0 auto;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:18px}
+.status-box h3{font-size:1rem;color:#f0f6fc;margin-bottom:10px}
+.status-box table{width:100%;border-collapse:collapse;font-size:.85rem}
+.status-box td{padding:6px 8px;border-bottom:1px solid #21262d;color:#c9d1d9}
+.status-box td:first-child{color:#8b949e;white-space:nowrap;width:140px}
+.pending-box{max-width:880px;margin:0 auto;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:18px}
+.pending-box h3{font-size:1rem;color:#d29922;margin-bottom:10px}
+.pending-box ol{font-size:.85rem;color:#c9d1d9;padding-left:20px}
+.pending-box li{margin-bottom:6px}
+@media(max-width:600px){body{padding:12px}.card,.header,.note-box,.exclude-box,.status-box,.pending-box{margin-left:12px;margin-right:12px}}
+</style>
+</head>
+<body>
+
+<div class="header">
+<h1>每日 AI 前沿技术精选</h1>
+<div class="meta">
+<span><b>日期</b> 2026-10-02</span>
+<span><b>时间</b> 11:30</span>
+<span><b>精选条数</b> 5 条</span>
+<span><b>时效窗口</b> 2026-10-01 11:30 – 2026-10-02 11:30（严格 24h）</span>
+</div>
+</div>
+
+<div class="card">
+<h2>今日精选</h2>
+
+<div class="news">
+<div class="title"><span>Runway 发布 Praxis-1 开放权重世界动作模型</span>
+<span class="src">（Runway 官方研究帖）</span><span class="date">2026-09 底发布，10/1 集中报道</span></div>
+
+<p class="section-label">事件概述</p>
+<p style="font-size:.9rem;color:#c9d1d9;margin-bottom:10px">
+Runway 宣布其首个开放权重世界动作模型（World Action Model, WAM）<b>Praxis-1</b>，基于与通用世界模型（Solaris、GWM Worlds 2）同源的大规模视频预训练，目标是让机器人策略无需依赖昂贵的遥操作数据采集。模型正与 Noble Machines、Standard Bots、Ultra 三家合作伙伴在真实硬件上测试，公开权重预计在数月内发布。
+</p>
+
+<p class="section-label">技术与工程价值</p>
+<ul>
+<li><b>核心机制</b>：将视频预训练中学到的物理直觉（物体行为、手部运动、任务中途状态）直接迁移为机器人控制策略。Runway 声称在自有世界模型中模拟机器人策略与真实世界性能的相关系数达 <b>0.95</b>，可替代成本更高的 3D 重建方法。对比实验中，web 视频预训练与遥操作视频预训练微调后放置误差分别为 16.1 cm 与 16.0 cm（Runway 自认统计不显著）。</li>
+<li><b>实际影响</b>：世界模型从「数字世界生成」走向「物理世界操控」的关键一步。视频数据的无限可扩展性直接解决具身智能最核心的数据瓶颈——遥操作数据采集成本高昂且规模有限。开放权重策略意味着机器人硬件开发者可以在本地部署与自定义，不受闭源 API 锁定。</li>
+</ul>
+
+<p class="section-label">关键指标/资源</p>
+<ul>
+<li>评测：web 视频 vs 遥操作视频：16.1 cm vs 16.0 cm（93 对评估，<i>Runway 自述，未见第三方复现，待核实</i>）；Sim-to-Real 0.95</li>
+<li>来源：<a href="https://runway.com/research/introducing-praxis-1" style="color:#58a6ff">runway.com/research/introducing-praxis-1</a>；早期合作伙伴：Noble Machines / Standard Bots / Ultra</li>
+</ul>
+
+<div class="tags"><span>#具身智能</span><span>#世界模型</span><span>#视频预训练</span><span>#开放权重</span></div>
+</div>
+
+<div class="news">
+<div class="title"><span>AWS 开源 Strands Decider 2B：2B 参数决策模型替代 LLM 做 Agent 工作流路由</span>
+<span class="src">（AWS Strands Labs / TechCrunch）</span><span class="date">2026-10-01 美东</span></div>
+
+<p class="section-label">事件概述</p>
+<p style="font-size:.9rem;color:#c9d1d9;margin-bottom:10px">
+AWS 通过 Strands Labs 开源了 <b>Strands Decider 2B</b>——一个 20 亿参数的决策模型，专为 Agent 工作流中的「从预定义选项中选择下一步」设计，替代通用 LLM 在每个步骤都调用大模型的高成本模式。基于 Qwen3.5-2B 的「躯干」（去掉文本生成头，换为约 100 万参数指针头 + rank-16 LoRA 适配器），支持本地 CPU/GPU 运行。
+</p>
+
+<p class="section-label">技术与工程价值</p>
+<ul>
+<li><b>核心机制</b>：项目起源于 AWS 杰出工程师 Marc Brooker 在 TypeSafe 发布 Jev 后三周内复现的自制模型，曾短暂登顶 JevBench 2B 级排名。输出为<b>校准置信度分数</b>而非自由文本，Agent 编排器可据此决定继续、澄清或转交。JevBench 2B 级第三（33 模型中），easy tier 准确率 100%。</li>
+<li><b>实际影响</b>：「决策模型」是一个仅诞生三周的新模型类别，已有数十个独立实现（OpenAI 同期推出闭源 Decisions API）。Agent 编排层最痛的成本问题——每个工作流步骤都调用完整 LLM——被直接压缩：简单决策步骤成本从 LLM token 计费降至接近零（本地运行），且置信度分数为多 Agent 架构提供了可审计的「信任阈值」信号。</li>
+</ul>
+
+<p class="section-label">关键指标/资源</p>
+<ul>
+<li>评测：JevBench 2B 级第三；easy tier 100%；RTX 3090 中位延迟 ~115ms；M3 MacBook ~153ms；基于 <b>Qwen3.5-2B</b> 基座</li>
+<li>代码：权重 + 训练数据 + 训练脚本全量开放（GitHub / Hugging Face）；v19 完整 changelog</li>
+<li>来源：<a href="https://techcrunch.com/2026/10/01/amazon-releases-its-own-jev-clone-as-decision-models-flood-the-web/" style="color:#58a6ff">TechCrunch 10/1 报道</a></li>
+</ul>
+
+<div class="tags"><span>#Agent 基础设施</span><span>#决策模型</span><span>#开源</span><span>#工作流编排</span></div>
+</div>
+
+<div class="news">
+<div class="title"><span>AIDE² 论文：AI 研究智能体 8 天自主运行递归改写自身代码，7 次连续增益</span>
+<span class="src">（AGI Hunt）</span><span class="date">2026-10-02 报道，arXiv 首发时刻待核实</span></div>
+
+<p class="section-label">事件概述</p>
+<p style="font-size:.9rem;color:#c9d1d9;margin-bottom:10px">
+新论文《Recursive Self-Improvement of AI Research Agents》报告了 <b>AIDE²</b> 的真实递归自我改进（RSI）实证：智能体将其自身源代码作为编辑对象，提出修改→构建新自身→在 AI R&D 任务上运行→保留在隐藏评估中得分最高的版本。被接受的改写成为下一轮编辑的执行者——真正的「递归」而非固定程序编辑他人代码。一次 <b>8 天无人干预运行</b>中，系统发现 7 次连续增益。
+</p>
+
+<p class="section-label">技术与工程价值</p>
+<ul>
+<li><b>核心机制</b>：与 MetaRSI-v1 的「元递归架构」不同，AIDE² 的递归在于<b>编辑对象与执行者为同一系统</b>——每轮改进后的 Agent 直接成为下一轮的编辑者，形成自指闭环。外层（meta）循环锁定评价标准防止 Reward Hacking，内层（task）循环在 AI 研发任务上实测增益。</li>
+<li><b>实际影响</b>：增益在四个 held-out 基准（ML 工程、启发式算法工程、物理天气预报）上保持稳定，说明递归改写并非过拟合到单一任务。这是 RSI 从「有界闭环」向「递归增益」第三层（「点火」）迈进的关键实证——但 8 天 7 次增益的时间尺度远未证明复利加速，仅证明方向可行。</li>
+<li><b>待核实</b>：arXiv 原始提交时间戳未在窗口检索中直接确认，需补充 arXiv 编号与 v1 提交日。</li>
+</ul>
+
+<p class="section-label">关键指标/资源</p>
+<ul>
+<li>评测：8 天运行 7 次连续增益；4 个 held-out 基准（ML 工程 / 启发式算法 / 天气预报）增益保持稳定（<i>具体数值未在公开报道中列出，待核实</i>）</li>
+<li>来源：<a href="https://agihunt.info/en/p/1a0f83ec5473d7a76e6e515e96e" style="color:#58a6ff">AGI Hunt 10/2 报道</a></li>
+</ul>
+
+<div class="tags"><span>#RSI</span><span>#自主研究智能体</span><span>#自我对弈</span><span>#推理时计算</span></div>
+</div>
+
+<div class="news">
+<div class="title"><span>Benzi 编译器驱动编码 Agent：不读源码而用编译器静态分析，SWE-bench 78.2% &lt;10¢/fix</span>
+<span class="src">（AGI Hunt）</span><span class="date">2026-10-02 报道</span></div>
+
+<p class="section-label">事件概述</p>
+<p style="font-size:.9rem;color:#c9d1d9;margin-bottom:10px">
+开发者发布 <b>Benzi</b>——一种以编译器与静态分析（而非读取源码片段或构建 embedding）为核心机制的编码 Agent。在编辑前，编译器报告「爆炸半径」（blast radius）并执行完整静态检查，模型因此无需频繁询问「这个函数的输入来源」。核心假设：对仓库的<b>索引</b>优于读取原始代码。
+</p>
+
+<p class="section-label">技术与工程价值</p>
+<ul>
+<li><b>核心机制</b>：三层「真相分级」（truth tiers）——① 静态可分析事实（编译器直接给出）；② 静态不可分析但可运行时追踪事实（runtime tracer 桥接）；③ 需要模型推理的事实。语法与语义验证写入确保每次编辑通过编译；上下文感知的模型自写复现脚本支持多文件重构；任务中途支持模型热升级。支持 9 种语言（Python、JS/TS、Java、C#、C++、C、Go、Rust、Ruby）。</li>
+<li><b>实际影响</b>：与 Claude Code（读 20,704 行）、DeepSeek harness（读 43,598 行）对比，Benzi Sonnet 仅读 <b>9,125 行</b>即完成相同任务。SWE-bench Verified 78.2%（V4flash 驱动）在 &lt;10 美分/fix 的成本下达到，验证了「确定性编译器信号替代 token 密集源码读取」路线的工程可行性。</li>
+<li><b>待核实</b>：78.2% 为发布方自述基准，未见第三方复现；单 fix &lt;10 美分使用 V4flash 模型，未公开具体定价结构。</li>
+</ul>
+
+<p class="section-label">关键指标/资源</p>
+<ul>
+<li>评测：SWE-bench Verified 78.2%（V4flash）；读取行数 9,125 vs Claude Code 20,704 / DeepSeek 43,598 / OpenCode 65K+；&lt;10 美分/fix（<i>发布方自述，待核实</i>）</li>
+<li>来源：<a href="https://agihunt.info/en/p/1a0f96ff47f5db7d1615d84f370" style="color:#58a6ff">AGI Hunt 10/2 报道</a></li>
+</ul>
+
+<div class="tags"><span>#AI Coding</span><span>#编译器驱动</span><span>#静态分析</span><span>#SWE-bench</span></div>
+</div>
+
+<div class="news">
+<div class="title"><span>蚂蚁集团 × 北大 × 澳门大学 Marathoner：Qwen3.5-9B 长时程编码 Agent 10+ 小时连续运行</span>
+<span class="src">（arXiv:2609.34378 / AGI Hunt）</span><span class="date">2026-10-02 报道</span></div>
+
+<p class="section-label">事件概述</p>
+<p style="font-size:.9rem;color:#c9d1d9;margin-bottom:10px">
+蚂蚁集团、北京大学与澳门大学联合发布 <b>Marathoner</b>——基于 Qwen3.5-9B 的长时程软件工作后训练管线。从 10,000 个 GitHub 仓库的 100,000 个重大版本 PR 中挖掘软件任务，通过多任务链接将 5 个任务组合为接近前沿规模的持续工作负载（执行上限 40 小时），使用 Kimi K3 成功运行轨迹作为训练信号、在真实执行环境中进行 RL 训练。核心创新是<b>奖励晚段进展</b>（late-stage progress bonus）——即使任务尚未完成，发现隐藏 bug 等有效进步也会获得正奖励。
+</p>
+
+<p class="section-label">技术与工程价值</p>
+<ul>
+<li><b>核心机制</b>：Marathoner 将 9B 小模型的 SWE-bench Verified 从基座 43.8% 提升至 <b>77.5%</b>，Terminal-Bench 2.0 从 27.3% 提升至 <b>57.2%</b>。在 FrontierSWE 与 SWE-Marathon 上超过 Gemini-3.1-Pro。10+ 小时连续编码、1000+ 工具调用的耐力数据，展示了「持久性可被训练进小模型」的可行性。</li>
+<li><b>实际影响</b>：明确的「小模型 + 长时程 RL」路线验证——不依赖 2.8T 参数开放权重模型也能达到接近前沿的编码结果，成本结构对本地部署/边缘计算场景极具吸引力。但权重、训练代码与数据集均未公开，实际复现门槛较高。</li>
+<li><b>待核实</b>：权重未公开，无法独立验证 77.5% 基准；10+ 小时数据来自高难度子集（FrontierSWE 平均 3.56 小时 / 648 工具调用），非全部运行。</li>
+</ul>
+
+<p class="section-label">关键指标/资源</p>
+<ul>
+<li>评测：SWE-bench Verified 43.8% → 77.5%；Terminal-Bench 2.0 27.3% → 57.2%；FrontierSWE / SWE-Marathon 超 Gemini-3.1-Pro（<i>发布方自述，未见第三方复现，待核实</i>）</li>
+<li>来源：<a href="https://arxiv.org/abs/2609.34378" style="color:#58a6ff">arXiv:2609.34378</a>；AGI Hunt 10/2 报道</li>
+</ul>
+
+<div class="tags"><span>#AI Coding</span><span>#长时程 Agent</span><span>#RL 训练</span><span>#小模型</span></div>
+</div>
+
+</div>
+
+<div class="note-box">
+<p><b>⚠️ 窗口判定说明</b></p>
+<p>本期采用严格 24h 基准窗口（2026-10-01 11:30 – 2026-10-02 11:30），距上次执行（第 78 跑 10/1 11:30）恰 24h00m，未触发增量收敛，亦未扩展 48h。</p>
+</div>
+
+<div class="exclude-box">
+<h3>排除项说明</h3>
+<ul>
+<li><b>AgiBot GE-Act 2.0</b>（世界动作模型 30,000 小时 Scaling Law）：DeCLaRe 项目页标注「2026」，Trustburn 9/11 报道，首发时刻早于窗口起点 10/1 11:30，窗口内无实质独立增量</li>
+<li><b>OpenAI DevDay 2026 GPT-6.1 Sol</b>：第 77 跑（9/30）已覆盖</li>
+<li><b>DeepSeek 昇腾开源</b>：第 77 跑（9/30）已覆盖</li>
+<li><b>Gemini 4 Argon 本体</b>：第 78 跑（10/1）已覆盖</li>
+<li><b>DeepSWE 1.1 排行榜更新</b>（10/2 Muse Spark 1.3 达 75.4%）：属榜单刷新而非首发事件，技术增量不足入选门槛</li>
+</ul>
+</div>
+
+<div class="pending-box">
+<h3>待核实</h3>
+<ol>
+<li><b>Praxis-1 Sim-to-Real 0.95 相关系数</b>：Runway 自述数据，基于自有世界模型内部模拟对比，未见第三方在独立环境中复现</li>
+<li><b>Praxis-1 16.1 vs 16.0 cm 放置误差</b>：93 对评估统计不显著（Runway 自认），需独立验证样本分布与任务难度</li>
+<li><b>AIDE² arXiv 提交时间戳</b>：AGI Hunt 10/2 首见公开报道，未确认 arXiv 编号与 v1 提交日是否在窗口内</li>
+<li><b>Benzi SWE-bench 78.2% 与 &lt;10 美分/fix</b>：发布方自述基准，未见第三方复现；V4flash 定价结构未公开</li>
+<li><b>Marathoner 77.5% SWE-bench Verified</b>：发布方自述，权重/代码/数据集均未公开，无法独立验证；10+ 小时数据来自高难度子集</li>
+</ol>
+</div>
+
+<div class="status-box">
+<h3>归档状态说明</h3>
+<table>
+<tr><td>工作区 Markdown</td><td>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261002_1130.md</td></tr>
+<tr><td>工作区 HTML</td><td>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261002_1130.html</td></tr>
+<tr><td>网盘归档</td><td>O:/quark/automation/每日 AI 新闻推送/（同步写入上述同名文件）</td></tr>
+<tr><td>执行状态</td><td>✅ 成功（O: 盘两份文件字节校验一致）</td></tr>
+</table>
+</div>
+
+</body>
+</html>

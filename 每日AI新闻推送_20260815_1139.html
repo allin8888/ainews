@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 新闻精选（2026-08-15）</title>
+<style>
+  :root{
+    --bg:#0f1115; --card:#171a21; --ink:#e8eaed; --muted:#9aa4b2;
+    --line:#262b36; --accent:#4f8cff; --accent2:#36c2a8; --warn:#f0a348;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.7;font-size:15px}
+  .wrap{max-width:860px;margin:0 auto;padding:32px 20px 56px}
+  h1{font-size:24px;margin:0 0 4px;letter-spacing:.5px}
+  .meta{color:var(--muted);font-size:13px;margin:0 0 8px}
+  .note{background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:12px 16px;color:var(--muted);font-size:13px;margin:18px 0 26px}
+  h2{font-size:18px;margin:28px 0 14px;padding-left:10px;border-left:3px solid var(--accent)}
+  .item{background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:18px 20px;margin:0 0 16px}
+  .item h3{margin:0 0 10px;font-size:16px;color:#fff}
+  .item h3 .tag{display:inline-block;font-size:11px;font-weight:600;color:var(--accent2);
+    border:1px solid var(--accent2);border-radius:6px;padding:1px 7px;margin-right:8px;vertical-align:middle}
+  .row{margin:6px 0}
+  .row b{color:var(--accent);font-weight:600}
+  .row .why{color:var(--warn);font-weight:600}
+  a{color:var(--accent);text-decoration:none;word-break:break-all}
+  a:hover{text-decoration:underline}
+  .sub{margin-top:30px}
+  .sub .item{background:transparent;border-style:dashed}
+  .sub h2{color:var(--muted);border-left-color:var(--muted)}
+  .verify{background:var(--card);border:1px solid var(--warn);border-radius:10px;
+    padding:12px 16px;color:var(--muted);font-size:13px;margin-top:26px}
+  .verify b{color:var(--warn)}
+  .foot{color:var(--muted);font-size:12px;margin-top:30px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>每日 AI 新闻精选</h1>
+  <p class="meta">2026-08-15 · 筛选窗口：过去 24 小时（8/14 晚间—8/15 中午）</p>
+
+  <div class="note">
+    以 <b>AI Coding</b> 与 <b>具身智能</b> 为主，兼顾对两方向有显著影响的产业 / 安全事件。
+    已与 8/14 晚间版去重（Cursor/SpaceX、GLM-5.3、Qwen3.8-27B、dots3-note、VLA 论文潮均未重复收录）。
+    数据源：AI HOT v1 精选池（24h）+ WebSearch/WebFetch 交叉核验（Yonhap、Anthropic、Hugging Face、163.com、北青网等）。
+  </div>
+
+  <h2>主选（5 条，按重要性排序）</h2>
+
+  <div class="item">
+    <h3><span class="tag">AI Coding</span>DeepSeek 开源 Harness 的开发记录显示其大量使用 OpenAI Codex</h3>
+    <div class="row"><b>事件</b>：开发者 Elie Bakouch 统计 DeepSeek Harness 公开 GitHub 历史——984 个已合并 PR 中 209 个来自 <code>codex/*</code> 分支（21.2%），相关提交约 2807 次（占总提交 22.8%）；而 <code>claude/*</code> 分支仅 3 个合并 PR（0.3%），提交 71 次。OpenAI 开发者体验团队成员 VB Srivastav 公开喊话「有问题随时找我，希望你们和我一样喜欢 Codex」。</div>
+    <div class="row"><span class="why">为何值得关注</span>：开源编程 Agent 框架的「去模型化」主张在现实中被讽刺性印证——DeepSeek 用竞争对手的 Codex 造出了对标 Claude Code 的 Harness；说明模型无关（model-agnostic）的 harness 设计已成共识，工具层与模型层正在解耦，与前几期「增量在模型之外」主线一致。</div>
+    <div class="row"><b>来源</b>：<a href="https://www.163.com/dy/article/L4B8ETI90511D6RL.html" target="_blank">https://www.163.com/dy/article/L4B8ETI90511D6RL.html</a>（统计为第三方基于公开 GitHub 历史得出，精确占比待核实）</div>
+  </div>
+
+  <div class="item">
+    <h3><span class="tag">AI Coding</span>ICML 2026 Open Reproductions：1200+ 志愿者 + 编码 Agent 复现 2226 篇论文</h3>
+    <div class="row"><b>事件</b>：7/15–8/2 的复现挑战赛共产出 6816 份 Trackio logbook，覆盖 ICML 2026 约 1/3 论文（2226 篇），35908 条 claim 由自动化 Logbook Judge（开源权重 GLM-5.2）逐条裁决；参与者自带 Claude Code / Codex / Cursor / Pi 等 agent，部分 logbook 公开上传完整 agent 执行轨迹。</div>
+    <div class="row"><span class="why">为何值得关注</span>：编码 Agent 首次在会议尺度承担「可复现性审计」这一科研基础设施角色；agent trace 公开化把「验证 / 审计」这一模型之外的层推到大规模实证，为 AI Coding 在科研中的定位提供了 landmark 案例。</div>
+    <div class="row"><b>来源</b>：<a href="https://worldthatgrows.com/news/what-we-learned-by-reproducing-2200-papers-from-icml" target="_blank">worldthatgrows.com/news/what-we-learned-by-reproducing-2200-papers-from-icml</a> · <a href="https://huggingface.co/spaces/ICML-2026-agent-repro/challenge" target="_blank">HF 挑战页</a></div>
+  </div>
+
+  <div class="item">
+    <h3><span class="tag">AI Coding</span>Anthropic 详解 Claude 文本水印机制（SynthID-Text），为欧盟 AI 法案合规</h3>
+    <div class="row"><b>事件</b>：未来 Claude 生成文本将内嵌基于 Google DeepMind SynthID-Text 的水印，用于判定文本由 Claude 撰写的概率；仅改变等概率候选词的随机来源，不影响生成质量 / 可读性，不增加 token 或成本，读者无法区分水印文本与正常文本。</div>
+    <div class="row"><span class="why">为何值得关注</span>：在 AI 生成代码与文档泛滥的背景下，非侵入式内容溯源成为信任 / 合规层的新基础设施；对「agent 产出如何归因与审计」这一 AI Coding 治理问题给出了可落地的工程答案。</div>
+    <div class="row"><b>来源</b>：<a href="https://www.anthropic.com/news/claude-text-watermark" target="_blank">https://www.anthropic.com/news/claude-text-watermark</a></div>
+  </div>
+
+  <div class="item">
+    <h3><span class="tag">具身智能</span>2026 上半年具身智能融资 935 亿元（同比 +5 倍），机器人「进厂打工」跑出 ROI 实证</h3>
+    <div class="row"><b>事件</b>：国内具身智能赛道 H1 融资破 935 亿元（同比约 5 倍）；广州邮区中心分拣流水线机器人供件效率从 300 提升至 1200 件/小时、准确率 >95%、7×24 运行；单一汽车工厂工站成功率 98%。工信部 + 国资委 6 月已启动实景实训专项行动，目标年底百个高价值场景 + 万台级落地。</div>
+    <div class="row"><span class="why">为何值得关注</span>：具身从「炫技」转入「算清 ROI」的实干期；「数据飞轮」（真实场景→数据→更强能力→更多场景）成为头部企业竞争核心，直接决定能否跨过量产鸿沟与核心零部件国产化临界点。</div>
+    <div class="row"><b>来源</b>：<a href="https://www.toutiao.com/article/7674028766510744083/" target="_blank">https://www.toutiao.com/article/7674028766510744083/</a></div>
+  </div>
+
+  <div class="item">
+    <h3><span class="tag">具身智能</span>LG 电子公布人形机器人计划：2027 Q1 基于 NVIDIA GR00T + Jetson Thor 出货</h3>
+    <div class="row"><b>事件</b>：LG 电子 8/14 在英伟达总部签署 MoU，宣布 2027 年第一季度推出双足人形机器人，搭载 Jetson Thor 模组，基于 NVIDIA Isaac GR00T 人形基础模型与 Holoscan for Robotics 安全系统开发；并整合 LG 系执行器（LG 电子）、传感器（LG Innotek）、电池（LG Energy Solution），合作覆盖机器人 / AI 工厂 / 移动出行三领域。</div>
+    <div class="row"><span class="why">为何值得关注</span>：主流消费电子厂商以「NVIDIA 机器人全栈（GR00T + Thor + Holoscan）」为底座下场，印证具身智能的「平台化」趋势——本体厂越来越依赖少数通用机器人基础模型与边缘算力，自研重心转向场景与集成。</div>
+    <div class="row"><b>来源</b>：<a href="https://en.yna.co.kr/view/AEN20260814003200320" target="_blank">https://en.yna.co.kr/view/AEN20260814003200320</a></div>
+  </div>
+
+  <div class="sub">
+    <h2>关注项（近 48h 补充，非主选）</h2>
+    <div class="item">
+      <div class="row"><b>DeepSeek 涨价</b>：V4 Pro 高峰 / 闲时峰谷定价 8/16 生效（闲时 5 折、高峰翻倍），输出价约 Claude Fable 5 的 1/57；高盛称国内 AI 算力需求同比 +417%（来源：新浪 / 高盛研报，8/15；部分内容为 AI 生成，价格以官方公告为准）。</div>
+    </div>
+    <div class="item">
+      <div class="row"><b>Figure AI</b> 完成 5 亿美元 C 轮（估值 50 亿美元）、<b>Boston Dynamics</b> 新版 Atlas 手部 12 DoF + 触觉、<b>Tesla Optimus</b> 累计运行 1 万小时 / MTBF 500h（Robotics Daily 8/15 汇编）。</div>
+    </div>
+    <div class="item">
+      <div class="row"><b>潜界科技（LatentVerse）</b> 数亿元种子轮 + <b>戴盟机器人</b> 触觉世界模型 Daimon-TWM（蚂蚁领投）（8/11，CVC 构建产业闭环信号）。</div>
+    </div>
+  </div>
+
+  <div class="verify">
+    <b>待核实</b><br>
+    • DeepSeek Harness 中 Codex 占比为第三方基于公开 GitHub 历史的统计，精确数值待原开发者 / 官方确认。<br>
+    • LG 人形机器人量产时间以 MoU 口径为准，尚无样机实测数据；具身智能供应链（减速器 / 力矩传感器）交付周期仍达 12–18 个月。<br>
+    • DeepSeek 涨价幅度与算力需求数字混有媒体二次解读与 AI 生成内容，以 DeepSeek 官方定价页为准。
+  </div>
+
+  <p class="foot">每日 AI 新闻推送 · 自动化生成 · 2026-08-15 11:39 (GMT+8)</p>
+</div>
+</body>
+</html>

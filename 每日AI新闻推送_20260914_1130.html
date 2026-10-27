@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 — 2026-09-14</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #0d1117;
+  color: #e6edf3;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", sans-serif;
+  line-height: 1.7;
+  padding: 32px 24px 64px;
+}
+.container { max-width: 820px; margin: 0 auto; }
+h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #58a6ff;
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+.meta {
+  font-size: 0.82rem;
+  color: #8b949e;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #21262d;
+}
+.meta span { margin-right: 16px; }
+.section-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #f0883e;
+  margin: 32px 0 16px;
+  padding-left: 10px;
+  border-left: 3px solid #f0883e;
+}
+.card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 22px 24px;
+  margin-bottom: 20px;
+}
+.card h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #e6edf3;
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+.card .source {
+  font-size: 0.78rem;
+  color: #8b949e;
+  margin-bottom: 14px;
+}
+.card h3 {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #58a6ff;
+  margin: 14px 0 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.card p, .card li {
+  font-size: 0.9rem;
+  color: #c9d1d9;
+}
+.card ul { padding-left: 18px; margin: 6px 0; }
+.card li { margin-bottom: 4px; }
+.tags { margin-top: 14px; }
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #7ee787;
+  background: #0d1f0f;
+  border: 1px solid #1a3a1a;
+  border-radius: 4px;
+  padding: 2px 8px;
+  margin-right: 6px;
+  margin-bottom: 4px;
+}
+.links a {
+  color: #58a6ff;
+  text-decoration: none;
+  font-size: 0.82rem;
+  word-break: break-all;
+}
+.links a:hover { text-decoration: underline; }
+.warning-box {
+  background: #1c1400;
+  border: 1px solid #3d2c00;
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin-top: 28px;
+}
+.warning-box h3 {
+  color: #f0883e;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+.warning-box p {
+  font-size: 0.84rem;
+  color: #c9d1d9;
+  margin-bottom: 6px;
+}
+.footer-box {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: #8b949e;
+}
+.footer-box p { margin-bottom: 4px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>每日 AI 前沿技术精选</h1>
+<div class="meta">
+  <span>📅 日期：2026-09-14</span>
+  <span>⏰ 时间：11:30</span>
+  <span>📊 精选条数：3 条</span>
+  <span>🕐 时效窗口：2026-09-13 21:25 – 2026-09-14 11:30（严格24小时）</span>
+</div>
+
+<div class="section-title">今日精选</div>
+
+<!-- Card 1 -->
+<div class="card">
+  <h2>1. MetaRSI-v1：首个元递归自我改进架构</h2>
+  <div class="source">arXiv:2609.06396 | CosmosMind × 斯坦福/伯克利/MIT/清华/北大 等 | 2026-09-14</div>
+
+  <h3>事件概述</h3>
+  <p>CosmosMind联合斯坦福、伯克利、MIT、清华、北大等十余家海内外高校发布技术报告MetaRSI-v1，全球首个统一Model-RSI、Data-RSI、Harness-RSI的元递归自我改进架构，首次把递归自我改进作用于RSI自身——"改进改进本身"。论文arXiv:2609.06396已上线。</p>
+
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><strong>核心机制：</strong>提出统一的Loop Kernel范式，把"进步如何发生"抽象为与对象无关的闭环：消费反馈学习信号，在Data/Harness/Model上提出改动，交由验证器裁决，结果回流。横轴编排算子应用顺序，纵轴优化算子内部策略，形成三层RSI嵌套（算子级→编排级→元策略级），由四个Agent协调运作。</li>
+    <li><strong>实际影响：</strong>不依赖外部教师模型，使30亿激活参数小模型在四项基准上平均自我提升10.9分（SWE-bench Pro解决率接近翻倍），并让GPT-5.6、Claude Opus 5等六款前沿旗舰模型平均提升7.3分。提炼出五条定律。</li>
+  </ul>
+
+  <h3>关键指标/资源</h3>
+  <ul>
+    <li>Qwen3.5-35B-A3B（3B激活）四项基准平均 +10.9分；六款前沿模型 Terminal-Bench 2.1 平均 +7.3分（论文数据）</li>
+    <li>代码：<a href="https://github.com/CosmosMind-ai/RSI-Harness">github.com/CosmosMind-ai/RSI-Harness</a></li>
+    <li>论文：<a href="https://arxiv.org/abs/2609.06396">arxiv.org/abs/2609.06396</a> | <a href="https://www.cosmosmind.ai/research/metarsi-v1">cosmosmind.ai/research/metarsi-v1</a></li>
+    <li>HuggingFace：<a href="https://huggingface.co/CosmosMind/RSI-Harness">huggingface.co/CosmosMind/RSI-Harness</a></li>
+  </ul>
+
+  <div class="tags">
+    <span class="tag">#RSI</span>
+    <span class="tag">#递归自我改进</span>
+    <span class="tag">#元递归</span>
+    <span class="tag">#开源</span>
+  </div>
+</div>
+
+<!-- Card 2 -->
+<div class="card">
+  <h2>2. 上海AI实验室「书生W0物理世界模型」+ 书生·端砚平台全面升级</h2>
+  <div class="source">上海人工智能实验室 | 2026-09-13（浦江创新论坛）</div>
+
+  <h3>事件概述</h3>
+  <p>9月13日，上海人工智能实验室在2026浦江创新论坛升级发布书生·端砚科学发现平台（全面开放全栈服务），并宣布推出国内首款原生融合视觉+力觉+触觉的通用物理世界模型"书生W0"，核心解决传统仿真缺少真实接触反馈的短板。</p>
+
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><strong>核心机制：</strong>书生W0原生融合视觉+力觉+触觉感知，支持感知、预测、动作、修正并行执行，适配机械臂精细操作。书生·端砚构建"可信科研证据链"，围绕交付对齐/独立核验/执行复现三环节组织完整证据链，引入评审智能体七维度核验。联合上海同步辐射光源、中国散裂中子源等大科学装置，打通真实实验闭环。</li>
+    <li><strong>实际影响：</strong>已在生命科学、关键材料、半导体、核聚变、量子、地球气象等方向开展应用，并在蛋白质进化、新材料研发等真实任务中完成计算设计与实验验证闭环。AI从"解题工具"向"完整课题研究工作平台"演进。</li>
+  </ul>
+
+  <h3>关键指标/资源</h3>
+  <ul>
+    <li>书生·端砚在蛋白质进化、新材料研发等任务完成干湿实验闭环（自述数据，未见第三方独立复现）</li>
+    <li>平台全面开放，详情见上海AI实验室官方发布</li>
+  </ul>
+
+  <div class="tags">
+    <span class="tag">#具身智能</span>
+    <span class="tag">#世界模型</span>
+    <span class="tag">#AI4S</span>
+    <span class="tag">#物理仿真</span>
+  </div>
+</div>
+
+<!-- Card 3 -->
+<div class="card">
+  <h2>3. Cursor Projects beta发布：协调者Agent持续工作流模式</h2>
+  <div class="source">Cursor官方博客 | 2026-09-10（Beta向全用户开放）</div>
+
+  <h3>事件概述</h3>
+  <p>Cursor于9月10日发布Projects功能beta版，向所有用户滚动开放。这是一个持久化线程，其中协调者Agent负责调度多个子Agent并行执行复杂任务，而非单Agent从头干到尾。</p>
+
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><strong>核心机制：</strong>协调者不写代码，只管调度和决策，将任务分派给子Agent并行执行；项目运行在Cursor云端（关电脑不影响），子Agent数量可超过本地机器承载上限；每个Project维护一套共享文件，在云和本地间同步，子Agent学到的经验后续可直接复用。支持订阅Slack频道、定时任务、PR/CI事件驱动。</li>
+    <li><strong>实际影响：</strong>代表Coding Agent从"单次任务执行"向"持续编排复杂工程"演进的关键产品化节点。Cursor内部数据显示主要用户PR合并量显著提升。</li>
+  </ul>
+
+  <h3>关键指标/资源</h3>
+  <ul>
+    <li>Cursor内部数据——新用户PR合并量+30%，主力用户+6倍（光标自述，基线定义、选择偏差均未披露，待核实）</li>
+    <li>Coverage：Cursor Bench 4.0同步升级，增加长期复杂项目评测维度</li>
+  </ul>
+
+  <div class="tags">
+    <span class="tag">#AI Coding</span>
+    <span class="tag">#多Agent</span>
+    <span class="tag">#编排层</span>
+    <span class="tag">#Cursor</span>
+  </div>
+</div>
+
+<!-- 待核实 -->
+<div class="warning-box">
+  <h3>⚠️ 待核实</h3>
+  <p>以下数据为发布方自述或二级来源，缺第三方独立复现：</p>
+  <p>• MetaRSI-v1四项基准具体分数（来自学术论文，属第一信源但实验规模有限）</p>
+  <p>• 书生W0物理世界模型"化学实验干湿闭环"的具体成功率指标（自述数据）</p>
+  <p>• Cursor Projects"PR合并量+6倍"数据（光标自述，基线定义、选择偏差均未披露）</p>
+</div>
+
+<!-- 归档状态 -->
+<div class="footer-box">
+  <p><strong>归档状态说明</strong></p>
+  <p>📄 工作区 Markdown：每日AI新闻推送_20260914_1130.md</p>
+  <p>🌐 工作区 HTML：每日AI新闻推送_20260914_1130.html</p>
+  <p>📦 网盘归档：O:/quark/automation/每日 AI 新闻推送/（执行后确认）</p>
+  <p>✅ 执行状态：成功</p>
+</div>
+
+</div>
+</body>
+</html>

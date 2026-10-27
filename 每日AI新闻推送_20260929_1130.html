@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-09-29</title>
+<style>
+  :root {
+    --bg-page: #0d1117;
+    --bg-card: #161b22;
+    --bg-card-alt: #1c2333;
+    --text-main: #e6edf3;
+    --text-muted: #8b949e;
+    --accent-blue: #58a6ff;
+    --accent-green: #3fb950;
+    --accent-orange: #f0883e;
+    --border: #30363d;
+    --tag-bg: #21262d;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg-page);
+    color: var(--text-main);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    padding: 32px 16px;
+  }
+  .container { max-width: 860px; margin: 0 auto; }
+
+  .header {
+    background: linear-gradient(135deg, #1c2333 0%, #0d1117 100%);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 28px;
+  }
+  .header h1 {
+    font-size: 24px;
+    color: var(--accent-blue);
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+  }
+  .meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+    font-size: 14px;
+  }
+  .meta-item { color: var(--text-muted); }
+  .meta-item strong { color: var(--text-main); font-weight: 600; }
+
+  .window-note {
+    background: var(--bg-card);
+    border-left: 3px solid var(--accent-orange);
+    padding: 12px 16px;
+    margin-top: 16px;
+    border-radius: 0 8px 8px 0;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .section-title {
+    font-size: 18px;
+    color: var(--text-main);
+    margin: 28px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+  }
+  .card:hover { border-color: #3d444d; }
+
+  .card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--accent-blue);
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+  .card-title .source {
+    display: block;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-top: 4px;
+  }
+
+  .subsection {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent-green);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 14px 0 8px;
+  }
+  .subsection.amber { color: var(--accent-orange); }
+
+  p { color: var(--text-main); margin-bottom: 8px; }
+
+  ul { list-style: none; padding-left: 0; }
+  ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 8px;
+    color: var(--text-main);
+    font-size: 14px;
+  }
+  ul li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--accent-orange);
+    font-size: 12px;
+    top: 2px;
+  }
+  ul li strong { color: var(--text-main); font-weight: 600; }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 16px;
+  }
+  .tag {
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    color: var(--accent-blue);
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-family: "SF Mono", "Fira Code", monospace;
+  }
+
+  .verify-section {
+    background: var(--bg-card-alt);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent-orange);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 28px 0;
+  }
+  .verify-section h2 {
+    font-size: 16px;
+    color: var(--accent-orange);
+    margin-bottom: 12px;
+  }
+  .verify-section ol {
+    padding-left: 20px;
+    font-size: 14px;
+    color: var(--text-main);
+  }
+  .verify-section ol li {
+    margin-bottom: 8px;
+    padding-left: 4px;
+    position: static;
+  }
+  .verify-section ol li::before { display: none; }
+  .verify-section ol li strong { color: var(--text-main); }
+
+  .dedup-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 28px 0;
+  }
+  .dedup-section h2 {
+    font-size: 16px;
+    color: var(--accent-green);
+    margin-bottom: 12px;
+  }
+  .dedup-section p, .dedup-section li { font-size: 14px; }
+  .dedup-section ul li::before { color: var(--accent-green); }
+
+  .archive-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-top: 28px;
+  }
+  .archive-section h2 {
+    font-size: 16px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+  .archive-section ul { font-size: 14px; }
+  .archive-section ul li { font-size: 14px; }
+  .archive-section .status-ok { color: var(--accent-green); font-weight: 600; }
+  .archive-section .status-warn { color: var(--accent-orange); font-weight: 600; }
+
+  .footer {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>每日 AI 前沿技术精选</h1>
+  <div class="meta-grid">
+    <div class="meta-item"><strong>日期</strong>：2026-09-29</div>
+    <div class="meta-item"><strong>时间</strong>：11:30</div>
+    <div class="meta-item"><strong>精选条数</strong>：4 条</div>
+    <div class="meta-item"><strong>时效窗口</strong>：09-28 23:20 – 09-29 11:30</div>
+  </div>
+  <div class="window-note">
+    <strong>窗口判定</strong>：上次执行 9/28 23:20（第 75 跑），距本次约 12h10m，不足 24h，触发增量收敛。已扫描工作区最近 7 天全部报告及 O: 盘 9/29 00:29 Hermes 产出，纳入去重扫描。未扩展 48h。
+  </div>
+</div>
+
+<div class="section-title">今日精选</div>
+
+<!-- 第 1 条 -->
+<div class="card">
+  <div class="card-title">
+    1. Anthropic 发布 Claude Sonnet 5.5：中端模型编码能力反超旗舰 Opus 5.5，首装网络安全防护层
+    <span class="source">Anthropic 官方 | 2026-09-28 美东</span>
+  </div>
+  <div class="subsection">事件概述</div>
+  <p>Anthropic 于 9/28 发布 Claude Sonnet 5.5，为 Claude 5.5 家族第二成员。输出速度较 Sonnet 5 快 30%+，每任务成本最高降 30%（来自 token 与工具调用效率，非降价），per-token 定价维持 $2/$10 不变。Terminal-Bench 4.0 上 Sonnet 5.5 达 70.6%，反超旗舰 Opus 5.5 的 66.4%；GDPval-AA 知识工作得分 1844，仅落后 Opus 5.5（1846）两分。同时是首个搭载网络安全防护层的 Sonnet 模型，高风险安全类请求将自动回退至 Sonnet 5 处理。</p>
+  <div class="subsection">技术与工程价值</div>
+  <ul>
+    <li><strong>核心机制</strong>：Mid-tier 模型编码能力反超旗舰——FrontierCode 1.1（Max 档）46.2% 超过 GPT-6 Sol xhigh 档 49.3%；OSWorld 2.1 达 80.1% 接近 Opus 5.5 的 81.8%；网络安全防护层将安全能力下沉至中端产品线。</li>
+    <li><strong>实际影响</strong>：Box 实测 2.4 倍提速 + 12% token 减少；Lovable 实测工具调用减少约 1/3；Base44 实测每应用构建 3.6 次迭代 vs Opus 5 的 7.7 次。对 Agent 编排平台：Mid-tier 模型在编码子任务上已可替代旗舰，多 Agent 系统成本结构可显著优化；网络安全回退机制要求安全敏感场景显式路由至旗舰。</li>
+  </ul>
+  <div class="subsection amber">关键指标/资源</div>
+  <ul>
+    <li>Terminal-Bench 4.0 70.6%（vs Opus 5.5 66.4%）；CursorBench 4.0 55.5%（vs 57.8%）；GDPval-AA 1844（vs 1846）；OSWorld 2.1 80.1%；CyScenarioBench 46.1%（vs Sonnet 5 0.7%）（自述数据，未见第三方复现，待核实）</li>
+    <li>Anthropic 官方发布页（anthropic.com/claude-sonnet-5-5）；VentureBeat / The Decoder / TechCrunch（9/28 集中报道）</li>
+  </ul>
+  <div class="tags">
+    <span class="tag">#AI-Coding</span><span class="tag">#模型发布</span><span class="tag">#安全治理</span><span class="tag">#Agent工程</span>
+  </div>
+</div>
+
+<!-- 第 2 条 -->
+<div class="card">
+  <div class="card-title">
+    2. H Company 开源 Holo4 计算机操作 Agent 模型：统一 GUI/代码/MCP/API 多接口，27B 版 CC BY-NC 4.0
+    <span class="source">Hugging Face Blog | 2026-09-28</span>
+  </div>
+  <div class="subsection">事件概述</div>
+  <p>法国 AI 实验室 H Company 于 9/28 发布 Holo4 系列（27B 稠密版 + 35B-A3B MoE 版），定位为「通用计算机操作 Agent 模型」。同一模型支持 GUI 点击、代码生成执行、MCP 工具调用与 API 直接调用四种接口，同一调用范式跑桌面/Web/Android/代码沙箱/业务 API，无需按平台切换模型。权重在 Hugging Face 开放（BF16/FP8/NVFP4/4-bit GGUF），27B 版 CC BY-NC 4.0 非商用，35B-A3B 版 Apache 2.0。同步发布 Holotron4 Nano（基于 NVIDIA Nemotron 3 Nano Omni 基座，NVIDIA 开源模型联盟成员）。</p>
+  <div class="subsection">技术与工程价值</div>
+  <ul>
+    <li><strong>核心机制</strong>：训练数据来自 Agentic Task Factory（内部自动生成环境工厂），覆盖约 10,000 个任务，含 Web 应用、MCP 服务器、桌面环境及混合 GUI+MCP 环境；推理 harness 经 OSWorld 2.0 失败标签驱动重构，支持跨数百步持久化记忆 + 桌面直接 Shell 访问。「任务工厂自动生成训练数据 + 失败驱动 harness 改进」闭环是典型 RSI 辅助数据生成范式。</li>
+    <li><strong>实际影响</strong>：OSWorld 2.0 上 27B 达 61.7%（Opus 5.5 为 81.8%），单任务成本 $1.22 vs Opus 的 $8.48（约 1/7）；基础版 OSWorld 85.2%，单任务 $0.08。Apache 2.0 的 35B-A3B 版（OSWorld 2.0 30.9%）为商用部署唯一选项，长流程场景需结合实际工作流验证。</li>
+  </ul>
+  <div class="subsection amber">关键指标/资源</div>
+  <ul>
+    <li>OSWorld 85.2%（27B）/ 80.8%（35B-A3B）；OSWorld 2.0 61.7%（27B，$1.22/任务）/ 30.9%（35B-A3B，$0.61）；AutomationBench 45.4%（27B，$0.05/任务）（自述数据，完整轨迹已开放，无第三方独立跑分，待核实）</li>
+    <li>Hugging Face Blog（huggingface.co/blog/Hcompany/holo4）；轨迹数据集与 viewer（trajectories.hcompany.ai）；H Models API</li>
+  </ul>
+  <div class="tags">
+    <span class="tag">#AI-Coding</span><span class="tag">#计算机操作</span><span class="tag">#开源模型</span><span class="tag">#Agent工程</span>
+  </div>
+</div>
+
+<!-- 第 3 条 -->
+<div class="card">
+  <div class="card-title">
+    3. NaiveAI 开源 Naive-N0.5-Flash：309B MoE / 15.5B 激活，全层无 Full Attention，MIT 协议
+    <span class="source">Hugging Face | 2026-09-27 发布，9/28 窗口内集中报道</span>
+  </div>
+  <div class="subsection">事件概述</div>
+  <p>北京 NaiveAI 于 9/27 发布 Naive-N0.5-Flash（基于小米 MiMo-V2.5 开放权重基座中训 + 后训），309B 总参数 / 15.5B 激活 MoE，MIT 协议开放权重与推理代码，原生 1M token 上下文。架构核心创新：48 层全部为混合注意力（39 层滑动窗口 128 token + 9 层 DeepSeek 稀疏注意力选 top-2048 token），全栈无任何 Full Attention 层。NaiveAI 称该混合注意力架构由 AI 系统自主探索设计，人类研究者仅负责设定方向与约束。</p>
+  <div class="subsection">技术与工程价值</div>
+  <ul>
+    <li><strong>核心机制</strong>：去 Full Attention 化将长上下文解码开销降至接近局部注意力水平——1M token 上下文中绝大多数层只需计算 128 token 窗口，稀疏层用 indexer 选出 2048 个关键 token，从根本上规避 Full Attention 随上下文线性增长的 O(n) 瓶颈。配套 NaiveRT 推理栈融合 mega-kernel 融合 + PDL + 投机解码，厂商自述标准模式 50 tok/s/用户，极速模式 2,000 tok/s。全程 3.25T token 在 1M 原生长度完成训练。</li>
+    <li><strong>实际影响</strong>：MIT 协议 + 开放权重 + 1M 上下文 + 极低推理成本（$0.10/M 输入），对端侧与中小团队部署长上下文 Coding Agent 有直接工程价值。厂商自述 SWE-Bench Pro 73.6 / Terminal-Bench 2.1 86.7（基准以图片发布，对照口径不完全可比，待核实）。RSI 叙事：内部 RSI 回路每周近 1000 万沙箱环境（峰值 10 万并发），缺乏可量化自持性验证门槛，属厂商自述定位（待核实）。</li>
+  </ul>
+  <div class="subsection amber">关键指标/资源</div>
+  <ul>
+    <li>SWE-Bench Pro 73.6 / Terminal-Bench 2.1 86.7 / Agents' Last Exam 32.4 / ProgramBench Almost@1 17.5（厂商自述，图片发布，无结构化数据，未见第三方复现，待核实）；API $0.10/M 输入 / $0.40/M 输出 / $0.01/M 缓存</li>
+    <li>Hugging Face 模型卡（NaiveAI/Naive-N0.5-Flash，约 315GB，49 文件，含 FP8 + 投机解码 drafter）；NaiveAI 技术博客；Pondero（9/28）/ Pandaily 技术分析</li>
+  </ul>
+  <div class="tags">
+    <span class="tag">#AI-Coding</span><span class="tag">#开源模型</span><span class="tag">#混合注意力</span><span class="tag">#RSI</span>
+  </div>
+</div>
+
+<!-- 第 4 条 -->
+<div class="card">
+  <div class="card-title">
+    4. 22 位 AI 研究者联署《What If Automating AI R&D Triggers an Intelligence Explosion?》：首个包含三大实验室现任首席的 RSI 治理呼吁书
+    <span class="source">Cambridge CASP | 2026-09-28 上线</span>
+  </div>
+  <div class="subsection">事件概述</div>
+  <p>剑桥 CASP 于 9/28 上线 22 位研究者联署论文，作者涵盖 Geoffrey Hinton（多伦多大学荣休教授）、Yoshua Bengio（蒙特利尔大学教授）、Jakub Pachocki（OpenAI 首席科学家，个人身份）、Jack Clark（Anthropic 联合创始人，个人身份）、Eric Horvitz（微软首席科学官）、Dawn Song（Meta AI 研究副总裁）。核心论断：若 RSI 回路在约两年内闭合，将触发「智能爆炸」，极端情形下可能导致人类边缘化甚至灭绝。</p>
+  <div class="subsection">技术与工程价值</div>
+  <ul>
+    <li><strong>核心机制</strong>：引据 Anthropic 内部数据——AI 自研代码占比 2025 年 1 月个位数 → 2026 年 5 月 80%+，AI 主导 R&D 任务从 3 月 1% → 8 月 26%；OpenAI 设定「2028 全自动 AI 研究者」目标。三类风险：① 能力增长快于社会适应；② 人类监控能力失效（Dawn Song：「今天已需要 AI 监控 AI Agent，仅靠人类不够」）；③ 现有权力制衡机制因 AI 超算能力而失效。</li>
+    <li><strong>实际影响</strong>：政策建议四条——强制标准化 R&D 自动化程度上报；派驻常驻监察员（类比 NRC/OCC）；建立可调节或暂停 AI R&D 工作负载的控制机制；制定劳动力市场与地缘政治剧变应急预案。本条是「定速前沿四家协议」（9/15）与「OpenAI 暂停训练」（9/27）主线的直接升级——治理主体从实验室内部协议扩展至跨企业研究者联署 + 政府介入呼吁。</li>
+  </ul>
+  <div class="subsection amber">关键指标/资源</div>
+  <ul>
+    <li>22 位署名者；Anthropic AI 代码占比 80%+ / R&D 任务 AI 主导 26%（截至 2026 年 8 月，论文引据，非独立审计，待核实）；OpenAI 2028 全自动 AI 研究者目标（官方表述，验证标准未公开，待核实）</li>
+    <li>Cambridge CASP（9/28 上线）；The Guardian / WSJ / Axios / Bloomberg 集中报道（9/28 美东）；Yonhap / 朝鲜日报 9/29 跟进</li>
+  </ul>
+  <div class="tags">
+    <span class="tag">#RSI</span><span class="tag">#安全治理</span><span class="tag">#政策监管</span><span class="tag">#前沿模型</span>
+  </div>
+</div>
+
+<!-- 待核实 -->
+<div class="verify-section">
+  <h2>⚠️ 待核实</h2>
+  <ol>
+    <li><strong>Claude Sonnet 5.5 全部基准分数</strong>（Terminal-Bench 4.0 70.6% / CursorBench 4.0 55.5% / GDPval-AA 1844 / OSWorld 2.1 80.1% / CyScenarioBench 46.1%）：均为 Anthropic 自述、自家 harness 跑分，未见第三方独立复现；网络安全回退机制的具体触发条件与覆盖范围未完整披露。</li>
+    <li><strong>Holo4 基准分数与单任务成本</strong>（OSWorld 85.2% / OSWorld 2.0 61.7% / AutomationBench 45.4% / $0.08–$1.22）：H Company 已开放完整轨迹数据集，但各对照模型数据来自不同 harness 与发布时点，口径不完全可比；27B 版 CC BY-NC 4.0 非商用授权限制范围（是否含内部商业应用）待确认。</li>
+    <li><strong>Naive-N0.5-Flash 基准分数</strong>（SWE-Bench Pro 73.6 / Terminal-Bench 2.1 86.7 / Agents' Last Exam 32.4）：厂商自述，以图片形式发布（无结构化数据表），对照模型数据来自不同 harness 口径，未见第三方复现；「AI 自主设计架构」叙事缺乏可量化验证门槛；NaiveRT 推理栈速度为厂商自述。</li>
+    <li><strong>CASP 论文引据的企业数据</strong>（Anthropic AI 代码占比 80%+ / R&D 任务 AI 主导 26% / OpenAI 2028 全自动 AI 研究者目标）：为论文引据，非独立审计；OpenAI 2028 目标实现路径与验证标准未公开。</li>
+    <li><strong>Hugging Face 遭 AI Agent 入侵事件</strong>（Hermes 9/29 00:29 版已报道）：第 74 跑已覆盖沙箱逃逸本体，本条属窗口边缘二次传播，未单独纳入；原始攻击路径技术细节未见官方完整披露。</li>
+  </ol>
+</div>
+
+<!-- 去重说明 -->
+<div class="dedup-section">
+  <h2>去重说明</h2>
+  <p>按「最近 7 天全部报告标题关键词集合」执行强约束去重，覆盖 9/22–9/29 共 6 份报告（第 70–75 跑）+ O: 盘 Hermes 9/29 00:29 版：</p>
+  <ul>
+    <li><strong>Claude Sonnet 5.5（9/28）</strong>：第 73 跑已覆盖 Fable 5.1 九圈 / Anthropic 军事禁令；第 70 跑已覆盖 Opus 5.5 静默灰度。Sonnet 5.5 为 9/28 新发布，非重复。</li>
+    <li><strong>Holo4（9/28）</strong>：历史报告未覆盖 H Company 主体；非重复。</li>
+    <li><strong>Naive-N0.5-Flash（9/27 发布，9/28 集中报道）</strong>：历史报告未覆盖 NaiveAI 主体；非重复。边界放宽：官方首发 9/27 早于窗口起点，因 9/28 Pondero 技术分析 + Pandaily 架构解析 + HF trending 构成窗口内实质发酵增量，已就地标注。</li>
+    <li><strong>CASP 22 位研究者论文（9/28）</strong>：第 63 跑「定速前沿四家协议」（9/15）为实验室内部协议；第 74 跑「OpenAI 暂停训练」（9/27）为单一事件；本条为跨企业联署 + 政府介入呼吁，非重复。</li>
+    <li><strong>排除项</strong>：Microsoft Copilot 全改版（9/25，第 72 跑已覆盖）；全球首款全自主国产电子架构具身智能机器人（央视 9/28 宜昌，Hermes 已报道，无 arXiv/基准，不达标）；OpenAI DevDay 9/29 产品清单（官方未公布，传闻未获确认，数据源未到位，强制留占位不纳入）；宇树 / 蚂蚁灵波（历史多次排除）。</li>
+  </ul>
+</div>
+
+<!-- 归档状态 -->
+<div class="archive-section">
+  <h2>归档状态说明</h2>
+  <ul>
+    <li><strong>工作区 Markdown</strong>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20260929_1130.md</code></li>
+    <li><strong>工作区 HTML</strong>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20260929_1130.html</code></li>
+    <li><strong>网盘归档</strong>：<code>O:/quark/automation/每日 AI 新闻推送/</code>（同步写入上述同名文件）</li>
+    <li><strong>执行状态</strong>：<span class="status-ok">✅ 成功</span>（O: 盘两份文件字节校验一致，md 15706B / html 19732B；第 74/75 跑 davfs Errno 13 锁定问题已恢复）</li>
+  </ul>
+</div>
+
+<div class="footer">
+  生成时间：2026-09-29 11:30 · 工作区 automation-1784106545536 · 第 76 跑
+</div>
+
+</div>
+</body>
+</html>

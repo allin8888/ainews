@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日 AI 前沿技术精选 · 2026-10-26 00:11</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --border:#30363d;
+    --fg:#e6edf3; --muted:#8d96a0;
+    --blue:#4493f8; --green:#3fb950; --orange:#d29922; --red:#f85149;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;padding:24px 16px 64px;background:var(--bg);color:var(--fg);
+    font-family:-apple-system,"Segoe UI","Microsoft YaHei",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.75;font-size:16px}
+  .wrap{max-width:960px;margin:0 auto}
+  h1{font-size:1.85rem;margin:0 0 6px;letter-spacing:.5px}
+  h2{font-size:1.25rem;margin:34px 0 12px;padding-left:11px;border-left:4px solid var(--blue)}
+  h3{font-size:1.05rem;margin:20px 0 8px;color:var(--blue)}
+  h4{font-size:.95rem;margin:16px 0 6px;color:var(--green)}
+  p{margin:8px 0}
+  ul{margin:8px 0 8px 4px;padding-left:20px}
+  li{margin:5px 0}
+  a{color:var(--blue);text-decoration:none;word-break:break-all}
+  a:hover{text-decoration:underline}
+  .meta{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin:16px 0 22px}
+  .meta div{margin:3px 0;color:var(--muted);font-size:.94rem}
+  .meta b{color:var(--fg)}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 22px;margin:16px 0}
+  .warn{border-left:4px solid var(--orange);background:#1c1a12}
+  .tag{display:inline-block;background:#1b222b;border:1px solid var(--border);border-radius:999px;
+    padding:2px 11px;margin:4px 6px 0 0;font-size:.8rem;color:var(--blue)}
+  code{background:#20262e;border:1px solid var(--border);border-radius:4px;padding:1px 5px;
+    font-family:ui-monospace,Consolas,"Courier New",monospace;font-size:.86em;color:#ffd9a0}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.9rem}
+  th,td{border:1px solid var(--border);padding:8px 10px;vertical-align:top;text-align:left}
+  th{background:#1b222b;color:var(--blue);white-space:nowrap}
+  .src{color:var(--muted);font-size:.86rem;margin-top:10px}
+  .self{color:var(--orange);font-weight:600}
+  .foot{color:var(--muted);font-size:.85rem;margin-top:34px;border-top:1px solid var(--border);padding-top:14px}
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>每日 AI 前沿技术精选</h1>
+
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="AI_Coding">AI_Coding</button>
+<button class="filter-chip" data-tag="Agent编排">Agent编排</button>
+<button class="filter-chip" data-tag="基准评测">基准评测</button>
+<button class="filter-chip" data-tag="Agent落地">Agent落地</button>
+<button class="filter-chip" data-tag="语音智能体">语音智能体</button>
+<button class="filter-chip" data-tag="安全">安全</button>
+<button class="filter-chip" data-tag="Agent生成应用">Agent生成应用</button>
+<button class="filter-chip" data-tag="产品发布">产品发布</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. GVS5H「Gorilla vs. 5 Humans」：零训练账本式自编排让 27B 开源权重在 LiveCodeBench Hard 上追平 Claude Fable 5</a><a class="toc-item" href="#entry-2">2. xAI 把 Agent 推向真实世界动作面：Grok Bot 0.77 支持代打电话、通话纪要与支付账户连接</a><a class="toc-item" href="#entry-3">3. Perplexity Computer 对已上线应用做增量开发：浏览器游戏 SF 2049 由单人 free-roam 升级为多人竞速</a>
+</nav>
+<div class="card warn" data-tags="AI_Coding Agent编排 基准评测" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="GVS5H「Gorilla vs. 5 Humans」：零训练账本式自编排让 27B 开源权重在 LiveCodeBench Hard 上追平 Claude Fable 5" data-link="https://github.com/slee-persis/GVS5H">复制</button>
+  <p><b>⚠️ 本期为「严格 24 小时内首发」条数不足说明</b></p>
+  <p>本期窗口经 <code>guardian.py pre</code> 收敛为 <b>12 小时 41 分</b>（周六北京 11:30 → 周日 00:11，对应美东周六 00:30–12:11），叠加 arXiv 周末停更（公告批次仍为 Fri 23 Oct 2026）、头部实验室官方博客整窗口零更新，<b>严格满足「第一信源发布时刻落在窗口内」的条目仅 2 条</b>。按规则：未扩展窗口、未启用已废止的 48 小时降级、未降低入选门槛；另以「边界放宽」方式收录 1 条窗口内实质发酵条目（GVS5H，已就地标注首发日与窗口内触发事件）。</p>
+</div>
+
+<div class="meta">
+  <div><b>日期</b>：2026-10-26</div>
+  <div><b>时间</b>：00:11</div>
+  <div><b>精选条数</b>：3 条（严格窗口内第一方首发 2 条 + 边界放宽 1 条）</div>
+  <div><b>时效窗口</b>：2026-10-25 11:30 – 2026-10-26 00:11（增量收敛：上次执行 10-25 11:30，真实跨度 12h41m；窗口以 guardian pre 快照为唯一依据）</div>
+</div>
+
+<h2>今日精选</h2>
+
+<div class="card priority-1" id="entry-1" data-tags="Agent落地 语音智能体 安全" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="xAI 把 Agent 推向真实世界动作面：Grok Bot 0.77 支持代打电话、通话纪要与支付账户连接" data-link="https://x.com/elonmusk/status/2114365361068138990">复制</button>
+  <h3>1. GVS5H「Gorilla vs. 5 Humans」：零训练账本式自编排让 27B 开源权重在 LiveCodeBench Hard 上追平 Claude Fable 5</h3>
+  <p class="src">第一来源：GitHub slee-persis/GVS5H + Hacker News｜仓库首发 2026-08-26、论文最后更新 09-23；<b class="self">窗口内触发事件为北京时间 10-25 11:56 登 HN 首页（175 分 / 63 评论）</b></p>
+
+  <h4>事件概述</h4>
+  <p>第三方研究者开源 GVS5H——一种<b>免训练</b>的「账本式零样本自编排」（ledger-based zero-shot self-orchestration）harness：让同一个模型的多个<b>全新实例</b>自行拆解问题，并通过一个存放 plan / notes / 当前解法的<b>共享文件系统</b>协调，以五实例规模在 100 道最新困难 LiveCodeBench 题目上把开源权重的 pass@1 推到接近甚至超过 Claude Fable 5 单次调用的水平。仓库 8 月 26 日创建、论文与图表最后更新 9 月 23 日（<b>首发在窗口外</b>）；窗口内的实质事件是其登 HN 首页并引发对基准有效性的集中质疑。</p>
+
+  <h4>技术与工程价值</h4>
+  <ul>
+    <li><b>核心机制</b>：① 无编排者、无训练——协调逻辑写在提示与共享「账本」文件里，实例间靠文件系统读写交接状态，规避中心 orchestrator 的上下文与吞吐天花板；② 11 个开源 / 闭源权重同批测试，pinned backend 上最高提升 <b>25.6 个百分点</b>，作者明确写出负结果「部分模型无提升甚至变差」；③ 两个成本档位：托管侧 Qwen3.8 Flash Next 编排后 pass@1 <b>93.0%</b>（Fable 5 单次调用 90.4%，成本约其 9%）；本地自托管侧 Qwen3.8-27B 从单次 <b>66.8% → 92.4%</b>；④ 转录分析把增益归因于「问题分解 + 持久化上下文」，即推理时<b>组织结构</b>而非思考预算；⑤ 代码 MIT、论文与运行数据 CC BY 4.0，附可复现命令（<code>--engine multiagent</code> / <code>single</code> 对照）。</li>
+    <li><b>实际影响</b>：为「inference-time compute 的第二条腿」提供可复现开源参照，直接支撑自托管成本论证——<b>9% 成本追平前沿编码模型</b>若成立，会把「本地 27B + 编排」变成中小团队可选项。窗口内的社区审查同样有价值：指出生效依据的 LiveCodeBench 更新版（1,055 题）<b>近乎确定存在训练污染</b>、未与 Astra / GPT-6.1 Sol / Fable 5.1 / Opus 5.5 对照、也未做「harness 加持后的对手机位」对照（作者自陈 Opus 5 用旧脚手架单次经 OpenRouter，口径不可比）。与此前 Agentic Shortcutting 基准利用率 82.4% 的可信度危机一脉相承：<b>结论方向可用，绝对分数不可引用</b>。</li>
+  </ul>
+
+  <h4>关键指标/资源</h4>
+  <ul>
+    <li>评测/性能：pass@1 93.0%（Qwen3.8 Flash Next，编排）vs 90.4%（Claude Fable 5，单次调用）；本地 Qwen3.8-27B 66.8% → 92.4%；11 模型 / 100 题、pinned backend 最高 +25.6 pt；托管成本约为 Fable 5 的 9%（<b class="self">全部为作者自述数据，未见第三方复现</b>，且存在基准污染与对照组缺失问题）</li>
+    <li>第三方可观测：GitHub 940 stars / 107 forks（API 实测）；HN 首页 175 分、63 评论（提交时刻 2026-10-25T03:56:01Z = 北京 11:56，落窗口起点后 26 分钟）</li>
+    <li>代码/论文：<a href="https://<a href="https://github.com/slee-persis/GVS5H" target="_blank" rel="noopener">github.com/slee-persis/GVS5H</a>">g<a href="https://ithub.com/slee-persis/GVS5H" target="_blank" rel="noopener">ithub.com/slee-persis/GVS5H</a></a>（MIT 代码 / CC BY 4.0 论文）；<a href="https://<a href="https://news.ycombinator.com/item?id=50228167" target="_blank" rel="noopener">news.ycombinator.com/item?id=50228167</a>">HN 讨论串</a></li>
+  </ul>
+  <p><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI_Coding</span><span class="tag" style="color:#f0883e;border-color:#f0883e">#Agent编排</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#基准评测</span></p>
+</div>
+
+<div class="card priority-2" id="entry-2" data-tags="Agent生成应用 AI_Coding 产品发布" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Perplexity Computer 对已上线应用做增量开发：浏览器游戏 SF 2049 由单人 free-roam 升级为多人竞速" data-link="https://x.com/AravSrinivas/status/2114372064866169210">复制</button>
+  <h3>2. xAI 把 Agent 推向真实世界动作面：Grok Bot 0.77 支持代打电话、通话纪要与支付账户连接</h3>
+  <p class="src">第一来源：官方 X @elonmusk｜2026-10-25 北京 22:31 / 22:35（snowflake 解码核验）</p>
+
+  <h4>事件概述</h4>
+  <p>埃隆·马斯克在 X 宣布 Grok @Bot 现在可以<b>代用户致电个人或商家、代为提出请求、记录通话内容并把摘要回送用户</b>；其引用内容为 Grok Bot 0.77 版本说明，同时包含 Mac 端消息通道接入、加入 Tailscale 私有网络、连接支付账户，以及 Bot 分享邀请需 Premium / Ultra 等条目。</p>
+
+  <h4>技术与工程价值</h4>
+  <ul>
+    <li><b>核心机制</b>：① 语音外呼闭环——拨号 / 等待 / 按键（IVR）/ 转接四类呼叫动作 + 实时转录 + 结构化纪要回送，等于把电话网络当成 Agent 的一个标准工具；② 与已上线的手机原生 App 授权（日历、提醒、通讯录、短信、位置、家庭，逐 App 授权）及邮箱、专属手机号拼出完整的「身份 + 动作」面；③ <b>Tailscale 私网接入</b>是本版本最具工程含义的一项：Agent 从「只能访问公网 API」升级到「可触达内网服务」，同时把支付账户纳入可授权动作集。</li>
+    <li><b>实际影响</b>：Agent 能力边界从「读数据 / 写代码」推进到「打电话、付款、进内网」三类真实世界高价值动作；风险面同向放大——不可逆外呼（对第三方构成骚扰 / 社会工程）、支付授权链路、私网接入后的横向移动面。与 Anthropic 千级并行子代理 + 爆炸半径 containment 属同一周的对偶推进。</li>
+  </ul>
+
+  <h4>关键指标/资源</h4>
+  <ul>
+    <li>评测/性能：xAI 未公布该版本任何量化基准（<b class="self">自述能力清单，未见第三方复现</b>）；背景值——SpaceX 管理层 10-20 财报电话会称 Grok Bot 周付费用户约 80 万、月内翻倍（第三方转述口径，<b>待核实</b>）</li>
+    <li>代码/论文：<a href="https://<a href="https://x.com/elonmusk/status/2114365361068138990" target="_blank" rel="noopener">x.com/elonmusk/status/2114365361068138990</a>">马斯克公告推文</a>；<a href="https://<a href="https://x.com/elonmusk/status/2114364277595488330" target="_blank" rel="noopener">x.com/elonmusk/status/2114364277595488330</a>">支付演示推文</a>；官方 changelog <code>x.ai/changelog/bot</code> 在本环境不可达</li>
+  </ul>
+  <p><span class="tag" style="color:#8b949e;border-color:#8b949e">#Agent落地</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#语音智能体</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#安全</span></p>
+</div>
+
+<div class="card priority-3" id="entry-3">
+  <h3>3. Perplexity Computer 对已上线应用做增量开发：浏览器游戏 SF 2049 由单人 free-roam 升级为多人竞速</h3>
+  <p class="src">第一来源：X @AravSrinivas｜2026-10-25 23:02（snowflake 解码核验）</p>
+
+  <h4>事件概述</h4>
+  <p>Perplexity CEO Aravind Srinivas 展示由其通用智能体 <b>Perplexity Computer</b> 构建并托管在 2049.pplx.app 的赛博朋克浏览器游戏 SF 2049「变大了，而且是多人模式」——即由智能体在<b>同一份已上线产物</b>上继续做功能增量（引入实时同步与竞速玩法），而非重新生成一个演示。</p>
+
+  <h4>技术与工程价值</h4>
+  <ul>
+    <li><b>核心机制</b>：Agent 从「一次性生成 demo」进入「对持续存在的线上服务做二次开发」：需读回既有代码与状态、扩展实时同步逻辑、并保持已发布 URL 可用；发布链路依赖 Perplexity 的 <code>*.pplx.app</code> 托管与沙箱内代码执行。</li>
+    <li><b>实际影响</b>：这是「vibe-coding 产物能否被智能体自己继续维护」的公开样本，指向 Agent 的<b>持续性工程上下文管理</b>这一新瓶颈。需保留判断：本次为<b class="self">产品演示，无准确率 / 成本 / 并发规模等任何量化指标</b>，多人同步的可靠性与可复现性均未披露。</li>
+  </ul>
+
+  <h4>关键指标/资源</h4>
+  <ul>
+    <li>评测/性能：无基准（产品演示事件；官方未披露并发人数、同步机制与实现细节，<b>待核实</b>）</li>
+    <li>代码/论文：<a href="https://<a href="https://x.com/AravSrinivas/status/2114372064866169210" target="_blank" rel="noopener">x.com/AravSrinivas/status/2114372064866169210</a>">Aravind Srinivas 推文</a>；应用 <a href="https://2049.pplx.app">2049.pplx.app</a></li>
+  </ul>
+  <p><span class="tag" style="color:#8b949e;border-color:#8b949e">#Agent生成应用</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI_Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#产品发布</span></p>
+</div>
+
+<h2>窗口内核验记录（七通道，全部实跑）</h2>
+<div class="card priority-4" id="entry-4">
+  <p>窗口 = 北京 2026-10-25 11:30 → 2026-10-26 00:11（UTC 03:30 → 16:11）。逐通道结论：</p>
+  <table>
+    <tr><th>通道</th><th>结论</th></tr>
+    <tr><td>AI HOT items</td><td>窗口内命中 48 / 50 条（limit 50–60 可用）。除本期 3 条外，均为窗口外迟到转载、评论播客类非首发内容，或政策资本法务类（超出五大焦点）。</td></tr>
+    <tr><td>AI HOT dailies</td><td>最新日报 2026-10-25，头条为 OpenAI 前沿训练断网 + CPU 缓存侧信道（官方首发 10-23，窗口外）。</td></tr>
+    <tr><td>arXiv</td><td>公告批次仍为 <b>Fri 23 Oct 2026</b>（69 entries），周末停更 → <b>窗口内学术首发 0 条</b>。四篇被转述论文 abs 页提交历史：TheoPhysEval 2610.16733（10-09）、OpenMobile-2 2610.14157（10-09）、TokenGate 2610.26754（10-19）、Specification-Oracle Gaps 2610.30635（10-22），均早于窗口起点。</td></tr>
+    <tr><td>GitHub releases</td><td>118 个焦点仓库 releases.atom 扫描，<b>窗口内发布事件 0</b>；最近为 gemini-cli nightly 10-25 01:31Z（早于起点 2h），qwen-code v0.26.1 / openclaw v2026.10.7 / Agensh v1.0 均在 10-23~10-24。</td></tr>
+    <tr><td>GitHub 新仓库</td><td><code>created:</code> 精确时刻过滤得窗口内新建仓库 106 个（stars ≥5）：头部为下载器 / ROM 工具等非 AI 项目；AI 相关者均为社区技能与第三方移植（如非官方 DeepSeek Harness 安卓移植 dsh-go），未达门槛。</td></tr>
+    <tr><td>Hacker News</td><td>created_at_i 精确过滤 + points≥2 全量与 AI 关键词两轮检索：头条级仅 GVS5H（175 分，其 artifact 见第 1 条边界放宽说明）；其余为 r/opensource 禁 AI 讨论（64 分）、Show HN Farol（47 分，v0.1.2 发布 10-24 15:15Z 窗口外）与若干 ≤15 分个人工具。</td></tr>
+    <tr><td>Hugging Face（hf-mirror）</td><td>窗口内新建模型 100 条 / 数据集 60 条切片，显著条目 0。官方 org 侧：KRAFTON Raon-1 mini 权重 createdAt 10-20~10-21 UTC、NVIDIA Flora 三件套 10-01 / 10-02（论文 10-20）——均窗口外，10-25 中文报道为迟到转载。</td></tr>
+    <tr><td>官方博客 / RSS</td><td>量子位、机器之心、36氪、OpenAI News、Google Research、Google AI blog、Cloudflare、GitHub、AWS ML、NVIDIA 新闻室、HF Blog：窗口内更新 <b>0 条</b>。不可达通道：Anthropic News RSS（404）、NVIDIA Developer Blog（空 feed）、Cursor / OpenAI changelog / Meta AI / <a href="https://x.ai" target="_blank" rel="noopener">x.ai</a>（连接失败）、Reddit .json（403）。</td></tr>
+  </table>
+</div>
+
+<h2>去重说明</h2>
+<div class="card priority-5" id="entry-5">
+  <ul>
+    <li><b>7 天标题扫描</b>：覆盖 2026-10-19 ~ 10-26 全部 <code>每日AI新闻推送_*.md</code>（第 96–106 跑 + 10-24 22:12 并发版，共 13 份报告 50 条），本期 3 条与其中任何条目均非「同主体 + 同动作」。</li>
+    <li><b>实体去重（dedup_check.py 逐条）</b>：GVS5H → <code>is_dup:false</code>（jaccard 0.065）；Grok Bot 0.77 → <code>is_dup:true</code>（jaccard 0.145，命中 10-09「Grok Bot 专属邮箱」，家族级实体重叠）——按「同主体 + 同动作」判定为<b>不同事件</b>（邮箱 = 寻址身份，本次 = 外呼动作 + 支付 + 私网），沿用第 93/94/95/102 跑先例<b>保留并披露</b>；Perplexity SF 2049 → 精简标题 <code>is_dup:false</code>（jaccard 0.211，匹配 10-24「技能市场 /impeccable」但动作不同：技能分发层 vs 对已上线应用的增量开发），含长括注标题版被判 true（0.236）→ 以精简标题结论为准并在此披露。</li>
+    <li><b>边界放宽披露（本期仅 1 处）</b>：第 1 条 GVS5H 的仓库与论文首发严格在窗口外（8-26 创建 / 9-23 最后更新）；窗口内第一方可核事实为 10-25 11:56 登 HN 首页 + 175 分 / 63 评论的公开发酵与社区审查，已就地标注。</li>
+    <li><b>跨实例扫描（O: 盘当日其他实例）</b>：<code>20261025_0027</code> 与 <code>20261025_1227</code>（另一实例，自述 24–48 小时标准）共 10 条已读取比对；后者 5 条为 Kimi K3.1 Pro 登顶开源榜 / TanStack AI 1.0 + Notion 六代 Agent 框架 / 云深处五项具身成果 / Anthropic IPO 文件料周一公开 / 「AI 生成代码 +741%、瓶颈转移到审查」产业观察——前四条第一方时刻均早于本窗口起点或属传闻，第五条依据的 Linux 基金会报告官方发布于 10-20（窗口外）且属二次报道，未发现重叠的同主体同动作产出。</li>
+    <li><b>时间戳不合格而排除的近失项</b>：KRAFTON Raon-1 mini 预览（权重 10-20~10-21）、微软 Agensh（v1.0 release 10-23、论文 9 月）、Anthropic OSS Scanner（仓库 10-08 建立、官方首发 10-08~09）、NVIDIA Flora（论文 10-20）、TheoPhysEval / OpenMobile-2 / TokenGate / Specification-Oracle Gaps（arXiv v1 10-09 / 10-09 / 10-19 / 10-22）、Google DeepMind 主动式智能体研究、Block Dessa（10-24 02:23）、中科创达 ThunderWorld 2026（10-23）、「求索」EIBench 具身评测体系（10-23）、越疆 DOBOT 欧洲生态大会与 VEGA 7（10-20 / 10-14）、尚品宅配 WorldSimReady-Home（9 月）、Claude 桌面新界面（McCoy 10-24）、Perplexity /impeccable 与 Krea 3 beta（第 106 跑已覆盖）、farol（10-24 发布）、Redwood「Simulated Control Evaluations」（10-24）。</li>
+    <li><b>门槛不足而未纳入</b>：无问芯穹 × 三体宇宙「智子 Agent 1.0」（10-25 官宣，但属 IP 联名发布、无技术细节与实测基准）；《三星堆：未来往事》AI 院线长片票房（10-23 上映，创意内容）；Reddit r/opensource 禁 AI 项目（社区治理）；TestingCatalog 泄露「Google AI Studio 将推托管智能体」（非官方首发）；阿里「千问 Go！」我的应用（第一方首发 10-23）；DeepSeek 传融资 150 亿美元、软银 500 亿美元马来西亚计划、猫王版权方诉讼、盖茨开放权重管制主张（资本 / 政策 / 法务，超出五大焦点）。</li>
+    <li><b>结构性说明（信源侧）</b>：信源健康 <b>ok=3 / warn=0 / error=0</b>（aihot_items 0.6h、aihot_dailies 2026-10-25、arXiv Fri 23 Oct 2026），无 warn/error 信源。另有三处通道级不可达按规则如实披露而不影响窗口与入选判断：<code>x.ai/changelog/bot</code> 与 Anthropic 新闻 RSS、Reddit <code>.json</code>（403）、NVIDIA Developer Blog feed（空）。低供给是「12h41m 周六窗口 + arXiv 周末停更 + 官方博客整窗口静默」的结构性结果，非抓取遗漏。</li>
+    <li><b>规则合规声明</b>：未扩展窗口（终点严格取 guardian pre 快照 2026-10-26 00:11）；<b>未使用已废止的 48 小时降级策略</b>；未降低三选一门槛；未把已报道事件改头换面重报。</li>
+  </ul>
+</div>
+
+<h2>待核实</h2>
+<div class="card priority-6" id="entry-6">
+  <ol style="margin:8px 0 0 20px;padding:0">
+    <li style="margin:7px 0"><b>GVS5H 全部性能数字</b>：93.0% / 90.4% / 66.8%→92.4% / +25.6 pt / 成本 9% 均为作者自述，100 题为自建 LCB 子集；缺第三方在同一分叉上的独立复现，缺与 Opus 5.5 / GPT-6.1 Sol / Fable 5.1 的同口径对照，且 2025 版 LiveCodeBench（1,055 题）被社区指为「近乎确定污染」。→ 缺：第三方复现、干净题目子集、harness 加持后的对手机位对照。</li>
+    <li style="margin:7px 0"><b>Grok Bot 0.77 官方版本说明</b>：0.77 清单（实时转录通话 / Mac 消息通道 / Tailscale / 支付账户 / Premium-Ultra 分享门槛）来自马斯克推文所引用的转述内容，<code>x.ai/changelog/bot</code> 在本环境不可达，未逐项对照官方 changelog；外呼能力的覆盖地区、订阅档位与号码资源未知。</li>
+    <li style="margin:7px 0"><b>Grok Bot 周付费用户 80 万</b>：SpaceX 管理层 10-20 财报电话会口径（第三方转录转述），无消费者 / 企业拆分、无独立审计。</li>
+    <li style="margin:7px 0"><b>Perplexity SF 2049 多人模式实现细节</b>：是否由 Computer 全程自主增量、并发人数上限、实时同步机制、迭代耗时均无披露；该应用为演示性质。</li>
+    <li style="margin:7px 0"><b>OpenAI《Securing our frontier model training environment》与 METR 监控红队报告</b>（第 106 跑遗留）：官方首发 10-23 / 10-22，仍在窗口外，本期继续跟踪；红队发现的漏洞总数与「无易利用且可躲避监控的外网路径」结论均为自述、未见第三方复现。</li>
+    <li style="margin:7px 0"><b>云深处 DEEPRobotics-Brain 五项成果</b>（第 106 跑遗留）：官方公告仍早于窗口起点，预印本位于 <a href="https://developer.deeprobotics.cn" target="_blank" rel="noopener">developer.deeprobotics.cn</a>（JS 渲染，未取得 arXiv ID 列表）；DR-APO 真机 25%→65% 等数字仅有官方与通稿来源。</li>
+    <li style="margin:7px 0"><b>Google AI Studio「托管智能体」</b>（@testingcatalog 10-25 21:32 泄露截图）：Google 未官宣，Agents hub 形态仅有第三方截图。</li>
+  </ol>
+</div>
+
+<h2>归档状态说明</h2>
+<div class="card priority-7" id="entry-7">
+  <ul>
+    <li><b>工作区 Markdown</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261026_0011.md</code></li>
+    <li><b>工作区 HTML</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261026_0011.html</code></li>
+    <li><b>网盘归档</b>：<code>O:/quark/automation/每日 AI 新闻推送/</code>（同步写入上述同名文件）</li>
+    <li><b>执行状态</b>：✅ 成功（<code>archive_latest.py</code> 首轮即 archived 覆盖 md+html、failed / skipped 均为空、probe 写入并清理成功；<code>guardian.py post</code> ok:true、issues 0、window_source=snapshot，窗口与 pre 快照 2026-10-25 11:30 – 2026-10-26 00:11 逐字一致。此后仅回填「执行状态 / 收尾固化」两行状态文本，经 rename 避让网盘 v1 为 <code>_superseded_每日AI新闻推送_20261026_0011_v1.{md,html}</code> 后重新归档 v2 并复检）</li>
+    <li><b>收尾固化</b>：5 ok / 0 failed / 0 skipped（kb 重建 / rss 刷新（本地 + 网盘滚动名）/ 归档总索引重建 / 待核实追踪 scanned 91、subjects 194、added 5、open 194 / 信源健康 ok=3 warn=0 error=0；终稿归档后重跑一次，确保 KB / RSS / 总索引使用终稿内容）</li>
+  </ul>
+</div>
+
+<div class="foot">每日 AI 前沿技术精选 · 自动化产出 · 窗口 2026-10-25 11:30 – 2026-10-26 00:11（guardian pre 快照）</div>
+
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>

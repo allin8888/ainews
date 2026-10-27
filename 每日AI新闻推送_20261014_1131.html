@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-10-14</title>
+<style>
+:root{
+  --bg:#0d1117; --card:#161b22; --card-alt:#1a2033; --border:#30363d;
+  --text:#e6edf3; --muted:#8b949e; --accent-blue:#58a6ff; --accent-green:#3fb950;
+  --accent-orange:#d29922; --accent-red:#f85149; --tag-bg:#21262d;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;line-height:1.75;padding:32px 16px}
+.wrap{max-width:860px;margin:0 auto}
+header{margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+h1{font-size:1.7rem;font-weight:700;margin-bottom:10px}
+h1 .dot{color:var(--accent-orange)}
+.meta{color:var(--muted);font-size:.9rem;line-height:1.9}
+.meta b{color:var(--text);font-weight:600}
+.notice{background:rgba(210,153,34,.12);border:1px solid var(--accent-orange);border-radius:8px;padding:10px 14px;font-size:.85rem;color:var(--accent-orange);margin:14px 0}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:22px 24px;margin-bottom:18px}
+.card h2{font-size:1.1rem;font-weight:600;margin-bottom:14px;color:var(--accent-blue);line-height:1.5}
+.card h2 .num{color:var(--accent-orange);margin-right:6px}
+.card h2 .src{display:block;font-size:.78rem;color:var(--muted);font-weight:400;margin-top:4px}
+.sub{font-size:.82rem;text-transform:uppercase;letter-spacing:.05em;color:var(--accent-green);font-weight:600;margin:14px 0 6px}
+.sub.o{color:var(--accent-orange)}
+ul{padding-left:18px}
+li{margin-bottom:6px;font-size:.94rem}
+li b{color:var(--text)}
+.tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.tag{background:var(--tag-bg);border:1px solid var(--border);border-radius:20px;padding:2px 12px;font-size:.78rem;color:var(--accent-blue)}
+h3.section{font-size:1.25rem;font-weight:700;margin:30px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--accent-orange)}
+.pending-item{font-size:.88rem;margin-bottom:10px;padding-left:20px;position:relative}
+.pending-item::before{content:"⚠";position:absolute;left:0;color:var(--accent-orange);font-size:.85rem}
+.archive{background:var(--card-alt);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-top:26px}
+.archive h3{font-size:1rem;color:var(--accent-green);margin-bottom:12px}
+.archive ul{list-style:none;padding:0}
+.archive li{font-size:.86rem;margin-bottom:7px;padding-left:18px;position:relative}
+.archive li::before{content:"▸";position:absolute;left:0;color:var(--accent-green)}
+.archive code{background:var(--tag-bg);padding:1px 6px;border-radius:4px;font-size:.8rem;color:var(--accent-blue)}
+.archive .status{color:var(--accent-green);font-weight:600}
+.dedup{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-top:18px}
+.dedup h3{font-size:1rem;color:var(--accent-blue);margin-bottom:12px}
+.dedup li{font-size:.88rem}
+footer{margin-top:30px;padding-top:16px;border-bottom:0;border-top:1px solid var(--border);color:var(--muted);font-size:.78rem;text-align:center}
+a{color:var(--accent-blue);word-break:break-all}
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1><span class="dot">●</span> 每日 AI 前沿技术精选</h1>
+<div class="meta">
+<b>日期</b>：2026-10-14 &nbsp;|&nbsp; <b>时间</b>：11:31 &nbsp;|&nbsp; <b>精选</b>：5 条<br>
+<b>时效窗口</b>：2026-10-13 11:31 – 2026-10-14 11:31（严格 24 小时）
+</div>
+<div class="notice">⚠️ 窗口说明：记忆文件记录「上次执行时刻」为 2026-10-13 11:30（第 90 跑），距本次执行约 24 小时 01 分，未触发增量收敛，按基准窗口「执行时刻前推 24 小时」执行；未启用已废止的 48 小时降级策略。本窗口内 arXiv 可公开检索的最新公告批次为 10-12（cs.RO / cs.LG 列表页实测），10-13 提交批次尚未进入公开列表，故本期无窗口内 arXiv 学术首发，以官方工程博客与产业发布为主。</div>
+</header>
+
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. Anthropic 自研版本控制系统 Scion 全面替代 git：Agent 规模合并量逼停人类时代的基础设施</a><a class="toc-item" href="#entry-2">2. Gemini 4 Argon 全球 GA + 通宵无人值守优化 20 万行 ADK 代码库：前沿模型首次公开长程 Agent 实盘全记录</a><a class="toc-item" href="#entry-3">3. XBOW 用 GPT-5.6 Sol 六天构建 Chrome 全链利用：单研究员 + Agent 穿越两层沙箱，获 Google 25 万美元全链奖励</a><a class="toc-item" href="#entry-4">4. 自然意志发布 Natura-1：百万小时第一人称视频预训练的 50B 物理世界基础模型</a><a class="toc-item" href="#entry-5">5. 魔法原子 EchoPolicy-0 登顶 MolmoSpaces 全球第一：VLM Agent 框架把 VLA 从「演示可用」推向「产线可用」（魔法原子 MagicLab Studio / MolmoSpaces</a>
+</nav>
+<div class="card priority-1" id="entry-1">
+<h2><span class="num">1.</span>Anthropic 自研版本控制系统 Scion 全面替代 git：Agent 规模合并量逼停人类时代的基础设施<span class="src">Anthropic Engineering | 2026-10-13</span></h2>
+<div class="sub">事件概述</div>
+<p style="font-size:.94rem">Anthropic 发布工程复盘《Redesigning source control at Anthropic》：因 Claude 编码 Agent 使 monorepo 日均合并代码量从 2026 年 5 月的约 2,500 增至 9 月的超 30,000，7 名工程师用 5 个月自研版本控制系统 Scion 并完成全量迁移，同时产出代码评审工具 Antique。官方 X 公告时间为北京时间 2026-10-14 00:36。</p>
+<div class="sub o">技术与工程价值</div>
+<ul>
+<li><b>核心机制</b>：Scion 放弃 git「客户端常持完整副本、可离线工作」的前提，改为「客户端永远在线 + 服务端不对称」架构——历史/blame/提交/合并/rebase 全部在服务端完成；工作单元是 changeset（预写日志条目，记录相对首个父提交的变更文件清单 + 内容寻址 blob 指针），无 packfile、无全局 ref（仅保留 main 与发布分支）；稀疏检出 + 虚拟化检出（按需落地文件）；客户端 → scion-daemon → 区域 scion-cache → scion-server（Spanner/云存储）四级缓存每层命中率 &gt;99%。配套 Antique 代码评审、代码搜索与源码控制 IAM 同期建成。</li>
+<li><b>实际影响</b>：Anthropic 自述新基础设施 CPU/内存占用为此前数百个 git mirror 方案的 1/200，CI 与研究任务检出从分钟级进入秒级（两个数量级），CI 单项节省 25% CPU 容量；流程上取消 merge queue、改为合并后与部署前自动化测试，评审从「逐行读代码」转向「审变更意图」。这是目前公开渠道中对「Agent 写代码速度超过人类基础设施承载力」最完整的第一方工程记录。</li>
+</ul>
+<div class="sub">关键指标/资源</div>
+<ul>
+<li>规模数据（自述，未见第三方复现）：日均合并 ~2,500（5 月）→ 30,000+（9 月），单日峰值 30,401（9/9）；主分支历史近 100 GB，压缩工作副本 &gt;25 GB，CI 日均检出约 2,500 万次，naive 拉取相当于日均 &gt;600 PB git 流量；Scion 由 7 人 5 个月建成，Claude 参与了大部分代码编写（Mythos Preview 曾把数据摄入管道重写为省 20× 内存、快 4× 的版本）。</li>
+<li>发布策略：Scion <b>不开源</b>，官方明确「不是 git 的通用替代品」，呼吁 git 上游采纳兼容的服务端与协议改进；预计其他 AI 编码组织将在 6–12 个月内遇到同类瓶颈。</li>
+<li>链接：<a href="https://<a href="https://www.anthropic.com/engineering/redesigning-source-control" target="_blank" rel="noopener">www.anthropic.com/engineering/redesigning-source-control</a>">a<a href="https://nthropic.com/engineering/redesigning-source-control" target="_blank" rel="noopener">nthropic.com/engineering/redesigning-source-control</a></a>；官方 X：@AnthropicAI（2026-10-14 00:36 北京）</li>
+</ul>
+<div class="tags"><span class="tag">#AI Coding</span><span class="tag">#基础设施</span><span class="tag">#版本控制</span><span class="tag">#Agent</span></div>
+</div>
+
+<div class="card priority-2" id="entry-2">
+<h2><span class="num">2.</span>Gemini 4 Argon 全球 GA + 通宵无人值守优化 20 万行 ADK 代码库：前沿模型首次公开长程 Agent 实盘全记录<span class="src">Google Blog / Google Developers Blog | 2026-10-13</span></h2>
+<div class="sub">事件概述</div>
+<p style="font-size:.94rem">Google 于 10-13 16:00 UTC（北京时间 10-14 00:00）宣布 Gemini 4 Argon 面向开发者、企业、科学家与消费者全球开放（GA），同步公开首批真实工程案例；其中 ADK 团队用 Argon 在 Antigravity 中对约 20.5 万行的 google/adk-python 完成 11 小时无人值守优化，是迄今细节最完整的长程编码 Agent 公开复盘。注：模型本体 9/30 首发（Fairwind 分阶段开放）已入第 78 跑，本条为 GA + 实盘案例增量，非同事件重复收录。</p>
+<div class="sub o">技术与工程价值</div>
+<ul>
+<li><b>核心机制</b>：GA 覆盖 Gemini API / AI Studio / Antigravity（Ultra）/Gemini 应用与搜索 AI Mode（Ultra+Pro）。ADK 案例的关键不在模型单体能力，而在「约束 + 目标持久化」工程范式：第二轮运行把维护者规范写入仓库 <code>.agents/skills</code>（SKILL.md 索引 + references/ 按需读取，避免上下文膨胀），并开启 Antigravity <code>/goal</code> 模式让目标在上下文压缩后不丢失；模型通宵自主跑基线、读规范、改代码、自审 diff，最后 3 分钟还在自建多 Agent 缓存里自查出一个 bug 并重跑全部 16,892 个单元测试后才自行停止。</li>
+<li><b>实际影响</b>：6 项优化（32 个文件）经人工评审仅合入 2 项（会话历史先过滤再拷贝，用循环安全 copier 替换通用深拷贝；FastAPI/OpenTelemetry 等重型依赖改惰性加载），长会话每轮请求前的内存准备开销降约 40%、冷启动导入提速 21%，158 轮工具调用累计省约 10 秒纯框架开销。第一轮（无规则、2 小时）虽找到真实瓶颈但违反维护者约定（擅改公开 JSON schema、只跑就近 216 个测试、PR 不附前后数据），构成「规则内化」重要性的对照实验。</li>
+</ul>
+<div class="sub">关键指标/资源</div>
+<ul>
+<li>评测/性能：Artificial Analysis 智能指数与 GPT-6 Astra 并列第一、Cost per Task 为其 60%（第三方口径）；Vals Index 综合第一（68.9）；OpenRouter 上线页面显示 AutomationBench 51.3%、LVBench 91.7%、CWE-bench v1 68% 并列第一；introductory 定价 $2/M 输入、$10/M 输出（缓存输入 95% off）。卡兹克实测认为知识工作强但 CUA-bench 仅 4.83%、额度消耗快、中文写作味道重（单一作者主观结论，待核实）。</li>
+<li>同批 Google 案例（自述）：Chrome 团队从约 600 万行遗留目录中拆分核心网页处理机制（数百文件、月级工作量压缩至周级）；Agentic 代码提交 +35%、回滚 -1/3；xTB 量子化学包 2.3× 结构预测 / 1.8× 构象搜索（已合入上游）；Gemma 4 E2B 在 A100 vLLM 上 2.85× 端到端加速（3.79 万 → 10.8 万 tok/s，100% token 一致）。</li>
+<li>链接：<a href="https://blog.google/products/gemini/gemini-4-argon/">blog.google/products/gemini/gemini-4-argon</a>；ADK 工程深潜（Bo Yang 等，Google Developers Blog）；OpenRouter 模型页</li>
+</ul>
+<div class="tags"><span class="tag">#AI Coding</span><span class="tag">#前沿模型</span><span class="tag">#Agent</span><span class="tag">#长程任务</span></div>
+</div>
+
+<div class="card priority-3" id="entry-3">
+<h2><span class="num">3.</span>XBOW 用 GPT-5.6 Sol 六天构建 Chrome 全链利用：单研究员 + Agent 穿越两层沙箱，获 Google 25 万美元全链奖励<span class="src">XBOW Research | 2026-10-13</span></h2>
+<div class="sub">事件概述</div>
+<p style="font-size:.94rem">XBOW 在研究博客公开 Chrome 全链利用完整技术细节：一名研究员与 GPT-5.6 Sol Agent 用 6 天（8/2–8/7）把三个此前未知漏洞串成「普通标签页内 JavaScript → 渲染器沙箱外代码执行」的完整利用链，Google 复现修复（Chrome 152）并开出 VRP 新规下首笔 25 万美元全链奖励。注：奖项公告 10/9（Business Wire）早于本窗口，完整根因分析与利用机制 10/13 首次公开，为本条纳入依据。</p>
+<div class="sub o">技术与工程价值</div>
+<ul>
+<li><b>核心机制</b>：链条跨两层防护、三个漏洞——① V8 Maglev 去优化时将可变 HeapNumber 当作不可变常量在对象间共享，获得指针压缩 cage 内任意读写；② 动画 WebP 解码器中已转交的 ArrayBuffer 仍可经未分离视图修改，缓存帧几何 + 篡改字节合成一次 cage 外原生写（CVE-2026-85045）；③ Crashpad 把对「已冻结」渲染器的一次失败读取当作稳定证据，重试期间 freeze-exempt 线程改写页属性导致溢出，在沙箱外崩溃处理进程取得代码执行（CVE-2026-78952）。方法上采用并行战役拆分（广谱漏洞搜索 / V8 内存破坏 / V8 沙箱逃逸 / 渲染器沙箱逃逸 / 集成），每阶段备独立备份路线与干净接口，坏件可替换而不重建全链；人类负责选目标、供上下文、质疑与改道，Agent 负责搜源码、验假设、建 PoC、写利用阶段。</li>
+<li><b>实际影响</b>：官方对比：LLM 之前全链利用需 4 人团队 6–9 个月，XBOW 首版提交耗时 2 个月（其中一个漏洞已被 Google 知悉而 disqualify），获奖版 6 天；6 天内共发现 11 个漏洞（Dolan-Gavitt 在 HN 自述）。修复前该类缺陷位于约 10 亿 Windows 版 Chrome 用户路径上（XBOW 估算），从未被实际使用。de Moor 的结论是限制模型发布无意义（模型本就公开），防御方需要同等速度的自扫能力。</li>
+</ul>
+<div class="sub">关键指标/资源</div>
+<ul>
+<li>成本/周期（自述）：获奖链条 API 花费约 4 万美元（由 Codex 日志重建）；6 天 vs 人类基线 6–9 个月；10 亿暴露面为厂商估算，待核实。</li>
+<li>奖项定性：Google 2026 年 4 月 VRP 新规下首笔 Chrome 全链奖励，也是首个授予自主攻安平台的同类奖励；奖金将用于 NGO 安全项目。</li>
+<li>链接：<a href="https://<a href="https://xbow.com/labs/research/zero-to-calc-in-six-days-inside-xbow-chrome-full-chain" target="_blank" rel="noopener">xbow.com/labs/research/zero-to-calc-in-six-days-inside-xbow-chrome-full-chain</a>">x<a href="https://bow.com/labs/research/zero-to-calc-in-six-days-inside-xbow-chrome-full-chain" target="_blank" rel="noopener">bow.com/labs/research/zero-to-calc-in-six-days-inside-xbow-chrome-full-chain</a></a>；奖项稿（Business Wire，10/9）</li>
+</ul>
+<div class="tags"><span class="tag">#AI Coding</span><span class="tag">#安全</span><span class="tag">#Agent</span><span class="tag">#漏洞研究</span></div>
+</div>
+
+<div class="card priority-4" id="entry-4">
+<h2><span class="num">4.</span>自然意志发布 Natura-1：百万小时第一人称视频预训练的 50B 物理世界基础模型<span class="src">自然意志技术报告《行动的意志》/ 晚点 LatePost | 2026-10-13</span></h2>
+<div class="sub">事件概述</div>
+<p style="font-size:.94rem">成立仅 9 个月的自然意志（真格天使项目）10/13 正式发布首个物理世界通用基础模型 Natura-1：以 100 万小时第一人称（Ego-Centric）人类视频预训练，语言/图像/视频/动作统一进 50B MoE 单一序列模型，官方技术报告《行动的意志 The Will to Act》同步公开，晚点 LatePost 同日发布深度访谈。</p>
+<div class="sub o">技术与工程价值</div>
+<ul>
+<li><b>核心机制</b>：数据管线用 20 余种底层算子持续执行去重、质量筛查、分布控制，从单目/双目视频恢复手部与全身运动，并把全局目标细化为子任务与原子步骤，形成「视频—语言—动作」多层级轨迹；数十 PB 数据湖仓每周可产出 35 万小时训练数据且随算力线性扩展。训练端样本分发 + 缓存预取，生产配置下 MFU &gt;50%、GPU 利用率 98%；自研 Attention 算子前向/反向基准平均约 1,200 TFLOP/s（约为调优后 FlexAttention 基线的 6 倍）；推理端 Rust 协调调度与常驻 GPU 状态缓存复用，观测到动作端到端延迟严控在 100 ms 内。</li>
+<li><b>实际影响</b>：Natura-1 演示零样本指令遵循（含末端位置与姿态的细粒度指令）、双手协作、长程任务中跟踪被移动/打开物体的状态，并出现未经训练的涌现行为（把扑克牌推过盒沿创造可抓悬空、借助穿篮杆拉近篮子取毛线、按笔记本空格键唤醒电脑）。全球公开可查的百万小时级 Ego 预训练具身模型此前不超过三家，该团队是达成速度最快的一家，为具身智能的「数据 Scaling」路线提供了新的工程样本。</li>
+</ul>
+<div class="sub">关键指标/资源</div>
+<ul>
+<li>评测/性能（全部为技术报告自建真机评测自述，无第三方基准）：基础任务成功率 53.4%，加记忆/纠错后 59.1%；同套测试中 π0.5 为 13.5%、GPT-6 Astra 为 16.7%（均为夹爪配置，两者灵巧手配置均无可计分结果）。LatePost 明确指出 π0.5 是去年开源模型、GPT-6 Astra 非机器人专用模型，该结果「更适合说明 Natura-1 的特长，不能直接理解为行业排名」；π0.7 / Helix-02 / Gen-1.5 / Dyna-2 等顶尖模型无法公开调用，未参评。</li>
+<li>资源：技术报告《行动的意志 The Will to Act》；晚点 LatePost《数百万小时、500 亿参数，自然意志的 Scaling 信仰》（10/13）；深潮 TechFlow 英文稿。</li>
+</ul>
+<div class="tags"><span class="tag">#具身智能</span><span class="tag">#基础模型</span><span class="tag">#Scaling</span><span class="tag">#第一人称数据</span></div>
+</div>
+
+<div class="card priority-5" id="entry-5">
+<h2><span class="num">5.</span>魔法原子 EchoPolicy-0 登顶 MolmoSpaces 全球第一：VLM Agent 框架把 VLA 从「演示可用」推向「产线可用」<span class="src">魔法原子 MagicLab Studio / MolmoSpaces（AI2）| 2026-10-13</span></h2>
+<div class="sub">事件概述</div>
+<p style="font-size:.94rem">10/13，艾伦人工智能研究所（AI2）发起的零样本具身评测 MolmoSpaces 最新榜单上，魔法原子 MagicLab Studio 的统一 VLM Agent 框架 EchoPolicy-0 以 75.4% 四项任务等权平均成功率位列 Combined 全球第一（3,915 局全量评测）；同门 3.4B 轻量框架 MagicBrain 以 72.4% 位列第四，抓取成功率 94.4% 并拿下 Pick-v1、Pick &amp; Place-v1 两项单项第一。</p>
+<div class="sub o">技术与工程价值</div>
+<ul>
+<li><b>核心机制</b>：EchoPolicy-0 不改模型输入，而是把「观察—理解—选能力—执行—验证」组织成闭环：VLM Agent 管语义目标与任务状态，几何工具提供可检查的空间交互，通用动作策略生成多候选轨迹，再由 VLM 按目标引导从候选中筛选（候选投影到图像平面匹配视觉目标），执行后持续验证、失败重规划。MagicBrain 走更轻路线：上下文视觉引导让擅长看的模型先标记目标、再交给动作模型执行，把「看懂在哪」与「动手去做」解耦，直击 VLA「听懂指令」短板。官方判断指令遵循是当前通用任务最大难点，具身大脑应采用分层协同（上层理解/规划/纠错，下层专注物理执行）。</li>
+<li><b>实际影响</b>：94.4% 抓取成功率与统一框架的「即插即用」特性（新任务接入同一框架而非从零搭系统）正对工厂分拣、仓储搬运等依赖稳定抓取的场景；团队下一步将融合两条技术线进入真实工业场景持续测试，搭建「部署—采集—训练—评测」循环，把验证成熟的能力做成标准化模块。</li>
+</ul>
+<div class="sub">关键指标/资源</div>
+<ul>
+<li>评测/性能（自提交跑分，3,915 局已披露；仿真基准，真机待验证）：EchoPolicy-0 75.4% 平均 / Combined 第一；MagicBrain 72.4% / 第四、Pick 94.4%、两项单项第一；MolmoSpaces 生态含 23 万+ 室内环境、约 13 万物体资产，刚体/关节交互与统一计分。EchoPolicy-0 已在 Franka 单臂完成四类操作验证。</li>
+<li>链接：MolmoSpaces 官方榜单；量子位《抓取成功率从 70% 跃至 94.4%！国产具身框架逼近产线可用门槛》（10/13）；大河财立方 / 新华日报报道（10/13）。</li>
+</ul>
+<div class="tags"><span class="tag">#具身智能</span><span class="tag">#VLA</span><span class="tag">#Agent</span><span class="tag">#基准评测</span></div>
+</div>
+
+<h3 class="section">待核实</h3>
+<div class="pending-item">Scion 规模数字：200× 足迹缩减、2,500 万次日检出、&gt;600 PB/日流量、+25% CI CPU 均为 Anthropic 自述；Scion 不开源、无第三方复现途径。</div>
+<div class="pending-item">ADK 通宵案例数据：-40% / +21% / 158 轮 66s→56s 为 Google 自述；两项优化已合入 google/adk-python，可通过 PR 与基准复测。</div>
+<div class="pending-item">XBOW 成本与暴露面：约 4 万美元算力为 Codex 日志重建值；「约 10 亿 Windows Chrome 用户暴露」为 XBOW 估算；奖励细则以 Google VRP 官方为准。</div>
+<div class="pending-item">Natura-1 全部基准：53.4% / 59.1% / π0.5 13.5% / GPT-6 Astra 16.7% 均为公司技术报告自建评测自述，缺第三方基准；对照模型为夹爪配置。</div>
+<div class="pending-item">魔法原子 MolmoSpaces 成绩：榜单跑分为厂商自提交（3,915 局已披露口径），仿真环境，真机表现待验证。</div>
+<div class="pending-item">Gemini 4 Argon GA 口径：定价与基准为官方口径；AA「并列第一 / 60% 成本」与卡兹克实测「CUA-bench 4.83%、体验糟糕」并存，后者为单一作者主观结论。</div>
+
+<div class="archive">
+<h3>归档状态说明</h3>
+<ul>
+<li><b>工作区 Markdown</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261014_1131.md</code></li>
+<li><b>工作区 HTML</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261014_1131.html</code></li>
+<li><b>网盘归档</b>：<code>O:/quark/automation/每日 AI 新闻推送/</code>（同步写入上述同名文件）</li>
+<li><b>执行状态</b>：<span class="status">✅ 成功</span></li>
+</ul>
+</div>
+
+<div class="dedup">
+<h3>去重与筛选说明</h3>
+<ul>
+<li><b>去重基线</b>：扫描工作区最近 7 天全部报告（20261008_0956 / 20261008_1030 / 20261009_1130 / 20261010_1145 / 20261011_1130 / 20261012_1130 / 20261013_1130）及历史知识库（kb/entries.jsonl，271 条）；5 条候选逐条执行 tools/dedup_check.py，均判定 is_dup: false。Gemini 4 Argon GA 与第 78 跑「模型本体 9/30 发布」共享主体但动作不同（首发 vs 全球 GA + 实盘案例），已在条目内就地标注。</li>
+<li><b>排除项</b>：Meta Muse Wonder (Max) 入 Arena 榜（模型本体已入第 90 跑）；微软 Maia 300（官方博客发布于当地时间 10-12，第一信源早于窗口起点）；VS Copilot / SSMS RCE CVE-2026-103572（窗口内，但 AI Coding 安全向已由 Xbow 条目覆盖，候选已满）；哈啰 Robotaxi HelloWorld（10/13 官方发布但无技术细节与实测基准，未达入选门槛）；Oneira（arXiv:2610.01614，约 10/1 提交）；Noiz × HKUST Helix World（论文 9/29）；宇树 UnifoLM-WLA-1.0（10/13 中文再报道，非新事件）；AgiBot GE-Act 2.0（首发 9/11，10/13 为解读）；Anthropic RSI 研发自动化指数（官方发布 9 月，10/13 为中文综述）；商汤 SenseNova-U1.5（既往开源事件回锅）；OpenAI 300 亿美元融资（纯资本事件）；NVIDIA 洽购 Reflection AI（仅聚合器二级源）；Character.AI Chapter 11 破产 + Disney 2,000 万美元资产出售（产业资本事件，非核心技术领域）；ComfyUI NVIDIA VFX 节点 / Apple HomeView / 千问 AI 眼镜 / LangSmith AI Search / ElevenLabs 上议院 AI 嗓音（未达入选门槛或非核心关注领域）。</li>
+<li><b>窗口内 arXiv 供给说明</b>：经 arXiv cs.RO / cs.LG 列表页实测，可公开检索的最新公告批次为 Mon 12 Oct（10-13 提交批次尚未进入公开列表），本期无窗口内 arXiv 学术首发；已按「禁止以转载时间作为入选依据」规则剔除多篇窗口外论文的窗口内中文解读稿。</li>
+</ul>
+</div>
+
+<footer>每日 AI 前沿技术精选 · 严格 24 小时窗口 · 2026-10-14 11:31</footer>
+</div>
+</body>
+</html>

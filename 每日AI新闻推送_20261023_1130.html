@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-10-23</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --card-border: #30363d;
+    --text: #e6edf3;
+    --text-dim: #9da7b3;
+    --accent: #58a6ff;
+    --green: #3fb950;
+    --orange: #d29922;
+    --red: #f85149;
+    --purple: #bc8cff;
+    --code-bg: #1f2430;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 24px 16px 48px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    line-height: 1.75;
+    font-size: 15px;
+  }
+  .container { max-width: 960px; margin: 0 auto; }
+  header.hero {
+    background: linear-gradient(135deg, #161b22 0%, #1a2332 100%);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+  }
+  header.hero h1 {
+    margin: 0 0 14px;
+    font-size: 26px;
+    letter-spacing: 0.5px;
+    color: var(--text);
+  }
+  header.hero h1 .em { color: var(--accent); }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    color: var(--text-dim);
+    font-size: 13.5px;
+  }
+  .meta b { color: var(--text); font-weight: 600; }
+  .meta .window { color: var(--orange); }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 26px 30px;
+    margin-bottom: 22px;
+  }
+  .card h2 {
+    margin: 0 0 18px;
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--text);
+    border-left: 4px solid var(--accent);
+    padding-left: 12px;
+  }
+  .card h2 .idx { color: var(--accent); margin-right: 6px; }
+  .card h2 .src { display: block; font-size: 13px; color: var(--text-dim); font-weight: 400; margin-top: 4px; }
+  .card h3 {
+    margin: 18px 0 8px;
+    font-size: 15.5px;
+    color: var(--accent);
+  }
+  .card p { margin: 8px 0; }
+  .card ul { margin: 8px 0; padding-left: 22px; }
+  .card li { margin: 6px 0; }
+  .card li b { color: var(--green); }
+  a { color: var(--accent); text-decoration: none; word-break: break-all; }
+  a:hover { text-decoration: underline; }
+  code {
+    background: var(--code-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 6px;
+    padding: 1px 6px;
+    font-size: 13px;
+    font-family: "Cascadia Code", Consolas, "Courier New", monospace;
+    color: #79c0ff;
+  }
+  .tags { margin-top: 14px; }
+  .tag {
+    display: inline-block;
+    background: rgba(88, 166, 255, 0.12);
+    border: 1px solid rgba(88, 166, 255, 0.35);
+    color: var(--accent);
+    border-radius: 999px;
+    padding: 2px 12px;
+    font-size: 12.5px;
+    margin: 2px 6px 2px 0;
+  }
+  .divider {
+    border: none;
+    border-top: 1px dashed var(--card-border);
+    margin: 28px 0;
+  }
+  .note-card { border-left: 4px solid var(--orange); }
+  .note-card h2 { border-left: none; padding-left: 0; color: var(--orange); }
+  .note-card ul { color: var(--text-dim); }
+  .note-card li b { color: var(--text); }
+  .ok { color: var(--green); font-weight: 600; }
+  .archive-card { border-left: 4px solid var(--green); }
+  .archive-card h2 { border-left: none; padding-left: 0; color: var(--green); }
+  .archive-card ul { list-style: none; padding-left: 4px; }
+  .archive-card li { margin: 8px 0; color: var(--text-dim); }
+  .archive-card li b { color: var(--text); }
+  footer { text-align: center; color: var(--text-dim); font-size: 12.5px; margin-top: 32px; }
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header class="hero">
+  <h1>每日 <span class="em">AI</span> 前沿技术精选</h1>
+  <div class="meta">
+    <span><b>日期</b>：2026-10-23</span>
+    <span><b>时间</b>：11:30</span>
+    <span><b>精选条数</b>：5 条</span>
+    <span><b>时效窗口</b>：<span class="window">2026-10-22 22:31 – 2026-10-23 11:30</span></span>
+  </div>
+  <div class="meta" style="margin-top:8px">
+    <span style="color:var(--text-dim)">增量收敛：距第 101 跑 22:31 不足 24 小时，仅抓增量；窗口以 guardian pre 快照为唯一依据，未启用已废止的 48 小时降级策略。</span>
+  </div>
+</header>
+
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="AI Coding">AI Coding</button>
+<button class="filter-chip" data-tag="形式化验证">形式化验证</button>
+<button class="filter-chip" data-tag="智能体安全">智能体安全</button>
+<button class="filter-chip" data-tag="重大开源">重大开源</button>
+<button class="filter-chip" data-tag="多模态MoE">多模态MoE</button>
+<button class="filter-chip" data-tag="世界模型">世界模型</button>
+<button class="filter-chip" data-tag="机器人">机器人</button>
+<button class="filter-chip" data-tag="视频预训练">视频预训练</button>
+<button class="filter-chip" data-tag="具身智能">具身智能</button>
+<button class="filter-chip" data-tag="可微仿真">可微仿真</button>
+<button class="filter-chip" data-tag="RSI">RSI</button>
+<button class="filter-chip" data-tag="持续学习">持续学习</button>
+<button class="filter-chip" data-tag="技能库">技能库</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. Anthropic × Theorem：Claude 大规模形式化验证生产软件，123 个开源库获汇编级无崩溃证明</a><a class="toc-item" href="#entry-2">2. MiniMax 开放 M3.1 Flash 权重：428B-A23B 原生多模态 MoE，vLLM / Together / NeMo 首日跟上</a><a class="toc-item" href="#entry-3">3. SkeLAM：骨架引导的潜在动作模型，把机器人世界模型从「看得像」变成「控得住」</a><a class="toc-item" href="#entry-4">4. DiffDreamer：世界模型与可微仿真耦合，动态门竞速 512 步过门数 16/12/8 全基线领先</a><a class="toc-item" href="#entry-5">5. HERD：Harness 进化的递归蒸馏，25 阶段任务流上新任务获取追平最强参数基线、遗忘度减半</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="AI Coding 形式化验证 智能体安全" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Anthropic × Theorem：Claude 大规模形式化验证生产软件，123 个开源库获汇编级无崩溃证明" data-link="https://www.anthropic.com/research/formal-verification">复制</button>
+  <h2><span class="idx">1.</span>Anthropic × Theorem：Claude 大规模形式化验证生产软件，123 个开源库获汇编级无崩溃证明<span class="src">Anthropic 官方研究博客 | 2026-10-23</span></h2>
+  <p><b>事件概述</b>：Anthropic 前沿红队与 Theorem 合作发表研究，把 OSS-Fuzz 模糊测试套件自动转化为形式化规约，驱动 Claude 在数周内为 123 个真实开源库的 239 个入口点生成约 1.8 亿行 Rocq 证明，证明其在 64MB 以下任意输入下不触发内存安全错误或断言失败。官方称这是首次大规模将 AI 应用于汇编级生产代码形式化验证的尝试；官方 X 账号于北京时间 10-23 06:01 发布（snowflake 时间戳验证）。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：以「该测试套件永远通过」为规约蓝本，借 Theorem 的 RISC-V 指令与 Linux 进程形式化语义把编译后二进制翻译为数学模型；Claude 编写证明、Rocq 证明内核机械检查；发现 bug 后自行修补再重新生成规约并证明（对补丁施加惩罚并全程审计，防范 reward hacking）。另有两个案例研究：x86 语义实验（Claude 自动生成 x86 ISA 形式化语义，证明 Linux 内核 zlib 实现符合 RFC 1950 规约，过程中发现官方参考文档数百处错误）与 Python 子集解释器实验（Rust 实现 + Verus 证明，170 万个随机程序 99.95% 与 CPython 行为一致）。</li>
+    <li><b>实际影响</b>：模糊测试数万亿次运行未能发现的 bug 在证明过程中暴露，包括 libexpat 的 CVE-2026-56132、约 20MB 罕见内存布局才触发的反压计数器下溢越界写、需 64MB 输入 + 2GB 内存的越界读、以及一个潜伏十余年的逻辑 bug。效率上，Opus 5.5 证明同批任务比 Opus 5 少用约 40% token，共享工作区的 agent 再省 17%，且有 2 个单独无法完成的证明在共享后成功。官方断言形式化验证将从「外挂式」走向「内置式」，像模糊测试一样成为生产软件标配。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>证明的开源库</td><td>123</td><td><div class="bar"><span style="width:100%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>证明的入口点</td><td>239</td><td><div class="bar"><span style="width:82%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>Rocq 证明代码</td><td>1.8亿行</td><td><div class="bar"><span style="width:95%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>Opus 5.5 token 节省</td><td>40%</td><td><div class="bar"><span style="width:40%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <ul>
+    <li>评测/性能：123 个开源库 / 239 个入口点 / 约 1.8 亿行 Rocq 证明（单证明典型约 60 万行；被证明二进制的指令中位数 18,000 条 RISC-V 指令；输入上限 64MB）——论文自述；证明假设（单线程静态二进制、musl libc、RISC-V 模型）为论文明示局限</li>
+    <li>代码/论文：<a href="https://<a href="https://www.anthropic.com/research/formal-verification" target="_blank" rel="noopener">www.anthropic.com/research/formal-verification</a>">a<a href="https://nthropic.com/research/formal-verification" target="_blank" rel="noopener">nthropic.com/research/formal-verification</a></a>；证明子集 <a href="https://<a href="https://github.com/theorem-labs/oss-verify-proofs" target="_blank" rel="noopener">github.com/theorem-labs/oss-verify-proofs</a>">g<a href="https://ithub.com/theorem-labs/oss-verify-proofs" target="_blank" rel="noopener">ithub.com/theorem-labs/oss-verify-proofs</a></a>；RISC-V/Linux 进程语义 <a href="https://<a href="https://github.com/theorem-labs/rocq-linux-process-semantics" target="_blank" rel="noopener">github.com/theorem-labs/rocq-linux-process-semantics</a>">g<a href="https://ithub.com/theorem-labs/rocq-linux-process-semantics" target="_blank" rel="noopener">ithub.com/theorem-labs/rocq-linux-process-semantics</a></a></li>
+  </ul>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#形式化验证</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#智能体安全</span></div>
+</div>
+
+<div class="card priority-2" id="entry-2" data-tags="重大开源 多模态MoE AI Coding" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="MiniMax 开放 M3.1 Flash 权重：428B-A23B 原生多模态 MoE，vLLM / Together / NeMo 首日跟上" data-link="https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash">复制</button>
+  <h2><span class="idx">2.</span>MiniMax 开放 M3.1 Flash 权重：428B-A23B 原生多模态 MoE，vLLM / Together / NeMo 首日跟上<span class="src">MiniMax 官方 X / Hugging Face | 2026-10-23</span></h2>
+  <p><b>事件概述</b>：MiniMax 于北京时间 10-23 09:06 官宣开放 M3.1 Flash 权重（官方 X 帖 snowflake 时间戳验证），HF 仓库同日 08:59 完成更新，48 个 safetensors 分片与 DSpark draft head 一并上线。该模型为 428B 总参数、每 token 激活 23B 的原生多模态 MoE，支持文本/图像/视频输入与 1M 上下文；发布即获 vLLM day-0 支持（官方博客 10-23 08:00）、Together AI 首日托管、NVIDIA NeMo day-0 微调及 SGLang / Miles 适配。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：在 M3 基础上以 MiniMax Sparse Attention（MSA）稀疏注意力贯穿全模型，配合量化感知训练（QAT）与 DSpark 投机解码提升推理效率；模型卡标签直指 coding / agentic workflows / computer use / cybersecurity 场景，属「编码 + 智能体」定位的开放权重模型。</li>
+    <li><b>实际影响</b>：继 9-27 静默上线 Preview、约 10-20 API 全量开放后，权重开放使 428B 级多模态模型进入可自托管区间；官方称上线 72 小时处理 Token 超 100 万亿（自述）。「权重开放 + 推理栈 day-0 支持」的组合延续了近期国产大模型发布即生态的节奏，也把开源编码模型的参数规模竞争推向 400B+ 档位。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>DeepSWE v1.1</td><td>73.7</td><td><div class="bar"><span style="width:74%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>BankerToolBench</td><td>76.2</td><td><div class="bar"><span style="width:76%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>OSWorld V2</td><td>61.7</td><td><div class="bar"><span style="width:62%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>CyberGym</td><td>82.2</td><td><div class="bar"><span style="width:82%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <ul>
+    <li>评测/性能（均为厂商自述，未见第三方复现）：BankerToolBench 76.2 / DeepSWE v1.1 73.7% / OSWorld V2 61.7 / Agents' Last Exam 29.6 / CyberGym 82.2；上下文 1,000,000 tokens；许可 minimax-community（自定义）</li>
+    <li>代码/权重：<a href="https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash">huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash</a>；day-0 支持 <a href="https://<a href="https://vllm.ai/blog/2026-10-23-minimax-m31-flash" target="_blank" rel="noopener">vllm.ai/blog/2026-10-23-minimax-m31-flash</a>">v<a href="https://llm.ai/blog/2026-10-23-minimax-m31-flash" target="_blank" rel="noopener">llm.ai/blog/2026-10-23-minimax-m31-flash</a></a></li>
+  </ul>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#重大开源</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#多模态MoE</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span></div>
+</div>
+
+<div class="card priority-3" id="entry-3" data-tags="世界模型 机器人 视频预训练" style="border-left:3px solid #bc8cff"><button class="copy-btn" data-title="SkeLAM：骨架引导的潜在动作模型，把机器人世界模型从「看得像」变成「控得住」" data-link="https://arxiv.org/abs/2610.31474">复制</button>
+  <h2><span class="idx">3.</span>SkeLAM：骨架引导的潜在动作模型，把机器人世界模型从「看得像」变成「控得住」<span class="src">arXiv:2610.31474 | NUS Show Lab 等 | 2026-10-22</span></h2>
+  <p><b>事件概述</b>：NUS Show Lab 等研究者提出 SkeLAM，将潜在动作分解为机器人骨架监督的运动学分量与保留互补视觉动态的残差分量，使视频驱动的机器人世界模型首次可按机器人控制量条件化生成。DROID 数据集上末端执行器 ADE 较 DreamDojo 降低 19.5%、LPIPS 降低 11.1%，并展示零样本人类到机器人动作迁移；论文 v1 于北京时间 10-23 00:01 提交（窗口内）。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：针对「重构驱动的潜在动作把机器人运动与物体响应混在一起、与真实控制量对应模糊」的痛点，用骨架监督 grounded 运动学分量；跨模态交换重建迫使 RGB 派生与骨架派生运动学表征在视频重建中可互换；分支 dropout 降低模型对未来残差信息的依赖；轻量 adapter 把机器人动作映射到运动学空间后再微调世界模型。</li>
+    <li><b>实际影响</b>：推理时可由「当前观测 + 机器人动作」生成未来观测，论文报告预测成功率与真机执行一致——这意味着世界模型可承担策略预评估、减少真机试错；对「人类视频预训练 + 机器人控制微调」主流路线给出可控性解法，直接服务具身智能的数据效率问题。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>末端 ADE 降幅</td><td>19.5%</td><td><div class="bar"><span style="width:20%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>LPIPS 降幅</td><td>11.1%</td><td><div class="bar"><span style="width:11%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <ul>
+    <li>评测/性能：DROID 末端 ADE −19.5%、LPIPS −11.1%（vs DreamDojo，论文自述，未见第三方复现）；零样本人→机器人动作迁移；策略评估成功率与真机执行一致（自述）</li>
+    <li>代码/论文：<a href="https://<a href="https://arxiv.org/abs/2610.31474" target="_blank" rel="noopener">arxiv.org/abs/2610.31474</a>">a<a href="https://rxiv.org/abs/2610.31474" target="_blank" rel="noopener">rxiv.org/abs/2610.31474</a></a>；项目页 <a href="https://<a href="https://aopolin-lv.github.io/SkeLAM/" target="_blank" rel="noopener">aopolin-lv.github.io/SkeLAM/</a>">a<a href="https://opolin-lv.github.io/SkeLAM" target="_blank" rel="noopener">opolin-lv.github.io/SkeLAM</a></a></li>
+  </ul>
+  <div class="tags"><span class="tag" style="color:#bc8cff;border-color:#bc8cff">#世界模型</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#机器人</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#视频预训练</span></div>
+</div>
+
+<div class="card priority-4" id="entry-4" data-tags="具身智能 世界模型 可微仿真" style="border-left:3px solid #3fb950"><button class="copy-btn" data-title="DiffDreamer：世界模型与可微仿真耦合，动态门竞速 512 步过门数 16/12/8 全基线领先" data-link="https://arxiv.org/abs/2610.31617">复制</button>
+  <h2><span class="idx">4.</span>DiffDreamer：世界模型与可微仿真耦合，动态门竞速 512 步过门数 16/12/8 全基线领先<span class="src">arXiv:2610.31617 | 上海科技大学 | 2026-10-22</span></h2>
+  <p><b>事件概述</b>：上海科技大学团队提出可微 RL 框架 DiffDreamer，在同一个优化步内让学习的世界模型传播捕获外部动态的潜状态、可微仿真器（VisFly）传播机器人显式物理状态，并把 actor 目标分解为 critic 驱动通路（不可微任务奖励）与仿真器驱动通路（可微运动奖励）。动态门竞速中 512 步过门数 16/12/8（门速 1.0/1.5/2.0 m/s）显著领先 DreamerV3、BPTT、PPO、MPC 等基线，并完成真机飞行概念验证；论文 v1 于北京时间 10-23 01:41 提交（窗口内）。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：针对世界模型 RL 把环境演化与机器人自身动力学纠缠在单一学习 rollout、模型偏差拖累策略优化的结构性问题，采用「学得的世界模型 + 可微物理仿真器」双通道分工；消融显示去掉可微运动奖励后过门数跌至 7/4/2，去掉离散过门奖励跌至 2/2/0，验证双通路缺一不可。</li>
+    <li><b>实际影响</b>：激进跟踪误差（水平/垂直/距离 0.168/0.215/0.381m）低于全部对比基线；真机策略以 &gt;100Hz 机载运行（Jetson Orin NX + Betaflight，动瞄提供里程计）。为「世界模型 × 可微仿真混合优化」在高速无人机控制上提供可复现证据，也回应了世界模型落地中「环境动态与本体动态解耦」的方法论问题。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>过门数 v=2.0 m/s</td><td>8</td><td><div class="bar"><span style="width:80%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>PPO 基线（同条件）</td><td>3</td><td><div class="bar"><span style="width:30%"></span></div></td><td><span class="badge compare">对比</span></td></tr><tr><td>跟踪距离误差</td><td>0.381m</td><td><div class="bar"><span style="width:38%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>DreamerV3 基线</td><td>1.003m</td><td><div class="bar"><span style="width:100%"></span></div></td><td><span class="badge compare">对比</span></td></tr></table></div>
+  <ul>
+    <li>评测/性能（论文自述，未见第三方复现）：竞速过门数 16/12/8 vs PPO 14/8/3、MPC 12/4/1、DreamerV3 3/1/0；跟踪距离误差 0.381m vs DreamerV3 1.003m；真机为 PoC 规模，未报告成功率数值</li>
+    <li>代码/论文：<a href="https://<a href="https://arxiv.org/abs/2610.31617" target="_blank" rel="noopener">arxiv.org/abs/2610.31617</a>">a<a href="https://rxiv.org/abs/2610.31617" target="_blank" rel="noopener">rxiv.org/abs/2610.31617</a></a>（正文未提及代码发布链接，待核实）</li>
+  </ul>
+  <div class="tags"><span class="tag" style="color:#3fb950;border-color:#3fb950">#具身智能</span><span class="tag" style="color:#bc8cff;border-color:#bc8cff">#世界模型</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#可微仿真</span></div>
+</div>
+
+<div class="card priority-5" id="entry-5" data-tags="RSI 持续学习 技能库" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="HERD：Harness 进化的递归蒸馏，25 阶段任务流上新任务获取追平最强参数基线、遗忘度减半" data-link="https://arxiv.org/abs/2610.31401">复制</button>
+  <h2><span class="idx">5.</span>HERD：Harness 进化的递归蒸馏，25 阶段任务流上新任务获取追平最强参数基线、遗忘度减半<span class="src">arXiv:2610.31401 | 2026-10-22</span></h2>
+  <p><b>事件概述</b>：HERD（Harness-Evolving Recursive Distillation）提出混合持续学习框架：harness 侧由冻结基础模型单次贪心解码生成技能、持续精炼技能注册表，技能失败的高残差样本存入有界记忆；参数侧以双锚点漂移约束蒸馏把经验内化为累计能力。TRACE+17 25 阶段任务流上，新任务获取 0.713 与最强参数基线 Seq-LoRA（0.715）统计不可区分，而遗忘度 0.010 约为其一半，通用能力损失仅 −0.063（参数基线 −0.20~−0.24）；代码与项目页已开源。论文 v1 于北京时间 10-22 23:03 提交（窗口内）。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：技能 = 标识符 + 路由前缀 + 指令（最长前缀匹配注入 system message），注册表预算 24,576 tokens、单技能 ≤768；残差记忆 32,768 tokens 只作漂移探针、从不回放；双锚点（checkpoint + base）约束蒸馏漂移；Guard 仅当窗口平均残差低于旧注册表才采纳新技能——把「自我改进」变成有预算、有审计、可回滚的工程过程，直指 RSI 中最难的「改进的可控性」问题。</li>
+    <li><b>实际影响</b>：长程稳定性上，前 8 任务均分从 stage 8 的 0.664 到 stage 25 的 0.665 基本持平（Seq-LoRA 中途一度跌至 0.372 后恢复）；训练总耗时 10,723s，远低于混合基线 OPHSD 的 659,000s。消融显示去掉技能后获取 −4.5、平均分 −5.0（最大损失项），验证 harness 侧是主要增益来源；为「经验 → 技能 → 蒸馏」的递归自我改进闭环给出可量化基线与开源实现。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>新任务获取 Acq.</td><td>0.713</td><td><div class="bar"><span style="width:71%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>Seq-LoRA 基线</td><td>0.715</td><td><div class="bar"><span style="width:72%"></span></div></td><td><span class="badge compare">对比</span></td></tr><tr><td>遗忘度 F</td><td>0.010</td><td><div class="bar"><span style="width:10%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>Seq-LoRA F</td><td>0.025</td><td><div class="bar"><span style="width:25%"></span></div></td><td><span class="badge compare">对比</span></td></tr></table></div>
+  <ul>
+    <li>评测/性能（论文自述，未见第三方复现）：Acq. 0.713 vs Seq-LoRA 0.715（配对差 −0.002，CI [−0.010, 0.007] 统计不可区分）；遗忘度 F 0.010（Seq-LoRA 0.025）；ΔC −0.063 vs 参数基线 −0.20~−0.24；训练 10,723s vs OPHSD 659,000s</li>
+    <li>代码/论文：<a href="https://<a href="https://arxiv.org/abs/2610.31401" target="_blank" rel="noopener">arxiv.org/abs/2610.31401</a>">a<a href="https://rxiv.org/abs/2610.31401" target="_blank" rel="noopener">rxiv.org/abs/2610.31401</a></a>；代码 <a href="https://<a href="https://github.com/a1exsun/HERD" target="_blank" rel="noopener">github.com/a1exsun/HERD</a>">g<a href="https://ithub.com/a1exsun/HERD" target="_blank" rel="noopener">ithub.com/a1exsun/HERD</a></a>；项目页 <a href="https://<a href="https://a1exsun.github.io/HERD" target="_blank" rel="noopener">a1exsun.github.io/HERD</a>">a<a href="https://1exsun.github.io/HERD" target="_blank" rel="noopener">1exsun.github.io/HERD</a></a></li>
+  </ul>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#RSI</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#持续学习</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#技能库</span></div>
+</div>
+
+<hr class="divider">
+
+<div class="card note-card">
+  <h2>去重说明</h2>
+  <ul>
+    <li><b>7 天扫描</b>：比对 10-16 ~ 10-23 工作区九期报告（第 94–101 跑，44 条）无同主体同动作；<code>dedup_check.py</code> 逐条：Anthropic FV <code>is_dup:false</code>（0.495，匹配「Anthropic 升级 Chrome 扩展」为不同事件）；MiniMax <code>is_dup:false</code>（0.523，匹配 9-27「M3.1-Flash-Preview 静默上线」——Preview API 上线 ≠ 权重开放，按「同主体+同动作」判定为不同事件，保留并披露）；SkeLAM / DiffDreamer / HERD 均 <code>is_dup:false</code> 且无实体匹配（jaccard 0.0）。</li>
+    <li><b>跨实例排除（O: 盘 20261023_0031 版，北京时间 08:31 生成）</b>：该实例已报道「AAIF 四新项目（Agent Skills / Open Responses / OpenEnv / OpenSandbox）」与「OpenAI Decisions API 全面开放（GPT-6 Luna）」两条——两者均为本窗口强候选（PR Newswire 传输时刻落在 10-22 12:00 UTC 档；TestingCatalog 帖北京时间 10-23 06:33 snowflake 验证），按跨实例去重规则排除，特此说明。</li>
+    <li><b>排除项（第一信源时间戳在窗口外）</b>：智元×北大 ViGAR 与 AgiBot World 2026 第四期「具身推理」数据集（10-22 白天 AI WAVE 首日发布；数据集第一信源 14:00–16:36 北京，与第 100 跑记录一致）；MIT Eko「荒岛自发玩耍」（底层论文 arXiv:2610.07130 为 10-05 提交、第 96 跑已排除，TechCrunch 10-22 为迟到报道）；Viggle JST-2（第 97 跑已报道）；Modal 开源 Spindle（10-22 20:00 北京，早于窗口起点）；Beren Millidge 三阶段文章（10-22 15:00 北京）；Hugging Face Carbon-X（10-22 18:59 北京，第 101 跑已排除）。</li>
+    <li><b>候补（达门槛但受条数上限或方向平衡限制）</b>：PhysTrace（视频生成模型物理一致性可解释评测，IntPhys2-Timing Hit Rate 70.7%，代码已开源）；Sakana Aquarium（本体驱动的智能体构建/运营平台，10-22 23:00 北京）；Artificial Analysis Coding Agent Index v2.0（DeepSWE → FrontierCode v1.1，290 任务）；Replit Monitoring Agent（自动修复并部署的值班智能体）；Microsoft × HF ThinkingBox-Training（数据库终态可执行检查作 RL 奖励）；Certified Execution Harness（Petri 网监督控制）；Grok Bot 手机系统应用 + 1Password 代登录（第 98 跑已覆盖 Grok Bot 升级，本次为新动作但属产品能力更新）。</li>
+    <li><b>其他排除</b>：微软 MAI-DxO（NEJM 复杂病例 83%，医学诊断方向超出本期五大焦点，且 Science 发表精确时刻待核实）；Claude on Google Cloud GA（官方博客仅日期级时间戳，参照第 99 跑先例排除）；Claude Code v2.1.309（macOS/Linux 沙箱修复补丁，未达门槛）；OpenClaw v2026.10.6 补丁（第 101 跑已报道同版本）；江苏「物理 AI 与世界模型」大会（产业会议，第 96 跑先例）；宇树 H2-X / AiMOGA Mobo（10-21/10-22 产品发布，技术细节以演示为主，未达入选门槛）。</li>
+    <li><b>结构性说明</b>：信源健康 ok=3 / warn=0 / error=0（aihot_items 0.4h 新鲜、dailies 2026-10-23、arXiv 当前批次 Fri 23 Oct 2026）；窗口内 arXiv 学术供给充裕，cs.RO / cs.AI / cs.CL / cs.LG / cs.CV / cs.MA / cs.SE 七类 v1 提交集中于 10-22 14:31–18:00 UTC，与窗口起点后移精确匹配；美国深夜时段（窗口前半段）无官方首发，增量集中在北京时间 10-23 05:00–10:00 发布带。</li>
+  </ul>
+</div>
+
+<div class="card note-card">
+  <h2>待核实</h2>
+  <ul>
+    <li><b>MiniMax M3.1 Flash</b>：全部基准（BankerToolBench 76.2 / DeepSWE v1.1 73.7% / OSWorld V2 61.7 / Agents' Last Exam 29.6 / CyberGym 82.2）与「72 小时处理 100 万亿 token」均为厂商自述，缺第三方复现；HF 仓库 createdAt 为 10-17（疑为文档/占位阶段），权重分片上传的确切时刻（lastModified 10-23 00:59 UTC）未经提交历史核实。</li>
+    <li><b>Anthropic FV</b>：效率对比（Opus 5.5 较 Opus 5 省 ~40% token、共享工作区再省 17%）为内部实验自述；证明覆盖假设（单线程静态二进制、musl libc、RISC-V 形式化模型）为论文明示局限，实际生产环境多为 x86/ARM + glibc，「已验证」不等于「无 bug」。</li>
+    <li><b>SkeLAM</b>：ADE −19.5% / LPIPS −11.1% 及「策略评估与真机一致」为论文自述，未见第三方复现；项目页代码与权重的开放范围待核实。</li>
+    <li><b>DiffDreamer</b>：超越基线的结论与真机 PoC 均为论文自述；正文未提及代码发布链接（待核实）；真机实验未报告成功率数值。</li>
+    <li><b>HERD</b>：TRACE+17 全部数值为论文自述，未见第三方复现；TRACE+17 基准本身的第三方采用情况待核实。</li>
+  </ul>
+</div>
+
+<div class="card archive-card">
+  <h2>归档状态说明</h2>
+  <ul>
+    <li><b>工作区 Markdown</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261023_1130.md</code></li>
+    <li><b>工作区 HTML</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261023_1130.html</code></li>
+    <li><b>网盘归档</b>：<code>O:/quark/automation/每日 AI 新闻推送/</code>（同步写入上述同名文件）</li>
+    <li><b>执行状态</b>：<span class="ok">✅ 成功</span>（archive_latest.py 双文件归档达成，本地与网盘 md5 逐字节一致；guardian post ok:true、issues 0、window_source=snapshot；probe 残渣清理受阻为已知环境约束）</li>
+    <li><b>收尾固化</b>：5 ok / 0 failed / 0 skipped（kb / rss / index / backlog / health 各 ok；backlog 新增待核实条目以 finalize 输出为准）</li>
+  </ul>
+</div>
+
+<footer>每日 AI 前沿技术精选 · 严格 24 小时增量窗口 · 2026-10-23 11:30</footer>
+
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>

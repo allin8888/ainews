@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-10-17</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --card-border: #2d333b;
+    --text: #e6edf3;
+    --text-dim: #9da7b1;
+    --accent-blue: #58a6ff;
+    --accent-green: #3fb950;
+    --accent-orange: #d29922;
+    --tag-bg: #1c2330;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    line-height: 1.75;
+    padding: 32px 20px 48px;
+  }
+  .container { max-width: 880px; margin: 0 auto; }
+  header.page {
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 20px;
+    margin-bottom: 28px;
+  }
+  header.page h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .meta b { color: var(--accent-blue); font-weight: 600; }
+  .meta .window { color: var(--accent-green); }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin-bottom: 22px;
+  }
+  .card h2 {
+    font-size: 18px;
+    font-weight: 650;
+    color: var(--text);
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .card h2 .no { color: var(--accent-blue); margin-right: 6px; }
+  .card h2 .src { color: var(--text-dim); font-size: 13px; font-weight: 400; }
+  .card h3 {
+    font-size: 14.5px;
+    font-weight: 650;
+    color: var(--accent-blue);
+    margin: 14px 0 6px;
+  }
+  .card p { font-size: 14.5px; color: var(--text); margin-bottom: 8px; }
+  .card ul { margin: 4px 0 8px 18px; }
+  .card li { font-size: 14.5px; margin-bottom: 6px; }
+  .card li b, .card p b { color: var(--accent-orange); font-weight: 650; }
+  .tags { margin-top: 12px; }
+  .tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    border: 1px solid var(--card-border);
+    color: var(--accent-blue);
+    font-size: 12.5px;
+    border-radius: 20px;
+    padding: 2px 12px;
+    margin-right: 8px;
+  }
+  .divider { border: none; border-top: 1px solid var(--card-border); margin: 30px 0; }
+  .section-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 26px 0 14px;
+  }
+  .warn-box {
+    background: #1d1708;
+    border: 1px solid #6b4e12;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 22px;
+  }
+  .warn-box .section-title { color: var(--accent-orange); margin-top: 0; }
+  .warn-box ol { margin-left: 20px; }
+  .warn-box li { font-size: 13.5px; color: var(--text); margin-bottom: 8px; }
+  .archive {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 18px 22px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .archive .section-title { margin-top: 0; }
+  .archive code {
+    background: var(--tag-bg);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 12.5px;
+    color: var(--accent-green);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  }
+  .archive ul { margin: 6px 0 0 18px; }
+  .archive li { margin-bottom: 5px; }
+  .status-ok { color: var(--accent-green); font-weight: 650; }
+  .status-warn { color: var(--accent-orange); font-weight: 650; }
+  a { color: var(--accent-blue); text-decoration: none; word-break: break-all; }
+  a:hover { text-decoration: underline; }
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header class="page">
+  <h1>每日 AI 前沿技术精选</h1>
+  <div class="meta">
+    <span><b>日期</b>：2026-10-17</span>
+    <span><b>时间</b>：11:30</span>
+    <span><b>精选条数</b>：5 条</span>
+    <span><b>时效窗口</b>：<span class="window">2026-10-16 11:30 – 2026-10-17 11:30（严格24小时）</span></span>
+  </div>
+</header>
+
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="AI-Coding">AI-Coding</button>
+<button class="filter-chip" data-tag="开放权重">开放权重</button>
+<button class="filter-chip" data-tag="MoE">MoE</button>
+<button class="filter-chip" data-tag="世界模型">世界模型</button>
+<button class="filter-chip" data-tag="具身智能">具身智能</button>
+<button class="filter-chip" data-tag="统一表征">统一表征</button>
+<button class="filter-chip" data-tag="Agent记忆">Agent记忆</button>
+<button class="filter-chip" data-tag="开源">开源</button>
+<button class="filter-chip" data-tag="长程任务">长程任务</button>
+<button class="filter-chip" data-tag="AI-for-Science">AI-for-Science</button>
+<button class="filter-chip" data-tag="研究智能体">研究智能体</button>
+<button class="filter-chip" data-tag="密码学">密码学</button>
+<button class="filter-chip" data-tag="开发工具">开发工具</button>
+<button class="filter-chip" data-tag="Agent编排">Agent编排</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. Reflection AI 开放权重模型 Beam：501B MoE 编码智能体，Apache 2.0 + Mirror CLI 同步开源</a><a class="toc-item" href="#entry-2">2. 优必选 Thinker-WM：RGB+深度+动作表征级统一的世界模型，三大具身基准登顶并开源</a><a class="toc-item" href="#entry-3">3. 腾讯混元开源 Hy Memory 2.0：业界首个工作记忆+代码记忆框架，模型/SDK/MemHub 三层齐开</a><a class="toc-item" href="#entry-4">4. Anthropic 内部研究模型 30 分钟溯源 NIST ECDSA 曲线种子：Unix 时间戳初始化的 lrand48，复现代码已获第三方验证</a><a class="toc-item" href="#entry-5">5. Claude Code v2.1.302：fork 子代理默认扩展至全客户端，自动模式分类器模型可固定</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="AI-Coding 开放权重 MoE" style="border-left:3px solid #58a6ff"><button class="copy-btn" data-title="Reflection AI 开放权重模型 Beam：501B MoE 编码智能体，Apache 2.0 + Mirror CLI 同步开源" data-link="https://reflection.ai/blog/beam-is-available">复制</button>
+  <h2><span class="no">1.</span>Reflection AI 开放权重模型 Beam：501B MoE 编码智能体，Apache 2.0 + Mirror CLI 同步开源 <span class="src">（Reflection 官方博客 / Hugging Face | 2026-10-16）</span></h2>
+  <h3>事件概述</h3>
+  <p>10 月 16 日，Reflection AI 官方博客宣布其首个开放权重模型 Beam 正式上线 Hugging Face，采用 Apache 2.0 许可；同步开源与 Beam 联合训练的智能体 harness Mirror CLI，并携 40 余家生态伙伴（AWS、Azure、Google Cloud、Oracle、Databricks、CoreWeave、Baseten、Fireworks、Together、NVIDIA NIMs、Ollama、OpenRouter、Vercel 等）构成其所谓「智能体开放操作系统」。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：501B 总参 / 23B 激活稀疏 MoE，1M token 上下文，原生文本；权重提供 BF16 / FP8 / NVFP4 三档精度并附投机解码 drafter；day-zero 适配 Transformers / vLLM / SGLang / TensorRT-LLM / Unsloth / Axolotl / NeMo RL 等训练推理栈。Mirror CLI 采用 Python 前端（prompts / skills / 工具）+ Rust 智能体内核架构，支持 worktree 隔离的并行代理、可恢复会话、MCP 连接与 Python 扩展，内核保持最小化以作为干净评测面。官方披露最大规模 RL 运行累计约 13 亿个沙箱，峰值 883,006 vCPU（占可分配资源 83%）横跨 23 个集群，并宣布采纳 Hugging Face OpenEnv 开放环境标准；同时发布自蒸馏 recipe（生成轨迹 → 验证轨迹训练 LoRA → 循环迭代）与 Beam 安全技术报告。</li>
+    <li><b>实际影响</b>：这是 48 小时内第三款开放权重编码/智能体模型（前两为 Meta Muse Spark Open 的受限许可与阶跃 Step 5 Preview 的条件许可），Beam 是其中唯一纯 Apache 2.0；与 Pi、OpenCode、Hermes（Nous Research）等开放 harness 的兼容测试同日披露，开放编码模型生态的「模型-工具链」耦合进一步加深。官方承认其在 DeepSWE 上仍落后 Kimi K3，定位为「推理 token 效率」而非绝对分数竞争。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>DeepSWE v1.1（BF16）</td><td>43.3</td><td><div class="bar"><span style="width:43%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>SWE-bench Verified</td><td>81.6</td><td><div class="bar"><span style="width:82%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>Terminal-Bench 2.1</td><td>80.1</td><td><div class="bar"><span style="width:80%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>SWE-bench Pro v2-Hard（NVFP4）</td><td>78.6</td><td><div class="bar"><span style="width:79%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>AA 智能指数（美国开放权重第二）</td><td>30</td><td><div class="bar"><span style="width:30%"></span></div></td><td><span class="badge third">第三方</span></td></tr></table></div>
+  <ul>
+    <li>评测/性能：DeepSWE v1.1 43.3（BF16）/ 42.7（NVFP4）；Terminal-Bench 2.1 80.1；SWE-bench Verified 81.6；SWE-bench Pro v2-Hard 78.6（4-bit NVFP4）vs 76.5（BF16）——均为模型卡数据（<b>厂商自述，未见第三方复现</b>）；Artificial Analysis 智能指数 30，列美国开放权重模型第二（<b>第三方评测</b>）；Reflection 自称以约 1/3 推理 token 达到领先开放模型相当的解题质量（<b>自述</b>）</li>
+    <li>代码/论文：<a href="https://<a href="https://reflection.ai/blog/beam-is-available" target="_blank" rel="noopener">reflection.ai/blog/beam-is-available</a>">r<a href="https://eflection.ai/blog/beam-is-available" target="_blank" rel="noopener">eflection.ai/blog/beam-is-available</a></a> ；模型卡 <a href="https://<a href="https://reflection.ai/beam-model-card" target="_blank" rel="noopener">reflection.ai/beam-model-card</a>">r<a href="https://eflection.ai/beam-model-card" target="_blank" rel="noopener">eflection.ai/beam-model-card</a></a> ；权重 <a href="https://huggingface.co/reflection/">huggingface.co/reflection/</a> ；Mirror CLI <a href="https://<a href="https://developers.reflection.ai/mirror-overview" target="_blank" rel="noopener">developers.reflection.ai/mirror-overview</a>">d<a href="https://evelopers.reflection.ai/mirror-overview" target="_blank" rel="noopener">evelopers.reflection.ai/mirror-overview</a></a></li>
+  </ul>
+  <div class="tags"><span class="tag" style="color:#58a6ff;border-color:#58a6ff">#AI-Coding</span><span class="tag" style="color:#79c0ff;border-color:#79c0ff">#开放权重</span><span class="tag" style="color:#79c0ff;border-color:#79c0ff">#MoE</span></div>
+</div>
+
+<div class="card priority-2" id="entry-2" data-tags="世界模型 具身智能 统一表征" style="border-left:3px solid #bc8cff"><button class="copy-btn" data-title="优必选 Thinker-WM：RGB+深度+动作表征级统一的世界模型，三大具身基准登顶并开源" data-link="https://arxiv.org/abs/2610.18447">复制</button>
+  <h2><span class="no">2.</span>优必选 Thinker-WM：RGB+深度+动作表征级统一的世界模型，三大具身基准登顶并开源 <span class="src">（优必选官方公众号 / arXiv / GitHub | 2026-10-16）</span></h2>
+  <h3>事件概述</h3>
+  <p>10 月 16 日，优必选通过官方公众号宣布 Thinker 团队自研统一多模态世界模型 Thinker-WM 在 WorldOlympiad、EWMBench、WorldArena 1.0 Track-1 三大具身世界模型基准评测中全部排名第一，论文（arXiv:2610.18447）与 GitHub / Hugging Face 物料同步公开，模型已完成在优必选机器人平台的部署验证。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：针对「视频生成管画面、策略网络管动作、几何模块管空间」的拼接式范式割裂物理耦合信号的问题，Thinker-WM 在表征层实现统一——RGB、度量深度、机器人动作经各自编码器映射至同一潜在空间，由共享参数的 Unified Dynamics Transformer（UDT）联合演化，深度作为原生生成模态而非辅助监督；同一组权重通过切换条件/生成模态支持六种能力：视频-动作联合生成、世界预测、策略推理、动作条件生成、视频转动作、逆动力学。机器人动作统一以末端位姿表征并附加本体标签，实现跨本体共享生成空间；团队以冻结 UDT 视觉表征上的微型运动探针恢复末端位移，作为跨模态耦合的实验证据。</li>
+    <li><b>实际影响</b>：与世界动作模型「分阶段解耦」路线（星动纪元 VPP2，第 89 跑）形成对照，「表征级统一」成为具身世界模型的第二条工程路线；RoboTwin 单任务消融显示引入深度模态使操作成功率较无深度基线提升 15 个百分点，几何信号对真机执行的价值获得直接量化。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>WorldOlympiad 综合</td><td>0.740</td><td><div class="bar"><span style="width:74%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>3D 一致性</td><td>0.531</td><td><div class="bar"><span style="width:53%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>交互保真度</td><td>0.765</td><td><div class="bar"><span style="width:77%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>EWMBench 总分</td><td>4.66</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <ul>
+    <li>评测/性能：WorldOlympiad 综合 0.740（3D 一致性 0.531、交互保真度 0.765）；EWMBench 总分 4.66（优于 Qwen-RobotWorld、Sora 2 等）；WorldArena 1.0 Track-1 十二项维度领先——<b>均为优必选自述成绩，基于公告时点结果，未见第三方复现</b>；训练数据约 3 万小时（约 2 万小时第一人称人类视频 + 1 万小时真机数据（含约 4 千小时深度对齐）+ 1 千小时仿真）</li>
+    <li>代码/论文：<a href="https://<a href="https://arxiv.org/abs/2610.18447" target="_blank" rel="noopener">arxiv.org/abs/2610.18447</a>">a<a href="https://rxiv.org/abs/2610.18447" target="_blank" rel="noopener">rxiv.org/abs/2610.18447</a></a> ；<a href="https://<a href="https://github.com/UBTECH-Robot/Thinker-WM" target="_blank" rel="noopener">github.com/UBTECH-Robot/Thinker-WM</a>">g<a href="https://ithub.com/UBTECH-Robot/Thinker-WM" target="_blank" rel="noopener">ithub.com/UBTECH-Robot/Thinker-WM</a></a> ；项目页 <a href="https://<a href="https://thinkercosmos.ubtrobot.com/thinker-wm" target="_blank" rel="noopener">thinkercosmos.ubtrobot.com/thinker-wm</a>">t<a href="https://hinkercosmos.ubtrobot.com/thinker-wm" target="_blank" rel="noopener">hinkercosmos.ubtrobot.com/thinker-wm</a></a></li>
+  </ul>
+  <div class="tags"><span class="tag" style="color:#bc8cff;border-color:#bc8cff">#世界模型</span><span class="tag" style="color:#3fb950;border-color:#3fb950">#具身智能</span><span class="tag" style="color:#bc8cff;border-color:#bc8cff">#统一表征</span></div>
+</div>
+
+<div class="card priority-3" id="entry-3" data-tags="Agent记忆 开源 长程任务" style="border-left:3px solid #d29922"><button class="copy-btn" data-title="腾讯混元开源 Hy Memory 2.0：业界首个工作记忆+代码记忆框架，模型/SDK/MemHub 三层齐开" data-link="https://github.com/Tencent-Hunyuan/Hy-Memory">复制</button>
+  <h2><span class="no">3.</span>腾讯混元开源 Hy Memory 2.0：业界首个工作记忆+代码记忆框架，模型/SDK/MemHub 三层齐开 <span class="src">（腾讯混元 / GitHub / Hugging Face | 2026-10-16）</span></h2>
+  <h3>事件概述</h3>
+  <p>10 月 16 日，腾讯混元宣布推出智能体记忆框架 Hy Memory 2.0 并同步开源三层能力：专用记忆模型 Hy-Memory-30B-A3B（约 30 亿激活参数）、记忆框架本身（PyPI: hy-memory 2.0.2）与本地记忆应用 MemHub，均以 Apache 2.0 发布；该框架已在腾讯内部金融、资讯、知识管理、办公 Agent、社交娱乐与游戏等业务中使用。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：框架负责聊天、工作、代码三类记忆的存储、更新与进化。聊天记忆建 L0–L7 层级（原始对话 → 事实 → 图式 → 前瞻意图）；2.0 新增的工作记忆以多维度记录单项任务的目标、已定做法与阶段结果，并沉淀可复用经验及其适用条件，复用前先判断当前情境是否符合条件；代码记忆分两层并附带代码版本链。框架提供 lite（仅嵌入）/ pro（事实抽取 + 冲突消解）/ ultra（完整认知架构 + 图式归纳）三档模式。MemHub 作为本地 CLI + Mac 应用，可导入 Claude Code、Cursor、Codex、OpenCode、Qwen Code 等 10 种工具的会话历史并沉淀为同一份本地记忆，新会话实时汇入。</li>
+    <li><b>实际影响</b>：继 Memento 3（冻结 LLM 的 model-based RSI，第 86 跑）之后，「记忆作为 Agent 自进化的可审计外部层」再添一个开源生产级实现，且首次把「工作记忆 / 代码记忆」从概念做成可安装组件；对长程 Agent 的跨会话连续性提供了不依赖厂商云的本地路径。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>MemoryArena 平均</td><td>55.31%</td><td><div class="bar"><span style="width:55%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>CodeMemoryBench 问答</td><td>64.2%</td><td><div class="bar"><span style="width:64%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>CodeMemoryBench 任务解决</td><td>35.6%</td><td><div class="bar"><span style="width:36%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>SWE-ContextBench</td><td>28.3%</td><td><div class="bar"><span style="width:28%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>LoCoMo 准确率</td><td>72.6%</td><td><div class="bar"><span style="width:73%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <ul>
+    <li>评测/性能：MemoryArena 旅行规划与组合购物任务平均 55.31%（领先次优 EverOS 10.2 个百分点）；CodeMemoryBench 代码问答准确率 64.2% / 代码任务解决率 35.6%；SWE-ContextBench 代码任务解决率 28.3%（高于 MemOS / Mem0 的 25.3%）；LoCoMo 准确率 72.6%（高于 EverOS 71.9%），每题 token 消耗 1159 → 703（-39.3%）——<b>均为腾讯自述，未见第三方复现</b>；论文报告 Hy-Memory-30B-A3B 在固定 20% 基准子样本的四套评测框架上宏观平均 55.49% 排名第一（自述）</li>
+    <li>代码/论文：<a href="https://<a href="https://github.com/Tencent-Hunyuan/Hy-Memory" target="_blank" rel="noopener">github.com/Tencent-Hunyuan/Hy-Memory</a>">g<a href="https://ithub.com/Tencent-Hunyuan/Hy-Memory" target="_blank" rel="noopener">ithub.com/Tencent-Hunyuan/Hy-Memory</a></a> ；权重 <a href="https://huggingface.co/tencent/Hy-Memory-30B-A3B">huggingface.co/tencent/Hy-Memory-30B-A3B</a></li>
+  </ul>
+  <div class="tags"><span class="tag" style="color:#d29922;border-color:#d29922">#Agent记忆</span><span class="tag" style="color:#3fb950;border-color:#3fb950">#开源</span><span class="tag" style="color:#d29922;border-color:#d29922">#长程任务</span></div>
+</div>
+
+<div class="card priority-4" id="entry-4" data-tags="AI-for-Science 研究智能体 密码学" style="border-left:3px solid #39c5cf"><button class="copy-btn" data-title="Anthropic 内部研究模型 30 分钟溯源 NIST ECDSA 曲线种子：Unix 时间戳初始化的 lrand48，复现代码已获第三方验证" data-link="https://www.anthropic.com/research/ecdsa-curve-origins">复制</button>
+  <h2><span class="no">4.</span>Anthropic 内部研究模型 30 分钟溯源 NIST ECDSA 曲线种子：Unix 时间戳初始化的 lrand48，复现代码已获第三方验证 <span class="src">（Anthropic 官方研究博客 | 2026-10-16）</span></h2>
+  <h3>事件概述</h3>
+  <p>10 月 16 日，Anthropic 官方研究博客披露：一名员工向内部研究模型（Claude）提问后，模型在不到半小时内确定了 NIST P-192、P-224、P-256、P-384、P-521 五条标准椭圆曲线「种子」的来源——它们并非任何哈希算法的输出，而是以 Unix 时间戳初始化的 C 库 lrand48 伪随机数生成器的输出；其中 P-256 标准种子对应 1997 年 8 月 16 日 01:52:34 UTC 启动之运行的第 1,842 个候选值，生成时间可追溯至 1997–1998 年。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：全过程是假设驱动分析而非盲搜——模型先推测生成软件使用 1990 年代 C 库 PRNG，写扫描器逐比特滑窗测试 34 种生成器/切片组合；注意到 10 个种子中 4 个的全部字高位为零（偶然概率约 1/5810），恰好匹配 lrand48 只输出 48 位内部状态高 31 位的特征；对截断的素数曲线种子用 LLL 格基约减恢复隐藏状态，对二元曲线缺失的 17 位以 2^17 暴力恢复。</li>
+    <li><b>实际影响</b>：为一桩延续约 26 年的密码学悬案（Neal Koblitz 与 Alfred Menezes 的 "A Riddle Wrapped in an Enigma"、已故 NSA 工程师 Jerry Solinas 2015 年给出的错误线索）提供可复现答案，显著降低「参数被植入后门」的疑虑（并非密码学破解，无新攻击面）；Anthropic 以 CC0 1.0 公开复现代码，CellCog 已独立复跑并确认九个种子与 FIPS 186-2 标准逐字符一致（<b>第三方复现</b>）。这是研究智能体「假设生成 → 实验验证 → 公开复现」闭环的又一范例，与此前 OpenAI openai/math（第 83 跑）共同充实「AI 作为研究产出主体」的证据链。</li>
+  </ul>
+  <h3>关键指标/资源</h3>
+  <ul>
+    <li>评测/性能：从提问到得出结论 &lt; 30 分钟（Anthropic 自述）；P-256 = 第 1,842 个候选（运行起点 1997-08-16 01:52:34 UTC）；种子生成时间区间 1997-05 至 1998-04；仍未解：B-163 种子来源、部分曲线基点的生成方式</li>
+    <li>代码/论文：<a href="https://<a href="https://www.anthropic.com/research/ecdsa-curve-origins" target="_blank" rel="noopener">www.anthropic.com/research/ecdsa-curve-origins</a>">a<a href="https://nthropic.com/research/ecdsa-curve-origins" target="_blank" rel="noopener">nthropic.com/research/ecdsa-curve-origins</a></a></li>
+  </ul>
+  <div class="tags"><span class="tag" style="color:#39c5cf;border-color:#39c5cf">#AI-for-Science</span><span class="tag" style="color:#39c5cf;border-color:#39c5cf">#研究智能体</span><span class="tag" style="color:#39c5cf;border-color:#39c5cf">#密码学</span></div>
+</div>
+
+<div class="card priority-5" id="entry-5" data-tags="AI-Coding 开发工具 Agent编排" style="border-left:3px solid #58a6ff"><button class="copy-btn" data-title="Claude Code v2.1.302：fork 子代理默认扩展至全客户端，自动模式分类器模型可固定" data-link="https://github.com/anthropics/claude-code/releases/tag/v2.1.302">复制</button>
+  <h2><span class="no">5.</span>Claude Code v2.1.302：fork 子代理默认扩展至全客户端，自动模式分类器模型可固定 <span class="src">（Anthropic / GitHub Releases | 2026-10-16）</span></h2>
+  <h3>事件概述</h3>
+  <p>10 月 16 日 20:53 UTC，Claude Code 发布 v2.1.302：fork 子代理（subagent_type: "fork"）从终端专属扩展为在 claude -p、Agent SDK、桌面端与 VS Code 中默认启用；新增 CLAUDE_CODE_AUTO_MODE_MODEL 环境变量，允许单独固定客户端自动模式分类器所用模型（不影响服务端自动模式）；附带 /config idle-compaction 开关、Claude Design Sunset 通知与 70 余项修复。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：fork 子代理语义在全客户端统一后，桌面端 / VS Code 中由主对话启动的子代理默认后台运行，而子代理自行启动的 Agent 调用默认前台（可用 CLAUDE_CODE_FORK_SUBAGENT=0 回退）；分类器模型固定项（如指向 claude-haiku-5-5）让自动模式的延迟/成本调节不再依赖主模型，服务端自动模式不受影响。</li>
+    <li><b>实际影响</b>：harness 层编排默认值继续向「多智能体后台化」演进，与第 87 跑 Anthropic 1000 并发动态工作流、第 92 跑 Chainguard microVM、第 93 跑 Figma MCP 工具面扩展共振；对以 Claude Code 承载夜间批量 agent 任务的团队，这是编排行为变更点，需在自动化脚本中显式确认前后台语义。</li>
+  </ul>
+  <h3>关键指标/资源</h3>
+  <ul>
+    <li>评测/性能：无量化基准（工具链版本发布）</li>
+    <li>代码/论文：<a href="https://<a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.302" target="_blank" rel="noopener">github.com/anthropics/claude-code/releases/tag/v2.1.302</a>">g<a href="https://ithub.com/anthropics/claude-code/releases/tag/v2.1.302" target="_blank" rel="noopener">ithub.com/anthropics/claude-code/releases/tag/v2.1.302</a></a></li>
+  </ul>
+  <div class="tags"><span class="tag" style="color:#58a6ff;border-color:#58a6ff">#AI-Coding</span><span class="tag" style="color:#f0883e;border-color:#f0883e">#开发工具</span><span class="tag" style="color:#f0883e;border-color:#f0883e">#Agent编排</span></div>
+</div>
+
+<hr class="divider">
+
+<div class="warn-box">
+  <div class="section-title">待核实</div>
+  <ol>
+    <li><b>Beam</b>：DeepSWE v1.1 / Terminal-Bench 2.1 / SWE-bench Verified / SWE-bench Pro 系列分数均来自 Reflection 模型卡（厂商自述），缺独立第三方复现；Artificial Analysis 智能指数 30（美国开放权重第二）为第三方数据但未经本次独立复核；「约 1/3 推理 token 达相当质量」为 Reflection 自述；MCP-Atlas 78.7 vs Muse Spark Open 89.2 引自 Meta 榜单。</li>
+    <li><b>Thinker-WM</b>：三大基准登顶成绩均为优必选自述（基于公告时点结果），缺独立复现；arXiv v1 提交于 10-13 14:18 UTC（v2 10-14），严格早于窗口起点，本条目以 10-16 官方公告 + 开源物料落地为窗口内事件；HF 权重仓库（UBTECH-Robotics/Thinker-WM）创建时间因 huggingface.co API 不可达未能核实。</li>
+    <li><b>Hy Memory 2.0</b>：MemoryArena / CodeMemoryBench / SWE-ContextBench / LoCoMo 全部为腾讯自述，缺第三方复现；「业界首个提出工作记忆与代码记忆」为官方表述；GitHub 仓库创建于 10-15 21:06（窗口起点前约 14 小时），公开官宣与权重/SDK 发布集中于 10-16；模型 arXiv 论文编号未在检索中确认。</li>
+    <li><b>NIST ECDSA 溯源</b>：发现过程与方法论细节来自 Anthropic 自述；CellCog 独立复跑为第三方验证但未经密码学社区同行评审；B-163 种子与部分基点生成方式仍未解。</li>
+    <li><b>Claude Code v2.1.302</b>：CLAUDE_CODE_AUTO_MODE_MODEL「仅作用于客户端分类器、不影响服务端自动模式」的边界以官方 release notes 为准，未在本地环境实测。</li>
+  </ol>
+</div>
+
+<details class="card priority-6" id="entry-6"><summary class="fold-summary">去重说明（审计明细，点击展开）</summary>
+  
+  <ul>
+    <li><b>7 天基线</b>：扫描 2026-10-10 至 10-16 全部 7 份工作区报告（第 86–93 跑，35 条目）及网盘跨实例产出（10-17 00:27 版 5 条：Skild AI 自对弈足球 / RoboParty RP1 / Vercel CEO 60% 数据 / Linux 内核披露决议 / Muse Spark 开放权重），无同主体同动作重复。</li>
+    <li><b>dedup_check 逐条执行</b>：Thinker-WM / Hy Memory 2.0 / NIST ECDSA / Claude Code v2.1.302 均 is_dup:false；Beam 被判 is_dup:true（匹配第 82 跑 10-06「Reflection AI 发布 Beam」模型首发事件），按「同主体+同动作」判定为不同事件（10-05 模型发布与 API 开放 vs 10-16 权重开源 + Mirror CLI + 40 伙伴生态），保留并披露，沿用第 93 跑 Step 5 Preview「模型发布 vs 权重交付」先例。</li>
+    <li><b>排除项（第一信源时点在窗口外或已被覆盖）</b>：OpenAI 失准报告三连发（第一信源 10-15；India CERT-In 多实验室越界报告 10-16 属安全治理向）；Anthropic 代码评审博文「Claude 写 90% Claude Code 代码」（10-15）；Hydra-0（arXiv:2608.18077，8 月旧闻）；MolmoAct2（arXiv:2605.02881，5 月旧闻）；LEASH（arXiv:2610.22280，v1 10-15）；Hybrid Reasoning Agents（arXiv:2610.18861，v1 10-13）；Towards Agentic Robots 综述（arXiv:2610.20442，v1 10-14）；WorldOracle 评测平台（arXiv:2610.18826 v1 10-13，平台 10-16 开放的信源为二级报道，未达第一信源窗口内标准）；Meta Muse Spark 开放权重（第 93 跑已覆盖）；Linux 内核弃用 LLM 披露（事件 10-08）；Perplexity Decider V1.2（决策模型族已由第 88/89 跑覆盖，V1.2 为同族更新）；Skild AI / RoboParty / Vercel CEO 数据（网盘 10-17 00:27 跨实例版已覆盖）。</li>
+    <li><b>观察项（窗口内但未达入选门槛或候选已满）</b>：商务部、科技部拟增列 23 项 AI 技术至出口管制目录并征求意见（10-16，政策事件非技术突破）；MicroFactory 弃用 VLA 转向 LLM 控制 + Poke &amp; Wiggle 让 Claude 做具身研究（10-16，第一信源为公司演示视频，缺可核实技术细节）；Artificial Analysis 首发 AA-AgentPerf：Vera Rubin NVL72 每兆瓦吞吐 5.7× GB300（10-16，基础设施效率评测，候选已满）；Amazon ALoDLM-8B 扩散语言模型（10-16，缺第一信源细节核实）。</li>
+    <li><b>结构性说明</b>：arXiv 10-16 提交批次尚未进入公开公告（周末停更，预计 10-19 周一公告），窗口内学术首发结构性空缺，本期以官方工程发布为主；具身/世界模型方向以 Thinker-WM 为代表，RSI 方向由 Hy Memory（记忆层基建）与 NIST ECDSA（研究智能体实证）覆盖。</li>
+  </ul>
+</div></details>
+
+<hr class="divider">
+
+<details class="archive"><summary class="fold-summary">归档状态说明（运维信息，点击展开）</summary>
+  
+  <ul>
+    <li><b>工作区 Markdown</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261017_1130.md</code></li>
+    <li><b>工作区 HTML</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261017_1130.html</code></li>
+    <li><b>网盘归档</b>：<code>O:/quark/automation/每日 AI 新闻推送/</code>（同步写入上述同名文件）</li>
+    <li><b>执行状态</b>：<span class="status-ok">✅ 成功（md+html 均以 open()+write 一次性写入网盘根目录，本地与网盘 md5 逐字节一致；guardian post ok:true 无 issue（窗口快照模式）；probe 残渣清理受阻为已知环境约束，不算失败。状态回填与重制后旧网盘副本经 rename 避让为 _superseded_ 前缀，修正版重新归档并通过校验）</span></li>
+    <li><b>收尾固化</b>：5 ok / 0 failed / 0 skipped（kb / rss / index / backlog / health 全部成功；RSS 291 条含本期，backlog 139 条 open，信源健康 ok=3 warn=0 error=0 manual=1）</li>
+  </ul>
+</div></details>
+
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日 AI 前沿技术精选 - 2026-08-22</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #0f0f0f;
+            color: #e0e0e0;
+            line-height: 1.7;
+            padding: 40px 20px;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header {
+            border-bottom: 2px solid #333;
+            padding-bottom: 24px;
+            margin-bottom: 32px;
+        }
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+        .meta {
+            display: flex;
+            gap: 24px;
+            color: #888;
+            font-size: 14px;
+        }
+        .meta span { display: flex; align-items: center; gap: 6px; }
+        .news-item {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: border-color 0.2s;
+        }
+        .news-item:hover { border-color: #444; }
+        .news-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .news-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        .news-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+            line-height: 1.4;
+        }
+        .news-source {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+        .news-section {
+            margin-top: 16px;
+        }
+        .news-section h4 {
+            font-size: 13px;
+            font-weight: 600;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+        .news-section p, .news-section li {
+            font-size: 15px;
+            color: #ccc;
+            line-height: 1.7;
+        }
+        .news-section ul {
+            padding-left: 20px;
+        }
+        .news-section li {
+            margin-bottom: 6px;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        .tag {
+            background: #252525;
+            color: #888;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .tag.primary { background: #1a3a5c; color: #6cb4ee; }
+        .edit-section {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 32px;
+        }
+        .edit-section h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+        .edit-section p {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 12px;
+        }
+        .edit-section ul {
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+        .edit-section li {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 8px;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid #2a2a2a;
+            color: #666;
+            font-size: 13px;
+            text-align: center;
+        }
+        .risk-note {
+            background: #2a1a1a;
+            border-left: 3px solid #e74c3c;
+            padding: 12px 16px;
+            margin-top: 16px;
+            font-size: 13px;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📰 每日 AI 前沿技术精选</h1>
+            <div class="meta">
+                <span>📅 2026-08-22</span>
+                <span>⏰ 23:03</span>
+                <span>📝 5 条精选</span>
+            </div>
+        </div>
+
+        <article class="news-item">
+            <div class="news-header">
+                <div class="news-number">1</div>
+                <div>
+                    <div class="news-title">OpenAI 大幅下调 GPT-5.6 Sol API 价格超 20%</div>
+                    <div class="news-source">Reuters / IT之家 | 2026-08-22</div>
+                </div>
+            </div>
+            <div class="news-section">
+                <h4>事件概述</h4>
+                <p>OpenAI 于 8 月 21 日宣布，未来 3 个月内将 GPT-5.6 Sol 的 API 与 Credit 价格下调 20% 以上。输入价格从 $5/M 降至 $4/M（降 20%），输出从 $30/M 降至 $20/M（降 33%）。这是 OpenAI 首次对旗舰模型进行降价。</p>
+            </div>
+            <div class="news-section">
+                <h4>技术与工程价值</h4>
+                <ul>
+                    <li><strong>核心机制</strong>：此次降价适用于 API、ChatGPT Work 和 Codex Credits，但 Pro/Plus/Business 订阅价格不变。官方称降价源于硬件路由优化、推理软件改进和更智能的上下文缓存。</li>
+                    <li><strong>实际影响</strong>：对输出 Token 占比高的 AI 智能体、编程代理、深度研究场景，综合推理成本可能下降近三成。</li>
+                </ul>
+            </div>
+            <div class="tags">
+                <span class="tag primary">#AI基础设施</span>
+                <span class="tag primary">#价格战</span>
+                <span class="tag">#OpenAI</span>
+                <span class="tag">#API定价</span>
+            </div>
+        </article>
+
+        <article class="news-item">
+            <div class="news-header">
+                <div class="news-number">2</div>
+                <div>
+                    <div class="news-title">AI Coding Agent 基础设施层「开源占位战」白热化</div>
+                    <div class="news-source">GitHub AI日报 / DeepTech | 2026-08-22</div>
+                </div>
+            </div>
+            <div class="news-section">
+                <h4>事件概述</h4>
+                <p>8 月 21-22 日，DeepSeek Harness 一周内三更，将 Claude Code 与 Codex 收编为子代理；OpenAI 同步将 Codex Harness 以 Apache-2.0 开源，获 10.7 万 Star。Cursor 发布 Origin 代码托管平台 Beta，同日 GitHub 遭遇全球性宕机。</p>
+            </div>
+            <div class="news-section">
+                <h4>技术与工程价值</h4>
+                <ul>
+                    <li><strong>核心机制</strong>：DeepSeek Harness 定位为 Agent 时代的「调度层」，Codex Harness 提供三层接口。Agent 基础设施层已进入「谁先开放谁占位」阶段。</li>
+                    <li><strong>实际影响</strong>：Cloudflare 同期开源 Computer 运行时，为 AI 智能体提供持久化环境，降低数亿并发 Agent 成本。</li>
+                </ul>
+            </div>
+            <div class="tags">
+                <span class="tag primary">#AI Coding</span>
+                <span class="tag primary">#开源竞争</span>
+                <span class="tag">#Agent基础设施</span>
+                <span class="tag">#DeepSeek</span>
+            </div>
+        </article>
+
+        <article class="news-item">
+            <div class="news-header">
+                <div class="news-number">3</div>
+                <div>
+                    <div class="news-title">WRC 2026 释放信号：具身智能迎规模化应用关键窗口期</div>
+                    <div class="news-source">央广网 / 科创板日报 | 2026-08-22</div>
+                </div>
+            </div>
+            <div class="news-section">
+                <h4>事件概述</h4>
+                <p>2026 世界机器人大会（8/19-23，北京）持续进行。中国电子学会指出具身智能产品正处于从「小批量试用」转向「大规模落地」的关键拐点。宇树科技同日科创板上市，开盘价 1100 元/股，较发行价大涨近 630%，市值一度冲破 4000 亿。</p>
+            </div>
+            <div class="news-section">
+                <h4>技术与工程价值</h4>
+                <ul>
+                    <li><strong>核心机制</strong>：竞争从硬件性能转向「模型+数据」综合能力。大脑层：大晓 Kairos 3.1 开源、蚂蚁灵波全栈大脑 2.0（6 万小时真实物理数据）、星海图 G0.5 即将开源。</li>
+                    <li><strong>实际影响</strong>：2026 年被定义为「具身智能数据规模化的元年」，客户数据需求从几百小时跃升至百万小时。行业正从 POC 进入 PMF 验证阶段。</li>
+                </ul>
+            </div>
+            <div class="tags">
+                <span class="tag primary">#具身智能</span>
+                <span class="tag primary">#WRC2026</span>
+                <span class="tag">#机器人</span>
+                <span class="tag">#规模化应用</span>
+            </div>
+        </article>
+
+        <article class="news-item">
+            <div class="news-header">
+                <div class="news-number">4</div>
+                <div>
+                    <div class="news-title">NVIDIA AVO 通用编程 Agent 在 ARC-AGI-3 取得 100% 满分</div>
+                    <div class="news-source">NVIDIA / DeepTech | 2026-08-22</div>
+                </div>
+            </div>
+            <div class="news-section">
+                <h4>事件概述</h4>
+                <p>NVIDIA 宣布其通用编程 Agent 系统 AVO 在 ARC-AGI-3 公开测试集全部 25 个环境中取得 100% 满分，完成所有 183 个关卡。ARC-AGI 是目前最具挑战性的通用智能基准测试之一。</p>
+            </div>
+            <div class="news-section">
+                <h4>技术与工程价值</h4>
+                <ul>
+                    <li><strong>核心机制</strong>：AVO 是 NVIDIA 专为视觉操作设计的 Agent 系统，满分成绩标志着在 Agent 工程领域取得重大突破。</li>
+                    <li><strong>实际影响</strong>：与 DeepSeek Harness、OpenAI Codex Harness 的开源竞争形成呼应——业界同时推进「工程任务解决能力」和「抽象推理能力」两条技术路线。</li>
+                </ul>
+            </div>
+            <div class="tags">
+                <span class="tag primary">#AI Coding</span>
+                <span class="tag primary">#ARC-AGI</span>
+                <span class="tag">#NVIDIA</span>
+                <span class="tag">#通用智能</span>
+            </div>
+        </article>
+
+        <article class="news-item">
+            <div class="news-header">
+                <div class="news-number">5</div>
+                <div>
+                    <div class="news-title">AI Coding 模型排行榜动态：Claude Opus 5 领跑，GPT-5.6 Sol 性价比提升</div>
+                    <div class="news-source">ixio / Toolradar | 2026-08-22</div>
+                </div>
+            </div>
+            <div class="news-section">
+                <h4>事件概述</h4>
+                <p>8 月 22 日多个 AI 编程模型排行榜更新。ixio 平台显示 Claude Opus 5 以 97 综合评分领跑，GPT-5.6 Sol 以 93 位列第三。AITNT News 代码 AI 排行榜中，Qwen3.8-Max 登顶（1669 分）。</p>
+            </div>
+            <div class="news-section">
+                <h4>技术与工程价值</h4>
+                <ul>
+                    <li><strong>核心机制</strong>：当前无单一模型在所有维度领先——Claude Opus 4.8 在 SWE-bench Verified 上以 88.6% 准确率领先，GPT-5.6 Sol 在 Terminal-Bench 2.1 上以 88.8% 和 54% 更高的 token 效率领先。</li>
+                    <li><strong>实际影响</strong>：OpenAI 降价使 GPT-5.6 Sol 成本从 $35 降至 $24，但 DeepSeek V4 Pro 仍以 $0.435/$0.87 保持最大差距。</li>
+                </ul>
+            </div>
+            <div class="tags">
+                <span class="tag primary">#AI Coding</span>
+                <span class="tag primary">#模型排行榜</span>
+                <span class="tag">#价格对比</span>
+                <span class="tag">#SWE-bench</span>
+            </div>
+        </article>
+
+        <div class="edit-section">
+            <h3>📝 编辑点评</h3>
+            <p><strong>今日主线：「Agent 基础设施层定价战 + 具身智能进入 PMF 验证期」</strong></p>
+            <p>本期核心信号来自两个方向的共振：</p>
+            <ul>
+                <li><strong>AI Coding 侧</strong>：OpenAI 首次对旗舰模型 GPT-5.6 Sol 降价，标志着 AI 价格战从「中低端内卷」升级为「前沿模型定价权争夺」。DeepSeek Harness 与 OpenAI Codex Harness 的开源竞争进入白热化，Cursor Origin 平台在 GitHub 宕机日上线。</li>
+                <li><strong>具身智能侧</strong>：WRC 2026 释放的信号比往年更清晰——从「炫技」转向「干活」。宇树科创板上市首日市值破 4000 亿，折射资本对具身智能交付能力的认可。</li>
+                <li><strong>技术突破</strong>：NVIDIA AVO 在 ARC-AGI-3 满分，标志着通用智能基准测试的新高度。</li>
+            </ul>
+            <div class="risk-note">
+                <strong>⚠️ 风险提示</strong>：OpenAI 降价为促销性质（至 11/21），长期定价走势待观察；宇树首日市值为媒体报道数据，待审计确认；WRC 人形出货量数据来自厂商披露，第三方验证待补充。
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>归档路径：O:/quark/automation/每日 AI 新闻推送/</p>
+            <p>执行状态：✅ 成功</p>
+        </div>
+    </div>
+</body>
+</html>

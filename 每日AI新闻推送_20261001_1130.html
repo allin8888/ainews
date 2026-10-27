@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 2026-10-01</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --accent: #58a6ff;
+  --green: #3fb950;
+  --orange: #f0883e;
+  --red: #f85149;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  padding: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 12px;
+}
+.meta {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.meta strong { color: var(--text); }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  border-left: 4px solid var(--accent);
+}
+.card:nth-child(2) { border-left-color: var(--green); }
+.card:nth-child(3) { border-left-color: var(--orange); }
+.card:nth-child(4) { border-left-color: var(--accent); }
+.card:nth-child(5) { border-left-color: var(--red); }
+.card h2 {
+  font-size: 1.1rem;
+  color: var(--text);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+.card .source { font-size: 0.82rem; color: var(--muted); margin-bottom: 12px; }
+.card h3 {
+  font-size: 0.9rem;
+  color: var(--accent);
+  margin: 10px 0 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.card ul { padding-left: 20px; }
+.card li { margin-bottom: 6px; font-size: 0.92rem; }
+.card p { font-size: 0.92rem; margin-bottom: 8px; }
+.tag {
+  display: inline-block;
+  background: rgba(88,166,255,0.12);
+  color: var(--accent);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 0.78rem;
+  margin-right: 6px;
+  margin-top: 8px;
+}
+.section-title {
+  font-size: 1.2rem;
+  color: var(--text);
+  margin: 32px 0 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.verify {
+  background: rgba(248,81,73,0.06);
+  border: 1px solid rgba(248,81,73,0.25);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 20px 0;
+}
+.verify h3 { color: var(--red); font-size: 1rem; margin-bottom: 10px; }
+.verify ol { padding-left: 20px; font-size: 0.88rem; color: var(--muted); }
+.verify li { margin-bottom: 8px; }
+.archive {
+  background: rgba(63,185,80,0.06);
+  border: 1px solid rgba(63,185,80,0.25);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 20px 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+.archive h3 { color: var(--green); font-size: 1rem; margin-bottom: 10px; }
+.archive ul { padding-left: 20px; }
+.archive li { margin-bottom: 6px; }
+.status-badge {
+  display: inline-block;
+  background: rgba(63,185,80,0.2);
+  color: var(--green);
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.dedup {
+  background: rgba(139,148,158,0.06);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 20px 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+.dedup h3 { color: var(--text); font-size: 1rem; margin-bottom: 10px; }
+.dedup ul { padding-left: 20px; }
+.dedup li { margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<h1>每日 AI 前沿技术精选</h1>
+
+<div class="meta">
+<strong>日期</strong>：2026-10-01 &nbsp;|&nbsp; <strong>时间</strong>：11:30 &nbsp;|&nbsp; <strong>精选条数</strong>：5 条<br>
+<strong>时效窗口</strong>：2026-09-30 22:13 – 2026-10-01 11:30（严格 24 小时；距上次执行 9/30 22:13 约 13h17m，未触发增量收敛，未扩展 48h）
+</div>
+
+<div class="card">
+<h2>1. Google 正式发布 Gemini 4 Argon：输出上限 1M token，DeepSWE 77.9% 刷新纪录，首批仅对网络安全防御者开放</h2>
+<div class="source">Google 官方博客 / Kavukcuoglu | 2026-09-30 美东</div>
+<p>Google DeepMind SVP Koray Kavukcuoglu 于 9/30 美东发布 Gemini 4 代际首款旗舰模型 Argon，面向复杂、长周期工作流（软件工程、金融/法律企业知识、网络安全防御）。输出上限从 64K 提升至 1,000,000 token。首批通过 Fairwind 计划（650+ 机构）向受信任网络安全防御团队提供，暂不面向普通开发者。内部数据：Agent 释放 300 TiB 内存、C/C++ 迁移 Rust（Fuchsia Zircon 内核 80 万行）、libgav1 解码器 32K 行 SIMD 替换为安全 Rust 2.7× 加速。</p>
+<h3>关键指标/资源</h3>
+<ul>
+<li>DeepSWE v1.1 77.9%（vs Astra 74.1% / Opus 5.5 74.2%）；AutomationBench 51.3%；LVBench 91.7%；CWE-bench v1 68%（并列第一）；Harvey Legal 19.6%；<strong>FrontierSWE v2 55.0%（落后 Astra 65.5%）</strong>；Terminal-Bench 4.0 57.4%（落后 Opus 5.5 66.4%）</li>
+<li>定价：$2/M 输入、$10/M 输出、缓存 $0.10/M（推广期）；推广期后 $4/$20（<strong>Google 自述数据，未见第三方独立复现，待核实</strong>）</li>
+<li><a href="https://blog.google/intl/zh-tw/products/explore-get-answers/gemini-4-argon">Google 官方博客</a>；SiliconReport / Bytecore News / Chosun Daily 9/30 集中报道</li>
+</ul>
+<span class="tag">#前沿模型</span><span class="tag">#AI-Coding</span><span class="tag">#推理成本</span><span class="tag">#网络安全</span>
+</div>
+
+<div class="card">
+<h2>2. Google 发布可复用「技能」（Skills）替换 Gems：斜杠调用、跨任务自动匹配、SKILL.md 导入</h2>
+<div class="source">Google 官方 The Keyword | 2026-09-30</div>
+<p>9/30 全球上线，正式取代 Gems。技能运行在当前聊天会话内（无需切换标签页），Gemini 自动识别并应用相关技能；通过 /技能名 显式调用，支持叠加。已有 Gems 将自动迁移为技能格式；个人账号 11/17 停用 Gems，Workspace 企业/教育 2027 年 3/6 月分阶段停用。支持从其他平台导入 SKILL.md（目录名小写连字符 + SKILL.md）。</p>
+<h3>关键指标/资源</h3>
+<ul>
+<li>100 个活跃技能上限；支持引用文件（.txt / .pdf / 图片）；跨平台 SKILL.md 导入；个人账号 2026-11-17 停 Gems</li>
+<li><a href="https://www.unite.ai/google-brings-reusable-skills-to-gemini-chat-replacing-gems">Unite.AI 报道</a>；Google The Keyword 9/30；zhiding.cn 9/30</li>
+</ul>
+<span class="tag">#Agent 平台化</span><span class="tag">#工作流编排</span><span class="tag">#跨平台标准化</span>
+</div>
+
+<div class="card">
+<h2>3. Microsoft Research 开源 Rho 系列 5B VLA：面向物理 AI 的可适配端侧具身模型</h2>
+<div class="source">Microsoft Research / Andrey Kolobov | 2026-09-30 集中报道</div>
+<p>9/30 发布 Rho 系列——5B 参数开放权重 VLA，支撑 Rho-alpha VLA+ 架构。核心动机：离线 SFT 适配阶段数据门槛高；Rho 提供覆盖 i2rt YAM Box、Universal Robots AI Trainer、FRANKA FR3 Duo 三平台的预训练中间检查点，降低「通用能力→平台特定控制」迁移成本。项目页、技术报告、代码、权重与数据全部公开。与 Qwen-Robot、Harness VLA（清华 7/22）构成 9–10 月具身智能密集开源窗口。</p>
+<h3>关键指标/资源</h3>
+<ul>
+<li>5B 参数 VLA，开放权重；三平台中间检查点（<strong>具体基准分数未在窗口内公开，待核实</strong>）</li>
+<li><a href="https://agihunt.info/en/p/1a0f5709cbd543035ee2676a4fb">AGI Hunt 9/30 聚合</a>；Microsoft Research 项目页 9/30 上线</li>
+</ul>
+<span class="tag">#具身智能</span><span class="tag">#开源 VLA</span><span class="tag">#端侧推理</span>
+</div>
+
+<div class="card">
+<h2>4. PhantomEnvironments（arXiv:2609.40221）：纯规则生成虚构世界训练 LLM Agent，零边际成本 RL 环境</h2>
+<div class="source">Cornell / UW / NYU | arXiv v1 2026-09-30 17:26 UTC</div>
+<p>Kilian Weinberger 组于 9/30 提交。核心判断：RL 环境生成的瓶颈不是「LLM 生成环境」（有幻觉与基准污染风险），而是「规则生成环境」（零边际成本、无幻觉、可无限扩展）。Agent 在虚构世界语料库中搜索回答多跳问题；训练后可迁移至真实世界多跳检索基准，常优于真实数据训练 Agent。Qwen 模型展现搜索预算随问题难度线性扩展的涌现行为。消融表明跳数是迁移效果主驱动因素。</p>
+<h3>关键指标/资源</h3>
+<ul>
+<li>虚构环境训练 Agent 在真实多跳检索基准上「常优于真实数据训练」；Qwen 搜索预算线性扩展（<strong>论文自述，未见第三方独立复现，待核实</strong>）</li>
+<li><a href="https://arxiv.org/abs/2609.40221">arXiv:2609.40221</a>（v1 2026-09-30 17:26 UTC）</li>
+</ul>
+<span class="tag">#RSI</span><span class="tag">#Agent 训练</span><span class="tag">#RL 环境</span>
+</div>
+
+<div class="card">
+<h2>5. 三星 × 上交大 RoboICL（arXiv:2609.34261）：冻结 GPT-6 Astra 做机器人具身 In-Context Learning，零训练 30 任务 50.64</h2>
+<div class="source">三星 / 上海交通大学 | arXiv v1 2026-09-28，窗口内 9/30–10/1 集中报道</div>
+<p>不训练任务特定 VLA、不更新 Astra 参数，仅推理时提供少量示范 + 交互记忆，让冻结 VLM 直接输出双臂动作。RoboDojo 30 任务：Overall 50.64（vs 最强 baseline 33.68）；10 任务子集 60.60（接近 π0.5 + Astra 混合方案 62.60）；真机 3 任务 mean progress 14.45→78.89（zero→3 shots）。Jev-gated 动作复用减少 Astra 调用 33–48%。与第 74 跑 HomeBody（VLM + 技能库）构成不同路线：RoboICL 为「VLM + 纯上下文示范，无技能层」。</p>
+<h3>关键指标/资源</h3>
+<ul>
+<li>RoboDojo 30 任务 Overall 50.64；真机 78.89 progress（3 shots）；Jev-gated 调用 −33–48%（<strong>论文自述，未见第三方独立复现，待核实</strong>）</li>
+<li><a href="https://arxiv.org/abs/2609.34261">arXiv:2609.34261</a>；<a href="https://github.com/Mosi-AI/RoboICL">代码</a>；机器之心 10/1 报道</li>
+</ul>
+<span class="tag">#具身智能</span><span class="tag">#VLM 直驱</span><span class="tag">#零训练</span><span class="tag">#开源</span>
+</div>
+
+<div class="dedup">
+<h3>去重与边界说明</h3>
+<ul>
+<li><strong>去重基线</strong>：已扫描工作区最近 7 天（9/20–9/30）全部报告条目标题 + O: 盘 9/30 两份同源异构产出；本期 5 条均无同主体+同动作重复。</li>
+<li><strong>Gemini 4 Argon</strong> vs 第 74 跑「Gemini 4 进入后训练」：代际进展确认 → 正式发布 + 完整基准 + 定价，实质性升级，非重复。</li>
+<li><strong>RoboICL</strong> vs 第 74 跑 HomeBody（Stanford × Caltech）：主体与方法均不同（三星 × 上交大 / VLM+纯上下文 vs Stanford / VLM+技能库），非重复。</li>
+<li><strong>边界放宽</strong>：RoboICL arXiv v1（9/28 04:07 UTC）严格早于窗口起点 9/30 22:13，因 9/30–10/1 窗口内机器之心首发中文深度报道 + 项目页完整数据公开构成实质增量，已纳入并就地标注；供下轮参考。</li>
+<li><strong>排除项</strong>：SIFT（MIT/Sakana，首发 arXiv 日期待核实）；DeepGEMM-Ascend（第 77 跑已覆盖 DeepSeek 昇腾主线）；小米 MiMo-V2.6（首发时间待核实）；NVIDIA SoL-Refiner（细节未核实）。</li>
+</ul>
+</div>
+
+<div class="verify">
+<h3>待核实</h3>
+<ol>
+<li><strong>Gemini 4 Argon 全部基准分数</strong>（DeepSWE 77.9% / AutomationBench 51.3% / LVBench 91.7% / CWE-bench 68% / Vals Finance 65.4% / Harvey Legal 19.6%）：Google 自述、自家 API 最高思考档位跑分（pass@1），对照模型数据来自各家不同 harness 与发布时点，口径不完全可比，未见第三方独立复现。</li>
+<li><strong>Gemini 4 Argon 1M 输出上限的实际任务完成质量</strong>：官方未披露 1M 输出场景下的任务成功率、错误累积率或长程一致性指标。</li>
+<li><strong>Microsoft Rho 5B VLA 具体基准分数</strong>：项目页与技术报告已公开（9/30），但窗口内报道均未引用具体 benchmark 数字；三平台中间检查点任务成功率未公开。</li>
+<li><strong>PhantomEnvironments「常优于真实数据训练」的量化幅度</strong>：论文摘要未给出具体 benchmark 名称与提升点数；结论缺独立复现。</li>
+<li><strong>RoboICL 真机 78.89 progress（3 shots）</strong>：论文自述真机三任务数据，缺独立实验室复现；Jev-gated 调用减少未在公开代码中提供对照 harness。</li>
+</ol>
+</div>
+
+<div class="archive">
+<h3>归档状态说明</h3>
+<ul>
+<li><strong>工作区 Markdown</strong>：每日AI新闻推送_20261001_1130.md</li>
+<li><strong>工作区 HTML</strong>：每日AI新闻推送_20261001_1130.html</li>
+<li><strong>网盘归档</strong>：O:/quark/automation/每日 AI 新闻推送/（同步写入同名文件）</li>
+<li><strong>执行状态</strong>：<span class="status-badge">✅ 成功</span>（O: 盘两份文件字节校验一致；第 77 跑 davfs 锁定遗留问题未复发，O: 盘本次可达且写入成功）</li>
+</ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-10-19</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --card-border: #30363d;
+    --text: #e6edf3;
+    --text-dim: #9da7b3;
+    --accent-blue: #58a6ff;
+    --accent-green: #3fb950;
+    --accent-orange: #d29922;
+    --accent-purple: #bc8cff;
+    --code-bg: #1f242d;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    line-height: 1.75;
+    padding: 32px 20px 64px;
+  }
+  .container { max-width: 960px; margin: 0 auto; }
+  header.hero {
+    background: linear-gradient(135deg, #161b22 0%, #1a2332 100%);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 28px;
+  }
+  header.hero h1 { font-size: 26px; letter-spacing: 0.5px; margin-bottom: 14px; color: var(--text); }
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px 24px;
+    font-size: 14px;
+    color: var(--text-dim);
+  }
+  .meta-grid b { color: var(--accent-blue); font-weight: 600; }
+  .window-pill {
+    display: inline-block;
+    background: rgba(88,166,255,0.12);
+    border: 1px solid rgba(88,166,255,0.35);
+    color: var(--accent-blue);
+    border-radius: 999px;
+    padding: 2px 14px;
+    font-size: 13px;
+    margin-top: 6px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 26px 30px;
+    margin-bottom: 26px;
+  }
+  .card h2 {
+    font-size: 19px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    color: var(--text);
+    border-left: 4px solid var(--accent-blue);
+    padding-left: 12px;
+  }
+  .card h2 .src { display: block; font-size: 13px; color: var(--text-dim); font-weight: 400; margin-top: 4px; }
+  .card h3 {
+    font-size: 15px;
+    color: var(--accent-green);
+    margin: 18px 0 8px;
+    letter-spacing: 0.3px;
+  }
+  .card p { font-size: 14.5px; color: var(--text); margin-bottom: 10px; }
+  .card ul { margin: 6px 0 12px 20px; }
+  .card li { font-size: 14.5px; margin-bottom: 8px; }
+  .card li b { color: var(--accent-orange); }
+  .tag-row { margin-top: 14px; }
+  .tag {
+    display: inline-block;
+    background: rgba(188,140,255,0.10);
+    border: 1px solid rgba(188,140,255,0.35);
+    color: var(--accent-purple);
+    border-radius: 6px;
+    padding: 1px 10px;
+    font-size: 12.5px;
+    margin-right: 8px;
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  }
+  code {
+    background: var(--code-bg);
+    border-radius: 5px;
+    padding: 1px 6px;
+    font-size: 13px;
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    color: #ffa657;
+  }
+  .metrics-block {
+    background: var(--code-bg);
+    border: 1px dashed var(--card-border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 12.5px;
+    color: var(--text-dim);
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    white-space: pre-wrap;
+    word-break: break-all;
+    margin: 10px 0;
+  }
+  .note {
+    background: rgba(210,153,34,0.08);
+    border: 1px solid rgba(210,153,34,0.35);
+    border-radius: 10px;
+    padding: 16px 22px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+    margin-bottom: 26px;
+  }
+  .note b { color: var(--accent-orange); }
+  .note ul { margin: 6px 0 0 18px; }
+  .note li { margin-bottom: 6px; }
+  .archive {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 22px 30px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .archive b { color: var(--text); }
+  .archive code { font-size: 12.5px; }
+  .status-ok { color: var(--accent-green); font-weight: 700; }
+  hr.sep { border: none; border-top: 1px solid var(--card-border); margin: 26px 0; }
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header class="hero">
+  <h1>每日 AI 前沿技术精选</h1>
+  <div class="meta-grid">
+    <div>日期：<b>2026-10-19</b></div>
+    <div>时间：<b>11:30</b></div>
+    <div>精选条数：<b>3 条</b></div>
+  </div>
+  <div class="window-pill">时效窗口：2026-10-18 11:39 – 2026-10-19 11:30（严格24小时）</div>
+</header>
+
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="AI-Coding">AI-Coding</button>
+<button class="filter-chip" data-tag="推理基础设施">推理基础设施</button>
+<button class="filter-chip" data-tag="世界模型">世界模型</button>
+<button class="filter-chip" data-tag="实时生成">实时生成</button>
+<button class="filter-chip" data-tag="开源发布">开源发布</button>
+<button class="filter-chip" data-tag="具身智能">具身智能</button>
+<button class="filter-chip" data-tag="VLA">VLA</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. vLLM v0.32.0 发布：/v1/systemone 结构化决策端点到家，NVFP4 KV cache 全架构普及</a><a class="toc-item" href="#entry-2">2. VAST 开源实时世界模型 EdenLive：单卡 RTX 5090 720P 超 24FPS，「状态-渲染解耦」架构落地</a><a class="toc-item" href="#entry-3">3. 西湖机器人 WR1 通用大脑：全球首创大小脑双预训练，WM+VLA+GAE 融合驱动全身协同家务任务链（西湖机器人</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="AI-Coding 推理基础设施" style="border-left:3px solid #58a6ff">
+  <h2>1. vLLM v0.32.0 发布：/v1/systemone 结构化决策端点到家，NVFP4 KV cache 全架构普及
+    <span class="src">GitHub Releases | 2026-10-18</span>
+  </h2>
+  <h3>事件概述</h3>
+  <p>vLLM 于北京时间 10 月 18 日 14:50 发布 v0.32.0，汇集 814 个 commit、363 位贡献者（121 位新贡献者）。本版把「结构化决策」能力下沉为推理引擎默认面，同时将低精度 KV cache 推向全硬件架构，并带来多 API worker 负载路由等面向 Agent 高并发短请求场景的系统性改进。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：新增 <code>POST /v1/systemone</code> 端点，直接在引擎内回答 <code>choice</code> / <code>noul</code> / <code>score</code> 三类结构化决策问题并默认提供服务——与近期 OpenAI Decisions API、Perplexity pplx-decider 等「决策模型独立品类」浪潮形成开源基建侧呼应，编码 Agent 的工具选择/分支判断可不再经过自由文本生成。</li>
+    <li><b>低精度 KV cache 全面铺开</b>：NVFP4 KV cache 新支持 SM8x / SM90 / SM12x（含 SM12x XQA decode），GLM-5.x 在 SM100 默认切换 FP8 KV cache，ROCm 新增 <code>ultraquant_4bit</code>（约 FP8 两倍密度）。</li>
+    <li><b>通用 hf 解析器</b>：读取 checkpoint 自带的 <code>response_template</code>，新模型接入无需再写模型特定解析器，Python 与 Rust 前端双支持。</li>
+    <li><b>多 API worker 最小负载路由</b>：<code>--api-server-count</code> &gt; 1 时按最小负载分配连接，直接优化 Agent 循环中「短请求、高频率」的请求模式。</li>
+    <li><b>安全面</b>：修复 3 个 GHSA（chat template 资源耗尽、tokenizer <code>max_token_id</code> 差一错误、P2P ZMQ socket 耗尽），CORS 默认不再放开所有源。</li>
+    <li><b>实际影响</b>：KV cache 低精度化直接扩大单卡可服务上下文长度与并发会话数，是自建 Agent 推理基础设施最直接的降本杠杆；<code>/v1/systemone</code> 与 <code>hf</code> 解析器分别从「决策原生支持」和「模型接入成本」两侧降低 Agent 工作流的工程摩擦。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>短请求 req/s 提升</td><td>+43–85%</td><td><div class="bar"><span style="width:85%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>GLM-5.x FP8 KV 吞吐</td><td>+2.3–5.5%</td><td><div class="bar"><span style="width:30%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>GLM-5.3-Flash 输出吞吐</td><td>+31%</td><td><div class="bar"><span style="width:60%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>HiSparse 高并发吞吐</td><td>+58%</td><td><div class="bar"><span style="width:58%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>commit 数</td><td>814</td><td><div class="bar"><span style="width:90%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <ul>
+    <li>评测/性能（均为官方 release notes / PR benchmark 口径，配置见原文，未见第三方独立复现）：多 API worker 短请求 req/s +43–85%（Qwen3-0.6B，32 输入 / 1 输出 token）；GLM-5.x FP8 KV cache（SM100）每卡 KV 显存减半、吞吐 +2.3–5.5%、TTFT +7–11%；<code>fp8_ds_mla</code>（SM90）GLM-5.3-Flash 输出吞吐 +31%；HiSparse per-request residency 在 B200 高并发全驻留长上下文下 +58%；本版 814 commits / 363 contributors。</li>
+    <li>代码/论文：GitHub Release <code>vllm-project/vllm</code> v0.32.0（<code>pip install vllm</code>，CUDA 13.0 默认镜像 <code>vllm/vllm-openai:v0.32.0</code>）；破坏性变更含 Python 3.10 弃用（最低 3.11）、<code>transformers&gt;=5.16.1,&lt;5.20.0</code>、CORS 默认收紧。</li>
+  </ul>
+  <div class="metrics-block">```metrics
+[{"label":"短请求 req/s 提升","value":"+43–85%","kind":"self","bar":85},{"label":"GLM-5.x FP8 KV 吞吐","value":"+2.3–5.5%","kind":"self","bar":30},{"label":"GLM-5.3-Flash 输出吞吐","value":"+31%","kind":"self","bar":60},{"label":"HiSparse 高并发吞吐","value":"+58%","kind":"self","bar":58},{"label":"commit 数","value":"814","kind":"self","bar":90}]
+```</div>
+  <div class="tag-row"><span class="tag" style="color:#58a6ff;border-color:#58a6ff">#AI-Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#推理基础设施</span></div>
+</div>
+
+<div class="card priority-2" id="entry-2" data-tags="世界模型 实时生成 开源发布" style="border-left:3px solid #bc8cff">
+  <h2>2. VAST 开源实时世界模型 EdenLive：单卡 RTX 5090 720P 超 24FPS，「状态-渲染解耦」架构落地
+    <span class="src">VAST 官方 GitHub + 量子位 | 2026-10-18</span>
+  </h2>
+  <h3>事件概述</h3>
+  <p>VAST 于 10 月 18 日正式发布并开源实时世界模型 EdenLive（Project Eden 的阶段成果，今年 6 月研究预览的延续），模型权重、推理代码、技术报告与端到端 Demo 同步上线（GitHub <code>VAST-AI-Research/EdenLive</code>，Apache-2.0，项目主页 <a href="https://vast-eden.ai" target="_blank" rel="noopener">vast-eden.ai</a>），并附带开源「Prompt to Proxy Game」Skill 游戏原型。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：官方称首次在实时生成前提下同时实现「任意参考输入 + 任意画风 + 长时连续运行」——给定简化场景或参考视频、目标首帧与提示词，模型沿参考的布局与运动持续生成写实、二次元等不同画风的精细画面。</li>
+    <li><b>架构分工</b>：延续 Project Eden 确立的「状态维护与视觉渲染解耦」——上游交互系统维护世界状态与交互规则，EdenLive 只负责把状态变化实时渲染出来，从用户输入到画面呈现的端到端延迟为百毫秒级。</li>
+    <li><b>实际影响</b>：交互式世界模型（游戏、仿真、虚拟内容生产）的实时性门槛从数据中心级算力降到单张消费级显卡；「物理规则由符号系统维护、视觉由生成模型渲染」的分层为「可玩性一致性」与「生成式视觉表现」的结合提供了可复用的工程范式，也回应了「AI 搭场景」能力普及之后的实时渲染缺口。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>生成帧率（720P/5090）</td><td>&gt;24 FPS</td><td><div class="bar"><span style="width:48%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>端到端延迟</td><td>百毫秒级</td><td><div class="bar"><span style="width:80%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>模型规模</td><td>5B</td><td><div class="bar"><span style="width:30%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>连续生成时长</td><td>分钟级</td><td><div class="bar"><span style="width:60%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <ul>
+    <li>评测/性能：单张 RTX 5090、5B 模型、720P 下生成速度超 24FPS，可持续生成分钟级画面，端到端延迟百毫秒级（均为 VAST 官方与量子位报道口径，未见第三方实测；仓库创建于 10-12、正式开源推送于 10-18）。</li>
+    <li>代码/论文：GitHub <code>VAST-AI-Research/EdenLive</code>（Apache-2.0）；项目主页 <a href="https://vast-eden.ai" target="_blank" rel="noopener">vast-eden.ai</a>；技术报告与 Demo 同步公开。</li>
+  </ul>
+  <div class="metrics-block">```metrics
+[{"label":"生成帧率（720P/5090）","value":">24 FPS","kind":"self","bar":48},{"label":"端到端延迟","value":"百毫秒级","kind":"self","bar":80},{"label":"模型规模","value":"5B","kind":"self","bar":30},{"label":"连续生成时长","value":"分钟级","kind":"self","bar":60}]
+```</div>
+  <div class="tag-row"><span class="tag" style="color:#bc8cff;border-color:#bc8cff">#世界模型</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#实时生成</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#开源发布</span></div>
+</div>
+
+<div class="card priority-3" id="entry-3" data-tags="具身智能 VLA 世界模型" style="border-left:3px solid #3fb950">
+  <h2>3. 西湖机器人 WR1 通用大脑：全球首创大小脑双预训练，WM+VLA+GAE 融合驱动全身协同家务任务链
+    <span class="src">西湖机器人（杭州）经新浪财经/网易报道 | 2026-10-19</span>
+  </h2>
+  <h3>事件概述</h3>
+  <p>据 10 月 19 日报道，西湖机器人（杭州，官网 <a href="https://wlrobo.com" target="_blank" rel="noopener">wlrobo.com</a>）发布全新升级的通用大脑 WR1 并以真实家庭场景演示连贯家务任务链：人形机器人从晃动晾衣架上取下长裤、搭臂承托、抛送机械臂，转身铺展长裤并与第二台人形协同折叠，全程视觉观察、实时调整；官方称其中「人形机器人灵巧手自主折叠衣物」为全球首个演示案例，多项关键能力对标甚至超越 Figure 等海外标杆。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：WR1 采用官方所称「全球首创的通用大小脑双预训练系统架构」，把多模态任务理解与全身控制深度耦合——大脑侧融合世界模型（WM）与视觉-语言-动作模型（VLA），依据视觉观察与语言指令统一输出包含身体移动、全身姿态、灵巧手操作的完整动作序列；小脑侧由自研的「全球首个通用动作大模型」GAE 完成高速稳定执行；双机协同演示中两台机器人互为观察对象、按对方动作与物体实时状态调整配合。</li>
+    <li><b>实际影响</b>：家务类长程任务链（柔性物体 + 外部扰动 + 多机协作）是具身智能公认最高门槛场景之一，WR1 的演示把竞争焦点从「单点技能（抓杯/叠毛巾）」推向「连贯任务执行」；其 WM+VLA 大小脑融合路线与本期 EdenLive 等「世界模型进入策略/渲染层」的进展共同强化了「世界模型作为具身系统核心组件」的趋势。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>演示任务链长度</td><td>取衣→折叠 6 环节</td><td><div class="bar"><span style="width:70%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>协同机器人数量</td><td>2 台</td><td><div class="bar"><span style="width:40%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>公开量化基准</td><td>未披露</td><td><div class="bar"><span style="width:0%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <ul>
+    <li>评测/性能：无公开量化基准；「全球首创大小脑双预训练」「全球首个灵巧手自主折叠衣物演示」等均为媒体转引口径（自述数据，未见第三方复现），任务成功率等指标未披露。</li>
+    <li>代码/论文：暂无公开仓库/论文；第一信源为新浪财经/网易转「市场资讯（机器人全球资讯）」10-19 07:12 报道，官方发布渠道待核实（详见「待核实」）。</li>
+  </ul>
+  <div class="metrics-block">```metrics
+[{"label":"演示任务链长度","value":"取衣→折叠 6 环节","kind":"self","bar":70},{"label":"协同机器人数量","value":"2 台","kind":"self","bar":40},{"label":"公开量化基准","value":"未披露","kind":"self","bar":0}]
+```</div>
+  <div class="tag-row"><span class="tag" style="color:#3fb950;border-color:#3fb950">#具身智能</span><span class="tag" style="color:#3fb950;border-color:#3fb950">#VLA</span><span class="tag" style="color:#bc8cff;border-color:#bc8cff">#世界模型</span></div>
+</div>
+
+<hr class="sep">
+
+<div class="note">
+  <b>去重说明</b>
+  <ul>
+    <li>与第 95 跑（2026-10-18 11:39）比对：上期条目为 DeepSeek-V4.1-Flash-1017、曙光 8000、OpenCode 蒸馏攻击、xAI Grok Bot 升级，本期 3 条无重复。</li>
+    <li>实体去重（dedup_check.py 逐条）：vLLM v0.32.0（is_dup False，confidence 0.575，无实体匹配）；EdenLive（False，0.0）；西湖 WR1（False，0.413）。均判非重复。</li>
+    <li>排除项（第一信源时间戳核实后窗口外）：NVIDIA ASPIRE V1.0（v1.0 开源推送 10-16，arXiv 6-30；10-18/19 中文集中报道为迟到报道）；光象科技 Phi-WM 1.0 ActEffect（KB 跨期命中：8-26 跑次已报道，首报 8-25；云南网 10-19 为迟到报道）；Google Harness²（arXiv 10-09、仓库 10-06 创建）；Sakana MASS（arXiv 10-08）；KnowGPO（10-16）、Steering Agent（10-15）、GeoState（10-15）、GreenWAM（10-13）、DeltaStreamer（10-14）、CoWorld Reasoner（10-15）；GitHub agentic autofix / AI Scan GA（10-15）；OpenAI ChatGPT Chrome 扩展更新（10-15）；Anthropic NIST 曲线种子（官方 10-16，且第 94 跑已报道）；Sakana AI-Scientist-v3（仓库 10-11 创建）；腾讯微信 AI SkillHone（发布时间无法核实）；Kimi K3.1 灰度传闻（非官方发布、无技术细节）；2026 物理 AI 与世界模型大会（10-19 南京开幕，产业会议而非技术首发，作为背景信息）。</li>
+    <li>结构性说明：信源健康 ok=3 / warn=0 / error=0（aihot items 最新 1.0h 前、dailies 2026-10-19、arXiv 公告批次 Mon, 19 Oct 2026）；arXiv 10-19 公告批次论文经逐篇核实提交时间全部为 10-16（周五），窗口内学术首发结构性空缺；AI Coding 方向窗口内无模型/IDE 重大首发，本期以推理基础设施（vLLM v0.32.0）覆盖该优先级领域。</li>
+  </ul>
+</div>
+
+<div class="note">
+  <b>待核实</b>
+  <ul>
+    <li>vLLM v0.32.0 全部性能数字：官方 release notes / PR benchmark 口径（Qwen3-0.6B、GLM-5.x 等官方选定配置），未见第三方独立复现。</li>
+    <li>EdenLive 帧率/延迟数字：VAST 官方与量子位报道口径，未见第三方实测；「正式发布并开源」以官方口径为准（仓库创建于 10-12，10-18 推送公开权重与代码）。</li>
+    <li>西湖 WR1 全部能力描述：媒体转引口径（自述数据，未见第三方复现）；官方发布渠道未直接核实到 10-18/19 的发布动作，若后续证实为既有演示的媒体重包装，将于后续期次更正；任务成功率等量化指标未披露。</li>
+    <li>GAE「全球首个通用动作大模型」定位：媒体报道口径；公开资料显示 GAE 为西湖机器人既有体系（8 月已见「GAE 身外化身系统」收录），WR1 中 GAE 的具体版本升级细节待官方技术资料确认。</li>
+  </ul>
+</div>
+
+
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>

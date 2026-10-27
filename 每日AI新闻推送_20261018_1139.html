@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-10-18</title>
+<style>
+:root { color-scheme: dark; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #0d1117;
+  color: #e6edf3;
+  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", -apple-system, sans-serif;
+  line-height: 1.75;
+  padding: 24px 16px 64px;
+}
+.wrap { max-width: 920px; margin: 0 auto; }
+header.hero {
+  background: linear-gradient(135deg, #161b22 0%, #1a2233 100%);
+  border: 1px solid #30363d;
+  border-radius: 14px;
+  padding: 28px 32px;
+  margin-bottom: 28px;
+}
+header.hero h1 { font-size: 26px; color: #e6edf3; letter-spacing: 1px; margin-bottom: 14px; }
+header.hero h1 .accent { color: #58a6ff; }
+.meta { display: flex; flex-wrap: wrap; gap: 10px; }
+.meta span {
+  background: #0d1117; border: 1px solid #30363d; border-radius: 20px;
+  padding: 4px 14px; font-size: 13px; color: #8b949e;
+}
+.meta span b { color: #e6edf3; font-weight: 600; }
+.meta span.win b { color: #3fb950; }
+.card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 26px 30px;
+  margin-bottom: 24px;
+}
+.card h2 {
+  font-size: 19px; line-height: 1.5; margin-bottom: 6px; color: #e6edf3;
+}
+.card h2 .num { color: #58a6ff; margin-right: 6px; }
+.src-line { font-size: 12.5px; color: #8b949e; margin-bottom: 16px; }
+.src-line .date { color: #d29922; }
+h3.sec {
+  font-size: 13.5px; color: #58a6ff; margin: 18px 0 8px;
+  letter-spacing: 1px; text-transform: uppercase;
+}
+.card p { font-size: 14.5px; color: #c9d1d9; margin-bottom: 10px; }
+.card ul { list-style: none; }
+.card ul li {
+  font-size: 14.5px; color: #c9d1d9; padding-left: 18px; position: relative; margin-bottom: 8px;
+}
+.card ul li::before { content: "▸"; position: absolute; left: 0; color: #58a6ff; }
+.card ul li b { color: #e6edf3; }
+code {
+  background: #0d1117; border: 1px solid #30363d; border-radius: 4px;
+  padding: 1px 6px; font-size: 13px; color: #79c0ff;
+  font-family: Consolas, Monaco, monospace;
+}
+.metrics-table { width: 100%; border-collapse: collapse; margin: 12px 0 4px; }
+.metrics-table th, .metrics-table td {
+  border: 1px solid #30363d; padding: 7px 12px; font-size: 13px; text-align: left;
+}
+.metrics-table th { background: #0d1117; color: #8b949e; font-weight: 600; }
+.metrics-table td { color: #e6edf3; }
+.badge {
+  display: inline-block; border-radius: 10px; padding: 0 8px; font-size: 11px; margin-left: 6px; vertical-align: middle;
+}
+.badge.self { background: #1f2a1f; color: #7ee787; border: 1px solid #2ea04326; }
+.badge.third { background: #1a2332; color: #79c0ff; border: 1px solid #58a6ff26; }
+.bar-cell { min-width: 140px; }
+.bar { height: 8px; background: #21262d; border-radius: 4px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: linear-gradient(90deg, #1f6feb, #58a6ff); border-radius: 4px; }
+.bar.warn i { background: linear-gradient(90deg, #9e6a03, #d29922); }
+.tagline { margin-top: 16px; }
+.tag {
+  display: inline-block; background: #0d1117; border: 1px solid #30363d; border-radius: 14px;
+  padding: 2px 12px; font-size: 12px; color: #58a6ff; margin-right: 8px;
+}
+.section-card { background: #11161d; }
+.section-card h2 { font-size: 16px; color: #d29922; border-bottom: 1px solid #30363d; padding-bottom: 10px; margin-bottom: 14px; }
+.section-card ul li::before { color: #d29922; }
+.section-card ul li { font-size: 13.5px; color: #adbac7; margin-bottom: 7px; }
+.section-card ul li b { color: #e6edf3; }
+.archive ul li { font-size: 13.5px; }
+.archive ul li code { font-size: 12px; word-break: break-all; }
+.status-ok { color: #3fb950; font-weight: 700; }
+footer { text-align: center; color: #484f58; font-size: 12px; margin-top: 36px; }
+hr.sep { border: none; border-top: 1px dashed #30363d; margin: 30px 0; }
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1>每日 AI 前沿技术精选 <span class="accent">2026-10-18</span></h1>
+  <div class="meta">
+    <span>日期 <b>2026-10-18</b></span>
+    <span>时间 <b>11:39</b></span>
+    <span>精选条数 <b>4 条</b></span>
+    <span class="win">时效窗口 <b>2026-10-17 11:39 – 2026-10-18 11:39</b>（严格24小时）</span>
+  </div>
+</header>
+
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="AI-Coding">AI-Coding</button>
+<button class="filter-chip" data-tag="自反馈强化学习">自反馈强化学习</button>
+<button class="filter-chip" data-tag="基础架构">基础架构</button>
+<button class="filter-chip" data-tag="国产算力">国产算力</button>
+<button class="filter-chip" data-tag="安全事件">安全事件</button>
+<button class="filter-chip" data-tag="Agent产品化">Agent产品化</button>
+<button class="filter-chip" data-tag="产业落地">产业落地</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. DeepSeek-V4.1-Flash-1017 发布：自反馈 RL 驱动「许愿式编程」，官方称性能-成本帕累托改进</a><a class="toc-item" href="#entry-2">2. 曙光 8000：我国首个全国产十万卡 AI 超集群真机亮相 HPC China 2026</a><a class="toc-item" href="#entry-3">3. OpenCode 遭「大规模蒸馏攻击」：约 1.4% Console 用户第三方 API 密钥或外泄（OpenCode</a><a class="toc-item" href="#entry-4">4. xAI Grok Bot 大规模升级：官方称任务速度提升 3 倍，日均约 20 项改进推进 Agent 执行闭环（xAI</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="AI-Coding 自反馈强化学习" style="border-left:3px solid #58a6ff">
+  <h2><span class="num">01</span>DeepSeek-V4.1-Flash-1017 发布：自反馈 RL 驱动「许愿式编程」，官方称性能-成本帕累托改进</h2>
+  <div class="src-line">第一来源：DeepSeek 官方（公众号 / API 文档 / changelog） ｜ <span class="date">2026-10-17</span></div>
+  <p><b>事件概述</b>：DeepSeek 于 10 月 17 日将 V4.1 Flash 升级至 DeepSeek-V4.1-Flash-1017（后缀即发布日期），网页端、App 与 API 三端同步切换（API 模型名仍为 <code>deepseek-flash</code>，调用方式与定价不变），权重以 MIT 许可上传 Hugging Face 与 ModelScope。官方 changelog 将本次定性为「性能-费用的帕累托改进」：多项基准提升的同时缩短任务运行时间与输出长度。</p>
+  <h3 class="sec">技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：引入基于自反馈的强化学习（训练中由模型批判自己的最终产出再迭代），显著提升从零构建完整端到端项目的能力——官方称之为「许愿式编程」（自然语言描述需求、极少交互轮次直接交付可运行项目）；新模型针对 DeepSeek Harness 做专项优化（需 0.2.1-rc.1+），并明确适配腾讯 CodeBuddy、WorkBuddy 等平台框架。架构承袭 9 月版本卡：552B 总参 Causal Encoder-Decoder（20 层因果编码器 + 20 层解码器）、prefill/decode 非对称激活（8B/16B）、384 路由专家取 6、CSA2 注意力、FP4 主 KV 缓存、196B Engram 条件记忆、1M 上下文。</li>
+    <li><b>实际影响</b>：模型从「代码片段生成器」向「项目级构建工具」演进的信号进一步强化；同日开放自研 Search 与 Fetch 两个 API（每千次成功请求 5 元，多来源称 11 月 1 日前限时免费），编码 Agent 工作流可直接叠加实时检索能力。</li>
+  </ul>
+  <h3 class="sec">关键指标 / 资源</h3>
+  <p>Terminal-Bench 4.0 31.2→42.3、DeepSWE v1.1 74.2→77.0、ProgramBench 20.3→29.1、NL2Repo-Bench 65.4→68.2、Automation-Bench 54.8→60.5、Agents' Last Exam 31.8→35.4、Apex Bench v1.1 64.6→72.1、HLE（无工具）36.8→42.6（<b>全部为官方自述数据，未见第三方复现</b>）；API 定价不变：缓存命中输入 $0.006/$0.003（峰/谷）、未命中 $0.30/$0.15、输出 $1.20/$0.60 每百万 token。官方示例：故宫 3D 建模、网页版赛车游戏、Godot 引擎复刻《传送门 2》、Valley of Ages 跨时代 3D 场景。</p>
+  <table class="metrics-table">
+    <tr><th>指标</th><th>数值</th><th>口径</th><th class="bar-cell">相对水平</th></tr>
+    <tr><td>Terminal-Bench 4.0</td><td>31.2 → 42.3</td><td><span class="badge self">自述</span></td><td><div class="bar warn"><i style="width:42%"></i></div></td></tr>
+    <tr><td>DeepSWE v1.1</td><td>74.2 → 77.0</td><td><span class="badge self">自述</span></td><td><div class="bar"><i style="width:77%"></i></div></td></tr>
+    <tr><td>Automation-Bench v1.0.6</td><td>54.8 → 60.5</td><td><span class="badge self">自述</span></td><td><div class="bar"><i style="width:61%"></i></div></td></tr>
+    <tr><td>Agents' Last Exam</td><td>31.8 → 35.4</td><td><span class="badge self">自述</span></td><td><div class="bar warn"><i style="width:35%"></i></div></td></tr>
+    <tr><td>HLE（无工具）</td><td>36.8 → 42.6</td><td><span class="badge self">自述</span></td><td><div class="bar warn"><i style="width:43%"></i></div></td></tr>
+  </table>
+  <p>资源：Hugging Face <code>deepseek-ai/DeepSeek-V4.1-Flash-1017</code>（MIT，safetensors 索引计 763,205,315,794 参数）；官方 changelog 与模型卡。</p>
+  <div class="tagline"><span class="tag" style="color:#58a6ff;border-color:#58a6ff">#AI-Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#自反馈强化学习</span></div>
+</div>
+
+<div class="card priority-2" id="entry-2" data-tags="基础架构 国产算力" style="border-left:3px solid #8b949e">
+  <h2><span class="num">02</span>曙光 8000：我国首个全国产十万卡 AI 超集群真机亮相 HPC China 2026</h2>
+  <div class="src-line">第一来源：中科曙光 @ CCF 全国高性能计算学术大会（深圳） ｜ <span class="date">2026-10-17</span></div>
+  <p><b>事件概述</b>：10 月 17 日在深圳开幕的 2026 CCF 全国高性能计算学术大会（HPC China 2026）上，今年建成的我国首个全国产十万卡 AI 超集群「曙光 8000」真机亮相，并发布十大重要应用成果。系统走「超算与智算原生融合」路线：同一套算力底座既支撑最高精度科学计算，也支撑大模型训练与推理。</p>
+  <h3 class="sec">技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：原生超智融合架构下，自研 scaleFabric 400G 无损高速网络将端到端时延压至 0.9 微秒、单子网最高可支撑 11 万卡部署（缓解十万卡规模通信拥堵）；搭配 ParaStor 分布式存储、相变浸没液冷（整机 PUE 低至 1.04，承受单机柜兆瓦级功率密度）与 Gridview 7.0 智能运维，实现芯片、网络、存储、散热全链路国产化。科研闭环范式：超算批量生成高保真仿真数据 → 智算从海量候选中快速海选 → 超算对少数候选做高精度复核剔除幻觉。</li>
+    <li><b>实际影响</b>：国产算力从单点芯片突破转向系统级工程协同的标志性节点；系统已在气象海洋、生命科学、新材料研发等领域实际应用，并依托国家超算互联网向高校、科研机构与产业用户开放。</li>
+  </ul>
+  <h3 class="sec">关键指标 / 资源</h3>
+  <table class="metrics-table">
+    <tr><th>指标</th><th>数值</th><th>口径</th></tr>
+    <tr><td>AI 加速卡规模</td><td>100,000 卡</td><td><span class="badge self">自述</span></td></tr>
+    <tr><td>scaleFabric 端到端时延</td><td>0.9 µs</td><td><span class="badge self">自述</span></td></tr>
+    <tr><td>单子网支撑规模</td><td>110,000 卡</td><td><span class="badge self">自述</span></td></tr>
+    <tr><td>整机 PUE</td><td>1.04</td><td><span class="badge self">自述</span></td></tr>
+  </table>
+  <p>均为官方大会披露口径，未见第三方实测。资源：央视新闻《全释硬科技》专题、中科曙光参会通稿。</p>
+  <div class="tagline"><span class="tag" style="color:#8b949e;border-color:#8b949e">#基础架构</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#国产算力</span></div>
+</div>
+
+<div class="card priority-3" id="entry-3" data-tags="AI-Coding 安全事件" style="border-left:3px solid #58a6ff">
+  <h2><span class="num">03</span>OpenCode 遭「大规模蒸馏攻击」：约 1.4% Console 用户第三方 API 密钥或外泄</h2>
+  <div class="src-line">第一来源：OpenCode（Anomaly Innovations）官方通报邮件 ｜ <span class="date">2026-10-17（当地时间上午）</span></div>
+  <p><b>事件概述</b>：开源终端编码代理 OpenCode 通报：攻击者于当地时间 10 月 16 日晚未经授权访问其正处于停用流程中的一套旧系统，约 1.4% 的 OpenCode Console 用户工作区内存储的第三方 API 密钥（OpenAI、Anthropic、Google 等）可能外泄；官方已于当地时间 10 月 17 日上午邮件通知全部受影响用户，未收到邮件者未受波及。</p>
+  <h3 class="sec">技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：事件本质是 BYOK（自带密钥）模式的共性攻击面暴露——编码代理/Agent 平台集中保管用户凭据时，密钥安全性取决于平台最薄弱环节；攻击被厂商定性为「大规模蒸馏攻击」（large scale distillation attack），即窃取真实付费用户密钥以绕过模型供应商的账户审查、批量调用前沿模型产出蒸馏训练数据——此前 Anthropic 曾指控三家实验室以约 2.4 万虚假账户产生逾 1,600 万次 Claude 交互，本次事件与之同构。</li>
+    <li><b>实际影响</b>：多名用户在官方通知送达前已出现异常扣费（个案：Anthropic 账户 $400 未经授权扣费、Google 服务约 €200 且项目因滥用被暂停）；官方正与 OpenAI、Anthropic、Google 协同处置，称迄今调查未发现其他数据泄露证据。对行业的直接警示：Agent 基础设施需将凭据保管与执行环境隔离（呼应 Perplexity SPACE「凭据注入在 VM 边界之外」的设计）。</li>
+  </ul>
+  <h3 class="sec">关键指标 / 资源</h3>
+  <table class="metrics-table">
+    <tr><th>指标</th><th>数值</th><th>口径</th></tr>
+    <tr><td>受影响 Console 用户占比</td><td>1.4%</td><td><span class="badge self">自述</span></td></tr>
+    <tr><td>个案最大异常扣费</td><td>$400（Anthropic）/ ≈€200（Google）</td><td><span class="badge third">用户自述</span></td></tr>
+  </table>
+  <p>资源：OpenCode 官方通报邮件（Startup Fortune / IT之家 / 环球网等多源转述）；obiguard 安全分析。官方建议受影响用户在供应商控制台（而非邮件链接）吊销并重发密钥、核查 10-16 以来的账单与用量并设置支出限额。</p>
+  <div class="tagline"><span class="tag" style="color:#58a6ff;border-color:#58a6ff">#AI-Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#安全事件</span></div>
+</div>
+
+<div class="card priority-4" id="entry-4" data-tags="Agent产品化 产业落地" style="border-left:3px solid #8b949e">
+  <h2><span class="num">04</span>xAI Grok Bot 大规模升级：官方称任务速度提升 3 倍，日均约 20 项改进推进 Agent 执行闭环</h2>
+  <div class="src-line">第一来源：xAI（Elon Musk X 系列推文） ｜ <span class="date">2026-10-18</span></div>
+  <p><b>事件概述</b>：马斯克于 10 月 18 日凌晨（北京时间）密集发文，转发 Grok Bot「大规模升级、任务速度提升 3 倍」，称 xAI 团队每天为 Grok Bot 做约 20 项改进，并演示其在 X 平台内代下单购物、协助用户自建视频编辑器等真实任务执行。</p>
+  <h3 class="sec">技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：Grok Bot 作为 X 平台内置通用 Agent，正从对话入口走向执行闭环（任务代执行 + agentic commerce 支付链路）；「日均 20 项改进」的高频迭代节奏在主流 Agent 产品中罕见，接近持续部署模式。</li>
+    <li><b>实际影响</b>：社交平台原生 Agent 与电商/本地服务打通的落地样本；与 Grok Build（编码）形成「消费级执行 + 开发级编码」双线布局。</li>
+  </ul>
+  <h3 class="sec">关键指标 / 资源</h3>
+  <p>任务速度提升 3 倍、日均约 20 项改进（<b>均为马斯克/官方自述，无测量口径与第三方基准，未见技术细节披露</b>）。资源：Elon Musk X 官方推文序列（无独立技术文档）。</p>
+  <div class="tagline"><span class="tag" style="color:#8b949e;border-color:#8b949e">#Agent产品化</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#产业落地</span></div>
+</div>
+
+<div class="card section-card">
+  <h2>去重说明</h2>
+  <ul>
+    <li><b>与第 94 跑（2026-10-17 11:30）比对</b>：上期条目为 Beam 开放权重、优必选 Thinker-WM、腾讯 Hy Memory 2.0、Anthropic ECDSA 溯源、Claude Code v2.1.302，本期 4 条无重复。</li>
+    <li><b>实体去重（dedup_check.py 逐条）</b>：DeepSeek-V4.1-Flash-1017（jaccard 0.0）、曙光 8000（confidence 0.187）、OpenCode 蒸馏攻击（confidence 0.359，7 天内无 OpenCode 条目）均判非重复；Grok Bot 判 is_dup:true（confidence 0.939，实体匹配 10-08「按任务择优调用多模型」、10-10「专属邮箱开放」条目），按「同主体+同动作」标准判定为不同事件（性能升级 ≠ 邮箱开放 ≠ 多模型路由），予以保留并披露。</li>
+    <li><b>排除项（第一信源时间戳核实后窗口外，禁止以转载时间入选）</b>：JetBrains Junie Local Day 0 适配 RTX Spark（公告 10-16）；Kyutai REKI 2.4B VLA（HF 仓库 createdAt 2026-10-05、arXiv v1 10-15；MarkTechPost 10-17 为迟到报道）；Anthropic《How employment is changing at Anthropic》（10-16 发布，Agent 工时 6:1 数据待后续期覆盖）；Google Research 湿实验室 agents 博文（10-16）；信通院《具身智能发展报告(2026)》（10-16 发布）；Anthropic Q3 财务披露（10-14 闭门投资者日，中文 10-17 报道为转载）；Elorian Glimpse（launch 10-16）；Apollo Research GLM-5.3「update-aware reasoning」（10-15 发布）；Anthropic Scion（工程博客 10-13）；NVIDIA RTX Spark 笔记本开售（官方 launch 10-16）；阿里 OpenGCUA + MAI-Gym（arXiv 10-15）；Gemini 4 Argon Minecraft 通关（arXiv 10-15，官宣约 10-17 08:05 早于窗口起点）；阿里灵波 LingBot-VLA（2026 年 7 月 WAIC 期间发布，闪讯为旧闻聚合）；OpenAI ChatGPT Slides（10-16）；Perplexity SPACE（aicoder 10-17 为转载，第 93 跑已报道）。</li>
+    <li><b>结构性说明</b>：信源健康 ok=3 / warn=0 / error=0（aihot items 最新条目 0.8h、dailies 2026-10-18、arXiv 批次 10-16 周五）；arXiv 周末（10-17/18）无公告批次，窗口内学术首发结构性空缺，与第 91/93/94 跑模式一致；本期具身智能与世界模型方向无第一信源在窗口内首发条目（结构性稀缺，REKI / Thinker-WM 等均已按时间戳纪律排除）。</li>
+  </ul>
+</div>
+
+<div class="card section-card">
+  <h2>待核实</h2>
+  <ul>
+    <li><b>DeepSeek-V4.1-Flash-1017 全部基准数据</b>：官方自述（模型卡/changelog），未见第三方复现；Artificial Analysis 智能指数尚无 1017 版本收录（第三方预期 45-46 区间仅为猜测）。</li>
+    <li><b>DeepSeek Search/Fetch API 定价口径</b>：经济日报等报「5 元/千次」，另有来源称「11 月 1 日前限时免费」，免费期结束后单价口径待官方文档确认。</li>
+    <li><b>曙光 8000 具体算力指标</b>（PFLOPS 级别、互联拓扑细节）与「十大重要应用成果」完整清单：官方大会新闻稿未见细节数据；HPC China 2026 开幕具体时刻未确证（真机亮相报道集中于 10-17 午后）；央视「数字孪生大脑 / 模拟百亿光年宇宙」为形象化表述。</li>
+    <li><b>OpenCode 事件三要素未披露</b>：受影响账户总数、攻击者入侵路径、密钥是否已被实际提取均未公布；「蒸馏攻击」为厂商对动机的定性，无归因；个案扣费金额为用户自述。</li>
+    <li><b>Grok Bot「速度 3 倍」「日均 20 项改进」</b>：均为马斯克/X 官方自述，无测量口径、无第三方基准，本次未披露任何技术细节。</li>
+  </ul>
+</div>
+
+<div class="card archive">
+  <h2>归档状态说明</h2>
+  <ul>
+    <li><b>工作区 Markdown</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261018_1139.md</code></li>
+    <li><b>工作区 HTML</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261018_1139.html</code></li>
+    <li><b>网盘归档</b>：<code>O:/quark/automation/每日 AI 新闻推送/</code>（同步写入上述同名文件）</li>
+    <li><b>执行状态</b>：<span class="status-ok">✅ 成功</span></li>
+  </ul>
+</div>
+
+<footer>每日 AI 前沿技术精选 · automation-1784106545536 · 第 95 跑 · 2026-10-18 11:39</footer>
+
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>

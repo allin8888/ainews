@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-09-20</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --card-hover: #1c2128;
+    --text: #e6edf3;
+    --text-dim: #8b949e;
+    --accent-blue: #58a6ff;
+    --accent-green: #3fb950;
+    --accent-orange: #d29922;
+    --border: #30363d;
+    --tag: #21262d;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 2rem 1rem 4rem;
+  }
+  .container { max-width: 880px; margin: 0 auto; }
+  header { margin-bottom: 2rem; }
+  h1 { font-size: 1.8rem; margin-bottom: 0.8rem; }
+  .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.5rem; margin-bottom: 1rem; }
+  .meta-item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 0.6rem 0.9rem; font-size: 0.9rem; }
+  .meta-item span { color: var(--text-dim); display: block; font-size: 0.75rem; margin-bottom: 0.2rem; }
+  .window-note {
+    background: var(--card); border-left: 3px solid var(--accent-blue);
+    padding: 0.8rem 1rem; border-radius: 0 8px 8px 0; font-size: 0.9rem; color: var(--text-dim);
+    margin-bottom: 1.5rem;
+  }
+  .section-title { font-size: 1.3rem; margin: 2rem 0 1rem; color: var(--accent-blue); }
+  .card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.4rem 1.6rem; margin-bottom: 1.2rem; transition: background 0.2s;
+  }
+  .card:hover { background: var(--card-hover); }
+  .card h3 { font-size: 1.05rem; line-height: 1.5; margin-bottom: 0.8rem; color: var(--text); }
+  .card h3 .src { color: var(--accent-orange); font-size: 0.85rem; font-weight: normal; }
+  .card h3 .num { color: var(--accent-green); margin-right: 0.4rem; font-weight: bold; }
+  .block-label { color: var(--accent-green); font-size: 0.85rem; font-weight: 600; margin: 0.9rem 0 0.3rem; }
+  .card p { font-size: 0.95rem; color: var(--text); margin-bottom: 0.5rem; }
+  ul { padding-left: 1.2rem; margin: 0.4rem 0; }
+  li { font-size: 0.92rem; color: var(--text); margin-bottom: 0.35rem; }
+  li strong { color: var(--accent-blue); }
+  .note { font-size: 0.82rem; color: var(--text-dim); font-style: italic; margin-top: 0.5rem; }
+  .tags { margin-top: 0.9rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .tag {
+    background: var(--tag); border: 1px solid var(--border); color: var(--accent-blue);
+    font-size: 0.78rem; padding: 0.15rem 0.6rem; border-radius: 999px;
+  }
+  .verify-section { margin-top: 2rem; }
+  .verify-section .card h3 { color: var(--accent-orange); }
+  .verify-section li { color: var(--text-dim); font-size: 0.88rem; }
+  .dedup-section .card h3 { color: var(--accent-green); }
+  .dedup-section li { color: var(--text-dim); font-size: 0.88rem; }
+  .archive-box {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.2rem 1.4rem; margin-top: 2rem; font-size: 0.88rem;
+  }
+  .archive-box code {
+    background: var(--tag); padding: 0.1rem 0.4rem; border-radius: 4px;
+    font-family: "SFMono-Regular", Consolas, monospace; font-size: 0.82rem; color: var(--accent-orange);
+  }
+  .archive-box ul { list-style: none; }
+  .archive-box li { margin-bottom: 0.3rem; }
+  .status-pending { color: var(--accent-orange); font-weight: 600; }
+  footer { margin-top: 2.5rem; text-align: center; color: var(--text-dim); font-size: 0.8rem; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>每日 AI 前沿技术精选</h1>
+    <div class="meta">
+      <div class="meta-item"><span>日期</span>2026-09-20</div>
+      <div class="meta-item"><span>时间</span>11:30</div>
+      <div class="meta-item"><span>精选条数</span>5 条</div>
+      <div class="meta-item"><span>时效窗口</span>09-19 11:47 → 09-20 11:30</div>
+    </div>
+    <div class="window-note">
+      <strong>窗口判定（增量收敛）</strong>：上次执行 2026-09-19 11:47（第 67 跑），距本次约 23h43m，<strong>不足 24h</strong>，故时间窗口收敛为「上次执行时刻 → 现在」（2026-09-19 11:47 – 2026-09-20 11:30），只抓该区间增量内容；<strong>未启用已废止的 48 小时降级策略</strong>。
+    </div>
+  </header>
+
+  <h2 class="section-title">今日精选</h2>
+
+  <div class="card">
+    <h3><span class="num">1.</span>MiniMax Code CLI v0.4.12 以 MIT 协议全面开源，Harness 实现与工具调用逻辑首次完整可审 <span class="src">（MiniMax / GitHub | 2026-09-18 晚间首发，9/19 集中报道）</span></h3>
+    <p class="block-label">事件概述</p>
+    <p>MiniMax 于 9 月 18 日晚间宣布其终端编程 Agent MiniMax Code CLI v0.4.12 面向全球开发者开放，第一方代码以 MIT 许可证完整开源（GitHub: <code>MiniMax-AI/minimax-code</code>），并同步挂出一份基于 Frontier Harness Eval 的第三方评测报告：同批 30 项软件工程任务使用 Kimi K3 驱动，通过 23 项，通过率 76.7%，成功任务耗时中位数 4 分 33 秒（对比基线 Codex 66.7% / 6 分 43 秒）。</p>
+    <p class="block-label">技术与工程价值</p>
+    <ul>
+      <li><strong>核心机制</strong>：开源范围覆盖 CLI 交互层、Harness runtime、工具调用与权限处理、会话持久化（SQLite 本地存储）与 AGENTS.md 项目规范；BYOK（自带模型）支持 openai-completions / openai-responses / anthropic-messages 三大协议，可接入任意兼容模型（含私有 DeepSeek、本地 Ollama），不锁定厂商模型。</li>
+      <li><strong>实际影响</strong>：与近期智谱 Zcode「默认开启云端 Repo Wiki 索引、疑似静默上传代码」隐私争议形成对照——MiniMax 以「MIT 全量可审计 + 权限沙箱 + 本地主权」直接回应了 Agent 级代码工具的信任问题；Harness 层成为独立可优化的工程对象，模型决定 Agent 能力下限、Harness 决定上限的行业逻辑首次由头部厂商以开源方式固化。</li>
+    </ul>
+    <p class="block-label">关键指标/资源</p>
+    <ul>
+      <li>评测/性能：通过率 76.7%（23/30）；成功任务耗时中位数 4m33s；对比 Codex 基线 66.7% / 6m43s（自述数据，未见第三方独立复现）</li>
+      <li>代码/论文：GitHub <code>MiniMax-AI/minimax-code</code>（MIT 协议）；官方快速入门 <code>agent.minimaxi.com/docs/cli/quick-start</code>；npm 包 <code>@minimax-ai/code</code></li>
+    </ul>
+    <p class="note">备注：第三方评测保留执行轨迹与适配器配置（PR #13 / #14），可供复现；76.7% 通过率为发布方自述基准。</p>
+    <div class="tags"><span class="tag">#AI-Coding</span><span class="tag">#基础架构</span></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">2.</span>Kimi K3 正式上线 Amazon Bedrock：首个 2.8 万亿参数开放权重模型进入企业云分发 <span class="src">（AWS / Moonshot AI | 2026-09-18）</span></h3>
+    <p class="block-label">事件概述</p>
+    <p>Moonshot AI（月之暗面）的旗舰开放权重模型 Kimi K3 于 9 月 18 日在 Amazon Bedrock 正式 GA。Kimi K3 是首个参数规模达 2.8 万亿的开放模型，原生视觉能力 + 1M token 上下文窗口，面向长程编码会话、多文档分析与长 Agent 工作流；它也是 Bedrock 上<strong>首个支持显式 prompt caching 的开放权重模型</strong>，可降低上下文复用时的延迟与输入成本。</p>
+    <p class="block-label">技术与工程价值</p>
+    <ul>
+      <li><strong>核心机制</strong>：与专有模型运行于相同安全边界（统一访问控制、加密、审计），零数据留存 + 零操作员访问默认开启；数据始终处理在 AWS 数据边界内，不共享给模型提供方、不用于训练底层模型；支持 OpenAI 兼容 API（Responses / Chat Completions）与 bedrock-runtime Invoke / Converse API。</li>
+      <li><strong>实际影响</strong>：开放权重模型正被系统性纳入企业采购与云分发体系——Bedrock 自 2025 年起已上线 DeepSeek、Google、MiniMax、Mistral、NVIDIA、OpenAI、Qwen 等数十家开放权重模型，平台级能力（工具调用、结构化输出、推理、流式响应）一次升级、全模型受益。Kimi K3 进入 Bedrock 意味着企业无需重建调用链路即可在既有治理体系内评估/切换该模型。</li>
+    </ul>
+    <p class="block-label">关键指标/资源</p>
+    <ul>
+      <li>评测/性能：2.8T 参数（首个达此规模的开放模型）；1M token 上下文；较 Kimi K2 scaling 效率 ~2.5×（自述，待核实）；全球跨区域推理（global profile）较地理 profile 成本约低 10%</li>
+      <li>代码/论文：AWS 官方博客《Introducing Kimi K3 on Amazon Bedrock》（<code>aws.amazon.com/blogs/machine-learning</code>，2026-09-18）；AWS What's New 公告；Bedrock Console 已开放</li>
+    </ul>
+    <p class="note">备注：2.8T 参数、1M 上下文与「较 Kimi K2 提升 2.5 倍 scaling 效率」均为 Moonshot AI 自述口径，未见第三方复现。</p>
+    <div class="tags"><span class="tag">#基础架构</span><span class="tag">#AI-Coding</span></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">3.</span>Anthropic × 埃森哲落地「嵌入式评估」：各拟五年投入 ≥10 亿美元，第三方评估员进驻前沿实验室 <span class="src">（Anthropic / Accenture | 2026-09-18 美东周五）</span></h3>
+    <p class="block-label">事件概述</p>
+    <p>9 月 18 日（美东周五），Anthropic 与埃森哲宣布合作，将埃森哲旗下 AI 专业部门 <strong>Faculty</strong> 的评估人员嵌入 Anthropic 内部，对前沿模型开展红队测试、对齐评估与安全护栏验证。双方各自承诺未来五年投入<strong>至少 10 亿美元</strong>（Reuters 口径合计 ~20 亿美元投入意向）。这是 CEO Dario Amodei 于 9 月 12 日长文《We Must Pace the Frontier》提出的「把独立评估员嵌入企业内部」承诺的<strong>首个落地样本</strong>。</p>
+    <p class="block-label">技术与工程价值</p>
+    <ul>
+      <li><strong>核心机制</strong>：与传统外部审计（仅拿模型输出结果）不同，嵌入式评估员享有<strong>接近正式员工的内部访问权限</strong>——可观察模型训练过程中的形态变化、追溯研发与上线的内部决策、直接和研发团队沟通，识别外部测试难以发现的安全盲点，并对外报告事件；Anthropic 强调此安排「不减轻自身责任，但使安全承诺更可验证」。</li>
+      <li><strong>实际影响</strong>：AI 安全治理从「外部测试 + 自我声明」向「独立评估员驻场 + 全程可审计」演进；埃森哲作为上市公司（盘后因该消息上涨 8%）而非 AI 安全研究机构，首次成为前沿实验室的嵌入式评估方——评估者独立性（股权关联、商业利益）成为新的争论焦点。Anthropic 同时表示正与 METR 等非营利评估机构沟通，未来数周将公布更多合作评估方，且合作非排他。</li>
+    </ul>
+    <p class="block-label">关键指标/资源</p>
+    <ul>
+      <li>评测/性能：各 ≥$1B × 5 年（双方预期，待核实）；Accenture 盘后 +8%（二级市场反应，待核实）</li>
+      <li>代码/论文：Anthropic 官方博客 <code>anthropic.com/news/accenture-embedded-evaluation</code>（2026-09-18）；Bloomberg / Reuters / CNBC 报道（2026-09-18）</li>
+    </ul>
+    <p class="note">备注：「各投 ≥$1B × 5 年」为双方预期投入口径（Reuters 加总 ~$2B），非已到账资金；评估细则、人员规模与披露框架仍在敲定。</p>
+    <div class="tags"><span class="tag">#RSI</span><span class="tag">#基础架构</span></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">4.</span>具身智能触觉世界模型三连发：Agile-WAM / HIL-UMI / DexTouch-WM <span class="src">（arXiv cs.RO | 2026-09-18 提交，9/19 在线）</span></h3>
+    <p class="block-label">事件概述</p>
+    <p>9 月 18 日 arXiv 集中提交、9 月 19 日在线的三篇 cs.RO 论文构成「触觉世界模型 + 人类数据迁移 + 策略盲区定向补数」组合：</p>
+    <ul>
+      <li><strong>Agile-WAM</strong>（UC Davis + Analog Devices）：轻量触觉世界动作模型，视觉/触觉异步时标（视觉预测较长时间跨度、触觉只预测下一帧），<strong>11.9 ms 推理延迟</strong>，5 项实机接触任务相对最强基线总体成功率 +29.4%。</li>
+      <li><strong>HIL-UMI</strong>（北大 + PrimeBot + 西安交大 + 京东）：人在环 VLA 后训练——操作者手持 UMI 与当前 VLA 策略在同一观测流上并行推理，以<strong>人机轨迹分歧（Energy Score）触发 OOD 数据采集</strong>，再用优势条件行为克隆更新策略；Clean Up Table 任务采集耗时较 HG-DAgger 逐帧采集快 <strong>5.63×</strong>。</li>
+      <li><strong>DexTouch-WM</strong>（HKUST(广州) + Xspark AI + 清华 + 北大 + 港大）：共享压阻阵列对齐人手与 20-DoF Wuji 灵巧手，<strong>100 小时人类双手触觉数据 + 固定 5 小时机器人数据</strong>共训动作条件视觉-触觉世界模型；机器人域 Contact-IoU 0.42→0.59、Contact-F1 0.55→0.71。</li>
+    </ul>
+    <p class="block-label">技术与工程价值</p>
+    <ul>
+      <li><strong>核心机制</strong>：三篇论文共同指向「数据采集策略应从继续堆同分布示教，转向同构传感接口 + 策略分歧触发 + 少量机器人原生接触数据校准」——Agile-WAM 证明高频接触控制无需重型视频生成骨干；HIL-UMI 把昂贵实机纠错改造成离线策略查询 + 手持采集；DexTouch-WM 给出人类触觉数据规模化的跨域收益曲线（视觉指标 ~50h 饱和、接触指标 50–100h 持续提升）。</li>
+      <li><strong>实际影响</strong>：对双臂/灵巧手工程最直接——「按模态设置预测跨度」「策略盲区定向补数」「人类-机器人传感拓扑对齐」三条路线均可低成本复刻消融，比单纯扩大常规示教集更可能改善接触、长时序与 OOD 失败。</li>
+    </ul>
+    <p class="block-label">关键指标/资源</p>
+    <ul>
+      <li>评测/性能：Agile-WAM 11.9 ms 推理 / +29.4% 实机成功率（自述）；HIL-UMI 5.63× 采集加速（自述）；DexTouch-WM Contact-IoU 0.42→0.59（自述）</li>
+      <li>代码/论文：arXiv <code>2609.20761</code>（Agile-WAM）、<code>2609.20659</code>（HIL-UMI）、<code>2609.20649</code>（DexTouch-WM）；项目页 <code>hanchuzhou.github.io/TAROprojectpage</code>、<code>hil-umi.github.io</code></li>
+    </ul>
+    <p class="note">备注：三篇论文截至核验均未发现完整公开训练代码/权重/数据；各项指标均为作者自述，未见第三方复现。</p>
+    <div class="tags"><span class="tag">#具身智能</span><span class="tag">#世界模型</span></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">5.</span>千问发布 Qwen3.8-LiveTranslate 实时同传模型：字均延迟 2.8s→2.3s，60 语种 + 实时说话人分离 <span class="src">（阿里 Qwen | 2026-09-19）</span></h3>
+    <p class="block-label">事件概述</p>
+    <p>阿里 Qwen 团队于 9 月 19 日（官方账号早间发布）推出实时同声传译大模型 <strong>Qwen3.8-LiveTranslate</strong>，基于 Hybrid MoE 的 Thinker–Talker 双模块 + Interleave（音频/画面/原文/译文交织进同一条因果序列）架构，将 60 种语言的平均字均延迟（LAAL）从 2.8s 压缩至 <strong>2.3s</strong>；API（<code>qwen3.8-livetranslate-flash-realtime</code>）已在千问 AI 平台上线，支持音频 + 图像输入。</p>
+    <p class="block-label">技术与工程价值</p>
+    <ul>
+      <li><strong>核心机制</strong>：三大新增能力：① <strong>实时说话人分离</strong>（多人交替发言时每句话归属清晰，译文语音保留对应说话人音色）；② <strong>原文译文同帧输出</strong>（双语同屏，兼顾即时理解与原文核对）；③ <strong>长上下文消歧</strong>（结合对话历史校正人名、术语、同音词）。模型支持 60 种语言（其中 29 种支持文本 + 语音输出，另 31 种主要文本输出），提供热词配置、声音克隆等能力。</li>
+      <li><strong>实际影响</strong>：实时同传长期被专业译员把守的高门槛场景，正被大模型推成人人可用的基础设施；「看懂现场」（音频 + 画面帧 + 字幕 + 唇形辅助消歧）使翻译从纯听觉链路升级为多模态实时链路，直接对准会议软件、直播平台与跨境客服的嵌入需求。</li>
+    </ul>
+    <p class="block-label">关键指标/资源</p>
+    <ul>
+      <li>评测/性能：LAAL 2.8s→2.3s（60 语种平均）；支持 60 语种（29 语种含语音输出）；Omnilingua-MSpeaker 14 语向多说话人长音频评测四项领先（自述，待核实）</li>
+      <li>代码/论文：Qwen 官方技术博客 + 阿里云 QwenCloud 文档；API <code>qwen3.8-livetranslate-flash-realtime</code> 已开放</li>
+    </ul>
+    <p class="note">备注：2.3s LAAL、Omnilingua-MSpeaker 评测领先等均为官方自述口径，未见独立第三方复现。</p>
+    <div class="tags"><span class="tag">#基础架构</span><span class="tag">#世界模型</span></div>
+  </div>
+
+  <h2 class="section-title verify-section">待核实</h2>
+  <div class="card">
+    <ol style="padding-left: 1.4rem;">
+      <li><strong>Kimi K3 参数规模 2.8T / 1M token 上下文 / 较 Kimi K2 scaling 效率 2.5×</strong>：Moonshot AI 自述口径，未见第三方独立复现。</li>
+      <li><strong>Anthropic × 埃森哲「各投 ≥$1B × 5 年」</strong>：Reuters 加总 ~$20 亿美元为投入意向（预期），非已到账资金；评估细则与人员规模未披露。</li>
+      <li><strong>Agile-WAM 11.9 ms 推理 / +29.4% 实机成功率</strong>：作者自述，截至核验未发现完整训练代码/数据/权重公开，未见第三方复现。</li>
+      <li><strong>HIL-UMI 5.63× 采集加速</strong>：作者自述（Clean Up Table 任务 73.40 ms/frame vs HG-DAgger 412.99 ms/frame），未见第三方复现。</li>
+      <li><strong>DexTouch-WM Contact-IoU 0.42→0.59 / 100 小时人类触觉数据收益曲线</strong>：作者自述，HumanTouch 数据集与模型权重截至核验未公开。</li>
+      <li><strong>Qwen3.8-LiveTranslate LAAL 2.3s / Omnilingua-MSpeaker 四项领先</strong>：官方自述，未见独立第三方复现。</li>
+      <li><strong>Accenture 盘后 +8%</strong>：二级市场反应，具体时点与成交量未核实。</li>
+      <li><strong>三篇具身论文时间戳差异</strong>：arXiv 提交日期 2026-09-18（美西），arXivDaily 标注在线 2026-09-18/19（北京时区），按「在线时刻落在增量窗口内」纳入，若按提交时刻则窗口外——已在条目中就地标注。</li>
+      <li><strong>Kimi K3 on Bedrock 精确上线时刻</strong>：AWS 博客标注 9/18（美东），换算北京时间约 9/19 凌晨，按「在线时刻落在增量窗口内」纳入，若按美东时刻则窗口边界——已在条目中就地标注。</li>
+    </ol>
+  </div>
+
+  <h2 class="section-title dedup-section">去重说明</h2>
+  <div class="card">
+    <p>按「最近 7 天全部 <code>每日AI新闻推送_*.md</code> 标题关键词集合」执行强约束去重，覆盖 9/13–9/19 共 8 份报告（第 61–67 跑）。本期 5 条候选与第 67 跑（9/19 11:47）及更早报告比对结果：</p>
+    <ul>
+      <li><strong>MiniMax Code CLI 开源（9/18 晚）</strong>：历史报告未覆盖 MiniMax；与第 67 跑 GLM-5.3-FlashX（智谱）主体不同，非重复。</li>
+      <li><strong>Kimi K3 on Bedrock（9/18 美东）</strong>：第 67 跑排除项含「Kimi K2.8 Preview（9/11）」；K3 Bedrock GA 为不同模型 + 不同事件（云分发），非重复。</li>
+      <li><strong>Anthropic × 埃森哲嵌入式评估（9/18 美东）</strong>：第 67 跑第 4 条为「Anthropic 拟 IPO 前抢先发新模型」，本条为「第三方评估员驻场」，主体（评估机制）与动作均不同，非重复。</li>
+      <li><strong>具身触觉世界模型三连发（9/18 提交 / 9/19 在线）</strong>：历史报告未覆盖 Agile-WAM / HIL-UMI / DexTouch-WM；与第 67 跑「日冕开物 POC」主体不同。</li>
+      <li><strong>Qwen3.8-LiveTranslate（9/19 早）</strong>：历史报告未覆盖；与第 64 跑「Gemini 3.8 Flash」为不同厂商/产品线，非重复。</li>
+    </ul>
+    <p style="margin-top: 0.8rem;"><strong>排除项（时间戳早于窗口起点 9/19 11:47，按严格规则剔除）：</strong></p>
+    <ul>
+      <li>GPT-6 Astra for Law（9/17 首发，第 66 跑已覆盖 GPT-6 Astra 相关主题）。</li>
+      <li>Temporal $550M Series E（9/14 官宣，窗口外）。</li>
+      <li>Figure Helix 2.5 零样本 30 家庭评测（9/17 官方发布，窗口外）。</li>
+      <li>宇树 UnifoLM-WLA-1.0 / G1+（9/10–9/14 密集发布，第 66 跑已排除）。</li>
+      <li>智谱 GLM-5.3 开源（9/14 首发，第 66 跑已覆盖）。</li>
+      <li>Atria Dawn Preview（9/11 权重 / 9/14 arXiv，第 67 跑已排除）。</li>
+    </ul>
+  </div>
+
+  <h2 class="section-title">归档状态说明</h2>
+  <div class="archive-box">
+    <ul>
+      <li><strong>工作区 Markdown</strong>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20260920_1130.md</code></li>
+      <li><strong>工作区 HTML</strong>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20260920_1130.html</code></li>
+      <li><strong>网盘归档</strong>：<code>O:/quark/automation/每日 AI 新闻推送/</code>（同步写入上述同名文件）</li>
+      <li><strong>执行状态</strong>：<span style="color: var(--accent-green); font-weight: 600;">✅ 成功</span>（O:/quark/automation/每日 AI 新闻推送/ 两份文件字节校验一致；最终 md 15395B / html 22586B）</li>
+    </ul>
+  </div>
+
+  <footer>每日 AI 前沿技术精选 · 2026-09-20 11:30 · 第 68 跑 · 增量收敛窗口</footer>
+</div>
+</body>
+</html>

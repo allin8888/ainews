@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 — 2026-08-24</title>
+<style>
+  :root {
+    --bg: #f5f7fa;
+    --card-bg: #ffffff;
+    --text-primary: #1a1a2e;
+    --text-secondary: #4a4a6a;
+    --text-muted: #8888a0;
+    --accent: #4f46e5;
+    --accent-light: #eef2ff;
+    --tag-bg: #f0f0f8;
+    --tag-text: #4f46e5;
+    --border: #e2e4f0;
+    --success: #059669;
+    --warning: #d97706;
+    --risk: #dc2626;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.7;
+    padding: 24px 16px 60px;
+  }
+  .container { max-width: 820px; margin: 0 auto; }
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    color: #fff;
+    border-radius: 16px;
+    padding: 32px 36px;
+    margin-bottom: 28px;
+  }
+  .header h1 { font-size: 22px; font-weight: 700; margin-bottom: 10px; letter-spacing: 0.3px; }
+  .header .meta { font-size: 13px; opacity: 0.85; display: flex; flex-wrap: wrap; gap: 16px; }
+  .header .meta span { display: inline-flex; align-items: center; gap: 4px; }
+  /* Section title */
+  .section-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 16px;
+    padding-left: 4px;
+  }
+  /* Cards */
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 26px 28px;
+    margin-bottom: 18px;
+    transition: box-shadow 0.2s;
+  }
+  .card:hover { box-shadow: 0 4px 20px rgba(79,70,229,0.08); }
+  .card-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px; height: 28px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .card h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.5;
+    margin-bottom: 4px;
+  }
+  .card .source-date {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+  }
+  .card .overview {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .card .value-section { margin-bottom: 14px; }
+  .card .value-section h3 {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+  }
+  .card .value-section p, .card .value-section li {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+  }
+  .card .value-section ul { padding-left: 18px; }
+  .card .value-section li { margin-bottom: 4px; }
+  .card .metrics {
+    background: var(--accent-light);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+  }
+  .card .metrics h3 {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 8px;
+  }
+  .card .metrics p, .card .metrics li {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+  .card .metrics ul { padding-left: 18px; }
+  .card .metrics li { margin-bottom: 3px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.3px;
+  }
+  /* Edit note */
+  .edit-note {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin-bottom: 18px;
+  }
+  .edit-note h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+  }
+  .edit-note p { font-size: 13.5px; color: var(--text-secondary); margin-bottom: 8px; }
+  .edit-note ul { padding-left: 18px; }
+  .edit-note li { font-size: 13px; color: var(--text-secondary); margin-bottom: 4px; }
+  /* Archive status */
+  .archive-status {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-top: 8px;
+  }
+  .archive-status h3 { font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; }
+  .archive-status p { font-size: 12.5px; color: var(--text-muted); margin-bottom: 4px; }
+  .archive-status .status-ok { color: var(--success); font-weight: 600; }
+  /* Divider */
+  .divider { height: 1px; background: var(--border); margin: 24px 0; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>📡 每日 AI 前沿技术精选</h1>
+    <div class="meta">
+      <span>📅 2026-08-24</span>
+      <span>🕙 10:42 GMT+8</span>
+      <span>📌 精选 5 条</span>
+    </div>
+  </div>
+
+  <div class="section-title">今日精选</div>
+
+  <!-- Card 1 -->
+  <div class="card">
+    <div class="card-number">1</div>
+    <h2>Jeff Dean 离开谷歌后创业首秀：Discovery Loop 以多 Agent 驱动科研方法论全自动闭环</h2>
+    <div class="source-date">Discovery Loop · 2026-08-22</div>
+    <div class="overview">前谷歌首席科学家 Jeff Dean 在斯坦福 Frontier & Pioneer Symposium 首次公开新创业项目 Discovery Loop。公司以公共利益公司（PBC）架构运营，核心使命是用多 Agent 系统将科学研究全流程（拆解子问题→提出假设→执行实验→评估结果→迭代反馈）自动化，瞄准递归自我改进（RSI）与 AI for Science。</div>
+    <div class="value-section">
+      <h3>核心机制</h3>
+      <ul>
+        <li>构建具备跨 20 个领域博士级专业知识的多智能体系统，将 RSI 从"模型改自身权重"拓展到"整个科学方法论自动化"</li>
+        <li>约 10 人小团队依托云与 MaaS 生态绕过大厂硬件壁垒，以极致人效比推进特定赛道</li>
+      </ul>
+    </div>
+    <div class="value-section">
+      <h3>实际影响</h3>
+      <p>若成功，将把 AI 从"辅助人类做研究"升级为"自主完成科学研究"，对药物发现、材料科学、基础物理等领域的研发效率产生结构性跃升；为递归自我改进提供了不同于"模型权重自我修改"的务实路径。</p>
+    </div>
+    <div class="metrics">
+      <h3>关键指标 / 资源</h3>
+      <ul>
+        <li>目标覆盖 20 个学科领域博士级专业知识（目标指标，尚未发布基准）</li>
+        <li>Jeff Dean 缔造 MapReduce、TensorFlow、操盘 Gemini；联合 Sanjay Ghemawat、Oriol Vinyals 等老搭档创立</li>
+      </ul>
+    </div>
+    <div class="tags">
+      <span class="tag">#递归自我改进</span>
+      <span class="tag">#AI for Science</span>
+      <span class="tag">#Jeff Dean</span>
+      <span class="tag">#基础设施</span>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card">
+    <div class="card-number">2</div>
+    <h2>Cloudflare 为 AI Agent 量身打造 Web 基础设施：无 Chromium 浏览器 + 可编程钱包 + x402 支付协议三件套齐发</h2>
+    <div class="source-date">Cloudflare · 2026-08-06 / 8 月中旬</div>
+    <div class="overview">Cloudflare 在过去三周内连续发布三项产品——Kitesurf（从零编写、无 Chromium 的浏览器）、Wallets（Account Wallet + Virtual Wallet）、Monetization Gateway（基于 x402 协议的边缘结算），三者共同构成面向 Agent 的完整 Web 基础设施栈。</div>
+    <div class="value-section">
+      <h3>核心机制</h3>
+      <ul>
+        <li>Kitesurf：Rust 编写、WASM 编译、V8 Isolates 运行，通过 235,000+ Web Platform Test；CPU/内存仅为 Chromium 的 1/3–1/7，支持 Chrome DevTools 协议</li>
+        <li>Wallets：按会话/ merchant 白名单/最大交易额度控制 Agent 消费</li>
+        <li>x402 协议：Agent 按次付费，稳定币边缘结算，无需注册或跳转</li>
+      </ul>
+    </div>
+    <div class="value-section">
+      <h3>实际影响</h3>
+      <p>彻底改变 Agent fleets 的 per-session 基础设施成本结构；Agent 付费能力从"需要人工介入"变为"可治理的自动化支出"，为大规模 Agent 自主完成 web 交互、API 调用、付费订阅开通打开大门。</p>
+    </div>
+    <div class="metrics">
+      <h3>关键指标 / 资源</h3>
+      <ul>
+        <li>Kitesurf 通过 235,000+ Web Platform Test 子项；CPU/内存降低 3–7 倍</li>
+        <li>x402 协议开放，已有 20+ 公司接入支付流</li>
+        <li>链接：cloudflare.com（产品页）</li>
+      </ul>
+    </div>
+    <div class="tags">
+      <span class="tag">#基础设施</span>
+      <span class="tag">#Agent</span>
+      <span class="tag">#Web协议</span>
+      <span class="tag">#开源</span>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card">
+    <div class="card-number">3</div>
+    <h2>Matt Pocock "Skills" 仓库一周内斩获 23 万 Star，"Prompt as Code"进入可版本化管理时代</h2>
+    <div class="source-date">GitHub Trending · 2026-08-24</div>
+    <div class="overview">TypeScript 教育者 Matt Pocock 将个人 .agents 目录中的"Skills"集合开源为 mattpocock/skills，短短数日内达到 233,815 Star。每个 Skill 是针对特定工程任务的结构化多步协议，含检查清单、错误处理流程、"禁止操作"约束，Claude Code、Codex、Cursor 等 Harness 可直接导入消费。</div>
+    <div class="value-section">
+      <h3>核心机制</h3>
+      <ul>
+        <li>将"高级工程师的判断力"显式编码为可版本化、可分享、可组合的 Markdown 文件</li>
+        <li>Skills 之间可嵌套、组合、优先级排序，形成可追溯的"工程知识 Git 历史"</li>
+      </ul>
+    </div>
+    <div class="value-section">
+      <h3>实际影响</h3>
+      <p>标志着 AI Coding 竞争重心从"基座模型能力对比"进一步下沉到"编排层与知识层"——配置精良的 Skill 库可以让中档模型达到比未经调优的顶级模型更高的输出质量；预测 6 个月内将出现"Skill 注册表"（类似 npm/PyPI）。</p>
+    </div>
+    <div class="metrics">
+      <h3>关键指标 / 资源</h3>
+      <ul>
+        <li>233,815 Star（截至 2026-08-24 GitHub Trending）</li>
+        <li>github.com/mattpocock/skills</li>
+      </ul>
+    </div>
+    <div class="tags">
+      <span class="tag">#AI Coding</span>
+      <span class="tag">#Prompt as Code</span>
+      <span class="tag">#开源</span>
+      <span class="tag">#工程知识</span>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="card">
+    <div class="card-number">4</div>
+    <h2>世界机器人大会闭幕：具身智能从"炫技"全面转向"上岗打工"，世界模型专家委员会成立</h2>
+    <div class="source-date">WRC 2026 / 中国电子学会 · 2026-08-19–23</div>
+    <div class="overview">2026 世界机器人大会 8 月 19–23 日在北京闭幕，373 家企业、3000+ 展品、150+ 首发新品。主题从"能走能跳"正式转向"能干活、能交付、能成交"。会同期，中国电子学会正式成立"世界模型专家委员会"，跨维智能 CEO 贾奎受聘首届委员并首提"Physical Token 经济学"。</div>
+    <div class="value-section">
+      <h3>核心机制</h3>
+      <ul>
+        <li>大晓机器人"晓满"（即时零售履约，1N 力控，合作商户包括烧卖购、快客达、中石油便利店）、"晓新"（酒店洗衣全流程）、"晓途"（户外巡检，已落地上海漕河泾/滨江）</li>
+        <li>银河通用"银河星脑"驱动 Galbot ET-1 网球对抗（延迟≤5ms）；蚂蚁灵波"一脑多机"已在国大药房上线</li>
+        <li>自变量机器人提出数据质量优先于规模，反对"千万小时数据决定论"</li>
+      </ul>
+    </div>
+    <div class="value-section">
+      <h3>实际影响</h3>
+      <p>行业共识从"谁的数据多"转向"数据来自什么环境、覆盖哪些任务、是否包含失败样本"；贾奎提出的 Physical Token 经济学主张从产业早期系统思考数据基础设施、模型架构与场景协同，形成数据飞轮。</p>
+    </div>
+    <div class="metrics">
+      <h3>关键指标 / 资源</h3>
+      <ul>
+        <li>2026 H1 中国人形机器人出货量 4 万+ 台（全球占比 97%+）</li>
+        <li>银河通用 Galbot ET-1 网球交互延迟≤5ms；自变量估值超 200 亿元</li>
+        <li>wrc2026.org；中国电子学会世界模型专家委员会公告</li>
+      </ul>
+    </div>
+    <div class="tags">
+      <span class="tag">#具身智能</span>
+      <span class="tag">#世界模型</span>
+      <span class="tag">#WRC2026</span>
+      <span class="tag">#PhysicalToken</span>
+    </div>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="card">
+    <div class="card-number">5</div>
+    <h2>NVIDIA Nemotron 3.5 Lightning 开源：30B MoE 单卡可跑，任务完成成本降至 Opus 4.8 的 1/3</h2>
+    <div class="source-date">NVIDIA · 2026-08-22</div>
+    <div class="overview">NVIDIA 发布开源模型 Nemotron 3.5 Lightning（30B 参数 MoE）及配套推理路由框架 NeMo Switchyard，支持单 GPU（RTX PC / DGX Spark / Jetson）运行，无需授权费。NeMo Switchyard 智能路由将简单任务分配给 Lightning、复杂决策路由至前沿模型，综合 AI 支出降低 50–67%。</div>
+    <div class="value-section">
+      <h3>核心机制</h3>
+      <ul>
+        <li>MoE 架构，推理速度较竞品快 4 倍，Agent 任务完成率提升 30%</li>
+        <li>HuggingFace、ModelScope、build.nvidia.com 三方均可免费下载</li>
+        <li>NeMo Switchyard 通过任务分类器动态选择最优模型，实现成本-性能帕累托前沿最优 trade-off</li>
+      </ul>
+    </div>
+    <div class="value-section">
+      <h3>实际影响</h3>
+      <p>将前沿级 AI 能力从"必须付费 API"变为"本地可部署、零许可费"，直接冲击 Claude Opus 4.8 / GPT-5.6 等企业客户定价体系；500+ SKU 中腰部卖家可在 30–60 天内收回 GPU 基础设施成本。</p>
+    </div>
+    <div class="metrics">
+      <h3>关键指标 / 资源</h3>
+      <ul>
+        <li>推理加速 1.98–2.40×；任务成本降至 Opus 4.8 的 ~1/3</li>
+        <li>huggingface.co/nvidia / modelscope.cn / build.nvidia.com（Nemotron 3.5 Lightning）</li>
+        <li>后续：Nemotron 4（1T+ 参数，2026 年末）已在规划中</li>
+      </ul>
+    </div>
+    <div class="tags">
+      <span class="tag">#开源模型</span>
+      <span class="tag">#NVIDIA</span>
+      <span class="tag">#推理加速</span>
+      <span class="tag">#成本下降</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Edit Note -->
+  <div class="edit-note">
+    <h3>✍️ 编辑点评</h3>
+    <p><strong>今日主线</strong>：「基础设施层从平台级卡位转向 Agent 原生——世界模型成具身智能新焦点」</p>
+    <ul>
+      <li><strong>AI Coding 侧</strong>：Matt Pocock Skills（23 万 Star）与 Cloudflare Kitesurf+Wallets+x402 三件套共同指向一个趋势——AI 编程竞争从"模型能力比拼"下沉到"编排层与交互层"；Lilian Weng 的"Harness Engineering for Self-Improvement"博文也呼应此判断：Harness 本身正成为递归自我改进的第一层对象。</li>
+      <li><strong>具身智能侧</strong>：WRC 2026 闭幕信号明确——行业从"炫技"进入"上岗打工"阶段，世界模型成为新焦点（中国电子学会世界模型专家委员会成立、贾奎首提 Physical Token 经济学）。"数据质量优于规模"正在成为新共识。</li>
+      <li><strong>基础设施侧</strong>：Jeff Dean 的 Discovery Loop 以 PBC 架构进军 AI for Science 全自动闭环，将 RSI 从"模型改自身权重"拓展到"整个科学方法论自动化"，是递归自我改进领域最重量级的新玩家入局信号。</li>
+    </ul>
+  </div>
+
+  <!-- Archive Status -->
+  <div class="archive-status">
+    <h3>📦 归档状态说明</h3>
+    <p>Markdown：<code>O:/quark/automation/每日 AI 新闻推送/每日AI新闻推送_20260824_1042.md</code></p>
+    <p>HTML：<code>O:/quark/automation/每日 AI 新闻推送/每日AI新闻推送_20260824_1042.html</code></p>
+    <p>执行状态：<span class="status-ok">✅ 成功</span></p>
+  </div>
+
+</div>
+</body>
+</html>

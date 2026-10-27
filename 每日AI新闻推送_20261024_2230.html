@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日 AI 前沿技术精选 · 2026-10-24 22:30</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --border:#30363d;
+    --fg:#e6edf3; --muted:#8d96a0;
+    --blue:#4493f8; --green:#3fb950; --orange:#d29922; --red:#f85149;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;padding:24px 16px 64px;background:var(--bg);color:var(--fg);
+    font-family:-apple-system,"Segoe UI","Microsoft YaHei",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.75;font-size:16px}
+  .wrap{max-width:960px;margin:0 auto}
+  h1{font-size:1.85rem;margin:0 0 6px;letter-spacing:.5px}
+  h2{font-size:1.25rem;margin:34px 0 12px;padding-left:11px;border-left:4px solid var(--blue)}
+  h3{font-size:1.05rem;margin:20px 0 8px;color:var(--blue)}
+  .meta{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin:16px 0 22px}
+  .meta div{margin:3px 0;color:var(--muted);font-size:.94rem}
+  .meta b{color:var(--fg)}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 22px;margin:16px 0}
+  .warn{border-left:4px solid var(--orange);background:#1c1a12}
+  .zero{border-left:4px solid var(--red)}
+  .zero .big{font-size:1.05rem;font-weight:600;color:var(--orange)}
+  code{background:#20262e;border:1px solid var(--border);border-radius:4px;padding:1px 5px;
+    font-family:ui-monospace,Consolas,"Courier New",monospace;font-size:.86em;color:#ffd9a0}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.9rem}
+  th,td{border:1px solid var(--border);padding:8px 10px;vertical-align:top;text-align:left}
+  th{background:#1b222b;color:var(--blue);white-space:nowrap}
+  td:first-child{white-space:nowrap;color:var(--muted)}
+  ul,ol{margin:8px 0 8px 22px;padding:0}
+  li{margin:6px 0}
+  .tag{display:inline-block;background:#1b222b;border:1px solid var(--border);border-radius:999px;
+    padding:1px 10px;margin:2px 4px 2px 0;font-size:.8rem;color:var(--green)}
+  .muted{color:var(--muted)}
+  hr{border:0;border-top:1px solid var(--border);margin:28px 0}
+  a{color:var(--blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>每日 AI 前沿技术精选</h1>
+<div class="meta">
+  <div><b>日期</b>：2026-10-24　<b>时间</b>：22:30　<b>精选条数</b>：0 条</div>
+  <div><b>时效窗口</b>：2026-10-23 22:30 – 2026-10-24 22:30（严格24小时）</div>
+  <div class="muted">窗口依据 <code>tools/guardian.py pre</code> 快照（mode=base），逐字一致。</div>
+</div>
+
+<nav class="toc">
+
+</nav>
+<div class="card warn">
+  <b>⚠️ 今日新闻不足3条，已严格筛选24小时内首发内容。</b>
+  本期为「零条目如实披露」跑次：未扩展时间窗口、未降低入选门槛、<b>未使用已永久废止的 48 小时降级策略</b>。
+</div>
+
+<h2>今日精选</h2>
+<div class="card zero">
+  <div class="big">本期无可入选条目。</div>
+  <p><b>核心成因（必读）</b>：本自动化在<b>同一 24 小时窗口内已被并发执行一次</b>——工作区存在
+  <code>每日AI新闻推送_20261024_2212.md</code>（覆盖 2026-10-23 22:30 – 2026-10-24 22:12，产出 4 条：
+  Kimi K3.1 Pro ／ Anthropic sandbox-runtime（srt）trending ／ NVIDIA Nemotron 3.5 Bolt E4B 4GB ／ 智元 110 台远征 A3 吉尼斯纪录）。
+  按「增量收敛（防重叠）」与「去重基线（强约束）」，本期护栏窗口（22:30 终点）与该版（22:12 终点）<b>重叠 23 小时 42 分钟，
+  真实新增区间仅 18 分钟</b>（北京 10-24 22:12 → 22:30 = 美东周六 10:12 → 10:30）。该 4 条经
+  <code>dedup_check.py</code> 逐条判定 <code>is_dup:true</code>（matched run_stamp 均为 <code>20261024_2212</code>，
+  confidence 1.0 / 1.0 / 1.0 / 0.625），一律排除。18 分钟尾部叠加「美东周六清晨 + 北京周六深夜」双发布空带，
+  构成本期零供给的结构性成因。</p>
+</div>
+
+<h2>窗口内核验记录（逐通道取证，可复核）</h2>
+<div class="card priority-1" id="entry-1">
+<table>
+  <tr><th>#</th><th>通道</th><th>取证方式</th><th>结果</th></tr>
+  <tr><td>1</td><td>并发实例比对</td><td>读取工作区 <code>每日AI新闻推送_20261024_2212.md</code> 全部 4 条标题</td><td>4 条全部命中本期窗口，按同主体同动作排除</td></tr>
+  <tr><td>2</td><td>AI HOT items</td><td><code>items?mode=all&amp;window=24h&amp;limit=50</code></td><td>返回 50 条全部落在窗口内（publishedAt 过滤 UTC 10-23 14:30 → 10-24 14:30），<b>最新一条为北京 10-24 21:01</b>，早于 22:12 版快照；22:12 之后无任何新增条目。窗口早段（≤ 北京 11:56，受 limit=50 截断）已由 22:12 版扫描</td></tr>
+  <tr><td>3</td><td>arXiv</td><td><code>/list/cs.RO/recent</code> + source_health 公告批次字段</td><td>当前公告批次仍为 <b>Fri, 23 Oct 2026</b>（v1 提交集中 10-22 14:31–18:00 UTC，已由第 103 跑取用 SkeLAM／DiffDreamer／HERD）。页面含 Thu 22／Fri 23 段落、<b>不含 Sat 24</b>；下一批次 Mon 26 落窗口外 → <b>窗口内 arXiv 公告事件 0、学术首发 0</b></td></tr>
+  <tr><td>4</td><td>GitHub Releases</td><td>REST 探测 16 个焦点仓库</td><td>窗口内命中 3 条均未达门槛：<code>claude-code v2.1.310</code>（北京 10-24 07:39，补丁 + 沙箱提示改进）、<code>openclaw v2026.10.7</code>（北京 17:53，会话恢复／更新激活／备份可靠性维护）、<code>gemini-cli v0.67.0-nightly.20261024</code>。<code>FlagGems v5.4.0</code>、<code>FlagScale v2.1.0</code> 最新 release 均为 <b>2026-09-28</b></td></tr>
+  <tr><td>5</td><td>Hacker News</td><td>Algolia <code>numericFilters=created_at_i</code> 双段过滤（北京 13:30–14:31、22:05–22:30）</td><td>尾部 20 hits 中 19 条 pts≤3；最高热度为一条 Reddit 反 AI 讨论帖（pts=332，非技术首发）。无窗口内实质条目</td></tr>
+  <tr><td>6</td><td>官方博客 RSS</td><td>OpenAI／DeepMind／Google Blog／Anthropic／Mistral 最新条目时刻</td><td>OpenAI 最新三条 pubDate 为 10-23 17:00／10:00／00:00 GMT，仅《<b>Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)</b>》（北京 10-24 01:00）落窗口内，但正文返回 <b>403</b>（仅得标题与时刻）→ 按「剔除缺乏技术细节内容」未纳入。DeepMind 最新 10-22 14:30 GMT、Google Blog 10-21 04:00 GMT、Anthropic／Mistral 无窗口内条目</td></tr>
+  <tr><td>7</td><td>国内媒体 RSS</td><td>量子位／InfoQ 中文／36氪</td><td>量子位最新条目 10-23 07:35 GMT（北京 15:35）<b>早于窗口起点</b>；InfoQ 窗口内条目（10-24 03:40「智源 FlagOS 2.2」、21:00「React 19.3」）均为二次报道，第一方发布物在窗口外（React v19.3.1 发布于 10-14、FlagGems 9-28）；36氪 feed 返回 0 条不可用。<b>一律按「禁止以转载时间入选」排除</b></td></tr>
+  <tr><td>8</td><td>Hugging Face</td><td><code>h<a href="https://f-mirror.com/api/models?sort=createdAt&amp;direction=-1&amp;limit=100" target="_blank" rel="noopener">f-mirror.com/api/models?sort=createdAt&amp;direction=-1&amp;limit=100</a></code></td><td>最新 100 个模型 createdAt 集中在北京 10-24 15:24–15:59 的 35 分钟切片，<b>downloads&gt;200 或 likes&gt;3 的显著条目为 0</b>（社区零散上传，无模型级首发）。HF 主站直连仍未取证</td></tr>
+</table>
+</div>
+
+<h2>去重说明</h2>
+<div class="card priority-2" id="entry-2">
+  <p><b>7 天标题扫描</b>：覆盖 2026-10-17 11:30 ~ 2026-10-24 22:12 共 <b>9 份报告（第 94–103 跑 + 本日 22:12 并发版）48 条</b>。
+  本期候选池 8 个已核验标题逐条调用 <code>tools/dedup_check.py</code>：</p>
+  <ul>
+    <li><b>判为重复（is_dup:true，4 条，一律排除）</b>：Kimi K3.1 Pro（jaccard 0.373／conf 1.0）、Anthropic sandbox-runtime srt trending（0.528／1.0）、NVIDIA Nemotron 3.5 Bolt E4B 4GB（0.438／1.0）、智元 110 台远征 A3 吉尼斯（0.453／0.625）——matched 目标全部为同窗口并发版 <code>20261024_2212</code>。</li>
+    <li><b>判为非重复但门槛／时间戳不合格（is_dup:false，4 条，未纳入）</b>：OpenClaw v2026.10.7（conf 0.533，与 20260901「OpenClaw 2.0」非同动作，但为维护流水）、Claude Code v2.1.310（补丁）、OpenAI ChatGPT 十亿用户存储扩展 Part II（正文不可达）、智源 FlagOS 2.2（jaccard 0.0，第一方发布物窗口外）。</li>
+  </ul>
+  <p><b>跨实例比对</b>：列 O: 盘 <code>每日 AI 新闻推送/</code> 目录，今日其他实例产出为 <code>20261024_0028</code>（窗口 10-22 ~ 10-23）与 <code>20261024_1231</code>，均已由 22:12 版处置排除；本期未发现晚于 22:12 的其他实例产出。</p>
+  <p><b>结构性说明（信源侧）</b>：信源健康 <b>ok=3 / warn=0 / error=0</b>（aihot_items 最新条目 1.5h 前、aihot_dailies 2026-10-24、arXiv 公告批次 Fri 23 Oct 2026），无 warn/error 信源，未影响窗口与入选规则。零供给源于<b>窗口已被同自动化并发版覆盖 99%</b>，而非抓取失败。</p>
+  <p><b>规则合规声明</b>：未扩展窗口（终点严格取 <code>guardian.py pre</code> 快照 22:30）；未启用 48 小时降级（永久废止）；未降低「技术突破／高价值开源／产业工程落地」三选一门槛；未把并发版已报道事件改头换面重新入选。</p>
+</div>
+
+<h2>待核实</h2>
+<div class="card priority-3" id="entry-3">
+  <ol>
+    <li><b>OpenAI《Rapidly scaling online storage … (Part II)》</b>：第一方 RSS pubDate 10-23 17:00 GMT（北京 10-24 01:00，窗口内），但正文页 403，<b>缺技术细节与量化指标取证</b>；是否属 Agent／记忆相关基础设施待下一跑在可达通道复核。</li>
+    <li><b>智源 FlagOS 2.2</b>：仅有 InfoQ 中文 10-24 03:40 GMT 二次报道，<b>缺第一方发布时刻</b>（FlagGems v5.4.0／FlagScale v2.1.0 均为 2026-09-28），判定为旧成果迟到报道。</li>
+    <li><b>OpenClaw v2026.10.7 与 Claude Code v2.1.310</b>：门槛判定基于官方 changelog 文本，若存在未披露的实质能力，本期判断可能偏保守。</li>
+    <li><b>并发执行来源（运维项）</b>：22:12 版完成归档与收尾固化，但<b>未把「上次执行时刻」写入记忆文件首个代码块</b>（仍停留 2026-10-23 22:30），导致本期 <code>guardian.py pre</code> 判为 base 模式（24h 整窗）而非增量收敛。属调度层重复触发 + 记忆回写缺失的复合问题。</li>
+    <li><b>Hugging Face 主站与 36氪 feed 可达性</b>：HF 取证依赖 hf-mirror（主站直连往期已知失败、本期未重试），36氪 feed 返回 0 条，两通道覆盖度待核实。</li>
+  </ol>
+</div>
+
+<hr>
+<h2>归档状态说明</h2>
+<div class="card priority-4" id="entry-4">
+  <ul>
+    <li><b>工作区 Markdown</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261024_2230.md</code></li>
+    <li><b>工作区 HTML</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261024_2230.html</code></li>
+    <li><b>网盘归档</b>：<code>O:/quark/automation/每日 AI 新闻推送/</code>（同步写入上述同名文件）</li>
+    <li><b>执行状态</b>：✅ 成功（archive_latest.py 首轮即 archived 覆盖 md+html、failed/skipped 均为空、probe 写入并清理成功；guardian.py post ok:true、issues 0、window_source=snapshot。此后仅回填「执行状态 / 收尾固化」两行状态文本，经 rename 避让网盘 v1 为 <code>_superseded_每日AI新闻推送_20261024_2230_v1.{md,html}</code> 后重新归档 v2 并复检）</li><li><b>收尾固化</b>：5 ok / 0 failed / 0 skipped（kb 重建 / rss 刷新 / 归档总索引重建 / 待核实追踪 / 信源健康；首轮 backlog scanned 89、subjects 183、<b>added 5</b>、open 183——本期待核实 5 条入库。按第 100/101 跑纪律，终稿归档后 finalize_report.py 重跑一次，确保 KB/RSS/总索引使用终稿内容）</li><li><b>本期无条目对下游产物的影响</b>：entries_每日AI新闻推送_20261024_2230.json entry_count=0；KB 新增条目 0、RSS 新增 0，仅待核实追踪与索引受影响</li>
+  </ul>
+</div>
+
+<p class="muted">标签：<span class="tag" style="color:#8b949e;border-color:#8b949e">#零条目披露</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#窗口去重</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#信源核验</span></p>
+
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>

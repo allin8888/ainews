@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-10-13</title>
+<style>
+:root{
+  --bg:#0d1117; --card:#161b22; --card-alt:#1a2033; --border:#30363d;
+  --text:#e6edf3; --muted:#8b949e; --accent-blue:#58a6ff; --accent-green:#3fb950;
+  --accent-orange:#d29922; --accent-red:#f85149; --tag-bg:#21262d;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;line-height:1.75;padding:32px 16px}
+.wrap{max-width:860px;margin:0 auto}
+header{margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+h1{font-size:1.7rem;font-weight:700;margin-bottom:10px}
+h1 .dot{color:var(--accent-orange)}
+.meta{color:var(--muted);font-size:.9rem;line-height:1.9}
+.meta b{color:var(--text);font-weight:600}
+.notice{background:rgba(210,153,34,.12);border:1px solid var(--accent-orange);border-radius:8px;padding:10px 14px;font-size:.85rem;color:var(--accent-orange);margin:14px 0}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:22px 24px;margin-bottom:18px}
+.card h2{font-size:1.1rem;font-weight:600;margin-bottom:14px;color:var(--accent-blue);line-height:1.5}
+.card h2 .num{color:var(--accent-orange);margin-right:6px}
+.card h2 .src{display:block;font-size:.78rem;color:var(--muted);font-weight:400;margin-top:4px}
+.sub{font-size:.82rem;text-transform:uppercase;letter-spacing:.05em;color:var(--accent-green);font-weight:600;margin:14px 0 6px}
+.sub.o{color:var(--accent-orange)}
+ul{padding-left:18px}
+li{margin-bottom:6px;font-size:.94rem}
+li b{color:var(--text)}
+.tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.tag{background:var(--tag-bg);border:1px solid var(--border);border-radius:20px;padding:2px 12px;font-size:.78rem;color:var(--accent-blue)}
+h3.section{font-size:1.25rem;font-weight:700;margin:30px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--accent-orange)}
+.pending-item{font-size:.88rem;margin-bottom:10px;padding-left:20px;position:relative}
+.pending-item::before{content:"⚠";position:absolute;left:0;color:var(--accent-orange);font-size:.85rem}
+.archive{background:var(--card-alt);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-top:26px}
+.archive h3{font-size:1rem;color:var(--accent-green);margin-bottom:12px}
+.archive ul{list-style:none;padding:0}
+.archive li{font-size:.86rem;margin-bottom:7px;padding-left:18px;position:relative}
+.archive li::before{content:"▸";position:absolute;left:0;color:var(--accent-green)}
+.archive code{background:var(--tag-bg);padding:1px 6px;border-radius:4px;font-size:.8rem;color:var(--accent-blue)}
+.archive .status{color:var(--accent-green);font-weight:600}
+.mainline{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-top:18px}
+.mainline h3{font-size:1rem;color:var(--accent-blue);margin-bottom:12px}
+.mainline li{font-size:.9rem}
+footer{margin-top:30px;padding-top:16px;border-top:1px solid var(--border);color:var(--muted);font-size:.78rem;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1><span class="dot">●</span> 每日 AI 前沿技术精选</h1>
+<div class="meta">
+<b>日期</b>：2026-10-13 &nbsp;|&nbsp; <b>时间</b>：11:30 &nbsp;|&nbsp; <b>精选</b>：5 条<br>
+<b>时效窗口</b>：2026-10-12 11:30 – 2026-10-13 11:30（严格 24 小时）
+</div>
+<div class="notice">⚠️ 窗口说明：记忆文件记录「上次执行时刻」为 2026-10-12 11:30（第 89 跑），距本次执行恰 24 小时 00 分，未触发增量收敛，按基准窗口执行；未启用已废止的 48 小时降级策略。本窗口内 arXiv 学术首发正常供给（10-12 为周四，非周末停更期）。</div>
+</header>
+
+<div class="card">
+<h2><span class="num">1</span> Meta 发布 Muse Wonder / Muse Wonder Full 前沿模型：Active Memory + Active Focus 面向长程 Agent 任务<span class="src">Meta | 2026-10-12 美东</span></h2>
+<div class="sub">事件概述</div>
+<p style="font-size:.94rem">Meta Superintelligence Labs（Alexandr Wang 团队）发布 Muse Wonder 与 Muse Wonder Full 两款前沿模型，主打跨会话记忆保持与多步骤目标持续推进，正式重返与 OpenAI / Anthropic 的前沿模型竞争。</p>
+<div class="sub">技术与工程价值</div>
+<ul>
+<li><b>核心机制</b>：Active Memory 让模型跨对话携带并主动检索用户关键上下文；Active Focus 让模型在困难目标前自动尝试替代路径、从错误中恢复、在关键动作前与用户确认。1M token 上下文，多模态输入，输出为文本。</li>
+<li><b>实际影响</b>：Meta 在 14 个月研发周期内将综合智能指数从 Muse Spark 1.3 的 48 分推至 Muse Wonder Full 的 56 分（AA v4.3），六周提升 8 分；「个人超级智能」产品路线正式落地商业化。</li>
+</ul>
+<div class="sub o">关键指标/资源</div>
+<ul>
+<li>评测/性能（自述数据，未见第三方复现）：SWE-Marathon Muse Wonder Full 57.5% vs Claude Opus 5.5 46.3% vs GPT-6 Astra 42.5%；DeepSWE 1.1 Full 79.0 vs Opus 74.2；Harvey Legal 13.1 vs Opus 4.2。Artificial Analysis 独立评分：Full 56 / 标准 52（Opus 5.5 为 58）。</li>
+<li>定价：API 输入 $4/M、输出 $20/M（与 Opus 5.5 同价位）；Full 版仅通过 Muse Code 订阅（$50/$200/月）。</li>
+<li>独立基准冲突：AA 综合分低于 Meta 自述长程编码优势；第三方实测 3D 生成与图像-HTML 任务表现明显落后（见待核实）。</li>
+</ul>
+<div class="tags"><span class="tag">#前沿模型</span><span class="tag">#Agent</span><span class="tag">#长程记忆</span></div>
+</div>
+
+<div class="card">
+<h2><span class="num">2</span> 欧拉万象 × 港科广开源 UniWAM：首个揭示 Human-Robot Co-training Scaling Law 的统一世界-动作模型<span class="src">机器之心 Pro | 2026-10-13</span></h2>
+<div class="sub">事件概述</div>
+<p style="font-size:.94rem">Ola-Sem 正式开源版本 UniWAM（Unified World-Action Model）将语义理解、未来视觉预测与动作生成纳入统一架构，首次系统揭示人类-机器人联合预训练的 Scaling 趋势，代码与权重全面开源。</p>
+<div class="sub">技术与工程价值</div>
+<ul>
+<li><b>核心机制</b>：三组件统一架构——Physical Reasoner（Qwen3-VL-2B）+ World Generator（Wan2.2-TI2V-5B）+ Action Predictor，通过联合多模态注意力交互；引入「物理语言」作为共享监督；历史条件流匹配减少生成步数；未来视觉噪声增强降低对精确预测的依赖。</li>
+<li><b>实际影响</b>：首次在 10,000+ 小时数据上验证人机联合预训练 Scaling 趋势；真机实验（AgileX Piper 双臂平台）验证长程任务执行能力；为具身基础模型规模化训练提供方法论支撑。</li>
+</ul>
+<div class="sub o">关键指标/资源</div>
+<ul>
+<li>评测/性能：LIBERO 99.2% / LIBERO-Plus 92.6% / RoboTwin 2.0 C2R 68.32%（C2C→C2R 仅降 6.82pt）；真机 4 类任务平均成功率 67.5%、指令跟随率 82.5%；长程桌面整理 5.0/6（vs π₀.₅ 4.8 / Motus 3.2）。</li>
+<li>消融：机器人数据 46.23%→67.53%；加入人类数据→71.34%；移除语言-动作监督后 C2R 降 11.16pt。</li>
+<li>代码/权重：GitHub <code>UniWAM/UniWAM</code> + ModelScope <code>Kosmos524/UniWAM</code>（Apache 2.0，全部权重开放）。</li>
+</ul>
+<div class="tags"><span class="tag">#具身智能</span><span class="tag">#世界模型</span><span class="tag">#开源</span></div>
+</div>
+
+<div class="card">
+<h2><span class="num">3</span> 跨维智能发布 UNITAS：全球首个机器人任务原生 3D 世界动作模型<span class="src">跨维智能 DexForce | 2026-10-12</span></h2>
+<div class="sub">事件概述</div>
+<p style="font-size:.94rem">跨维智能（DexForce）发布 UNITAS（A 3D-Native World Action Model for Embodied Manipulation），主张「只有让模型原生理解三维物理世界，世界模型才真正接近世界本身」，探索为 Physical AI 建立统一三维表示空间的新路径。</p>
+<div class="sub">技术与工程价值</div>
+<ul>
+<li><b>核心机制</b>：突破传统 VLA/WAM 以二维图像 token 为桥梁的范式，直接让模型在三维物理空间中联合建模观察、行动与世界变化；引入「动作流」（Action Flow）与「场景流」（Scene Flow）两个互补量，在同一坐标系下联合学习。</li>
+<li><b>实际影响</b>：将「策略模型」与「世界模型」两个独立问题统一为可解释的三维物理交互建模，是 3D 原生物理 AI 架构的代表性探索；中国团队在 3D 具身世界模型方向的持续输出。</li>
+</ul>
+<div class="sub o">关键指标/资源</div>
+<ul>
+<li>评测/性能：官方称在多项 3D 操作基准上刷新 SOTA（自述数据，未见第三方复现；完整基准表待核实）。</li>
+<li>代码/论文：项目页已上线；技术报告与代码发布时刻待核实。</li>
+</ul>
+<div class="tags"><span class="tag">#世界模型</span><span class="tag">#具身智能</span><span class="tag">#3D</span></div>
+</div>
+
+<div class="card">
+<h2><span class="num">4</span> 清华 VeriLoop E2 开源：VGR 循证收敛递归机制让模型无法自证成功<span class="src">清华 SGR 机器人实验室 | 2026-10-12</span></h2>
+<div class="sub">事件概述</div>
+<p style="font-size:.94rem">清华大学深圳国际研究生院智能机器人实验室开源 VeriLoop E2（27B 后训练模型，基于 Qwen3.8-27B，Apache-2.0，原生 262K 上下文），核心创新是 VGR（VeriLoop-Governed Recurrence）机制——将「模型提案」与「外部验证」严格分离，候选状态只有在保护证据坐标无退化且至少一项严格改进时才原子提交，否则完整回滚，模型不能自证成功。</p>
+<div class="sub">技术与工程价值</div>
+<ul>
+<li><b>核心机制</b>：VGR 将任务求解建模为候选状态转移：模型作为 proposer 生成候选潜变量位移，固定 decoder 物化为输出，外部 verifier 在固定合同下返回受保护证据秩；弱支配且至少一坐标严格改进才提交；配合 14 条 Golden Rules 工程契约约束长周期任务的可审计性。</li>
+<li><b>实际影响</b>：为「可验证智能」提供工程范式——在软件工程与科学研究中防止模型用局部优化掩盖全局错误；将 RSI 循环的安全性从「信任模型」转向「验证证据」。</li>
+</ul>
+<div class="sub o">关键指标/资源</div>
+<ul>
+<li>评测/性能（自述数据）：SWE-bench Pro 76.2% / Terminal-Bench 2.1 88.8% / DeepSWE v1.1 64.6%；AIME 2026 98.3% / GPQA Diamond 93.9%；黎曼 ζ 临界线零点比例下界 67.350003708785593%（严格有限维证书）。</li>
+<li>代码/权重：Apache 2.0，vLLM 0.17.0 OpenAI 兼容接口；HF / ModelScope 已上架。</li>
+</ul>
+<div class="tags"><span class="tag">#RSI</span><span class="tag">#可验证智能</span><span class="tag">#开源</span></div>
+</div>
+
+<div class="card">
+<h2><span class="num">5</span> 智谱开源 GLM-Legal：基于 GLM-5.3-Flash 的法律智能体全通过率 19.2%<span class="src">智谱 Z.ai | 2026-10-12</span></h2>
+<div class="sub">事件概述</div>
+<p style="font-size:.94rem">智谱发布 GLM-Legal，基于轻量级 GLM-5.3-Flash 基座，通过法律领域中期训练与高效后训练强化专业能力，覆盖合同审查、证据分析与合规流程，API 已开放申请并将接入其桌面智能体平台 AutoClaw。</p>
+<div class="sub">技术与工程价值</div>
+<ul>
+<li><b>核心机制</b>：轻量基座（GLM-5.3-Flash）+ 领域中期训练 + 高效后训练三层架构，以远低于全量前沿模型的参数规模实现法律专业能力，显著降低垂直 Agent 部署成本。</li>
+<li><b>实际影响</b>：法律 Agent 领域首次出现「轻量基座 + 第三方验证」完整开源方案——结果由第三方评测机构 Vals 独立验证（Harvey LAB 全通过率 19.2%，较基座提升 12.5pt），与决策模型浪潮（OpenAI/Perplexity/Cloudflare/微软四方竞争）形成对标。</li>
+</ul>
+<div class="sub o">关键指标/资源</div>
+<ul>
+<li>评测/性能（Vals 独立验证）：Harvey 法律智能体基准（24 个执业领域）全通过率 19.2%（基座 6.7%）；LegalBench 与中文 PLawBench 与顶级闭源模型持平。</li>
+<li>代码/API：API 申请已开放；接入 AutoClaw 桌面平台；完整模型规格待核实。</li>
+</ul>
+<div class="tags"><span class="tag">#法律Agent</span><span class="tag">#垂直领域</span><span class="tag">#开源</span></div>
+</div>
+
+<h3 class="section">待核实</h3>
+<div class="card">
+<p class="pending-item"><b>Muse Wonder 综合性能</b>：Artificial Analysis 综合分（56 Full / 52 标准）低于 Meta 自述长程编码优势；第三方实测 3D 生成与图像-HTML 任务（HN 用户）称「明显落后于 Opus 5.5」；「14 个月研发周期」为 Meta 自述口径，缺独立时间线佐证。</p>
+<p class="pending-item"><b>Muse Wonder Full 成本</b>：Artificial Analysis 估算单任务成本 $4.52（7.69M 输入 token / 任务），比 GPT-6 Astra（$3.26）与 Gemini 4 Argon（$1.99）更高；「成本效率」为 Meta 未公开指标。</p>
+<p class="pending-item"><b>UniWAM Scaling Law</b>：R² 值（人机混合预训练验证损失与数据规模的对数线性拟合）在报道中被截断，具体数值待核实；「首次揭示」为技术判断，缺同期竞品 Scaling 数据对照。</p>
+<p class="pending-item"><b>UNITAS 完整基准</b>：官方称「多项 3D 操作基准 SOTA」但未公布完整基准表（含与 VPP2 / Xiaomi-Robotics-0 / GR00T N1.7 对照）；技术报告与代码发布时刻待核实。</p>
+<p class="pending-item"><b>VeriLoop E2 科学证书边界</b>：黎曼 ζ 零点比例 67.35% 为严格有限维证书，不可外推为黎曼猜想已证；模型许可证与科学工件许可证分开；完整 14 条 Golden Rules 文本待核实。</p>
+<p class="pending-item"><b>GLM-Legal 完整规格</b>：基于 GLM-5.3-Flash 的参数量、上下文窗口、推理延迟未公开；AutoClaw 平台接入时间线待核实；「全通过率 19.2%」为 Vals 单次评测结果，多轮稳定性待核实。</p>
+</div>
+
+<h3 class="section">本期主线总结</h3>
+<div class="mainline">
+<ul>
+<li><b>前沿模型价格锚定 Opus 5.5</b>：Meta Muse Wonder 以 $4/$20 直接对标 Anthropic Opus 5.5 定价，放弃低价走量策略；GLM-Legal 以轻量基座做垂直 Agent，形成「全栈前沿 vs 垂直轻量」双轨格局。</li>
+<li><b>世界模型 3D 原生化加速</b>：UNITAS（3D 原生联合建模）与 UniWAM（统一架构 + 人机 Scaling）双线推进；「动作-世界联合学习」正从二维视频 token 走向三维物理坐标系。</li>
+<li><b>可验证 RSI 成为工程护栏</b>：VeriLoop E2 的 VGR 机制将 RSI 循环安全边界从「信任模型输出」转向「外部证据验证」；「模型不能自证成功」成为可验证智能核心设计原则。</li>
+<li><b>垂直 Agent 第三方验证范式成形</b>：GLM-Legal（Vals 独立验证）+ 决策模型浪潮共同推动「垂直 Agent 必须附带第三方基准」成为行业事实标准。</li>
+</ul>
+</div>
+
+<div class="archive">
+<h3>归档状态说明</h3>
+<ul>
+<li><b>工作区 Markdown</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261013_1130.md</code></li>
+<li><b>工作区 HTML</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261013_1130.html</code></li>
+<li><b>网盘归档</b>：<code>O:/quark/automation/每日 AI 新闻推送/</code>（同步写入上述同名文件）</li>
+<li><b>执行状态</b>：<span class="status">✅ 成功</span></li>
+</ul>
+</div>
+
+<footer>每日 AI 前沿技术精选 · 自动化任务 automation-1784106545536 · 第 90 跑 · 2026-10-13 11:30</footer>
+</div>
+</body>
+</html>

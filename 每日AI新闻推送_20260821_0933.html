@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 — 2026-08-21</title>
+<style>
+  :root {
+    --bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-primary: #1a1a2e;
+    --text-secondary: #4a4a6a;
+    --accent: #2563eb;
+    --accent-light: #dbeafe;
+    --border: #e2e8f0;
+    --tag-bg: #f1f5f9;
+    --tag-text: #334155;
+    --success: #16a34a;
+    --warning: #d97706;
+    --code-bg: #f8fafc;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.7;
+    padding: 24px;
+  }
+  .container { max-width: 860px; margin: 0 auto; }
+  header {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+    color: white;
+    padding: 32px 40px;
+    border-radius: 16px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 24px rgba(37,99,235,0.18);
+  }
+  header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+  header .meta { font-size: 14px; opacity: 0.85; }
+  header .meta span { margin-right: 16px; }
+  .summary-bar {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 24px;
+    margin-bottom: 24px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+  .summary-bar .tag {
+    background: var(--accent-light);
+    color: var(--accent);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+  article {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: box-shadow 0.2s;
+  }
+  article:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+  article .rank {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    width: 28px; height: 28px;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 28px;
+    font-weight: 700;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  article h2 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+  }
+  article h2 .source {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-left: 8px;
+  }
+  article h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 16px 0 6px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  article p { font-size: 14.5px; color: var(--text-secondary); margin-bottom: 10px; }
+  article ul { margin: 8px 0 12px 20px; font-size: 14.5px; color: var(--text-secondary); }
+  article li { margin-bottom: 4px; }
+  article strong { color: var(--text-primary); }
+  .metrics {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 12px 0;
+    font-size: 13.5px;
+  }
+  .metrics dt { font-weight: 600; color: var(--text-primary); margin-bottom: 2px; }
+  .metrics dd { margin-left: 0; margin-bottom: 6px; color: var(--text-secondary); padding-left: 12px; }
+  .metrics a { color: var(--accent); text-decoration: none; }
+  .metrics a:hover { text-decoration: underline; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .tags span {
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .note {
+    background: #fffbeb;
+    border-left: 3px solid var(--warning);
+    padding: 10px 14px;
+    border-radius: 0 8px 8px 0;
+    font-size: 13px;
+    color: #92400e;
+    margin-top: 12px;
+  }
+  footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border);
+    margin-top: 12px;
+  }
+  @media (max-width: 640px) {
+    body { padding: 12px; }
+    header { padding: 20px 24px; }
+    article { padding: 20px 22px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📰 每日 AI 前沿技术精选</h1>
+  <div class="meta">
+    <span>📅 2026-08-21</span>
+    <span>⏰ 09:33</span>
+    <span>📋 精选 5 条</span>
+  </div>
+</header>
+
+<div class="summary-bar">
+  <span>🔥 主线：<strong>Agent 调度层卡位战 + 具身智能长程突破</strong></span>
+  <span class="tag">AI Coding</span>
+  <span class="tag">具身智能</span>
+  <span class="tag">世界模型</span>
+</div>
+
+<!-- 1 -->
+<article>
+  <h2><span class="rank">1</span>Anthropic 最快月底公开提交 IPO 文件，剑指史上最大募资纪录 <span class="source">财联社/彭博 | 2026-08-21</span></h2>
+  <h3>事件概述</h3>
+  <p>Anthropic 正准备最快于 8 月底公开提交上市申请，预计募资规模将追平或超越 SpaceX 今年 6 月创下的 862 亿美元 IPO 纪录。此前公司已于 6 月秘密向 SEC 提交 S-1 文件，由摩根士丹利、高盛、摩根大通担任承销商。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><strong>核心机制</strong>：Anthropic 二季度初步营收突破 115 亿美元，同比增超 14 倍，经调整营业利润首度转正；截至 7 月底年化收入运行率（ARR）达 650 亿美元，较 2025 年底约 90 亿增 6 倍+</li>
+    <li><strong>实际影响</strong>：若以 20 倍 PS 估值，Anthropic 目标 2 万亿美元估值将超越 SpaceX（1.77 万亿），成为史上最大 IPO；Claude Code 年化收入已超 151 亿美元，占企业 API 收入的八成，标志 AI 编程工具从实验层进入规模商业化阶段</li>
+  </ul>
+  <div class="metrics">
+    <dl>
+      <dt>Q2 营收</dt><dd>115 亿美元（同比 +14x，环比 +140%）</dd>
+      <dt>ARR（7月底）</dt><dd>650 亿美元；Claude Code 单独年化 151.2 亿美元</dd>
+      <dt>IPO 目标</dt><dd>追平/超越 SpaceX 862 亿美元纪录，估值目标 2 万亿美元</dd>
+      <dt>待核实</dt><dd>最终估值与募资规模（媒体援引知情人士，尚未公开）；经调整营业利润 5.59 亿美元需待审计</dd>
+    </dl>
+  </div>
+  <div class="tags">
+    <span>#AI Coding</span><span>#IPO</span><span>#Anthropic</span><span>#Claude Code</span>
+  </div>
+  <div class="note">⚠️ 待核实：募资规模与估值为媒体援引知情人士报道，尚未正式披露；营业利润数据需待审计确认。</div>
+</article>
+
+<!-- 2 -->
+<article>
+  <h2><span class="rank">2</span>GigaBrain-0.7 发布：具身基础模型首次将世界模型嵌入实时决策回路 <span class="source">极佳视界/arXiv | 2026-08-19</span></h2>
+  <h3>事件概述</h3>
+  <p>极佳视界（GigaAI）8 月 19 日发布新一代具身基础模型 GigaBrain-0.7，提出"双金字塔"（数据金字塔 + 算法金字塔）架构，首次将世界模型（GigaWorld-1）嵌入机器人实时决策回路，命名为 System-3。模型即将开源，技术报告已上传 arXiv。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><strong>核心机制</strong>：三层算法金字塔——世界模拟（VLM + World Model 预判）、动作对齐（MoT + Flow Matching，跨本体参数共享）、经验强化（离线 RL + 在线持续强化）；System-3 让机器人在执行动作前"先预演判断，再执行动作"</li>
+    <li><strong>实际影响</strong>：真机评测在 Maker H01 上任务成功率"断档领先"，RoboColiseum 仿真平台 4 项全方位评测包揽第一；行业首次实现超 20 分钟、超 10 个任务的长程复杂精细操作一镜到底，标志具身智能从单任务执行迈向长程自主操作</li>
+  </ul>
+  <div class="metrics">
+    <dl>
+      <dt>技术报告</dt><dd><a href="https://arxiv.org/abs/2608.15875">https://arxiv.org/abs/2608.15875</a></dd>
+      <dt>项目主页</dt><dd><a href="https://gigaai.cc/blog/gigabrain07">https://gigaai.cc/blog/gigabrain07</a></dd>
+      <dt>代码/模型</dt><dd>Coming soon（GitHub: open-gigaai/giga-brain-0）</dd>
+      <dt>数据规模</dt><dd>20,500h 真机数据 + 11,200h 真人示教 + 5,000h+ 仿真合成数据</dd>
+    </dl>
+  </div>
+  <div class="tags">
+    <span>#具身智能</span><span>#世界模型</span><span>#开源</span><span>#VLA</span>
+  </div>
+  <div class="note">⚠️ 待核实：Benchmark 分数为厂商自述，第三方独立验证待补充。</div>
+</article>
+
+<!-- 3 -->
+<article>
+  <h2><span class="rank">3</span>阿里发布 Qwen-UI-Agent：让模型"会用"每一块屏幕 <span class="source">快科技/阿里千问 | 2026-08-20</span></h2>
+  <h3>事件概述</h3>
+  <p>阿里千问 8 月 20 日正式发布 GUI 智能体基座模型 Qwen-UI-Agent，覆盖移动端、PC 桌面端、网页与深度搜索四类环境，可看懂屏幕界面并模拟人类操作未开放 API 的传统软件，定位为"数字设备上的通用执行器"。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><strong>核心机制</strong>：基于 100+ 台真实手机、150+ 款应用的真机环境训练，支持 GUI 图形操作 + CLI 命令行混合动作，单次决策可批量输出多个动作；支持 100+ 步超长轨迹在线强化学习，约 10,000 并发环境同时 rollout</li>
+    <li><strong>实际影响</strong>：安全机制贯穿全流程，高风险请求直接拒绝，支付/删除等敏感操作需用户确认后再执行，解决 GUI Agent 落地的核心信任问题；"不改造世界，先学会用世界本来的样子"——不依赖 API，直接操作任意有屏幕的软件</li>
+  </ul>
+  <div class="metrics">
+    <dl>
+      <dt>移动端 MobileWorld</dt><dd>82.1%（领先 GPT-5.6 Sol 12.0pp、Claude Opus 4.8 14.6pp）</dd>
+      <dt>真机基准 MobileWorld-Real</dt><dd>92.2%</dd>
+      <dt>AndroidDaily</dt><dd>97.5%</dd>
+      <dt>WebArena</dt><dd>73.6%（对比模型第一）</dd>
+      <dt>ScreenSpot-Pro</dt><dd>81.5%（刷新 SOTA）</dd>
+    </dl>
+  </div>
+  <div class="tags">
+    <span>#AI Coding</span><span>#GUI Agent</span><span>#阿里</span><span>#Qwen</span>
+  </div>
+  <div class="note">⚠️ 待核实：真机跑分与海外旗舰对比的详细测试条件为厂商自述，独立复现待补充。</div>
+</article>
+
+<!-- 4 -->
+<article>
+  <h2><span class="rank">4</span>NVIDIA 发布 Cosmos 3 世界动作模型 WAM，开源三版本供具身智能使用 <span class="source">NVIDIA Blog/至顶科技 | 2026-08-04/20</span></h2>
+  <h3>事件概述</h3>
+  <p>NVIDIA 8 月 4 日发布技术博客《Beyond VLAs》，提出世界动作模型（WAM）新路线，同步开源 Cosmos 3 世界模型（MoT 架构，4B Edge / 16B Nano / 64B Super 三版本），8 月 20 日 SIGGRAPH 2026 正式亮相。核心思路是从 VLA 的"动作表象拟合"转向物理底层理解。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><strong>核心机制</strong>：VLA 骨干聚焦跨模态对齐，擅长语义理解但不擅长预测物理动态；WAM 以视频世界模型为骨干，学习物体动力学、接触因果与运动规律，通过物理规律外推适应新场景</li>
+    <li><strong>实际影响</strong>：Cosmos 3 支持商用授权，内部对照实验证明基于多域动作认知基座初始化的机器人任务成功率明显提升；百度百舸 6.0 已在国内主流 GPU 上完成 Cosmos 3 训练加速，512 卡集群扩展效率 97%+</li>
+  </ul>
+  <div class="metrics">
+    <dl>
+      <dt>架构</dt><dd>混合 Transformer MoT，兼顾离散 token 生成与视频/动作连续模态建模</dd>
+      <dt>版本</dt><dd>4B Edge（边缘）/ 16B Nano / 64B Super（支持商用授权）</dd>
+      <dt>训练优化</dt><dd>百度百舸单机效率提升近 1 倍，512 卡集群扩展效率 97%+</dd>
+      <dt>开源地址</dt><dd><a href="https://github.com/NVIDIA/Cosmos">https://github.com/NVIDIA/Cosmos</a></dd>
+    </dl>
+  </div>
+  <div class="tags">
+    <span>#世界模型</span><span>#具身智能</span><span>#NVIDIA</span><span>#开源</span>
+  </div>
+  <div class="note">⚠️ 待核实：Cosmos 3 在真实机器人任务上的第三方基准测试数据尚未公开。</div>
+</article>
+
+<!-- 5 -->
+<article>
+  <h2><span class="rank">5</span>DeepSeek Harness RC.8 发布：将 Claude Code 与 Codex 收编为子代理，卡位 Agent 调度层 <span class="source">36氪/DeepSeek | 2026-08-19</span></h2>
+  <h3>事件概述</h3>
+  <p>DeepSeek Harness（DSH）8 月 19 日深夜发布 v0.1.0-rc.8，距 rc.7 仅两天。核心更新：Claude Code 和 Codex 可作为 Profile Bundle 按需安装，在 Harness 工作流中作为子代理被调度，标志 DSH 从"自研 Agent 框架"向"Agent 调度层"演进。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><strong>核心机制</strong>："一切皆插件"架构——模型、工具、技能、会话、沙箱、存储、调度、UI 乃至 Agent 主循环全部可替换；底层 Cordis 微内核仅 129 行启动清单。RC.8 新增原生图片请求（/goal、/plan 支持图文混合输入），web_search 支持并发查询，Codex 支持非交互权限模式与多实例并行</li>
+    <li><strong>实际影响</strong>：DSH 首日 GitHub Star 破 3 万、登顶 Hacker News，创史上最快破 2 万 Star 纪录；将竞对的闭源 Agent 产品封装为子代理调用，意味着模型层竞争不再决定 Agent 工作流归属，"卖水人"逻辑正在成型</li>
+  </ul>
+  <div class="metrics">
+    <dl>
+      <dt>GitHub</dt><dd><a href="https://github.com/deepseek-ai/DeepSeek-Harness">https://github.com/deepseek-ai/DeepSeek-Harness</a>（MIT 协议）</dd>
+      <dt>更新节奏</dt><dd>v0.1 发布至今 8 次迭代（8/13–8/19）</dd>
+      <dt>风险警示</dt><dd>官方警告"将有破坏兼容性变更"；SQLite 数据结构有不兼容变更，升级前需备份</dd>
+    </dl>
+  </div>
+  <div class="tags">
+    <span>#AI Coding</span><span>#Agent</span><span>#开源</span><span>#DeepSeek</span>
+  </div>
+  <div class="note">⚠️ 待核实：RC.8 在真实多 Agent 协作场景下的稳定性，内测开发者反馈体验仍不如 Claude Code/Codex 完善。</div>
+</article>
+
+<footer>
+  <p>📌 本报告由自动化任务生成 · 数据截至 2026-08-21 09:33 GMT+8 · 所有基准/营收/产能数据为发布方自述或二级来源，已标注待核实</p>
+</footer>
+
+</div>
+</body>
+</html>

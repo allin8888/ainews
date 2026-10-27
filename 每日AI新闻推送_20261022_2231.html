@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-10-22 22:31</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --card2:#11161d; --line:#30363d;
+    --fg:#e6edf3; --muted:#9198a1; --accent:#58a6ff; --ok:#3fb950; --warn:#d29922; --danger:#f85149;
+    --self:#d29922; --third:#3fb950; --compare:#58a6ff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;padding:24px 16px 64px;background:var(--bg);color:var(--fg);
+       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Helvetica,Arial,sans-serif;
+       line-height:1.75;font-size:15.5px}
+  .wrap{max-width:960px;margin:0 auto}
+  header{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin-bottom:18px}
+  h1{margin:0 0 14px;font-size:26px;letter-spacing:.3px}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
+  .meta li{background:var(--card2);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:13px;color:var(--muted)}
+  .meta b{color:var(--fg);font-weight:600}
+  h2{font-size:20px;margin:30px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+  article{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin:0 0 16px}
+  article h3{margin:0 0 6px;font-size:18px;line-height:1.5}
+  .src{color:var(--muted);font-size:13px;margin:0 0 14px}
+  h4{margin:16px 0 6px;font-size:14px;color:var(--accent);letter-spacing:.4px;text-transform:uppercase}
+  p{margin:6px 0}
+  ul{margin:6px 0;padding-left:20px}
+  li{margin:5px 0}
+  strong{color:#fff}
+  code{background:var(--card2);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:13px;
+       font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px dotted rgba(88,166,255,.45)}
+  a:hover{border-bottom-style:solid}
+  .tags{margin-top:14px}
+  .tag{display:inline-block;background:rgba(88,166,255,.12);border:1px solid rgba(88,166,255,.35);
+       color:#9cd0ff;border-radius:999px;padding:2px 10px;font-size:12.5px;margin:0 6px 0 0}
+  .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .badge{border-radius:8px;padding:8px 12px;font-size:13px;border:1px solid var(--line);background:var(--card2)}
+  .badge .k{display:inline-block;margin-right:6px;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+  .k-self{color:var(--self)} .k-third{color:var(--third)} .k-compare{color:var(--compare)}
+  .note{background:var(--card2);border-left:3px solid var(--warn);border-radius:6px;padding:12px 16px;margin:14px 0;font-size:14.5px}
+  .excluded li{margin:8px 0}
+  footer{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-top:24px;font-size:14px;color:var(--muted)}
+  footer code{color:var(--fg)}
+  hr{border:0;border-top:1px solid var(--line);margin:26px 0}
+  .path{font-size:13px;word-break:break-all}
+  @media (max-width:640px){body{font-size:15px}h1{font-size:22px}article{padding:16px 14px}}
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>每日 AI 前沿技术精选</h1>
+  <ul class="meta">
+    <li>日期 <b>2026-10-22</b></li>
+    <li>时间 <b>22:31</b></li>
+    <li>精选条数 <b>5 条</b></li>
+    <li>时效窗口 <b>2026-10-22 20:42 – 2026-10-22 22:31</b>（增量收敛 · 严格 24 小时上限内）</li>
+  </ul>
+  <p class="src" style="margin-top:12px">距第 100 跑上次执行时刻 20:42 不足 24 小时，窗口收敛为「上次执行时刻 → 现在」；已废止的 48 小时降级策略未启用，未向下修正窗口起点，未为凑数放宽入选门槛。</p>
+</header>
+
+<h2>今日精选</h2>
+
+<article>
+  <h3>1. VS Code 1.143 稳定版：Copilot Harness 成为新会话默认，多模型并行对比进入预览</h3>
+  <p class="src">第一来源：Microsoft / GitHub Releases ｜ 2026-10-22</p>
+  <h4>事件概述</h4>
+  <p>微软发布 VS Code 1.143.0 稳定版，编码 Agent 会话默认切换到构建在 Copilot SDK 之上的「Copilot harness」，同时把「同一任务多模型 / 多 harness 并行求解再对比合并」做成预览功能，并首次把本地设备模型（MAI Code 1.1 Flash）作为实验性推理后端引入 IDE。</p>
+  <h4>技术与工程价值</h4>
+  <ul>
+    <li><strong>核心机制</strong>：harness（执行框架）与 model（权重）在架构上解耦——默认 harness 由 Copilot SDK 承载，企业策略可强制走 Copilot 并禁用 Local / Claude / Codex harness；Compare Models 让同一任务在不同「模型 × harness」组合上并行跑，再横向比较与合并解法；on-device 实验路线把推理下沉到本地 GPU，官方明确其不消耗 AI credits 但仍需 GitHub 登录；配套工程能力包括 Agent 会话 worktree 的存储回收、可查看与停止的分离式后台 shell、以及语音模式自带密钥（BYOK，使用用户自己的 OpenAI API Key）。</li>
+    <li><strong>实际影响</strong>：编码 Agent 的「默认运行时」从外挂 CLI 收敛为 IDE 原生抽象，harness 选择第一次成为可在产品内 A/B 的一等工程变量；本地模型作为实验后端，为源码不出域（受监管代码库、私有内核）场景给出了显性的硬件门槛下界，也把「谁为 token 付费」的成本模型从订阅额度推向设备能力。</li>
+  </ul>
+  <h4>关键指标 / 资源</h4>
+  <ul>
+    <li>评测 / 性能：本地实验模型 MAI Code 1.1 Flash 要求 NVIDIA GPU 显存 <code>96 GB</code> 以上（厂商文档口径，未见第三方实测）；1.143 文档页标注里程碑日期 2026-10-19，而 1.143.0 稳定版 GitHub Release 发布时刻为 2026-10-22 21:00（北京时间，窗口内），两处口径差异已列入「待核实」。</li>
+    <li>代码 / 论文：<a href="https://<a href="https://code.visualstudio.com/updates/v1_143" target="_blank" rel="noopener">code.visualstudio.com/updates/v1_143</a>">VS Code 1.143 Release Notes</a> ｜ <a href="https://<a href="https://github.com/microsoft/vscode/releases/tag/1.143.0" target="_blank" rel="noopener">github.com/microsoft/vscode/releases/tag/1.143.0</a>">GitHub Release 1.143.0</a></li>
+  </ul>
+  <div class="badges">
+    <div class="badge"><span class="k k-self">self</span>本地 MAI Code 1.1 Flash 显存门槛 · 96 GB+</div>
+    <div class="badge"><span class="k k-self">self</span>Compare Models · Preview</div>
+    <div class="badge"><span class="k k-self">self</span>On-device Models · Experimental</div>
+  </div>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#AICoding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#AgentHarness</span></div>
+</article>
+
+<article>
+  <h3>2. OpenClaw 2026.10.6：把「已修补的 Node 运行时」变成硬依赖，拒收受损密钥签名的 TLS 链</h3>
+  <p class="src">第一来源：OpenClaw / GitHub Releases ｜ 2026-10-22</p>
+  <h4>事件概述</h4>
+  <p>智能体运行时框架 OpenClaw 发布 2026.10.6，要求 Node 24 线 ≥ 24.22.1 或 26 线 ≥ 26.12.1——这些版本会拒绝由 2026 年 10 月 Node.js 安全公告中被泄露的证书私钥签名的 TLS 链；Docker 镜像内置 Node 24.22.1，<code>openclaw update</code> 在旧 Node 上先拒绝安装并给出恢复指引，源码构建固定 pnpm 12.15.0。</p>
+  <h4>技术与工程价值</h4>
+  <ul>
+    <li><strong>核心机制</strong>：把上游供应链风险（受损签名私钥）从「使用者自行关注公告」上移为「框架级准入条件」，由 Agent 框架在执行路径上强制 TLS 策略；同一版本集中收敛长程 Agent 的失败语义——更新与恢复拒绝在不安全服务状态下换包、迁移与备份路径拒绝畸形或有损的工作区导入并保留畸形 Notes 字节、拒绝非 UTF-8 的不安全 wiki 重写、restore 检查失败时保留 staging 证据；重启后可靠投递使排队轮次、被监视子任务结果、死信投递与流式回复不再丢失、重复或产生假性「漏答」提示；Provider 与模型弹性覆盖 GPT-5.6 工具轮次、OpenRouter 上的 DeepSeek 工具调用、LM Studio 溢出恢复、并行 OpenAI 推理设置与模型重试/回退预算；工具调用恢复让未完成工具显式超时、被转向后的上下文溢出才做压缩、此前拒绝后仍继续处理畸形调用。</li>
+    <li><strong>实际影响</strong>：这是「Agent 基础设施」从能力竞赛转入可靠性与供应链治理的一个具体样本：长程任务最常见的失败模式（消息丢失/重复、静默挂死、有损迁移）被逐项工程化封堵，同时给出框架强制 TLS 供应链策略的可复制范式——与本窗口内第 1 条的 harness 权限治理、第 4 条的凭证滥用事件构成同一条主线。</li>
+  </ul>
+  <h4>关键指标 / 资源</h4>
+  <ul>
+    <li>评测 / 性能：最低运行时 Node <code>24.22.1 / 26.12.1</code>，源码构建固定 pnpm <code>12.15.0</code>；启动路径的 SQLite 资格检查改动自述「每类 census 工作负载少 10 条语句、少 2 条主线程语句」，原生 owner 回归 <code>97</code> 项通过（发布方自述数据，未见第三方复现）。</li>
+    <li>代码 / 论文：<a href="https://<a href="https://github.com/openclaw/openclaw/releases/tag/v2026.10.6" target="_blank" rel="noopener">github.com/openclaw/openclaw/releases/tag/v2026.10.6</a>">OpenClaw 2026.10.6 Release</a>（发布说明列出 #179992、#171101、#172293、#170384、#176709、#176174 等 PR）</li>
+  </ul>
+  <div class="badges">
+    <div class="badge"><span class="k k-self">self</span>最低 Node（24 线） · 24.22.1</div>
+    <div class="badge"><span class="k k-self">self</span>最低 Node（26 线） · 26.12.1</div>
+    <div class="badge"><span class="k k-self">self</span>固定 pnpm 版本 · 12.15.0</div>
+    <div class="badge"><span class="k k-self">self</span>owner 回归通过项 · 97</div>
+  </div>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#AgentRuntime</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#供应链安全</span></div>
+</article>
+
+<article>
+  <h3>3. Sierra 发布 τ-Entity：语音智能体实体采集基准，最优系统 pass@1 60.3%、pass³ 34.0%</h3>
+  <p class="src">第一来源：Sierra Research 官方博客 ｜ 2026-10-22（22:02 北京时间）</p>
+  <h4>事件概述</h4>
+  <p>Sierra 发布 τ-Entity 基准，专测语音 Agent 能否正确采集姓名、电话、地址、邮箱等细节，识别自己可能采集错了，并在错误扩散到后续动作前修复；规模为 200 个任务 × 10 类实体 × 6 种语言，沿用 τ-bench / τ²-bench / τ-i18n 的多语言覆盖设定，并区分常规通话、噪声密集与语音密集三类声学条件。</p>
+  <h4>技术与工程价值</h4>
+  <ul>
+    <li><strong>核心机制</strong>：把评测最小单元从「任务是否完成」下沉到「实体级三元回路：采集—怀疑—修复」，从而把 ASR 感知误差与对话策略误差分离度量；pass³（同一任务连跑三次须全对）替代单次通过率，直接压出「碰运气答对」的空间。</li>
+    <li><strong>实际影响</strong>：头部语音系统从单次 60.3% 掉到三次全过 34.0%，说明细节型可靠性而非平均能力才是语音 Agent 上线客服/工单流的瓶颈；「被核查的初始错误采集中最终仅 24–37% 被改正」直接量化了自我纠错回路的缺失，与 τ-bench 谱系此前在工具-用户闭环上的结论一致：Agent 的失败主要来自不会承认与修正错误，而非单次推理能力不足。</li>
+  </ul>
+  <h4>关键指标 / 资源</h4>
+  <ul>
+    <li>评测 / 性能：GPT Live 1 pass@1 <code>60.3%</code> / pass³ <code>34.0%</code>；Grok Voice Think Fast 2.0 <code>44.2%</code> / <code>24.0%</code>；Gemini 3.8 Live <code>43.8%</code> / <code>19.5%</code>；初始错误采集经验证后最终改正比例 <code>24–37%</code>（全部为发布方自述评测，未见第三方复现；未提供级联 ASR+LLM+TTS 基线数值）。</li>
+    <li>代码 / 论文：<a href="https://<a href="https://sierra.ai/blog/tau-entity-can-voice-agents-get-the-details-right" target="_blank" rel="noopener">sierra.ai/blog/tau-entity-can-voice-agents-get-the-details-right</a>">官方博客</a> ｜ <a href="https://<a href="https://arxiv.org/abs/2609.13602" target="_blank" rel="noopener">arxiv.org/abs/2609.13602</a>">arXiv:2609.13602（τ-Voice 谱系论文）</a> ｜ <a href="https://<a href="https://taubench.com" target="_blank" rel="noopener">taubench.com</a>">榜单 <a href="https://taubench.com" target="_blank" rel="noopener">taubench.com</a></a>；基准数据/代码是否开源官方帖未说明（待核实）。</li>
+  </ul>
+  <div class="badges">
+    <div class="badge"><span class="k k-self">self</span>GPT Live 1 pass@1 · 60.3</div>
+    <div class="badge"><span class="k k-self">self</span>GPT Live 1 pass³ · 34.0</div>
+    <div class="badge"><span class="k k-self">self</span>Grok Voice Think Fast 2.0 pass@1 · 44.2</div>
+    <div class="badge"><span class="k k-self">self</span>Gemini 3.8 Live pass@1 · 43.8</div>
+    <div class="badge"><span class="k k-self">self</span>初始错误采集改正率上界 · 37</div>
+  </div>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#Agent评测</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#语音智能体</span></div>
+</article>
+
+<article>
+  <h3>4. Wiz 披露 ARTEX 被 Storm-0940 武器化：开源自主渗透测试框架转向 IT 与身份厂商</h3>
+  <p class="src">第一来源：Wiz Research 官方博客 ｜ 2026-10-22（21:05 北京时间）</p>
+  <h4>事件概述</h4>
+  <p>Wiz Research 披露，2026 年 10 月有攻击者使用开源自主渗透测试框架 ARTEX（2026 年 7 月由一名中国开发者发布）针对多家 IT 与软件厂商，活动与微软 10-21 报告的、与中国国家背景关联的 Storm-0940 供应链入侵重叠，目标包含 Okta、Entra、Cognito 等身份入口。</p>
+  <h4>技术与工程价值</h4>
+  <ul>
+    <li><strong>核心机制</strong>：ARTEX 的交互契约是「操作者只提供目标与目的，编排由 Agent 自行完成」，Agent 直接驱动 <code>nmap</code>、Impacket 等既有工具链，且「每一步自动消费上一步的输出」——例如从前端 source map 反查出未公开 API 路由，再据此决定下一步探测面；攻击杠杆因此从「有没有工具」上移到「编排循环能否自续」。</li>
+    <li><strong>实际影响</strong>：自主 pentest 框架的合法用途与滥用门槛在同一份代码上同步下降，防守方的检测单元必须从单个漏洞/C2 特征转向「Agent 编排行为模式」，Wiz 给出的可落地信号是「对多用户的大量登录失败后紧跟一次管理员账号成功登录」；这与本窗口第 1、2 条形成闭环：当编码/执行 Agent 大规模获得凭证与基础设施权限时，凭证边界（第 2 条的 TLS 准入、第 1 条的 harness 权限治理）与行为可审计性成为同一战场的两侧。</li>
+  </ul>
+  <h4>关键指标 / 资源</h4>
+  <ul>
+    <li>评测 / 性能：披露的威胁指标含 IP <code>144.172.64.60</code> 与自定义 User-Agent <code>ReconProbe/1.0</code>；受影响组织数量区间官方帖未量化（待核实）。</li>
+    <li>代码 / 论文：<a href="https://<a href="https://www.wiz.io/blog/artex-in-the-wild-storm-0940-expands-targeting-of-it-and-software-vendors" target="_blank" rel="noopener">www.wiz.io/blog/artex-in-the-wild-storm-0940-expands-targeting-of-it-and-software-vendors</a>">Wiz 官方博客</a></li>
+  </ul>
+  <div class="badges">
+    <div class="badge"><span class="k k-third">third</span>ARTEX 开源发布 · 2026-07</div>
+    <div class="badge"><span class="k k-third">third</span>重叠活动（微软报告） · 2026-10-21</div>
+    <div class="badge"><span class="k k-third">third</span>目标层级 · IdP：Okta / Entra / Cognito</div>
+  </div>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#Agentic安全</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#产业落地</span></div>
+</article>
+
+<article>
+  <h3>5. DeepMind 等发布全球森林类型 10 米制图：AlphaEarth Foundations 嵌入驱动，类型判别 90%</h3>
+  <p class="src">第一来源：Google DeepMind 官方博客 / Nature Scientific Data ｜ 2026-10-22（22:30 北京时间）</p>
+  <h4>事件概述</h4>
+  <p>Google DeepMind 发布与 Google Research、世界资源研究所（WRI）、国际应用系统分析研究所（IIASA）合作的全球森林类型制图成果：以 AlphaEarth Foundations 嵌入作为关键输入，把地球陆地按每 10×10 米单元划为六类（原生林、天然更新林、人工造林、种植林、树木作物与农林复合、其他用地），并覆盖 2017–2025 时间窗。</p>
+  <h4>技术与工程价值</h4>
+  <ul>
+    <li><strong>核心机制</strong>：不再依赖手工光谱/纹理特征，而是用地理空间基础模型的嵌入作为表征底座做类型判别，把长期被当作单一标量的「森林覆盖率」升级为「森林类型与用途」的结构化分类；同时以 2020 基准年地图与逐年时序两个 Earth Engine 应用交付，训练侧使用约 170 万个标注位置，验证侧使用 9,000 余个随机抽样站点。</li>
+    <li><strong>实际影响</strong>：碳核算、造林补贴与毁林合规长期被「有树 ≠ 碳汇」混淆，能区分天然林与商业种植林意味着减排量核算与「伪装成造林」的套利第一次具备可机器核查的底座；对基础模型方向，这是「地理空间嵌入 → 可验证科学产物」的公开范例，把嵌入模型的价值从榜单分数搬到可复现的下游制图任务上。</li>
+  </ul>
+  <h4>关键指标 / 资源</h4>
+  <ul>
+    <li>评测 / 性能：森林类型判对率 <code>90%</code>、林/非林判别 <code>95%</code>（发布方自述口径，第三方独立精度评估未见）；约 170 万训练标注点，&gt;9,000 随机验证站点。</li>
+    <li>代码 / 论文：<a href="https://deepmind.google/blog/beyond-tree-cover-mapping-the-worlds-forest-types/">官方博客</a> ｜ <a href="https://<a href="https://www.nature.com/articles/s41597-026-08299-5" target="_blank" rel="noopener">www.nature.com/articles/s41597-026-08299-5</a>">Nature Scientific Data 论文</a> ｜ <a href="https://nature-trace.projects.earthengine.app/view/forest-typology-2020">2020 地图 Earth Engine 应用</a> ｜ <a href="https://nature-trace.projects.earthengine.app/view/forest-typology">时序 Earth Engine 应用</a> ｜ <a href="https://<a href="https://plus.figshare.com/articles/dataset/_i_Forest_Typology_2020_v1_i_/32288616" target="_blank" rel="noopener">plus.figshare.com/articles/dataset/_i_Forest_Typology_2020_v1_i_/32288616</a>">figshare 数据集</a></li>
+  </ul>
+  <div class="badges">
+    <div class="badge"><span class="k k-self">self</span>森林类型判对率 · 90%</div>
+    <div class="badge"><span class="k k-self">self</span>林/非林判别 · 95%</div>
+    <div class="badge"><span class="k k-self">self</span>训练标注点 · 约 170 万</div>
+    <div class="badge"><span class="k k-compare">compare</span>空间分辨率 · 10 米</div>
+  </div>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#基础模型应用</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#地理空间AI</span></div>
+</article>
+
+<hr>
+
+<h2>去重说明</h2>
+<p><strong>7 天窗口扫描</strong>：本地工作区 <code>每日AI新闻推送_20261015_1131</code> ~ <code>20261022_2026</code> 共 9 份报告全部读取（含同日跨实例产出），另扫网盘同日其他实例报告 <code>20261022_0029</code>（OpenAI 编码 Agent 关闭安全监控 / LSCBench / Chrome DevTools Agent Plugins + VS Code 1.142 / 港具身智能国际应用中心）与 <code>20261022_1227</code>（Recursive Flint / 生数 Motubrain 2.0 / 大晓 ACE-Brain-0.6 / Cursor Origin / OpenAI 广告栈），合计比对约 50 条已报道标题。本期 5 条与第 99、100 跑无同主体同动作重复。</p>
+<p><strong>实体去重（tools/dedup_check.py 逐条执行，5/5 判定 is_dup=false）</strong>：</p>
+<ul class="excluded">
+  <li><code>VS Code 1.143 稳定版发布…</code> → 最近邻为 <code>20261008_0956</code>「MAI Code 1.1 Flash 引入 Windows 11 / GitHub Copilot 本地云端混合推理」（共享词 code/copilot/flash/mai），复核为不同事件：前者是 IDE 稳定版发布（harness 默认化 + 并行对比），后者是模型侧混合推理支持；初版标题因含模型名被误判为重复，改以事件主体（VS Code 1.143）命名后通过。另与跨实例 <code>20261022_0029</code> 的「VS Code 1.142」为不同版本号、不同发布事件。</li>
+  <li><code>OpenClaw 2026.10.6…</code> → 最近邻 <code>20260901_0910</code>「OpenClaw 2.0 发布」（仅共享项目名），非同一动作。</li>
+  <li><code>Sierra τ-Entity…</code>、<code>Wiz ARTEX…</code> → 无匹配（confidence 0.0）。</li>
+  <li><code>DeepMind 森林类型制图…</code> → 最近邻 <code>20260927_2300</code>（Gemini 4 后训练），仅共享 google/deepmind 词，非同一事件。</li>
+</ul>
+<p><strong>排除项（含原因）</strong>：</p>
+<ol class="excluded">
+  <li><strong>Hugging Face 开源 DNA 模型 Carbon-X</strong>：核心作者（HF CEO）推文落在 21:41（窗口内），但中文首发报道为 18:59–19:19（窗口前），且本机对 huggingface.co 的 API 与页面抓取连续 TLS 失败，无法核验第一信源发布时刻 → 按「时间戳以第一信源为准」不入选。</li>
+  <li><strong>Cohere CulturalRiddles 基准</strong>：arXiv v1 提交于 2026-10-21（窗口外），10-22 官方账号帖属二次传播 → 排除。</li>
+  <li><strong>1Password for Agents</strong>：官方博客 <code>article:published_time</code> 为占位值 2026-10-22T00:00:00Z（折北京 08:00，落在窗口前），仅二级来源（The Verge <code>datePublished</code> 13:00:00Z）显示可能恰在窗口内；禁止以转载时刻作入选依据 → 排除，转「待核实」。</li>
+  <li><strong>NVIDIA Cosmos 训练/仿真/Data Factory 扩展</strong>（本期具身智能与世界模型方向最接近的候选）：官方博客发布于 10-22 13:00（北京），早于窗口起点 20:42 → 排除。</li>
+  <li><strong>Modal「Toward RL on mixed-precision, mixed-accelerator samplers」</strong>：HN 于 22:20 提交形成「当日」错觉，博客 <code>datePublished</code> 实为 2026-10-13 → 排除。</li>
+  <li><strong>Nature「The anatomy of a personal health agent」</strong>：HN 22:28 提交，论文 <code>datePublished</code> 为 2026-10-21 → 排除。</li>
+  <li><strong>WorldTUI（360M「假装成终端」的世界模型，HN 368 分）</strong>：提交时刻 10-22 10:18（北京），窗口外 → 排除。</li>
+  <li><strong>llama.cpp b11819 / ClickHouse 26.7.37.6-stable、26.3.59.10-lts</strong>：窗口内 GitHub 发布事件，但属常规版本流水，无基准或架构增量，不满足入选门槛 → 排除。</li>
+</ol>
+<p><strong>结构性说明</strong>：</p>
+<ul class="excluded">
+  <li>本期窗口由增量收敛压缩为 <strong>1 小时 49 分</strong>，具身智能与世界模型两个方向 0 条命中；这不是该时段无进展，而是（a）arXiv 公告批次按日节奏（对 submittedDate 落在 20261022 12:42–14:31 UTC 的 cs.RO/AI/CL/LG/CV/MA/SE 七类查询命中均为 0），论文类首发不可能落在本窗口；（b）当日该两方向的头部事件（NVIDIA Cosmos、WorldTUI、Motubrain 2.0、ACE-Brain-0.6）发布时刻均在窗口之外。窗口规则未因此放宽。</li>
+  <li><strong>信源健康（source_health.py）</strong>：aihot_items ok（最新条目 0.5h 前）、aihot_dailies ok（最新日报 2026-10-22）、arXiv ok（当前公告批次 Thu, 22 Oct 2026），warn=0 error=0，无降级披露。</li>
+  <li><strong>工具受限披露</strong>：GitHub REST API 在第二轮 89 仓发布探测中触发未认证速率限制（403，release 列表为空），已改用 <code>releases/tags.atom</code> 全量复核（65 仓网络/解析失败为已知沙箱限制，42 条时间记录可用）；huggingface.co 与 <a href="https://openai.com" target="_blank" rel="noopener">openai.com</a> 直连在本机失败（TLS/403），HF 侧改用检索与作者账号交叉验证，仍不足以确认 Carbon-X 第一信源时刻，故按规则排除。</li>
+  <li>本期未使用已废止的 48 小时降级策略，未向下修正窗口起点。</li>
+</ul>
+
+<h2>待核实</h2>
+<ol class="excluded">
+  <li><strong>VS Code 1.143 的「发布时刻」口径</strong>：官方 Release Notes 页标注里程碑日期 2026-10-19，而 GitHub Release <code>1.143.0</code> 发布于 10-22 21:00（北京）。本期以 GitHub Releases 事件时刻为窗口依据；需确认文档日期与 stable rollout 的官方定义。缺：官方 changelog 对「stable 推送开始时间」的明确声明。</li>
+  <li><strong>MAI Code 1.1 Flash 本地推理的实际门槛与成本</strong>：96 GB+ 显存与「不消耗 AI credits」为微软文档自述，缺第三方在真实代码库上的吞吐/成功率实测。</li>
+  <li><strong>Sierra τ-Entity 的可复现性</strong>：官方帖未给出 GitHub 链接，200 任务与 6 语种数据的许可与是否公开、三项 pass 分数能否由第三方复现均需验证（当前全为发布方自述）。</li>
+  <li><strong>OpenClaw 引用的 Node.js 公告编号</strong>：发布说明称新运行时用于拒收「2026 年 10 月 Node.js 安全公告中被泄露的证书私钥」签名的 TLS 链，但未列出具体 CVE / 公告 ID 与受影响版本面；「少 10 条语句 / 少 2 条主线程语句」「97 项回归通过」亦为自述，缺独立复测。</li>
+  <li><strong>Wiz 报告的规模量化</strong>：受影响厂商数量、ARTEX 上游仓库地址与其被 Fork/使用的规模，官方帖未给出。</li>
+  <li><strong>DeepMind 森林类型图精度口径</strong>：90% / 95% 为发布方在其验证站点集上的结果，缺跨大陆分层的第三方独立精度评估；与既有全球土地覆盖产品（如 ESA WorldCover）的同口径对比亦未见。</li>
+  <li><strong>1Password for Agents 首发时刻</strong>：官方博客仅有日期级时间戳，无法确认是否落在窗口内（见排除项 3）。</li>
+</ol>
+
+<footer>
+  <h4 style="margin-top:0">归档状态说明</h4>
+  <ul class="path">
+    <li>工作区 Markdown：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261022_2231.md</code></li>
+    <li>工作区 HTML：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261022_2231.html</code></li>
+    <li>网盘归档：<code>O:/quark/automation/每日 AI 新闻推送/</code>（同名文件）</li>
+    <li>执行状态：<span style="color:var(--ok);font-weight:600">✅ 成功</span>（md/html 双份由 <code>tools/archive_latest.py</code> 写入网盘根目录并通过字节校验；<code>guardian.py post</code> 校验命名、条数声明、时效窗口与 pre 快照逐字一致、网盘双文件字节一致；本 HTML 为 <code>enhance_report.py</code> 产出的 <code>.enhanced.html</code> 回写规范名，未重复喂入已增强文件）</li>
+    <li>护栏校验：<code>guardian.py post 每日AI新闻推送_20261022_2231</code> → <code>ok: true</code>，<code>issues: []</code>，<code>window_source: snapshot</code>（无 NAMING/COUNT/WINDOW/ARCHIVE 报错；归档步骤已自行清理 probe 残渣，本轮未出现「清理受阻」）。</li>
+    <li>收尾固化：<span style="color:var(--ok);font-weight:600">5 ok / 0 failed / 0 skipped</span>（<code>finalize_report.py --stamp 20261022_2231</code>：KB 重建、RSS 刷新、归档总索引重建（本地 + 网盘滚动名）、待核实追踪（scanned 85 / subjects 164 / added 7 / open 164）、信源健康记录（ok=3 warn=0 error=0 manual=1）各一步成功）。</li>
+  </ul>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>

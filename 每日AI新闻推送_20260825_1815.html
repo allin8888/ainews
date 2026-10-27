@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 - 2026-08-25 晚间版</title>
+<style>
+:root {
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --bg-card: #0f3460;
+  --text-primary: #e8e8e8;
+  --text-secondary: #b8b8b8;
+  --text-muted: #888;
+  --accent-cyan: #00d4ff;
+  --accent-green: #00ff88;
+  --accent-orange: #ff9f1c;
+  --accent-purple: #bd34fe;
+  --accent-red: #ff3d71;
+  --border-color: #2a2a4a;
+  --tag-bg: rgba(0, 212, 255, 0.1);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  padding: 2rem 1rem;
+}
+.container { max-width: 860px; margin: 0 auto; }
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+header h1 {
+  font-size: 1.8rem;
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.75rem;
+}
+meta-info {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+.meta-item { display: flex; align-items: center; gap: 0.4rem; }
+.meta-item .label { color: var(--text-muted); }
+.meta-item .value { color: var(--accent-cyan); font-weight: 600; }
+.alert {
+  background: rgba(255, 159, 28, 0.1);
+  border: 1px solid var(--accent-orange);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 2rem;
+  font-size: 0.85rem;
+  color: var(--accent-orange);
+}
+section { margin-bottom: 2.5rem; }
+section h2 {
+  font-size: 1.2rem;
+  color: var(--accent-cyan);
+  margin-bottom: 1.25rem;
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--accent-cyan);
+}
+.card {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--border-color);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 212, 255, 0.1);
+}
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.card-number {
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
+  color: var(--bg-primary);
+  font-weight: bold;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+}
+.card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+.card-meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+.card-body h3 {
+  font-size: 0.9rem;
+  color: var(--accent-green);
+  margin: 0.75rem 0 0.4rem 0;
+}
+.card-body p, .card-body li {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+.card-body ul {
+  list-style: none;
+  padding-left: 0;
+}
+.card-body li {
+  padding-left: 1.1rem;
+  position: relative;
+  margin-bottom: 0.3rem;
+}
+.card-body li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--accent-cyan);
+}
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+.tag {
+  background: var(--tag-bg);
+  color: var(--accent-cyan);
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+footer {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+footer h3 { color: var(--accent-cyan); margin-bottom: 0.75rem; font-size: 0.95rem; }
+footer p { margin-bottom: 0.4rem; }
+footer a { color: var(--accent-cyan); text-decoration: none; }
+.highlight { color: var(--accent-orange); font-weight: 600; }
+.editors-note {
+  background: var(--bg-secondary);
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  border-left: 3px solid var(--accent-purple);
+}
+.editors-note h3 {
+  color: var(--accent-purple);
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+.editors-note p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+.editors-note ol {
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+}
+.editors-note li {
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+.verification {
+  background: rgba(255, 61, 113, 0.05);
+  border: 1px solid rgba(255, 61, 113, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+}
+.verification h4 {
+  color: var(--accent-red);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+.verification ul {
+  list-style: none;
+  padding-left: 0;
+}
+.verification li {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  padding-left: 1rem;
+  position: relative;
+  margin-bottom: 0.3rem;
+}
+.verification li::before {
+  content: "⚠";
+  position: absolute;
+  left: 0;
+  color: var(--accent-red);
+  font-size: 0.7rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>每日 AI 前沿技术精选</h1>
+    <meta-info>
+      <div class="meta-item">
+        <span class="label">日期：</span>
+        <span class="value">2026-08-25</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">时间：</span>
+        <span class="value">18:15</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">精选条数：</span>
+        <span class="value">5 条</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">时效窗口：</span>
+        <span class="value">24小时</span>
+      </div>
+    </meta-info>
+  </header>
+
+  <div class="alert">
+    ⏰ 本期严格筛选 2026-08-24 18:15 – 2026-08-25 18:15 期间首次发布的新闻，排除重复条目
+  </div>
+
+  <section>
+    <h2>今日精选</h2>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-number">1</div>
+        <div>
+          <div class="card-title">微软 Agent Lightning v1.0 正式发布："Agent 训练 Agent"走向工程化</div>
+          <div class="card-meta">2026-08-25 | 稀土掘金</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <h3>事件概述</h3>
+        <p>微软开源的 Agent Lightning 框架发布 v1.0 正式版，已获 <span class="highlight">1.76 万 Star</span>。核心能力是用部署时的真实 Agent Harness 做强化学习训练——Agent 通过框架代理与模型交互，工具、上下文、控制流和环境全部保持在环内，且无需修改任何代码。仅用 <span class="highlight">6000 条训练样本</span>，端到端将 Qwen3.5-9B 编程工作流的 SWE-bench Verified 成绩从 41.8% 提升到 <span class="highlight">56.4%（+14.6 个百分点）</span>。</p>
+        
+        <h3>技术与工程价值</h3>
+        <ul>
+          <li><strong>核心机制</strong>：用"真实 Harness 在环"抹平训练环境与部署环境的鸿沟，Agent 强化学习从论文走向工程化</li>
+          <li><strong>实际影响</strong>：6000 条样本换 14.6pp 的 SWE-bench 跃升，数据效率比规模更重要</li>
+        </ul>
+        
+        <h3>关键指标</h3>
+        <ul>
+          <li>GitHub Star：1.76 万</li>
+          <li>训练样本：6000 条</li>
+          <li>SWE-bench Verified：41.8% → 56.4%（+14.6pp）</li>
+        </ul>
+        
+        <div class="card-tags">
+          <span class="tag">#AI Coding</span>
+          <span class="tag">#Agent</span>
+          <span class="tag">#强化学习</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-number">2</div>
+        <div>
+          <div class="card-title">光象科技发布物理原生世界模型 Phi-WM 1.0 ActEffect</div>
+          <div class="card-meta">2026-08-25 | 每日经济新闻</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <h3>事件概述</h3>
+        <p>具身智能公司光象科技今日发布物理原生世界模型 Phi-WM 1.0 ActEffect。该模型是"物理原生智能"（Physics-native Intelligence, Phi）技术路线的首个模型化落地成果。</p>
+        
+        <h3>技术与工程价值</h3>
+        <ul>
+          <li><strong>核心机制</strong>：世界模型从"预测器"变为"训练时反馈器"，通过预测动作后果来指导机器人学习</li>
+          <li><strong>实际影响</strong>：解决具身智能中"动作-后果"因果关系的学习瓶颈，为 Sim2Real 迁移提供新路径</li>
+        </ul>
+        
+        <h3>关键指标</h3>
+        <ul>
+          <li>发布时间：2026-08-25</li>
+          <li>技术路线：物理原生智能（Phi）</li>
+        </ul>
+        
+        <div class="card-tags">
+          <span class="tag">#世界模型</span>
+          <span class="tag">#具身智能</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-number">3</div>
+        <div>
+          <div class="card-title">JetBrains Junie Local：免费本地 AI Coding Agent，跑在 Mac 上</div>
+          <div class="card-meta">2026-08-25 | DEV Community</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <h3>事件概述</h3>
+        <p>JetBrains 发布 Junie Local，一款完全本地运行的 AI 编程智能体，无需 Token、无需订阅、代码不外传。使用 <span class="highlight">Qwen3.6-27B 4-bit 量化模型</span>，需 Apple M5 Mac + 64GB RAM。安装只需一条命令 <code>/local</code>，约 20GB 下载后自动启动本地服务器。</p>
+        
+        <h3>技术与工程价值</h3>
+        <ul>
+          <li><strong>核心机制</strong>：Prefill 优化（MLX-VLM 8-bit 指令集补丁，M5 比 M4 快 40%）、KV-cache 复用、投机解码（n-gram 匹配）</li>
+          <li><strong>实际影响</strong>：解决本地 AI Coding Agent 三大痛点——设置摩擦、模型选择、质量不足</li>
+        </ul>
+        
+        <h3>关键指标</h3>
+        <ul>
+          <li>模型：Qwen3.6-27B（4-bit 量化）</li>
+          <li>硬件要求：Apple M5 + 64GB RAM</li>
+          <li>Prefill 速度：约 650 token/s（M5 裸机）</li>
+          <li>价格：完全免费，无注册、无订阅</li>
+        </ul>
+        
+        <div class="card-tags">
+          <span class="tag">#AI Coding</span>
+          <span class="tag">#本地部署</span>
+          <span class="tag">#开源</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-number">4</div>
+        <div>
+          <div class="card-title">英伟达 Vera Rubin NVL72 能效数据公布：Agent 工作负载每兆瓦吞吐提升 30 倍</div>
+          <div class="card-meta">2026-08-24 | NVIDIA 官方博客</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <h3>事件概述</h3>
+        <p>英伟达 8/24 博客公布 Vera Rubin NVL72 在智能体（agentic）工作负载下的实测性能数据：基于 SemiAnalysis AgentX 真实编码轨迹测试，每兆瓦吞吐较上代 <span class="highlight">GB300 NVL72 最高提升 30 倍</span>，每百万 token 成本<span class="highlight">降低 35 倍</span>。平台为七芯架构（含 Vera CPU、Groq 3 LPU、BlueField-4 等），已进入全面生产。</p>
+        
+        <h3>技术与工程价值</h3>
+        <ul>
+          <li><strong>核心机制</strong>：Vera Rubin 芯片架构优化 + Groq 3 LPU 低延迟推理 + BlueField-4 网络加速</li>
+          <li><strong>实际影响</strong>：改写 AI 工厂"每兆瓦产出"与"每百万 token 利润"经济账，低延迟推理成为 Agent 编程等场景的关键竞争点</li>
+        </ul>
+        
+        <h3>关键指标</h3>
+        <ul>
+          <li>每兆瓦吞吐：+30x vs GB300 NVL72</li>
+          <li>每百万 token 成本：-35x</li>
+          <li>架构：七芯（Vera CPU + Groq 3 LPU + BlueField-4）</li>
+        </ul>
+        
+        <div class="card-tags">
+          <span class="tag">#AI 基础设施</span>
+          <span class="tag">#芯片</span>
+          <span class="tag">#能效</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-number">5</div>
+        <div>
+          <div class="card-title">阿里云 Wan3.0 视频大模型上线：30 秒长视频 + 文档输入</div>
+          <div class="card-meta">2026-08-24 | 量子位</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <h3>事件概述</h3>
+        <p>阿里云视频生成大模型 Wan3.0 正式上线，单次可生成 <span class="highlight">30 秒视频</span>，首次支持 doc/xls/ppt/pdf/md 文档输入，可直接把文档内容转为视频脚本与画面。公测已进入相关生产线。商业化定价：8/24–9/23 限时 7 折，480P/720P/1080P 分别 0.21/0.42/0.84 元/秒。</p>
+        
+        <h3>技术与工程价值</h3>
+        <ul>
+          <li><strong>核心机制</strong>：支持多格式文档输入（doc/xls/ppt/pdf/md），将内容直接转为视频脚本与画面</li>
+          <li><strong>实际影响</strong>：国产视频生成在时长、输入形态与商用定价上同步推进，从"demo 玩具"推向可嵌入企业内容产线的工具</li>
+        </ul>
+        
+        <h3>关键指标</h3>
+        <ul>
+          <li>视频时长：30 秒</li>
+          <li>输入格式：doc/xls/ppt/pdf/md</li>
+          <li>定价：480P 0.21元/秒 / 720P 0.42元/秒 / 1080P 0.84元/秒（限时7折）</li>
+        </ul>
+        
+        <div class="card-tags">
+          <span class="tag">#多模态</span>
+          <span class="tag">#视频生成</span>
+          <span class="tag">#商业化</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="editors-note">
+    <h3>📝 编辑点评</h3>
+    <p><strong>本期主线："Agent 基础设施层工程化 + 世界模型走向物理原生 + 本地 AI Coding 普惠化"</strong></p>
+    <ol>
+      <li><strong>Agent Lightning v1.0</strong> 标志着"Agent 训练 Agent"从论文走向工程化——6000 条样本换 14.6pp 的 SWE-bench 跃升，证明数据效率比规模更重要</li>
+      <li><strong>光象科技 ActEffect</strong> 提出"训练时反馈器"概念，世界模型从预测转向因果，是 Sim2Real 的新路径</li>
+      <li><strong>Junie Local</strong> 解决本地 AI Coding 三大痛点（设置、模型选择、质量），M5 Mac 上 650 tok/s prefill 接近可用</li>
+      <li><strong>Vera Rubin 能效数据</strong> 改写 Agent 工作负载的经济账，30x 吞吐提升意味着 Agent 规模化部署门槛骤降</li>
+      <li><strong>Wan3.0</strong> 把视频生成从"生成玩具"推向"企业工具"，文档输入 + 7折定价是商业化关键一步</li>
+    </ol>
+  </div>
+
+  <div class="verification">
+    <h4>⚠️ 待核实项</h4>
+    <ul>
+      <li>Agent Lightning v1.0 SWE-bench 56.4% 第三方复现待补充</li>
+      <li>光象科技 ActEffect 技术白皮书与基准测试待公开</li>
+      <li>Junie Local M5 硬件门槛限制当前普及度</li>
+      <li>Vera Rubin 能效数据基于 SemiAnalysis AgentX 轨迹，真实场景待验证</li>
+      <li>Wan3.0 定价 7 折至 9/23 截止，长期定价走势待观察</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p><strong>归档状态说明</strong></p>
+    <p>Markdown 路径：<code>O:/quark/automation/每日 AI 新闻推送/每日AI新闻推送_20260825_1815.md</code></p>
+    <p>HTML 路径：<code>O:/quark/automation/每日 AI 新闻推送/每日AI新闻推送_20260825_1815.html</code></p>
+    <p>执行状态：<span style="color: var(--accent-green);">✅ 成功</span></p>
+  </footer>
+</div>
+</body>
+</html>

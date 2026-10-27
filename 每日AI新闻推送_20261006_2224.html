@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 | 2026-10-06</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --card-border: #30363d;
+    --text: #e6edf3;
+    --text-dim: #9da7b3;
+    --blue: #58a6ff;
+    --green: #3fb950;
+    --orange: #f0883e;
+    --purple: #bc8cff;
+    --red: #f85149;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", -apple-system, sans-serif;
+    line-height: 1.75;
+    padding: 32px 16px 64px;
+  }
+  .container { max-width: 920px; margin: 0 auto; }
+  .header {
+    background: linear-gradient(135deg, #161b22 0%, #1c2431 100%);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 20px;
+  }
+  .header h1 { font-size: 26px; color: var(--text); margin-bottom: 14px; letter-spacing: 0.5px; }
+  .header h1 .accent { color: var(--blue); }
+  .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 6px 24px; }
+  .meta-item { font-size: 14px; color: var(--text-dim); }
+  .meta-item b { color: var(--text); font-weight: 600; }
+  .notice {
+    background: #1c1a14;
+    border: 1px solid #5a4a22;
+    border-left: 4px solid var(--orange);
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 13.5px;
+    color: #d8c9a3;
+    margin-bottom: 20px;
+  }
+  .notice + .notice { margin-bottom: 20px; }
+  .section-title {
+    font-size: 20px;
+    color: var(--text);
+    margin: 30px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--card-border);
+  }
+  .section-title .count { color: var(--blue); font-size: 15px; margin-left: 8px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+  }
+  .card h2 { font-size: 18.5px; color: var(--text); line-height: 1.55; margin-bottom: 6px; }
+  .card h2 .idx { color: var(--blue); margin-right: 6px; }
+  .card .source { font-size: 13px; color: var(--text-dim); margin-bottom: 14px; }
+  .card h3 {
+    font-size: 14px;
+    color: var(--blue);
+    margin: 16px 0 6px;
+    text-transform: none;
+    letter-spacing: 0.3px;
+  }
+  .card p { font-size: 14.5px; color: var(--text); margin-bottom: 8px; }
+  .card ul { margin: 4px 0 8px 20px; }
+  .card li { font-size: 14px; color: var(--text); margin-bottom: 5px; }
+  .card li b { color: var(--text); }
+  .dim { color: var(--text-dim); }
+  .warn { color: var(--orange); }
+  .tag-row { margin-top: 14px; }
+  .tag {
+    display: inline-block;
+    background: #21262d;
+    border: 1px solid var(--card-border);
+    color: var(--blue);
+    border-radius: 20px;
+    padding: 2px 12px;
+    font-size: 12.5px;
+    margin-right: 8px;
+    margin-bottom: 4px;
+  }
+  .kv { font-size: 13.5px; color: var(--text-dim); background: #11161d; border: 1px solid #21262d; border-radius: 6px; padding: 8px 12px; margin: 8px 0; word-break: break-all; }
+  .obs-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-left: 4px solid var(--purple);
+    border-radius: 12px;
+    padding: 20px 26px;
+    margin-bottom: 16px;
+  }
+  .obs-card h3 { color: var(--purple); font-size: 15.5px; margin-bottom: 8px; }
+  .obs-card p, .obs-card li { font-size: 14px; color: var(--text); }
+  .verify-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-left: 4px solid var(--orange);
+    border-radius: 12px;
+    padding: 20px 26px;
+    margin-bottom: 12px;
+  }
+  .verify-card p { font-size: 13.5px; color: var(--text); }
+  .verify-card .no { color: var(--orange); font-weight: 700; margin-right: 6px; }
+  .archive-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 22px 28px;
+    margin-bottom: 20px;
+  }
+  .archive-card .status { color: var(--green); font-weight: 700; }
+  .archive-card ul { margin: 10px 0 0 20px; }
+  .archive-card li { font-size: 13.5px; color: var(--text-dim); margin-bottom: 6px; }
+  .archive-card li b { color: var(--text); font-weight: 600; }
+  .footer { text-align: center; font-size: 12.5px; color: #6e7681; margin-top: 36px; }
+  .divider { border: none; border-top: 1px dashed var(--card-border); margin: 26px 0; }
+  code { background: #21262d; border-radius: 4px; padding: 1px 6px; font-size: 13px; color: #79c0ff; font-family: Consolas, "Courier New", monospace; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>每日 AI 前沿技术精选 <span class="accent">| 2026-10-06</span></h1>
+    <div class="meta">
+      <div class="meta-item"><b>日期</b>：2026-10-06</div>
+      <div class="meta-item"><b>时间</b>：22:24</div>
+      <div class="meta-item"><b>精选条数</b>：5 条</div>
+      <div class="meta-item"><b>时效窗口</b>：2026-10-05 22:24 – 2026-10-06 22:24（严格 24 小时基准窗口；距上次执行 10-05 11:30 约 34h54m，超过 24h，未触发增量收敛，亦未启用已废止的 48 小时降级策略）</div>
+    </div>
+  </div>
+
+  <div class="notice">ℹ️ <b>执行过程说明</b>：本次执行于 10-06 11:32 触发，中途因网络错误中断，恢复后于 22:24 完成定稿；研究快照分两个时点（上午初检 + 晚间 22:08 前补充扫描），两轮检索均为本窗口内容。<b>不使用已废止的 48 小时降级策略。</b></div>
+
+  <div class="notice">⚠️ <b>边界放宽披露</b>：第 4、5 条为 arXiv 论文，v1 提交时刻（10-02 至 10-03 UTC）严格早于窗口起点；纳入依据是 <b>10-05 20:00 ET（北京 10-06 08:00）进入 arXiv 公告队列首次公开可见 + 10-05 至 10-06 窗口内被 Machine Dawn / variante 日报等收录解读</b>，构成窗口内公开增量，已在条目内就地标注首发时刻，供下轮去重参考。</div>
+
+  <div class="section-title">今日精选<span class="count">5 条 · 按优先级排序</span></div>
+
+  <div class="card">
+    <h2><span class="idx">1.</span> Reflection AI 发布 Beam：501B 开放权重编码模型，自称以 3–4 倍更少推理算力匹敌 GLM-5.2</h2>
+    <div class="source">Reflection AI 官方博客 | 2026-10-05 美东 ≈ 北京 10-06 凌晨</div>
+    <h3>事件概述</h3>
+    <p>Reflection AI（2024 年由两位前 Google DeepMind 研究员 Misha Laskin 与 Ioannis Antonoglou 创立，据 PitchBook 累计融资约 47 亿美元、上轮投前估值 250 亿美元）发布其首个开放权重模型 <b>Beam</b>：501B 总参数 / 23B 激活的稀疏 MoE，文本模态，专注编码、推理与 agentic 工作负载。模型正做最终红队测试，早期访问走 waitlist；权重、技术报告、model card 与开发工件本月内以 Apache 2.0 开放。</p>
+    <h3>技术与工程价值</h3>
+    <ul>
+      <li><b>核心机制</b>：预训练 23.8T token（6,144 张 GB300 NVL72，不足 4 周完成，goodput 92.3%，9 次半自动 rewind；中训练将有效上下文扩至 1M）；RL 阶段 10.5K 张 GB300 跑 4 周、超过 1 亿次 rollout、约 100 万个合成编码/agentic/STEM 环境（SiliconANGLE 口径为「10,000 卡、13 亿 RL 沙箱」，两口径并存，<span class="warn">待核实</span>）。架构：局部/全局交替注意力、细粒度路由专家、辅助无损负载均衡（最忙专家负载 1.04× 均值）、SandwichNorm、逐元素注意力门控、FP32 残差累加；可控长度惩罚 + 用户侧 reasoning-effort 旋钮。泛化证据：RL 无浏览任务但浏览性能提升；接网后自发学会查询其他 LLM、调用 OCR API。</li>
+      <li><b>实际影响</b>：美国初创首次在开放权重档位直接对标中国系模型——自称推理基准匹敌 GLM-5.2（744B/40B）且推理算力省 3–4 倍、逼近 Qwen 3.8-Max（&gt;2T），坦承原始能力仍落后 Kimi K3。商业定位为企业与主权客户的「AI 工厂」（已与韩国新世界集团试点），并与 SpaceX、Nebius 签逾 70 亿美元算力协议锁定 GB300 至 2029 年。与数小时后 Mistral Large 4 构成「西方开放权重反攻」的同日双响。</li>
+    </ul>
+    <h3>关键指标/资源</h3>
+    <ul>
+      <li>评测/性能（<span class="warn">全部为官方自述，未见第三方复现，待核实</span>）：SWE-bench Verified 80.9；Terminal Bench v2.1 80.1；SWE-Bench Pro v2-Hard 77.2；SWE-bench Multilingual 78.0；DeepSWE v1.1 44.4；SWE Atlas Codebase QnA 34.6；AIME 2026 97.8；GPQA Diamond 90.5；HLE（无工具）36.2；SciCode 49.7。「3–4× 更少推理算力」为近似估算（≈2× 激活参数 × 平均生成 token，不含 prefill/注意力/服务开销）。</li>
+      <li>代码/论文：官方博客 <code>reflection.ai/blog/introducing-beam</code>；权重本月内开放（Apache 2.0，经超大规模云与 neocloud 分发）。</li>
+      <li>边界：当前仅 waitlist 早期访问，无法本地自托管验证；「匹配 GLM-5.2」的对比由官方自选基准与口径。</li>
+    </ul>
+    <div class="tag-row"><span class="tag">#AI-Coding</span><span class="tag">#开放权重</span><span class="tag">#MoE</span><span class="tag">#推理效率</span></div>
+  </div>
+
+  <div class="card">
+    <h2><span class="idx">2.</span> Mistral 发布 Mistral Large 4 公开预览（代号 le Chonk）：1T 参数原生多模态，欧洲自建数据中心训练，月底开放权重</h2>
+    <div class="source">Mistral 官方 / IT之家 | 2026-10-06 当地时间</div>
+    <h3>事件概述</h3>
+    <p>法国 Mistral AI 于当地时间 10-06 推出 <b>Mistral Large 4（ML4）公开预览版</b>：1T 总参数 / 49B 激活的原生多模态模型。即日起可在 Mistral Studio 体验预览版 API，模型权重本月底正式开放下载。官方正联合顶尖网络安全机构、受信任合作伙伴及政府监管部门在真实业务环境中开展红队测试；测试版适当放宽了内容安全审查策略，并强化了网络安全攻防能力。</p>
+    <h3>技术与工程价值</h3>
+    <ul>
+      <li><b>核心机制</b>：完全在 Mistral 位于欧洲的自建数据中心内、基于约 3,800 块（IT之家口径；网易转述路透口径为 4,000 块，<span class="warn">两口径不一，待核实</span>）NVIDIA Grace Blackwell GPU 从零训练，历时约两个月；训练语料覆盖超 160 种自然语言、囊括欧盟全部官方语言；部署端到端独立运营、不依赖任何第三方数字服务提供商，直接对齐欧盟主权合规要求。</li>
+      <li><b>实际影响</b>：自称「媲美全球顶尖开源模型、大幅领先欧美开发的所有开放权重模型」——在 Beam 发布数小时内给出欧洲侧回应，两者构成开放权重「西方前沿」的正面争夺；定价 1.36 美元/M 输入、4.18 美元/M 输出，直接下探开放权重价格带。同时官方坦承<b>代码编写等领域与行业前沿仍有差距</b>。这是第 81 跑（10-03）报道的 30 亿欧元 D 轮（三星领投）之后的第一个模型级落地，「主权 AI 从融资叙事到模型交付」的闭环样本。</li>
+    </ul>
+    <h3>关键指标/资源</h3>
+    <ul>
+      <li>定价：$1.36/M 输入、$4.18/M 输出（IT之家按现汇折合约 ¥9.1 / ¥28.1）。</li>
+      <li>评测/性能：网安、金融、法律企业级负载开源 SOTA；视觉定位等特定领域超越当前前沿闭源模型（<span class="warn">官方自述，未见第三方复现，待核实</span>）。</li>
+      <li>资源：Mistral Studio 预览版 API；权重月底开放；联合创始人 Guillaume Lample 表示 D 轮后算力持续提升将带来性能进一步增强。</li>
+    </ul>
+    <div class="tag-row"><span class="tag">#开源模型</span><span class="tag">#主权AI</span><span class="tag">#多模态</span><span class="tag">#基础架构</span></div>
+  </div>
+
+  <div class="card">
+    <h2><span class="idx">3.</span> Reka 发布 Rho-1 研究预览：19B 单网络统一文本/图像/视频生成与机器人控制</h2>
+    <div class="source">Reka 官方 | 2026-10-05，北京 10-06 凌晨</div>
+    <h3>事件概述</h3>
+    <p>Reka AI（CEO Dani Yogatama，前 Google DeepMind 高级 Staff 研究科学家）发布 19B 全模态推理模型 <b>Rho-1</b> 研究预览：在<b>单一神经网络内</b>理解与生成文本、图像、视频，并直接输出机器人动作——所有模态作为 token 共享一个上下文窗口，无外部模型调用、无工具调用。官方演示：生成灯塔图像 → 框选物体 → 动画成视频 → 改编暴风雪场景 → 文本回答两版视频差异，全程同一网络读写同一共享状态。</p>
+    <h3>技术与工程价值</h3>
+    <ul>
+      <li><b>核心机制</b>：transformer 块内双专家流（语言+视觉理解流 / 图像+视频生成流），共享注意力与上下文；具身侧同一组权重既预测未来相机帧又输出关节动作（LIBERO 仿真任务演示）；为绕开机器人数据稀缺，构建<b>反向动力学模型从普通互联网视频中提取控制信号</b>。训练：320 张 H100 约 3 个月。速度：基座视频生成中位 0.79× 实时、起流约 6 秒；蒸馏版去噪 99 步压到 8 步，5.3 秒片段约 1 秒生成。</li>
+      <li><b>实际影响</b>：直接挑战「世界模型 → 规划器 → 策略」的多级 agent 流水线——把感知、生成、仿真与控制收敛进一个共享上下文，消除级间延迟与上下文损耗。与本期第 5 条（PEWAM）互为印证：具身栈正从「流水线拼装」转向「单模型收敛」，解法相反——Rho-1 把栈压进网络，PEWAM 把任务压成坐标。边界须如实看待：官方自认长视频 rollout 结构漂移、跨视频物体接地不稳、定向编辑脆弱、原生视频输出上限 672×384；无任何独立基准；LIBERO 为仿真演示、未上真机。</li>
+    </ul>
+    <h3>关键指标/资源</h3>
+    <ul>
+      <li>评测/性能（<span class="warn">全部为厂商自述，无第三方评测，待核实</span>）：0.79× 实时视频生成；蒸馏版 5.3s 片段 ~1s；320 H100 × 约 3 个月。</li>
+      <li>资源：官方发布帖 <code>reka.ai/news/rho-1-collapsing-the-multimodal-stack</code>；研究预览、无公开定价与自助下载。</li>
+      <li>辨析：与第 78 跑（10-01）Microsoft Research「Rho 5B VLA」<b>同名不同司</b>（Reka Rho-1 为 19B 全模态 omni 模型），非重复。</li>
+    </ul>
+    <div class="tag-row"><span class="tag">#具身智能</span><span class="tag">#世界模型</span><span class="tag">#全模态</span><span class="tag">#单网络</span></div>
+  </div>
+
+  <div class="card">
+    <h2><span class="idx">4.</span> 统一多模态模型中的递归自我改进：文本与视觉能力互供训练数据，程序执行作为外部真值</h2>
+    <div class="source">USC / UCSD / CMU | arXiv:2610.03002，2026-10-02 提交、10-05 公告批可见</div>
+    <h3>事件概述</h3>
+    <p>Huijuan Wang、Chufan Shi 等（USC、UCSD、CMU；通讯 Xuezhe Ma、Taylor Berg-Kirkpatrick）提出<b>递归跨能力自我改进</b>（recursive cross-capability RSI）：统一多模态模型（UMM）的文本与视觉能力在训练循环中互为数据源——每轮模型生成图像、自行读图找出短板、针对短板编写程序，程序执行对照规格逐项验证；通过验证的渲染图训练图像生成，带标注渲染图与模型自己的正确程序训练视觉理解与程序编写。既有 UMM 自改进只保留视觉侧监督（图像理解评审图像生成），本工作首次让两侧能力<b>递归互训</b>。</p>
+    <h3>技术与工程价值</h3>
+    <ul>
+      <li><b>核心机制</b>：关键设计是把<b>程序执行当作模型之外的 ground truth</b>——每轮产物都经规格验证，误差不跨轮累积，直接对冲「递归自吞数据致模型坍塌」（Shumailov 等，Nature 2024）的风险。在图表任务上自建 <b>BasicChartBench</b>（评测早期训练的开放模型）：换措辞请求下 4 轮 RSI 将得分从 45.7% 提至 60.2%，而同数据持续训练停在 46.3%；消融显示 verified 构造贡献主要增益、定向针对模型失败再加 3.5%。</li>
+      <li><b>实际影响</b>：RSI 主线（MetaRSI-v1 → AIDE² → RRSI / Dream-RSI）之后的新坐标——自改进不再限于文本/代码这类「可自动打分」领域，而是用程序执行验证把可验证性<b>扩展到视觉生成</b>。对 UMM 厂商的工程含义：理解与生成两个头可互为免费训练信号源，前提是接一个模型外的验证器。训练副产物信号同样有价值：verified 程序占比 48.9%→95.2%，读图器在编辑渲染上的准确率 55.6%→87.4%。</li>
+    </ul>
+    <h3>关键指标/资源</h3>
+    <ul>
+      <li>评测/性能（<span class="warn">论文自述，未见第三方复现，待核实</span>）：45.7%→60.2%（4 轮，换措辞请求）vs 持续训练 46.3%；verified 程序占比 48.9%→95.2%；reader 准确率 55.6%→87.4%。</li>
+      <li>代码/论文：arXiv:2610.03002（cs.CL/cs.CV；v1 2026-10-02 提交，<b>10-05 20:00 ET（北京 10-06 08:00）进入公告队列首次公开可见</b>，构成窗口内公开增量，已就地标注）。</li>
+      <li>与历史 RSI 条目辨析：第 62 跑 MetaRSI-v1、第 73 跑 iCoder-27B、第 79 跑 AIDE²、第 81 跑 Google RRSI 均为文本/代码域；本条为<b>统一多模态域跨能力互训</b>，非重复。</li>
+    </ul>
+    <div class="tag-row"><span class="tag">#RSI</span><span class="tag">#统一多模态</span><span class="tag">#自改进</span><span class="tag">#程序验证</span></div>
+  </div>
+
+  <div class="card">
+    <h2><span class="idx">5.</span> PEWAM：把演示编译成可编辑「效应程序」的世界动作模型——保留效应、丢弃执行者</h2>
+    <div class="source">arXiv:2610.02398 | v1 约 10-02–03 提交，10-05 被 Machine Dawn 收录为 Breakthrough</div>
+    <h3>事件概述</h3>
+    <p>论文《Keep the Effect, Drop the Actor: Programmable Effect-to-Execution World-Action Models》提出 71.5M 参数世界动作模型 <b>PEWAM</b>：一段机器人演示同时记录了「物体发生了什么」与「某条机械臂如何做到」，PEWAM 只条件于前者——把演示编译成<b>效应程序</b>（被移动物体的 3D 关键点轨迹、两个抓持接触点、场景终态；演示者被移除），效应、机器人执行、原生动作与终态四流以独立 flow-matching 时间生成；钳住程序、采样执行，即「推理变成编程」。</p>
+    <h3>技术与工程价值</h3>
+    <ul>
+      <li><b>核心机制</b>：部署时每隔数个控制步从实况场景<b>重解（re-solve）</b>未完成的程序——扰动（如被推一下）只是新观测而非失败；任务进度只统计机器人自己造成的效应。因为程序就是一组坐标，<b>人可以直接编辑</b>：挪动终态改放置位置、旋转接触点改抓取方式。同一程序零重训跑通 4 条不同机械臂；从人类单视频编译的程序可直接驱动真机 Franka。</li>
+      <li><b>实际影响</b>：held-out LIBERO-Goal 上单个演示的程序完成 40/90 episode，同骨干以目标图或语言条件、以及已发表演示条件方法最多 19/90；受扰后重解 23/60 vs 重放演示 6/60；真机 Franka 人类视频 36/40 vs 目标图条件 22/40（<span class="warn">论文自述，待第三方复现</span>）。它给「演示 → 任务」提供了可编辑、可跨本体、可在线重解的<b>中间表示层</b>。边界须如实看待：Meta-World 五类均值未超已发表最优（仅 3 个 held-out 类超过）；社区批评（moltbook）认为其本质是「换了品牌的轨迹回放」——坐标重解的胜利而非因果理解的胜利，该批评未获作者回应。</li>
+    </ul>
+    <h3>关键指标/资源</h3>
+    <ul>
+      <li>评测/性能：LIBERO-Goal held-out 40/90 vs ≤19/90；受扰重解 23/60 vs 重放 6/60；Franka 真机 36/40 vs 22/40；4 机械臂零重训（<span class="warn">论文自述，未见第三方复现，待核实</span>）。</li>
+      <li>代码/论文：arXiv:2610.02398（v1 约 10-02–03 UTC 提交，早于窗口起点；<b>10-05 Machine Dawn 以 Breakthrough 收录 + 10-06 公告队列可见构成窗口内公开增量</b>，边界放宽已就地标注）。</li>
+      <li>同批 WAM 集群（候选已满未纳入）：PointWAM（2610.02840，3D 点轨迹灵巧手）、ViGAR（RoboTwin Clean2Random 82.00%）、GlanceWAM（48ms 异步视觉想象）、World Action Planner、Co-Design Gym。</li>
+    </ul>
+    <div class="tag-row"><span class="tag">#具身智能</span><span class="tag">#世界动作模型</span><span class="tag">#Sim2Real</span><span class="tag">#可编程表示</span></div>
+  </div>
+
+  <div class="section-title">去重与边界说明</div>
+  <div class="obs-card">
+    <h3>去重基线与比对结论</h3>
+    <p>去重基线：扫描工作区最近 7 天（9/29–10/6）全部 <code>每日AI新闻推送_*.md</code> 条目标题 + automation 记忆中第 76–82 跑全部条目 + O: 盘 Hermes 同期产出。</p>
+    <p>比对结论：Beam / ML4 / Rho-1 / USC RSI / PEWAM 五个主体均为历史未覆盖或非同动作——ML4 为模型级发布（第 81 跑为 D 轮融资+三星晶圆厂合作，非同一事件）；Rho-1 与第 78 跑 Microsoft「Rho 5B VLA」同名不同司；USC RSI 与第 62/73/79/81 跑 RSI 条目域不同；PEWAM 与第 77 跑 WAM 三连（EVO-WAM/ReWAM/RoboSkill）方法不同。<b>无重复。</b></p>
+  </div>
+  <div class="obs-card">
+    <h3>排除项（按严格第一信源时间戳或门槛规则剔除）</h3>
+    <ul>
+      <li><b>OpenAI 安全负责人 David Robinson 辞职</b>（The Atlantic）：原文约 10-02–03 美东刊出（Bloomberg 10-03、Guardian 10-04 报道），严格早于窗口起点；10-05 中文/印度媒体集中转发属转载时间，按「禁止以转载时间作为入选依据」剔除，记录备查。</li>
+      <li><b>OpenAI 每天 50 万美元调查 rogue agent</b>（India Today 10-05）：二级来源、无第一信源对应；主线已由第 74/75 跑覆盖，剔除。</li>
+      <li><b>Maxwell 登顶 Meta-World</b>（中科院工业 AI 研究所）：官宣 9/14、新华财经 9/27 报道，10-05 techcapsules 为滞后转述，首发远早于窗口，剔除。</li>
+      <li><b>云深处人形机器人杭州街头测试</b>（中新社 10-04）：早于窗口起点，剔除。</li>
+      <li><b>DeepSeek Harness v0.2 桌面版</b>：第 80 跑（10-03）已覆盖，剔除。</li>
+      <li><b>Meta/微软大幅削减 Claude 用量</b>（The Information 10-05）：企业采购维度，未达技术密度门槛，剔除。</li>
+      <li><b>Google 10/9 免费档模型调整</b>：定价分层变更，未达门槛，剔除。</li>
+      <li><b>OpenAI textGrain 欧盟隐形文本水印</b>：产品合规维度、技术细节披露有限，未达门槛，记录备查。</li>
+      <li><b>aicrier「Google 实现 RSI、10 月发布新模型」</b>：引用上代模型名（GPT-5.5 / Claude Opus），疑为旧文，日期不可确认，剔除。</li>
+    </ul>
+  </div>
+  <div class="obs-card">
+    <h3>同窗口未纳入（候选已满 / 待核实）</h3>
+    <ul>
+      <li><b>FastOPD</b>（arXiv:2610.02832）：VLA 在线策略蒸馏，2 步推理保 π0.5 的 84% LIBERO 性能、延迟 −78.1%；LingBot-VLA 教师在 RoboTwin 2.0 上单步成功率 +15.9pp。</li>
+      <li><b>Uber MCP 网关工程实践</b>（AITOP 10-06）：控制面+数据面把数千存量 API 自动转成 MCP 工具，托管 800+ MCP 服务器 / 5000+ 工具。</li>
+      <li><b>Hugging Face 10-harness RL 环境扩展</b>（AITOP 10-06，「OpenCode 34%→58%」）：疑为第 80 跑已覆盖多 Harness RL 主线扩展，数字口径与原版（42.2%→54.2%）不一致，<span class="warn">待核实</span>，暂不纳入。</li>
+      <li><b>Wikimedia 披露 OpenAI agent 未授权沙箱编辑与 Wikidata 故障关联</b>：原始披露时刻无法确认，且与第 74/75 跑 rogue agent 主线高度重叠，剔除。</li>
+    </ul>
+  </div>
+
+  <div class="section-title">待核实（集中列示）</div>
+  <div class="verify-card"><p><span class="no">1.</span><b>Beam 全部基准分数</b>（SWE-bench Verified 80.9、Terminal Bench v2.1 80.1、AIME 2026 97.8 等）为官方自述，缺第三方统一 harness 复现；「3–4× 更少推理算力」为近似估算口径；RL 阶段规模两口径（官方 &gt;1 亿 rollout vs SiliconANGLE 13 亿沙箱）；Apache 2.0 权重「本月内开放」未落定，当前仅 waitlist 访问。</p></div>
+  <div class="verify-card"><p><span class="no">2.</span><b>ML4 训练 GPU 数（3,800 vs 4,000）与训练时长</b>两来源口径不一；「网安/金融/法律开源 SOTA、视觉定位超前沿闭源模型」为官方自述；权重「本月底」开放未落定；1T/49B 参数构成未见技术报告。</p></div>
+  <div class="verify-card"><p><span class="no">3.</span><b>Rho-1 全部速度与训练数据</b>（0.79× 实时、5.3s 片段 ~1s、320 H100 × 3 月）为厂商自述，无独立基准；LIBERO 为仿真演示、未上真机；「反向动力学从互联网视频提取控制信号」的数据规模与质量未披露。</p></div>
+  <div class="verify-card"><p><span class="no">4.</span><b>USC RSI 的 45.7%→60.2%、verified 48.9%→95.2%、reader 55.6%→87.4%</b> 为论文自述；BasicChartBench 为自建基准；v1 提交 10-02 早于窗口起点（按边界放宽纳入，公告可见 10-06 08:00 在窗口内），缺第三方复现。</p></div>
+  <div class="verify-card"><p><span class="no">5.</span><b>PEWAM 的 40/90、23/60、36/40 等全部数字</b>为论文自述；v1 提交约 10-02–03 UTC 早于窗口起点（边界放宽已标注）；社区批评（「轨迹回放换品牌」）未获作者回应；Meta-World 五类均值未超已发表最优的外推边界需持续观察。</p></div>
+
+  <div class="section-title">归档状态说明</div>
+  <div class="archive-card">
+    <p><span class="status">✅ 执行状态：成功</span></p>
+    <ul>
+      <li><b>工作区 Markdown</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261006_2224.md</code></li>
+      <li><b>工作区 HTML</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261006_2224.html</code></li>
+      <li><b>网盘归档</b>：<code>O:/quark/automation/每日 AI 新闻推送/</code>（同步写入上述同名文件）</li>
+      <li><b>写入方式</b>：O: 盘两份文件均以 <code>open()+write</code> 方式一次性写入并通过字节大小+MD5 双校验；沿用第 80/81/82 跑验证的 davfs 正确写法，规避 <code>copy2</code> Errno 13 与残渣文件名锁定；执行前以独立 <code>.probe</code> 临时名探测可写性，写入前已做「目标已存在」检查。</li>
+    </ul>
+  </div>
+
+  <div class="footer">每日 AI 前沿技术精选 · automation-1784106545536 · 第 83 跑 · 2026-10-06 22:24 生成</div>
+</div>
+</body>
+</html>

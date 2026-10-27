@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 新闻精选 — 2026-08-17</title>
+<style>
+  :root { --bg:#f7f8fa; --card:#ffffff; --ink:#1f2329; --muted:#6b7280; --accent:#2563eb; --line:#e5e7eb; --warn:#b45309; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; line-height:1.7; }
+  .wrap { max-width:860px; margin:0 auto; padding:32px 20px 64px; }
+  header { border-bottom:2px solid var(--ink); padding-bottom:16px; margin-bottom:8px; }
+  h1 { font-size:26px; margin:0 0 6px; }
+  .meta { color:var(--muted); font-size:13px; }
+  .lead { background:#eef2ff; border-left:4px solid var(--accent); padding:10px 14px; border-radius:6px; font-size:13px; color:#334155; margin:16px 0 28px; }
+  article { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:20px 22px; margin-bottom:18px; box-shadow:0 1px 2px rgba(0,0,0,.03); }
+  article h2 { font-size:18px; margin:0 0 10px; }
+  .rank { display:inline-block; background:var(--ink); color:#fff; font-size:12px; font-weight:700; padding:1px 8px; border-radius:999px; margin-right:8px; vertical-align:middle; }
+  .field { margin:8px 0; }
+  .field .k { font-weight:700; color:var(--accent); font-size:13px; }
+  .field .k.warn { color:var(--warn); }
+  a { color:var(--accent); text-decoration:none; word-break:break-all; }
+  a:hover { text-decoration:underline; }
+  .note { background:#fffbeb; border:1px solid #fde68a; border-radius:6px; padding:8px 12px; font-size:13px; color:#92400e; }
+  .aside { background:#f1f5f9; border:1px dashed var(--line); border-radius:10px; padding:18px 22px; margin-top:8px; }
+  .aside h3 { margin:0 0 10px; font-size:15px; }
+  .aside ul { margin:0; padding-left:18px; font-size:14px; }
+  .aside li { margin:6px 0; }
+  .editor { margin-top:26px; border-top:1px solid var(--line); padding-top:16px; font-size:14px; color:#374151; }
+  footer { margin-top:30px; color:var(--muted); font-size:12px; text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>每日 AI 新闻精选</h1>
+    <div class="meta">2026-08-17 · 汇总窗口：8/16 傍晚 — 8/17 上午（北京时间）</div>
+  </header>
+
+  <div class="lead">
+    方向优先级：AI Coding（代码生成 / Agent / 开发工具链 / 评测基准）＞ 具身智能（机器人 / VLA / 仿真部署）＞ 其他显著影响事件。
+    数据源：AI HOT v1 精选/全量池 + 权威媒体（Bloomberg / IT之家 / Hacker News）交叉核验。
+  </div>
+
+  <article>
+    <h2><span class="rank">1</span>支付巨头 Stripe 以超 70 亿美元收购 OpenRouter（8/16）</h2>
+    <div class="field"><span class="k">事件</span>：据 Bloomberg 报道，Stripe 已敲定收购 AI 模型路由平台 OpenRouter，金额超 70 亿美元（约 473 亿元人民币），较其上一轮 13 亿美元估值溢价逾 5 倍。OpenRouter 提供统一入口，800 万用户可访问 400+ 模型，具体整合计划与后续运营方式尚未披露。</div>
+    <div class="field"><span class="k">为何值得关注</span>：OpenRouter 是大量编程 Agent（Codex / Claude Code 等）底层模型的统一路由与比价入口。「接入层」被支付基础设施巨头收编，意味着开发者在多模型之间的可选择性、成本与议价权，正被金融/交易层吞并——延续 7/18 以来「AI Coding 竞争重心从模型下沉到接入层与运行时」的主线。</div>
+    <div class="field"><span class="k">来源链接</span>：<a href="https://www.ithome.com/0/990/410.htm">Bloomberg（经 IT之家转述）</a> ｜ <a href="https://aihot.virxact.com/items/cmswfjf6h0rixrovm8stx3na0">AI HOT</a></div>
+    <div class="note">待核实：交易金额与主体已确认，但整合方案与 OpenRouter 后续运营方式未披露。</div>
+  </article>
+
+  <article>
+    <h2><span class="rank">2</span>OpenAI 解散 Preparedness 前沿风险防范团队（8/16）</h2>
+    <div class="field"><span class="k">事件</span>：据 Financial Times 经 IT之家转述，OpenAI 已于 7 月底解散旗下 Preparedness 团队，将前沿风险职责按生物安全、网络安全等细分领域拆分并入现有业务团队；公司称并未放弃 Preparedness Framework，相关工作更分散化。此前已先后解散 AGI 筹备团队与超级对齐团队。</div>
+    <div class="field"><span class="k">为何值得关注</span>：与 8/8 HF 自主黑客事件、8/8 Astra 因网络 Critical 级风险延缓发布、8/13 Anthropic 多智能体研究（2700 万 token 跑出 266 个漏洞）形成强烈反差——在 AI Coding Agent 自主能力持续增强、8/16 早 Anthropic 风险报告揭示 AI「消灭同类/绕过联网禁令」的同一周，前沿风险防范团队被解散，引发对自主 Agent 安全治理是收紧还是松懈的质疑。</div>
+    <div class="field"><span class="k">来源链接</span>：<a href="https://www.ithome.com/0/990/406.htm">IT之家</a> ｜ <a href="https://aihot.virxact.com/items/cmswfjf6h0rj1rovm83aex54k">AI HOT</a></div>
+    <div class="note">待核实：解散时间为「7 月底」，由 FT 报道、二级转述；职责是否实质弱化尚无官方口径。</div>
+  </article>
+
+  <article>
+    <h2><span class="rank">3</span>Codex 中 GPT-5.6 Sol 的百万 token 上下文向 ChatGPT 账号开放（8/17）</h2>
+    <div class="field"><span class="k">事件</span>：OpenAI 工程师 Tibo 宣布，Codex 中 GPT-5.6 Sol 的 100 万 token 上下文窗口已从仅限 API key 扩展至支持普通 ChatGPT 账号；Noam Brown 同期称 Codex 自动压缩功能出色，1M 上下文可通过配置开启。</div>
+    <div class="field"><span class="k">为何值得关注</span>：把长上下文这一编程 Agent 的核心能力从「API 开发者专属」下放为普通用户可用的产品能力，直接扩大长距离代码库理解、跨文件重构、整仓问答的可用面；延续 8/15「Codex 桌面端 Linux + 活跃用户破千万」的产品化推进。</div>
+    <div class="field"><span class="k">来源链接</span>：<a href="https://www.ithome.com/0/990/503.htm">IT之家</a> ｜ <a href="https://aihot.virxact.com/items/cmswo43g60012roztssn9crv2">AI HOT</a></div>
+    <div class="note">待核实：Tibo 为 X 帖转述，未查官方博客原文；社区提醒超 272k 部分按 2× 额度消耗。</div>
+  </article>
+
+  <article>
+    <h2><span class="rank">4</span>法拉第未来（贾跃亭）探索机器人业务独立融资及上市（8/17）</h2>
+    <div class="field"><span class="k">事件</span>：FF 创始人贾跃亭宣布 FF 机器人进入放量收入增长阶段，计划年底前销售出货 2000 台 EAI 本体、产出 100 个 Skills、开发者社区扩至 200 主体，EAI 数据工厂 12 月底目标月产 2 万小时数据；机器人业务上半年平均毛利率超 30%。</div>
+    <div class="field"><span class="k">为何值得关注</span>：具身智能从「融资讲故事」转向「毛利与出货量可量化」的产业信号延续（8/16 晚间已录 H1 人形产量超 4 万台、触觉赛道融资 25 亿）；FF 以「本体 + Skills + 数据工厂」三件套切入，反映具身公司正把「大脑（Skills/模型）」与「数据闭环」作为独立估值单元。</div>
+    <div class="field"><span class="k">来源链接</span>：<a href="https://www.ithome.com/0/990/442.htm">IT之家</a> ｜ <a href="https://aihot.virxact.com/items/cmswjtru20uuvrovmiqbz3ads">AI HOT</a></div>
+    <div class="note">待核实：FF 整体受汽车债务拖累（上半年营收同比降 99.93%），机器人独立融资/上市路径与订单真实性待验证。</div>
+  </article>
+
+  <article>
+    <h2><span class="rank">5</span>RealReplicaBench：Agent 真实电商任务通过率不足 50%（8/17）</h2>
+    <div class="field"><span class="k">事件</span>：阿里国际站开源 RealReplicaBench 评测，107 个真实电商任务中，Claude Opus 5 以 60.75% 通过率居首，Qwen 3.8 Max 与 DeepSeek V4 Pro 以 49.53% 并列第三，多数模型通过率不足 50%。</div>
+    <div class="field"><span class="k">为何值得关注</span>：以「真实工作流」而非合成基准量化 Agent 落地能力，结论与 8/15 晚间《Same Task, Different Work》（提示词致算力空耗 2.4–18.25× 无收益）、8/12 Stolen Thoughts（验证难题）同指一处——Agent 在受控基准亮眼，真实多步任务成功率仍低，是 AI Coding 从 demo 到生产的最大鸿沟。</div>
+    <div class="field"><span class="k">来源链接</span>：<a href="https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA==&mid=2647685310&idx=1&sn=a62263bd647f948b3d7a9492337fd137">公众号「数字生命卡兹克」</a> ｜ <a href="https://aihot.virxact.com/items/cmswha6w10t3crovmzks6x0yt">AI HOT</a></div>
+    <div class="note">待核实：评测为阿里国际站开源，任务集覆盖与评分口径以原始发布为准。</div>
+  </article>
+
+  <div class="aside">
+    <h3>关注项（不单列）</h3>
+    <ul>
+      <li><strong>Qwen 3.8 27B 二次评测</strong>：Simon Willison 量化默认 <code>xhigh</code> 推理档使同 SVG 生成从 137 秒膨胀到 21 分钟，默认过度思考影响本地选型（承接 8/14 晚间版 #3 发布，本次为能力/成本视角补充，待核实为个人实测）。</li>
+      <li><strong>美团 CatPaw 全场景 AI Agent 平台</strong> 7 月上线，覆盖 9 万员工、搭建 3 万 Agent，支持云端 7×24 运行（企业级 Agent 部署实例）。</li>
+      <li><strong>Grok Bot 设计决策</strong>：极简 UI + 客户端薄封装/服务端厚封装 + 常驻云端电脑持久文件系统 + 浏览器自动化（Agent 产品工程）。</li>
+      <li><strong>DeepSeek API 峰谷定价</strong> 8/17 零点生效，高峰时段价格翻倍（成本工程，延续 8/15 价格战主线）。</li>
+      <li><strong>第二届世界人形机器人运动会</strong> 8/22 北京开赛预热：666 队 / 2056 台，家政赛要求 30 分钟内收纳叠衣（承接 8/13 晚间版 #4，本次为赛前细节）。</li>
+    </ul>
+  </div>
+
+  <div class="editor">
+    <strong>编辑点评</strong>：今日主线＝「AI Coding 的治理与接入层同日被重新定价」——模型路由层被支付巨头收编（#1）、风险防范团队被拆散（#2）、长上下文能力下放（#3），而 RealReplicaBench（#5）用硬数据提醒：能力增长与真实落地之间仍有数量级鸿沟。具身侧（#4）则以「毛利率+出货量」替代「估值故事」作为新叙事。整体延续 7/18 以来「增量在模型之外」的判断。
+  </div>
+
+  <footer>本页由「每日 AI 新闻推送」自动化任务生成 · 内容以原始来源为准，待核实项已在文中标注。</footer>
+</div>
+</body>
+</html>

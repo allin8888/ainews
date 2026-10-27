@@ -1,0 +1,14 @@
+# 白名单策略：除下列显式条目外，工作区其余内容一律不进仓库
+# （tools/、.workbuddy/、内部运维文档等均不提交，防止敏感内容外泄）
+/*
+!/.gitignore
+!/index.html
+!/待核实追踪.md
+!/ai_news_rss.xml
+!/每日AI新闻推送_*.md
+!/每日AI新闻推送_*.html
+!/site/
+site/.*
+# 手写源与中间产物排除（置于白名单之后，最后匹配生效）
+/每日AI新闻推送_*.src.html
+/每日AI新闻推送_*.src.md

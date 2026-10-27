@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-08-31</title>
+<style>
+  :root {
+    --bg: #f5f7fa;
+    --card-bg: #ffffff;
+    --text: #1a1a2e;
+    --text-secondary: #555770;
+    --accent: #2563eb;
+    --accent-light: #dbeafe;
+    --border: #e2e8f0;
+    --tag-bg: #f1f5f9;
+    --tag-text: #334155;
+    --red: #dc2626;
+    --green: #16a34a;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.04);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 24px 16px 64px;
+  }
+  .container { max-width: 820px; margin: 0 auto; }
+
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+    color: #fff;
+    border-radius: 16px;
+    padding: 32px 36px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 24px rgba(37,99,235,0.25);
+  }
+  .header h1 { font-size: 22px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.3px; }
+  .header-meta { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 13px; opacity: 0.9; }
+  .header-meta span { display: inline-flex; align-items: center; gap: 4px; }
+  .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    border-radius: 6px;
+    padding: 2px 10px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  /* Section titles */
+  .section-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin: 36px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent-light);
+  }
+
+  /* News card */
+  .news-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    padding: 28px 32px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.2s;
+  }
+  .news-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.10); }
+  .news-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px; height: 28px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .news-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+  .news-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 6px;
+  }
+  .news-body { font-size: 14.5px; color: var(--text-secondary); margin-bottom: 14px; }
+  .news-body p { margin-bottom: 10px; }
+  .news-body ul { margin: 8px 0 12px 18px; }
+  .news-body li { margin-bottom: 6px; }
+  .news-body strong { color: var(--text); }
+
+  /* Tags */
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    border-radius: 6px;
+    padding: 3px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid var(--border);
+  }
+
+  /* Metrics table */
+  .metrics {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 13.5px;
+    border: 1px solid var(--border);
+  }
+  .metrics dt { font-weight: 700; color: var(--text); margin-bottom: 2px; }
+  .metrics dd { margin-left: 0; margin-bottom: 8px; color: var(--text-secondary); }
+  .metrics dl { display: grid; grid-template-columns: max-content 1fr; gap: 2px 12px; }
+  .metrics dt::after { content: "："; }
+
+  /* Exclude table */
+  .exclude-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-top: 12px;
+  }
+  .exclude-table th {
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    font-weight: 700;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+  }
+  .exclude-table td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    vertical-align: top;
+  }
+  .exclude-table tr:nth-child(even) td { background: #fafbfc; }
+
+  /* Main line */
+  .main-line {
+    background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%);
+    border: 1px solid #fde047;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+  }
+  .main-line h3 { font-size: 15px; font-weight: 700; color: #854d0e; margin-bottom: 14px; }
+  .main-line p { font-size: 14px; color: #713f12; margin-bottom: 10px; line-height: 1.75; }
+  .main-line p:last-child { margin-bottom: 0; }
+
+  /* Tentative section */
+  .tentative {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-radius: 12px;
+    padding: 22px 28px;
+    margin-bottom: 20px;
+  }
+  .tentative h3 { font-size: 15px; font-weight: 700; color: #9a3412; margin-bottom: 12px; }
+  .tentative ul { margin-left: 18px; }
+  .tentative li { font-size: 14px; color: #7c2d12; margin-bottom: 8px; line-height: 1.7; }
+  .tentative li:last-child { margin-bottom: 0; }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    color: #94a3b8;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* Divider */
+  hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+
+  @media (max-width: 600px) {
+    .header { padding: 24px 20px; }
+    .news-card { padding: 20px 18px; }
+    .header-meta { flex-direction: column; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>📰 每日 AI 前沿技术精选</h1>
+    <div class="header-meta">
+      <span>📅 <strong>2026-08-31</strong></span>
+      <span>🕘 <strong>09:17</strong>（GMT+8）</span>
+      <span>📋 <strong>5 条</strong>精选</span>
+      <span class="badge">严格 24h 窗口</span>
+    </div>
+    <div class="header-meta" style="margin-top:8px;opacity:0.8;">
+      <span>窗口：2026-08-30 09:17 – 2026-08-31 09:17</span>
+    </div>
+  </div>
+
+  <!-- Section: Top Picks -->
+  <div class="section-title">今日精选</div>
+
+  <!-- News 1 -->
+  <div class="news-card">
+    <div class="news-num">1</div>
+    <div class="news-label">AI 安全 · 递归自我改进</div>
+    <div class="news-title">Anthropic AAR：Claude 用 48 小时自动对齐 10 类安全失败，超越 28 位人类研究员</div>
+    <div class="news-body">
+      <p><strong>事件概述：</strong>8 月 28 日，Anthropic 发布《Automated Researchers Can Reliably Mitigate Alignment Failures》，披露其首创的「自动化对齐研究员」（AAR）系统——由 Claude Opus 4.8 驱动，在 48 小时内自主完成文献检索、训练方案设计、小模型微调、独立评估的完整闭环，成功缓解 10 类常见对齐失败。该工作在 8 月 30 日被 Unite.AI、IBTimes、ASAP 等科技媒体详细解读。</p>
+      <p><strong>技术与工程价值：</strong></p>
+      <ul>
+        <li><strong>核心机制（对齐研究流程自动化）：</strong>每个 AAR 以单线程循环运行：检索文献→撰写 mini-paper→在 1 张 H200 GPU 上微调目标模型（约 30 分钟）→独立评估器打分→迭代。5 个 AAR 并行，共享发现论坛；监控 Agent 拦截蒸馏行为与基准污染。</li>
+        <li><strong>实际影响：</strong>首次实证「AI 可自动化部分对齐研究迭代循环」——对 7 项人类可比较的对齐失败，最佳 AAR 均超过 28 位平均 2.5 年经验的安全研究员；欺骗类高出 20%。成本 $4/小时（AAR）vs $150/小时（人类）。更惊人：Claude Sonnet 5 用 60 小时、仅 2,000 样本（生产数据的 1/15,000）即接近修复 Claude Opus 4.8 早期 checkpoint 的对齐缺陷。</li>
+      </ul>
+    </div>
+    <div class="metrics">
+      <dl>
+        <dt>安全缺口关闭</dt><dd>10 类对齐失败：26%–96%（欺骗类平均 85%）</dd>
+        <dt>泛化验证</dt><dd>在未见基准、Petri 多轮审计工具、4.7 倍更大模型上均保持有效</dd>
+        <dt>成本对比</dt><dd>AAR $4/小时 vs 人类研究员 $150/小时</dd>
+        <dt>代码/论文</dt><dd>arXiv（Anthropic Alignment Science Report，2026-08-28）</dd>
+        <dt>来源</dt><dd>Unite.AI、IBTimes Singapore、ASAP、Anthropic 官方博客</dd>
+      </dl>
+    </div>
+    <div class="tags">
+      <span class="tag">#AI 安全</span>
+      <span class="tag">#递归自我改进</span>
+      <span class="tag">#对齐研究</span>
+      <span class="tag">#Anthropic</span>
+    </div>
+  </div>
+
+  <!-- News 2 -->
+  <div class="news-card">
+    <div class="news-num">2</div>
+    <div class="news-label">AI Coding · Agent 治理</div>
+    <div class="news-title">OpenAI Codex 清算 8 类后台额度「偷跑」：异常 Goal 任务竟吃掉用户一周 15%–70%</div>
+    <div class="news-body">
+      <p><strong>事件概述：</strong>8 月 30 日，OpenAI Codex 工程负责人 Tibo 公开披露并修复 8 类会在后台额外消耗使用额度的异常行为，同时为付费用户重置历史额度。同等额度预计可比此前多支撑 10%–50%。该公告在 8 月 30 日晚至 8 月 31 日上午被多家中文科技媒体详细报道。</p>
+      <p><strong>技术与工程价值：</strong></p>
+      <ul>
+        <li><strong>核心机制（后台消耗八大病灶）：</strong>①Compaction 上下文压缩 Bug；②Memory 后台记忆进程死循环（某 worker 检查 15,000 次「能否停止」）；③Goal 任务越过终止条件（个案吞噬周额度 15%–70%）；④Automations 执行频率超出设置；⑤Subagents 偷偷调用更强模型；⑥Computer History 重复总结（极端每周白吃 20%）；⑦Rolling summaries 普通对话也触发后台请求；⑧MCP 工具结果重复编码或截断后重新获取。</li>
+        <li><strong>实际影响：</strong>OpenAI 首次公开承认 Codex「后台偷跑」并系统性修复，标志 AI 编程 Agent 的「隐性成本透明度」进入企业级审计阶段。同时暴露「持久模式 Agent」在默认开启下极易产生资源浪费——后续持久模式上线需以更严格的配额监控为前提。</li>
+      </ul>
+    </div>
+    <div class="metrics">
+      <dl>
+        <dt>修复效果</dt><dd>同等额度多支撑 10%–50%；异常 Goal 任务最高吞噬单周额度 70%</dd>
+        <dt>补充动作</dt><dd>增加监控告警；计划在前端展示额度去向</dd>
+        <dt>来源</dt><dd>OpenAI Codex 官方博客（Tibo 公告）、网易科技、新浪财经、AI Radar</dd>
+      </dl>
+    </div>
+    <div class="tags">
+      <span class="tag">#AI Coding</span>
+      <span class="tag">#OpenAI</span>
+      <span class="tag">#Agent 治理</span>
+      <span class="tag">#成本控制</span>
+    </div>
+  </div>
+
+  <!-- News 3 -->
+  <div class="news-card">
+    <div class="news-num">3</div>
+    <div class="news-label">AI Coding · 开源标准</div>
+    <div class="news-title">AGENTS.md 终结「配置战」：18 个月收敛至单一入口，超 6 万开源仓库 Adopted</div>
+    <div class="news-body">
+      <p><strong>事件概述：</strong>8 月 30 日，日本 Pochang Lab 发布长达 18 个月的 AGENTS.md 标准化演进史深度分析——从 Amp 最初提议 singular AGENT.md（2025-05-07），到 plural AGENTS.md 成为公共容器（2025-08-19），再到 Linux Foundation 旗下 Agentic AI Foundation 正式托管。截至 2026 年 8 月已有超 6 万个开源项目 Adopted，兼容 Codex、Cursor、GitHub Copilot、Gemini CLI、Windsurf、Zed、Jules、Factory 等 20+ 工具；GitHub 官方仓库 23,991 Star、1,815 Fork。</p>
+      <p><strong>技术与工程价值：</strong></p>
+      <ul>
+        <li><strong>核心机制（最小化协议面获胜）：</strong>AGENTS.md 不规定 JSON Schema、不定义必填字段、不设版本号，只统一一个文件名和发现约定；内容各仓库自定。这使各工具厂商无需放弃自身产品哲学即可接入，开发者只需维护一个文件。</li>
+        <li><strong>实际影响：</strong>标志着 AI Coding Agent 配置文件的「战国时代」正式结束。过去一个仓库需维护 .cursorrules、CLAUDE.md、.clinerules、.windsurfrules、GEMINI.md 等多份同名异名文件，AGENTS.md 用「单一入口」解决了这一碎片化浪费。Claude Code 仍是明显例外，尚未 Adopt。</li>
+      </ul>
+    </div>
+    <div class="metrics">
+      <dl>
+        <dt>Adopted</dt><dd>超 6 万开源仓库</dd>
+        <dt>GitHub 仓库</dt><dd>23,991 Star / 1,815 Fork（截至 2026-08-30）</dd>
+        <dt>兼容工具</dt><dd>Codex、Cursor、Copilot、Gemini CLI、Windsurf、Zed、Jules、Factory 等 20+</dd>
+        <dt>博客</dt><dd>Pochang Lab 深度分析文（pochanglab.com，2026-08-30）</dd>
+      </dl>
+    </div>
+    <div class="tags">
+      <span class="tag">#AI Coding</span>
+      <span class="tag">#开源标准</span>
+      <span class="tag">#Agent 基础设施</span>
+      <span class="tag">#工程规范</span>
+    </div>
+  </div>
+
+  <!-- News 4 -->
+  <div class="news-card">
+    <div class="news-num">4</div>
+    <div class="news-label">AI 治理 · 版权合规</div>
+    <div class="news-title">索尼与华纳音乐起诉 Anthropic：版权侵权诉讼升级，涉及「数万首」作品</div>
+    <div class="news-body">
+      <p><strong>事件概述：</strong>8 月 30 日（当地时间周五晚），索尼音乐与华纳音乐出版机构在加州北区联邦法院对 Anthropic 提起版权侵权诉讼，将 CEO Dario Amodei 和联合创始人 Benjamin Mann 列为被告。诉状 48 页，指控 Anthropic 在开发 Claude 系列模型过程中，通过种子下载、网页抓取等方式获取受版权保护的音乐作品；覆盖范围远超 BMG 此前针对 Anthropic 的 493 首作品诉讼。Anthropic 回应「不同意主张，将积极应诉」。</p>
+      <p><strong>技术与工程价值：</strong></p>
+      <ul>
+        <li><strong>核心机制（训练数据版权边界再划定）：</strong>音乐版权可拆分为歌词、录音和曲谱不同权利，同一首歌可能由多方分别持有——这使围绕模型训练材料的争议可能同时产生多组诉讼，形成「诉讼叠加」效应。本案将「训练数据授权」的商业谈判范畴从文本/代码正式延伸至音频/音乐等强版权领域。</li>
+        <li><strong>实际影响：</strong>对 Anthropic 而言，Q2 刚披露 ARR 650 亿美元、营业利润首度转正、冲刺 10 月 IPO 的关键窗口期，此时遭遇大规模版权诉讼构成显著法律与舆论风险；对行业而言，所有依赖公开互联网数据训练的模型厂商均需重新评估数据授权风险敞口。</li>
+      </ul>
+    </div>
+    <div class="metrics">
+      <dl>
+        <dt>管辖法院</dt><dd>加州北区联邦法院</dd>
+        <dt>诉状长度</dt><dd>48 页</dd>
+        <dt>涉案作品</dt><dd>「数万首」音乐作品（远超 BMG 案 493 首）</dd>
+        <dt>被告</dt><dd>Anthropic、Dario Amodei、Benjamin Mann</dd>
+        <dt>来源</dt><dd>Axios、财新等（2026-08-30）</dd>
+      </dl>
+    </div>
+    <div class="tags">
+      <span class="tag">#AI 治理</span>
+      <span class="tag">#版权</span>
+      <span class="tag">#Anthropic</span>
+      <span class="tag">#合规风险</span>
+    </div>
+  </div>
+
+  <!-- News 5 -->
+  <div class="news-card">
+    <div class="news-num">5</div>
+    <div class="news-label">具身智能 · 产业落地</div>
+    <div class="news-title">敏实集团×智元 塞尔维亚人形机器人工厂量产启动：中国企业在欧洲首座机器人工厂落地</div>
+    <div class="news-body">
+      <p><strong>事件概述：</strong>8 月 29 日，塞尔维亚沙巴茨，敏实集团与智元创新（上海）合作建设的人形机器人工厂正式启动量产，塞尔维亚总统武契奇出席仪式并化身守门员与射门机器人「过招」。该工厂是中国企业在欧洲投资建设的<strong>首家人形机器人工厂</strong>，初期年产 5,000 台，扩展后计划年产 2 万台，首批机器人将于 2027 年贝尔格莱德专业类世博会亮相。</p>
+      <p><strong>技术与工程价值：</strong></p>
+      <ul>
+        <li><strong>核心机制（具身智能出海 + 本地化制造）：</strong>量产机器人搭载多模态感知系统，指尖集成触觉与传感，具备精密力控与柔性抓取能力，依托 AI 深度学习算法可自主适应复杂环境并持续智能进化。首批落地场景明确为汽车制造产线上下料、物料搬运、危化品装卸（如氨、硫酸），以及养老/展馆导览等服务场景。</li>
+        <li><strong>实际影响：</strong>中国具身智能产业链从「技术验证/国内交付」走向「海外本土化制造」的标志性事件——敏实集团在塞尔维亚已建有 10 家工厂（2018 年起布局），此次机器人工厂是其制造业经验向机器人领域延伸；年产 5,000→2 万台的路径清晰，呼应 WRC 2026 闭幕后「具身从炫技转向上岗」的行业趋势。</li>
+      </ul>
+    </div>
+    <div class="metrics">
+      <dl>
+        <dt>产能规划</dt><dd>初期年产 5,000 台 → 扩展后年产 2 万台</dd>
+        <dt>首批落地</dt><dd>2027 年贝尔格莱德专业类世博会（约 80 台政府采购）</dd>
+        <dt>应用场景</dt><dd>汽车制造上下料/质检、危化品装卸、养老、展馆导览、清洁</dd>
+        <dt>就业岗位</dt><dd>初期约 200 个</dd>
+        <dt>来源</dt><dd>环球时报、环球网、塞尔维亚《今日报》《闪电报》</dd>
+      </dl>
+    </div>
+    <div class="tags">
+      <span class="tag">#具身智能</span>
+      <span class="tag">#人形机器人</span>
+      <span class="tag">#出海</span>
+      <span class="tag">#产业落地</span>
+    </div>
+  </div>
+
+  <!-- Exclude Table -->
+  <div class="section-title">本轮排除记录（时间戳/去重纪律）</div>
+  <table class="exclude-table">
+    <thead>
+      <tr><th>候选</th><th>来源时间</th><th>排除原因</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>OpenAI 切断 Cursor 供应</td><td>8/28</td><td>已在第 56 跑（8/30 17:09）覆盖</td></tr>
+      <tr><td>Recuris RSI 记忆架构</td><td>8/30</td><td>已在第 56 跑覆盖</td></tr>
+      <tr><td>Gemini Omni 1.1 Flash</td><td>8/27</td><td>已在第 56 跑覆盖</td></tr>
+      <tr><td>IBM Granite 4.2</td><td>8/25</td><td>已在第 56 跑覆盖</td></tr>
+      <tr><td>Dyna-2 百万小时视频</td><td>8/30</td><td>已在第 56 跑覆盖</td></tr>
+      <tr><td>Uber 70% PR / Dwarkesh</td><td>8/30 上午</td><td>已在第 55 跑（8/30 10:06）覆盖</td></tr>
+      <tr><td>Code-as-World / 原力灵机 DM0.5</td><td>8/30</td><td>已在第 55 跑覆盖</td></tr>
+      <tr><td>DeepSeek Harness 19万 Star</td><td>8/30</td><td>已在第 55 跑覆盖</td></tr>
+      <tr><td>GLM-5.3-Flash / Qwen3.8-Flash</td><td>8/27/28</td><td>已在第 50–54 跑覆盖</td></tr>
+      <tr><td>Hy4 preview 开源</td><td>8/28</td><td>已在第 54 跑覆盖</td></tr>
+      <tr><td>Meta Muse Glimmer 30B</td><td>8/5</td><td>已超出 24h 窗口</td></tr>
+      <tr><td>字节「豆包工作」升级送会员</td><td>8/30 20:12</td><td>产品营销层面，非技术突破</td></tr>
+      <tr><td>豆包大模型 2.2 延期</td><td>8/30 21:50</td><td>产品发布节奏调整，无技术信息</td></tr>
+      <tr><td>蚂蚁 Agentar Skill 化</td><td>8/30</td><td>平台功能更新，非技术突破</td></tr>
+      <tr><td>快手/百度组织调整（Agent 事业部）</td><td>8/30–31</td><td>组织架构新闻，非技术事件</td></tr>
+      <tr><td>OpenWebUI / oMLX / Superagent</td><td>8/30 Product Hunt</td><td>工具层面增量改进，无技术突破</td></tr>
+      <tr><td>Faraday Future 中东机器人交付 6 台</td><td>8/30</td><td>商业交付新闻，非技术突破</td></tr>
+      <tr><td>怀柔具身智能论坛（8/29–30）</td><td>8/30</td><td>学术活动，无具体技术成果发布</td></tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <!-- Main Line -->
+  <div class="section-title">今日主线</div>
+  <div class="main-line">
+    <h3>「Agent 治理成本显性化 × 对齐研究从人工走向自动化 × 配置文件战国时代终结 × 具身智能欧洲本土化落地」</h3>
+    <p>1. <strong>Anthropic AAR</strong> 是本期最具方法论冲击性的一条——它把「对齐研究」这一 traditionally human-intensive 工作流，拆解为可自动化的迭代循环，并在 7/10 类失败上超越 28 位人类安全研究员。成本从 $150/小时降至 $4/小时，更警醒的是：Claude Sonnet 5（较弱模型）用 60 小时、仅 2,000 样本就接近修复了 Claude Opus 4.8 早期 checkpoint 的对齐缺陷，数据效率是生产流程的 15,000 倍——「强模型训练弱模型对齐」可能成为低成本安全研究的新范式。</p>
+    <p>2. <strong>OpenAI Codex 后台偷跑清算</strong>与 AAR 形成有趣对照：前者暴露了 Agent 基础设施层的「隐性成本黑洞」（异常 Goal 任务吞噬 70% 周额度），后者则展示了用 AI 自动化的力量去解决 AI 自身产生的问题。两件事共同指向同一趋势——Agent 系统的复杂度和不可观测性正在超越人工管控的极限，必须依靠自动化监控与治理来维系可持续运营。</p>
+    <p>3. <strong>AGENTS.md 的 18 个月标准化战争</strong>宣告结束——这不是技术突破，但是工程基础设施的关键共识。它消除了 AI Coding Agent 时代的「配置文件碎片化成本」，让开发者、工具厂商、开源社区各取所需。Claude Code 仍未 Adopt 是唯一悬念。</p>
+    <p>4. <strong>索尼/华纳起诉 Anthropic</strong>把 AI 训练数据合规从「文本灰色地带」正式拉入「音乐强版权领域」——这对所有依赖公开数据训练的模型厂商是警示信号：版权诉讼的战场正在扩展，Anthropic 的 IPO 窗口期遭遇此事件，法律与舆论风险需密切关注。</p>
+    <p>5. <strong>塞尔维亚人形机器人工厂量产</strong>是中国具身智能出海从「产品出口」升级为「制造出口」的标志事件——年产 5,000→2 万台的路径清晰，目标场景（汽车制造/危化/养老/世博会）明确，呼应 WRC 2026「具身从炫技转向上岗」的行业叙事。</p>
+  </div>
+
+  <!-- Tentative -->
+  <div class="section-title">待核实</div>
+  <div class="tentative">
+    <h3>⚠️ 以下数据为发布方自述或二级来源，需独立验证</h3>
+    <ul>
+      <li>Anthropic AAR 26%–96% 安全缺口关闭率为研究论文自述，独立复现与 Petri 审计完整结果待补充；$4/小时 vs $150/小时成本对比口径待确认</li>
+      <li>OpenAI Codex 8 类额度浪费修复效果的长期稳定性（是否会有新回归）尚无第三方数据</li>
+      <li>AGENTS.md 6 万 Adopted 仓库数为 Linux Foundation 官方统计，但 Claude Code 未 Adopt 的具体原因待确认</li>
+      <li>索尼/华纳诉 Anthropic 的「数万首」作品数量与法律定性（侵权 vs 合理使用）尚在诉讼早期，最终判决未知</li>
+      <li>塞尔维亚工厂年产 5,000→2 万台产能规划为敏实集团披露，实际交付节奏待观察；武契奇出席仪式属政治背书，非技术验证</li>
+    </ul>
+  </div>
+
+  <!-- Archive Status -->
+  <div class="section-title">归档状态说明</div>
+  <div class="tentative" style="background:#f0fdf4;border-color:#86efac;">
+    <h3 style="color:#166534;">✅ 执行状态</h3>
+    <ul style="margin-left:18px;">
+      <li style="color:#14532d;"><strong>Markdown 路径：</strong><code>O:/quark/automation/每日 AI 新闻推送/每日AI新闻推送_20260831_0917.md</code></li>
+      <li style="color:#14532d;"><strong>HTML 路径：</strong><code>O:/quark/automation/每日 AI 新闻推送/每日AI新闻推送_20260831_0917.html</code></li>
+      <li style="color:#14532d;"><strong>归档状态：</strong>待写入后执行双轨归档（dated + latest）</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    本期由「每日 AI 新闻推送」自动化任务（automation-1784106545536）产出<br>
+    抓取窗口：2026-08-30 09:17 – 2026-08-31 09:17（GMT+8）· 第 57 跑
+  </div>
+
+</div>
+</body>
+</html>

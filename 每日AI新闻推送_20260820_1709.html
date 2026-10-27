@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日 AI 前沿技术精选 - 2026-08-20</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: #0f1117;
+            color: #e4e6eb;
+            line-height: 1.7;
+            padding: 40px 20px;
+        }
+        .container { max-width: 860px; margin: 0 auto; }
+        .header {
+            border-bottom: 2px solid #2a2d37;
+            padding-bottom: 24px;
+            margin-bottom: 32px;
+        }
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .header .meta {
+            font-size: 14px;
+            color: #8b8fa3;
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .header .meta span { display: flex; align-items: center; gap: 4px; }
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #3a3d4a, transparent);
+            margin: 32px 0;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #7c8aff;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-title::before {
+            content: "";
+            width: 4px;
+            height: 18px;
+            background: #7c8aff;
+            border-radius: 2px;
+        }
+        .news-card {
+            background: #1a1d27;
+            border: 1px solid #2a2d37;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: border-color 0.2s;
+        }
+        .news-card:hover { border-color: #3d4155; }
+        .news-card .rank {
+            display: inline-block;
+            background: linear-gradient(135deg, #7c8aff, #5b7aff);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-right: 10px;
+        }
+        .news-card h2 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+        .news-card .source {
+            font-size: 12px;
+            color: #6b7280;
+            margin-bottom: 14px;
+        }
+        .news-card .overview {
+            font-size: 14px;
+            color: #c4c7d0;
+            margin-bottom: 14px;
+            padding-left: 12px;
+            border-left: 2px solid #3d4155;
+        }
+        .news-card h3 {
+            font-size: 13px;
+            font-weight: 600;
+            color: #7c8aff;
+            margin: 14px 0 8px;
+        }
+        .news-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .news-card ul li {
+            font-size: 14px;
+            color: #b0b3bd;
+            padding: 4px 0 4px 16px;
+            position: relative;
+        }
+        .news-card ul li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #5b7aff;
+        }
+        .news-card .tags {
+            margin-top: 14px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .news-card .tag {
+            background: #252836;
+            color: #8b8fa3;
+            font-size: 12px;
+            padding: 3px 10px;
+            border-radius: 4px;
+            border: 1px solid #2e3142;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #2a2d37;
+            font-size: 13px;
+            color: #6b7280;
+        }
+        .footer p { margin-bottom: 6px; }
+        .footer .status-ok { color: #4ade80; }
+        .footer .status-warn { color: #fbbf24; }
+        .highlight-box {
+            background: #1e2230;
+            border: 1px solid #2e3450;
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin: 10px 0;
+            font-size: 13px;
+            color: #c4c7d0;
+        }
+        .highlight-box strong { color: #7c8aff; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>每日 AI 前沿技术精选</h1>
+            <div class="meta">
+                <span>📅 2026-08-20</span>
+                <span>🕐 17:09</span>
+                <span>📊 精选 5 条</span>
+            </div>
+        </div>
+
+        <div class="section-title">今日精选</div>
+
+        <!-- 新闻 1 -->
+        <div class="news-card">
+            <span class="rank">TOP 1</span>
+            <h2>SpaceX 以 600 亿美元收购 Cursor 母公司 Anysphere</h2>
+            <div class="source">腾讯新闻 / 科技日报 | 2026-08-14/18</div>
+            <div class="overview">
+                SpaceX 确认收购 AI 编程 IDE 公司 Cursor 的母公司 Anysphere，交易金额约 600 亿美元。这是 2026 年 AI Coding 赛道最大规模并购，标志 AI 编程工具进入「平台化整合」阶段。
+            </div>
+            <h3>技术与工程价值</h3>
+            <ul>
+                <li><strong>核心机制</strong>：Cursor 采用 VS Code 分支架构，将 AI 深度嵌入编辑器；收购后 xAI 与 Cursor 在模型中立性上的关系引发关注</li>
+                <li><strong>实际影响</strong>：600 亿估值较此前融资估值增长数倍，反映头部 AI 基础设施对编程工作流的战略卡位</li>
+            </ul>
+            <div class="highlight-box">
+                <strong>关键指标</strong>：估值 600 亿美元；同期 Claude Code 环比增速 5.2% vs Codex 环比 20.8%
+            </div>
+            <div class="tags">
+                <span class="tag">#AI Coding</span>
+                <span class="tag">#并购</span>
+                <span class="tag">#Cursor</span>
+            </div>
+        </div>
+
+        <!-- 新闻 2 -->
+        <div class="news-card">
+            <span class="rank">TOP 2</span>
+            <h2>Claude Code 增长神话破灭，用户大规模转向 Codex</h2>
+            <div class="source">新智元 / 界面新闻 | 2026-08-20</div>
+            <div class="overview">
+                Claude Code ARR 环比增速暴跌至 5.2%，OpenAI Codex 近四周环比增长 20.8%。Anthropic 为合规欧盟 AI 法案添加不可感知水印，引发用户退订潮，GitHub 涌现大量去水印工具。
+            </div>
+            <h3>技术与工程价值</h3>
+            <ul>
+                <li><strong>核心机制</strong>：Claude Code Auto Mode 已于 8/14 起默认开启，内置风险分级分类器三层防御</li>
+                <li><strong>实际影响</strong>：Cursor 以「退订 Claude 截图送 200 美元」补贴抢人；竞争从「功能对标」转向「用户忠诚度与生态绑定」</li>
+            </ul>
+            <div class="highlight-box">
+                <strong>待核实</strong>：水印合规强制范围（API/CLI/Extension 全覆盖？）/ 额度延期具体条款<br>
+                <strong>性能对比</strong>：Terminal-Bench 2.1 榜单 Claude Code Fable 5 以 83.8% 领先 Codex GPT-5.5 的 83.2%
+            </div>
+            <div class="tags">
+                <span class="tag">#AI Coding</span>
+                <span class="tag">#Claude Code</span>
+                <span class="tag">#市场格局</span>
+            </div>
+        </div>
+
+        <!-- 新闻 3 -->
+        <div class="news-card">
+            <span class="rank">TOP 3</span>
+            <h2>镜智格物落地上海张江，自进化 AI 系统产业化迈出关键一步</h2>
+            <div class="source">腾讯新闻 | 2026-08-20</div>
+            <div class="overview">
+                长期记忆团队 EverMind 与长程推理项目 MiroMind 正式落地上海张江，注册成立「上海镜智格物人工智能科技有限公司」，系统性输出从「技能层」「脚手架层」到「模型权重层」的完整自进化全栈技术方案。
+            </div>
+            <h3>技术与工程价值</h3>
+            <ul>
+                <li><strong>核心机制</strong>：构建 Agent 从「感知错误」→「修改逻辑」→「形成长期记忆」的闭环；核心技术包括 EverOS、MiroThinker、Raven、Context Model</li>
+                <li><strong>实际影响</strong>：海外 NeoLab（RSI 46.5 亿、Ineffable 51 亿）多停留在单点理论探索，镜智格物已系统性输出全栈方案；C 端产品 EverMe 已有数千名早期用户参与 Alpha 测试</li>
+            </ul>
+            <div class="highlight-box">
+                <strong>论文支撑</strong>：arXiv 百页综述《Self-Improvement of Large Language Models》(2603.25681) 梳理自我提升闭环四步迭代
+            </div>
+            <div class="tags">
+                <span class="tag">#递归自我改进</span>
+                <span class="tag">#自进化AI</span>
+                <span class="tag">#上海张江</span>
+            </div>
+        </div>
+
+        <!-- 新闻 4 -->
+        <div class="news-card">
+            <span class="rank">TOP 4</span>
+            <h2>General Intuition 开源 MIRA：多玩家实时交互世界模型</h2>
+            <div class="source">将门创投 / arXiv | 2026-08-20</div>
+            <div class="overview">
+                General Intuition 与 Kyutai 等机构联合开源 MIRA 框架，基于冻结 DINOv3 特征的表示自编码器构建语义紧凑潜空间，实现多玩家实时交互式世界模型。
+            </div>
+            <h3>技术与工程价值</h3>
+            <ul>
+                <li><strong>核心机制</strong>：输入四名玩家的历史视角与动作流，联合预测四个玩家未来画面；采用扩散强制训练策略与实时自回归推演解耦，10 Hz 潜变量更新 + 20 FPS 视频输出</li>
+                <li><strong>实际影响</strong>：解决单玩家世界模型「物体融合失效」问题——多视角输入为目标物体提供连续空间位置约束，防止表征错误合并</li>
+            </ul>
+            <div class="highlight-box">
+                <strong>关键指标</strong>：gFID 10.7（潜空间）vs 81.0（像素空间），提升近一个数量级<br>
+                <strong>资源</strong>：代码 https://github.com/mira-wm/mira · 论文 https://arxiv.org/abs/2607.05352
+            </div>
+            <div class="tags">
+                <span class="tag">#世界模型</span>
+                <span class="tag">#多智能体</span>
+                <span class="tag">#开源</span>
+            </div>
+        </div>
+
+        <!-- 新闻 5 -->
+        <div class="news-card">
+            <span class="rank">TOP 5</span>
+            <h2>WRC 2026 五大趋势：机器人从技术验证走向产品验证</h2>
+            <div class="source">PanDaily / 科技日报 | 2026-08-19/20</div>
+            <div class="overview">
+                2026 世界机器人大会 8 月 19 日北京开幕，300+ 企业、2000+ 展品、150+ 新品首秀。宇树科技同日科创板上市，首日市值 3417.7 亿元、涨幅 460%。
+            </div>
+            <h3>技术与工程价值</h3>
+            <ul>
+                <li><strong>核心机制</strong>：大晓机器人发布开悟世界模型 Kairos 3.1（视频生成与状态预测评测第一，超越 Cosmos3/PI/MotuBrain），并向全行业开源</li>
+                <li><strong>实际影响</strong>：宇树 G1 机器人乒乓球互动延迟≤5ms，标志感知-决策-控制-执行全链路成熟；汪星兴预测具身智能「ChatGPT 时刻」最快 2-3 年、最慢 5-10 年</li>
+            </ul>
+            <div class="highlight-box">
+                <strong>待核实</strong>：宇树首日市值 3417.7 亿元（媒体报道）/ Kairos 3.1 评测第一（厂商自述）<br>
+                <strong>行业趋势</strong>：①技术验证→产品验证 ②世界模型聚焦但热度降温 ③触觉传感成新焦点 ④外骨骼初显潜力 ⑤关节成为新竞争战场
+            </div>
+            <div class="tags">
+                <span class="tag">#具身智能</span>
+                <span class="tag">#世界机器人大会</span>
+                <span class="tag">#宇树</span>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="footer">
+            <p><strong>归档状态说明</strong></p>
+            <p>📄 Markdown 路径：<code>O:/quark/automation/每日 AI 新闻推送/每日AI新闻推送_20260820_1709.md</code></p>
+            <p>🌐 HTML 路径：<code>O:/quark/automation/每日 AI 新闻推送/每日AI新闻推送_20260820_1709.html</code></p>
+            <p class="status-warn">⚠️ 执行状态：待归档</p>
+        </div>
+    </div>
+</body>
+</html>

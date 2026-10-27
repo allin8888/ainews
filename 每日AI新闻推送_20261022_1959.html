@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-10-22</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --card-border: #30363d;
+    --text: #e6edf3;
+    --text-dim: #9da7b3;
+    --accent: #58a6ff;
+    --green: #3fb950;
+    --orange: #d29922;
+    --purple: #bc8cff;
+    --code-bg: #1c2128;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    line-height: 1.7;
+    padding: 32px 20px 64px;
+  }
+  .container { max-width: 860px; margin: 0 auto; }
+  header.page {
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 20px;
+    margin-bottom: 28px;
+  }
+  header.page h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 14px;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .meta b { color: var(--accent); font-weight: 600; }
+  .window {
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--orange);
+    background: rgba(210, 153, 34, 0.08);
+    border: 1px solid rgba(210, 153, 34, 0.3);
+    border-radius: 6px;
+    padding: 6px 12px;
+    display: inline-block;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 24px 26px;
+    margin-bottom: 26px;
+  }
+  .card h2 {
+    font-size: 18.5px;
+    font-weight: 650;
+    line-height: 1.5;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .card h2 .no { color: var(--accent); margin-right: 6px; }
+  .src {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed var(--card-border);
+  }
+  .card h3 {
+    font-size: 15px;
+    font-weight: 650;
+    color: var(--accent);
+    margin: 16px 0 8px;
+  }
+  .card p { font-size: 14.5px; color: var(--text); margin-bottom: 8px; }
+  .card ul { margin: 6px 0 10px 20px; }
+  .card li { font-size: 14.5px; margin-bottom: 8px; }
+  .card li b, .card p b { color: var(--green); font-weight: 650; }
+  .card a { color: var(--accent); text-decoration: none; word-break: break-all; }
+  .card a:hover { text-decoration: underline; }
+  .tags { margin-top: 14px; }
+  .tag {
+    display: inline-block;
+    font-size: 12px;
+    color: var(--purple);
+    background: rgba(188, 140, 255, 0.1);
+    border: 1px solid rgba(188, 140, 255, 0.35);
+    border-radius: 999px;
+    padding: 1px 10px;
+    margin-right: 6px;
+  }
+  pre.metrics {
+    background: var(--code-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 12.5px;
+    color: var(--text-dim);
+    overflow-x: auto;
+    margin-top: 12px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  }
+  hr.sep { border: none; border-top: 1px solid var(--card-border); margin: 34px 0; }
+  section.notes h2 {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 14px;
+  }
+  section.notes h3 {
+    font-size: 15px;
+    font-weight: 650;
+    color: var(--accent);
+    margin: 16px 0 8px;
+  }
+  section.notes p, section.notes li { font-size: 14px; color: var(--text); }
+  section.notes ul { margin: 4px 0 10px 20px; }
+  section.notes li { margin-bottom: 6px; }
+  section.notes .dim { color: var(--text-dim); }
+  .status-ok { color: var(--green); font-weight: 650; }
+  footer {
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px solid var(--card-border);
+    font-size: 12.5px;
+    color: var(--text-dim);
+    text-align: center;
+  }
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header class="page">
+  <h1>每日 AI 前沿技术精选</h1>
+  <div class="meta">
+    <span><b>日期</b>：2026-10-22</span>
+    <span><b>时间</b>：19:59</span>
+    <span><b>精选条数</b>：5 条</span>
+  </div>
+  <div class="window">时效窗口：2026-10-21 22:07 – 2026-10-22 19:59（增量收敛窗口：距第 98 跑不足 24 小时，未启用已废止的 48h 降级策略）</div>
+</header>
+
+<main>
+
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="AI Coding">AI Coding</button>
+<button class="filter-chip" data-tag="Agent 产品化">Agent 产品化</button>
+<button class="filter-chip" data-tag="形式化验证">形式化验证</button>
+<button class="filter-chip" data-tag="国产算力">国产算力</button>
+<button class="filter-chip" data-tag="具身智能">具身智能</button>
+<button class="filter-chip" data-tag="基准评测">基准评测</button>
+<button class="filter-chip" data-tag="世界模型">世界模型</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. Anthropic 推出 Claude Duet：主动式智能体研究预览，Opus 5.5 驱动云端 VM 常驻执行</a><a class="toc-item" href="#entry-2">2. GitHub Next × Microsoft Research 发布 PDD Kit：Verus 形式化验证门控智能体生成的 Rust 代码</a><a class="toc-item" href="#entry-3">3. 讯飞星火 X2.6 发布：293B-A30B MoE 全国产算力训练，SWE Pro 77.3</a><a class="toc-item" href="#entry-4">4. LIBERO-10 基准报告：GPT-6 Astra 以 44% 成功率领先，前沿推理模型零训练直控机器人</a><a class="toc-item" href="#entry-5">5. AW-0 智能体世界动作模型：代码-视频-动作三流统一 MoT，把「技能」变成可复用程序</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="AI Coding Agent 产品化" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Anthropic 推出 Claude Duet：主动式智能体研究预览，Opus 5.5 驱动云端 VM 常驻执行" data-link="https://claude.com/resources/articles/claude-duet">复制</button>
+  <h2><span class="no">1.</span>Anthropic 推出 Claude Duet：主动式智能体研究预览，Opus 5.5 驱动云端 VM 常驻执行</h2>
+  <div class="src">第一来源：Anthropic 官方博客 / @claudeai ｜ 2026-10-21</div>
+  <h3>事件概述</h3>
+  <p>Anthropic 发布独立应用 Claude Duet 研究预览版（候补制，面向美国 Pro/Max 订阅者）：一款基于 Opus 5.5 的「主动式智能体」，运行在带独立浏览器的云端虚拟机上，每隔几小时巡检用户已连接的应用，主动推送晨间简报与待办事项；用户关掉手机电脑后任务仍在后台继续，发送消息、付款、签文件、删内容等敏感动作须经用户批准。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：① 云端 VM + 浏览器隔离执行环境，本地设备关机不影响任务连续性；② 继承 Claude 账号既有记忆、技能与应用连接，通过 Claude Marketplace 6,000+ 连接器零配置接入 Gmail、Slack、QuickBooks、Stripe、Shopify 等；③ 凭据处理沿用 Claude Managed Agents 设计——Agent 从不直接看到密码与登录令牌；④ 新增专用分类器 + 安全系统提示词逐条检查外发消息，拒绝分享信用卡号、政府证件等最高敏感级信息，健康与个人财务信息仅在用户明确指示时放行；⑤ 动作由 auto mode 分类器审批，证券交易与账户间转账即使用户同意也一律禁止；⑥ 支付经 Stripe Link / Shop Pay 虚拟卡完成，形成「用户批准 + 钱包端确认」双重闸门。红队、外部机构渗透测试与公开漏洞赏金覆盖。</li>
+    <li><b>实际影响</b>：继 Meta Muse（上线后登顶美区 App Store）与 OpenAI Dots 之后，个人 Agent 赛道形成三强格局；竞争壁垒从模型能力扩展到记忆、工具连接与安全架构三层。官方坦言预览版仍可能误判信息紧急程度、个人事务（如订票）能力偏弱，暂不支持 Microsoft 365，语音模式仅转写。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>Marketplace 连接器</td><td>6000+</td><td><div class="bar"><span style="width:100%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>后台巡检周期</td><td>约数小时</td><td><div class="bar"><span style="width:30%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <ul>
+    <li>连接器规模：6,000+（Claude Marketplace）；可用性：美国 Pro/Max 候补制，包含在套餐内、与其他功能共享用量额度；巡检周期约数小时一次</li>
+    <li>官方博客：<a href="https://<a href="https://claude.com/resources/articles/claude-duet" target="_blank" rel="noopener">claude.com/resources/articles/claude-duet</a>">https://<a href="https://claude.com/resources/articles/claude-duet" target="_blank" rel="noopener">claude.com/resources/articles/claude-duet</a></a>（Date: October 21, 2026）</li>
+    <li>官宣 X：<a href="https://<a href="https://x.com/claudeai/status/2112984664256241837" target="_blank" rel="noopener">x.com/claudeai/status/2112984664256241837</a>">https://<a href="https://x.com/claudeai/status/2112984664256241837" target="_blank" rel="noopener">x.com/claudeai/status/2112984664256241837</a></a>（10-21 19:09 UTC = 北京 10-22 03:09，窗口内）</li>
+  </ul>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#Agent 产品化</span></div>
+  <pre class="metrics">[{"label":"Marketplace 连接器","value":"6000+","kind":"self","bar":100},{"label":"后台巡检周期","value":"约数小时","kind":"self","bar":30}]</pre>
+</div>
+
+<div class="card priority-2" id="entry-2" data-tags="AI Coding 形式化验证" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="GitHub Next × Microsoft Research 发布 PDD Kit：Verus 形式化验证门控智能体生成的 Rust 代码" data-link="https://x.com/GitHubNext/status/2112936525457740139">复制</button>
+  <h2><span class="no">2.</span>GitHub Next × Microsoft Research 发布 PDD Kit：Verus 形式化验证门控智能体生成的 Rust 代码</h2>
+  <div class="src">第一来源：@GitHubNext 官方 X / <a href="https://automater.ai" target="_blank" rel="noopener">automater.ai</a> ｜ 2026-10-21</div>
+  <h3>事件概述</h3>
+  <p>GitHub Next 与 Microsoft Research 联合发布 Proof-Driven Development Kit（PDD Kit）研究预览版：把「人逐行读 diff」的评审模式反转为「人批规格、机器证代码」——智能体生成的 Rust 代码必须通过 Verus 定理证明器验证其对全部输入满足形式化规格，方可合入，产出「已验证 PR」。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：五步流水线——① 团队在 Chopin（GitHub Next 的多人实时智能体规划工具，2026-09 研究原型）中共同规划功能；② PDD Kit 与代码对话、推断意图并生成 Verus 形式化规格；③ 人工批准的是规格而非代码；④ Verus 证明器自动验证智能体代码对每个输入满足规格；⑤ 无法完全证明时回退到测试 + 计算机使用智能体（CUA）实证检查；⑥ 输出已验证 PR。GitHub 官方定位为「verified software factory，工程师评审规格而非代码」，并称其「让团队无需逐行评审即可交付 AI 生成代码，保障强于单纯代码评审与测试」（厂商表述）。</li>
+    <li><b>实际影响</b>：Microsoft Research verus-proof-synthesis 仓库（AutoVerus 150 项 / VeruSAGE 849 项验证任务）的证明合成研究线首次被包装进「规划→PR」产品工作流，形式化验证从专门技术变为智能体工作流中的按钮式环节。边界清晰：仅支持 Rust，且仅覆盖可形式化表达的属性（I/O 契约、不变量、状态机转换）；UI 行为与多数 I/O 密集型逻辑仍走回退路径。GitHub Universe（10-28/29）将首次对真实代码公开演示。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>VeruSAGE 验证任务</td><td>849</td><td><div class="bar"><span style="width:85%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>AutoVerus 验证任务</td><td>150</td><td><div class="bar"><span style="width:30%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <ul>
+    <li>底层研究基准：AutoVerus 150 项 / VeruSAGE 849 项验证任务（Microsoft Research 仓库，第一方数据）</li>
+    <li>官宣 X：<a href="https://<a href="https://x.com/GitHubNext/status/2112936525457740139" target="_blank" rel="noopener">x.com/GitHubNext/status/2112936525457740139</a>">https://<a href="https://x.com/GitHubNext/status/2112936525457740139" target="_blank" rel="noopener">x.com/GitHubNext/status/2112936525457740139</a></a>（10-21 15:58 UTC = 北京 10-21 23:58，窗口内）；GitHub 官方账号同步：<a href="https://<a href="https://x.com/github/status/2112938664959562081" target="_blank" rel="noopener">x.com/github/status/2112938664959562081</a>">https://<a href="https://x.com/github/status/2112938664959562081" target="_blank" rel="noopener">x.com/github/status/2112938664959562081</a></a></li>
+    <li>MSR 仓库：<a href="https://<a href="https://github.com/microsoft/verus-proof-synthesis" target="_blank" rel="noopener">github.com/microsoft/verus-proof-synthesis</a>">https://<a href="https://github.com/microsoft/verus-proof-synthesis" target="_blank" rel="noopener">github.com/microsoft/verus-proof-synthesis</a></a>；状态：研究预览（依赖的 Chopin 同为研究原型）</li>
+  </ul>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#形式化验证</span></div>
+  <pre class="metrics">[{"label":"VeruSAGE 验证任务","value":"849","kind":"self","bar":85},{"label":"AutoVerus 验证任务","value":"150","kind":"self","bar":30}]</pre>
+</div>
+
+<div class="card priority-3" id="entry-3" data-tags="AI Coding 国产算力" style="border-left:3px solid #8b949e">
+  <h2><span class="no">3.</span>讯飞星火 X2.6 发布：293B-A30B MoE 全国产算力训练，SWE Pro 77.3</h2>
+  <div class="src">第一来源：科大讯飞 1024 开发者节主论坛 ｜ 2026-10-22</div>
+  <h3>事件概述</h3>
+  <p>科大讯飞在 2026 全球 1024 开发者节（北京）发布端云一体大模型星火 X2.6：293B 总参 / 30B 激活 MoE、1M tokens 上下文，官方称其为首个完全基于全国产算力训练、并同步突破代码与智能体能力的主流大模型；同步开源端侧模型 X2.6-4B，并发布星火语音基座 SparkAudio 1.0。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：针对国产芯片显存与带宽受限，训练侧采用长程任务动态并行训练（按任务长度自适应分配计算资源，官方称超长上下文训练效率提升约 4 倍）；推理侧采用国产异构算力分布式推理 + 首个基于全国产设备的四层 KV Cache + 中间结果复用（官方称整体推理效率提升约 4.5 倍）。端云协同分工：约 60% 常规任务端侧完成（数据不出域、零 Token 成本）、30% 端云协同、10% 交云端大模型。</li>
+    <li><b>实际影响</b>：把「国产算力能否训出有竞争力的大模型」变成公开可检验的命题——训练效率、推理缓存、端侧小模型与定价一次性落地；对信创与国产替代需求的企业新增一个可自行基准测试的选项。代码与智能体基准（SWE Pro 77.3 / SWE Multilingual 95.0 / SWE Verified 95.4）均为厂商自述，未见第三方复现；SWE Verified 上略低于 DeepSeek-V4.1-Flash（95.4 vs 95.6）。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>SWE Pro</td><td>77.3</td><td><div class="bar"><span style="width:77%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>SWE Multilingual</td><td>95.0</td><td><div class="bar"><span style="width:95%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>SWE Verified</td><td>95.4</td><td><div class="bar"><span style="width:95%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>DeepSeek-V4.1-Flash SWE Verified</td><td>95.6</td><td><div class="bar"><span style="width:96%"></span></div></td><td><span class="badge compare">对比</span></td></tr></table></div>
+  <ul>
+    <li>架构/上下文：293B-A30B MoE，1M tokens；限时推理定价：输入 ¥0.9/百万 tokens、缓存命中 ¥0.08/百万、输出 ¥3.6/百万；端侧 X2.6-4B 开源、推理限时免费（前代 X2.5-4B 自 9-01 开源以来下载量进入全球端侧模型前四，厂商自述）</li>
+    <li>第一信源：2026 科大讯飞全球 1024 开发者节主论坛（2026-10-22，北京）；IT 之家等多家媒体当日报道</li>
+  </ul>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#国产算力</span></div>
+  <pre class="metrics">[{"label":"SWE Pro","value":"77.3","kind":"self","bar":77},{"label":"SWE Multilingual","value":"95.0","kind":"self","bar":95},{"label":"SWE Verified","value":"95.4","kind":"self","bar":95},{"label":"DeepSeek-V4.1-Flash SWE Verified","value":"95.6","kind":"compare","bar":96}]</pre>
+</div>
+
+<div class="card priority-4" id="entry-4" data-tags="具身智能 基准评测" style="border-left:3px solid #3fb950"><button class="copy-btn" data-title="LIBERO-10 基准报告：GPT-6 Astra 以 44% 成功率领先，前沿推理模型零训练直控机器人" data-link="https://arxiv.org/abs/2610.30051">复制</button>
+  <h2><span class="no">4.</span>LIBERO-10 基准报告：GPT-6 Astra 以 44% 成功率领先，前沿推理模型零训练直控机器人</h2>
+  <div class="src">第一来源：arXiv:2610.30051 ｜ UT Dallas ｜ 2026-10-21 v1</div>
+  <h3>事件概述</h3>
+  <p>UT Dallas 团队发布统一闭环操作框架，在 LIBERO-10 基准上系统评测 6 个前沿 AI 模型（GPT-6 Astra / GPT-6.1 Sol / GPT-6 Luna / Claude Opus 5 / Claude Opus 5.5 / Gemini-4 Argon）× 3 档推理强度共 18 种配置、累计 1,800 个评测回合：模型仅凭视觉观测、机器人本体感与结构化工具调用（指定目标末端位姿与夹爪指令）直接控制机器人，无任何任务特定微调或预训练操作技能。GPT-6 Astra 成功率 44% 居首，Gemini-4 Argon 以 43% 紧随。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：闭环框架把机器人控制建模为工具调用——模型输出目标末端执行器位姿与夹爪命令而非连续动作 token；每回合执行后有测试/判定反馈。实验发现提高推理强度普遍提升操作表现但增加推理成本；任务间差异显著——模型在物体放置类任务表现较好，在精确空间排布与复杂多步交互上明显挣扎；单轮成绩不足以刻画交互式操作能力（不同交互预算下排名会变化）。</li>
+    <li><b>实际影响</b>：首次在标准化机器人基准上给出「前沿通用模型零样本直控」的系统对照数据：44% 距实用尚远，但证明了纯推理路线可行性；评测框架与全部实验结果开源，为「推理能力→物理动作」转化提供可复现基线。与本期 AW-0（世界动作模型输出技能程序）形成路线对照：端到端直控 vs 代码即技能。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>GPT-6 Astra 成功率</td><td>44</td><td><div class="bar"><span style="width:44%"></span></div></td><td><span class="badge third">第三方</span></td></tr><tr><td>Gemini-4 Argon 成功率</td><td>43</td><td><div class="bar"><span style="width:43%"></span></div></td><td><span class="badge third">第三方</span></td></tr></table></div>
+  <ul>
+    <li>评测规模：6 模型 × 3 推理档 = 18 配置、1,800 回合；最佳成功率 44%（GPT-6 Astra）/ 43%（Gemini-4 Argon）</li>
+    <li>论文：<a href="https://<a href="https://arxiv.org/abs/2610.30051" target="_blank" rel="noopener">arxiv.org/abs/2610.30051</a>">https://<a href="https://arxiv.org/abs/2610.30051" target="_blank" rel="noopener">arxiv.org/abs/2610.30051</a></a>（v1 10-21 17:11 UTC = 北京 10-22 01:11，10-22 公告批次）</li>
+    <li>代码：<a href="https://<a href="https://github.com/IRVLUTD/LLM_LIBERO" target="_blank" rel="noopener">github.com/IRVLUTD/LLM_LIBERO</a>">https://<a href="https://github.com/IRVLUTD/LLM_LIBERO" target="_blank" rel="noopener">github.com/IRVLUTD/LLM_LIBERO</a></a></li>
+  </ul>
+  <div class="tags"><span class="tag" style="color:#3fb950;border-color:#3fb950">#具身智能</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#基准评测</span></div>
+  <pre class="metrics">[{"label":"GPT-6 Astra 成功率","value":"44","kind":"third","bar":44},{"label":"Gemini-4 Argon 成功率","value":"43","kind":"third","bar":43}]</pre>
+</div>
+
+<div class="card priority-5" id="entry-5" data-tags="世界模型 具身智能" style="border-left:3px solid #bc8cff"><button class="copy-btn" data-title="AW-0 智能体世界动作模型：代码-视频-动作三流统一 MoT，把「技能」变成可复用程序" data-link="https://arxiv.org/abs/2610.30136">复制</button>
+  <h2><span class="no">5.</span>AW-0 智能体世界动作模型：代码-视频-动作三流统一 MoT，把「技能」变成可复用程序</h2>
+  <div class="src">第一来源：arXiv:2610.30136 ｜ NVIDIA / UC Berkeley 等 ｜ 2026-10-21 v1</div>
+  <h3>事件概述</h3>
+  <p>由 NVIDIA、UC Berkeley、Georgia Tech 等机构研究者（含 Ken Goldberg、Danfei Xu、Yuke Zhu、Linxi "Jim" Fan、Trevor Darrell、Renrui Zhang 等）提出 AW-0：在统一 mixture-of-transformers 架构中把代码、未来视频、机器人动作建模为三个耦合生成流——代码专家生成参数化技能例程与控制逻辑，视频与动作专家生成未来视觉状态与低层电机命令；配套自动 curation 流水线把机器人与人类视频轨迹标注为对齐程序，并把 recurring 例程固化为可复用技能库。RoboTwin 2.0 与物理双臂操作任务上超越 VLA 与 WAM 基线，语言跟随、语义推理与鲁棒性同步提升。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：代码在模型中承担双重角色——既结构化世界模型内部的多步预测与控制，又把技能表示为可供后续智能体执行复用的程序；这弥合了「代码规划 + 技能复用」的智能体路线与「视觉预见 + 物理动态」的世界模型路线之间的断层。自动 curation 流水线（视频轨迹→对齐程序→技能库）解决了技能复用的数据来源问题。</li>
+    <li><b>实际影响</b>：为世界动作模型（WAM）开辟「智能体化」演进方向——WAM 不止预测未来，还输出可执行技能程序；与本期 LIBERO-10（纯 VLM 零样本直控 44%）形成路线对照。作者群横跨 NVIDIA 机器人与伯克利自动化实验室，工程落地信号强。</li>
+  </ul>
+  <h3>关键指标/资源</h3>
+  <ul>
+    <li>评测：RoboTwin 2.0 + 物理双臂操作，较 VLA/WAM 基线提升（摘要未披露具体数值，待论文全文核实）</li>
+    <li>论文：<a href="https://<a href="https://arxiv.org/abs/2610.30136" target="_blank" rel="noopener">arxiv.org/abs/2610.30136</a>">https://<a href="https://arxiv.org/abs/2610.30136" target="_blank" rel="noopener">arxiv.org/abs/2610.30136</a></a>（v1 10-21 17:59 UTC = 北京 10-22 01:59，10-22 公告批次）</li>
+    <li>项目页：<a href="https://<a href="https://agentic-wam.github.io/" target="_blank" rel="noopener">agentic-wam.github.io/</a>">https://<a href="https://agentic-wam.github.io/" target="_blank" rel="noopener">agentic-wam.github.io/</a></a></li>
+  </ul>
+  <div class="tags"><span class="tag" style="color:#bc8cff;border-color:#bc8cff">#世界模型</span><span class="tag" style="color:#3fb950;border-color:#3fb950">#具身智能</span></div>
+</div>
+
+<hr class="sep">
+
+<section class="notes">
+  <h2>去重说明</h2>
+  <h3>结构性说明</h3>
+  <p>信源健康 ok=3 / warn=0 / error=0（AI HOT items 最新条目 0.4h 前、dailies 2026-10-22、arXiv 公告批次 Thu 22 Oct 2026 共 78 entries）；本窗口 arXiv v1 提交集中于 10-21 14:00 ET 截止前（北京 10-22 02:00），入选的 3 条 arXiv 论文均在此区间，且公告时刻（北京 10-22 08:00）落在窗口内。</p>
+  <h3>7 天扫描</h3>
+  <p>覆盖 10-15~10-21 七期 32 条标题，无同主体同动作重复；跨实例扫网盘同日其他实例产出（<span class="dim">每日AI新闻推送_20261022_0029</span>：OpenAI 监控披露 / LSCBench / DevTools-VS Code / 香港具身智能中心 / FF Nova）无重叠。</p>
+  <h3>dedup_check 逐条</h3>
+  <p>Claude Duet is_dup:false（匹配第 82 跑 Sonnet 5.5，同主体不同动作——模型发布 vs 智能体应用上线）；PDD Kit is_dup:false（匹配 MSR Rho VLA，不同事件）；星火 X2.6 is_dup:false；LIBERO-10 is_dup:false（匹配 StationeryBench，不同基准不同动作）；AW-0 is_dup:false。</p>
+  <h3>排除项（第一信源时间戳核实窗口外，或候选已满）</h3>
+  <ul>
+    <li>Mistral Large 4（1.05T MoE 公测）：首发 10-06，窗口外</li>
+    <li>Anthropic OpenSSH 攻击面审计报告（Chris Rohlf，493 项问题）：官方发布 10-20，窗口外（10-22 中文集中报道为迟到传播）</li>
+    <li>DeepMind × 剑桥 Busy Beaver「Cryptids」论文（arXiv:2610.22603）：v1 10-15，窗口外</li>
+    <li>Gemini 4 Argon 四智能体 27 小时通关 Minecraft：arXiv 10-15 + 官宣 10-17，第 97 跑已排除</li>
+    <li>腾讯混元 × 复旦 WorkForge（16.7K 可验证环境，GDPval 45.5→73.6）：论文 v1 10-04 已公开，10-22 官宣为框架发布 + 论文 v4 更新，按第一信源纪律列为候补（本期 AI Coding 线已满）</li>
+    <li>GuideEvolve（arXiv:2610.30017）、UserSWE（2610.29822）、CW-WAM（2610.30117）、AtomicRL（2610.30097）、PhysiCalWorld（2610.30125）：均在窗口内，候选已满列为候补</li>
+    <li>蚂蚁数科 LingDT-Decision-1.0（10-22，决策模型）、Mirendil-Base 千亿代码基座（X 单帖，细节不足）、MiniMax Code 桌面端 Mini App（10-21 16:00 UTC，产品功能更新）：候选已满或未达门槛</li>
+    <li>OpenAI 模型登陆 Google Cloud Model Garden /「Patch the Planet」/ PHP2Shell 应急修复：基础设施与安全事件线，非本期焦点方向</li>
+  </ul>
+  <h3>待核实</h3>
+  <ul>
+    <li>星火 X2.6 全部基准（SWE Pro 77.3 / SWE Multilingual 95.0 / SWE Verified 95.4）、「唯一全国产算力训练的主流模型」表述、训练效率约 4 倍 / 推理效率约 4.5 倍、X2.5-4B 下载量前四——均为厂商自述，缺第三方复现</li>
+    <li>PDD Kit 二级来源（<a href="https://aicoder.com" target="_blank" rel="noopener">aicoder.com</a>）称「无约束智能体潜在边缘缺陷率 37.8% → PDD Kit 引导后 100% 形式化验证、调试轮次 7.4→2.1」——官方博文未确认</li>
+    <li>AW-0 摘要未给出 RoboTwin 2.0 等基准具体数值</li>
+    <li>Claude Duet 早期测试者评价（Every.to Dan Shipper：邮件起草质量不及 ChatGPT Dots、定时任务暂不支持自定义连接器）为个人评测</li>
+  </ul>
+</section>
+
+<hr class="sep">
+
+<section class="notes">
+  <h2>归档状态说明</h2>
+  <ul>
+    <li><b>工作区 Markdown</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261022_1959.md</code></li>
+    <li><b>工作区 HTML</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261022_1959.html</code></li>
+    <li><b>网盘归档</b>：O:/quark/automation/每日 AI 新闻推送/（同步写入上述同名文件）</li>
+    <li><b>执行状态</b>：<span class="status-ok">✅ 成功</span></li>
+  </ul>
+</section>
+
+<footer>每日 AI 前沿技术精选 · 时效窗口 2026-10-21 22:07 – 2026-10-22 19:59 · 严格 24 小时增量窗口</footer>
+
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>

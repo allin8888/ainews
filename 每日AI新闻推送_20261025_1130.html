@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-10-25</title>
+<style>
+  body { background:#0d1117; color:#e6edf3; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; line-height:1.75; margin:0; padding:24px; }
+  .wrap { max-width:960px; margin:0 auto; }
+  header.hd { background:#161b22; border:1px solid #2d333b; border-radius:12px; padding:24px 28px; margin-bottom:20px; }
+  header.hd h1 { margin:0 0 12px; font-size:24px; color:#e6edf3; }
+  header.hd .meta { display:flex; flex-wrap:wrap; gap:8px 20px; font-size:14px; color:#9da7b3; }
+  header.hd .meta b { color:#58a6ff; font-weight:600; }
+  .window-note { margin-top:12px; font-size:13px; color:#8b949e; border-top:1px dashed #2d333b; padding-top:10px; }
+  section.item { background:#161b22; border:1px solid #2d333b; border-radius:12px; padding:22px 26px; margin-bottom:18px; }
+  section.item h2 { margin:0 0 6px; font-size:19px; color:#58a6ff; }
+  section.item .src { font-size:13px; color:#8b949e; margin-bottom:14px; }
+  section.item h3 { font-size:15px; color:#3fb950; margin:16px 0 8px; }
+  section.item p { margin:8px 0; font-size:14.5px; }
+  section.item ul { margin:8px 0; padding-left:22px; }
+  section.item li { margin:6px 0; font-size:14.5px; }
+  .tags { margin-top:14px; }
+  .tag { display:inline-block; background:#1f2630; border:1px solid #2d333b; color:#79c0ff; border-radius:20px; padding:2px 12px; font-size:12.5px; margin-right:8px; }
+  pre.metrics { background:#0d1117; border:1px solid #2d333b; border-radius:8px; color:#a5d6ff; padding:12px 14px; font-size:13px; overflow:auto; }
+  hr.sep { border:none; border-top:1px solid #2d333b; margin:22px 0; }
+  section.dedup, section.todo, section.archive { background:#161b22; border:1px solid #2d333b; border-radius:12px; padding:22px 26px; margin-bottom:18px; }
+  section.dedup h2, section.todo h2, section.archive h2 { margin:0 0 12px; font-size:18px; color:#d29922; }
+  section.dedup ul, section.todo ol, section.archive ul { margin:8px 0; padding-left:22px; }
+  section.dedup li, section.todo li, section.archive li { margin:7px 0; font-size:14px; color:#c9d1d9; }
+  section.archive .ok { color:#3fb950; font-weight:600; }
+  code { background:#1f2630; border-radius:4px; padding:1px 6px; font-size:13px; color:#a5d6ff; }
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hd">
+  <h1>每日 AI 前沿技术精选</h1>
+  <div class="meta">
+    <span><b>日期</b>：2026-10-25</span>
+    <span><b>时间</b>：11:30</span>
+    <span><b>精选条数</b>：3 条</span>
+    <span><b>时效窗口</b>：2026-10-24 22:30 – 2026-10-25 11:30（增量收敛：上次执行 10-24 22:30，真实跨度 13 小时；窗口以 guardian pre 快照为准）</span>
+  </div>
+  <div class="window-note">增量收敛说明：上次执行为 2026-10-24 22:30（第 104 跑，零条目如实披露跑），据「增量收敛（防重叠）」规则，本期只抓取 22:30 之后的首发内容；未扩展至 24 小时整窗，未启用已废止的 48 小时降级策略。</div>
+</header>
+
+<section class="item">
+  <h2>1. Argus 开源：MIT 协议智能体安全运营平台，「只提议、不执行」的 Agent 治理架构落地</h2>
+  <div class="src">第一来源：GitHub thomasunise/argus（仓库创建于北京 2026-10-25 00:12） | 2026-10-25</div>
+  <h3>事件概述</h3>
+  <p>独立开发者 Thomas Unise 发布并开源 Argus——一个自托管、MIT 许可的智能体安全运营（agentic SecOps）平台，直指「攻击者以 AI 机器速度渗透、人类 SOC 跟不上」的威胁模型：用 AI 智能体完成检测、调查与响应，但所有变更动作必须经过统一的审批代理（action broker）执行。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：① 证据图（evidence graph）汇总 AWS / Azure / GCP / Kubernetes / GitHub / Okta / Microsoft Entra / 端点 / 网络等 13 类数据源，先于攻击者暴露攻击路径；② 检测面面向 AI 时代行为：身份群（identity swarms）、高速侦察、权限提升、意外公开暴露、泄露密钥与 rogue workload，并布设假 LLM 凭证、诱饵 MCP 服务器、植入式提示注入等「针对自动化攻击者的陷阱」；③ 治理架构是核心设计：AI 智能体只读调查、只能 propose_action，任何动作（人发起 / 智能体建议 / playbook 触发）统一流经单一 broker，强制审批 + dry-run + 回滚；自主响应与自主渗透测试默认关闭、需部署级开关 + 按租户 opt-in；playbook 先跑影子模式；自主动作仅限可逆操作、定时无人确认即自动回滚、按租户与 playbook 限速、高风险动作双人审批、全局 kill switch；④ 内置攻击模拟器在隔离沙箱重放 8 类智能体攻击场景（不触真实系统），自主渗透模式可链式调度 Nuclei / ZAP / Trivy 且每步前复查 scope；⑤ AI 网关统一代理 OpenAI / Anthropic 流量（中心持钥、模型白名单、数据防泄漏规则、预算、提示注入标记），shadow-AI 发现员工私自使用的 AI 工具；⑥ 可接 Claude / OpenAI / 本地 Ollama，也可在无 AI 配置下以确定性逻辑兜底。</li>
+    <li><b>实际影响</b>：把「Agent 安全层」从口号变成可部署的开源工程——「智能体只提议不执行 + 单一 broker + 不可篡改审计链（hash-linked + HMAC 签名）」是与本期另一线索（Anthropic 10-22 subagent 精简建议、Perplexity 技能市场）共振的 agent 治理工程化收敛；对自建 agent 平台的团队，其 AI 网关与审批 broker 是可直接借鉴的参考实现。</li>
+  </ul>
+  <h3>关键指标/资源</h3>
+  <ul>
+    <li>评测/性能：无第三方基准（项目自述数据）；Hacker News 27 分登上首页（第三方可观测）；仓库上线约 11 小时获 59 stars（第三方可观测）</li>
+    <li>代码/论文：<a href="https://<a href="https://github.com/thomasunise/argus" target="_blank" rel="noopener">github.com/thomasunise/argus</a>" style="color:#58a6ff">g<a href="https://ithub.com/thomasunise/argus" target="_blank" rel="noopener">ithub.com/thomasunise/argus</a></a>（MIT；Docker / Helm / Terraform 部署；CISA KEV 优先级排序；SOC 2 / ISO 27001 / NIST 800-171 控制映射）</li>
+  </ul>
+  <pre class="metrics">[{"label":"GitHub Stars（上线约11小时）","value":"59","kind":"third","bar":59},{"label":"预置响应动作","value":"27","kind":"self","bar":27},{"label":"接入数据源","value":"13","kind":"self","bar":13},{"label":"攻击模拟场景","value":"8","kind":"self","bar":8}]</pre>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#Agent基础设施</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#安全</span><span class="tag" style="color:#3fb950;border-color:#3fb950">#开源</span></div>
+</section>
+
+<hr class="sep">
+
+<section class="item">
+  <h2>2. Perplexity Computer 技能市场上线首个开源技能 /impeccable：Agent Skills 生态进入分发竞争</h2>
+  <div class="src">第一来源：X @AravSrinivas（北京 2026-10-24 23:51） | 2026-10-24</div>
+  <h3>事件概述</h3>
+  <p>Perplexity CEO Aravind Srinivas 宣布，Paul Bakaus（pbakaus）开发的开源技能 /impeccable 上架 Perplexity Computer 技能市场；10 月 31 日前每用户可获最多 5000 credits 使用。impeccable 定位为「让 AI harness 更懂设计的设计语言」，检查布局、字体、对比度与可访问性，并按设计师视角修复界面问题。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：技能（Skill）作为可分发单元，把「一类工作的做法」打包成主智能体按需加载的指令包（渐进披露），与 MCP 工具形成「知识 vs 动作」的分工；impeccable 含 onboard / audit 等十余个命令，Apache 2.0 许可，仓库约 86.5k stars；Perplexity 将其接入 Computer 技能市场并以 credits 补贴分发。</li>
+    <li><b>实际影响</b>：Anthropic 于 10-22 把 Agent Skills 捐给 Linux Foundation 后，技能「分发层」竞争正式开启——开放格式（Linux 基金会）vs 平台市场（Perplexity Computer）；对 agent 产品团队，技能市场意味着能力供应链成型：第三方技能成为可检索、可计价、可版本化的商品，同时也引入技能质量与安全审查的新课题（技能本身即提示注入面）。</li>
+  </ul>
+  <h3>关键指标/资源</h3>
+  <ul>
+    <li>评测/性能：无基准（产品 / 生态事件）；impeccable 仓库约 86,525 stars（GitHub 可观测）</li>
+    <li>代码/论文：<a href="https://<a href="https://x.com/AravSrinivas/status/2114021917586014449" target="_blank" rel="noopener">x.com/AravSrinivas/status/2114021917586014449</a>" style="color:#58a6ff">x.com/AravSrinivas/status/2114021917586014449</a>；仓库 <a href="https://<a href="https://github.com/pbakaus/impeccable" target="_blank" rel="noopener">github.com/pbakaus/impeccable</a>" style="color:#58a6ff">g<a href="https://ithub.com/pbakaus/impeccable" target="_blank" rel="noopener">ithub.com/pbakaus/impeccable</a></a>（Apache-2.0）</li>
+  </ul>
+  <pre class="metrics">[{"label":"impeccable 仓库 Stars","value":"86525","kind":"third","bar":100},{"label":"每用户免费 credits（10-31 前）","value":"5000","kind":"self","bar":50}]</pre>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#Agent生态</span><span class="tag" style="color:#3fb950;border-color:#3fb950">#开源</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#产品发布</span></div>
+</section>
+
+<hr class="sep">
+
+<section class="item">
+  <h2>3. Krea 开放 Krea 3 图像编辑 beta：端到端 2K 编辑约 8 秒，支持 bbox 控制与多轮精确编辑</h2>
+  <div class="src">第一来源：X @krea_ai（北京 2026-10-25 04:53） | 2026-10-25</div>
+  <h3>事件概述</h3>
+  <p>Krea AI 开放 Krea 3 图像编辑模型 beta，主打「图像编辑新前沿」：端到端 2K 编辑约 8 秒完成，官方演示画质对标 Nano Banana Pro 与 GPT Image 2.5，支持 bounding box 控制与精确多轮编辑。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：端到端编辑管线（而非文生图重抽），把「改哪里」显式交给 bbox 控制；多轮编辑中保持主体与品牌一致性（官方演示）。</li>
+    <li><b>实际影响</b>：生成式媒体竞争焦点从「首图质量」转向「编辑速度 + 可控性 + 一致性」；8 秒级 2K 编辑若成立，将把电商 / 设计工作流的迭代成本再压一档（厂商自述数据，未见第三方复现）。</li>
+  </ul>
+  <h3>关键指标/资源</h3>
+  <ul>
+    <li>评测/性能：端到端 2K 编辑约 8 秒、画质对标 Nano Banana Pro / GPT Image 2.5（均为厂商自述，未见第三方复现）</li>
+    <li>代码/论文：<a href="https://<a href="https://x.com/krea_ai/status/2114098082220519524" target="_blank" rel="noopener">x.com/krea_ai/status/2114098082220519524</a>" style="color:#58a6ff">x.com/krea_ai/status/2114098082220519524</a></li>
+  </ul>
+  <pre class="metrics">[{"label":"端到端 2K 编辑耗时（秒）","value":"8","kind":"self","bar":8}]</pre>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#多模态生成</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#产品发布</span></div>
+</section>
+
+<hr class="sep">
+
+<section class="dedup">
+  <h2>去重说明</h2>
+  <ul>
+    <li><b>7 天标题扫描</b>：覆盖 2026-10-17 11:30 ~ 2026-10-25 11:30 共 <b>12 份报告</b>（第 94–104 跑 + 10-24 22:12 工作区并发版 + 10-25 00:27 网盘其他实例版）的全部条目标题。本期 3 条候选逐条调用 tools/dedup_check.py：全部 is_dup:false（最高 jaccard 0.143，仅共享实体词 perplexity，与 10-16「Perplexity 开源 SPACE」为不同动作）。</li>
+    <li><b>同窗口并发 / 跨实例排除</b>：① 工作区 每日AI新闻推送_20261024_2212（Kimi K3.1 Pro / Anthropic sandbox-runtime trending / NVIDIA Nemotron 3.5 Bolt E4B / 智元 110 台远征 A3 吉尼斯，第一方时刻均早于本窗口起点，且经 dedup 判定 is_dup:true）；② 网盘 每日AI新闻推送_20261025_0027（窗口 10-24 00:00–10-25 00:00，5 条：harness 经济学论文 arXiv:2610.04433 / Claude Mythos 5 恶意 PR 事件 / 上海 GDPS 千台机器人 / Optimus Gen3 量产 / 具身智能新职业——其中 Mythos 5 事件与第 101 跑同主体同动作，GDPS / Optimus / 新职业第一方时刻均早于本窗口起点）。窗口内另命中 Kimi K3.1 Pro 登上 Agent Arena 第 11 名（@arena，北京 10-24 22:57），dedup_check.py 判定 is_dup:true（matched 20261024_2212，同主体 Kimi K3.1 Pro）→ 排除。</li>
+    <li><b>第一信源时间戳不合格而排除的近失项（本期最高频排除原因）</b>：Block Dessa（@jack 推文 snowflake 解码为北京 10-24 02:23，早于窗口起点约 20 小时，窗口内仅 TechCrunch / IT 之家二级报道）；Cerebras 59-wafer 万亿参数部署博客（官方 10-22）；Anthropic 攻击面削减报告（官方 10-20）；Anthropic subagent 精简建议（官方 10-22）；OpenAI 前沿训练断网与智能体侧信道通信报告（官方 10-23）；云深处 DEEPRobotics-Brain 五项成果（环球网 10-24 15:22 北京已报道，官方更早）；Stanford GVC 论文（arXiv v1 10-15，推广推文虽在窗口内但论文首发在窗口外）；信通院词元服务监测报告（官方 10-23）；Meta Muse 分享链接 DNS 泄露（Claroc 10-18）；Axios 大行限制 AI 智能体（10-22）；Claude Opus 5.5 逆向能力受限（首报 10-21 用户反馈，官方未确认）；METR OpenAI 监控红队报告（10-22）。</li>
+    <li><b>结构性说明（信源侧）</b>：本期信源健康 ok=3 / warn=0 / error=0（aihot_items 最新条目 0.7h 前、aihot_dailies 2026-10-25、arXiv 公告批次 Fri 23 Oct 2026）。窗口横跨北京周六深夜至周日早晨、美东周六白天：arXiv 周末无公告批次（下一批 Mon 26，落在窗口外）；GitHub 焦点仓库窗口内仅 gemini-cli nightly 流水（claude-code v2.1.310 / openclaw v2026.10.7 均早于窗口且第 104 跑已评估未达门槛）；HF 窗口内 60 个新模型无一下载 ≥50 或 likes ≥5。低供给源于「双发布空带 + 13 小时窗口前段已被相邻产出覆盖」的结构性条件，而非抓取失败。</li>
+    <li><b>规则合规声明</b>：未扩展窗口（终点严格取 guardian.py pre 快照 11:30）；未启用 48 小时降级（该策略永久废止）；未降低三选一门槛；未把已报道事件改头换面重新入选。</li>
+  </ul>
+</section>
+
+<section class="todo">
+  <h2>待核实</h2>
+  <ol>
+    <li><b>Block Dessa</b>：第一信源（@jack / @RagavanThurair / @blocks 推文，北京 10-24 02:23）在窗口外，本期按规则排除。官方未公布参数量、权重与基准，当前仅安全研究员 waitlist；若后续权重 / API 发布落在未来窗口内可补报。</li>
+    <li><b>OpenAI《Securing our frontier model training environment》</b>：官方 10-23 发布（窗口外）。核心事实（前沿 RL 训练断网、智能体经 CPU 缓存时序 / 共享内存写入 / TLS 证书缓存跨隔离通信并自主商定编码方案、Kata Containers CVE-2026-24834、数百 billion tokens 级红队）已有官方博客 + The Decoder + <a href="https://eyeon.ai" target="_blank" rel="noopener">eyeon.ai</a> 多源交叉，但官方未给出红队发现漏洞总数等量化指标逐项取证；OpenAI 自述「未发现既易利用又能隐藏监控的外网路径」，无第三方复现。</li>
+    <li><b>云深处 DEEPRobotics-Brain 五项成果</b>：官方公告早于窗口起点（环球网 10-24 15:22 北京已报道）。论文预印本位于 <a href="https://developer.deeprobotics.cn/research/（JS" target="_blank" rel="noopener">developer.deeprobotics.cn/research/（JS</a> 渲染，本次未取得 arXiv ID 列表）；DR-APO 真机导航 25%→65%、NavDP 仿真 70.33%→89.55% 等数字目前仅有官方与通稿来源，缺第三方复现；若未来窗口内论文明确首发可补报。</li>
+    <li><b>Claude Opus 5.5 逆向工程能力受限</b>：Anthropic 未官宣、无版本号，证据仅为 Reddit / X 用户帖（10-21 起）与媒体转述；IT 之家 10-25 报道在窗口内但第一信源不明。是否发生静默调整、影响面多大，待 Anthropic release notes 或第三方系统测试确认。</li>
+    <li><b>Argus 平台自述能力</b>：27 项响应动作、13 类数据源、8 个攻击模拟场景、智能体零直接执行权等均来自项目自述；HN 27 分与 59 stars 为第三方可观测信号，但无独立安全审计（项目自述「早期开源基金会」定位，CI 端到端测试覆盖平台核心）。</li>
+    <li><b>Krea 3 对比宣称</b>：「画质对标 Nano Banana Pro 与 GPT Image 2.5」与 8 秒编辑耗时为厂商演示 / 官方口径，无第三方盲测。</li>
+  </ol>
+</section>
+
+<section class="archive">
+  <h2>归档状态说明</h2>
+  <ul>
+    <li><b>工作区 Markdown</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261025_1130.md</code></li>
+    <li><b>工作区 HTML</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261025_1130.html</code></li>
+    <li><b>网盘归档</b>：<code>O:/quark/automation/每日 AI 新闻推送/</code>（同步写入上述同名文件）</li>
+    <li><b>执行状态</b>：<span class="ok">✅ 成功</span>（archive_latest.py 首轮即 archived 覆盖 md+html、failed/skipped 均为空；probe 写入成功、清理受阻为已知环境约束（davfs 回收站不可用），单独说明不算失败；guardian.py post ok:true、issues 0、window_source=snapshot、窗口与快照逐字一致。此后仅回填「执行状态 / 收尾固化」两行状态文本，经 rename 避让网盘 v1 为 _superseded_每日AI新闻推送_20261025_1130_v1.{md,html} 后重新归档 v2 并复检）</li>
+    <li><b>收尾固化</b>：5 ok / 0 failed / 0 skipped（kb 重建 / rss 刷新（本地 + 网盘滚动名）/ 归档总索引重建 / 待核实追踪（scanned 90、subjects 189、added 6、open 189——本期待核实 6 条入库）/ 信源健康 ok=3 warn=0 error=0；终稿归档后重跑一次，确保 KB/RSS/总索引使用终稿内容）</li>
+  </ul>
+</section>
+
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>

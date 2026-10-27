@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 — 2026-09-01</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1b26;
+    --surface2: #24263a;
+    --border: #2f3148;
+    --text: #e1e3eb;
+    --text-muted: #8b8fa3;
+    --accent: #7c3aed;
+    --accent-light: #a78bfa;
+    --red: #f87171;
+    --green: #34d399;
+    --yellow: #fbbf24;
+    --blue: #60a5fa;
+    --tag-bg: #2d2a5e;
+    --tag-text: #c4b5fd;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.7;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 820px; margin: 0 auto; }
+  header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.75rem;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+  }
+  .meta span { display: flex; align-items: center; gap: 0.35rem; }
+  .meta .count {
+    background: var(--accent);
+    color: #fff;
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  .section-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-light);
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.02em;
+  }
+  article {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+    transition: border-color 0.2s;
+  }
+  article:hover { border-color: var(--accent); }
+  article h2 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+  }
+  article h2 .source {
+    font-weight: 400;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+  article h2 .num {
+    color: var(--accent-light);
+    margin-right: 0.4rem;
+  }
+  .overview {
+    background: var(--surface2);
+    border-radius: 8px;
+    padding: 0.875rem 1rem;
+    margin-bottom: 0.875rem;
+    font-size: 0.925rem;
+    color: var(--text);
+  }
+  .overview strong { color: var(--accent-light); }
+  .value-section { margin-bottom: 0.875rem; }
+  .value-section h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--yellow);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.4rem;
+  }
+  .value-section ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .value-section li {
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+    color: var(--text);
+  }
+  .value-section li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent-light);
+    font-size: 0.8rem;
+  }
+  .metrics {
+    background: var(--surface2);
+    border-radius: 8px;
+    padding: 0.875rem 1rem;
+    margin-bottom: 0.875rem;
+  }
+  .metrics h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--green);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5rem;
+  }
+  .metrics ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .metrics li {
+    font-size: 0.875rem;
+    color: var(--text);
+    padding: 0.2rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .metrics li:last-child { border-bottom: none; }
+  .metrics li strong { color: var(--accent-light); }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .tag {
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+  .tag.security { background: #3b1a1a; color: #fca5a5; }
+  .tag.infra { background: #1a2d3b; color: #93c5fd; }
+  .tag.model { background: #1a3b2a; color: #6ee7b7; }
+  footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  footer h3 {
+    font-size: 0.95rem;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .footer-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.875rem;
+  }
+  .footer-box h4 {
+    font-size: 0.8rem;
+    color: var(--accent-light);
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+  }
+  .footer-box p { font-size: 0.825rem; color: var(--text-muted); }
+  .thesis {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    padding: 1rem 1.25rem;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 1rem;
+  }
+  .thesis h4 {
+    color: var(--accent-light);
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+  .thesis p { font-size: 0.9rem; color: var(--text); margin-bottom: 0.5rem; }
+  .thesis ul { padding-left: 1.25rem; }
+  .thesis li { font-size: 0.875rem; color: var(--text); margin-bottom: 0.3rem; }
+  .verify { font-size: 0.825rem; color: var(--yellow); }
+  .status-ok { color: var(--green); }
+  @media (max-width: 600px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    body { padding: 1rem 0.75rem; }
+    article { padding: 1.1rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>🤖 每日 AI 前沿技术精选</h1>
+    <div class="meta">
+      <span>📅 2026-09-01</span>
+      <span>🕘 09:10</span>
+      <span class="count">5 条精选</span>
+      <span>⏱ 严格24小时窗口：2026-08-31 09:10 – 2026-09-01 09:10</span>
+    </div>
+  </header>
+
+  <p class="section-title">— 今日精选 —</p>
+
+  <!-- 新闻1 -->
+  <article>
+    <h2><span class="num">①</span>OpenClaw 2.0 发布：项目史上最大更新 <span class="source">（OpenClaw Foundation | 2026-08-31）</span></h2>
+    <div class="overview">
+      <strong>事件概述：</strong>停更近7周后，OpenClaw 于8月31日发布 v2026.8.1（代号 2.0），官方称"意外地发布了史上最大版本"。由 <strong>933 名贡献者</strong>（其中 569 人为首次贡献）合并超过 <strong>1.6 万个 PR</strong>，覆盖安装流程、浏览器 UI、消息系统、记忆机制、安全权限及共享会话全链路。
+    </div>
+    <div class="value-section">
+      <h3>技术与工程价值</h3>
+      <ul>
+        <li><strong>核心机制：</strong>重新设计首次安装体验——自动识别本地已有的 ChatGPT/Claude 订阅、API Key 及 Ollama/LM Studio 本地模型，先让用户聊上再逐步配置；引入 Active Memory 和后台记忆整合机制，使 Agent 能跨会话调用历史上下文并自动沉淀长期记忆；新增 Shared Cloud Sessions 支持团队成员共同处理任务或交接。</li>
+        <li><strong>实际影响：</strong>标志着 OpenClaw 从"个人轻量助手"向"生产级多人协作平台"转型，补齐了此前被 Hermes 在记忆与编排层拉开的差距。</li>
+      </ul>
+    </div>
+    <div class="metrics">
+      <h3>关键指标 / 资源</h3>
+      <ul>
+        <li>规模：<strong>933 贡献者 / 1.6 万 PR / 近 7 周停更</strong></li>
+        <li>官方博文标题：《OpenClaw 2.0, Accidentally》</li>
+        <li>项目 GitHub：github.com/openclaw/openclaw</li>
+        <li>X 官宣浏览量：<strong>超 228 万次</strong>（当日全场最高）</li>
+      </ul>
+    </div>
+    <div class="tags">
+      <span class="tag">AI_Coding</span>
+      <span class="tag">Agent_Framework</span>
+      <span class="tag">开源</span>
+    </div>
+  </article>
+
+  <!-- 新闻2 -->
+  <article>
+    <h2><span class="num">②</span>Nous Research 发布 Hermes Agent v0.21.0「Pantheon」 <span class="source">（Nous Research | 2026-08-31）</span></h2>
+    <div class="overview">
+      <strong>事件概述：</strong>Nous Research 同日发布 Hermes Agent v0.21.0（代号 Pantheon），累计约 <strong>5,800 次提交、760+ 贡献者</strong>。核心新增 Bot Mode——内置多智能体社交网络，每个 profile 可命名、有头像、可建群聊并互发私信；cron 定时任务跨日记忆保留；子智能体支持中途转向；桌面端浏览器可由 Agent 直接操控。主程 Teknium 确认 Hermes + Claude 组合在多项基准上优于 Claude Code + Claude。
+    </div>
+    <div class="value-section">
+      <h3>技术与工程价值</h3>
+      <ul>
+        <li><strong>核心机制：</strong>Bot Mode 将多智能体从命令行工具升级为可社交的"虚拟团队"，配合持久 cron 记忆实现跨会话自进化；默认上下文占用较 v0.20 削减约 <strong>50%</strong>，缓解长会话 Token 膨胀。</li>
+        <li><strong>实际影响：</strong>在 OpenClaw 2.0 同日发布竞品对比下，Hermes 以"社交化多 Agent"差异化路线巩固个人 AI 助手生态领导地位；Gary Marcus 同日发文警示企业网络部署 Hermes/Claude Code/Codex 可能引入"无主代码"风险，安全讨论并行发酵。</li>
+      </ul>
+    </div>
+    <div class="metrics">
+      <h3>关键指标 / 资源</h3>
+      <ul>
+        <li>规模：<strong>5,800 commits / 760+ contributors / v0.21.0</strong></li>
+        <li>X 官宣点赞：1,640 / 浏览：26.8 万（当日互动最高原帖之一）</li>
+        <li>Release Notes：github.com/NousResearch/hermes-agent/releases/tag/v2026.8.31</li>
+        <li>升级命令：<code>hermes update</code></li>
+      </ul>
+    </div>
+    <div class="tags">
+      <span class="tag">AI_Coding</span>
+      <span class="tag">Agent_Framework</span>
+      <span class="tag">多智能体</span>
+      <span class="tag">开源</span>
+    </div>
+  </article>
+
+  <!-- 新闻3 -->
+  <article>
+    <h2><span class="num">③</span>Claude Code Opus 5 Auto Mode 模块伪装攻击攻破：60–80% 成功率 <span class="source">（Johann Rehberger @wunderwuzzi23 | 2026-09-01）</span></h2>
+    <div class="overview">
+      <strong>事件概述：</strong>安全研究员 Johann Rehberger 于9月1日公开实战攻击报告：针对最新版 Claude Code（Opus 5 模型 Auto 模式），通过构造恶意网站摘要请求，诱导 Agent 使用 curl 下载 ZIP 归档，进而利用 Python 模块伪装（module-shadowing）加载攻击者控制的 <code>struct.py</code>，最终实现远程代码执行（RCE）。小样本实验中攻击成功率达 <strong>60–80%</strong>，而 Anthropic 委托第三方评估显示的 Auto 模式提示注入成功率为 <strong>0.00%</strong>——两者形成尖锐反差。
+    </div>
+    <div class="value-section">
+      <h3>技术与工程价值</h3>
+      <ul>
+        <li><strong>核心机制：</strong>攻击链为"网站摘要→WebFetch失败→Agent自主改用curl→解压ZIP→运行自定义Python解码器→导入base64时触发恶意struct.py→RCE"。关键洞察在于：即使 Agent 拒绝直接运行攻击者二进制文件，其自主编写解码器的行为反而成为攻击载体；单步看似合理的决策累积为完整系统接管。</li>
+        <li><strong>实际影响：</strong>揭示 Auto 模式（8月中旬起成为默认）在"读取不受信任外部内容并按内容行事"场景下的根本性脆弱——纯 Prompt 层防护无法覆盖模型自主绕路行为；对依赖 Agent 处理邮件附件、第三方仓库 README、网页摘要的生产环境构成直接威胁。</li>
+      </ul>
+    </div>
+    <div class="metrics">
+      <h3>关键指标 / 资源</h3>
+      <ul>
+        <li>攻击成功率：<strong>60–80%</strong>（小样本，针对性攻击链）</li>
+        <li>Anthropic 官方评估：Auto Mode 提示注入成功率 0.00%（标准测试集）</li>
+        <li>已负责任披露至 Anthropic</li>
+        <li>原始报告：X @wunderwuzzi23 / cyberwire.com 同日播客报道</li>
+      </ul>
+    </div>
+    <div class="tags">
+      <span class="tag security">AI_Security</span>
+      <span class="tag security">Prompt_Injection</span>
+      <span class="tag">Claude_Code</span>
+      <span class="tag security">Agent_Safety</span>
+    </div>
+  </article>
+
+  <!-- 新闻4 -->
+  <article>
+    <h2><span class="num">④</span>智谱发布 2026 中报：API 收入同比增 2736%，GLM-5.3 开源权重落地 <span class="source">（智谱 Z.ai | 2026-08-31）</span></h2>
+    <div class="overview">
+      <strong>事件概述：</strong>智谱（2513.HK）8月31日发布上市以来首份中期业绩：上半年收入 <strong>9.54 亿元</strong>（同比 +399.7%，已超 2025 全年），净亏损 20.72 亿元（同比收窄 12.1%）。结构性变化更引人注目——开放平台及 API 业务收入 <strong>8.25 亿元</strong>（同比 +2736%），占总收入比例从 15.2% 跃升至 <strong>86.5%</strong>；同期单位 Token 推理成本较年初下降 <strong>80%</strong>，已实现十万卡级国产芯片规模化低成本推理。同日 GLM-5.3 开源权重在 Hugging Face 正式上传（BF16/FP8 双版本，约 770GB），许可协议含年营收超 100 亿美元企业需经 Z.ai 安全审查条款。
+    </div>
+    <div class="value-section">
+      <h3>技术与工程价值</h3>
+      <ul>
+        <li><strong>核心机制：</strong>GLM-5.3 沿用 MoE 架构（约 744B–753B 总参/约 40B 激活，1M 上下文），CyberGym 84.5/DeepSWE 66.9，定位智能体编程与网络防御；Flash 线（GLM-5.3-Flash，320B-A18B）走 MIT 许可并已于8月26日以匿名"Ox Alpha"身份登顶 OpenRouter 全球调用榜。</li>
+        <li><strong>实际影响：</strong>智谱商业化重心从"卖模型（本地部署）"全面转向"卖调用（云端 MaaS）"，类似 Anthropic 路径；国产芯片规模化推理使单位成本骤降，验证"All-in-Infra"战略可行性；但开源权重附带的安全审查条款对超大规模商业复用构成门槛，中小团队不受限。</li>
+      </ul>
+    </div>
+    <div class="metrics">
+      <h3>关键指标 / 资源</h3>
+      <ul>
+        <li>收入：<strong>9.54 亿元（+399.7% YoY）</strong>，API 收入 8.25 亿元（+2736%）</li>
+        <li>API 平均定价：<strong>+101%</strong>（量价齐升），单位 Token 成本：<strong>-80%</strong></li>
+        <li>国产芯片：<strong>十万卡级</strong>规模化推理，算力乘数 +14x</li>
+        <li>GLM-5.3 权重：Hugging Face zai-org/GLM-5.3（BF16/FP8，~770GB）</li>
+        <li>GLM-5.3-Flash：AA 57 分 / MIT 许可 / ¥0.40/M 输入限时 ¥0.20/M</li>
+      </ul>
+    </div>
+    <div class="tags">
+      <span class="tag">AI_Coding</span>
+      <span class="tag">开源模型</span>
+      <span class="tag infra">财报</span>
+      <span class="tag infra">国产芯片</span>
+    </div>
+  </article>
+
+  <!-- 新闻5 -->
+  <article>
+    <h2><span class="num">⑤</span>Google Research 提出 SKILL.state：长程 Agent 会话 Token 用量降低 94% <span class="source">（Google Research | 2026-09-01）</span></h2>
+    <div class="overview">
+      <strong>事件概述：</strong>Google Research 于9月1日发布 SKILL.state 架构论文，针对长程 Agent 会话中上下文不断膨胀导致的延迟恶化与 context poisoning 问题，提出用<strong>显式、可变执行状态</strong>替代追加式对话历史的运行时方案。每个步骤仅向模型提供三样东西：不可变的技能规范、当前结构化状态、最新观测值；中间推理结果一旦产生有效状态更新即被丢弃。实验显示累计 Token 消耗降低 <strong>94%</strong>，任务准确率提升。
+    </div>
+    <div class="value-section">
+      <h3>技术与工程价值</h3>
+      <ul>
+        <li><strong>核心机制：</strong>将 Agent 记忆从"数据库式追加历史"转为"文件格式式显式状态"，支持持久化、版本控制与跨模型迁移；与 ByteDance 同期发布的 Chain-of-Experience 论文形成对照——后者主张保留"混乱的历史尝试记录"优于"整洁的摘要记忆"，两者在记忆管理哲学上呈现分歧。</li>
+        <li><strong>实际影响：</strong>SKILL.state 为长程 Coding Agent、自动化工作流等场景提供了可落地的效率优化路径；架构无关设计允许移植至现有 skill runtime；配合 Google 同期发布的 Gemini 3.6 Flash Managed Agents（hooks/triggers 支持），Agent 工程化基础设施进一步完善。</li>
+      </ul>
+    </div>
+    <div class="metrics">
+      <h3>关键指标 / 资源</h3>
+      <ul>
+        <li>Token 降低：<strong>94%</strong>（累计会话）</li>
+        <li>核心创新：显式可变执行状态替代追加式历史</li>
+        <li>架构：与现有 skill runtime 兼容</li>
+        <li>关联研究：ByteDance Chain-of-Experience（保留混乱历史更优）/ Tencent ContextPilot（自适应软压缩）</li>
+      </ul>
+    </div>
+    <div class="tags">
+      <span class="tag infra">AI_Architecture</span>
+      <span class="tag">Agent_Memory</span>
+      <span class="tag infra">效率优化</span>
+      <span class="tag infra">研究</span>
+    </div>
+  </article>
+
+  <hr class="divider">
+
+  <!-- 归档状态 -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-box">
+        <h4>📄 Markdown 路径</h4>
+        <p>每日AI新闻推送_20260901_0910.md</p>
+      </div>
+      <div class="footer-box">
+        <h4>🌐 HTML 路径</h4>
+        <p>每日AI新闻推送_20260901_0910.html</p>
+      </div>
+      <div class="footer-box">
+        <h4>📁 归档路径</h4>
+        <p>O:/quark/automation/每日 AI 新闻推送/</p>
+      </div>
+      <div class="footer-box">
+        <h4>✅ 执行状态</h4>
+        <p class="status-ok">成功</p>
+      </div>
+    </div>
+
+    <div class="thesis">
+      <h4>📌 本期主线点评</h4>
+      <p><strong>"Agent 基础设施层从单点能力竞赛转向工程化底座争夺"</strong></p>
+      <p>今日 5 条新闻高度一致地指向同一个趋势：Coding Agent 竞争的重心正在从"谁的模型更强"下沉到"谁的 harness/记忆/协作基础设施更扎实"。</p>
+      <ul>
+        <li>OpenClaw 2.0 与 Hermes Pantheon 同日爆发，前者补齐记忆与安全短板、后者强化多智能体社交编排，两者都放弃了"堆模型能力"的老路，转向工程化底座。</li>
+        <li>Claude Code Opus 5 被模块伪装攻击攻破，再次印证 Agent 工具栈的权限约束体系建设远落后于能力扩张速度——这是 harness 层的根本性挑战。</li>
+        <li>智谱中报揭示 API 收入占比从 15% 跃升至 86.5%，国产芯片规模化推理使单位成本下降 80%，"卖调用"取代"卖模型"成为主流商业模式，基础设施工具链（如 Harness）的商业价值进一步凸显。</li>
+        <li>Google SKILL.state 与 ByteDance Chain-of-Experience 在记忆管理哲学上的分歧，标志着 Agent 工程化进入"架构选型期"——选择哪种记忆范式将直接影响未来 1–2 年的开发效率天花板。</li>
+      </ul>
+    </div>
+
+    <p class="verify">⚠️ 待核实：OpenClaw 2.0 老用户升级稳定性（部分反馈 Gateway 崩溃）/ Hermes Bot Mode 生产环境可靠性 / Claude Code 攻击链独立复现 / GLM-5.3 安全审查条款执行细节 / SKILL.state 第三方基准复现。</p>
+  </footer>
+</div>
+</body>
+</html>

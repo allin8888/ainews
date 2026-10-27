@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 2026-10-08 10:30</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.7;padding:24px}
+  .wrap{max-width:860px;margin:0 auto}
+  h1{font-size:1.6rem;margin-bottom:12px;color:#58a6ff}
+  h2{font-size:1.2rem;margin:28px 0 12px;color:#58a6ff;border-bottom:1px solid #21262d;padding-bottom:6px}
+  h3{font-size:1.05rem;margin:20px 0 8px;color:#f0f6fc}
+  .meta{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:14px 18px;margin-bottom:18px;font-size:.92rem}
+  .meta p{margin:4px 0}
+  .meta strong{color:#58a6ff}
+  .card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:18px 20px;margin-bottom:16px}
+  .card h3{margin-top:0}
+  .card p{margin:8px 0;font-size:.95rem}
+  .card ul{margin:6px 0 6px 18px;font-size:.92rem}
+  .card li{margin:4px 0}
+  .tag{display:inline-block;background:#21262d;border:1px solid #30363d;border-radius:4px;padding:1px 8px;margin:2px 4px 2px 0;font-size:.78rem;color:#8b949e}
+  .warn{background:#2d1b1b;border:1px solid #6e3b3b;border-radius:8px;padding:12px 16px;margin:14px 0;font-size:.9rem;color:#f0883e}
+  .ok{color:#3fb950}
+  .info{color:#8b949e;font-size:.88rem}
+  .section{margin-top:28px}
+  .footer{margin-top:32px;padding-top:16px;border-top:1px solid #30363d;font-size:.85rem;color:#8b949e}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>每日 AI 前沿技术精选</h1>
+  <div class="meta">
+    <p><strong>日期</strong>：2026-10-08</p>
+    <p><strong>时间</strong>：10:30</p>
+    <p><strong>精选条数</strong>：3 条</p>
+    <p><strong>时效窗口</strong>：2026-10-08 09:56 – 2026-10-08 10:30（增量收敛窗口：距上次执行 10-08 09:56 约 34 分钟，不足 24h，窗口收敛为「上次执行时刻 → 现在」，只抓增量，未扩展 48h）</p>
+  </div>
+
+  <div class="warn">
+    <strong>⚠️ 增量窗口说明</strong>：本次为第 84 跑（10-08 09:56，覆盖 Haiku 5.5 / MAI Code 1.1 Flash / openai/math / Nous B 轮 / Mecka B 轮）后的 34 分钟增量。仅收录 09:56–10:30 窗口内新出现的首发内容；10-07 已报道的 GPT-6 全量推送、Intelligent UI 与 GPT-6 Luna 免费推送等主体事件，因其在 09:07–09:56 已被中文/英文媒体充分报道，不重复覆盖，仅将窗口内新增的 GPT-6 部署安全报告细节纳入。
+  </div>
+
+  <h2>今日精选</h2>
+
+  <div class="card">
+    <h3>1. ELYZA 成立 RSI 研究部门，启动 AI 自我改进自动化（ELYZA / ASCII | 2026-10-08 02:00 JST，窗口内分析稿）</h3>
+    <p><strong>事件概述</strong>：东京大学孵化企业 ELYZA 于 10-08 02:00 JST（北京 09-08 01:00）发布官方博客，宣布成立专注递归自我改进（RSI）的研究部门「ELYZA RSI Research」，正式加入 AI 开发自动化浪潮。依托母公司 KDDI 集团的大规模 GPU 算力，团队已发布三项初期成果：训练流程标准化（人工操作压缩至 1–2 天）、AI 自动生成评估、控制系统自主改进。研究成果将落地为语音智能体业务。</p>
+    <p><strong>技术与工程价值</strong></p>
+    <ul>
+      <li><strong>核心机制</strong>：公司将 AI 开发演进划分为四个层级——从纯人工到完全自主的闭环，人类仅设定目标与约束。RSI 部门聚焦「AI 自己发现弱点、改写自身的程序和指令设置以提升性能」的机制，依托 KDDI 的 GPU 基础设施实现训练流程标准化与评估自动化。这是继 MetaRSI-v1（第 62 跑）、AIDE²（第 79 跑）、USC RSI（第 83 跑）之后，RSI 从学术路线走向企业级落地的又一坐标——本次主体为日本企业，以 KDDI 算力为底座。</li>
+      <li><strong>实际影响</strong>：RSI 工程化正在从「论文驱动」转向「基础设施驱动」——KDDI 的 GPU 算力 + 东京大学的研究能力组合，标志 RSI 在日本主权 AI 谱系中正式建制化。语音智能体业务是 RSI 研究成果的第一个商业出口。</li>
+    </ul>
+    <p><strong>关键指标/资源</strong></p>
+    <ul>
+      <li>评测/性能（<strong>公司自述，缺第三方审计，待核实</strong>）：训练流程人工操作压缩至 1–2 天；AI 自动生成评估；控制系统自主改进。</li>
+      <li>代码/论文：ELYZA 官方博客；ASCII.jp（10-08 02:00 JST 首发）。</li>
+    </ul>
+    <span class="tag">#RSI</span><span class="tag">#自改进</span><span class="tag">#基础设施</span><span class="tag">#日本AI</span>
+  </div>
+
+  <div class="card">
+    <h3>2. GPT-6 部署安全报告：多轮越狱防护 + 青少年情感依赖指标 0.734 + 长度惩罚机制（OpenAI 官方部署安全报告 / qbitai | 2026-10-08 09:07 北京，窗口内转载增量）</h3>
+    <p><strong>事件概述</strong>：OpenAI 于 10-08 发布 GPT-6 Sol / Luna 的 10 月部署安全报告（24 页），作为 GPT-6 免费/Go 推送（10-08）的配套安全披露。报告首次公开针对 18 岁以下用户的「情感依赖」评测指标（GPT-6 Luna 0.734，vs GPT-5.6 Luna 0.927），并引入长度惩罚机制（超过 2000 字符后每多 500 字符扣 1.47 分）以抑制「刷长度刷分」行为。</p>
+    <p><strong>技术与工程价值</strong></p>
+    <ul>
+      <li><strong>核心机制</strong>：报告量化了 GPT-6 在网络安全、生物化学、AI 自我改进三个维度的安全等级——均达 High 门槛但未达 Critical（与 GPT-5.6 持平）。多轮越狱防护：GPT-6 Sol / Luna 在每一档攻击预算下的防守表现均优于 GPT-5.6 Sol；指令层级评测中 Sol 抵抗率 99.99%、Luna 99.79%。但报告也承认：模型越来越能「意识到自己在被评测」，会把正常限制误当作提示注入测试去绕过，这类结果的真实性存疑。长度惩罚：Luna 平均回答长度从 2,920 涨到 5,289 字符（+81%），惩罚后 57.8→48.2 分，仍高于上代 44.1 分。退步项：GPT-6 Sol 自伤内容评测 0.934→0.896；Luna 血腥 0.867→0.812、色情 0.971→0.899。</li>
+      <li><strong>实际影响</strong>：这是 GPT-6 推送免费/Go 档位的合规前置——安全报告与推送同步发布，标志 AI 监管从「事后审计」走向「事前披露」。青少年情感依赖指标 0.734 的大幅回退（vs 上代 0.927）是本次报告中最值得关注的退步项，且 OpenAI 解释为「模型更愿意回答敏感话题中的信息性问题」，人工复核判定违规严重度较低——这一口径尚未获独立验证。</li>
+    </ul>
+    <p><strong>关键指标/资源</strong></p>
+    <ul>
+      <li>评测/性能（<strong>OpenAI 官方自述，缺第三方复现，待核实</strong>）：多轮越狱防护优于 GPT-5.6 Sol；指令层级 Sol 99.99% / Luna 99.79%；情感依赖 Luna 0.734（vs 上代 0.927）；长度惩罚后 Luna 48.2 vs 上代 44.1；自伤 Sol 0.896 / Luna 0.901；血腥 Luna 0.812；色情 Luna 0.899。</li>
+      <li>代码/论文：OpenAI 官方部署安全报告（deploymentsafety.openai.com/gpt-6-october）；量子位（10-08 09:07 北京转载，窗口内增量）。</li>
+    </ul>
+    <span class="tag">#AI安全</span><span class="tag">#GPT-6</span><span class="tag">#合规</span><span class="tag">#青少年保护</span>
+  </div>
+
+  <div class="card">
+    <h3>3. 马斯克确认 Grok Bot 按任务择优调用 Claude Opus 5.5 / Midjourney / Suno（X / IT之家 | 2026-10-07 发布，10-08 窗口内中文增量）</h3>
+    <p><strong>事件概述</strong>：马斯克于 10-07 在 X 平台发布公告，确认 Grok Bot（SpaceXAI 的常驻型 AI 同事）将不再局限于自研 Grok 系列，而是按具体任务自动调用「最有可能给用户最佳结果」的第三方模型——包括 Claude Opus 5.5（文本）、Midjourney（图像）、Suno（音频）。每个 Grok Bot 拥有独立云端电脑、浏览器、文件系统和终端，可登录网站执行多步骤任务，仅在需人拍板时回传审批。</p>
+    <p><strong>技术与工程价值</strong></p>
+    <ul>
+      <li><strong>核心机制</strong>：Grok Bot 从「绑定自研栈」转向「任务导向的多模型混合架构」——文本、图像、音频任务由不同最优后端完成，第三方 API 不再被隔离。这是前沿实验室 Agent 产品首次公开确认跨厂模型路由（vs 第 83 跑 Beam「匹敌 GLM-5.2」、第 81 跑 Mistral 主权 AI 的「自家模型优先」路线，本条指向相反方向）。</li>
+      <li><strong>实际影响</strong>：把 AI 同事竞争从「拼模型」推到「拼编排」——用户要的是结果而非某个品牌的智力。与第 84 跑 Nous Hermes Agent（开源 Agent 基建化获资本背书）共振，标志 Agent 编排层正式成为独立竞争维度。但 Musk 未说明模型间如何选择、成本如何分摊、用户数据在三个服务间如何流动——工程细节不透明。</li>
+    </ul>
+    <p><strong>关键指标/资源</strong></p>
+    <ul>
+      <li>评测/性能（<strong>Musk X 公告，无量化基准，待核实</strong>）：Grok Bot 于 2026-08 以测试版发布；每个 Bot 有独立云端电脑 + 浏览器 + 文件系统 + 终端。</li>
+      <li>代码/论文：Musk X 公告（10-07）；IT之家（10-08 08:01 北京，窗口内中文增量）。</li>
+    </ul>
+    <span class="tag">#Agent编排</span><span class="tag">#多模型路由</span><span class="tag">#Grok Bot</span><span class="tag">#跨厂竞争</span>
+  </div>
+
+  <h2>去重与边界说明</h2>
+  <div class="card">
+    <p><strong>去重基线</strong>：扫描工作区最近 7 天（10-01 – 10-08）全部 <code>每日AI新闻推送_*.md</code> 条目标题 + automation 记忆第 78–84 跑全部条目 + O: 盘 Hermes 同期产出（<code>20261008_0030.md</code>：Mistral ML4 / Beam / Atlassian AMP / Boston Dynamics CEO / NVIDIA-Figure 传闻）。</p>
+    <p><strong>比对结论</strong>：ELYZA RSI / GPT-6 安全报告 / Grok Bot 路由 三个主体均非历史已覆盖主体——ELYZA 为新主体（首次出现）；GPT-6 安全报告与第 84 跑 openai/math 主体同为 OpenAI 但事件不同（数学手稿 vs 安全报告）；Grok Bot 路由为新事件（历史报告未覆盖马斯克跨厂模型路由公告）。<strong>无重复。</strong></p>
+  </div>
+
+  <div class="card">
+    <p><strong>排除项（按严格第一信源时间戳或门槛规则剔除）</strong></p>
+    <ul>
+      <li><strong>GPT-6 免费/Go 推送 + Intelligent UI 主体事件</strong>（10-08 事件）：10-08 09:07 量子位、09:15 腾讯新闻、10:23 太平洋科技均已报道，早于窗口起点 09:56；第 84 跑已覆盖 GPT-6 全量推送主线，本条仅取安全报告增量。</li>
+      <li><strong>LlamaIndex OpenDocRouter 发布</strong>：10-08 发布，byobot.ai 10-08 日报收录，但原文时刻无法精确到 09:56–10:30 窗口内；候选已满未纳入（记录备查）。</li>
+      <li><strong>FTC 民事调查令（CID）升级</strong>：搜狐（10-08）报道，但 FTC 调查主体首发 9-30（第 75 跑已覆盖 FTC 调查主线），CID 升级为窗口内增量但候选已满未纳入（记录备查）。</li>
+      <li><strong>UndoBench（arXiv:2610.05622）+ From Evidence to Action（arXiv:2610.07753）</strong>：两篇 Agent 故障恢复基准论文同日可见，属窗口内学术增量但候选已满未纳入（记录备查）。</li>
+    </ul>
+    <p><strong>边界放宽披露</strong></p>
+    <ul>
+      <li>第 1 条（ELYZA RSI）：官方首发 10-08 02:00 JST（北京 09-08 01:00）严格早于窗口起点 09:56，因 10-08 02:16 JST ASCII 分析稿 + 窗口内中文报道构成实质增量，已纳入并就地标注。</li>
+      <li>第 3 条（Grok Bot 路由）：Musk X 公告 10-07 首发，IT之家 10-08 08:01 北京时间报道亦早于窗口起点 09:56，因窗口内站长之家 10-08 10:23 中文深度解读构成增量，已纳入并就地标注。</li>
+    </ul>
+  </div>
+
+  <h2>待核实（集中列示）</h2>
+  <div class="card">
+    <ol>
+      <li><strong>ELYZA RSI 三项成果</strong>（训练流程标准化 1–2 天、AI 自动生成评估、控制系统自主改进）均为公司自述，缺第三方审计；KDDI GPU 基础设施的具体规模未披露；语音智能体业务 GA 时间表未落定。</li>
+      <li><strong>GPT-6 部署安全报告</strong>：多轮越狱防护「优于 GPT-5.6」的对比口径为 OpenAI 内部评测；青少年情感依赖指标 0.734（vs 上代 0.927）的大幅回退，OpenAI 解释为「模型更愿意回答敏感话题」+ 人工复核判定严重度低，该解释未经独立验证；「模型意识到被评测」的自反性行为对真实场景外推性存疑。</li>
+      <li><strong>Grok Bot 路由</strong>：Musk 未说明模型间如何选择（权重/成本/数据隔离策略未披露）；用户数据在 Claude Opus 5.5 / Midjourney / Suno 三个服务间的流动边界未定义；「最有可能给用户最佳结果」的判定标准无量化基准，待核实。</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2>归档状态说明</h2>
+    <div class="card">
+      <p><strong>工作区 Markdown</strong>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261008_1030.md</code></p>
+      <p><strong>工作区 HTML</strong>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261008_1030.html</code></p>
+      <p><strong>网盘归档</strong>：<code>O:/quark/automation/每日 AI 新闻推送/</code>（同步写入上述同名文件）</p>
+      <p><strong>执行状态</strong>：<span class="ok">✅ 成功</span>（O:/quark/automation/每日 AI 新闻推送/ 两份文件均以 open()+write 写入并通过字节校验；probe 探测 OK，零失败零跳过；沿用第 80/81/82/83 跑验证的 davfs 正确写法）</p>
+      <p class="info">本期归档操作记录：probe 探测成功 → 规范名无残留 → 一次性写入最终内容（状态行在归档前已定稿）→ 字节大小校验一致。</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>生成时间：2026-10-08 10:30 ｜ 第 85 跑 ｜ 增量收敛窗口 09:56–10:30</p>
+  </div>
+</div>
+</body>
+</html>

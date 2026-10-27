@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 — 2026-08-21</title>
+<style>
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --card: #0f3460;
+    --accent: #e94560;
+    --accent2: #00d2ff;
+    --text: #e8e8e8;
+    --text-muted: #a0a0b0;
+    --border: #2a2a4a;
+    --tag-bg: #1e2a4a;
+    --success: #4ade80;
+    --warn: #fbbf24;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    line-height: 1.7;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 860px; margin: 0 auto; }
+  .header {
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.02em;
+  }
+  .header .meta {
+    margin-top: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+  .header .meta span { margin-right: 1.5rem; }
+  .section-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent2);
+    margin: 2rem 0 1rem;
+    padding-left: 0.75rem;
+    border-left: 3px solid var(--accent2);
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+    transition: border-color 0.2s;
+  }
+  .card:hover { border-color: var(--accent); }
+  .card-num {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+  }
+  .card h2 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    display: inline;
+    vertical-align: middle;
+    color: var(--text);
+  }
+  .card .source-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-left: 0.5rem;
+  }
+  .card .section-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent2);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 1rem 0 0.4rem;
+  }
+  .card p, .card li {
+    font-size: 0.92rem;
+    color: var(--text);
+  }
+  .card ul { padding-left: 1.2rem; margin-top: 0.3rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card .metrics {
+    background: var(--tag-bg);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    margin-top: 0.75rem;
+    font-size: 0.88rem;
+  }
+  .card .metrics dt { color: var(--text-muted); font-size: 0.82rem; margin-top: 0.4rem; }
+  .card .metrics dd { color: var(--text); margin-left: 0; font-weight: 500; }
+  .tags { margin-top: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .tag {
+    background: var(--tag-bg);
+    color: var(--accent2);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+  }
+  .summary-box {
+    background: var(--card);
+    border: 1px solid var(--accent2);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+  .summary-box h3 {
+    color: var(--accent2);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .summary-box ol { padding-left: 1.3rem; }
+  .summary-box li {
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+    color: var(--text);
+  }
+  .summary-box strong { color: var(--accent); }
+  .mini-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    margin-top: 0.75rem;
+  }
+  .mini-table th {
+    background: var(--tag-bg);
+    color: var(--accent2);
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .mini-table td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    vertical-align: top;
+  }
+  .mini-table tr:last-child td { border-bottom: none; }
+  .archive-note {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: var(--tag-bg);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .archive-note code {
+    background: var(--card);
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.82rem;
+    color: var(--accent2);
+  }
+  @media (max-width: 600px) {
+    body { padding: 1rem 0.5rem; }
+    .card { padding: 1rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>📐 每日 AI 前沿技术精选</h1>
+    <div class="meta">
+      <span>📅 2026-08-21</span>
+      <span>🕕 18:19</span>
+      <span>📊 5 条主选 + 3 条补充</span>
+    </div>
+  </div>
+
+  <div class="section-title">今日精选</div>
+
+  <!-- Card 1 -->
+  <div class="card">
+    <span class="card-num">1</span>
+    <h2>Stripe 以约 75 亿美元收购 OpenRouter</h2>
+    <span class="source-date">NYT / Inside AI | 2026-08-20</span>
+    <div class="section-label">事件概述</div>
+    <p>支付巨头 Stripe 正式确认以约 75 亿美元收购 AI 模型路由平台 OpenRouter，较其 5 月 B 轮估值 13 亿美元溢价超 400%。OpenRouter 联合创始人将获 15 亿美元，其余 60 亿美元归投资者（含 a16z、Nvidia、Sequoia、Alphabet 投资部）。</p>
+    <div class="section-label">技术与工程价值</div>
+    <ul>
+      <li><strong>核心机制</strong>：OpenRouter 提供统一 API 接入层，400+ 模型来自 80+ 供应商，根据任务复杂度/价格/速度自动路由，日均处理量超 10 万亿 token，服务费约 5%</li>
+      <li><strong>实际影响</strong>：Stripe 将支付基础设施延伸至 AI 推理消费层；Token 交易层被整合进支付基础设施，多模型中立编排成为新基础设施类别</li>
+    </ul>
+    <div class="metrics">
+      <dl>
+        <dt>月收入（2026.8）</dt><dd>约 1,300 万美元（4 月以来增长超 3 倍）</dd>
+        <dt>客户</dt><dd>NVIDIA、Zoom、Lovable Labs、Vercel 等</dd>
+        <dt>代码/入口</dt><dd><a href="https://openrouter.ai" style="color:var(--accent2)">openrouter.ai</a></dd>
+      </dl>
+    </div>
+    <div class="tags">
+      <span class="tag">#AI基础设施</span>
+      <span class="tag">#模型路由</span>
+      <span class="tag">#支付整合</span>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card">
+    <span class="card-num">2</span>
+    <h2>Anthropic Q2 营收 115 亿美元同比 +14 倍，最快 10 月 IPO</h2>
+    <span class="source-date">财联社 / Axios | 2026-08-14 / 20</span>
+    <div class="section-label">事件概述</div>
+    <p>Anthropic 向投资者披露 Q2 初步营收超 115 亿美元（同比 +14x），ARR 达 650 亿美元，超越 OpenAI 同期 400 亿美元。公司最快 10 月提交 IPO 文件，估值讨论接近 2 万亿美元。</p>
+    <div class="section-label">技术与工程价值</div>
+    <ul>
+      <li><strong>核心机制</strong>：Claude Code 等企业级编码工具驱动快速渗透，每季度 ARR 新增约 90 亿美元；企业 LLM 份额 32%，首次超越 OpenAI（25%）</li>
+      <li><strong>实际影响</strong>：Coding Agent 商业化从实验进入真实工作流；Anthropic 以零数据保留（ZDR）策略差异化，但 Frontier 模型强制 30 天保留，与 OpenAI PSP 预览版形成竞品对照</li>
+    </ul>
+    <div class="metrics">
+      <dl>
+        <dt>Q2 营收</dt><dd>115 亿美元（同比 +14x，2025 年同期 7.87 亿美元）</dd>
+        <dt>ARR</dt><dd>650 亿美元（每季度 +90 亿增速）</dd>
+        <dt>企业 LLM 份额</dt><dd>32%（首超 OpenAI 25%）</dd>
+        <dt>目标估值</dt><dd>≈ 2 万亿美元（媒体援引知情人士）⚠️ 待核实</dd>
+      </dl>
+    </div>
+    <div class="tags">
+      <span class="tag">#企业AI</span>
+      <span class="tag">#CodingAgent</span>
+      <span class="tag">#IPO</span>
+      <span class="tag">#Anthropic</span>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card">
+    <span class="card-num">3</span>
+    <h2>OpenAI 预览 Private Safety Processing，扩展零数据留存安全机制</h2>
+    <span class="source-date">OpenAI Blog / Agentic Tribune | 2026-08-19</span>
+    <div class="section-label">事件概述</div>
+    <p>OpenAI 宣布为符合资格的前沿模型 API 客户扩展 ZDR 服务，并预览 PSP 机制，可在不暴露客户内容给 OpenAI 员工的前提下，通过自动化系统跨多轮交互识别风险模式。</p>
+    <div class="section-label">技术与工程价值</div>
+    <ul>
+      <li><strong>核心机制</strong>：PSP 解决跨会话/跨账户协调性滥用、持续试探安全边界的提示注入、长期自主任务的意图漂移等盲区；两种部署模式：客户控制基础设施 / OpenAI 基础设施但客户持加密密钥</li>
+      <li><strong>实际影响</strong>：为受监管行业提供安全审查与数据保留的平衡路径；与 Anthropic 30 天强制保留策略形成差异化竞争，企业合规焦虑成为产品博弈点</li>
+    </ul>
+    <div class="metrics">
+      <dl>
+        <dt>状态</dt><dd>预览版，Glean / Databricks / Abridge / Microsoft 等早期客户测试中</dd>
+        <dt>正式推出</dt><dd>计划 2026 年 9 月，同步发布技术白皮书</dd>
+        <dt>例外</dt><dd>CSAM（儿童性虐待材料）仍按法律要求保留，ZDR 不豁免</dd>
+      </dl>
+    </div>
+    <div class="tags">
+      <span class="tag">#AI安全</span>
+      <span class="tag">#零数据留存</span>
+      <span class="tag">#企业合规</span>
+      <span class="tag">#Prompt注入防护</span>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="card">
+    <span class="card-num">4</span>
+    <h2>Google 向 Marvell 投资最高 122 亿美元，扩展 TPU 定制芯片供应链</h2>
+    <span class="source-date">Reuters / SEC 8-K | 2026-08-19</span>
+    <div class="section-label">事件概述</div>
+    <p>Google 与 Marvell Technology 扩大合作，授予 Google 认购权证，允许以每股 206.58 美元购买最多 5897 万股 Marvell 股票，上限 122 亿美元。合作范围涵盖 TPU 生态的 AI 推理加速器、存储/网络/内存控制器及近存计算芯片。</p>
+    <div class="section-label">技术与工程价值</div>
+    <ul>
+      <li><strong>核心机制</strong>：通过股权绑定（warrant 分 240 批归属，每 5 亿美元采购解锁一期）深度绑定 Marvell 定制芯片产能，实现 TPU 供应链多元化（当前主要供应商为 Broadcom）</li>
+      <li><strong>实际影响</strong>：Google 将 TPU 从内部使用转向对外销售（Google Cloud TPU），定制芯片成为吸引云客户的核心卖点；Marvell 股价当日涨约 10%，Broadcom 跌 4.6%</li>
+    </ul>
+    <div class="metrics">
+      <dl>
+        <dt>认购价</dt><dd>$206.58/股，合计 5897 万股，上限 $122 亿</dd>
+        <dt>归属节奏</dt><dd>首年每季度 136 万股，此后每 $5 亿采购解锁一期，至 2033 财年结束</dd>
+        <dt>预期总收入</dt><dd>约 $1200 亿（Marvell 披露 2033 年累计）</dd>
+        <dt>股价反应</dt><dd>Marvell +10%（$237.27，市值 $2078 亿）；Broadcom -4.6%</dd>
+      </dl>
+    </div>
+    <div class="tags">
+      <span class="tag">#AI芯片</span>
+      <span class="tag">#TPU</span>
+      <span class="tag">#供应链</span>
+      <span class="tag">#自研芯片</span>
+    </div>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="card">
+    <span class="card-num">5</span>
+    <h2>Waymo 自研 5nm ASIC 芯片正式上车，AI 算力超 1000 TOPS</h2>
+    <span class="source-date">Waymo Blog / The Verge / 财联社 | 2026-08-20</span>
+    <div class="section-label">事件概述</div>
+    <p>Alphabet 旗下 Waymo 首次披露其首款定制 ASIC 芯片已量产并搭载于最新一代 Robotaxi。芯片由台积电 5nm 工艺制造，AI 算力超 1000 TOPS（INT8），专为实时处理激光雷达/雷达/摄像头数据流并运行异构神经网络设计。</p>
+    <div class="section-label">技术与工程价值</div>
+    <ul>
+      <li><strong>核心机制</strong>：芯片-传感器-算法协同开发（co-design），专用加速器实现时域降噪与低光照感知增强；双引擎冗余设计，液冷集成车辆散热系统</li>
+      <li><strong>实际影响</strong>：Waymo 从依赖 NVIDIA/AMD 通用芯片转向自研 ASIC，Robotaxi 竞争深入底层计算平台；预计可降低单车硬件成本并提供更宽敞乘坐空间；累计超 2 亿英里全自动驾驶经验</li>
+    </ul>
+    <div class="metrics">
+      <dl>
+        <dt>制程</dt><dd>台积电 5nm</dd>
+        <dt>算力</dt><dd>&gt;1000 TOPS（INT8，对标 NVIDIA Drive AGX Thor）</dd>
+        <dt>部署状态</dt><dd>已量产上车，搭载于最新 Zeekr 合作车型</dd>
+        <dt>服务城市</dt><dd>旧金山、菲尼克斯、亚特兰大</dd>
+      </dl>
+    </div>
+    <div class="tags">
+      <span class="tag">#自动驾驶</span>
+      <span class="tag">#ASIC</span>
+      <span class="tag">#芯片自研</span>
+      <span class="tag">#Robotaxi</span>
+    </div>
+  </div>
+
+  <!-- 补充信号 -->
+  <div class="section-title">补充信号（简讯）</div>
+  <table class="mini-table">
+    <thead>
+      <tr><th>#</th><th>事件</th><th>来源</th><th>影响</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>6</td>
+        <td>Binance 推出 Agent OS，支持 Claude Code / Codex / Cursor 等 AI 代理自动执行交易</td>
+        <td>Binance Blog</td>
+        <td>加密交易首次开放给第三方 Agent 运行时，MCP 协议在金融场景落地</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>GuideLight 首份 AI 安全评估：Anthropic/OpenAI 并列 C+，Meta 得 F，无机构完全达标</td>
+        <td>Guidelight / Fortune</td>
+        <td>揭示行业安全基础设施普遍薄弱，「发现→预防→遏制」链条断裂</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>以色列公司 Dream 披露首起近自主 AI 网络攻击：Hermes+OpenClaw 框架链式攻击台湾政府系统，4 天入侵 85 账户</td>
+        <td>Dream / Reuters</td>
+        <td>开源 Agent 框架被武器化风险显现，主权级攻击门槛降低</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 本期刊要 -->
+  <div class="summary-box">
+    <h3>📌 本期刊要</h3>
+    <p style="margin-bottom:1rem;color:var(--text-muted);font-size:0.9rem;">主线：<strong>「基础设施层定价战 + Agent 安全成本显性化 + 自研芯片竞争白热化」</strong></p>
+    <ol>
+      <li><strong>Stripe 收购 OpenRouter</strong> 标志 AI 推理消费被纳入支付基础设施，Token 交易层迎来定价重估；a16z 一周内连续退出 Cursor 和 OpenRouter 两笔巨型交易。</li>
+      <li><strong>Anthropic Q2 营收 115 亿美元</strong> 印证企业级 AI 采用加速，Coding Agent 从实验工具变为真实工作流，IPO 倒计时开启估值竞赛。</li>
+      <li><strong>OpenAI Private Safety Processing</strong> 与 Anthropic 30 天保留策略形成安全-隐私差异化竞争，企业客户的合规焦虑成为产品博弈点。</li>
+      <li><strong>Google-Marvell 122 亿美元芯片绑定</strong> 与 Waymo 自研 ASIC 同期发布，反映超大规模厂商对芯片供应链控制的战略焦虑——NVIDIA GPU 垄断正在被多路径分化。</li>
+      <li><strong>Guidelight 安全评估</strong> 揭示业界「发现能力强但预防/遏制能力弱」的系统性漏洞，AI 失控风险的管控能力仍落后于模型能力增长速度。</li>
+    </ol>
+  </div>
+
+  <!-- 归档状态 -->
+  <div class="archive-note">
+    <strong>归档状态</strong><br>
+    Markdown：<code>O:/quark/automation/每日 AI 新闻推送/每日AI新闻推送_20260821_1819.md</code><br>
+    HTML：<code>O:/quark/automation/每日 AI 新闻推送/每日AI新闻推送_20260821_1819.html</code><br>
+    执行状态：<span style="color:var(--success)">✅ 成功</span>
+  </div>
+
+</div>
+</body>
+</html>

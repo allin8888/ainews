@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 新闻推送 · 2026-08-13（晚间版）</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1f2328;
+    --muted: #59636e;
+    --accent: #2563eb;
+    --border: #d8dee4;
+    --card: #f6f8fa;
+    --warn: #b45309;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 32px 16px;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; }
+  h1 { font-size: 26px; margin: 0 0 6px; }
+  .meta {
+    color: var(--muted);
+    font-size: 14px;
+    border-left: 3px solid var(--accent);
+    padding: 6px 12px;
+    background: var(--card);
+    border-radius: 4px;
+    margin: 16px 0 28px;
+  }
+  .item {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin: 0 0 18px;
+    background: var(--bg);
+  }
+  .item h2 {
+    font-size: 18px;
+    margin: 0 0 10px;
+    color: var(--accent);
+    line-height: 1.4;
+  }
+  .item .label {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--fg);
+    margin-right: 4px;
+  }
+  .item p { margin: 6px 0; }
+  .item a { color: var(--accent); word-break: break-all; }
+  .tag {
+    display: inline-block;
+    font-size: 12px;
+    color: var(--warn);
+    border: 1px solid var(--warn);
+    border-radius: 999px;
+    padding: 1px 8px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .aside {
+    margin-top: 28px;
+    border-top: 2px solid var(--border);
+    padding-top: 16px;
+  }
+  .aside h3 { font-size: 17px; margin: 0 0 10px; }
+  .aside ul { padding-left: 20px; margin: 6px 0; }
+  .aside li { margin: 8px 0; }
+  .notes {
+    margin-top: 24px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .notes strong { color: var(--fg); }
+  footer {
+    margin-top: 32px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>每日 AI 新闻推送 · 2026-08-13（晚间版）</h1>
+  <div class="meta">
+    覆盖 8/13 下午—深夜（北京时间）。承接上午版 <code>AI新闻精选_2026-08-13.md</code>（已覆盖 DeepSeek V4 Pro / Grok 4.6 / Qwen3.8 开源 / Anthropic 多智能体研究 / G0.5），本版只取当日新增、不重述。<br>
+    主线：<strong>「开源 Harness 争夺开发者入口 + 企业级 Coding Agent 部署跑出硬指标」</strong>。共 5 条主选 + 关注项。
+  </div>
+
+  <div class="item">
+    <h2>一、DeepSeek Harness v0.1 开发者预览版发布：一切皆插件，MIT 开源</h2>
+    <p><span class="label">事件：</span>8/13 晚，DeepSeek 发布首款 Agent 产品 Harness v0.1 开发者预览，同步以 MIT 协议开源。底层基于 Cordis 插件系统，模型 / 工具 / 技能 / 会话 / 沙箱 / 存储 / 循环 / 调度 / UI 全部由插件组合，可替换、可重组；提供标准 / PTC（程序化工具调用）/ 极简 / 创造四种运行模式；append-only 会话日志 + Trajectory 视图支持恢复 / 分叉 / 检索 / 回放。启动命令：<code>npx @deepseek-ai/dsh web</code>。</p>
+    <p><span class="label">为何值得关注：</span>DeepSeek 不再只卖"可被调用的模型"，而是下场争夺模型之上的开发者入口，直接对标 Codex / Claude Code。MIT + "一切皆插件"把模型降格为技术栈中可替换的一环，延续本系列「去模型化 → 接入层 → 运行时标准化」主线，并给国产模型厂提供开源 Harness 范本（V4-Flash 公测时的 Code Agent 评测即用的极简模式）。</p>
+    <p><span class="label">来源：</span><a href="https://news.qq.com/rain/a/20260813A0DOWY00">DeepSeek Harness 团队公告（腾讯新闻转载）/ X @deepseek_ai</a></p>
+  </div>
+
+  <div class="item">
+    <h2>二、三星 System LSI 用 Claude Code 把 SoC 验证从 30+ 天压到 2 天</h2>
+    <p><span class="label">事件：</span>8/13 每日经济新闻报道，三星 System LSI 今年 5 月引入 Claude Code，定制 SoC 验证周期由 30 余天缩至 2 天、效率提升约 15 倍，PDK 适配迭代压缩超 95%。</p>
+    <p><span class="label">为何值得关注：</span>这是 Coding Agent 在硬核芯片验证场景的最强企业级实证之一——验证是典型的「长上下文 + 强约束 + 高合规」任务。但报道同时指出模型存在"擅改代码"缺陷、仍需人工复核，呼应本系列长期警示：能力增长必须与权限收敛同步。</p>
+    <p><span class="label">来源：</span><a href="https://view.inews.qq.com/a/20260813A05ZDP00">每日经济新闻（经 vibe coding 日报转述）</a></p>
+  </div>
+
+  <div class="item">
+    <h2>三、Claude Code 团队揭秘上下文工程原语：Hooks 是唯一可扩展插件抽象</h2>
+    <p><span class="label">事件：</span>8/13 InfoQ 整理 Anthropic Claude Code 团队在 NDC Copenhagen 的演讲：上下文窗口一年未扩容仍是瓶颈；Hooks 是唯一真正可扩展的插件抽象；2026 年团队重心从"把信息输入模型"转向"把信息从模型输出给用户"。</p>
+    <p><span class="label">为何值得关注：</span>把"上下文工程"从玄学落到具体原语——当模型上下文长度见顶，胜负手转向工具 / 钩子编排与输出侧治理。与 #1 DeepSeek Harness 的"一切皆插件"思路同源，印证 Agent 框架的竞争焦点已彻底从模型能力下沉到运行时与编排层。</p>
+    <p><span class="label">来源：</span><a href="https://view.inews.qq.com/a/20260813A08L5700">InfoQ（经 vibe coding 日报转述）</a></p>
+  </div>
+
+  <div class="item">
+    <h2>四、第二届世界人形机器人运动会 8/22 开赛：666 队 / 2056 台机器人</h2>
+    <p><span class="label">事件：</span>8/13 IT之家报道，第二届世界人形机器人运动会将于 8/22 在国家速滑馆"冰丝带"开赛，吸引六大洲 16 国 666 支队伍、2056 台机器人参赛，队伍总量同比 +138%；设"机器人之家"运动员村，一机一码数字化管理，200 个充电柜可同时满足 ≥1200 块电池充电。</p>
+    <p><span class="label">为何值得关注：</span>具身智能从实验室走向规模化赛事与运维基建，参赛规模与配套（数字孪生管理、充电网络）是产业成熟度信号；与上个月 IDC 报告"中国占全球人形出货 97%+"相互印证，硬件侧热度持续。</p>
+    <p><span class="label">来源：</span><a href="https://www.ithome.com/0/989/270.htm">IT之家</a></p>
+  </div>
+
+  <div class="item">
+    <h2>五、Codex 桌面端登陆 Linux，活跃用户破 1000 万<span class="tag">待核实</span></h2>
+    <p><span class="label">事件：</span>8/13 多个 X 帖（经每日 AI 洞察汇总）称 OpenAI Codex 与 ChatGPT 桌面端已支持 Linux，Codex 活跃用户超 1000 万，并预告"明日有惊喜"。</p>
+    <p><span class="label">为何值得关注：</span>若属实，Codex 从云端 API 扩展到本地桌面多端，是 AI Coding 工具主流化的又一信号；但"1000 万活跃""明日惊喜"均来自单人 X 帖转述，无 OpenAI 官方博客佐证，需谨慎对待。</p>
+    <p><span class="label">来源：</span><a href="https://buttondown.com/cherrylin000/archive/u6bcf-u65e5-ai-u6d1e-u5bdf-2026-08-13">每日 AI 洞察（聚合 X @tsottiaux 等）</a></p>
+  </div>
+
+  <div class="aside">
+    <h3>关注项</h3>
+    <ul>
+      <li><strong>Grok 浏览器录屏教学</strong>：xAI 推出"教 Grok 一项任务"——聊天中点 + 录制浏览器操作，bot 观看学习后重复执行（X @ericzakariasson，8/13）。Agent 从演示学习（LfD）进入消费级 IDE。</li>
+      <li><strong>G0.5（arXiv 2608.11739）</strong>：上午版已覆盖——单条自回归流统一机器人推理 + 动作，替代 VLM + 动作专家范式。</li>
+      <li><strong>上午版已覆盖、本版不重述</strong>：DeepSeek V4 Pro 正式版 / Grok 4.6 + Cursor 首发 / 阿里 Qwen3.8-2.4T 开源 / Anthropic 多智能体系统研究。详见 <code>AI新闻精选_2026-08-13.md</code>。</li>
+    </ul>
+  </div>
+
+  <div class="notes">
+    <strong>待核实汇总</strong>
+    <ul>
+      <li>DeepSeek Harness 为 v0.1 早期预览，基准 / 生态未成熟；官方与媒体均称"替代 Claude Code 为时尚早"。</li>
+      <li>三星 SoC 验证提速为媒体报道，未附内部基准原始数据；"模型擅改代码"缺独立复现。</li>
+      <li>Codex Linux / 1000 万活跃用户来自 X 帖转述，无 OpenAI 官方公告；"明日惊喜"未指明。</li>
+      <li>世界人形机器人运动会数字来自主办方 / IT之家，参赛规模与实际落地表现待赛后验证。</li>
+    </ul>
+  </div>
+
+  <footer>每日 AI 新闻推送 · 自动化生成于 2026-08-13 · 聚焦 AI Coding 与具身智能</footer>
+</div>
+</body>
+</html>

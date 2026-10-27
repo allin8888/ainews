@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-10-03 21:15</title>
+<style>
+  :root{
+    --bg:#0d1117;
+    --card:#161b22;
+    --card2:#1c2128;
+    --border:#30363d;
+    --text:#e6edf3;
+    --muted:#8b949e;
+    --blue:#58a6ff;
+    --green:#3fb950;
+    --orange:#f0883e;
+    --red:#f85149;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.75;
+    padding:32px 20px 64px;
+  }
+  .wrap{max-width:960px;margin:0 auto}
+  header.page{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:28px 32px;
+    margin-bottom:28px;
+  }
+  header.page h1{
+    font-size:26px;font-weight:700;letter-spacing:.5px;
+    padding-bottom:16px;margin-bottom:16px;
+    border-bottom:1px solid var(--border);
+  }
+  .meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px 20px}
+  .meta div{font-size:14px;color:var(--muted)}
+  .meta b{color:var(--text);font-weight:600}
+  .win{
+    margin-top:14px;padding:10px 14px;
+    background:rgba(88,166,255,.08);
+    border-left:3px solid var(--blue);
+    border-radius:0 6px 6px 0;
+    font-size:13.5px;color:var(--muted);
+  }
+  .win b{color:var(--blue)}
+  h2.sec{
+    font-size:19px;font-weight:700;color:var(--green);
+    margin:36px 0 18px;padding-left:11px;
+    border-left:4px solid var(--green);
+  }
+  article.item{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:24px 26px;
+    margin-bottom:20px;
+    transition:border-color .2s;
+  }
+  article.item:hover{border-color:var(--blue)}
+  article.item h3{
+    font-size:17.5px;font-weight:700;line-height:1.5;
+    margin-bottom:4px;color:var(--text);
+  }
+  .src{font-size:12.5px;color:var(--muted);margin-bottom:16px}
+  .blk{margin-bottom:15px}
+  .blk:last-child{margin-bottom:0}
+  .lbl{
+    display:inline-block;font-size:12px;font-weight:700;
+    color:var(--orange);letter-spacing:.6px;
+    margin-bottom:6px;
+  }
+  .blk p{font-size:14.5px;color:var(--text)}
+  ul.pts{margin:0;padding-left:20px}
+  ul.pts li{font-size:14px;margin-bottom:7px}
+  ul.pts li b{color:var(--blue)}
+  .tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:7px}
+  .tag{
+    font-size:12px;padding:3px 10px;border-radius:20px;
+    background:rgba(63,185,80,.12);color:var(--green);
+    border:1px solid rgba(63,185,80,.3);
+  }
+  .warn{
+    background:rgba(240,136,62,.08);
+    border:1px solid rgba(240,136,62,.28);
+    border-left:4px solid var(--orange);
+    border-radius:0 8px 8px 0;
+    padding:18px 22px;margin:20px 0;
+  }
+  .warn h2{border:none;margin:0 0 12px;padding:0;font-size:17px;color:var(--orange)}
+  .tbl{width:100%;border-collapse:collapse;font-size:13.5px;margin:14px 0}
+  .tbl th,.tbl td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--border)}
+  .tbl th{background:var(--card2);color:var(--muted);font-weight:600;font-size:12.5px}
+  .tbl td:first-child{white-space:nowrap;font-weight:600}
+  .yes{color:var(--green);font-weight:600}
+  .section-card{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:12px;padding:22px 26px;margin-bottom:20px;
+  }
+  ol.excl,ol.tbd{margin:0;padding-left:22px}
+  ol.excl li,ol.tbd li{font-size:14px;margin-bottom:9px}
+  .arch{font-size:14px}
+  .arch div{margin-bottom:8px}
+  .arch code{
+    background:var(--card2);padding:2px 7px;border-radius:4px;
+    font-size:12.5px;color:var(--blue);
+    font-family:"SF Mono",Consolas,monospace;
+  }
+  .st-ok{color:var(--green);font-weight:700}
+  footer{
+    margin-top:34px;padding-top:18px;
+    border-top:1px solid var(--border);
+    font-size:12.5px;color:var(--muted);text-align:center;
+  }
+  a{color:var(--blue);text-decoration:none;word-break:break-all}
+  a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="page">
+  <h1>每日 AI 前沿技术精选</h1>
+  <div class="meta">
+    <div><b>日期</b>：2026-10-03</div>
+    <div><b>时间</b>：21:15</div>
+    <div><b>精选条数</b>：5 条</div>
+  </div>
+  <div class="win">
+    <b>时效窗口</b>：2026-10-02 21:15 – 2026-10-03 21:15（严格 24 小时）<br>
+    距上次执行 10/2 11:30 约 33h45m，超过 24h，故采用基准窗口「执行时刻前推 24h」，未触发增量收敛，亦未启用已废止的 48h 降级策略。
+  </div>
+</header>
+
+<h2 class="sec">今日精选</h2>
+
+<article class="item">
+  <h3>1. Hugging Face × Liquid AI 发布多 Harness RL 完整指南：同一权重在 Mini-SWE-Agent 得 62%、在 Claude Code 仅 33%，跨 4 Harness 训练后 held-out 42.2% → 54.2%</h3>
+  <div class="src">第一来源：Hugging Face / Liquid AI ｜ 2026-10-03</div>
+
+  <div class="blk">
+    <span class="lbl">事件概述</span>
+    <p>Hugging Face 后训练团队与 Liquid AI 联合发布《The ultimate guide to multi-harness RL》，核心实证是一组令人不安的数字：<b>完全相同的模型权重，在 Mini-SWE-Agent 中解决 62% 的任务，在 Claude Code 中只解决 33%</b>。指南给出一套不修改任何 harness 代码即可在多个 Agent 框架内做 RL 训练的完整配方——用 capture proxy 记录 vLLM 实际采样的 token id 与 logprobs，配合 OpenEnv（环境）、Harbor（任务/沙箱）、TRL（async GRPO 训练器）三件套，在 Claude Code、Codex、OpenCode、Mini-SWE-Agent 四个 harness 上同时训练 LFM2.5-2.6B。</p>
+  </div>
+
+  <div class="blk">
+    <span class="lbl">技术与工程价值</span>
+    <ul class="pts">
+      <li><b>核心机制</b>：harness 控制 agent loop、工具集与上下文，因此训练者根本看不到模型真正吐出的 token——这是「同一权重、同一模型、不同分数」的结构性原因。解法是<b>不改 harness，只改指向</b>：在模型与 harness 之间插一层支持全部四种编码 Agent API 格式（OpenAI Chat Completions / OpenAI Responses / Anthropic Messages / Gemini）的代理层，harness 代码零改动即可获得训练信号。训练侧用 dense replay 在每个时间偏移构造预测窗口，存入增长中的 buffer 并采 mini-batch 更新。</li>
+      <li><b>实际影响</b>：这是「增量在模型之外」主线的又一次硬证据——<b>决定 Agent 表现的主要变量正在从模型转向运行时</b>。工程含义直接：跨 harness 泛化能力（而非单 harness 峰值）应成为开放模型发布的必测指标；同时 proxy 层本身成为新的基础设施位——谁掌握它，谁就能把任意开放权重模型训成任意 harness 可用的形态，模型分发权与 harness 适配权在这里合流。</li>
+    </ul>
+  </div>
+
+  <div class="blk">
+    <span class="lbl">关键指标 / 资源</span>
+    <ul class="pts">
+      <li><b>评测/性能</b>：同权重 Mini-SWE-Agent 62% vs Claude Code 33%（训练前，held-out SmolDataEnvs 数据分析任务）；跨 4 harness 训练后平均 pass@1 <b>42.2% → 54.2%</b>；工具调用数 <b>−31%</b>（在基线与训练模型均解出的任务上）；仅在 OpenCode 训练的对照组达 52.3% 但仅在 OpenCode 内最优，两者 1.9 个百分点总体差距落在评估噪声内；对成功 rollout 做 SFT 的增益明显更小</li>
+      <li><b>边界与代码</b>：全部开源（OpenEnv + Harbor + TRL，HF Spaces <code>FineEnvs/multi-harness-rl</code>）；<b>结论仅在 2.6B 小模型 + 数据分析任务上成立，未验证大模型或大规模软件工程基准</b>（发布方自述口径，待核实）</li>
+      <li><b>来源</b>：<a href="https://rss.bz/post/hugging-face-multi-harness-rl-proxy-training-guide">rss.bz / Hugging Face multi-harness RL</a>；AGI Hunt 10/3 汇总</li>
+    </ul>
+  </div>
+
+  <div class="tags"><span class="tag">#AI Coding</span><span class="tag">#RL 训练</span><span class="tag">#Agent 基础设施</span><span class="tag">#多 Harness</span><span class="tag">#开放权重</span></div>
+</article>
+
+<article class="item">
+  <h3>2. DeepSeek Harness 全球公测并同步开源：基于 Cordis「一切皆插件」架构，桌面版打包 macOS/Windows，官方演示 5 分 24 秒自建并验证插件</h3>
+  <div class="src">第一来源：DeepSeek 官方公告 / Hacker News ｜ 2026-10-02 登 HN 首页，10-03 窗口内集中报道</div>
+
+  <div class="blk">
+    <span class="lbl">事件概述</span>
+    <p>DeepSeek 将其开源编码 Agent 框架 <b>DeepSeek Harness（dsh）</b> 推向全球公测并同步开源，配套发布 macOS（Apple Silicon）与 Windows 64 位桌面构建，Linux 通过 <code>deepseek-ai/dsh</code> npm 包提供。Harness 建立在 Cordis 插件框架之上，官方定位是「一切皆插件」——模型适配器、工具注册、沙箱、会话日志、调度器乃至 agent loop 本身全部是可替换插件。官方演示中模型用 5 分 24 秒完成「创建 → 安装 → 验证」一个插件的全过程。</p>
+  </div>
+
+  <div class="blk">
+    <span class="lbl">技术与工程价值</span>
+    <ul class="pts">
+      <li><b>核心机制</b>：与 Claude Code 的约 30 个生命周期 hook 扩展点相比，Harness 允许直接换掉核心（agent loop 自身就是插件），架构文档给出的层序为：profile 中各 bundle（按列出顺序）→ profile 级 <code>cordis.patch.yml</code> → home 级 patch → 命令行 <code>--patch</code> 覆盖层，可用 <code>dsh --profile web --dump-config</code> 打印实际装载的插件树。DSH 把 Agent 的构成形式化为 <b>Agent = 模型 + harness</b>，与第 79 跑报道的 AWS Strands Decider 2B 属同一判断：决策/路由不应每次调用完整 LLM。</li>
+      <li><b>实际影响</b>：对成本敏感批处理与需要逐层审计的团队，Harness 的可自定义深度是当前开源编码 Agent 中最高的——第三方基准跑 DeepSeek V4 Flash 时，Harness 约 $0.028/成功任务 vs Claude Code 约 $0.195（约 7 倍成本差），token 效率 88,562 vs 649,900/任务，完成任务数 20/30 vs 19/30；代价是成熟度（第三方插件约 80 个，多为官方自产；安全审计未完成，官方文档明确警告「恶意输入或不可信插件可损坏文件或泄露数据」）。</li>
+    </ul>
+  </div>
+
+  <div class="blk">
+    <span class="lbl">关键指标 / 资源</span>
+    <ul class="pts">
+      <li><b>产品参数</b>：MIT 许可；五种 profile（web / headless / sdk / sdk-minimal / acp）；支持任意 OpenAI 兼容端点与本地推理引擎（Ollama / LM Studio）；桌面版 v0.2，内置定时任务插件与执行 trace 调试器</li>
+      <li><b>时间戳界定（重要）</b>：<b>Harness CLI 本身于 2026 年 8 月开源</b>（首周 177,000 star），本次增量是<b>全球公测 + 桌面版打包 + 官方插件生态启动</b>；多源称公告于 10/2 登 HN 首页，确切发布小时数未在第一信源标明（<b>待核实</b>）</li>
+      <li><b>成本对照</b>为第三方基准（<b>非 DeepSeek 官方数据，未见独立复现，待核实</b>）</li>
+      <li><b>来源</b>：<a href="https://deniz.in/deepseek-harness-desktop-agent-enters-public-preview-as-open-source-on-macos-and">deniz.in 报道</a>；<a href="https://codeyourcraft.com/blog/deepseek-harness-open-source-agent-framework-mit-cordis-plugins">codeyourcraft 架构解析</a></li>
+    </ul>
+  </div>
+
+  <div class="tags"><span class="tag">#AI Coding</span><span class="tag">#开源框架</span><span class="tag">#插件架构</span><span class="tag">#Agent 运行时</span></div>
+</article>
+
+<article class="item">
+  <h3>3. JEPA-TTT：世界模型在测试时持续自监督训练，500 episode 后潜在预测误差 −83%、规划性能较冻结 JEPA 提升 153%</h3>
+  <div class="src">第一来源：Honda Research Institute / JHU，NeurIPS 2026 World Models Workshop ｜ arXiv:2610.00722，2026-10-03 上线</div>
+
+  <div class="blk">
+    <span class="lbl">事件概述</span>
+    <p>《JEPA-TTT: Persistent Test-Time Training of Latent World Models for Planning under Dynamics Shifts》提出一个直接对准具身智能核心痛点的机制：预训练的世界模型一旦遇到与训练分布不同的动力学（dynamics shift），预测即失效。JEPA-TTT 在测试期持续对<b>动作条件化 JEPA 世界模型的潜在动力学预测器</b>做自监督更新，且更新<b>跨 episode 累积</b>；视觉编码器与奖励头保持冻结，以保住预训练表征与任务目标。规划时既不需要目标图像，也不需要在线环境奖励。</p>
+  </div>
+
+  <div class="blk">
+    <span class="lbl">技术与工程价值</span>
+    <ul class="pts">
+      <li><b>核心机制</b>：dense replay——在<b>每一个时间偏移</b>处构造预测窗口，存入不断增长的 buffer 并从中采 mini-batch 更新预测器。相比「每个新环境重新微调权重」，这是把适应成本从<b>训练成本</b>转移到<b>推理期数据积累成本</b>。</li>
+      <li><b>实际影响</b>：把「部署后域自适应」从一次性工程动作变成随时间自动积累的在线过程——对动态环境（可变光照、载荷变化、磨损、他人干预）下的长时程机器人部署，直接消除了「新环境一来就要重训」的运维负担。这是本窗口内世界模型方向最具工程含义的一篇：它不追求更大更强的世界模型，而追求<b>世界模型自己会变</b>。</li>
+      <li><b>与主线的关系</b>：本跑第 4 条（Percepta Spotlight）把「能力增长不靠重训」做到推理架构层，本条把它做到世界模型的动力学层——<b>测试时自适应正在成为继「更大模型」之外的第二条通用路线</b>。</li>
+    </ul>
+  </div>
+
+  <div class="blk">
+    <span class="lbl">关键指标 / 资源</span>
+    <ul class="pts">
+      <li><b>评测/性能</b>：4 个连续控制环境 × 8 种动力学偏移，<b>全部偏移上规划均改善</b>；500 测试期 episode 后自回归潜在预测误差平均 <b>−83%</b>，规划性能较冻结 JEPA 世界模型 <b>+153%</b>（<b>论文自述数据，未见第三方独立复现，待核实</b>）</li>
+      <li><b>代码/论文</b>：arXiv:2610.00722v1（cs.LG，NeurIPS 2026 World Models in Physical AI Workshop 录用）；项目页见论文内链</li>
+      <li><b>来源</b>：<a href="https://arxiv.org/abs/2610.00722">arxiv.org/abs/2610.00722</a></li>
+    </ul>
+  </div>
+
+  <div class="tags"><span class="tag">#世界模型</span><span class="tag">#测试时训练</span><span class="tag">#具身智能</span><span class="tag">#域自适应</span></div>
+</article>
+
+<article class="item">
+  <h3>4. Percepta 发布 Spotlight 架构：用可写无界外部内存替换注意力，称访问成本不随内存规模增长</h3>
+  <div class="src">第一来源：Percepta（Christos Tzamos 团队）｜ 2026-10-03</div>
+
+  <div class="blk">
+    <span class="lbl">事件概述</span>
+    <p>Percepta 发布新架构 <b>Spotlight</b>，核心主张是<b>把「智能」与「记忆」解耦</b>：计算模块的权重保持固定，知识、技能与工作状态存放在一个可写、无界增长的外部内存中，模型自行决定每个 token 加载与覆写什么内容。官方称这是首个「访问成本不随内存规模增长」的架构——每个 token 可读写无界内存，而生成只需常量级计算；其自述为「结合了注意力机制的记忆容量与固定状态循环模型的线性计算成本」，并声称相对注意力在长上下文上更优。</p>
+  </div>
+
+  <div class="blk">
+    <span class="lbl">技术与工程价值</span>
+    <ul class="pts">
+      <li><b>核心机制</b>：与 MoE 的<b>固定</b>稀疏不同，Spotlight 的稀疏度是<b>任意可调</b>的——模型逐 token 自行索引记忆单元。由于记忆可存储技能（不只是事实），模型能在不重训的前提下获得新能力。</li>
+      <li><b>实际影响</b>：若成立，则「上下文管理 / 技能积累」从外挂的 harness 逻辑下沉为模型内生能力，与本跑第 1 条（harness 决定 Agent 表现 62% vs 33%）形成有趣对照——两条路线都在削 harness 的权，一条是让模型自己学，另一条是换一个不依赖注意力的记忆基座。</li>
+      <li><b>风险与边界（须明确）</b>：<b>全部为厂商自述，无第三方基准</b>；社区质疑集中在常数因子——单次记忆访问需触及 9 个 cell 且每格涉及注意力计算，渐近复杂度虽是线性/常量，常数可能很大；真实大规模场景表现待独立验证。</li>
+    </ul>
+  </div>
+
+  <div class="blk">
+    <span class="lbl">关键指标 / 资源</span>
+    <ul class="pts">
+      <li><b>评测/性能</b>：无公开基准分数，仅有「胜过注意力」的公司声明（<b>自述数据，无第三方复现，待核实</b>）；验证方式为「在 LLM 中直接构建 Python」的公司演示，非标准化评测</li>
+      <li><b>资源</b>：Percepta 官方博客两篇（Can LLMs Grow Their Own Capabilities；Spotlight），<b>未公布论文编号与权重/代码可用性</b></li>
+      <li><b>来源</b>：<a href="https://agihunt.info/en/p/1a0fdc811e643b882ab79e36a97">AGI Hunt 汇总</a></li>
+    </ul>
+  </div>
+
+  <div class="tags"><span class="tag">#基础架构</span><span class="tag">#外部记忆</span><span class="tag">#长上下文</span><span class="tag">#能力增长</span></div>
+</article>
+
+<article class="item">
+  <h3>5. 苹果收紧 macOS「完整磁盘访问」授权：因桌面 AI Agent 风险上升，要求「非常明确的用户操作」方可授予</h3>
+  <div class="src">第一来源：Apple 官方开发者博客 / Reuters ｜ 2026-10-02 美西 17:00 ≈ 北京 10-03 08:00</div>
+
+  <div class="blk">
+    <span class="lbl">事件概述</span>
+    <p>苹果在面向开发者的博客中宣布将调整 macOS 权限机制，为「完整磁盘访问」（Full Disk Access）增加额外控制措施，规定真正需要该级别访问的应用<b>必须通过更明确（very explicit）的用户操作</b>才能完成授权。苹果给出的理由是：「随着 AI Agent 变得愈发自主且能力增强，此类访问带来的风险将实质性增长」。此举直接回应 Inc. 专栏作者 Jason Aten 对 Meta Muse 的指控——称 Muse 在其未授权的情况下读取了私人消息；Meta 发言人 Andy Stone 公开否认，称 Messages 访问严格 opt-in，须同时开启完整磁盘访问与 Messages 连接器。</p>
+  </div>
+
+  <div class="blk">
+    <span class="lbl">技术与工程价值</span>
+    <ul class="pts">
+      <li><b>核心机制</b>：macOS 与 iOS/iPad 的关键差异在于后者默认沙箱隔离、前者以高灵活性换取之——一旦授予完整磁盘访问，应用可触及文件、邮件、消息乃至浏览历史。苹果指出的要害是<b>权限模型与 Agent 形态的错配</b>：传统应用被动读取，而 Agent 会依据指令自主执行动作，风险的性质与量级都变了。</li>
+      <li><b>实际影响</b>：这是操作系统层首次因 AI Agent 而收紧既有权限授予机制，而非仅新增 Agent 权限——方向由「给 Agent 更多能力」转为「让高危授权更难发生」。对桌面 Agent 开发者的直接工程含义：Full Disk Access 将从「一次勾选」变成需要显式意图确认的关键路径，且叠加了此前 Wired 报道的 ChatGPT macOS 应用漏洞这一前置背景。<b>但苹果未说明新控制的生效时间</b>，且本次调整由一起未获独立证实的隐私争议触发。</li>
+      <li><b>交叉参照</b>：O 盘另一实例 10/3 00:32 版已收录 GitHub Copilot computer use（10/1 public preview），说明<b>桌面 Agent 的能力扩张与权限收敛正在同一周内并行发生</b>。</li>
+    </ul>
+  </div>
+
+  <div class="blk">
+    <span class="lbl">关键指标 / 资源</span>
+    <ul class="pts">
+      <li><b>关键事实</b>：苹果 10/2（周五）美东发布官方开发者博客声明 + Reuters 同步报道；<b>生效时间未公布（待核实）</b>；Meta 与 Jason Aten 各执一词，<b>争议未经独立取证（待核实）</b></li>
+      <li><b>来源</b>：<a href="https://techcrunch.com/2009/01/08/joost-has-a-heartbeat/">TechCrunch</a>；<a href="https://cio.economictimes.indiatimes.com/news/consumer-tech/apple-targets-metas-muse-as-ai-privacy-fears-mount-over-data-access-in-mac-os/134650818">ET CIO / Reuters</a></li>
+    </ul>
+  </div>
+
+  <div class="tags"><span class="tag">#AI Agent 安全</span><span class="tag">#操作系统权限</span><span class="tag">#隐私治理</span><span class="tag">#桌面 Agent</span></div>
+</article>
+
+<h2 class="sec">去重与边界说明</h2>
+
+<div class="section-card">
+  <p style="font-size:14px;margin-bottom:12px"><b>去重基线</b>：已扫描工作区最近 7 天（9/27–10/2）全部 <code>每日AI新闻推送_*.md</code> 的条目标题构建关键词集合；并额外比对 O 盘同一归档目录下<b>另一实例今日两份产出</b>（<code>每日AI新闻推送_20261003_0032.md</code>：Gemini 4 Argon / Claude Code Mods / GitHub Copilot computer use / Skild AI S1 / Unitree Dex5-S；<code>每日AI新闻推送_20261003_1230.md</code>：Cloudflare Clef 决策模型 / AgiBot×长隆 / FMC³ Robotics 工业联合体 / IBM Bob AI 编程代理 / InfoQ 开源安全披露），避免同源异构重复。</p>
+
+  <table class="tbl">
+    <thead><tr><th>本期条目</th><th>与历史报告的关系</th><th>判定</th></tr></thead>
+    <tbody>
+      <tr><td>HF 多 Harness RL</td><td>历史报告从未覆盖 harness 层 RL 训练方法论；第 79 跑 Strands Decider 2B 为「决策模型替代 LLM 路由」，本条为「跨 harness 分布泛化的 RL 训练配方」</td><td class="yes">非重复</td></tr>
+      <tr><td>DeepSeek Harness 公测</td><td>第 77 跑为 DeepSeek 昇腾组件栈（DeepGEMM-Ascend 等），主体与动作均不同；Harness 框架本身历史未报道</td><td class="yes">非重复</td></tr>
+      <tr><td>JEPA-TTT</td><td>历史世界模型条目（Praxis-1 / 京东 EchoWM / World Observer 系）均为生成式或策略侧，无「世界模型测试时自训练」条目</td><td class="yes">非重复</td></tr>
+      <tr><td>Percepta Spotlight</td><td>与第 78 跑 Gemini 4 Argon（模型代际）、第 79 跑 Marathoner（长时程 RL）均非同主体同动作</td><td class="yes">非重复</td></tr>
+      <tr><td>苹果收紧 FDA</td><td>第 72/73 跑 Meta Muse 条目为「云电脑算力瓶颈」与「Connect 2026 硬件全栈」，非权限治理维度；O 盘两份今日产出亦未收录</td><td class="yes">非重复</td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:14px;margin:18px 0 10px"><b>排除项（按严格第一信源时间戳规则剔除）</b></p>
+  <ol class="excl">
+    <li><b>OpenAI 取消 GPT-6.1 Astra 发布</b>（NYT/WSJ 报道）：首发 Reuters 报道为 9/28，早于窗口起点；且「OpenAI 暂停前沿模型训练」已由第 74 跑（9/27 21:25）与第 75 跑（9/28 23:20）覆盖，排除</li>
+    <li><b>KAIST World Observer</b>（arXiv:2610.02162）：v1 提交 10/1 17:53 UTC（北京时间 10/2 01:53），早于窗口起点 10/2 21:15 约 19 小时，排除（论文价值高，留待下轮候选）</li>
+    <li><b>Meta Context Language Models</b>（arXiv:2609.37725）：v1 提交 9/29，排除</li>
+    <li><b>ReSAIL 迭代自蒸馏崩溃缓解</b>（arXiv:2609.39306）：9 月提交，排除</li>
+    <li><b>MIT × Sakana AI SIFT 快速树搜索</b>（arXiv 约 9/18）：首发远早于窗口，10/2 仅为社区二次传播，排除</li>
+    <li><b>FTC 对 OpenAI/Anthropic/METR 发起行业调查</b>（Reuters 9/30）：早于窗口，排除</li>
+    <li><b>Salesforce 约 $2B 收购 Listen Labs</b>（Business Insider 10/2）：产业并购，未触及本任务技术关注领域，排除</li>
+    <li><b>Cloudflare Clef 决策模型</b>（10/01）：已由 O 盘 12:30 版收录，排除</li>
+    <li><b>llama.cpp 新增 <code>/v1/systemone</code> 决策模型端点</b>：单点功能更新，未达入选门槛</li>
+  </ol>
+
+  <p style="font-size:14px;margin:18px 0 10px"><b>同窗口未纳入（候选已满 / 未达门槛）</b></p>
+  <ol class="excl">
+    <li>Unitree UnifoLM-WLA-1.0（6B / 约 2,500 小时真机数据 / G1 上 64 项任务）：<b>已于第 66、69、72、73 跑多次排除，本次仍不重复引入</b></li>
+    <li>Microsoft FrogNano-4B-2609（Qwen3.5-4B 派生的 agentic 编码模型）：仅社区聚合站提及，未见官方首发确认，按「禁止以转载时间作为入选依据」未纳入</li>
+    <li>Gemini 4 Argon 订阅口径争议（部分 Google 员工称内部表现不佳，Bloomberg）：属第 78 跑已覆盖条目的舆论增量，技术增量不足</li>
+  </ol>
+</div>
+
+<h2 class="sec">待核实</h2>
+
+<div class="warn">
+  <h2>⚠️ 待核实清单（缺少可交叉验证的第一信源或第三方复现）</h2>
+  <ol class="tbd">
+    <li><b>HF 多 Harness RL 的「62% vs 33%」</b>：为 Hugging Face 自家实验，同一模型跨 harness 对比极可能受 harness 默认参数（最大轮次、上下文窗口、工具集）影响，未见独立第三方在同等配置下复现；42.2% → 54.2% 与工具调用 −31% 亦为发布方口径</li>
+    <li><b>DeepSeek Harness 官方公告的确切发布时刻</b>：多源称 10/2 登 HN 首页，但未标明具体小时；窗口归属（10/2 21:15 之后）依赖二手推断。另 7 倍成本差与 88,562 vs 649,900 token 效率对照为第三方基准，非 DeepSeek 官方数据</li>
+    <li><b>JEPA-TTT 的 −83% / +153%</b>：论文自述，4 环境 × 8 偏移的实验设置由作者自选，未见独立复现；「规划不需要目标图像与在线奖励」的设定在真实任务中的可行性未验证</li>
+    <li><b>Percepta Spotlight「访问成本不随内存规模增长」</b>：无公开基准与论文编号；「单次记忆访问触及 9 个 cell」的常数因子质疑来自社区分析，未经官方回应</li>
+    <li><b>苹果 Full Disk Access 新控制的生效时间</b>：官方未公布；Meta Muse 是否越权读取 Messages 双方各执一词，未见独立取证结果</li>
+  </ol>
+</div>
+
+<h2 class="sec">归档状态说明</h2>
+
+<div class="section-card arch">
+  <div><b>工作区 Markdown</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261003_2115.md</code></div>
+  <div><b>工作区 HTML</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261003_2115.html</code></div>
+  <div><b>网盘归档</b>：<code>O:/quark/automation/每日 AI 新闻推送/</code>（同步写入上述同名文件）</div>
+  <div><b>执行状态</b>：<span style="color:var(--orange);font-weight:700">⚠️ 部分成功</span>——HTML 已按规范名归档（<code>每日AI新闻推送_20261003_2115.html</code>，27322B，字节校验一致）；Markdown 的规范名在首次 <code>shutil.copy2</code> 尝试时触发 davfs <code>Errno 13 Permission denied</code>，并留下 <b>0 字节残渣导致该文件名被锁定</b>（davfs 拒绝覆盖，删除被 safe-delete shim 拦截），故改用替代名 <code>每日AI新闻推送_20261003_2115.md.tmp</code> 落盘，内容与本地源完全一致（19009B，md5 校验通过）。工作区双格式文件为权威交付物。</div>
+  <div><b>待人工清理</b>：<code>每日AI新闻推送_20261003_2115.md</code>（0 字节残渣）；如需规范名，将 <code>.md.tmp</code> 重命名为 <code>.md</code> 即可生效。</div>
+</div>
+
+<footer>每日 AI 前沿技术精选 · 严格 24 小时窗口 · 2026-10-03 21:15 生成</footer>
+
+</div>
+</body>
+</html>
