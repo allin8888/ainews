@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日 AI 前沿技术精选 · 2026-10-28 22:14</title>
+<style>
+:root{
+  --bg:#0d1117; --card:#161b22; --card2:#1c2129; --border:#30363d;
+  --fg:#e6edf3; --muted:#9198a1; --blue:#58a6ff; --green:#3fb950; --orange:#e3a008; --red:#f85149;
+}
+*{box-sizing:border-box}
+body{margin:0;padding:24px 16px 64px;background:var(--bg);color:var(--fg);
+  font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Helvetica,Arial,sans-serif}
+.wrap{max-width:960px;margin:0 auto}
+header.page{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:22px 24px;margin-bottom:20px}
+h1{margin:0 0 10px;font-size:26px;letter-spacing:.3px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--muted);font-size:14px;margin:0;padding:0;list-style:none}
+.meta b{color:var(--fg);font-weight:600}
+.note{margin:14px 0 0;padding:12px 14px;border-left:3px solid var(--orange);background:var(--card2);border-radius:0 8px 8px 0;color:var(--fg);font-size:14.5px}
+h2.sec{font-size:19px;margin:30px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border);color:var(--blue)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin:0 0 18px}
+.card h3{margin:0 0 6px;font-size:19px;line-height:1.5}
+.src{color:var(--muted);font-size:13.5px;margin:0 0 14px}
+h4{margin:18px 0 6px;font-size:15px;color:var(--green)}
+p{margin:8px 0}
+ul{margin:6px 0 6px;padding-left:22px}
+li{margin:6px 0}
+b.k{color:var(--blue);font-weight:600}
+code{background:var(--card2);padding:1px 6px;border-radius:5px;font-size:13.5px;color:var(--orange);
+  font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace}
+a{color:var(--blue);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.tags{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:12.5px;padding:3px 10px;border-radius:999px;border:1px solid var(--border);background:var(--card2);color:var(--fg)}
+.self{color:var(--orange)}
+.badge{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(227,160,8,.14);border:1px solid rgba(227,160,8,.45);color:var(--orange);margin-left:6px}
+.badge.t{background:rgba(63,185,80,.13);border-color:rgba(63,185,80,.45);color:var(--green)}
+table{border-collapse:collapse;width:100%;margin:10px 0;font-size:14.5px}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--card2);color:var(--fg)}
+footer.page{margin-top:26px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 22px;font-size:14px;color:var(--muted)}
+footer.page b{color:var(--fg)}
+.st{color:var(--green);font-weight:600}
+hr{border:0;border-top:1px solid var(--border);margin:26px 0}
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="page">
+  <h1>每日 AI 前沿技术精选</h1>
+  <ul class="meta">
+    <li><b>日期</b> 2026-10-28</li>
+    <li><b>时间</b> 22:14</li>
+    <li><b>精选条数</b> 4 条</li>
+    <li><b>时效窗口</b> 2026-10-28 11:30 – 2026-10-28 22:14（严格24小时）</li>
+  </ul>
+  <div class="note">本期为增量窗口（第 113 跑终点 → 本次执行），实际跨度 10 小时 44 分钟。未使用、也不会使用已废止的「48 小时降级」策略。窗口内多条高热事件的第一信源时刻落在 10-26/10-27（见文末「去重说明」），按时间戳纪律一律排除，因此本期条数收敛到 4 条。</div>
+</header>
+
+<h2 class="sec">今日精选</h2>
+
+<section class="card">
+  <h3>1. 面壁智能 ForgeKernel：自进化算子生成系统同时登顶华为 CANNBench 三硬件榜与英伟达 SOL-ExecBench</h3>
+  <p class="src">第一来源：X @OpenBMB 官方账号 + 公开榜单 | 2026-10-28</p>
+  <p><b class="k">事件概述</b>：面壁智能（OpenBMB）官方账号公布自研 AI 算子生成系统 ForgeKernel 的打榜结果：同一套通用算子优化流程，同时在华为 CANNBench 的 950DT、950PR、A3 三张昇腾硬件榜单与英伟达 SOL-ExecBench（FlashInfer-Bench 合集）取得第一，把「Agent 自动写底层高性能代码」从实验室基准推进到两套互不兼容的硬件生态。</p>
+  <h4>技术与工程价值</h4>
+  <ul>
+    <li><b class="k">核心机制</b>：ForgeKernel 不设固定优化流程，模型按目标自主完成架构设计、编译、正确性校验与耗时剖析，并把每轮算子经验与硬件知识沉淀为可复用记忆，通过持续迭代实现自进化；其能力底座来自更早的极简通用 harness 实验 JustGoal（只给目标 + 通用工具），ForgeKernel 在其上补强长程规划与经验复用，而非沿专家预设路线逐步执行。</li>
+    <li><b class="k">实际影响</b>：高性能算子长期受限于资深工程师逐芯片手写调优，新硬件上市到适配完成之间存在空窗。若 AI 能在新芯片发布初期直接产出可提交榜单的算子，国产算力从「能跑」到「跑好」的周期被显著压缩，等价于把已采购算力更早转化为可用吞吐；同一流程跨华为/英伟达复用，也降低多硬件路线的重复适配成本。生成结果已接入两侧训练框架并完成 MiniCPM5 0.9B 长训验证，说明产物进入了真实训练路径而不只停留在打榜。</li>
+  </ul>
+  <h4>关键指标/资源</h4>
+  <ul>
+    <li>评测/性能：950DT 总分 3903.96（第二名 2846.61，领先 37.1%）、基准加速比 1.523×（第二名 0.305×）、提交 55/60；950PR 总分 3736.44（第二名 3552.34，领先 5.2%）、基准加速比 1.886×；A3 总分 4338.67（第二名 4049.50，领先 7.1%）、基准加速比 1.894×、提交 58/60；英伟达 SOL-ExecBench SOL 分数 0.814101 居首，同榜含 SF Tensor、Databricks、Qwen、Cursor 等团队。<span class="badge">厂商供稿口径，待以榜单实时页复核</span></li>
+    <li>代码/论文：暂无公开仓库与技术论文，官方称核心机制将随后续技术报告公布；榜单入口为华为 CANNBench（official-tasks 2.0，60 算子）与英伟达 SOL-ExecBench / FlashInfer-Bench（B200，26 项任务，含正确性与作弊检查）。官方宣布帖 <a href="https://<a href="https://x.com/OpenBMB/status/2115318402273394964" target="_blank" rel="noopener">x.com/OpenBMB/status/2115318402273394964</a>">x.com/OpenBMB/status/2115318402273394964</a>；10-29 上午 10:00 现场对垒 DeepSeek 开源 FlashMLA Prefill 手写算子的预告 <a href="https://<a href="https://mp.weixin.qq.com/s?__biz=Mzg3Mzg2MTg2NQ%3D%3D&amp;mid=2247499663&amp;idx=1&amp;sn=b879302c82b0bd1e2e76647d593044af" target="_blank" rel="noopener">mp.weixin.qq.com/s?__biz=Mzg3Mzg2MTg2NQ%3D%3D&amp;mid=2247499663&amp;idx=1&amp;sn=b879302c82b0bd1e2e76647d593044af</a>">公众号预告</a>。</li>
+  </ul>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#RSI</span><span class="tag" style="color:#58a6ff;border-color:#58a6ff">#AI-Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#推理加速</span></div>
+</section>
+
+<section class="card">
+  <h3>2. Mistral 推出 Responses API 公开预览：把推理过程与工具调用拆成独立条目，面向智能体逐步执行</h3>
+  <p class="src">第一来源：X @MistralAI 官方账号 | 2026-10-28</p>
+  <p><b class="k">事件概述</b>：Mistral 在官方账号宣布 Responses API 进入公开预览，定位为「在 Mistral 上构建智能体」的接口层：每次响应把模型回答、推理过程、工具调用拆分为彼此独立的条目返回，覆盖其托管的全部聊天模型（含 Large 4）。</p>
+  <h4>技术与工程价值</h4>
+  <ul>
+    <li><b class="k">核心机制</b>：以条目化响应取代 Chat Completions 的单段文本返回，使客户端可逐步消费推理轨迹与工具调用结果，匹配 agent 循环中「一次动作—一次观察」的结构；同一接口层适配多模型，降低自研 agent 框架的模型适配成本。</li>
+    <li><b class="k">实际影响</b>：这是对 OpenAI Responses API 语义的事实跟随，意味着 agent 侧接口约定正在收敛：可观测的中间步骤、可寻址的工具调用、把 reasoning 与 answer 分离的计费与审计粒度。对合规敏感的自建 agent 团队，多了一条不绑定单一供应商的等价接口路径。</li>
+  </ul>
+  <h4>关键指标/资源</h4>
+  <ul>
+    <li>评测/性能：官方未给出延迟、吞吐或任务成功率数据，本期无可引用基准。</li>
+    <li>代码/论文：官方公告 X 帖 <a href="https://<a href="https://x.com/MistralAI/status/2115443720371814478" target="_blank" rel="noopener">x.com/MistralAI/status/2115443720371814478</a>">x.com/MistralAI/status/2115443720371814478</a>，接口参考见文档站 <a href="https://<a href="https://docs.mistral.ai" target="_blank" rel="noopener">docs.mistral.ai</a>">d<a href="https://ocs.mistral.ai" target="_blank" rel="noopener">ocs.mistral.ai</a></a>；预览状态，接口存在变动可能。</li>
+  </ul>
+  <div class="tags"><span class="tag" style="color:#58a6ff;border-color:#58a6ff">#AI-Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#Agent框架</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#API</span></div>
+</section>
+
+<section class="card">
+  <h3>3. 小红书 2049 Lab × Rokid：蜜薯 Personal Agent 的智能眼镜架构——实时多模态全双工 + Proactive + Memory</h3>
+  <p class="src">第一来源：公众号「小红书技术 dots.llm」| 2026-10-28</p>
+  <p><b class="k">事件概述</b>：小红书 2049 Lab 发布与 Rokid 合作的 AI 生活助手「蜜薯」技术长文，披露其在智能眼镜上支撑「边看边聊」的三段式架构：实时多模态全双工链路、主动触发（Proactive）与记忆（Memory）协同，把大模型能力、社区经验与个人情境接入现场感知。</p>
+  <h4>技术与工程价值</h4>
+  <ul>
+    <li><b class="k">核心机制</b>：与桌面 agent 的一问一答不同，眼镜侧的核心约束是打断与并发——用户随时说话、环境随时变化，链路需同时维持上行视觉流、下行语音合成与中途插话处理（全双工）；Proactive 决定「什么时候由 Agent 先开口」，Memory 把个人情境与社区经验挂载到当前场景，二者共同把感知转成有条件、可撤回的行动建议。文中把该路线指向 Personal OS 作为下一阶段目标。</li>
+    <li><b class="k">实际影响</b>：这是具身智能「真实场景多模态交互」的低成本落地样本——不依赖机械臂与本体，而把感知—决策—表达闭环压到消费级穿戴设备，验证全双工与主动性策略在真实用户环境的工程可行性，也为端侧/云侧分工提供可复用的系统分层。</li>
+  </ul>
+  <h4>关键指标/资源</h4>
+  <ul>
+    <li>评测/性能：技术文以架构与工程取舍为主，未公布端到端时延、主动触发准确率或记忆召回等量化指标（见「待核实」）。</li>
+    <li>代码/论文：无开源产物；第一信源为小红书官方技术公众号长文 <a href="https://<a href="https://mp.weixin.qq.com/s?__biz=Mzg4OTc2MzczNg%3D%3D&amp;mid=2247496882&amp;idx=1&amp;sn=dbc2683bf7bd56abfb5982ec128b89ca" target="_blank" rel="noopener">mp.weixin.qq.com/s?__biz=Mzg4OTc2MzczNg%3D%3D&amp;mid=2247496882&amp;idx=1&amp;sn=dbc2683bf7bd56abfb5982ec128b89ca</a>">「小红书技术 dots.llm」原文</a>。</li>
+  </ul>
+  <div class="tags"><span class="tag" style="color:#3fb950;border-color:#3fb950">#具身智能</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#多模态交互</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#Agent落地</span></div>
+</section>
+
+<section class="card">
+  <h3>4. 蚂蚁 inclusionAI 开源 UBTree：用 Unigram 与 Bigram 模型做并行树草稿的投机解码</h3>
+  <p class="src">第一来源：GitHub inclusionAI/ubtree + 项目页 | 2026-10-28</p>
+  <p><b class="k">事件概述</b>：蚂蚁 inclusionAI 上线 UBTree 项目页并新建公开仓库，释出其投机解码起草方法：以 Unigram 与 Bigram 语言模型并行构造候选验证树，一次前向联合起草多个分支，再由目标模型按树结构验证。仓库同时给出面向 Ling3 Tiny / Flash 的 HumanEval 对比演示，并附 Hugging Face 权重与 SGLang 分支。</p>
+  <h4>技术与工程价值</h4>
+  <ul>
+    <li><b class="k">核心机制</b>：主流树草稿方法（DFlash、DSpark 等）依赖较强起草模型的多次前向或序列内自回归展开，UBTree 改用极轻的 n-gram 统计模型（unigram + bigram）并行生成整棵候选树，把草稿成本压到接近常数级，再靠树形分支提升单步命中率；与目标模型严格对齐的验证协议保证输出与自回归解码一致，属无损加速。</li>
+    <li><b class="k">实际影响</b>：起草器越轻，加速比越易在低显存与高并发场景兑现，尤其适合自研小模型（Ling3 系列）与服务端批量推理。对已部署 SGLang 的团队，提供分支而非重写栈，接入成本较低；n-gram 路线也重新打开「投机解码是否必须再养一个草稿模型」这一问题。</li>
+  </ul>
+  <h4>关键指标/资源</h4>
+  <ul>
+    <li>评测/性能：项目页报告 Qwen3-8B 上 6.94× 加速、Ling3-Flash 上 5.36× 加速，并称在全部测试项上优于 DARTree。<span class="badge">自述数据，未见第三方复现</span></li>
+    <li>代码/论文：仓库 <a href="https://<a href="https://github.com/inclusionAI/ubtree" target="_blank" rel="noopener">github.com/inclusionAI/ubtree</a>">g<a href="https://ithub.com/inclusionAI/ubtree" target="_blank" rel="noopener">ithub.com/inclusionAI/ubtree</a></a>（创建于北京 10-28 15:48）、项目页 <a href="https://<a href="https://www.inclusion-ai.org/ubtree/" target="_blank" rel="noopener">www.inclusion-ai.org/ubtree/</a>">i<a href="https://nclusion-ai.org/ubtree" target="_blank" rel="noopener">nclusion-ai.org/ubtree</a></a>、Hugging Face 权重与 SGLang 分支；方法论文 arXiv:2609.39972 <a href="https://<a href="https://arxiv.org/abs/2609.39972" target="_blank" rel="noopener">arxiv.org/abs/2609.39972</a>">a<a href="https://rxiv.org/abs/2609.39972" target="_blank" rel="noopener">rxiv.org/abs/2609.39972</a></a>（提交于 2026-09-30，本期事件仅为开源发布，非论文首发）。</li>
+  </ul>
+  <div class="tags"><span class="tag" style="color:#3fb950;border-color:#3fb950">#开源</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#推理加速</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#基础架构</span></div>
+</section>
+
+<hr>
+
+<h2 class="sec">待核实</h2>
+<section class="card">
+  <ul>
+    <li><b>ForgeKernel 榜单数字口径</b>：总分、加速比与 SOL 分数均由厂商供稿转述，需以华为 CANNBench 与英伟达 SOL-ExecBench 的实时榜单页复核；不同转载来源已出现不一致（SOL 分数 0.814101 / 0.814011；A3 总分 4338.67 与 10-26 口径的 4130.38），且榜单快照日期为 10-27、官方账号宣布时刻为 10-28，两者相差一日。ForgeKernel 的自进化机制细节、训练与硬件配置未公开，缺论文与代码，无法核对是否使用专家先验流程。</li>
+    <li><b>UBTree 6.94× / 5.36×</b>：为作者侧实验，缺第三方复现与统一 harness 对照（批处理规模、上下文长度、精度未确认）；仓库创建时未声明 LICENSE 字段，商用前需补确认，SGLang 分支是否已合入上游亦待验证。</li>
+    <li><b>蜜薯（小红书 × Rokid）</b>：全双工端到端时延、Proactive 准确率/误触发率、Memory 召回与隐私边界均无量化披露，效果结论以官方叙述为准。</li>
+    <li><b>Mistral Responses API</b>：预览版无延迟/成功率数据，也未说明与 Chat Completions 的兼容性矩阵与计费口径差异。</li>
+  </ul>
+</section>
+
+<h2 class="sec">去重说明</h2>
+<section class="card">
+  <ul>
+    <li><b>7 天扫描</b>：比对工作区根目录与 <code>archive/</code> 中 2026-10-21 之后全部 <code>每日AI新闻推送_*.md</code>，共 56 条已报道标题（第 98–113 跑）。</li>
+    <li><b>实体去重</b>：四条候选分别执行 <code>tools/dedup_check.py</code>，结果均为 <code>is_dup: false</code>。其中「Mistral Responses API」与「小红书 × Rokid 蜜薯架构」各命中一条低置信匹配（分别共享通用词 <code>api</code>、<code>agent</code>，jaccard 0.042，置信 0.244 / 0.175），判定为不同主体不同动作，予以保留。</li>
+    <li><b>窗口内高热度但按时间戳纪律排除</b>（第一信源时刻落在窗口起点之前，或属前次已覆盖时段）：
+      <ol>
+        <li>商汤 SenseNova 6.8 Code2Video 开源——官方 X 北京 22:09 发布，但权重/Skill 10-24 已开放、中文媒体 10-28 06:47（第 94 跑窗口）已报道，属 T-4 事件的迟到官宣。</li>
+        <li>Artificial Analysis Intelligence Index v5 与 Cognition FrontierCode 2.0——第一方文章日期 10-27（第 113 跑已取证排除，本期为聚合站再传播）；其「编码权重 25%、开源差距扩大到 12 分」的影响下期继续跟踪。</li>
+        <li>Axiom 43.1M 行 Lean 形式化 CFSG 开源——第一方公告 10-26/10-27，10-28 条目为英文聚合站转述。</li>
+        <li>Entire（前 GitHub CEO 的 Agent-first Git 托管平台，Trail 取代 PR）——发布日 10-26。</li>
+        <li>Liquid AI LFM3 六模型家族——官方发布 10-27，10-28 中文报道为二次传播。</li>
+        <li>面壁 MiniCPM-OCR 系列开源——<code>OpenBMB/MiniCPM-OCR</code> 仓库创建于北京 10-27 21:22（第 112 跑窗口），10-28 公众号为二次发布稿。</li>
+        <li>MiniMax Code 开源 MCode Stack——<code>MiniMax-AI/mcode-stack</code> 仓库创建于北京 10-28 10:17，落在第 113 跑窗口（09:10–11:30）内。</li>
+        <li>LangChain《How We Built Our Design Agent》（Content Studio）——官方博客日期 10-27。</li>
+        <li>摩尔线程开源 Megatron-MUSA-Titan——仅见中文媒体报道，官方 GitHub 组织最新仓库列表未见同名项目，第一方时刻无法确认，本期不入选（后续取证成功再补）。</li>
+      </ol>
+    </li>
+    <li><b>与第 113 跑（11:30）重叠检查</b>：该跑主体为 arXiv Wed-28 批次（自进化 harness 论文群、世界动作模型集群、TAPESTRY、Dwell、数据缩放实证），本期无同主体同动作条目。</li>
+    <li><b>结构性说明</b>：动笔前 <code>source_health.py</code> 全部正常（AI HOT items 最新条目 0.3 小时前、dailies 最新为 2026-10-28、arXiv 公告批次为 Wed 28 Oct 2026），无 warn/error 信源需披露。空缺说明：具身智能与世界模型方向窗口内无新的可核实一手发布（arXiv Thu-29 批次要到北京 10-29 约 08:00 才公布；智元 2026 创新日定在 10-29，官方仅发预告与产品线页面更新，未达入选门槛），故五大焦点实际覆盖为 AI Coding ×2、RSI ×1、具身 ×1、基础架构/开源 ×1、世界模型 ×0。</li>
+  </ul>
+</section>
+
+
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
