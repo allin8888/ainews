@@ -162,7 +162,10 @@ details[open] > summary.fold-summary { color: #e6edf3; }
     <p>工作区 HTML：<code>每日AI新闻推送_20261029_1130.html</code></p>
     <p>网盘归档：<code>O:/quark/automation/每日 AI 新闻推送/</code></p>
     <p>GitHub 发布：<a href="https://github.com/allin8888/ainews" target="_blank" rel="noopener">https://github.com/allin8888/ainews</a> ｜ Cloudflare Pages：<a href="https://ainews-3rw.pages.dev" target="_blank" rel="noopener">https://ainews-3rw.pages.dev</a></p>
-    <p>执行状态：待 guardian post 校验后回填</p>
+    <p><b>执行状态</b>：✅ 成功（guardian post ok:true、归档 archived 2/failed 0/skipped 0、probe 清理受阻为已知环境约束）</p>
+    <p><b>收尾固化</b>：5 ok / 0 failed / 0 skipped（KB 重建 / RSS 刷新 / 归档总索引 / 待核实追踪 backlog+3 / 信源健康 ok=3）</p>
+    <p><b>GitHub 发布</b>：⚠️ 失败（push 403 Permission denied，`~/.workbuddy/gh_token.txt` PAT 疑似失效/过期；本地 commit 已生成，待凭证恢复后重跑 `git_publish.sh`）</p>
+    <p><b>Cloudflare Pages</b>：⚠️ 未执行（发布链因 GitHub push 失败中断，待凭证恢复后重跑 `git_publish.sh` 连带直传）</p>
   </footer>
 </div>
 
