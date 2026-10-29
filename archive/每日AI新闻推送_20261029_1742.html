@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-10-29 17:42</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --card2:#11161d; --border:#30363d;
+    --text:#e6edf3; --muted:#8b949e; --blue:#58a6ff; --green:#3fb950;
+    --orange:#d29922; --red:#f85149; --purple:#bc8cff;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;padding:24px 16px;background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.75;}
+  .wrap{max-width:920px;margin:0 auto;}
+  header.hero{background:linear-gradient(180deg,#161b22 0%,#0d1117 100%);
+    border:1px solid var(--border);border-radius:12px;padding:26px 28px;margin-bottom:22px;}
+  h1{margin:0 0 12px;font-size:26px;color:var(--blue);letter-spacing:1px;}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:13.5px;color:var(--muted);}
+  .meta b{color:var(--text);font-weight:600;}
+  .notice{background:#1c2128;border-left:4px solid var(--orange);border-radius:6px;
+    padding:12px 16px;margin:16px 0 0;font-size:13.5px;color:var(--muted);}
+  .notice b{color:var(--orange);}
+  h2.sec{font-size:19px;color:var(--green);margin:30px 0 14px;padding-bottom:6px;
+    border-bottom:1px solid var(--border);}
+  article.entry{background:var(--card);border:1px solid var(--border);border-radius:12px;
+    padding:22px 24px;margin-bottom:20px;}
+  article.entry h3{margin:0 0 12px;font-size:17.5px;color:var(--text);line-height:1.5;}
+  article.entry h3 .idx{color:var(--blue);font-weight:700;margin-right:6px;}
+  .lead{color:var(--muted);font-size:13px;margin:0 0 14px;}
+  h4.sub{margin:16px 0 6px;font-size:14.5px;color:var(--blue);}
+  h4.sub.val{color:var(--green);} h4.sub.kv{color:var(--orange);} h4.sub.tag{color:var(--purple);}
+  p{margin:6px 0;}
+  ul{margin:6px 0;padding-left:22px;}
+  li{margin:6px 0;}
+  code.k{background:#21262d;border:1px solid var(--border);border-radius:4px;
+    padding:1px 7px;font-size:12.5px;color:var(--purple);font-family:Consolas,monospace;margin-right:6px;}
+  .kvline{font-size:13.5px;color:var(--text);}
+  .self{color:var(--orange);font-size:12px;}
+  .third{color:var(--green);font-size:12px;}
+  section.blocks{background:var(--card2);border:1px solid var(--border);border-radius:12px;
+    padding:18px 22px;margin-bottom:20px;font-size:13.5px;}
+  section.blocks h2{font-size:16.5px;color:var(--orange);margin:4px 0 10px;border:none;}
+  section.blocks ol{padding-left:20px;}
+  section.blocks li{margin:8px 0;color:var(--muted);}
+  section.blocks li b{color:var(--text);}
+  section.blocks p{color:var(--muted);}
+  section.blocks p b{color:var(--text);}
+  footer{margin-top:28px;text-align:center;color:#57606a;font-size:12.5px;}
+  hr{border:none;border-top:1px solid var(--border);margin:22px 0;}
+  a{color:var(--blue);}
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1>每日 AI 前沿技术精选</h1>
+  <div class="meta">
+    <span><b>日期</b>：2026-10-29</span>
+    <span><b>时间</b>：17:42</span>
+    <span><b>精选条数</b>：4 条</span>
+    <span><b>时效窗口</b>：2026-10-29 11:30 – 2026-10-29 17:42（增量收敛：距上跑 11:30 约 6h12m，未扩展）</span>
+  </div>
+  <div class="notice">本期窗口为北京时间周四午后（= 美东 10-28 深夜至 10-29 凌晨），美国一线实验室公告稀疏；<b>窗口内增量主体为 2026 智元创新日午间—午后场发布群与腾讯全球数字生态大会午后场发布</b>。AI Coding 最高优先域在本窗口内无模型/基准类一手首发（GitHub Copilot Fusion GA 等为 10-28 第一信源，已列待核实追踪），结构性空缺见「去重说明」。arXiv Thu-29 批次截至窗口终点仍未上线（列表页仍为 Wed-28），学术首发 0 条。</div>
+</header>
+
+<h2 class="sec">今日精选</h2>
+
+<article class="entry">
+  <h3><span class="idx">1.</span>智元发布新一代具身基座模型 GO-3 Preview：具身原生 WRAM 架构「理解-预测-动作」统一建模，双 Scaling 曲线 + 真实便利店 Physical RSI 验证，年底全面开源</h3>
+  <p class="lead">2026 智元创新日现场发布 · 2026-10-29</p>
+  <h4 class="sub">事件概述</h4>
+  <p>10 月 29 日，智元创新日主论坛上，智元联合创始人、联席总裁、具身智能业务体系总裁姚卯青现场正式发布新一代具身基座大模型 <b>GO-3 Preview</b>。模型采用自研具身原生架构 <b>WRAM（World Reasoning Action Model，世界推理行动模型）</b>，将任务推理、未来预测与动作生成连接为统一建模链路；官方称其近日已登顶 <b>RoboDojo、RoboTwin、RoboColiseum</b> 三项具身评测榜单，并计划 <b>2026 年底全面开源</b>。</p>
+  <h4 class="sub val">技术与工程价值</h4>
+  <ul>
+    <li><b>核心机制</b>：WRAM 三段式设计——输入端 VLM 推理 + CoAE 控制向编码，将视觉 token 压至 DINOv3 的 1/16，动作恢复误差降低 35%；决策端单步预测未来（先预测后果、再经 IDM 模块生成动作）；输出端 KASO「四选其一」在训练时筛掉不相容未来。全链路 Scaling 覆盖三阶段：预训练（数据×模型双维扩展）、后训练（<b>Genie Evolver</b>：百台真机 + 物理仿真 + 世界模型 Genie Envisioner 2.0，联合清华大学与无问芯穹的群体经验学习 CEL 已在百台真机集群完成原型验证）、部署后（<b>Genie Master</b> 具身 Agent 框架 + EEP 具身执行协议）。</li>
+    <li><b>实际影响</b>：官方称搭载 Genie Master 的精灵 G2 在真实便利店「无人在环」持续自我进化——不依赖人工示范与调试，自行定位失败原因、调整策略、沉淀经验，行业首次在真实业务场景（而非仿真环境）验证 <b>Physical RSI（具身递归自进化）</b>；以少量示范即可学习制作煎饼果子等长程精细任务。这是把「预训练-后训练-部署后训练」三段 Scaling 讲成完整闭环并承诺开源的首个国产基座级样本。</li>
+  </ul>
+  <h4 class="sub kv">关键指标/资源</h4>
+  <ul>
+    <li class="kvline"><b>评测/性能</b>（<span class="self">官方现场披露口径，未见第三方复现</span>）：数据 Scaling 实验 Zero-Shot 平均成功率 <b>13.4% → 56.4%</b>（20 类技能、100 个任务）；模型 Scaling 实验 <b>56.2% → 73.2%</b>；便利店部署首任务日成功率 <b>28.6% → 5 天后稳定 85.7%</b>；桌面冰壶 4 小时在线迭代后超过被测人类平均水平；RoboDojo（港大 MMLab 主导，42 仿真 + 18 真机任务）同系列 <b>GO-3 Nano Preview 以均分 61.90、平均成功率 56.42% 居首</b>（<span class="third">第三方榜单</span>，10-27 已公示，本期为创新日现场再确认）</li>
+    <li class="kvline"><b>代码/论文</b>：GO-3 Preview 与 Genie Master 计划 2026 年底全面开源（官方口径，尚无仓库/权重释出）；Genie Studio 2.0 提供天级部署</li>
+    <li class="kvline"><b>信源</b>：上证报·中国证券网现场报道（12:12、17:11）、北京商报（12:05）、中国基金报（15:14）等 11:23–17:14 多源现场报道</li>
+  </ul>
+  <h4 class="sub tag">标签</h4>
+  <p><code class="k">#具身智能</code><code class="k">#RSI</code></p>
+</article>
+
+<article class="entry">
+  <h3><span class="idx">2.</span>智元发布并承诺开源业界首个具身智能原生操作系统灵渠 OS 1.0：1000Hz 负载端到端时延抖动 &lt;4μs，2 亿行代码与 5000+ 软件包年底开源并捐赠开放原子基金会</h3>
+  <p class="lead">2026 智元创新日现场发布 · 2026-10-29</p>
+  <h4 class="sub">事件概述</h4>
+  <p>同日主论坛操作系统环节，智元合伙人、联席总裁、中央研发部总裁熊彦发布<b>具身智能原生操作系统灵渠 OS 1.0</b>，称系业界首个；灵渠 OS 1.0 <b>计划 2026 年底全面开源</b>，智元同时宣布成为<b>开放原子开源基金会白金捐赠人</b>，将灵渠 OS 项目捐赠基金会，共建「中国人形机器人开源社区」。</p>
+  <h4 class="sub val">技术与工程价值</h4>
+  <ul>
+    <li><b>核心机制</b>：覆盖从构建到部署全流程、从底层硬件使能到上层应用支撑的全技术栈，经量产机器人大规模验证；定义机器人本体硬件接入新范式，支持 <b>15 类 100+ 种外设</b>快速接入；全栈确定性时延优化——<b>1000Hz 高频任务负载下端到端时延抖动小于 4 微秒</b>。年底将把经全系量产验证的 <b>2 亿行代码与 5000+ 生态软件包</b>开源，提供端到端构建工具链并预集成具身智能开源组件。</li>
+    <li><b>实际影响</b>：操作系统层长期是国产具身栈的「隐形断点」（多数团队直接用 Linux/ROS 二开）。把本体使能、外设接入范式与确定性实时能力做成可开源的专属 OS，是「部署态」战略在基础设施侧的落点——第三方本体厂商与开发者可站在同一 OS 上对接 GO-3/Genie 系列模型与工具链，降低整机研发与跨本体迁移成本。</li>
+  </ul>
+  <h4 class="sub kv">关键指标/资源</h4>
+  <ul>
+    <li class="kvline"><b>评测/性能</b>：1000Hz 负载端到端时延抖动 &lt;4μs；15 类 100+ 外设接入（<span class="self">官方现场口径，自述数据，未见第三方复现</span>）</li>
+    <li class="kvline"><b>代码/论文</b>：灵渠 OS 1.0 计划 2026 年底全面开源（开放原子基金会托管路径已官宣，仓库尚未上线）</li>
+    <li class="kvline"><b>信源</b>：证券时报（12:23）、DoNews（12:17）、新浪科技（12:40）、北京商报（13:35）等现场报道</li>
+  </ul>
+  <h4 class="sub tag">标签</h4>
+  <p><code class="k">#具身智能</code><code class="k">#开源操作系统</code></p>
+</article>
+
+<article class="entry">
+  <h3><span class="idx">3.</span>腾讯全球数字生态大会：BuddyOne 套件正式发布、WorkBuddy 全面开放第三方与企业自研 Agent——统一账号/积分池/数据池、共享同一套 Harness，上架 Skills 超 20 万</h3>
+  <p class="lead">2026 腾讯全球数字生态大会 · 2026-10-29</p>
+  <h4 class="sub">事件概述</h4>
+  <p>10 月 29 日腾讯全球数字生态大会上，腾讯集团高级执行副总裁汤道生宣布以 WorkBuddy 为工作台的跨应用一体化套件 <b>BuddyOne 正式发布</b>：打通腾讯文档、腾讯会议、腾讯网盘、ima 等产品，<b>统一账号（BuddyOne ID）、统一积分池、统一数据池</b>，技术底座层面各产品调用的是 <b>WorkBuddy 的同一套 Harness</b>。同时 <b>WorkBuddy 将全面开放产品架构</b>，支持企业自研 Agent 与第三方 Agent（含第三方 IM 接入）——「选什么模型、接什么 Agent、用什么 IM，选择权都在企业手里」。</p>
+  <h4 class="sub val">技术与工程价值</h4>
+  <ul>
+    <li><b>核心机制</b>：Agent 底座（Harness）作为多产品共享层，跨文档/会议/网盘/知识库聚合上下文，一次提问可检索并整合多应用内容生成带来源的回答；开放平台引入硬件、Buddy 应用、专家、技能、连接器五类能力，首批接入超百家伙伴；腾讯云 AgentRuntime 与安全能力同步升级，配套「行为可控（隐藏指令识别清洗、高危操作拦截）、过程可溯（Agent 独立身份全程留痕）、数据可管（端到端加密 + 文件级恢复）」治理三件套。</li>
+    <li><b>实际影响</b>：国内头部厂商把「Agent 工作台」从单产品推向<b>平台化开放与跨应用统一上下文</b>的标志性动作——积分池通用、记忆共享、连接器生态意味着 Agent 分发与计费的入口竞争开始成型。WorkBuddy 已打通通用办公、编程与设计场景并上线「人机双写」，企业自研 Agent 可直接挂接大厂上下文资产。同场再确认：混元 Hy4 即将推出、Hy4 flash 近期发布（延续第 116 跑预告，不重复计条）。</li>
+  </ul>
+  <h4 class="sub kv">关键指标/资源</h4>
+  <ul>
+    <li class="kvline"><b>评测/性能</b>（<span class="self">大会口径自述，未见第三方复现</span>）：WorkBuddy 自 3 月上线累计迭代 100+ 重大版本、用户累计完成任务请求 <b>90 亿次</b>、Token 消耗较初期增长 <b>50 倍</b>；企业版落地 50+ 行业，覆盖中国企业 500 强中 50%、100 强中 60%；开放平台伙伴与开发者超 <b>5 万家</b>、上架 Skills 超 <b>20 万</b>；为承接 Hy4 preview 调用洪峰，上线前两周把某国产芯片单卡吞吐量提升 <b>5 倍</b></li>
+    <li class="kvline"><b>代码/论文</b>：BuddyOne 关联入口为 WorkBuddy PC 端 5.9.0+；开放平台与 Skill 生态经大会官宣</li>
+    <li class="kvline"><b>信源</b>：亿欧快讯（12:42）、网易（13:38）、澎湃新闻（16:46）、虎嗅（16:49）等窗口内现场报道</li>
+  </ul>
+  <h4 class="sub tag">标签</h4>
+  <p><code class="k">#Agent平台</code><code class="k">#AI Coding</code></p>
+</article>
+
+<article class="entry">
+  <h3><span class="idx">4.</span>智元发布行业首个具身智能原生多模态交互大模型 WITA Omni 1.0：语音-视觉-文本与表情-动作同模型同步建模，「边听边想边说」快慢双模，12 月国内全面部署</h3>
+  <p class="lead">2026 智元创新日现场发布 · 2026-10-29</p>
+  <h4 class="sub">事件概述</h4>
+  <p>智元创新日交互智能环节，熊彦发布<b>具身全模态端到端交互大模型 WITA-OMNI（WITA Omni 1.0）</b>，称系行业首个具身智能原生多模态交互大模型——把输入的语音、视觉、文本与输出的语音、表情、动作放进<b>同一个模型同步建模、统一对齐</b>，实现「边听、边想、边说」。</p>
+  <h4 class="sub val">技术与工程价值</h4>
+  <ul>
+    <li><b>核心机制</b>：快慢双模系统（快响应通道 + 深思考通道）；能力面包括极速响应、超强拾音、灵动情感、本体部署、语言大咖（支持超 100 种语言与 29 种方言）、Intelligent FaceUI（智能面屏外显「所思所想」）、全时自主与全模态拒识。</li>
+    <li><b>实际影响</b>：交互智能是部署态机器人融入人类场景的最后一环。原生全模态端到端路线若成立，将替代「ASR + LLM + TTS + 表情脚本」级联栈，把交互时延与情感一致性压进同一模型预算。商业化节奏明确：即日起首批友好客户部署、12 月国内全面部署、2027 年 1 月欧洲首发、3 月海外全面上线——国内具身交互大模型少见的带部署时间表发布。</li>
+  </ul>
+  <h4 class="sub kv">关键指标/资源</h4>
+  <ul>
+    <li class="kvline"><b>评测/性能</b>：支持超 100 种语言与 29 种方言；另有「登顶多个具身交互权威榜单」表述但<span class="self">具体榜单与分数未披露（自述，待第三方口径）</span></li>
+    <li class="kvline"><b>代码/论文</b>：未见模型报告/权重发布；部署节奏见上</li>
+    <li class="kvline"><b>信源</b>：雷递现场稿（新浪转载，14:39）、映象网（17:38）等窗口内报道</li>
+  </ul>
+  <h4 class="sub tag">标签</h4>
+  <p><code class="k">#具身智能</code><code class="k">#多模态交互</code></p>
+</article>
+
+<section class="blocks">
+  <h2>去重说明</h2>
+  <p><b>7 天扫描</b>：10-22 ~ 10-29 11:30 全部 16 份历史报告（第 98–116 跑，约 60 条标题）纳入已报道集合；本跑为第 117 跑。四条入选条目经 dedup_check.py 逐条判定均 <code>is_dup:false</code>（BuddyOne 与第 116 跑「腾讯混元 Hy4 即将发布」同主体不同动作：模型预告 vs 平台套件发布与开放，保留）。智元同日 GO-3（模型）/ 灵渠 OS（操作系统）/ WITA（交互模型）为三个独立主体动作，不构成同事件重复。</p>
+  <p><b>时间戳纪律排除（第一信源时刻在窗口外或不可取证）</b>：</p>
+  <ol>
+    <li><b>超衍智能 Apex-35B-V1.0</b>（RSI/AI for Science 候选）：网易窗内报道（14:47），但正文明记「10 月 28 日发布」→ 窗外排除，禁止以转载时间入选。</li>
+    <li><b>蚂蚁灵光 2.0 + Ling-3.1-flash-1019 开源</b>：模型部分与第 20261027_2237 跑同主体同动作 → 重复排除；灵光 2.0 为产品功能升级稿、无实测基准 → 门槛排除。</li>
+    <li><b>华为昇腾 950DT 1024 卡超节点武汉点亮</b>（IT之家 13:12）：报道自述活动为「昨日(28 日)」华为中国行大会 → 第一信源时刻窗外，排除。</li>
+    <li><b>智元 Worken 度量衡 / 下线破 2 万台 / 上半年营收近 20 亿</b>：开场环节现场报道最早 10:44–10:49（窗口起点前）→ 不单独计条，仅作背景事实引用。</li>
+    <li><b>Addy Osmani「过度提示 Claude」经验帖</b>（AI HOT 池内唯一窗内条目 14:13）：不满足入选门槛 → 排除。</li>
+    <li><b>MiniMax M3.1 Flash「正式发布」</b>：仅见券商周报转述，权重发布实为 10-23（第 20261023_1130 跑已报道）→ 排除。</li>
+    <li><b>Anthropic 漏洞发现报告</b>（IT之家窗内 16:35 转载）：官方第一信源为 10-27/28 → 转载时间不作入选依据，排除。</li>
+  </ol>
+  <p><b>结构性说明</b>：信源健康 ok=3 / warn=0 / error=0；<b>arXiv Thu-29 批次截至窗口终点仍未上线</b>（cs.RO/cs.AI/cs.CL/cs.LG recent 均止于 Wed-28），窗口内学术首发 0 条，连续第四跑延迟；<b>AI Coding 域结构性空缺</b>——GitHub Universe/Copilot Fusion GA、Octoverse 2026、MetaHarness、Clover-35B 等第一信源均为 10-28，本期窗内无 AI Coding 模型/基准类一手首发，AI Coding 标签由 BuddyOne/WorkBuddy 开放承载；<b>GO-3 窗口边缘披露</b>——最早现场报道 11:23:48/11:29:39（窗口起点前 1–6 分钟），其后 12:05 起多家现场一手报道密集落于窗内，按窗口内入选处理并列入待核实。</p>
+</section>
+
+<section class="blocks">
+  <h2>待核实</h2>
+  <ol>
+    <li><b>GO-3 Preview 全部现场数字</b>（13.4%→56.4%、56.2%→73.2%、28.6%→85.7%、token 压缩 1/16、动作恢复误差 -35% 等）：均为官方口径，未见论文/榜单原始页/第三方复现；年底开源为承诺待落地。</li>
+    <li><b>GO-3 Preview 精确发布时刻</b>：最早报道 11:23:48 早于窗口起点 6 分钟，需以大会实际时序钉死。</li>
+    <li><b>WITA Omni 1.0「登顶多个具身交互权威榜单」</b>：具体榜单与分数未披露。</li>
+    <li><b>灵渠 OS &lt;4μs 抖动与年底开源</b>：官方现场口径；许可证类型与仓库地址未见。</li>
+    <li><b>腾讯大会经营/生态数字</b>（90 亿次请求、Token 50 倍、5 万开发者、20 万 Skills、国产芯片吞吐 +5 倍）：大会口径自述。</li>
+    <li><b>智元经营口径分歧</b>：官方「下线 20000 台 / 份额约 43%」与媒体转述 IDC「出货 8600+」及上观「出货 9700」混用，下线量≠出货量。</li>
+    <li><b>arXiv Thu-29 批次延迟</b>（连续第四跑）：需确认公告时刻表是否变更。</li>
+    <li><b>GitHub Copilot Fusion GA 覆盖缺口</b>：10-28 第一信源，仍未入选报道，继续登记追踪。</li>
+  </ol>
+</section>
+
+<footer>每日 AI 前沿技术精选 · 自动生成 · 时效窗口以报告头为准</footer>
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
