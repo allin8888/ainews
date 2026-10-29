@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-10-29 11:30</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --card2:#1c2230;
+    --fg:#e6edf3; --muted:#9da7b3; --line:#30363d;
+    --blue:#388bfd; --green:#3fb950; --orange:#f0883e; --accent:#58a6ff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Helvetica,Arial,sans-serif;
+    line-height:1.7; padding:32px 16px;
+  }
+  .wrap{max-width:860px; margin:0 auto;}
+  header.top{
+    border-bottom:1px solid var(--line); padding-bottom:18px; margin-bottom:22px;
+  }
+  h1{font-size:26px; margin:0 0 12px; color:var(--fg); letter-spacing:.5px;}
+  .meta{display:flex; flex-wrap:wrap; gap:8px 18px; color:var(--muted); font-size:13.5px;}
+  .meta b{color:var(--accent); font-weight:600;}
+  .warn{
+    background:rgba(240,136,62,.12); border:1px solid var(--orange);
+    color:#ffd8a8; padding:12px 14px; border-radius:10px; font-size:13.5px;
+    margin:18px 0;
+  }
+  .item{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:22px 22px 18px; margin:18px 0; box-shadow:0 1px 0 rgba(255,255,255,.02);
+  }
+  .item h2{font-size:19px; margin:0 0 4px; color:var(--fg); line-height:1.45;}
+  .src{color:var(--muted); font-size:12.5px; margin:0 0 14px;}
+  .item h3{font-size:14px; color:var(--accent); margin:16px 0 6px; font-weight:600;}
+  .item p{margin:6px 0; font-size:14.5px; color:#d6dee7;}
+  ul{margin:6px 0; padding-left:20px;}
+  li{margin:5px 0; font-size:14px; color:#d6dee7;}
+  .kv{margin:6px 0; font-size:14px;}
+  .kv b{color:var(--green);}
+  .tags{margin-top:14px;}
+  .tag{
+    display:inline-block; background:var(--card2); border:1px solid var(--line);
+    color:var(--accent); font-size:12px; padding:3px 10px; border-radius:999px; margin:3px 6px 0 0;
+  }
+  .section-title{font-size:17px; color:var(--fg); margin:34px 0 10px; border-left:3px solid var(--blue); padding-left:10px;}
+  .note{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 18px; margin:14px 0; font-size:13.5px; color:#c9d3de;}
+  .note ul{color:#c9d3de;}
+  footer{margin-top:30px; border-top:1px solid var(--line); padding-top:16px; color:var(--muted); font-size:12.5px;}
+  code{background:var(--card2); padding:1px 6px; border-radius:5px; font-size:12.5px; color:#ffd8a8;}
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>每日 AI 前沿技术精选</h1>
+    <div class="meta">
+      <span><b>日期</b>：2026-10-29</span>
+      <span><b>时间</b>：11:30</span>
+      <span><b>精选条数</b>：1 条</span>
+      <span><b>时效窗口</b>：2026-10-29 09:10 – 2026-10-29 11:30（增量收敛约 2h20m，未扩展）</span>
+    </div>
+  </header>
+
+  <div class="warn">
+    ⚠️ 今日新闻不足3条，已严格筛选本增量窗口（2026-10-29 09:10 – 11:30，约 2h20m）内首发内容：本窗口对应美东 10-28 21:10–23:30 深夜低活时段，且 arXiv Thu-29 批次截至报告时刻仍未上线（列表仍显示 Wed 28 Oct）；未启用已废止的 48h 降级策略、未扩展窗口。唯一入选为腾讯混元 Hy4 大会预告（第一信源时刻落在窗口内）；其余候选经第一信源时刻核验均在窗外或时间戳不可取证，按纪律排除，详见「去重说明」。
+  </div>
+
+  <div class="item">
+    <h2>1. 腾讯混元 Hy4 将于近期发布、Hy4 flash 同步推出：首次引入视觉理解，强化长程与 Agent 能力</h2>
+    <p class="src">2026 腾讯全球数字生态大会 | 2026-10-29 BJ 10:18</p>
+
+    <h3>事件概述</h3>
+    <p>10 月 29 日，在 2026 腾讯全球数字生态大会上，腾讯宣布混元 Hy4 <b>即将发布</b>、Hy4 flash 也将在近期推出。相较于今年 8 月已开源的 Hy4 preview（总参 770B / 激活 49B / 上下文 1M），正式版被描述为「全面大幅提升」，重点强化长程与真实生产力任务、显著提升思维链（CoT）效率，并<b>首次引入视觉理解</b>；Hy4 flash 定位极致性价比实用模型，在继承 Hy4 视觉与 Agent 能力的基础上，通过模型与产品的深度 Co-Design 高频进化。本次为「发布预告」性质，模型尚未正式上线、未披露公开基准或权重。</p>
+
+    <h3>技术与工程价值</h3>
+    <ul>
+      <li><b>核心机制</b>：Hy4 的能力升级集中在三条线——① 视觉理解首次引入（multimodal 补齐，从纯文本/长上下文走向图文多模态）；② 长程与真实生产力任务强化 + 思维链效率提升（指向长上下文下的复杂多步推理与 agentic 工作流可靠性）；③ Agent 能力继承到 flash 线（通过模型-产品 Co-Design 做高频迭代）。结合 8 月 Hy4 preview 已开源的事实，本次预告意味着国产多模态阵营再添一枚主力，且开源主线大概率延续。</li>
+      <li><b>实际影响</b>：对 AI Coding / Agent 视角，Hy4 把「视觉理解 + Agent」下沉到 flash 性价比线，延续了国产模型「全模态 + 低价位 + 高频进化」的竞争路径；若正式版延续 preview 的开源许可与 1M 上下文，将在本地部署与长文档/长代码场景构成对闭源 frontier 的务实替代。当前仅为预告，真实能力需待正式发布后的第三方基准复测验证。</li>
+    </ul>
+
+    <h3>关键指标/资源</h3>
+    <p class="kv"><b>评测/性能</b>：本次为发布预告，<b>无公开基准数字</b>；可参照的已公开基线仅来自 Hy4 preview（2026-08-28 开源：总参 770B / 激活 49B / 上下文 1M，开源模型第一梯队，腾讯官方口径，待正式版复测）。</p>
+    <p class="kv"><b>代码/论文</b>：Hy4 preview 开源仓库与公告（2026-08-28）；Hy4 正式版官方公告以腾讯全球数字生态大会 2026-10-29 现场发布为准（截至报告时刻未见独立官方博客 URL）。</p>
+    <p class="kv"><b>信源</b>：证券时报/科技日报/网易/时代周报等媒体 2026-10-29 10:18–10:46 报道，均指向同一大会现场发布动作。</p>
+
+    <div class="tags">
+      <span class="tag" style="color:#8b949e;border-color:#8b949e">#多模态大模型</span>
+      <span class="tag" style="color:#8b949e;border-color:#8b949e">#Agent</span>
+    </div>
+  </div>
+
+  <h2 class="section-title">去重说明</h2>
+  <div class="note">
+    <p><b>7 天扫描</b>：工作区根 10-22 ~ 10-29 09:10 共 16 份报告（第 98–114 跑）标题纳入已报道集合；本跑为第 115 跑。入选条目「腾讯混元 Hy4 即将发布」不在任一历史文件标题集合中（上跑 09:10 仅覆盖 Gemini 4 Carbon）。</p>
+    <p><b>实体去重</b>：<code>dedup_check.py "腾讯混元 Hy4 即将发布 首次引入视觉理解"</code> → <code>is_dup:false, jaccard:0.0, matched:null</code>。</p>
+    <p><b>时间戳纪律排除（第一信源时刻在窗口外或不可取证）</b>：</p>
+    <ul>
+      <li><b>GitHub Copilot Fusion GA</b>（AI Coding 重磅）：GitHub changelog 写明 GA 日期 2026-10-28（SF 当地），映射到北京 10-29 00:00–08:00，<b>早于本窗口起点 09:10</b> → 排除；同时该条目未出现在第 114 跑（09:10）产出中，属上一跑窗口的覆盖缺口，登记待核实追踪，建议下一跑补录。</li>
+      <li><b>Google Genie 4</b>（世界模型）：已在第 112 跑入选 → 排除。</li>
+      <li><b>Google Gemini 4 Carbon</b>：已在第 114 跑（09:10）入选 → 排除。</li>
+      <li><b>Google Connected Apps Platform（Gemini/Search 经 MCP 开放）</b>：官方博文与 TechCrunch 均标注 2026-10-28 → 窗口外，排除。</li>
+      <li><b>NVIDIA Nemotron 3.5 Transcribe</b>（开放权重语音转录 30B MoE）：第一信源窗口内时刻未能钉死，且属语音 ASR（非四大优先焦点）→ 排除。</li>
+      <li><b>Cartesia H-Net</b>（byte-level LM，去 tokenizer，Albert Gu 团队）：仅见于 AGI Hunt 聚合流（标注「Oct 29」但无第一信源精确时刻），时间戳不可取证 → 排除。</li>
+      <li><b>Anthropic 终止编码面试 / GPT-6 Astra 语音基准 / OpenAI 随笔 / 法律 AI</b>：多为 10-28 或观点/产品功能类，且非优先焦点或时间戳不可取证 → 排除。</li>
+      <li><b>OpenAI Codex rust-v0.166.0-alpha.6</b>（GitHub release 09:41 BJ，窗口内）：已扫描，但属已 GA 开发工具的常规预发布 alpha，新颖性不足 → 排除。</li>
+    </ul>
+    <p><b>结构性说明</b>：信源健康 ok=3 / warn=0 / error=0（aihot_items 0.4h 新鲜、dailies 2026-10-29、arXiv 公告批次仍为 <b>Wed 28 Oct 2026</b>，Thu-29 未上线）；窗口 2h20m（北京周四上午 09:10–11:30 = 美东 10-28 21:10–23:30 深夜低活）；<b>arXiv Thu-29 批次截至 11:30 BJ 仍未上线，窗口内学术首发不可取证 → 0 条</b>；GitHub 关键仓窗口内无 release 事件（codex alpha.6 窗内但常规预发布已排除）；国内媒体 RSS 头条多为已覆盖主体或 10-28 窗口外条目，无新增窗口内合规首发。</p>
+  </div>
+
+  <h2 class="section-title">待核实</h2>
+  <div class="note">
+    <ul>
+      <li><b>腾讯混元 Hy4 正式版能力数字</b>：本次为「即将发布」预告，无公开基准/权重；「全面大幅提升 / 长程强化 / 思维链效率提升 / 视觉理解首次引入」均为大会口径自述，未见第三方复测。缺：官方公告 URL、公开基准、权重/许可与开源计划。</li>
+      <li><b>Hy4 flash 上线时间与定价/许可</b>：官方称「近期发布」，无具体日期、价格与开源计划。</li>
+      <li><b>GitHub Copilot Fusion GA 覆盖缺口</b>：10-28 第一信源（BJ 00:00–08:00），理论上落入第 114 跑窗口却未被覆盖，建议下一跑补录并核实其 AA Coding Agent Index 60 等数字（均为 GitHub 自述）。</li>
+      <li><b>arXiv Thu-29 批次公告延迟</b>（近失追踪）：截至 11:30 仍为 Wed 28 Oct 批次；若系正常落地带宽延迟则下跑窗口可取证，若系时刻表变更需复核。</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>工作区 Markdown：<code>每日AI新闻推送_20261029_1130.md</code></p>
+    <p>工作区 HTML：<code>每日AI新闻推送_20261029_1130.html</code></p>
+    <p>网盘归档：<code>O:/quark/automation/每日 AI 新闻推送/</code></p>
+    <p>GitHub 发布：<a href="https://github.com/allin8888/ainews" target="_blank" rel="noopener">https://github.com/allin8888/ainews</a> ｜ Cloudflare Pages：<a href="https://ainews-3rw.pages.dev" target="_blank" rel="noopener">https://ainews-3rw.pages.dev</a></p>
+    <p>执行状态：待 guardian post 校验后回填</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
