@@ -3,7 +3,49 @@
 <title>每日 AI 前沿技术精选</title>
 <link>https://local.invalid/ai-news</link>
 <description>每日 AI 前沿技术精选 · 结构化条目流</description>
-<lastBuildDate>Thu, 29 Oct 2026 10:26:07 -0000</lastBuildDate>
+<lastBuildDate>Fri, 30 Oct 2026 03:02:29 -0000</lastBuildDate>
+<item>
+<title>Meta 全量部署 Catching JiTTests：LLM 在代码合入前按需锻造「一次性捕获测试」，H1 拦截 74 个严重隐私 bug、隐私 SEV 总量降 20%</title>
+<link>每日AI新闻推送_20261030_0954.html</link>
+<guid isPermaLink="false">20261030_0954-Meta 全量部署 Catching JiTTests：LLM 在代码合入前按需锻造「一次性捕获测试」，H1 拦截 74 个严重隐私 bug、隐私 SEV 总量降 20%</guid>
+<pubDate>2026-10-30</pubDate>
+<category>AI Coding、Agent工作流</category>
+</item>
+<item>
+<title>Figma 公开自研画布编辑模型训练方法：25 万合成样本 SFT 起步、确定性校验器 + 视觉评委做奖励，转向 RL 后内部评测 77.8%</title>
+<link>每日AI新闻推送_20261030_0954.html</link>
+<guid isPermaLink="false">20261030_0954-Figma 公开自研画布编辑模型训练方法：25 万合成样本 SFT 起步、确定性校验器 + 视觉评委做奖励，转向 RL 后内部评测 77.8%</guid>
+<pubDate>2026-10-30</pubDate>
+<category>AI Coding、专用模型RL</category>
+</item>
+<item>
+<title>腾讯混元官宣 Hy-Nomas 技术报告并发布 Hy-Nomas-Bench：开源交互式视频世界模型重现 Genie 4 示例、demo 免排队</title>
+<link>每日AI新闻推送_20261030_0954.html</link>
+<guid isPermaLink="false">20261030_0954-腾讯混元官宣 Hy-Nomas 技术报告并发布 Hy-Nomas-Bench：开源交互式视频世界模型重现 Genie 4 示例、demo 免排队</guid>
+<pubDate>2026-10-30</pubDate>
+<category>世界模型、重大开源</category>
+</item>
+<item>
+<title>Pika 开源 Pika-H3-Flex：MiniMax H3 后训练六步采样视频模型，LoRA 适配器 + Apache-2 推理包落地</title>
+<link>每日AI新闻推送_20261030_0954.html</link>
+<guid isPermaLink="false">20261030_0954-Pika 开源 Pika-H3-Flex：MiniMax H3 后训练六步采样视频模型，LoRA 适配器 + Apache-2 推理包落地</guid>
+<pubDate>2026-10-30</pubDate>
+<category>重大开源、视频生成</category>
+</item>
+<item>
+<title>Unsloth 发布 Mistral Large 4「Dynamic 1-bit」GGUF：约 233GB 本地跑 1T 参数多模态模型，保留 91% top-1；AA 同日第三方确认 1.05T-A52B/1M 上下文</title>
+<link>每日AI新闻推送_20261030_0954.html</link>
+<guid isPermaLink="false">20261030_0954-Unsloth 发布 Mistral Large 4「Dynamic 1-bit」GGUF：约 233GB 本地跑 1T 参数多模态模型，保留 91% top-1；AA 同日第三方确认 1.05T-A52B/1M 上下文</guid>
+<pubDate>2026-10-30</pubDate>
+<category>重大开源、推理加速</category>
+</item>
+<item>
+<title>Mistral 开放 Large 4「Le Chonk」权重：1T 参数 MoE 原生多模态 + 混合推理，agentic coding 与网络安全自述领先</title>
+<link>每日AI新闻推送_20261029_2225.html</link>
+<guid isPermaLink="false">20261029_2225-Mistral 开放 Large 4「Le Chonk」权重：1T 参数 MoE 原生多模态 + 混合推理，agentic coding 与网络安全自述领先</guid>
+<pubDate>2026-10-29</pubDate>
+<category>重大开源、AI Coding</category>
+</item>
 <item>
 <title>智元发布新一代具身基座模型 GO-3 Preview：具身原生 WRAM 架构「理解-预测-动作」统一建模，双 Scaling 曲线 + 真实便利店 Physical RSI 验证，年底全面开源</title>
 <link>每日AI新闻推送_20261029_1742.html</link>

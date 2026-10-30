@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日 AI 前沿技术精选 · 2026-10-30 09:54</title>
+<style>
+:root{
+  --bg:#0d1117; --card:#161b22; --card2:#1c2129; --border:#30363d;
+  --fg:#e6edf3; --muted:#9198a1; --blue:#58a6ff; --green:#3fb950; --orange:#e3a008; --red:#f85149;
+}
+*{box-sizing:border-box}
+body{margin:0;padding:24px 16px 64px;background:var(--bg);color:var(--fg);
+  font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Helvetica,Arial,sans-serif}
+.wrap{max-width:960px;margin:0 auto}
+header.page{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:22px 24px;margin-bottom:20px}
+h1{margin:0 0 10px;font-size:26px;letter-spacing:.3px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--muted);font-size:14px;margin:0;padding:0;list-style:none}
+.meta b{color:var(--fg);font-weight:600}
+.note{margin:14px 0 0;padding:12px 14px;border-left:3px solid var(--orange);background:var(--card2);border-radius:0 8px 8px 0;color:var(--fg);font-size:14.5px}
+h2.sec{font-size:19px;margin:30px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border);color:var(--blue)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin:0 0 18px}
+.card h2{margin:0 0 6px;font-size:19px;line-height:1.5}
+.src{color:var(--muted);font-size:13.5px;margin:0 0 14px}
+.card h3{margin:18px 0 6px;font-size:15px;color:var(--green)}
+p{margin:8px 0}
+ul{margin:6px 0 6px;padding-left:22px}
+li{margin:6px 0}
+b.k{color:var(--blue);font-weight:600}
+code{background:var(--card2);padding:1px 6px;border-radius:5px;font-size:13.5px;color:var(--orange);
+  font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace}
+a{color:var(--blue);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.tags{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:12.5px;padding:3px 10px;border-radius:999px;border:1px solid var(--border);background:var(--card2);color:var(--fg)}
+.self{color:var(--orange)}
+.badge{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(227,160,8,.14);border:1px solid rgba(227,160,8,.45);color:var(--orange);margin-left:6px}
+.badge.t{background:rgba(63,185,80,.13);border-color:rgba(63,185,80,.45);color:var(--green)}
+table{border-collapse:collapse;width:100%;margin:10px 0;font-size:14.5px}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--card2);color:var(--fg)}
+footer.page{margin-top:26px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 22px;font-size:14px;color:var(--muted)}
+footer.page b{color:var(--fg)}
+hr{border:0;border-top:1px solid var(--border);margin:26px 0}
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="page">
+  <h1>每日 AI 前沿技术精选</h1>
+  <ul class="meta">
+    <li><b>日期</b> 2026-10-30</li>
+    <li><b>时间</b> 09:54</li>
+    <li><b>精选条数</b> 5 条</li>
+    <li><b>时效窗口</b> 2026-10-29 22:25 – 2026-10-30 09:54（严格24小时 · 增量收敛，与护栏计算一致）</li>
+  </ul>
+  <div class="note">本期窗口横跨北京周四深夜至周五清晨（= 美东周四全天），美系一线公告密集：AI Coding 最高优先域取得 Meta 生产级测试系统全量部署、Figma 自研编辑模型训练方法论两篇官方长文首发；世界模型方向腾讯混元官宣 Hy-Nomas 技术报告与基准开源；重大开源方向 Pika-H3-Flex（六步视频生成）与 Unsloth 1-bit GGUF（1T 权重本地化）同日落地。arXiv 公告批次异常延续：Thu-29 批次连续第六跑未上线、Fri-30 批次亦未出现，窗口内学术首发不可取证 0 条；具身智能窗口内无一手合规首发（见「去重说明」）。</div>
+</header>
+
+<h2 class="sec">今日精选</h2>
+
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="AI Coding">AI Coding</button>
+<button class="filter-chip" data-tag="Agent工作流">Agent工作流</button>
+<button class="filter-chip" data-tag="专用模型RL">专用模型RL</button>
+<button class="filter-chip" data-tag="世界模型">世界模型</button>
+<button class="filter-chip" data-tag="重大开源">重大开源</button>
+<button class="filter-chip" data-tag="视频生成">视频生成</button>
+<button class="filter-chip" data-tag="推理加速">推理加速</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. Meta 全量部署 Catching JiTTests：LLM 在代码合入前按需锻造「一次性捕获测试」，H1 拦截 74 个严重隐私 bug、隐私 SEV 总量降 20%</a><a class="toc-item" href="#entry-2">2. Figma 公开自研画布编辑模型训练方法：25 万合成样本 SFT 起步、确定性校验器 + 视觉评委做奖励，转向 RL 后内部评测 77.8%</a><a class="toc-item" href="#entry-3">3. 腾讯混元官宣 Hy-Nomas 技术报告并发布 Hy-Nomas-Bench：开源交互式视频世界模型重现 Genie 4 示例、demo 免排队</a><a class="toc-item" href="#entry-4">4. Pika 开源 Pika-H3-Flex：MiniMax H3 后训练六步采样视频模型，LoRA 适配器 + Apache-2 推理包落地</a><a class="toc-item" href="#entry-5">5. Unsloth 发布 Mistral Large 4「Dynamic 1-bit」GGUF：约 233GB 本地跑 1T 参数多模态模型，保留 91% top-1；AA 同日第三方确认 1.05T-A52B/1M 上下文</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="AI Coding Agent工作流" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Meta 全量部署 Catching JiTTests：LLM 在代码合入前按需锻造「一次性捕获测试」，H1 拦截 74 个严重隐私 bug、隐私 SEV 总量降 20%" data-link="https://engineering.fb.com/2026-10-29/security/catching-bugs-before-they-land-jittestings-human-on-the-loop-approach-at-full-scale/">复制</button>
+  <h2>1. Meta 全量部署 Catching JiTTests：LLM 在代码合入前按需锻造「一次性捕获测试」，H1 拦截 74 个严重隐私 bug、隐私 SEV 总量降 20% <span class="src">（Meta 官方工程博客 | 2026-10-29 UTC 16:00）</span></h2>
+  <h3>事件概述</h3>
+  <p>Meta 工程博客发布《Catching Bugs Before They Land》，首次系统披露 Catching JiTTests（即时捕获测试）从研究原型进入<b>全量生产基础设施</b>：每次 PR 提交时由 LLM 按需生成专攻「本次 diff 引入的行为差异」的一次性测试——默认不入库、用完即弃，工程师只回答「这个行为变化是否预期」的是非题。概念与论文（arXiv:2601.22832）于 2026 年 2 月公开，本条事件为 10-29 官方博客的生产规模部署详解（RSS pubDate 2026-10-29 16:00:12 GMT = 北京 10-30 00:00，落窗）。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b class="k">核心机制</b>：双管线并行——dodgy diff 把 diff 直接当「嫌疑变异体」生成能区分 parent/diff 行为的测试（铺量、覆盖广、误报多）；intent-aware 先读 diff 标题/描述/代码推断变更意图与风险点（空值、边界、状态机），在 parent 上注入变异后生成「parent 过、mutant 挂」的测试再打真实 diff（精准）。parent 过而 diff 挂记为 weak catch，经 RubFake 确定性规则评估器（布尔翻转、mock 错误、反射断裂等误报模式 + 风险标记）与多模型 LLM-as-Judge 集成（-1~+1 语义分、等级、理由聚合排序）过滤假阳性，仅高分候选推给人审；passing 池经评审有选择地「收割」为长期加固测试，形成「临时探针 + 永久资产」双轨。</li>
+    <li><b class="k">实际影响</b>：直接回应 AI Coding 时代的结构性矛盾——agent 生成代码的速度已超过人类写/维护测试的速度，传统测试「守未来、不抓当下」且脆断维护成本爆炸。把测试变成按 diff 定制、阅后即焚的动态防线，人审被压到「一句是非题」量级，是头部机构把 LLM 测试生成推进到全量 CI 基础设施的标杆样本；RubFake 规则层 + judge 集成 + human-on-the-loop 的分层降噪设计对自建 agent 编码工作流可直接借鉴。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>真阳性率</td><td>60%</td><td><div class="bar"><span style="width:60%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>H1 拦截严重隐私 bug</td><td>74 个</td><td><div class="bar"><span style="width:37%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>隐私 SEV 降幅</td><td>-20%</td><td><div class="bar"><span style="width:20%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>参与工程师</td><td>589（触达 64%）</td><td><div class="bar"><span style="width:64%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <ul>
+    <li>评测/性能（均为 Meta 官方披露口径，自述数据，未见第三方复现）：589 名工程师实际参与（占触达 64%）；人审候选真阳性率 60%；2026 上半年拦截 74 个严重隐私 bug、隐私类 SEV 总量同比降 20%，交付速度未受拖累（论文期另有 22,126 条生成测试分析、intent 管线单 diff 捕获率 4.0%→7.9%）。</li>
+    <li>代码/论文：官方博客 <a href="https://<a href="https://engineering.fb.com/2026-10-29/security/catching-bugs-before-they-land-jittestings-human-on-the-loop-approach-at-full-scale/" target="_blank" rel="noopener">engineering.fb.com/2026-10-29/security/catching-bugs-before-they-land-jittestings-human-on-the-loop-approach-at-full-scale/</a>">e<a href="https://ngineering.fb.com/2026-10-29/security/catching-bugs-before-they-land-jittestings-human-on-the-loop-approach-at-full-scale" target="_blank" rel="noopener">ngineering.fb.com/2026-10-29/security/catching-bugs-before-they-land-jittestings-human-on-the-loop-approach-at-full-scale</a></a> ；方法论文 arXiv:2601.22832（2026-02）；未开源。</li>
+  </ul>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#Agent工作流</span></div>
+</div>
+
+<div class="card priority-2" id="entry-2" data-tags="AI Coding 专用模型RL" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Figma 公开自研画布编辑模型训练方法：25 万合成样本 SFT 起步、确定性校验器 + 视觉评委做奖励，转向 RL 后内部评测 77.8%" data-link="https://www.figma.com/blog/training-a-figma-fluent-editing-model/">复制</button>
+  <h2>2. Figma 公开自研画布编辑模型训练方法：25 万合成样本 SFT 起步、确定性校验器 + 视觉评委做奖励，转向 RL 后内部评测 77.8% <span class="src">（Figma 官方博客 | 2026-10-29）</span></h2>
+  <h3>事件概述</h3>
+  <p>Figma 官方博客发布《How we're training a Figma-fluent editing model》，详解为 Figma Agent 训练<b>专用画布编辑模型</b>的完整配方：任务不是从零生成设计，而是对既有画布做「调间距、换颜色、按反馈重排」的小步编辑；先用 25 万+ 合成样本做 SFT（起始设计 + 合成编辑请求 + 成功改动三元组，以 Figma 原生文件格式表示、输出可直接落回画布），教师模型先尝试编辑、再由确定性校验器与视觉模型评委检查有效性并反馈自我修正；早期基于 Llama 3.3 70B 的版本在 25 万样本训练后编辑任务表现已与当时顶级模型竞争。官方渠道条目发布时刻 2026-10-29T21:00:02Z（北京 10-30 05:00，落窗；博客页仅日期级 10-29，已列待核实）。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b class="k">核心机制</b>：SFT 上限被明确承认——模型倾向复现训练见过的设计、泛化变弱、样本覆盖成本高，因此转向 RL：贴近设计领域的强化学习环境、样本多样性扩充、奖励模型打磨与「专家撰写的评判标准」；评测不把「设计质量」当笼统分数，拆为对齐度、对比度、请求满足度、组件用法正确性等维度，结构检查 + 视觉评委 + 专家设计师三层校准；基座随时代际更新（官方提及已使用更新的 Qwen 等模型）。</li>
+    <li><b class="k">实际影响</b>：「垂直领域 Agent 专用后训练模型」的罕见完整工程样本——LLM-as-Judge 与确定性校验器混合成可训练奖励、评委反馈进入数据闭环（与 arXiv 近期 rubric-harness 共进化方向同频），并以产品指标验证收益：Figma Agent 已向全部用户推出，典型任务从测试版到正式版提速约 20%；与专家设计师对照测试 62% 情形不输上一代、评分 +33%、撤销操作 -60%。为设计-代码一体化工作流提供「专用小模型 + 混合奖励」路线参照。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>内部评测·Figma 编辑模型</td><td>77.8%</td><td><div class="bar"><span style="width:78%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>内部评测·对照模型</td><td>76.9%</td><td><div class="bar"><span style="width:77%"></span></div></td><td><span class="badge compare">对比</span></td></tr><tr><td>vs 专家设计师不输上一代</td><td>62%</td><td><div class="bar"><span style="width:62%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>评分提升</td><td>+33%</td><td><div class="bar"><span style="width:33%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>撤销操作</td><td>-60%</td><td><div class="bar"><span style="width:60%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>SFT 合成样本</td><td>25 万+</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <ul>
+    <li>评测/性能（均为 Figma 自述，未见第三方复现）：内部评测最新未发布编辑模型 77.8% vs 对照模型 76.9%；任务提速 ~20%、vs 专家设计师 62% 不输上一代、评分 +33%、撤销 -60%；SFT 样本 25 万+。</li>
+    <li>代码/论文：官方博客 <a href="https://<a href="https://www.figma.com/blog/training-a-figma-fluent-editing-model/" target="_blank" rel="noopener">www.figma.com/blog/training-a-figma-fluent-editing-model/</a>">f<a href="https://igma.com/blog/training-a-figma-fluent-editing-model" target="_blank" rel="noopener">igma.com/blog/training-a-figma-fluent-editing-model</a></a> ；模型未开源。</li>
+  </ul>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#专用模型RL</span></div>
+</div>
+
+<div class="card priority-3" id="entry-3" data-tags="世界模型 重大开源" style="border-left:3px solid #bc8cff"><button class="copy-btn" data-title="腾讯混元官宣 Hy-Nomas 技术报告并发布 Hy-Nomas-Bench：开源交互式视频世界模型重现 Genie 4 示例、demo 免排队" data-link="https://hy-nomas.hy.tencent.com/">复制</button>
+  <h2>3. 腾讯混元官宣 Hy-Nomas 技术报告并发布 Hy-Nomas-Bench：开源交互式视频世界模型重现 Genie 4 示例、demo 免排队 <span class="src">（X @TencentHunyuan 官方账号 | 2026-10-30 BJ 01:00）</span></h2>
+  <h3>事件概述</h3>
+  <p>腾讯混元官方账号宣布交互式视频世界模型 <b>Hy-Nomas</b>（arXiv:2610.36729《Hy-Nomas: Towards Free-form Interactive World Generation》）技术报告发布，并开源 <b>Hy-Nomas-Bench</b> 评测基准用于可复现研究；同场放出 Hy-Nomas 重现 Genie 4 示例的对比视频，托管 demo（<a href="https://<a href="https://hy-nomas.hy.tencent.com/" target="_blank" rel="noopener">hy-nomas.hy.tencent.com/</a>">h<a href="https://y-nomas.hy.tencent.com" target="_blank" rel="noopener">y-nomas.hy.tencent.com</a></a>）宣布免排队开放试用。官方宣布动作 2026-10-29T17:00:03Z（北京 10-30 01:00，落窗）；GitHub 仓库窗口内亦有推送（10-29T21:14:54Z）。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b class="k">核心机制</b>：Hy-Nomas 走「自由形式交互式世界生成」路线——以视频扩散模型做可交互的类环境模拟（非绑定动作集/场景模板），官方以逐项重现 Genie 4 示例作为能力标尺；配套 Hy-Nomas-Bench 把交互世界生成的评测拆为可复现协议，补齐开源阵营在该方向缺公共基准的短板。</li>
+    <li><b class="k">实际影响</b>：Genie 4 把实时交互世界模型推向闭源前沿标杆后，开源阵营的「可复现对标」随即出现——模型代码/权重/基准三件套齐备，意味着交互世界模拟从 demo 竞争进入可审计的评测竞争；免排队 demo + 开源 bench 显著降低跟进实验门槛。边缘披露：模型权重/HF 仓库实际创建于 10-21、Bench 数据集创建于 10-22（均早于本窗口且未被本报道历史覆盖）；本期入选事件为窗口内官方账号的「报告官宣 + 基准开源宣布 + demo 开放」动作。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>HF 下载量</td><td>44,124</td><td><div class="bar"><span style="width:44%"></span></div></td><td><span class="badge third">第三方</span></td></tr><tr><td>GitHub stars</td><td>387</td><td><div class="bar"><span style="width:39%"></span></div></td><td><span class="badge third">第三方</span></td></tr></table></div>
+  <ul>
+    <li>评测/性能：官方未公布定量分数线（Bench 维度待论文与基准页核对）；HF 仓库 likes 115 / 累计下载 44,124，GitHub 387 stars（第三方可见观测值，截至检索时刻）。</li>
+    <li>代码/论文：arXiv <a href="https://<a href="https://arxiv.org/abs/2610.36729" target="_blank" rel="noopener">arxiv.org/abs/2610.36729</a>">a<a href="https://rxiv.org/abs/2610.36729" target="_blank" rel="noopener">rxiv.org/abs/2610.36729</a></a>（v1 提交 2026-10-27，公告批次因 arXiv 异常未核验）；GitHub <a href="https://<a href="https://github.com/Tencent-Hunyuan/Hy-Nomas" target="_blank" rel="noopener">github.com/Tencent-Hunyuan/Hy-Nomas</a>">g<a href="https://ithub.com/Tencent-Hunyuan/Hy-Nomas" target="_blank" rel="noopener">ithub.com/Tencent-Hunyuan/Hy-Nomas</a></a>；HF 模型 <a href="https://<a href="https://huggingface.co/tencent/Hy-Nomas" target="_blank" rel="noopener">huggingface.co/tencent/Hy-Nomas</a>">h<a href="https://uggingface.co/tencent/Hy-Nomas" target="_blank" rel="noopener">uggingface.co/tencent/Hy-Nomas</a></a>、基准数据集 <a href="https://<a href="https://huggingface.co/datasets/tencent/Hy-Nomas-Bench" target="_blank" rel="noopener">huggingface.co/datasets/tencent/Hy-Nomas-Bench</a>">h<a href="https://uggingface.co/datasets/tencent/Hy-Nomas-Bench" target="_blank" rel="noopener">uggingface.co/datasets/tencent/Hy-Nomas-Bench</a></a>。</li>
+  </ul>
+  <div class="tags"><span class="tag" style="color:#bc8cff;border-color:#bc8cff">#世界模型</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#重大开源</span></div>
+</div>
+
+<div class="card priority-4" id="entry-4" data-tags="重大开源 视频生成" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Pika 开源 Pika-H3-Flex：MiniMax H3 后训练六步采样视频模型，LoRA 适配器 + Apache-2 推理包落地" data-link="https://huggingface.co/Pika-Labs/Pika-H3-Flex">复制</button>
+  <h2>4. Pika 开源 Pika-H3-Flex：MiniMax H3 后训练六步采样视频模型，LoRA 适配器 + Apache-2 推理包落地 <span class="src">（Hugging Face 官方仓库 | 2026-10-29 UTC 17:08）</span></h2>
+  <h3>事件概述</h3>
+  <p>Pika Labs 发布并开源 <b>Pika-H3-Flex</b>——对 MiniMax H3（2026-07-31 开源的 33B 全模态音视频生成基座）做后训练的成果：HF 仓库创建于 2026-10-29T17:08:44Z（北京 10-30 01:08，落窗），官方博客/X 同日发布。核心卖点是把采样从 50 步蒸馏到 <b>6 步</b>、原生输出带 32kHz 立体声的 480p/768p 视频，官方称 15 秒 768p 片段仅需约 7 秒 DiT 计算（受控基准口径）。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b class="k">核心机制</b>：三阶段后训练——①自建美学筛选音视频语料 SFT（仍 50 步教师档）；②PDMD（Projected Distribution Matching Distillation）把采样 50→6 步（官方称标准 DMD 在其实验不稳定）；③蒸馏后奖励学习：ReFL（美学/清晰度）与 DPO（指令遵循/真实感）分别训练 LoRA 再合并为单一适配器、不增推理步数。交付为 FL2VA（文本+首/尾帧）与 Ref2VA（多模态引用：最多 9 图 + 3 视频 + 3 音频共 12 个引用文件，支持运动迁移、角色替换、引用引导编辑）两个 LoRA（各 ~2.77GB FP32），叠加 H3 基座（组件合计约 210GB）；推理代码 Apache 2.0；ComfyUI 当日提供三个官方模板（ManualSigmas 1000/750/500/250/100/40/0、video shift 12 / audio shift 3、CFG 1.0）。8×B300 上经 fused kernels / FlashAttention-4 / 块稀疏注意力优化，5 秒 768p 完整推理 3.409s→2.129s（1.60×）。</li>
+    <li><b class="k">实际影响</b>：继 fal H3 Max（09-01，闭源 API 路线）后第二个 MiniMax H3 后训练产品，但选择开源分发——把视频模型迭代成本压到 LoRA 级，创作者可本地以 6 步调度做草稿级快速迭代（单卡实测 5 秒 1344×768 约 1 分钟，与官方 7 秒口径的差距须注意：后者为受控基准 DiT 计算、非端到端延迟）；「开源适配层 + 闭源高级能力（4K 上采样器、五条可编辑音轨留云端）」的分层开源模式，与 Mistral MaaS 商用墙（上期）同属最新开放策略样本。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>采样步数蒸馏</td><td>50 → 6</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>5s 768p 完整推理（8×B300）</td><td>3.409s → 2.129s（1.60×）</td><td><div class="bar"><span style="width:60%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>vs fal H3 Max 平均加速</td><td>1.8×</td><td><div class="bar"><span style="width:65%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>视频技术质量（内部评测）</td><td>12.3 vs 11.7/10.6</td><td><div class="bar"><span style="width:62%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>DesignArena T2V 开源权重排名</td><td>#1（自述待确认）</td><td><div class="bar"><span style="width:50%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <ul>
+    <li>评测/性能（均为 Pika 自述，未见第三方复现）：采样 50→6 步；15s 768p 约 7s DiT 计算；5s 768p 完整推理 3.409→2.129s（1.60×，8×B300）；平均较 fal H3 Max 快 1.8×；内部五项视觉/音频质量指标最高（视频技术质量 12.3 vs 基座 11.7 / fal 10.6；音视频对齐与文本-视频对齐与对手持平略弱）；盲测人偏好在解剖结构、复杂构图、音画同步、引用任务视觉风格/构图/相机运动领先，物理表现、多场景叙事、光照材质、动作密集引用仍落后；自述 DesignArena T2V 开源权重第一、总榜第 7（发布日榜单未确认，launch 博客残留「Editorial checks」草稿块，待核实）；价格自述 768p 首发 $0.01–0.02/秒。</li>
+    <li>代码/论文：权重 <a href="https://<a href="https://huggingface.co/Pika-Labs/Pika-H3-Flex" target="_blank" rel="noopener">huggingface.co/Pika-Labs/Pika-H3-Flex</a>">h<a href="https://uggingface.co/Pika-Labs/Pika-H3-Flex" target="_blank" rel="noopener">uggingface.co/Pika-Labs/Pika-H3-Flex</a></a>（LoRA 适配器，许可为 MiniMax H3 Community License——非标准开源证）；推理代码 Apache 2.0（Pika GitHub）；官方博客 Introducing Pika H3 Flex + 技术深潜文。</li>
+  </ul>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#重大开源</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#视频生成</span></div>
+</div>
+
+<div class="card priority-5" id="entry-5" data-tags="重大开源 推理加速" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Unsloth 发布 Mistral Large 4「Dynamic 1-bit」GGUF：约 233GB 本地跑 1T 参数多模态模型，保留 91% top-1；AA 同日第三方确认 1.05T-A52B/1M 上下文" data-link="https://huggingface.co/unsloth/Mistral-Large-4-1T-A52B-GGUF">复制</button>
+  <h2>5. Unsloth 发布 Mistral Large 4「Dynamic 1-bit」GGUF：约 233GB 本地跑 1T 参数多模态模型，保留 91% top-1；AA 同日第三方确认 1.05T-A52B/1M 上下文 <span class="src">（X @UnslothAI 官方账号 | 2026-10-29 UTC 14:27）</span></h2>
+  <h3>事件概述</h3>
+  <p>Unsloth 为上期报道的 Mistral Large 4「Le Chonk」开放权重释出 <b>Dynamic 1-bit GGUF 量化家族</b>（unsloth/Mistral-Large-4-1T-A52B-GGUF）：1-bit 档需 256–270GB 内存、最小 UD-IQ1_S 约 233GB 磁盘，较 FP8 约 1.1TB 缩小 80%，称在 Mac Studio 一类大内存单机即可本地运行，保留 91% top-1 准确率，支持文本+图像输入、1M 上下文与 160+ 语言。官方宣布帖 2026-10-29T14:27:32Z——距窗口起点约 2.5 分钟；仓库 createdAt 11:24:56Z（窗口前，建库/上传开始）、权重落定 lastModified 15:58:11Z（窗口内），本条按「官方账号宣布 + 权重落盘均在窗内」入选并做边缘披露。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b class="k">核心机制</b>：延续 Unsloth Dynamic 量化路线——按层/张量敏感度非均匀分配位宽，把 1T MoE（52B 激活）压进 1-bit 档 GGUF；MoE 稀疏激活使低比特总预算内每 token 实际计算量远小于稠密档位，配合 llama.cpp / vLLM / SGLang 生态与多模态输入保留。</li>
+    <li><b class="k">实际影响</b>：昨日 Large 4 权重开放回答「有没有」，1-bit GGUF 回答「跑不跑得起」——把前沿开源旗舰的硬件门槛从机架级降到单机工作站/Studio 级，私有化与离线场景（含 agent 编码）获得可用的 1T 档选项；量化以牺牲部分精度换可达性，91% top-1 保留为 Unsloth 自给口径（待第三方复现）。同日 Artificial Analysis 官方账号（14:58:23Z，窗口内）发布对 Large 4 的评估：<b>总参数 1.05T、激活 52B、上下文 1M tokens</b>——上期待核实的架构与上下文参数获第三方口径确认。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>量化后体积</td><td>~233GB（-80% vs FP8）</td><td><div class="bar"><span style="width:20%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>top-1 保留</td><td>91%</td><td><div class="bar"><span style="width:91%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>1-bit 内存需求</td><td>256–270GB</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>AA 确认规格</td><td>1.05T-A52B / 1M ctx</td><td></td><td><span class="badge third">第三方</span></td></tr></table></div>
+  <ul>
+    <li>评测/性能：体积约 233GB（较 FP8 -80%）、top-1 保留 91%（Unsloth 自述）；1-bit 档内存需求 256–270GB；1M 上下文 / 160+ 语言（AA 第三方确认）；仓库 likes 11、downloads 0（落盘初期观测值）。</li>
+    <li>代码/论文：权重 <a href="https://<a href="https://huggingface.co/unsloth/Mistral-Large-4-1T-A52B-GGUF" target="_blank" rel="noopener">huggingface.co/unsloth/Mistral-Large-4-1T-A52B-GGUF</a>">h<a href="https://uggingface.co/unsloth/Mistral-Large-4-1T-A52B-GGUF" target="_blank" rel="noopener">uggingface.co/unsloth/Mistral-Large-4-1T-A52B-GGUF</a></a> ；指南 <a href="https://<a href="https://unsloth.ai/docs/models/mistral-large-4" target="_blank" rel="noopener">unsloth.ai/docs/models/mistral-large-4</a>">u<a href="https://nsloth.ai/docs/models/mistral-large-4" target="_blank" rel="noopener">nsloth.ai/docs/models/mistral-large-4</a></a> ；官方宣布帖 X @UnslothAI（2026-10-29T14:27:32Z）。</li>
+  </ul>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#重大开源</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#推理加速</span></div>
+</div>
+
+<hr>
+
+<h2 class="sec">待核实</h2>
+<div class="card priority-6" id="entry-6">
+  <ul>
+    <li><b>Meta JiTTests 生产指标</b>：589 名工程师/64% 触达、60% 真阳性、H1 拦 74 个严重隐私 bug、隐私 SEV -20% 均官方自述；与 2 月论文口径的衔接关系未公布。缺：第三方或独立审计口径。</li>
+    <li><b>Figma 编辑模型全部数字</b>：77.8%/76.9% 内部评测、62% 不输上一代、+33% 评分、-60% 撤销均自述；博客页仅日期级 10-29（官方渠道条目 21:00:02Z 落窗）。缺：评测集构成、第三方复核、博客精确发布时刻。</li>
+    <li><b>Pika H3 Flex 性能与排名</b>：7s/15s 为 8×B300 受控基准 DiT 计算（非端到端；单卡实测 5 秒 768p 约 1 分钟）；DesignArena「开源权重 #1/总榜 #7」自述且发布日博客残留「Editorial checks – remove before publishing」草稿块、榜单未确认；内部五项质量指标自述；「可编辑音轨分离为视频模型首个」未能核实；4K 上采样器（官方称后续开源）与 stems 留云端。缺：DesignArena 榜单页、第三方复测、上采样器开源时间表。</li>
+    <li><b>Pika/Unsloth 许可细则</b>：Pika-H3-Flex 适配器按 MiniMax H3 Community License（AA 口径：年收入 &lt;2000 万美元组织可商用需署名，属地条款待核），仅推理代码 Apache 2.0；Unsloth GGUF 继承 Mistral「Ecosystem Open-Weight（修改版 MIT、MaaS 需商用授权）」口径未在仓库页逐项确认。缺：许可原文条款核对。</li>
+    <li><b>Unsloth 91% top-1 保留与 Mac Studio 可行性</b>：自述口径，未说明测试集与对照。缺：独立量化评测。</li>
+    <li><b>Hy-Nomas 首发时刻链</b>：权重 10-21、Bench 10-22、arXiv v1 10-27 提交（listing 因 arXiv 批次停摆无法核验公告日）、官方宣布 10-30 01:00 BJ 落窗。缺：arXiv 公告恢复后的 listing 日期、Bench 评测维度原始页。</li>
+    <li><b>arXiv 公告批次停摆（升级）</b>：Thu-29 从未上线 + Fri-30 缺席，连续第六跑，已超常规落地带宽解释范围。缺：arXiv 官方状态/公告确认。</li>
+    <li><b>OpenAI 四层失准监测体系覆盖缺口</b>（延续登记）：官方 RSS pubDate 10-29 09:00 GMT 落在既往覆盖带之间，各跑未捕获；METR 红队发现、30 分钟回放预警等数字为 OpenAI 自述。缺：窗口归属已错过，仅背景追踪。</li>
+    <li><b>Mistral Large 4 第三方口径进展</b>：AA 已确认 1.05T 总参/52B 激活/1M 上下文（官方 X 14:58Z 落窗）；其余自述基准（FrontierCode 19.7% 等）仍待 AA 评测页与第三方复现。</li>
+  </ul>
+</div>
+
+<h2 class="sec">去重说明</h2>
+<div class="card priority-7" id="entry-7">
+  <ul>
+    <li><b>7 天扫描</b>：比对工作区与归档目录内 10-23 至 10-29 全部往期日报标题（含并行执行线各跑），五条入选与已报道集合逐条做实体去重，均判定非重复。</li>
+    <li><b>实体去重</b>：Hy-Nomas 条与「Genie 4 发布」条共享实体 genie（jaccard 0.073），主体与动作不同，保留；Unsloth 条与上期「Mistral Large 4 权重开放」共享 mistral/large 实体（jaccard 0.126）——量化分发 vs 权重开放为不同主体不同动作，保留并互为引用；Meta/Figma/Pika 三条无匹配。</li>
+    <li><b>时间戳纪律排除</b>：①OpenAI《How we detect frontier model misalignment》官方 RSS pubDate 10-29 09:00 GMT（北京 17:00）早于窗口起点约 5.5 小时——X 宣布帖虽在窗内但属再传播，按既往覆盖缺口登记不补录；②Cognition 收购 Corridor：创始人与官方公告日 10-28，窗内 X 帖为迟到再传播；③DiffuSpace Clover-35B-A3B-Preview（IT之家窗内报道）：HF 主仓 10-24 创建、官方 GGUF 仓 10-29 06:55Z 均在窗口前，中文迟到稿；④特朗普工业机器人 232 公告：公告日 10-28 且政策类；⑤RSI 方向三例（Princeton×Meta《Self-Direction》、Google Research/UCB Exo、YC Labs Minecraft/Mindustry agent swarm——HN 163 分）窗内高热但一手时刻不可钉，转待核实。</li>
+    <li><b>边缘披露</b>：Unsloth 仓 createdAt 11:24:56Z 在窗口前、宣布与权重落定在窗内（以官方账号发布时刻入选）；Hy-Nomas 权重 10-21/Bench 10-22 早于窗口（以窗内官宣动作入选，权重首发属既往覆盖缺口不追溯）。</li>
+    <li><b>门槛/焦点排除</b>：OpenAI Model Spec 五项核心价值观重组（治理文档）、AA Search Index（评测产品更新）、Gemini 聊天内文件编辑 GA、Claude 语音模式/CarPlay、NotebookLM 教材免费开放、Kimi 接入 Google 三件套、ElevenLabs SFX v3、Fish/Phonic 语音榜（非焦点）、Oracle 投资者日（事件本体 10-28、资本口径）、Alphabet/Amazon/Reddit 财报系列（市场资本类）、Anthropic S-1 细节与 self-assessment（S-1 主体已报/治理背景跟踪）、Wiz 智能体攻击报告（安全研究非焦点）、tinyworldformer 微型世界模型（repo 首发窗外，HN 再传播）、Megaspeed/Nvidia 情报报道（地缘政治）、Proton AI 化争议（观点报道）、LangChain MDA v0.10/OpenRouter 路由升级/Baseten joey-1/Tripo/Granola/Perplexity 技能市场（产品迭代未达门槛）、Epoch AI 算力增速（二手数据转述）。</li>
+    <li><b>结构性说明</b>：信源健康全部正常（AI HOT items 0.2h 新鲜、dailies 2026-10-30、arXiv 公告批次仍 Wed-28）；arXiv 公告批次异常升级为「Thu-29 连续第六跑未上线 + Fri-30 批次亦缺席」，窗口内学术首发 0 条可取证；具身智能窗口内 0 条一手合规首发（美东周四为美系公告带，智元三连发已报、机器人 232 公告与 Rokid×JoyAI 眼镜开售稿均在窗外），五大焦点实际覆盖 AI Coding ×2、世界模型 ×1、重大开源 ×2（含推理加速交叉）、具身 ×0、RSI ×0（一手不可取证，结构性空缺）。</li>
+  </ul>
+</div>
+
+<footer class="page">每日 AI 前沿技术精选 · 自动生成 · 时效窗口以报告头为准</footer>
+
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
