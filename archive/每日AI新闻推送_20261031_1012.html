@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-10-31</title>
+<style>
+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--green:#3fb950;--gold:#d29922;--purple:#bc8cff;--red:#f85149}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7;padding:24px 16px}
+.wrap{max-width:860px;margin:0 auto}
+header.hero{text-align:center;padding:36px 20px 28px;border-bottom:1px solid var(--border);margin-bottom:8px}
+.hero h1{font-size:26px;font-weight:700;letter-spacing:1px;background:linear-gradient(90deg,#58a6ff,#bc8cff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero .sub{color:var(--muted);font-size:13px;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px}
+.chip{background:var(--card);border:1px solid var(--border);border-radius:999px;padding:4px 14px;font-size:12px;color:var(--muted)}
+.chip b{color:var(--accent);font-weight:600}
+.notice{background:rgba(210,153,34,.08);border:1px solid rgba(210,153,34,.35);border-radius:10px;padding:10px 16px;font-size:12.5px;color:#e3b341;margin:16px 0}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px 26px;margin:18px 0;position:relative}
+.card .idx{position:absolute;top:-12px;left:22px;background:linear-gradient(90deg,#1f6feb,#8957e5);color:#fff;font-size:12px;font-weight:700;padding:3px 12px;border-radius:999px;letter-spacing:.5px}
+.card h2{font-size:18.5px;font-weight:700;margin:10px 0 4px;line-height:1.5}
+.card h2 .hl{color:var(--accent)}
+.src{font-size:12px;color:var(--muted);margin-bottom:14px}
+.src b{color:var(--green);font-weight:600}
+.sec{margin:12px 0}
+.sec h3{font-size:13px;color:var(--purple);font-weight:700;margin-bottom:6px;letter-spacing:.5px}
+.sec p,.sec li{font-size:13.5px;color:#c9d1d9}
+.sec ul{padding-left:20px}
+.sec li{margin:5px 0}
+.sec b{color:var(--text)}
+.metrics{display:flex;flex-direction:column;gap:9px;margin:14px 0 6px;background:rgba(88,166,255,.05);border:1px solid rgba(88,166,255,.18);border-radius:10px;padding:14px 16px}
+.metric{display:flex;align-items:center;gap:10px;font-size:12.5px}
+.metric .label{min-width:150px;color:var(--muted)}
+.metric .val{color:var(--text);font-weight:600;white-space:nowrap}
+.bar{flex:1;height:6px;background:#21262d;border-radius:4px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,#1f6feb,#58a6ff)}
+.tags{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
+.tag{font-size:11.5px;color:var(--accent);background:rgba(88,166,255,.1);border:1px solid rgba(88,166,255,.3);border-radius:6px;padding:2px 10px}
+.edge{margin-top:12px;font-size:12px;color:#e3b341;background:rgba(210,153,34,.07);border-left:3px solid rgba(210,153,34,.5);padding:8px 12px;border-radius:0 8px 8px 0}
+.quote{border-left:3px solid var(--accent);background:rgba(88,166,255,.06);padding:8px 14px;border-radius:0 8px 8px 0;font-size:13px;color:#a5d6ff;margin:10px 0;font-style:italic}
+.dedup{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 26px;margin:18px 0}
+.dedup h2{font-size:16px;color:var(--gold);margin-bottom:12px}
+.dedup h3{font-size:13px;color:var(--purple);margin:14px 0 6px}
+.dedup p,.dedup li{font-size:13px;color:#c9d1d9}
+.dedup ol,.dedup ul{padding-left:22px}
+.dedup li{margin:7px 0}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:26px 0 10px;border-top:1px solid var(--border);margin-top:24px}
+a{color:var(--accent);text-decoration:none}
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1>每日 AI 前沿技术精选</h1>
+  <div class="sub">2026-10-31 · 第 120 跑 · 每日 08:30 档自动化推送</div>
+  <div class="chips">
+    <span class="chip">精选 <b>4</b> 条</span>
+    <span class="chip">时效窗口 <b>2026-10-30 10:12 – 2026-10-31 10:12</b>（严格24小时）</span>
+    <span class="chip">信源健康 <b>ok=3 / warn=0 / error=0</b></span>
+  </div>
+  <div class="notice">窗口纪律：全部入选条目第一信源时刻经 HF/GitHub API、<a href="https://schema.org" target="_blank" rel="noopener">schema.org</a> datePublished、官方新闻稿结构化数据或 Wayback CDX 取证；aihot publishedAt 仅作线索——本期据此证伪排除 4 组「旧闻新热」滞后报道（Genie 4 滞后 3 天、Argon/TokenEconomizer 滞后 17 天、Sonnet 5 手术滞后约 27 小时）。arXiv 缺批异常已于本窗口恢复（Thu-29 提交随 Fri-30 批次补齐）。</div>
+</header>
+
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="AI Coding">AI Coding</button>
+<button class="filter-chip" data-tag="供应链安全">供应链安全</button>
+<button class="filter-chip" data-tag="基础设施">基础设施</button>
+<button class="filter-chip" data-tag="轨道计算">轨道计算</button>
+<button class="filter-chip" data-tag="行业重大">行业重大</button>
+<button class="filter-chip" data-tag="端云AI">端云AI</button>
+<button class="filter-chip" data-tag="具身智能">具身智能</button>
+<button class="filter-chip" data-tag="自动驾驶">自动驾驶</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. Cursor 市场 Claude Code 官方扩展被植入 SSH 持久后门：2.1.312/2.1.313 受影响、已下架，官方响应链窗内集中爆发</a><a class="toc-item" href="#entry-2">2. Google Project Suncatcher 完成轨道 TPU「Hello World」：数据中心级 TPU 首次在轨返回 AI 推理结果，星载 Gemma 4 太空作诗</a><a class="toc-item" href="#entry-3">3. Apple 智能正式登陆中国：接入阿里千问，11 月 4 日起随 iOS 开发者 Beta 开测、12 月随 iOS 27.3 正式上线（Apple</a><a class="toc-item" href="#entry-4">4. Toyota×Waymo 官宣下一阶段：2027 年日本启动自动驾驶 bZ4X 车队测试运营，Takaoka 工厂整车集成</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="AI Coding 供应链安全" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Cursor 市场 Claude Code 官方扩展被植入 SSH 持久后门：2.1.312/2.1.313 受影响、已下架，官方响应链窗内集中爆发" data-link="https://phorion.io/blog/offical-claude-code-vsx-compromise/">复制</button>
+  <span class="idx">01 · AI Coding / 供应链安全</span>
+  <h2>Cursor 市场 <span class="hl">Claude Code 官方扩展被植入 SSH 持久后门</span>：2.1.312/2.1.313 受影响、已下架</h2>
+  <div class="src"><b>Phorion 安全通告</b> | 2026-10-30 日期级（边缘披露）· Cursor 官方声明 10-30 07:46 UTC</div>
+  <div class="sec"><p>安全厂商 Phorion（Calum Hall）披露：Claude Code for VS Code <b>官方扩展</b>在 Cursor Marketplace 分发的 bundle 被篡改，植入<b>持久化 SSH 后门</b>，含 macOS、Linux、Windows 三平台 setup 与持久化逻辑（技术分析以 macOS 为主）。受影响版本 <b>2.1.312 与 2.1.313</b>——通告首版仅指认 2.1.313，10-31 依据 Cursor 安全通告扩展至 2.1.312；Cursor 已下架受影响版本。HN 相关讨论 <b>786 分 / 492 评论</b>。</p></div>
+  <div class="sec"><h3>工程价值</h3>
+    <ul>
+      <li><b>「官方渠道」供应链攻击样本</b>：被篡改的不是野鸡扩展，而是开发者信任链顶端的官方扩展在第三方市场（Cursor Marketplace）的分发 bundle；Phorion 建议企业立即排查 2.1.312/2.1.313 使用并启动应急响应。</li>
+      <li><b>AI Coding 工具链的扩展分发面成为新攻击面</b>：与 Wiz 同日汇总的「黑色十月：九个 AI 开发者平台接连披露安全事件」互为背景。版本流水佐证：Claude Code v2.1.316（10-31 01:01 UTC，ultrathink 开关、分组预算）已越过受影响版本线。</li>
+    </ul>
+  </div>
+  <div class="metrics">
+    <div class="metric"><span class="label">受影响版本</span><span class="val">2.1.312 / 2.1.313</span><div class="bar"><i style="width:100%"></i></div></div>
+    <div class="metric"><span class="label">波及用户（媒体口径）</span><span class="val">约 5000 名 · 待核实</span><div class="bar"><i style="width:50%"></i></div></div>
+    <div class="metric"><span class="label">上架时长（媒体口径）</span><span class="val">近 12 小时 · 待核实</span><div class="bar"><i style="width:50%"></i></div></div>
+  </div>
+  <div class="edge">边缘披露：Phorion 通告 schema 时间为日期级 2026-10-30T00:00:00Z（未含时刻），最早可能早于窗口起点（北京 10-30 10:12）；入选依据是事件发酵与官方响应链（Cursor 声明 07:46 UTC 雪花解码、HN 786 分、10-31 版本范围更新、下架动作）集中在窗口内。</div>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#供应链安全</span></div>
+</div>
+
+<div class="card priority-2" id="entry-2" data-tags="基础设施 轨道计算" style="border-left:3px solid #e3b341"><button class="copy-btn" data-title="Google Project Suncatcher 完成轨道 TPU「Hello World」：数据中心级 TPU 首次在轨返回 AI 推理结果，星载 Gemma 4 太空作诗" data-link="https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-satellite-response/">复制</button>
+  <span class="idx">02 · 基础设施 / 轨道计算</span>
+  <h2>Google Project Suncatcher 完成轨道 TPU「Hello World」：<span class="hl">数据中心级 TPU 首次在轨返回 AI 推理结果</span></h2>
+  <div class="src"><b>Google 官方博客</b> | datePublished 2026-10-30T17:00:00Z（北京 10-31 01:00）</div>
+  <div class="sec"><p>Project Suncatcher（太空 AI 算力 moonshot）达成「Hello World」里程碑：卫星完成数周 commissioning（主机与 TPU tray 加电、早期 ML 测试）后，地面站过境窗口上行首个 prompt，星载 <b>Gemma 4 开放模型</b>在轨生成太空俳句，卫星过境挪威 Svalbard 上空时下行确认成功：</p>
+  <div class="quote">「Blue marble below / Data streams in silent grace / Starlight feeds my core.」</div></div>
+  <div class="sec"><h3>工程价值</h3>
+    <ul>
+      <li><b>从「硬件上天」到「负载可用」</b>：跑通「上行 prompt → 在轨推理 → 下行结果」全链路；下一步在轨测试 TPU 在<b>热应力与辐射暴露</b>下的可靠性——太空算力区别于地面数据中心的真正考核项。</li>
+      <li><b>下一里程碑定档 2027：双星互联（twin interconnected satellites）</b>，「轨道数据中心」从论文设计进入在轨实证阶段；aihot 同窗多条报道与官方口径一致。</li>
+    </ul>
+  </div>
+  <div class="metrics">
+    <div class="metric"><span class="label">里程碑</span><span class="val">在轨 TPU 首次 AI 推理回传</span><div class="bar"><i style="width:100%"></i></div></div>
+    <div class="metric"><span class="label">星载模型</span><span class="val">Gemma 4（开放模型）</span><div class="bar"><i style="width:90%"></i></div></div>
+    <div class="metric"><span class="label">下一里程碑</span><span class="val">2027 双星互联</span><div class="bar"><i style="width:70%"></i></div></div>
+  </div>
+  <div class="tags"><span class="tag" style="color:#e3b341;border-color:#e3b341">#基础设施</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#轨道计算</span></div>
+</div>
+
+<div class="card priority-3" id="entry-3" data-tags="行业重大 端云AI" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Apple 智能正式登陆中国：接入阿里千问，11 月 4 日起随 iOS 开发者 Beta 开测、12 月随 iOS 27.3 正式上线（Apple" data-link="https://www.apple.com.cn/newsroom/2026/10/apple-intelligence-features-are-coming-to-users-in-china/">复制</button>
+  <span class="idx">03 · 行业重大 / 端云 AI</span>
+  <h2>Apple 智能正式登陆中国：<span class="hl">接入阿里千问</span>，11 月 4 日起开测、12 月随 iOS 27.3 正式上线</h2>
+  <div class="src"><b>Apple（中国）官方新闻稿</b> | pubDate 2026-10-30T20:59:25Z（北京 10-31 04:59）</div>
+  <div class="sec"><p>Apple 官宣与<b>阿里巴巴达成合作</b>，部分 Apple 智能体验加入<b>千问</b>支持（含文本与图像理解）——中国用户可在 Siri、写作工具及视觉智能中使用千问，「只需登录千问账户，或使用通过 Apple 登录」。节奏：<b>11 月 4 日起随最新 iOS 开发者 Beta 开放测试，12 月 iOS 27.3 正式发布时面向中国用户推出</b>。</p></div>
+  <div class="sec"><h3>工程价值</h3>
+    <ul>
+      <li><b>端云组合落定</b>：Apple 自家端侧模型 + 阿里千问云侧的合规架构首次官方确认；首批覆盖文字对话 Siri、写作工具（含系统级创作）、视觉智能、实时翻译、照片消除与自然语言搜索、邮件摘要、通话转录等；<b>明确排除</b> WWDC 2026 宣布的下一代 Siri AI 功能。</li>
+      <li><b>入华两年悬案给出时间表</b>：「接入哪家中国模型」终局答案为千问；支持机型 iPhone 16 及后续、iPhone 15 Pro/Pro Max、iPhone Air（Siri 与设备语言需设为英文和简体中文）。阿里侧同步表态「国行用户可自主选择是否开通千问集成」——与 Apple 稿「登录即可使用」口径存在细微差别（见待核实）。</li>
+    </ul>
+  </div>
+  <div class="metrics">
+    <div class="metric"><span class="label">开放测试</span><span class="val">11 月 4 日（iOS 开发者 Beta）</span><div class="bar"><i style="width:90%"></i></div></div>
+    <div class="metric"><span class="label">正式推出</span><span class="val">12 月（随 iOS 27.3）</span><div class="bar"><i style="width:80%"></i></div></div>
+    <div class="metric"><span class="label">云侧合作方</span><span class="val">阿里千问（文本+图像理解）</span><div class="bar"><i style="width:100%"></i></div></div>
+  </div>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#行业重大</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#端云AI</span></div>
+</div>
+
+<div class="card priority-4" id="entry-4" data-tags="具身智能 自动驾驶" style="border-left:3px solid #3fb950"><button class="copy-btn" data-title="Toyota×Waymo 官宣下一阶段：2027 年日本启动自动驾驶 bZ4X 车队测试运营，Takaoka 工厂整车集成" data-link="https://newsroom.toyota.eu/toyota-and-waymo-advance-autonomous-driving-collaboration-for-safer-streets-and-freedom-of-movement-for-all/">复制</button>
+  <span class="idx">04 · 具身智能 / 自动驾驶</span>
+  <h2>Toyota×Waymo 官宣下一阶段：<span class="hl">2027 年日本启动自动驾驶 bZ4X 车队测试运营</span>，Takaoka 工厂整车集成</h2>
+  <div class="src"><b>Toyota 官方新闻room</b> | 2026-10-30 08:00 Amsterdam（07:00 UTC，北京 15:00）</div>
+  <div class="sec"><p>丰田与 Waymo 官宣合作下一阶段（基于 2025 年 4 月初步协议）：<b>2027 年在日本启动自动驾驶 bZ4X 车队的 initial operations（测试验证）</b>，后续数年计划扩展至英国及其他 Waymo 运营市场；为日本首个使用高产量<b>国产车辆</b>的全自动驾驶 ride-hailing 服务铺路。车辆由丰田 <b>Takaoka 工厂（爱知县丰田市）</b>制造——基础车装配到 Waymo AV 硬件集成同厂闭环。</p></div>
+  <div class="sec"><h3>工程价值</h3>
+    <ul>
+      <li><b>制造与自动驾驶的垂直整合样本</b>：「基础车装配 + AV 硬件集成」单厂闭环，对比此前 Waymo 与车企合作（Jaguar I-Pace、Zeekr）的分厂改装模式，官方口径「accelerate scaling safety-validated Level 4 autonomous vehicles globally」。</li>
+      <li><b>L4 向右侧驾驶/密集城区场景扩展的关键节点</b>：日本市场首次引入 Waymo 完整技术栈且由本土车企主导制造，对 Nuro/Momenta 等在日布局者是直接压力。</li>
+    </ul>
+  </div>
+  <div class="metrics">
+    <div class="metric"><span class="label">日本测试运营</span><span class="val">2027 年</span><div class="bar"><i style="width:85%"></i></div></div>
+    <div class="metric"><span class="label">车型/工厂</span><span class="val">bZ4X / Takaoka 单厂集成</span><div class="bar"><i style="width:90%"></i></div></div>
+    <div class="metric"><span class="label">下一市场</span><span class="val">英国及其他 Waymo 市场</span><div class="bar"><i style="width:60%"></i></div></div>
+  </div>
+  <div class="tags"><span class="tag" style="color:#3fb950;border-color:#3fb950">#具身智能</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#自动驾驶</span></div>
+</div>
+
+<div class="dedup">
+  <h2>去重与核验说明</h2>
+  <p><b>7 天扫描</b>：工作区根现存 10-27 2237 ~ 10-30 0954 共 10 份报告（含 10-30 双线撞号：0912 线与 0954 线同窗并行）；更早报告以记忆文件执行记录补全。</p>
+  <h3>实体去重（dedup_check.py）</h3>
+  <p>入选 4 条全部 is_dup:false（confidence 0.000–0.347，远低于 0.45 阈值）。</p>
+  <h3>时间戳纪律排除（本期 5 组，aihot「旧闻新热」集中证伪）</h3>
+  <ol>
+    <li><b>Genie 4</b>（aihot 10-30 18:34「发布」）：CDX 首捕 <b>2026-10-27 16:07 UTC</b>，且第 112 跑已报 → 滞后 3 天旧闻 + 已报主体，双重排除。</li>
+    <li><b>Gemini 4 Argon</b>（aihot 10-30 23:02「发布前沿模型」）：Cloud 官方博客 datePublished <b>2026-10-13</b>（滞后 17 天）；Carbon 官宣 10-28 且第 115 跑已报 → 排除。</li>
+    <li><b>Microsoft TokenEconomizer</b>（aihot 10-30 17:53）：仓库 created <b>10-13</b>、v0.1.0 release <b>10-26</b>、论文 arXiv 2610.22732 提交 <b>10-15</b>——全链路出窗，10-30 仅为媒体滞后报道。</li>
+    <li><b>Claude Sonnet 5 自主基因疗法+小鼠脑部手术</b>（aihot 10-30 19:42）：传播链首帖雪花解码 <b>10-29 16:47 UTC</b> 出窗，且第三方存在「Claimed vs Verified」质疑 → 排除列近失 + 待核实。</li>
+    <li><b>CMU「预训练/微调/RL 单一训练规则」</b>（aihot 10-30 21:52）：arXiv 检索 0 命中、二手源无法回溯一手 → 无法取证，排除。</li>
+  </ol>
+  <h3>结构性说明</h3>
+  <ul>
+    <li>arXiv 缺批异常恢复：连续缺席 6 跑的 Thu-29 提交随 Fri-30 批次（129 条）补齐上线，官方原因待核实。</li>
+    <li>aihot 时间戳陷阱二次集中爆发：四组「旧闻新热」全部经一手取证证伪——聚合器对旧闻回热不做首发时刻校验。</li>
+    <li>世界模型与 RSI 方向窗口内合规首发 0 条（Genie 4/Argon/CMU/Sonnet 5 手术全部出窗），如实披露；HN &gt;35 分 57 条中入选 1 条；GitHub API 中途 403 限流（重试成功）；Apple 新闻稿正文经 WebFetch 服务端取证（本地直抓为 JS 壳）。</li>
+  </ul>
+</div>
+
+<footer>每日 AI 前沿技术精选 · 自动化推送第 120 跑 · 窗口 2026-10-30 10:12 – 2026-10-31 10:12 · 待核实项 7 条见 Markdown 存档</footer>
+
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>

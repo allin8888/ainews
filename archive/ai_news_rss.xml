@@ -3,7 +3,35 @@
 <title>每日 AI 前沿技术精选</title>
 <link>https://local.invalid/ai-news</link>
 <description>每日 AI 前沿技术精选 · 结构化条目流</description>
-<lastBuildDate>Fri, 30 Oct 2026 03:02:29 -0000</lastBuildDate>
+<lastBuildDate>Sat, 31 Oct 2026 02:37:35 -0000</lastBuildDate>
+<item>
+<title>Cursor 市场 Claude Code 官方扩展被植入 SSH 持久后门：2.1.312/2.1.313 受影响、已下架，官方响应链窗内集中爆发</title>
+<link>每日AI新闻推送_20261031_1012.html</link>
+<guid isPermaLink="false">20261031_1012-Cursor 市场 Claude Code 官方扩展被植入 SSH 持久后门：2.1.312/2.1.313 受影响、已下架，官方响应链窗内集中爆发</guid>
+<pubDate>2026-10-31</pubDate>
+<category>AI Coding、供应链安全</category>
+</item>
+<item>
+<title>Google Project Suncatcher 完成轨道 TPU「Hello World」：数据中心级 TPU 首次在轨返回 AI 推理结果，星载 Gemma 4 太空作诗</title>
+<link>每日AI新闻推送_20261031_1012.html</link>
+<guid isPermaLink="false">20261031_1012-Google Project Suncatcher 完成轨道 TPU「Hello World」：数据中心级 TPU 首次在轨返回 AI 推理结果，星载 Gemma 4 太空作诗</guid>
+<pubDate>2026-10-31</pubDate>
+<category>基础设施、轨道计算</category>
+</item>
+<item>
+<title>Apple 智能正式登陆中国：接入阿里千问，11 月 4 日起随 iOS 开发者 Beta 开测、12 月随 iOS 27.3 正式上线（Apple</title>
+<link>每日AI新闻推送_20261031_1012.html</link>
+<guid isPermaLink="false">20261031_1012-Apple 智能正式登陆中国：接入阿里千问，11 月 4 日起随 iOS 开发者 Beta 开测、12 月随 iOS 27.3 正式上线（Apple</guid>
+<pubDate>2026-10-31</pubDate>
+<category>行业重大、端云AI</category>
+</item>
+<item>
+<title>Toyota×Waymo 官宣下一阶段：2027 年日本启动自动驾驶 bZ4X 车队测试运营，Takaoka 工厂整车集成</title>
+<link>每日AI新闻推送_20261031_1012.html</link>
+<guid isPermaLink="false">20261031_1012-Toyota×Waymo 官宣下一阶段：2027 年日本启动自动驾驶 bZ4X 车队测试运营，Takaoka 工厂整车集成</guid>
+<pubDate>2026-10-31</pubDate>
+<category>具身智能、自动驾驶</category>
+</item>
 <item>
 <title>Meta 全量部署 Catching JiTTests：LLM 在代码合入前按需锻造「一次性捕获测试」，H1 拦截 74 个严重隐私 bug、隐私 SEV 总量降 20%</title>
 <link>每日AI新闻推送_20261030_0954.html</link>
@@ -38,6 +66,27 @@
 <guid isPermaLink="false">20261030_0954-Unsloth 发布 Mistral Large 4「Dynamic 1-bit」GGUF：约 233GB 本地跑 1T 参数多模态模型，保留 91% top-1；AA 同日第三方确认 1.05T-A52B/1M 上下文</guid>
 <pubDate>2026-10-30</pubDate>
 <category>重大开源、推理加速</category>
+</item>
+<item>
+<title>Pika 开源 H3 Flex：公司首个开源权重发布——MiniMax-H3 之上后训练的视频+同步音频生成 adapter，六步采样、最多 12 参考输入</title>
+<link>每日AI新闻推送_20261030_0912.html</link>
+<guid isPermaLink="false">20261030_0912-Pika 开源 H3 Flex：公司首个开源权重发布——MiniMax-H3 之上后训练的视频+同步音频生成 adapter，六步采样、最多 12 参考输入</guid>
+<pubDate>2026-10-30</pubDate>
+<category>重大开源、视频生成</category>
+</item>
+<item>
+<title>Baseten 发布 joey-1 决策模型：2B、单次前向出标签+校准置信度，P50 约 20 ms、定价 $0.01/百万 tokens，权重同步开源</title>
+<link>每日AI新闻推送_20261030_0912.html</link>
+<guid isPermaLink="false">20261030_0912-Baseten 发布 joey-1 决策模型：2B、单次前向出标签+校准置信度，P50 约 20 ms、定价 $0.01/百万 tokens，权重同步开源</guid>
+<pubDate>2026-10-30</pubDate>
+<category>基础设施、决策模型</category>
+</item>
+<item>
+<title>LangChain 发布 Managed Deep Agents v0.10：声明式浏览器使用与异步子智能体（公开 beta）</title>
+<link>每日AI新闻推送_20261030_0912.html</link>
+<guid isPermaLink="false">20261030_0912-LangChain 发布 Managed Deep Agents v0.10：声明式浏览器使用与异步子智能体（公开 beta）</guid>
+<pubDate>2026-10-30</pubDate>
+<category>Agent基础设施、AI Coding</category>
 </item>
 <item>
 <title>Mistral 开放 Large 4「Le Chonk」权重：1T 参数 MoE 原生多模态 + 混合推理，agentic coding 与网络安全自述领先</title>
