@@ -3,7 +3,28 @@
 <title>每日 AI 前沿技术精选</title>
 <link>https://local.invalid/ai-news</link>
 <description>每日 AI 前沿技术精选 · 结构化条目流</description>
-<lastBuildDate>Sat, 31 Oct 2026 02:37:35 -0000</lastBuildDate>
+<lastBuildDate>Sat, 31 Oct 2026 14:24:09 -0000</lastBuildDate>
+<item>
+<title>DeepSeek 发布 Super-agent 架构并开源 dsh-superagent-prototype：Router 常驻分派 + Worker 隔离并发，任务完成 P95 15.7 分钟对单 Session 29.5 分钟</title>
+<link>每日AI新闻推送_20261031_2146.html</link>
+<guid isPermaLink="false">20261031_2146-DeepSeek 发布 Super-agent 架构并开源 dsh-superagent-prototype：Router 常驻分派 + Worker 隔离并发，任务完成 P95 15.7 分钟对单 Session 29.5 分钟</guid>
+<pubDate>2026-10-31</pubDate>
+<category>AI Coding、Agent 架构</category>
+</item>
+<item>
+<title>百度 Apollo Go 伦敦媒体试乘 + 香港东涌大规模公众试乘：RT6 同时推进英港两个左行交通市场</title>
+<link>每日AI新闻推送_20261031_2146.html</link>
+<guid isPermaLink="false">20261031_2146-百度 Apollo Go 伦敦媒体试乘 + 香港东涌大规模公众试乘：RT6 同时推进英港两个左行交通市场</guid>
+<pubDate>2026-10-31</pubDate>
+<category>具身智能、自动驾驶</category>
+</item>
+<item>
+<title>OpenCode 启动「Operation Cheepseek」第四阶段：10 美元 OpenCode Go 订阅给到 100 美元 DeepSeek V4.1 Flash 额度，编码 Agent 订阅杠杆升至 10 倍</title>
+<link>每日AI新闻推送_20261031_2146.html</link>
+<guid isPermaLink="false">20261031_2146-OpenCode 启动「Operation Cheepseek」第四阶段：10 美元 OpenCode Go 订阅给到 100 美元 DeepSeek V4.1 Flash 额度，编码 Agent 订阅杠杆升至 10 倍</guid>
+<pubDate>2026-10-31</pubDate>
+<category>AI Coding、模型成本</category>
+</item>
 <item>
 <title>Cursor 市场 Claude Code 官方扩展被植入 SSH 持久后门：2.1.312/2.1.313 受影响、已下架，官方响应链窗内集中爆发</title>
 <link>每日AI新闻推送_20261031_1012.html</link>

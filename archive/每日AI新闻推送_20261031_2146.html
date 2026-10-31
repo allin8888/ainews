@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日 AI 前沿技术精选 · 2026-10-31 21:46</title>
+<style>
+:root{
+  --bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;
+  --accent:#58a6ff;--green:#3fb950;--gold:#d29922;--purple:#bc8cff;--orange:#f0883e;
+}
+*{box-sizing:border-box}
+body{margin:0;padding:32px 16px 40px;background:var(--bg);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  line-height:1.75;font-size:15px}
+.wrap{max-width:1000px;margin:0 auto}
+.hero{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px 28px;margin-bottom:22px}
+.hero h1{margin:0 0 6px;font-size:25px;letter-spacing:.5px}
+.hero .sub{color:var(--muted);font-size:13px;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{font-size:12.5px;color:var(--muted);background:#21262d;border:1px solid var(--border);border-radius:20px;padding:4px 12px}
+.chip b{color:var(--text);font-weight:600}
+.notice{font-size:12.5px;color:#a5d6ff;background:rgba(88,166,255,.06);border-left:3px solid rgba(88,166,255,.5);
+  padding:10px 14px;border-radius:0 8px 8px 0}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 26px;margin:18px 0}
+.card .idx{font-size:11.5px;letter-spacing:1.4px;color:var(--muted);text-transform:uppercase}
+.card h2{font-size:18.5px;margin:6px 0 8px;line-height:1.5}
+.card h2 .hl{color:var(--accent)}
+.src{font-size:12.5px;color:var(--muted);margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:10px}
+.src b{color:var(--green)}
+.card h3{font-size:13.5px;color:var(--purple);margin:16px 0 6px}
+.card p{margin:8px 0;font-size:14px}
+.card ul{padding-left:20px;margin:6px 0}
+.card li{margin:7px 0;font-size:13.5px}
+.card li b{color:var(--text)}
+.res{font-size:13px;color:#c9d1d9;background:rgba(63,185,80,.06);border:1px solid rgba(63,185,80,.2);
+  border-radius:10px;padding:10px 14px;margin:8px 0}
+.edge{margin-top:12px;font-size:12px;color:#e3b341;background:rgba(210,153,34,.07);
+  border-left:3px solid rgba(210,153,34,.5);padding:8px 12px;border-radius:0 8px 8px 0}
+.tags{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
+.tag{font-size:11.5px;color:var(--accent);background:rgba(88,166,255,.1);border:1px solid rgba(88,166,255,.3);
+  border-radius:6px;padding:2px 10px}
+.block{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 26px;margin:18px 0}
+.block h2{font-size:17px;margin:0 0 12px;color:var(--gold)}
+.block h3{font-size:13.5px;color:var(--purple);margin:16px 0 6px}
+.block p,.block li{font-size:13.5px;color:#c9d1d9}
+.block ol,.block ul{padding-left:22px}
+.block li{margin:7px 0}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:26px 0 10px;border-top:1px solid var(--border);margin-top:24px}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1>每日 AI 前沿技术精选</h1>
+  <div class="sub">2026-10-31 · 21:46 · 第 121 跑（增量收敛窗口）</div>
+  <div class="chips">
+    <span class="chip">精选 <b>3</b> 条</span>
+    <span class="chip">时效窗口 <b>2026-10-31 10:12 – 2026-10-31 21:46</b>（增量收敛，11 小时 34 分）</span>
+    <span class="chip">信源健康 <b>aihot ok / arxiv error（脚本侧）</b></span>
+    <span class="chip">方向覆盖 <b>AI Coding ×2 · 具身智能 ×1</b></span>
+  </div>
+  <div class="notice">窗口纪律：本期为距上次执行 11 小时 34 分的增量收敛窗口，48 小时降级策略已废止且未使用。全部入选条目以第一信源时刻为准（GitHub created_at / 首发提交、官方账号 X 雪花时间戳）；聚合器时刻仅作线索——本期据此证伪并排除 5 组「旧闻新热」（agent 技能监督指令研究滞后 4 天、agent-desktop 发布日在 10-30、Factory Droid 1.0 原公告 10-29、Mundo/PrimeSim 一手在 10-30、AI Mode 财报在 10-29/30）。另需注意：窗口内无 arXiv 批次公告（上一批 10-31 08:00 BJ 早于起点、下一批 11-01 08:00 BJ 晚于终点），世界模型与 RSI 方向合规首发 0 条。</div>
+</header>
+
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="AI Coding">AI Coding</button>
+<button class="filter-chip" data-tag="Agent 架构">Agent 架构</button>
+<button class="filter-chip" data-tag="具身智能">具身智能</button>
+<button class="filter-chip" data-tag="自动驾驶">自动驾驶</button>
+<button class="filter-chip" data-tag="模型成本">模型成本</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. DeepSeek 发布 Super-agent 架构并开源 dsh-superagent-prototype：Router 常驻分派 + Worker 隔离并发，任务完成 P95 15.7 分钟对单 Session 29.5 分钟</a><a class="toc-item" href="#entry-2">2. 百度 Apollo Go 伦敦媒体试乘 + 香港东涌大规模公众试乘：RT6 同时推进英港两个左行交通市场</a><a class="toc-item" href="#entry-3">3. OpenCode 启动「Operation Cheepseek」第四阶段：10 美元 OpenCode Go 订阅给到 100 美元 DeepSeek V4.1 Flash 额度，编码 Agent 订阅杠杆升至 10 倍</a>
+</nav>
+<div class="card" id="entry-1" style="border-left:3px solid #f0883e" data-tags="AI Coding Agent 架构" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="DeepSeek 发布 Super-agent 架构并开源 dsh-superagent-prototype：Router 常驻分派 + Worker 隔离并发，任务完成 P95 15.7 分钟对单 Session 29.5 分钟" data-link="https://github.com/deepseek-ai/dsh-superagent-prototype">复制</button>
+  <span class="idx">01 · AI Coding / Agent 架构</span>
+  <h2>DeepSeek 发布 Super-agent 架构并开源 dsh-superagent-prototype：<span class="hl">Router 常驻分派 + Worker 隔离并发</span>，任务完成 P95 15.7 分钟对单 Session 29.5 分钟</h2>
+  <div class="src"><b>GitHub deepseek-ai/dsh-superagent-prototype + DeepSeek Harness 团队文章</b> | 2026-10-31 BJ 17:32:46 建仓 / 20:05:39 首发提交</div>
+  <p>DeepSeek Harness 团队发布《Super-agent 设计探索：迈向更自主的 Agent 系统》（<i>Exploring Super-agent Design: Towards a More Autonomous Agent System</i>），把 Agent 从「用户手动开的单次会话」解绑为跨信道常驻、可并行推进多任务的连续实体：上层 <b>Router</b> 承接交互、维护全局上下文并分派任务，下层 <b>Worker</b> 在相互隔离的会话中并发执行、只向 Router 汇报而不直接对用户说话。同步以 <b>MIT</b> 协议开源研究原型 <b>dsh-superagent-prototype</b>——面向单个 GitHub 仓库的 proactive coding agent，监听 GitHub（可选飞书），在独立会话与工作目录中干活并以 Pull Request 交付。一手时点：仓库 <code>created_at 2026-10-31T09:32:46Z</code>（北京 17:32:46），首发提交 <code>feat: add the dsh-superagent research prototype</code> 于 <code>12:05:39Z</code>（北京 20:05:39），检查时 star 325。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>五模块撑四特征</b>：① 双层架构——Router 只做全局序点/协调/记忆，可用轻量模型甚至省掉 Bash；Worker 决定结果与代码质量，配最强模型 + 全套工具，内部可再开 Subagent 或本身就是一个 Agent Team，对上层透明。② 事件驱动——群聊、邮件日程、代码评审评论、CI 结果统称 <b>Trigger</b>，先经程序层 Fast Path（来源/群组/白名单）过滤，再交语义层 Slow Path 判断；同一话题或同一 PR 的连续事件构成 <b>Thread</b>，Worker 直接订阅 Thread，后续事件绕开 Router 直达（多对多订阅，两个 Worker 改同一 PR 时互见提交、自行解冲突）。</li>
+    <li><b>把上下文窗口当 Cache 管</b>：<b>Inline &amp; Spill</b>（近期信息内联、超预算内容留在窗口外只留引用或摘要，长内容先给前 50 字并留「续读」入口）＋ <b>链式召回 Chain of Recall</b>（Trigger/Thread/Worker Session 各配唯一 ID，沿引用图逐跳找回旧任务）；再叠加<b>投机执行</b>——群里讨论 Bug 时后台先复现找修复，只有确认问题且找到简单修法才交付，否则全程安静。</li>
+    <li><b>全双工与一直在线</b>：耗时工具调用改成异步 <code>start()</code>/<code>stop()</code> 构成异步 ReAct Loop（已在 DeepSeek Harness 实现但未默认开启），IM 信道单次回复限 100 词、PR/邮件信道写结构化交付；借<b>存算分离</b>把 Agent Loop 放云端无状态容器、会话状态进数据库，执行环境留在原地由端侧轻量 daemon 承接命令，支持 BYOM 且设备重新上线后自动续跑；另设独立 <b>Watchdog Session</b> 作外部控制回路，既查基础设施故障，也用模型判断 Worker 是否原地打转或偏离目标。</li>
+    <li><b>实际影响</b>：把「一个人同时能跟几个 Agent」从注意力问题（官方观察通常 3–5 个活跃 Session）转为系统调度问题，同一套骨架同时覆盖研发协作与个人助手。官方自列未解问题：Router 水平切分粒度与层内拓扑、跨月长程记忆、脱离 Session 的中途接管、实例间 A2A，以及安全隐私——云端 Agent Loop 若因服务端入侵或提示词注入失守，连着的端侧设备（未提交改动、私有凭据、内网服务）都有被控制风险。团队亦坦言思路来自计算机系统经典工程思想而非全新理论。</li>
+    <li><b>读代码前须知</b>：README 明示「研究原型、非正式产品；大量工程由 coding agent 完成，可能含 bug、风格不一致」，且已为公开做改编、与内部实现不等同，文中部分设计属未来方向未实现；安装流程本身设计为交给编码 Agent 执行。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>Super-agent 完成时间 P50</td><td>12.4 分钟</td><td><div class="bar"><span style="width:42%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>Super-agent 完成时间 P95</td><td>15.7 分钟</td><td><div class="bar"><span style="width:53%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>单 Session 中性提示 P95</td><td>29.5 分钟</td><td><div class="bar"><span style="width:100%"></span></div></td><td><span class="badge compare">对比</span></td></tr><tr><td>单 Session 优先委派 P95</td><td>29.0 分钟</td><td><div class="bar"><span style="width:98%"></span></div></td><td><span class="badge compare">对比</span></td></tr><tr><td>去直通后读缓存 token 增幅</td><td>+37%（2323 万→3177 万）</td><td><div class="bar"><span style="width:37%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>Router 单决定分摊推理</td><td>6.4s→1.6s</td><td><div class="bar"><span style="width:25%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <p>评测/性能（<b>DeepSeek 自述数据</b>，合成负载 + 简化环境，未见第三方复现）：端到端消融实验单次约 300 条消息、约 20 条工作请求、每方案重复 5 次，编码任务用「只消耗时间」的替身工具代替——Super-agent <b>P50 12.4 / P95 15.7 分钟</b>，读缓存 token 2323 万；去掉事件直通的版本 12.6 / 15.5 分钟，但 Router 决策次数 <b>+30%</b>、读缓存 token 升至 3177 万（<b>+37%</b>）；单 Session + Subagent 中性提示 20.4 / <b>29.5 分钟</b>（605 万 token，5 次运行一次都没调用 Subagent）；优先委派提示 13.8 / 29.0 分钟（1082 万 token，5 次中 4 次委派）。Router 层压测（Router 调真实模型、Worker 用 Mock）：Trigger 到达速率由约 1 条/分钟提到约 40 条/分钟时，平均批 <b>1.0→2.8</b>、单次请求耗时 <b>2.5s→3.9s</b>、单个决定分摊推理 <b>6.4s→1.6s</b>。官方明确该实验只衡量调度与协作能力，不衡量单任务执行质量。</p>
+  <div class="res">资源：GitHub <a href="https://<a href="https://github.com/deepseek-ai/dsh-superagent-prototype" target="_blank" rel="noopener">github.com/deepseek-ai/dsh-superagent-prototype</a>">deepseek-ai/dsh-superagent-prototype</a>（MIT，created 2026-10-31T09:32:46Z）；DeepSeek Harness 官方页 <a href="https://<a href="https://www.deepseek.com/en/harness/" target="_blank" rel="noopener">www.deepseek.com/en/harness/</a>">d<a href="https://eepseek.com/en/harness" target="_blank" rel="noopener">eepseek.com/en/harness</a></a>；底层插件框架 <a href="https://<a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noopener">github.com/deepseek-ai/deepseek-harness</a>">deepseek-ai/deepseek-harness</a>；文档 docs/000-philosophy → 008-cookbook。</div>
+  <div class="edge">边缘披露：官方文章正文的发布时刻未直接取证（Harness 产品页当前未列出该文章链接，中文媒体首发集中在 20:50–21:57 BJ）；本条以 GitHub 建仓与首发提交时刻作为窗口内一手依据。</div>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#Agent 架构</span></div>
+</div>
+
+<div class="card" id="entry-2" style="border-left:3px solid #3fb950" data-tags="具身智能 自动驾驶" style="border-left:3px solid #3fb950"><button class="copy-btn" data-title="百度 Apollo Go 伦敦媒体试乘 + 香港东涌大规模公众试乘：RT6 同时推进英港两个左行交通市场" data-link="https://www.apollogo.com/news/">复制</button>
+  <span class="idx">02 · 具身智能 / 自动驾驶</span>
+  <h2>百度 Apollo Go 伦敦媒体试乘 + 香港东涌大规模公众试乘：<span class="hl">RT6 同时推进英港两个左行交通市场</span></h2>
+  <div class="src"><b>X @Baidu_Inc</b> | 2026-10-31 BJ 14:42:10（推文 ID 2116420446287712315，雪花反推）</div>
+  <p>百度官方账号 <b>@Baidu_Inc</b> 发文：10 月在<b>伦敦</b>首次邀请路透社、ITV 等媒体试乘 <b>RT6</b> 自动驾驶车辆；并在<b>香港东涌</b>启动全港首个大规模公众试乘，向逾 1000 名居民提供免费体验。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>同代量产车两条路径</b>：伦敦侧是面向媒体与监管的示范性试乘（先建立公众与监管认知），香港侧是面向居民的开放试乘（东涌此前已运营，百度 2024 年 11 月取得香港首个自动驾驶试点牌照，为其进入右舵左行市场的起点）。</li>
+    <li><b>实际影响</b>：Robotaxi 出海战线从「中东 / 东南亚试点」扩展到「欧洲高监管城市 + 中国特别行政区」。与上期 Toyota×Waymo 宣布 2027 年日本启动 bZ4X 车队测试运营形成同期对照——L4 规模化的瓶颈正从感知/规划技术转向<b>牌照、监管沟通、公众接受度与运力经济学</b>。</li>
+    <li><b>口径注意</b>：厂商自述进展，无第三方实测数据；推文未披露伦敦是否为公开道路测试、监管主体与牌照状态、车队规模与安全员配置。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>伦敦媒体试乘</td><td>首次（路透社 / ITV 等）</td><td><div class="bar"><span style="width:80%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>东涌公众试乘规模</td><td>逾 1000 名居民 · 免费</td><td><div class="bar"><span style="width:60%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>车型</td><td>RT6（右舵左行市场）</td><td><div class="bar"><span style="width:70%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>香港试点牌照</td><td>2024 年 11 月（首个）</td><td><div class="bar"><span style="width:50%"></span></div></td><td><span class="badge third">第三方</span></td></tr></table></div>
+  <p>无基准数字。量化口径（厂商自述）：东涌公众试乘覆盖<b>逾 1000 名居民</b>且免费；伦敦为<b>首次</b>媒体试乘，到场媒体含路透社与 ITV。车队规模、累计里程、安全员配置与两地商业化时间表未披露（待核实）。</p>
+  <div class="res">资源：X @Baidu_Inc 2026-10-31 14:42:10 BJ（ID 2116420446287712315）；背景资料 Apollo Go 官方新闻室 <a href="https://<a href="https://www.apollogo.com/news/" target="_blank" rel="noopener">www.apollogo.com/news/</a>">a<a href="https://pollogo.com/news" target="_blank" rel="noopener">pollogo.com/news</a></a>。</div>
+  <div class="tags"><span class="tag" style="color:#3fb950;border-color:#3fb950">#具身智能</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#自动驾驶</span></div>
+</div>
+
+<div class="card" id="entry-3" style="border-left:3px solid #58a6ff" data-tags="AI Coding 模型成本" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="OpenCode 启动「Operation Cheepseek」第四阶段：10 美元 OpenCode Go 订阅给到 100 美元 DeepSeek V4.1 Flash 额度，编码 Agent 订阅杠杆升至 10 倍" data-link="https://www.ithome.com/1/020/474.htm">复制</button>
+  <span class="idx">03 · AI Coding / 模型成本</span>
+  <h2>OpenCode 启动「Operation Cheepseek」第四阶段：<span class="hl">10 美元 OpenCode Go 订阅给到 100 美元 DeepSeek V4.1 Flash 额度</span>，订阅杠杆升至 10 倍</h2>
+  <div class="src"><b>OpenCode 官方 X</b> | 2026-10-31 日期级（IT之家 14:40 BJ 首发转述）</div>
+  <p>AI 编程工具 OpenCode 于 10 月 31 日在 X 宣布 <b>Operation Cheepseek 第四阶段</b>：面向 10 美元/月的 OpenCode Go 订阅，把内含的 <b>DeepSeek V4.1 Flash</b> 用量额度提升至价值 <b>100 美元</b>（约 667 元人民币）。计划四级演进：30 美元 → 60 美元（原限时额度转永久）→ 80 美元（配合 OpenCode 达成 10 万 GitHub Stars、取消峰谷限制）→ 100 美元。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>杠杆建立在模型成本结构上</b>：DeepSeek V4.1 Flash 为 9 月发布的原生多模态 MoE，总参数 552B，输入侧每 token 激活约 8B、输出侧约 16B，最高约 100 万 token 上下文，支持文本与图像输入、函数调用与智能体工作流；官方另称其 KV Cache 对 HBM 需求降至上一代四分之一、对 SSD 需求降至八分之一（厂商自述，未见第三方复现）。低激活比 + 长上下文 + KV Cache 显存需求下降，正是长上下文 agent 任务单价下降的来源。</li>
+    <li><b>实际影响</b>：编码 Agent 的「订阅经济学」继续加码——同订阅可完成更多代码生成、审查、文档理解与多轮工具调用/长文档分析；对以 token 计价的其他 harness 形成价格锚定压力。第三阶段已取消峰谷限制，第四阶段等于把低价长任务的边际成本压到订阅价之下。</li>
+    <li><b>口径注意</b>：100 美元额度不等同现金余额，按模型调用计费折算使用价值；实际可用量仍受请求频率、上下文长度、输入输出规模与平台速率限制影响。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>OpenCode Go 订阅价</td><td>10 美元/月</td><td><div class="bar"><span style="width:10%"></span></div></td><td><span class="badge compare">对比</span></td></tr><tr><td>内含额度价值</td><td>100 美元（约 667 元）</td><td><div class="bar"><span style="width:100%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>名义杠杆</td><td>10×</td><td><div class="bar"><span style="width:100%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>阶段三→四额度</td><td>80→100 美元</td><td><div class="bar"><span style="width:80%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <p>订阅价 10 美元/月 vs 内含额度价值 100 美元 → 名义杠杆 <b>10×</b>；四阶段额度序列 30 / 60 / 80 / 100 美元（厂商公布口径，无第三方核验）。无编码基准数字。</p>
+  <div class="res">资源：IT之家首发 <a href="https://<a href="https://www.ithome.com/1/020/474.htm" target="_blank" rel="noopener">www.ithome.com/1/020/474.htm</a>">i<a href="https://thome.com/1/020/474.htm" target="_blank" rel="noopener">thome.com/1/020/474.htm</a></a>（14:40 BJ）；OpenCode 仓库 <a href="https://<a href="https://github.com/sst/opencode" target="_blank" rel="noopener">github.com/sst/opencode</a>">sst/opencode</a>；DeepSeek V4.1 Flash 规格引自其官方发布材料与 9 月报道。</div>
+  <div class="edge">边缘披露：入选依据为「OpenCode 官方 X 于 10 月 31 日发布」＋IT之家 10-31 14:40 BJ 首发转述；推文具体时刻未取证，理论上可能早于窗口起点 10:12（已列入待核实）。</div>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#模型成本</span></div>
+</div>
+
+<div class="block">
+  <details open>
+    <summary class="fold-summary">去重与信源健康说明</summary>
+    <h3>7 天扫描与实体去重</h3>
+    <p>工作区根现存 10-27 1131 ~ 10-31 1012 共 12 份报告（archive/ 为同期副本），覆盖第 ~111–120 跑；已报道主题含 Genie 4、Gemini 4 Carbon/Argon、Mistral Large 4「Le Chonk」、智元 GO-3 Preview/灵渠 OS/WITA Omni、腾讯 BuddyOne、面壁 ForgeKernel、UBTree、Ling-3.1-flash、Unlimited OCR 2、ScarfBench、ForTy 森林地图、Claude Duet、GPT-6.1 Terra、Kimi K3.1 Pro、Cursor 后门、Suncatcher、Apple 智能入华、Toyota×Waymo 等。入选 3 条经 <code>dedup_check.py</code> 判定 <code>is_dup:false</code>（confidence 0.00–0.29，阈值 0.45）。</p>
+    <h3>已排除项（含理由）</h3>
+    <ol>
+      <li><b>同主体同动作</b>：Cursor 官方扩展后门「约 11 小时 / 最多 5000 名开发者」（第 120 跑已报道同一事件）；DeepMind ForTy 全球森林类型地图（第 114 跑已报道，本窗为二次传播）。</li>
+      <li><b>时间戳纪律·旧闻新热</b>：「约 1/17 的 agent 技能含绕过人工检查指令」研究——一手 arXiv 2610.37734 v1 提交 10-27T13:21:17Z（出窗 4 天，同批 2610.37738 亦 10-27）；Vercel Labs <b>agent-desktop 1.0.2</b>——仓库 created 2026-02-19、公开发布日 10-30，GitHub pushed_at 10-31T13:48:43Z＝北京 21:48:43（窗口终点后 2 分钟），窗内 8 条 commit 为 caret/overlay 修补；<b>Factory Droid 1.0</b>——原始公告 10-29；<b>Mundo</b>（大晓×NTU S-Lab）与 <b>PrimeSim</b>（启元）——一手发布 10-30，10-31 为中文转载。</li>
+      <li><b>财经/人事（无官方一手可取证）</b>：Google AI Mode 拖累搜索收入（财报 10-29/30）、Microsoft 向约 1/4 员工提供自愿离职方案而 AI 关键部门除外、OpenAI 本轮仅募约 110 亿美元且估值降至 1.25 万亿、Baseten 拟融约 20 亿、黑石称 Anthropic 上市后或难获投资级评级、Sam Altman 会见约 50 名三星高管。</li>
+      <li><b>门槛/焦点</b>：ChatGPT 网页与移动端多账号切换（X @thsottiaux 13:42:26 BJ 时刻已取证，但按既有口径属消费级功能）；Anthropic 在 Claude Code 的 Opus 5.5 提示词加入「禁止复刻特定现有游戏」（服务端规则 <code>tengu_heron_brook</code>，约 10-27 落地、10-30 曝出，10-31 仅转载）；版本流水（Claude Code v2.1.316、llama.cpp b12018/b12019/b12020、DeepSeek Harness v0.2.1-rc.5、cline nightly、langgraph 1.2.19）；PixVerse 长片与提示词；2026 中国自动化大会在京开幕。</li>
+    </ol>
+    <h3>结构性说明</h3>
+    <ul>
+      <li>信源健康（动笔前）：aihot_items ok（最新条目 0.2 小时前）、aihot_dailies ok（2026-10-31）、arxiv <b>error</b>（脚本报 URLError 取数路径异常，<a href="https://export.arxiv.org" target="_blank" rel="noopener">export.arxiv.org</a> API 手工直连正常）；未改变窗口与入选规则。</li>
+      <li><b>窗口内无 arXiv 批次公告</b>：arXiv 于周日—周四 20:00 ET（北京次日 08:00）发布新批次，上一批 10-31 08:00 BJ 早于窗口起点、下一批 11-01 08:00 BJ 晚于终点，故学术侧首发只能取官方仓库/博客时刻；<b>世界模型与 RSI 方向本期合规首发 0 条</b>，具身智能方向仅 Apollo Go 一条（产业落地）。</li>
+      <li>官方博客 RSS 大面积不可达（openai 超时、anthropic 404、deepmind 连接被断、mistral/aws TLS 超时、github.blog 与 hf blog 连接失败；可达的 MSR/BAIR/NVIDIA 窗内 0 条），本期改以 aihot items（24h+7d 双查询去重、窗内命中 24 条）、GitHub releases.atom、HN Algolia（窗内 points&gt;25 共 29 条）、X 雪花解码与站内检索交叉取证。</li>
+      <li>GitHub API 中途 403 rate limit；HuggingFace 主站经 urllib 报错，改由 hf-mirror 拉取窗内新建模型 60 条，全为个人量化/微调仓库（downloads=0、likes≤1）→ 窗内无重要权重发布。</li>
+      <li>窗口性质：增量收敛（11 小时 34 分），非 24 小时基准窗口；48 小时降级策略已废止、本期未使用。</li>
+    </ul>
+  </details>
+</div>
+
+<div class="block">
+  <details open>
+    <summary class="fold-summary">待核实（集中列示）</summary>
+    <ol>
+      <li>DeepSeek Super-agent 官方文章的发布时刻与一手链接（产品页未列该文章，中文首发集中 20:50–21:57 BJ；仅 GitHub 时刻可分钟级取证）。缺：文章 URL + 时间戳。</li>
+      <li>Super-agent 实验外部效度：合成负载 + 简化环境、每方案 5 次、编码任务用时间替身工具，P50/P95 与 token 数字均为自述。缺：第三方真实仓库复现。</li>
+      <li>dsh-superagent-prototype 与内部版本能力差异（README 声明已改编、部分设计未实现；异步 ReAct Loop 未默认开启）。缺：实现/未实现对照表。</li>
+      <li>Apollo Go 伦敦与东涌细节：是否公开道路测试、监管主体与牌照、车队规模、安全员配置、公众开放时间；「逾 1000 名居民」为自述。缺：监管口径 + 官方新闻稿。</li>
+      <li>OpenCode Cheepseek 第四阶段的推文时刻与条款：是否永久、是否仅限 V4.1 Flash、峰谷与速率限制细则。缺：官方公告链接 + Go 页面条款。</li>
+      <li>DeepSeek V4.1 Flash「KV Cache HBM 需求 1/4、SSD 1/8」为厂商自述。缺：独立显存/吞吐压测。</li>
+      <li>Claude Code 服务端规则 <code>tengu_heron_brook</code> 适用范围与治理口径（是否推广至其他模型/版本、授权用例申诉处理结果、服务端提示词变更的披露机制）。缺：Anthropic 官方说明。</li>
+      <li>arXiv 信源健康 error 的确切成因（脚本侧路径/代理问题）。缺：脚本修复验证。</li>
+    </ol>
+  </details>
+</div>
+
+<footer>每日 AI 前沿技术精选 · 自动生成 · 时效窗口以报告头为准</footer>
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
