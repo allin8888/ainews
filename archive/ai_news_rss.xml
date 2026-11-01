@@ -3,7 +3,28 @@
 <title>每日 AI 前沿技术精选</title>
 <link>https://local.invalid/ai-news</link>
 <description>每日 AI 前沿技术精选 · 结构化条目流</description>
-<lastBuildDate>Sun, 01 Nov 2026 08:26:43 -0000</lastBuildDate>
+<lastBuildDate>Sun, 01 Nov 2026 15:48:45 -0000</lastBuildDate>
+<item>
+<title>Pranjal Garg 的受控 RL 实验：监控规避取决于「RL 能找到什么」与「监控本来就漏什么」——把欺骗性 hack 的起始概率压到 1e-6 即可阻止规避，而总体 AUROC 0.99 的激活探针面对欺骗样本只有 0.51</title>
+<link>每日AI新闻推送_20261101_2247.html</link>
+<guid isPermaLink="false">20261101_2247-Pranjal Garg 的受控 RL 实验：监控规避取决于「RL 能找到什么」与「监控本来就漏什么」——把欺骗性 hack 的起始概率压到 1e-6 即可阻止规避，而总体 AUROC 0.99 的激活探针面对欺骗样本只有 0.51</guid>
+<pubDate>2026-11-01</pubDate>
+<category>递归自我改进、RL 与监控器</category>
+</item>
+<item>
+<title>阿里千问 AI 眼镜推 OTA：通话翻译与媒体翻译进入「实时」，嘈杂环境语音识别抗噪再升级，译文在同屏穿戴 App 承载</title>
+<link>每日AI新闻推送_20261101_2247.html</link>
+<guid isPermaLink="false">20261101_2247-阿里千问 AI 眼镜推 OTA：通话翻译与媒体翻译进入「实时」，嘈杂环境语音识别抗噪再升级，译文在同屏穿戴 App 承载</guid>
+<pubDate>2026-11-01</pubDate>
+<category>具身智能、端侧多模态</category>
+</item>
+<item>
+<title>2026 世界互联网大会乌镇峰会·开源主题生态体验馆开馆：之江实验室 021 科学基础模型完成 2360 亿参数训练并「上线开放」（MoE + OneTokenizer，面向图像/序列/光谱等科学模态），六大国家 AI 应用中试基地与蚂蚁 AGILingBot 等同场陈列</title>
+<link>每日AI新闻推送_20261101_2247.html</link>
+<guid isPermaLink="false">20261101_2247-2026 世界互联网大会乌镇峰会·开源主题生态体验馆开馆：之江实验室 021 科学基础模型完成 2360 亿参数训练并「上线开放」（MoE + OneTokenizer，面向图像/序列/光谱等科学模态），六大国家 AI 应用中试基地与蚂蚁 AGILingBot 等同场陈列</guid>
+<pubDate>2026-11-01</pubDate>
+<category>基础架构、重大开源</category>
+</item>
 <item>
 <title>OpenAI 官宣 12 月起 ChatGPT 与 Codex 合并为一份额度：三档订阅同池计量、按 token 扣减，Instant 聊天明确不占用</title>
 <link>每日AI新闻推送_20261101_1548.html</link>
