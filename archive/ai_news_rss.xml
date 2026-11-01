@@ -3,7 +3,35 @@
 <title>每日 AI 前沿技术精选</title>
 <link>https://local.invalid/ai-news</link>
 <description>每日 AI 前沿技术精选 · 结构化条目流</description>
-<lastBuildDate>Sat, 31 Oct 2026 14:24:09 -0000</lastBuildDate>
+<lastBuildDate>Sun, 01 Nov 2026 08:26:43 -0000</lastBuildDate>
+<item>
+<title>OpenAI 官宣 12 月起 ChatGPT 与 Codex 合并为一份额度：三档订阅同池计量、按 token 扣减，Instant 聊天明确不占用</title>
+<link>每日AI新闻推送_20261101_1548.html</link>
+<guid isPermaLink="false">20261101_1548-OpenAI 官宣 12 月起 ChatGPT 与 Codex 合并为一份额度：三档订阅同池计量、按 token 扣减，Instant 聊天明确不占用</guid>
+<pubDate>2026-11-01</pubDate>
+<category>AI Coding、模型额度</category>
+</item>
+<item>
+<title>Memdoor 把 GVS5H 论文复现成开源 workflow：5 个 Qwen3.8-27B 组队跑 LiveCodeBench Hard 五轮均值 9.8 超 Fable 5 单发 8.0，50 次运行全量日志与 $35.79 成本公开</title>
+<link>每日AI新闻推送_20261101_1548.html</link>
+<guid isPermaLink="false">20261101_1548-Memdoor 把 GVS5H 论文复现成开源 workflow：5 个 Qwen3.8-27B 组队跑 LiveCodeBench Hard 五轮均值 9.8 超 Fable 5 单发 8.0，50 次运行全量日志与 $35.79 成本公开</guid>
+<pubDate>2026-11-01</pubDate>
+<category>AI Coding、多智能体复现</category>
+</item>
+<item>
+<title>OpenRouter 教程把「AI 代码审查」改成先证明再出补丁：233 行纯标准库 review.py 组合 Responses API 的 Files / Shell 沙箱 / Apply Patch 三工具，findings 强制附命令与输出</title>
+<link>每日AI新闻推送_20261101_1548.html</link>
+<guid isPermaLink="false">20261101_1548-OpenRouter 教程把「AI 代码审查」改成先证明再出补丁：233 行纯标准库 review.py 组合 Responses API 的 Files / Shell 沙箱 / Apply Patch 三工具，findings 强制附命令与输出</guid>
+<pubDate>2026-11-01</pubDate>
+<category>AI Coding、Agent 工具链</category>
+</item>
+<item>
+<title>Meta 与上海傅利叶三个月造出人形原型 Max：Jetson Thor + 独立运控，把「家庭交互」写成 5 米语音 / 3 米手势 / 眼神接触的可验收指标</title>
+<link>每日AI新闻推送_20261101_1548.html</link>
+<guid isPermaLink="false">20261101_1548-Meta 与上海傅利叶三个月造出人形原型 Max：Jetson Thor + 独立运控，把「家庭交互」写成 5 米语音 / 3 米手势 / 眼神接触的可验收指标</guid>
+<pubDate>2026-11-01</pubDate>
+<category>具身智能、人形机器人</category>
+</item>
 <item>
 <title>DeepSeek 发布 Super-agent 架构并开源 dsh-superagent-prototype：Router 常驻分派 + Worker 隔离并发，任务完成 P95 15.7 分钟对单 Session 29.5 分钟</title>
 <link>每日AI新闻推送_20261031_2146.html</link>
