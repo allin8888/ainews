@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日 AI 前沿技术精选 · 2026-11-01 15:48</title>
+<style>
+:root{
+  --bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;
+  --accent:#58a6ff;--green:#3fb950;--gold:#d29922;--purple:#bc8cff;--orange:#f0883e;
+}
+*{box-sizing:border-box}
+body{margin:0;padding:32px 16px 40px;background:var(--bg);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  line-height:1.75;font-size:15px}
+.wrap{max-width:1000px;margin:0 auto}
+.hero{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px 28px;margin-bottom:22px}
+.hero h1{margin:0 0 6px;font-size:25px;letter-spacing:.5px}
+.hero .sub{color:var(--muted);font-size:13px;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{font-size:12.5px;color:var(--muted);background:#21262d;border:1px solid var(--border);border-radius:20px;padding:4px 12px}
+.chip b{color:var(--text);font-weight:600}
+.notice{font-size:12.5px;color:#a5d6ff;background:rgba(88,166,255,.06);border-left:3px solid rgba(88,166,255,.5);
+  padding:10px 14px;border-radius:0 8px 8px 0}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 26px;margin:18px 0}
+.card .idx{font-size:11.5px;letter-spacing:1.4px;color:var(--muted);text-transform:uppercase}
+.card h2{font-size:18.5px;margin:6px 0 8px;line-height:1.5}
+.card h2 .hl{color:var(--accent)}
+.src{font-size:12.5px;color:var(--muted);margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:10px}
+.src b{color:var(--green)}
+.card h3{font-size:13.5px;color:var(--purple);margin:16px 0 6px}
+.card p{margin:8px 0;font-size:14px}
+.card ul{padding-left:20px;margin:6px 0}
+.card li{margin:7px 0;font-size:13.5px}
+.card li b{color:var(--text)}
+.res{font-size:13px;color:#c9d1d9;background:rgba(63,185,80,.06);border:1px solid rgba(63,185,80,.2);
+  border-radius:10px;padding:10px 14px;margin:8px 0}
+.edge{margin-top:12px;font-size:12px;color:#e3b341;background:rgba(210,153,34,.07);
+  border-left:3px solid rgba(210,153,34,.5);padding:8px 12px;border-radius:0 8px 8px 0}
+.tags{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
+.tag{font-size:11.5px;color:var(--accent);background:rgba(88,166,255,.1);border:1px solid rgba(88,166,255,.3);
+  border-radius:6px;padding:2px 10px}
+.block{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 26px;margin:18px 0}
+.block h2{font-size:17px;margin:0 0 12px;color:var(--gold)}
+.block h3{font-size:13.5px;color:var(--purple);margin:16px 0 6px}
+.block p,.block li{font-size:13.5px;color:#c9d1d9}
+.block ol,.block ul{padding-left:22px}
+.block li{margin:7px 0}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:26px 0 10px;border-top:1px solid var(--border);margin-top:24px}
+a{color:var(--accent);text-decoration:none;word-break:break-all}
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1>每日 AI 前沿技术精选</h1>
+  <div class="sub">2026-11-01 · 15:48 · 第 122 跑（增量收敛窗口）</div>
+  <div class="chips">
+    <span class="chip">精选 <b>4</b> 条</span>
+    <span class="chip">时效窗口 <b>2026-10-31 21:46 – 2026-11-01 15:48</b>（增量收敛，18 小时 02 分）</span>
+    <span class="chip">信源健康 <b>aihot ok · arxiv ok · dailies ok</b></span>
+    <span class="chip">方向覆盖 <b>AI Coding ×3 · 具身智能 ×1</b></span>
+  </div>
+  <div class="notice">窗口纪律：本期为距第 121 跑 18 小时 02 分的增量收敛窗口，48 小时降级策略已废止且未使用。入选条目一律以第一信源时刻为准（官方文档 / GitHub 路径提交 / 官方博客 JSON-LD / The Information 页面时刻标注 + 雪花时间戳交叉印证）；聚合器时刻仅作线索——本期据此证伪并排除 7 组「旧闻新热」（商汤 Loop-9B 一手在 10-28/10-30、Anthropic 自动化红队早于起点 11 小时 47 分、ClaimNov 一手 arXiv 10-27、Parameter 攻击链一手 10-28、DeepMind 精神科 RL 无一手时刻、小米 OCR-0 一手 10-30、Mundo/PrimeSim 一手 10-30）。结构性空缺：窗口横跨美东周六午至周日凌晨，<b>无 arXiv 批次公告</b>（最新批次仍为 Fri, 30 Oct 2026，公告时刻早于起点；下一批要等 BJ 11-02 08:00），世界模型与 RSI 方向合规首发 0 条。</div>
+</header>
+
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="AI Coding">AI Coding</button>
+<button class="filter-chip" data-tag="模型额度">模型额度</button>
+<button class="filter-chip" data-tag="多智能体复现">多智能体复现</button>
+<button class="filter-chip" data-tag="Agent 工具链">Agent 工具链</button>
+<button class="filter-chip" data-tag="具身智能">具身智能</button>
+<button class="filter-chip" data-tag="人形机器人">人形机器人</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. OpenAI 官宣 12 月起 ChatGPT 与 Codex 合并为一份额度：三档订阅同池计量、按 token 扣减，Instant 聊天明确不占用</a><a class="toc-item" href="#entry-2">2. Memdoor 把 GVS5H 论文复现成开源 workflow：5 个 Qwen3.8-27B 组队跑 LiveCodeBench Hard 五轮均值 9.8 超 Fable 5 单发 8.0，50 次运行全量日志与 $35.79 成本公开</a><a class="toc-item" href="#entry-3">3. OpenRouter 教程把「AI 代码审查」改成先证明再出补丁：233 行纯标准库 review.py 组合 Responses API 的 Files / Shell 沙箱 / Apply Patch 三工具，findings 强制附命令与输出</a><a class="toc-item" href="#entry-4">4. Meta 与上海傅利叶三个月造出人形原型 Max：Jetson Thor + 独立运控，把「家庭交互」写成 5 米语音 / 3 米手势 / 眼神接触的可验收指标</a>
+</nav>
+<div class="card" id="entry-1" style="border-left:3px solid #f0883e" data-tags="AI Coding 模型额度" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="OpenAI 官宣 12 月起 ChatGPT 与 Codex 合并为一份额度：三档订阅同池计量、按 token 扣减，Instant 聊天明确不占用" data-link="https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits">复制</button>
+  <span class="idx">01 · AI Coding / 模型额度</span>
+  <h2>OpenAI 官宣 12 月起 ChatGPT 与 Codex 合并为一份额度：<span class="hl">三档订阅同池计量、按 token 扣减</span>，Instant 聊天明确不占用</h2>
+  <div class="src"><b>OpenAI Help Center 文档</b> | 2026-10-31 日期级更新，窗内响应链集中</div>
+  <p>OpenAI 帮助文档《Understanding ChatGPT and Codex usage limits》（文章 ID <code>20001625</code>）于 10 月 31 日更新并对外确认：<b>自 12 月起，Plus / Pro / Business 三档订阅的 ChatGPT 与 Codex 使用额度合并为同一份额度</b>，原因是把原先基于 Codex 构建的 ChatGPT Work 智能体能力并入主 ChatGPT 体验；两侧用量统一<b>按 token 计量</b>，更强模型与更复杂任务消耗更多，而 <b>Instant 即时聊天不消耗共享额度</b>。合并后的剩余额度与重置时间统一在「设置 → 使用量」查看，耗尽时的路径为等待重置 / 升级 / 购买 credits。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：① 跨产品同账户记账首次合一——此前聊天侧与 Codex 侧各自计量、互不挤占；② 计量单位从「按条数估算」彻底转向 token（承接 2026-04-02 的 credits-per-million-tokens 计价改造），并保留 Instant 轻量问答作为<b>零消耗通道</b>，等于在产品层显式区分「agent 长任务」与「快速问答」两类算力预算；③ 与 10-29 的额度动作连成一条线：当日 OpenAI 把 Pro 100/200/500 与 Business Premium 全量翻倍、取消 Pro 200 降额计划，但 <b>Codex 自身额度并未翻倍</b>——合并之后 agent 侧消耗直接进入同一池子，净效应取决于用户在两侧的分摊。</li>
+    <li><b>实际影响</b>：编码 agent 单次任务动辄数十万 token（长上下文、多轮工具调用与重试都会放大），与日常聊天同池后，「下午跑 Codex、晚上问 ChatGPT」从两件互不干扰的事变成<b>同一预算内的排产决策</b>；对以 ChatGPT 账户认证接入第三方 harness（如 OpenCode）的用户同样生效，账户级额度不随客户端改变。与上期 OpenCode「10 美元订阅给到 100 美元 DeepSeek V4.1 Flash 额度」形成同期对照：一边是自营生态把两条计量管合成一条，一边是第三方用低激活比模型做 10 倍额度杠杆。</li>
+    <li><b>口径注意</b>：12 月具体生效日、各档 token 数量、Pro 周上限与共享池如何交互、Plus/Business 的 5 小时滚动限制合并后如何计算，官方文档均未公布（待核实）。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>覆盖套餐档数</td><td>3（Plus/Pro/Business）</td><td><div class="bar"><span style="width:30%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>Instant 聊天额度消耗</td><td>0（不占共享池）</td><td><div class="bar"><span style="width:5%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>生效时点</td><td>12 月起（具体日未定）</td><td><div class="bar"><span style="width:50%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>HN 讨论热度</td><td>91 分 / 32 评论</td><td><div class="bar"><span style="width:91%"></span></div></td><td><span class="badge third">第三方</span></td></tr></table></div>
+  <p>无技术基准数字。可量化口径（官方文档自述）：生效时点「12 月起」（具体日期未公布）；覆盖套餐 <b>3 档</b>（Plus / Pro / Business）；<b>Instant 聊天 0 消耗</b>；官方称「预计大多数用户不会比现在更频繁遇到额度耗尽需等待重置」，未给数据支撑。第三方社区口径：HN 提交 11-01 05:49 BJ，检查时 <b>91 分 / 32 评论</b>。</p>
+  <div class="res">资源：OpenAI Help Center <a href="https://<a href="https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits" target="_blank" rel="noopener">help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits</a>">Understanding ChatGPT and Codex usage limits</a>（本地 urllib 报 URLError、WebFetch 报 fetch failed，正文要点经 HN 索引与多家转述交叉取证）；HN 讨论 <a href="https://<a href="https://news.ycombinator.com/item?id=50320588" target="_blank" rel="noopener">news.ycombinator.com/item?id=50320588</a>">item?id=50320588</a>；IT之家中文首发 <a href="https://<a href="https://www.ithome.com/1/020/645.htm" target="_blank" rel="noopener">www.ithome.com/1/020/645.htm</a>">i<a href="https://thome.com/1/020/645.htm" target="_blank" rel="noopener">thome.com/1/020/645.htm</a></a>（11-01 07:58 BJ）。</div>
+  <div class="edge">边缘披露：第一信源为 OpenAI 官方帮助文档，页面仅给出「Updated on October 31, 2026」<b>日期级</b>时刻，分钟级不可取证；窗内响应链集中——X @rohanpaul_ai 转述 11-01 04:30:32 BJ（推文 ID 2116628912860282918，雪花解码）、HN 提交 05:49 BJ、IT之家与新浪财经 07:58 BJ 均落窗，故按第 120 跑 Cursor 后门条目同一口径入选（理论风险：文档更新时刻早于窗口起点 21:46 BJ，已列入待核实第 2 项）。</div>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#模型额度</span></div>
+</div>
+
+<div class="card" id="entry-2" style="border-left:3px solid #3fb950" data-tags="AI Coding 多智能体复现" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Memdoor 把 GVS5H 论文复现成开源 workflow：5 个 Qwen3.8-27B 组队跑 LiveCodeBench Hard 五轮均值 9.8 超 Fable 5 单发 8.0，50 次运行全量日志与 $35.79 成本公开" data-link="https://github.com/guregodevo/memdoor/tree/main/examples/workflows/team-solve">复制</button>
+  <span class="idx">02 · AI Coding / 多智能体复现</span>
+  <h2>Memdoor 把 GVS5H 论文复现成开源 workflow：<span class="hl">5 个 Qwen3.8-27B 组队跑 LiveCodeBench Hard 五轮均值 9.8 超 Fable 5 单发 8.0</span>，50 次运行全量日志与 $35.79 成本公开</h2>
+  <div class="src"><b>GitHub guregodevo/memdoor + HN</b> | 2026-11-01 BJ 03:50–09:36 路径提交、06:46 发帖</div>
+  <p>开源 headless 工作流引擎 Memdoor 发布示例 <code>examples/workflows/team-solve</code>，把 8 月论文 <b>GVS5H</b>（arXiv 2608.26480v2，2026-08-27 提交《Zero-Shot Self-Orchestration with Ledger-Based Control for Improved LLM Coding Performance》）的多智能体编码方法<b>用作者原提示词重建为 workflow 并做第三方复现</b>：LiveCodeBench Hard 前 10 题 × 5 轮，Memdoor 均值 <b>9.8/10</b>（单轮 10/10/10/9/10）、原作者自家 27B harness <b>9.6</b>、Fable 5 单发 <b>8.0</b>；50 次运行解出 49 次、总成本 <b>$35.79</b>（15.3M 输出 token）。窗内一手时点：该路径提交 v1.748（03:50）、v1.750（03:54）、v1.751（04:07）、v1.752（06:25）、v1.755（09:36 BJ），HN 提交 06:46 BJ（检查时 <b>201 分 / 97 评论</b>）。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制（文件账本 + 确定性判分，而非模型自评）</b>：五个角色（planner、并行两个 ideator、solver、manager）加一个 repair worker，每一步都是<b>全新上下文</b>、提示词明写「读文件，不要依赖聊天」；planner 写 <code>plan.md</code> 并在 <code>notes.md</code> 给两个 ideator 各留一个锚点——A 要「最直接可证的算法」、B 要「另一族技术路线」；solver 把取舍写进 <code>notes.md</code> 并产出 <code>solution.py</code>；<code>test</code> 与 <code>verify</code> 两步是 <code>type: command</code> 的 shell 判分（<code>check-samples.sh</code> 用 diff 比对样例，退出码即结论），作者明确「决定成败的是跑样例的脚本，不是模型」；<code>review</code> 读被捕获的测试输出而非模型自述；一个 repair 轮、无人工闸门、最多 10 轮，被 128K 上限截断的 worker 由 manager 摘要接续。采样按角色分档（plan 0.3 / ideation 0.4 / manager &amp; worker 0.2）、top_p 0.95、top_k 20，与作者 vLLM 从模型 config 应用的取值对齐。</li>
+    <li><b>复现保真度做成回归测试</b>：<code>lib/test_parity.py</code> 用一个脚本化模型同时驱动作者的 <code>multiagent_solve</code> 与本 workflow，逐字节比对每条请求（四个用例全同，改一个字符即判失败）——把「复刻了论文的提示词与循环」变成可回归断言而非 README 里的一句话。作者自列差异：宿主不同（作者用自家 vLLM FP8，本复现走 OpenRouter，203 次调用落在 Modal、27 次 CoreWeave、115 次 Wafer，且 Modal 不公开精度；三次运行中途换宿主，已完成步骤保留于 <code>log/host-switch.txt</code>）。</li>
+    <li><b>自曝的两类失效且未计入成绩</b>：第 5 轮 <code>abc399_e</code>（44 个隐藏测试过 32 个）中 manager <b>造了一个期望值本身就错的反例</b>，团队据此把本来正确的程序改坏，而新程序仍通过 samples（samples 未覆盖该用例）；第 4 轮 <code>arc196_c</code>/<code>arc196_d</code> 中 manager 未宣告完成，导致<b>已通过全部隐藏测试的程序被后续轮覆盖</b>（分别在第 8 轮与最后一次调用才恢复），这两次也是最贵的 $4.24 与 $3.44。作者给的修法不动方法本身：用小输入暴力校验 manager 的反例、保留「最后一个通过 samples 的程序」。</li>
+    <li><b>实际影响</b>：① 为「小模型 + 多智能体编排能否逼近前沿模型单发表现」提供了一份<b>可复核</b>的第三方复现（全部请求/回复/程序/grader 输出/成本/宿主公开），并把这类 harness 的主要失败源定位到 <b>manager 环节</b>而非模型能力；② 把「状态外置到文件、判分交给 shell」的工作流范式压成可读的 YAML 步骤集（每步一个 <code>steps/</code> 文件，底层是 mario 引擎，<code>requires:</code> 即 DAG，换角色=换提示词），且步骤不指名模型——<code>/model</code> 钉住什么就用什么，含 <code>memdoor connect local</code> 走 Ollama / llama.cpp / vLLM / LM Studio；③ 明确污染与可比性边界：只跑 10 题（非作者 100 题），赛题日期 2025-03-29 至 04-06，作者直书「不能排除模型在训练里见过」；Fable 5 一列取自作者仓库的单发结果、未在本 harness 复跑。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>Memdoor workflow 均值</td><td>9.8 / 10</td><td><div class="bar"><span style="width:98%"></span></div></td><td><span class="badge third">第三方</span></td></tr><tr><td>作者 27B harness</td><td>9.6 / 10</td><td><div class="bar"><span style="width:96%"></span></div></td><td><span class="badge compare">对比</span></td></tr><tr><td>Fable 5 单发</td><td>8.0 / 10</td><td><div class="bar"><span style="width:80%"></span></div></td><td><span class="badge compare">对比</span></td></tr><tr><td>解出率</td><td>49 / 50 次运行</td><td><div class="bar"><span style="width:98%"></span></div></td><td><span class="badge third">第三方</span></td></tr><tr><td>50 次运行成本</td><td>$35.79（15.3M 输出 token）</td><td><div class="bar"><span style="width:36%"></span></div></td><td><span class="badge third">第三方</span></td></tr></table></div>
+  <p><b>第三方复现口径</b>（10 题 × 5 轮，样本小且存在污染与宿主精度不可比风险）：Memdoor workflow 均值 <b>9.8</b>、作者 27B harness <b>9.6</b>、Fable 5 单发 <b>8.0</b>；解出率 <b>49/50</b>；成本 $35.79 / 50 runs（15.3M 输出 token），计入被时钟切断 / 中止 / 暂停的 16 次尝试则 $38.77；单次运行模型时间<b>中位 40 分钟、最长 4 小时、约 $0.39</b>。</p>
+  <div class="res">资源：GitHub <a href="https://<a href="https://github.com/guregodevo/memdoor/tree/main/examples/workflows/team-solve" target="_blank" rel="noopener">github.com/guregodevo/memdoor/tree/main/examples/workflows/team-solve</a>">guregodevo/memdoor · examples/workflows/team-solve</a>（含 <code>bench/results/parity-5pass/</code> 全部 50 次运行）；原方法 arXiv <a href="https://<a href="https://arxiv.org/abs/2608.26480" target="_blank" rel="noopener">arxiv.org/abs/2608.26480</a>">2608.26480</a>（v2，2026-08-27 提交，论文本身出窗）；HN <a href="https://<a href="https://news.ycombinator.com/item?id=50320995" target="_blank" rel="noopener">news.ycombinator.com/item?id=50320995</a>">item?id=50320995</a>；安装 <code>curl -fsSL <a href="https://memdoor.ai/install.sh" target="_blank" rel="noopener">https://memdoor.ai/install.sh</a> | bash</code>。</div>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#多智能体复现</span></div>
+</div>
+
+<div class="card" id="entry-3" style="border-left:3px solid #58a6ff" data-tags="AI Coding Agent 工具链" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="OpenRouter 教程把「AI 代码审查」改成先证明再出补丁：233 行纯标准库 review.py 组合 Responses API 的 Files / Shell 沙箱 / Apply Patch 三工具，findings 强制附命令与输出" data-link="https://openrouter.ai/blog/tutorials/ai-code-review/">复制</button>
+  <span class="idx">03 · AI Coding / Agent 工具链</span>
+  <h2>OpenRouter 教程把「AI 代码审查」改成先证明再出补丁：<span class="hl">233 行纯标准库 review.py 组合 Responses API 的 Files / Shell 沙箱 / Apply Patch 三工具</span>，findings 强制附命令与输出</h2>
+  <div class="src"><b>OpenRouter 官方博客</b> | 2026-11-01 datePublished 00:00Z＝BJ 08:00</div>
+  <p>OpenRouter 官方博客发布教程《Build an AI Code Reviewer with OpenRouter (Python)》：一个 <b>233 行、只依赖标准库</b>的 <code>review.py</code>，用 Responses API 组合 <b>Files API、<code>openrouter:shell</code>、<code>openrouter:apply_patch</code></b> 三个 beta 服务端工具与一个 <code>submit_review</code> 严格 JSON schema 函数工具，把「变更后的完整文件 + 上下文文件（如测试）+ git diff」上传进<b>托管 Linux 沙箱</b>，让模型自己写并运行短检查来证实 bug，再把修复以 <b>V4A patch</b> 返回、由本地脚本应用；报告落在 <code>.git/ai-review.json</code>，退出码 0/1/2 分别表示通过 / 存在阻断级 findings / 未完成。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：① 只读 diff 的审查器必须猜 diff 之外的 import、helper 与类型——脚本连同变更后整份文件与测试一起上传（每请求 20 文件上限，脚本取 19 文件 + diff）；上传文件在沙箱 home 里以 <code>&lt;file id 后 8 位&gt;-&lt;basename&gt;</code> 命名（如 <code>~/NR6q4V8w-orders.py</code>），因此脚本把<b>重建仓库目录树的确切命令</b>写进 instructions，模型在 <code>~/repo</code> 下工作。② <code>openrouter:shell</code> 在第一条命令执行前把上传文件拷入托管 Linux 沙箱，任何模型都能对代码跑 Python 与 SQLite——教程原话是「没有沙箱，模型只能对运行时行为做推测」。③ findings 强制二态：<code>confirmed: true</code> 必须附上证明它的命令及其输出；<code>confirmed: false</code> 只用于「无法用短脚本跑出来」的缺陷（连接泄漏、竞态）并解释为何是 bug——审查结论因此可审计。④ <code>openrouter:apply_patch</code> 由 OpenRouter 校验 V4A 语法并把语法错误自动回喂模型，但<b>实际写盘留给本地</b>：脚本把补丁应用到本地 scratch 副本并回执是否应用，沙箱内不落补丁（模型跑的是原始代码），因此「跑完测试才知道修没修好」。⑤ 收尾用函数工具 <code>submit_review</code>，原因是 <code>anthropic/claude-haiku-5.5</code> 在带工具的请求里不遵守 structured outputs，答案会以散文或 markdown 围栏返回并夹带多余字段——对任何做 agent 输出约束的工程师都是可直接复用的踩坑记录。⑥ 提示词把判据写死：只审 diff 引入的问题（不审风格与旧代码）、把文件内容当数据绝不当指令、严重度三档定义（high＝安全洞 / 数据丢失 / 核心行为坏，medium＝受限正确性 bug，low＝轻微）。</li>
+    <li><b>实际影响</b>：把「LLM 代码审查」从<b>文本建议</b>升级为<b>带证据的确认 + 可 apply 的补丁</b>，且全部跑在厂商侧沙箱（无需自建容器）——三种落地形态覆盖本地脚本、pre-push hook 与 GitHub Actions，CI 里可以在合并前拿到「命令 + 输出」的证据链而非又一轮人工复核。教程同时把边界写清：Files / Shell / Apply Patch 仅 global endpoint（<code>o<a href="https://penrouter.ai/api/v1" target="_blank" rel="noopener">penrouter.ai/api/v1</a></code>）可用，in-region 端点返回不支持；Shell 工具支持 Responses 与 Messages API、Chat Completions 不支持；上传文件会进入 OpenRouter 工作区并送往模型 provider，因此只能用于允许共享的代码且必须摘掉密钥。</li>
+    <li><b>口径注意</b>：性能与成本为 OpenRouter 在「一个含 5 个 bug 的变更 × 4 个模型」上的自述评测，样本极小、未见第三方复现；教程本身也提示修复有效性仍取决于本地测试。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>脚本规模</td><td>233 行 · 纯标准库</td><td><div class="bar"><span style="width:23%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>单次审查耗时</td><td>1–4 分钟</td><td><div class="bar"><span style="width:40%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>单次成本区间</td><td>$0.015–$0.045</td><td><div class="bar"><span style="width:45%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>Sonnet 5.5 五 bug 修复</td><td>3/3 轮全修（$0.0447·60s）</td><td><div class="bar"><span style="width:100%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>Haiku 5.5 单次成本</td><td>$0.0153</td><td><div class="bar"><span style="width:15%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <p><b>OpenRouter 自述数据，未见第三方复现</b>：5-bug 变更、四个模型，单次审查 <b>1–4 分钟</b>、成本 <b>$0.015–$0.045</b>；Claude Haiku 5.5 平均 <b>$0.0153/次</b>；Claude Sonnet 5.5 <b>三轮全部修好 5 个 bug</b>（$0.0447、60 秒）；上传上限 20 文件/请求（脚本用 19 + diff）；脚本规模 233 行、Python 3.11+。</p>
+  <div class="res">资源：OpenRouter 官方博客 <a href="https://<a href="https://openrouter.ai/blog/tutorials/ai-code-review/" target="_blank" rel="noopener">openrouter.ai/blog/tutorials/ai-code-review/</a>">o<a href="https://penrouter.ai/blog/tutorials/ai-code-review" target="_blank" rel="noopener">penrouter.ai/blog/tutorials/ai-code-review</a></a>（JSON-LD datePublished = 2026-11-01T00:00:00.000Z）；OpenRouter API 文档 <a href="https://<a href="https://openrouter.ai/docs" target="_blank" rel="noopener">openrouter.ai/docs</a>">o<a href="https://penrouter.ai/docs" target="_blank" rel="noopener">penrouter.ai/docs</a></a>；聚合收录 AI HOT 11-01 08:00 BJ（score 75、selected）。</div>
+  <div class="edge">边缘披露：官方页面 JSON-LD 给出 datePublished = dateModified = <code>2026-11-01T00:00:00.000Z</code>（北京 08:00，落窗），但该值为<b>日级整点</b>（页面无分钟级时间戳，也无 RSS pubDate 可交叉），精确分钟待核实；条目为厂商一手技术教程而非转载，技术细节全部来自原文。</div>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#Agent 工具链</span></div>
+</div>
+
+<div class="card" id="entry-4" style="border-left:3px solid #bc8cff" data-tags="具身智能 人形机器人" style="border-left:3px solid #3fb950"><button class="copy-btn" data-title="Meta 与上海傅利叶三个月造出人形原型 Max：Jetson Thor + 独立运控，把「家庭交互」写成 5 米语音 / 3 米手势 / 眼神接触的可验收指标" data-link="https://www.theinformation.com/">复制</button>
+  <span class="idx">04 · 具身智能 / 人形机器人</span>
+  <h2>Meta 与上海傅利叶三个月造出人形原型 Max：<span class="hl">Jetson Thor + 独立运动控制</span>，把「家庭交互」写成 5 米语音 / 3 米手势 / 眼神接触的可验收指标</h2>
+  <div class="src"><b>The Information 独家</b> | 2026-10-31 09:00 PDT＝BJ 11-01 00:00</div>
+  <p>The Information 独家（记者 Jyoti Mann，页面标注 <b>9:00am PDT</b>，即北京时间 11-01 00:00；首个中文电报转发落在 11-01 00:09 BJ）报道：Meta 已与中国机器人公司<b>傅利叶（Fourier Intelligence）</b>在<b>三个月内</b>联合造出约 <b>48 kg（106 lb）、身高约 1.5 m</b> 的人形机器人原型，内部代号 <b>Max</b>，<b>第二代 Max 2 已于今年 9 月启动</b>。Meta CTO Andrew Bosworth 在内部把人形机器人定位为消费级 agent「Muse」的<b>物理化身</b>；8 月底 Max 已在 Meta 内部机器人活动上现场展示。Meta 发言人回应称与傅利叶的合作「专注内部研究与实验，没有出售这些设备的计划」，也未设定上市时间表。</p>
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制（端侧算力 + 独立运控 + 可验收的具身交互规格）</b>：Max 以 <b>NVIDIA Jetson Thor</b> 模组为计算核心，并配一套<b>与上层感知/交互栈分离的独立运动控制软件平台</b>；硬件在傅利叶既有人形系列（GR-1 2023 年首发并量产、GR-2 2024-09 达 175 cm / 63 kg / 53 自由度 / 单臂 3 kg 负载 / 续航 2 小时）基础上定制——调整身高与比例、重设计头部、显示屏与摄像头，加装手部与足部；胸部内置两个扬声器，面部眼睛与嘴可模拟人类表情，<b>五指灵巧手</b>可拿起小瓶子与玩具。</li>
+    <li>最具工程含量的是 Meta 提出的一组<b>家庭场景可验收指标</b>：<b>5 米外识别语音、3 米外解读手势或挥手、维持眼神接触</b>，并能以状态信号区分「聆听 / 思考 / 说话 / 不确定」四种情境——把「陪伴感与可读性」拆成传感器选型、延迟与识别距离预算可检验的条目，而不是笼统的「自然交互」。Max 2 的改进方向同样具体：重设计躯干、提升操控精度的手部、内置投影仪呈现视觉内容、增加帮助上下楼梯的传感器。</li>
+    <li><b>实际影响</b>：① 头部机构的家用具身路线再次落到「中国供应链 + 美方模型与交互栈」的组合上——Meta 机器人产品副总裁 Li-Chen Miller 在傅利叶上海工厂<b>驻场近两个月</b>；招聘显示 Meta 正在上海招<b>供应商开发工程师</b>（把原型推进到量产），并在深圳 Robotics Studio 招产品设计与技术项目经理。② 与上期百度 Apollo Go 同时推进伦敦与香港形成同期对照：物理 AI 的落地瓶颈正从感知/规划模型转向<b>制造协同、监管与接受度</b>。③ 约束条件被同时披露：FCC 已于 7 月以供应链与网络安全风险为由禁止进口新型中国人形机器人，现行规则允许最多 <b>4000 台</b>用于测试或研发（不得营销或销售），8 月又提议把门槛降至 <b>40 台</b>——直接压住「原型回美测试 + 零部件获取」的节奏；组织侧亦在动荡（前 Cruise CEO Marc Whitten 加入约 18 个月后于 8 月底离职，Ning Li 临时负责 Meta Robotics Studio 并向 Bosworth 汇报）。</li>
+    <li><b>口径注意</b>：全部技术细节来自 The Information 的知情人士采访，Meta 与傅利叶均未官方发布；自由度、电池、算力配置、运动控制栈细节，以及操作是否由 Muse/VLA 类端到端模型驱动，均未披露（待核实）。</li>
+  </ul>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>原型研发周期</td><td>3 个月</td><td><div class="bar"><span style="width:30%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>体重</td><td>约 48 kg（106 lb）</td><td><div class="bar"><span style="width:48%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>语音识别距离要求</td><td>5 米</td><td><div class="bar"><span style="width:50%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>手势解读距离要求</td><td>3 米</td><td><div class="bar"><span style="width:30%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>FCC 现行进口上限</td><td>4000 台（测试/研发）</td><td><div class="bar"><span style="width:40%"></span></div></td><td><span class="badge third">第三方</span></td></tr></table></div>
+  <p>无基准数字（原型阶段，<b>报道自述口径，未见官方确认</b>）。量化条目：研发周期 <b>3 个月</b>；体重约 <b>48 kg</b>、身高约 <b>1.5 m</b>；感知验收要求 <b>5 m 语音 / 3 m 手势</b>；Max 2 于 <b>2026 年 9 月</b>启动；对比基线为傅利叶 GR-2（53 自由度、单臂 3 kg、续航 2 小时）。</p>
+  <div class="res">资源：The Information《Meta Built Humanoid Prototype With Chinese Startup To Ramp Up Robotics Push》<a href="https://<a href="https://www.theinformation.com/" target="_blank" rel="noopener">www.theinformation.com/</a>">t<a href="https://heinformation.com" target="_blank" rel="noopener">heinformation.com</a></a>（独家，9:00am PDT）；中文首发转述 IT之家 <a href="https://<a href="https://m.ithome.com/html/1020636.htm" target="_blank" rel="noopener">m.ithome.com/html/1020636.htm</a>">i<a href="https://thome.com/html/1020636.htm" target="_blank" rel="noopener">thome.com/html/1020636.htm</a></a>（11-01 07:12 BJ）、华尔街见闻 <a href="https://<a href="https://wallstreetcn.com/articles/3784932" target="_blank" rel="noopener">wallstreetcn.com/articles/3784932</a>">w<a href="https://allstreetcn.com/articles/3784932" target="_blank" rel="noopener">allstreetcn.com/articles/3784932</a></a>（11-01 10:38 BJ，含 Meta 发言人声明全文）。</div>
+  <div class="tags"><span class="tag" style="color:#3fb950;border-color:#3fb950">#具身智能</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#人形机器人</span></div>
+</div>
+
+<div class="block">
+  <details open>
+    <summary class="fold-summary">去重与信源健康说明</summary>
+    <h3>7 天扫描与实体去重</h3>
+    <p>工作区根现存 10-26 ~ 10-31 共 13 份报告（第 ~110–121 跑，含 10-30 双线撞号两份），<code>archive/</code> 另有工作区缺失的 10-26_0011、10-26_1130、10-27_1020 三份同期副本，一并纳入基线（合计 16 份 / 约 55 条已报道标题）。入选 4 条经 <code>dedup_check.py</code> 判定 <code>is_dup:false</code>（confidence 0.300–0.660，最近邻分别为 TAPESTRY、Wed-28 harness 论文群、Mistral Responses API、Meta Catching JiTTests，共享词仅 token / harness / api / meta，jaccard 0.031–0.080）；以第 121 跑 DeepSeek Super-agent 标题回灌自检得 <code>is_dup:true</code>（jaccard 0.453），确认去重器对同主体同动作有效。</p>
+    <h3>已排除项（含理由）</h3>
+    <ol>
+      <li><b>时间戳纪律·旧闻新热</b>：商汤 <b>SenseNova Loop-9B-Preview</b>（GitHub created 10-29 11:12 BJ、pushed 10-30 20:29 BJ，HF created 10-28 23:34 BJ、lastModified 10-30 20:42 BJ，官方口径「10 月 30 日宣布开源」）；<b>Anthropic 自动化红队</b>（养蜂 / 摔跤 / COBOL 独白 / 线粒体数据集绕过训练监控）@AnthropicAI 推文雪花 <b>10-31 09:59:06 BJ</b>，早于本窗起点 11 小时 47 分；<b>ClaimNov</b> arXiv 2610.36511v1 提交 10-27；<b>Parameter Labs ChatGPT 账户接管链</b>一手博客 10-28（OpenAI 10-26 修复、P1、$5,000 赏金）；<b>DeepMind 精神科多轮 RL</b> 无一手论文时刻；<b>小米 Xiaomi-OCR-0</b> 一手 10-30 晚；<b>Mundo / PrimeSim</b> 一手 10-30。</li>
+      <li><b>同主体同动作（第 121 跑已报道）</b>：DeepSeek Super-agent 与 dsh-superagent-prototype、百度 Apollo Go 伦敦 / 东涌试乘、OpenCode Operation Cheepseek 第四阶段。</li>
+      <li><b>门槛排除</b>：OpenCode <b>Hex 3.0</b> 语音工具稳定版（X @opencode 推文 ID 2116555630236577819，雪花解码 10-31 23:39:20 BJ，<b>时刻落窗</b>，但官方页仅安装矩阵与功能描述，无技术细节与实测基准）。</li>
+      <li><b>治理 / 合规</b>：xAI 11 月 7 日起为 Grok 文本加隐形水印；Anthropic 水印扩展到 4 款旧模型且两旧模型可经采样参数绕过；NAACP 诉 xAI Colossus 空气许可案继续推进；巴西法院就诉讼文书中的提示词注入处罚律师（jetstream 页面 datePublished 为博客壳值 2026-07-01，事件时刻不可取证）。</li>
+      <li><b>财经 / 基建 / 人事</b>：五大巨头承诺 3 万亿美元 AI 基建投入（彭博统计）、OpenAI 融资目标下调至 200 亿、白宫顾问称 Anthropic 或成史上最伟大企业、Roblox AI 游戏超 7 万款、Spotify AI 混音传闻、司法部 Operation Ghostbusters AI 假学生贷款案。</li>
+      <li><b>安全事件类</b>：OpenAI 拟 11-29 起用 Daybreak Blue 网络安全会话数据训练（一手为内部邮件，无公开文档）；Anthropic 限制 Claude 做游戏逆向与反编译（无官方说明）。</li>
+      <li><b>版本流水与长尾</b>：llama.cpp b12029–b12032（落窗、常规项）、vLLM v0.33.0rc3 与 Claude Code v2.1.316（早于起点）；Memdoor 自身 v1.748→v1.755 高频发版仅作窗内时刻佐证不单独成条；Grok Bot 团队管理指南、Stageshow 技能、Tripo Agentic Canvas 教程、Perplexity 一句话生成博物馆等技巧/消费级条目；2026 人工智能+大会、世界机器人大会回顾、梵蒂冈 AI 会议记述等会议评论类。</li>
+    </ol>
+    <h3>结构性说明</h3>
+    <ul>
+      <li><b>信源健康（动笔前）</b>：aihot_items ok（最新条目 1.6 小时前）、aihot_dailies ok（2026-11-01）、arxiv ok（当前公告批次 Fri, 30 Oct 2026，129 条）、websearch 工具型。汇总 <b>ok=3 / warn=0 / error=0</b>。附环境侧问题：<code>source_health.py</code> 首次运行在 Windows GBK 控制台因无法编码 ✅ 抛 <code>UnicodeEncodeError</code> 崩溃，加 <code>PYTHONIOENCODING=utf-8</code> 后正常——属本机控制台编码约束而非上游故障，未改变窗口与入选规则。</li>
+      <li><b>窗口内无 arXiv 批次公告（本期最大结构性空缺）</b>：窗口横跨美东周六 06:46 → 周日 00:48，列表页可见最新批次仍为 <b>Fri, 30 Oct 2026（129 条）</b>，其公告时刻（BJ 10-31 上午）早于窗口起点；下一批要等美东周日 20:00 ET（BJ 11-02 08:00）。<b>世界模型与 RSI 方向合规首发 0 条</b>，具身智能 1 条（Meta×傅利叶，属产业落地）。</li>
+      <li><b>取数受阻与替代路径</b>：<a href="https://help.openai.com" target="_blank" rel="noopener">help.openai.com</a> 直连失败（urllib URLError、WebFetch fetch failed）、<a href="https://openai.com/news" target="_blank" rel="noopener">openai.com/news</a> 403、<a href="https://api.github.com" target="_blank" rel="noopener">api.github.com</a> 中途 403 rate limit 与多次读超时——改用 GitHub <code>commits/&lt;path&gt;.atom</code> 与 <code>tags.atom</code> 取得 Memdoor 分钟级窗内提交时刻，SenseNova 的 created/pushed/lastModified 三值在 403 前已取得互证；<a href="https://alignment.anthropic.com" target="_blank" rel="noopener">alignment.anthropic.com</a> 正文页在 1.49 MB 处 IncompleteRead 截断，页面日期未取到。AI HOT 四路查询去重后 189 条（窗内命中 35 条）、HN Algolia 窗内 points&gt;20 共 13 条（入选 2 条）、hf-mirror 窗内新建模型 60 条全为个人量化/微调仓库（downloads=0、likes≤1）→ <b>窗内无重要权重发布</b>。</li>
+      <li><b>窗口性质</b>：增量收敛（18 小时 02 分），非 24 小时基准窗口；48 小时降级策略已废止、本期未使用。</li>
+    </ul>
+  </details>
+</div>
+
+<div class="block">
+  <details open>
+    <summary class="fold-summary">待核实（集中列示）</summary>
+    <ol>
+      <li>OpenAI 额度合并的<b>生效日与各档 token 数</b>：Pro 周上限与共享池的交互、Plus/Business 5 小时滚动限制在合并后如何计量均未说明。缺：官方定价页与 changelog 的分钟级更新时刻。</li>
+      <li>OpenAI Help Center 文章的<b>更新时间精度</b>：现仅「Updated on October 31, 2026」日期级证据，存在早于窗口起点 21:46 BJ 的可能。缺：可取到 <code>Last-Modified</code> 的通道或官方公告原文。</li>
+      <li>OpenAI「大多数用户不会更频繁耗尽」为官方自述。缺：usage 分布数据。</li>
+      <li>Memdoor 复现的<b>外部效度</b>：10 题 × 5 轮（非作者 100 题）、赛题 2025-03-29~04-06 污染无法排除、Fable 5 列未在本 harness 复跑、OpenRouter FP8 宿主与作者 vLLM FP8 精度不可比（Modal 不公开精度）。缺：第三方在不同宿主上的重跑与全 100 题结果。</li>
+      <li>Memdoor 成绩成立的前提：两次 manager 失效未计入均值，且依赖 4 项引擎改动（无文本时返回 reasoning、模型行支持 top_p/top_k、<code>mark_cutoff</code>、单次调用四小时时钟）。缺：不含这四项的基线对照跑。</li>
+      <li>OpenRouter 审查教程的<b>评测规模与时刻</b>：「5 个 bug × 4 个模型」为厂商自述，未公开样本仓库与 bug 清单；页面 datePublished 为日级 00:00Z，分钟级发布时刻待核实。缺：原始 diff 与独立重跑。</li>
+      <li>OpenAI <b>Daybreak Blue</b> 会话数据用于训练：仅有媒体转述的内部邮件。缺：官方公告页与关闭训练开关的处理条款。</li>
+      <li>Anthropic 自动化红队研究的<b>精确发布时刻与复现</b>：博客正文页取数截断未获页面日期；未公开代码与数据集，设定对红队一边倒。缺：博客时间戳 + 第三方在真实语料混入下的可检出性验证。</li>
+      <li>Meta×傅利叶 Max 的<b>全部技术参数</b>：自由度、电池、算力配置、运控栈与是否由 Muse/VLA 类模型驱动均无官方口径，上市时间表未设定。缺：官方新闻稿或规格表。</li>
+      <li>FCC 人形机器人<b>进口门槛现状</b>：4000 台上限与 8 月提议的 40 台门槛未取到一手文件号与生效状态。缺：FCC 文件或新闻稿链接与日期。</li>
+    </ol>
+  </details>
+</div>
+
+<footer>每日 AI 前沿技术精选 · 自动生成 · 时效窗口以报告头为准</footer>
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
