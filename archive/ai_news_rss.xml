@@ -3,7 +3,21 @@
 <title>每日 AI 前沿技术精选</title>
 <link>https://local.invalid/ai-news</link>
 <description>每日 AI 前沿技术精选 · 结构化条目流</description>
-<lastBuildDate>Sun, 01 Nov 2026 15:48:45 -0000</lastBuildDate>
+<lastBuildDate>Mon, 02 Nov 2026 01:59:34 -0000</lastBuildDate>
+<item>
+<title>微软 AI 负责人 Mustafa Suleyman 发文《Don't build conscious superintelligence》：主张只造无意识、无权利、无内在动机的系统，训练中若现意识迹象应叫停</title>
+<link>每日AI新闻推送_20261102_0936.html</link>
+<guid isPermaLink="false">20261102_0936-微软 AI 负责人 Mustafa Suleyman 发文《Don't build conscious superintelligence》：主张只造无意识、无权利、无内在动机的系统，训练中若现意识迹象应叫停</guid>
+<pubDate>2026-11-02</pubDate>
+<category>AI安全、模型福利</category>
+</item>
+<item>
+<title>Grok Bot 工程负责人 Lauren Tan 复盘 4 天 AI 写游戏：约 1150 个 PR、「每发现一个问题就让 bot 加一条 lint 规则」、TLA+ 形式化验证状态机</title>
+<link>每日AI新闻推送_20261102_0936.html</link>
+<guid isPermaLink="false">20261102_0936-Grok Bot 工程负责人 Lauren Tan 复盘 4 天 AI 写游戏：约 1150 个 PR、「每发现一个问题就让 bot 加一条 lint 规则」、TLA+ 形式化验证状态机</guid>
+<pubDate>2026-11-02</pubDate>
+<category>AI Coding、工程实践</category>
+</item>
 <item>
 <title>Pranjal Garg 的受控 RL 实验：监控规避取决于「RL 能找到什么」与「监控本来就漏什么」——把欺骗性 hack 的起始概率压到 1e-6 即可阻止规避，而总体 AUROC 0.99 的激活探针面对欺骗样本只有 0.51</title>
 <link>每日AI新闻推送_20261101_2247.html</link>
