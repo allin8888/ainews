@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-11-03</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --card2: #1c2129;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --blue: #58a6ff;
+    --green: #3fb950;
+    --orange: #d29922;
+    --red: #f85149;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    line-height: 1.75;
+    padding: 24px 16px 64px;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; }
+  header.hero {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+  }
+  header.hero h1 { font-size: 1.7em; margin-bottom: 14px; color: var(--text); }
+  header.hero h1 span { color: var(--blue); }
+  .meta { display: flex; flex-wrap: wrap; gap: 10px 22px; color: var(--muted); font-size: 0.95em; }
+  .meta b { color: var(--text); font-weight: 600; }
+  .section-title {
+    font-size: 1.25em;
+    margin: 30px 0 14px;
+    padding-left: 12px;
+    border-left: 4px solid var(--blue);
+    color: var(--text);
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+  }
+  .card h2 { font-size: 1.2em; color: var(--blue); margin-bottom: 12px; line-height: 1.5; }
+  .src { color: var(--muted); font-size: 0.88em; font-weight: 400; }
+  .card h3 { font-size: 1.0em; color: var(--green); margin: 16px 0 6px; }
+  .card p { margin: 8px 0; }
+  .card ul { margin: 8px 0 8px 22px; }
+  .card li { margin: 6px 0; }
+  .card li b { color: var(--text); }
+  .muted { color: var(--muted); font-size: 0.92em; }
+  code {
+    background: var(--card2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.88em;
+    color: var(--orange);
+    word-break: break-all;
+  }
+  .link { color: var(--blue); word-break: break-all; font-size: 0.92em; }
+  .tag {
+    display: inline-block;
+    background: rgba(88, 166, 255, 0.12);
+    border: 1px solid rgba(88, 166, 255, 0.4);
+    color: var(--blue);
+    border-radius: 999px;
+    padding: 2px 12px;
+    font-size: 0.82em;
+    margin-right: 8px;
+  }
+  .excl {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 26px;
+    margin-bottom: 20px;
+    font-size: 0.95em;
+  }
+  .excl h4 { color: var(--orange); margin: 12px 0 6px; }
+  .excl ul { margin-left: 22px; }
+  .excl li { margin: 6px 0; }
+  .excl p { margin: 8px 0; }
+  .divider { border: none; border-top: 1px dashed var(--border); margin: 28px 0; }
+  footer { text-align: center; color: var(--muted); font-size: 0.85em; margin-top: 40px; }
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1>每日 AI 前沿技术精选 <span>· 2026-11-03</span></h1>
+  <div class="meta">
+    <span>精选条数 <b>6 条</b></span>
+    <span>时效窗口 <b>2026-11-03 08:45 – 2026-11-03 16:55</b>（严格24小时，增量收敛）</span>
+    <span>生成时间 <b>16:55</b></span>
+  </div>
+</header>
+
+<div class="section-title">今日精选</div>
+
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="RSI">RSI</button>
+<button class="filter-chip" data-tag="Agent基础设施">Agent基础设施</button>
+<button class="filter-chip" data-tag="AI Coding">AI Coding</button>
+<button class="filter-chip" data-tag="ComputerUseAgent">ComputerUseAgent</button>
+<button class="filter-chip" data-tag="世界模型">世界模型</button>
+<button class="filter-chip" data-tag="自动驾驶">自动驾驶</button>
+<button class="filter-chip" data-tag="具身智能">具身智能</button>
+<button class="filter-chip" data-tag="人形机器人">人形机器人</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. Exo：把优化循环折叠进任务执行的 agent 运行时自我改进架构——在岗学习中同时修订 harness 与策略，模型成本对 Codex 降 12–53%</a><a class="toc-item" href="#entry-2">2. NorthCUA 技术报告：经验飞轮 + 递归自我改进 + 桌面/网页联合 RL，开源 CUA 模型家族 Nano/Mini/Pro/Ultrafast</a><a class="toc-item" href="#entry-3">3. 小米汽车发布 Auto World Model 2.0：统一流式因果世界模型覆盖真实驾驶与具身智能，VTA+多视角 RoPE+WorldRec 2.0 前向重建</a><a class="toc-item" href="#entry-4">4. Archon Robotics 发布 Anchor 1：人形全身操作控制器 + 分级基准，真实世界追踪误差较全基线降 30–80%</a><a class="toc-item" href="#entry-5">5. Auriga 技术报告：任务无关具身 agent harness 零样本关闭 RoboDojo 68.3% 规划-执行鸿沟</a><a class="toc-item" href="#entry-6">6. WorldSketch：VLM 不再生成动作、转而「搭建世界模型」——自改进运动学世界模型实现零样本移动操作</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="RSI Agent基础设施" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Exo：把优化循环折叠进任务执行的 agent 运行时自我改进架构——在岗学习中同时修订 harness 与策略，模型成本对 Codex 降 12–53%" data-link="https://arxiv.org/abs/2611.00463">复制</button>
+  <h2>1. Exo：把优化循环折叠进任务执行的 agent 运行时自我改进架构——在岗学习中同时修订 harness 与策略，模型成本对 Codex 降 12–53% <span class="src">（arXiv 2611.00463 · Tue-03 批次 | 2026-11-03 BJ 13:00 公告）</span></h2>
+
+  <h3>事件概述</h3>
+  <p>Krentsel、Sylvia Ratnasamy、Ion Stoica、Martin Casado、Ankur Goyal 等发布 Exo——一个支持「在岗安全学习」的 agent 运行时架构：把优化循环折叠进任务执行本身，允许 agent 在持续工作过程中同时修订自己的 harness（经可检视的代码变更）与后续策略；由最小「受保护机制层」保存执行历史并管辖策略激活，使 harness 演化不破坏安全边界。论文 v1 提交于 10-30（周末提交顺延），随 arXiv Tue-03 批次公开（公告 2026-11-03 05:00 UTC = 北京 13:00，窗口内）。本条同时补全第 124 跑待核实项：当时仅有 Arena X 转述且误归因为「Google Research」，本跑以 arXiv 元数据确证作者归属并取回全部基准数字。</p>
+
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：与「离线跑数据集 + 代价高昂的重复执行」的自动 harness 优化路线不同，Exo 在任务执行中就地完成「发现失败 → 提议修改 → 受保护激活」闭环；受保护机制层只做两件事（保执行历史、管策略激活），把对 agent 行为的干预压缩到最小面。这把 RSI 从「模型自我改进」下沉到「运行时基础设施自我改进」——harness 以可检视代码形式演化，天然可审计。</li>
+    <li><b>实际影响</b>：长时程开放世界目标下，Exo 相对 Codex 与 Pi 独立运行降模型成本 12–53%、迁移运行降 45–82%，任务完成率持平；同等起始策略下若不可编辑策略则无此收益（消融对照），验证收益来自「策略可演化」而非单纯调度。</li>
+  </ul>
+
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>独立运行模型成本</td><td>-12~-53% vs Codex/Pi</td><td><div class="bar"><span style="width:53%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>迁移运行模型成本</td><td>-45~-82%</td><td><div class="bar"><span style="width:82%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>AppWorld 平均任务耗时</td><td>-13%</td><td><div class="bar"><span style="width:13%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>SREGym 中位诊断耗时</td><td>-35%</td><td><div class="bar"><span style="width:35%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <ul>
+    <li>评测/性能：held-out 模型成本在 AppWorld 与 SREGym 降 35–61%（正确率相当）；AppWorld 平均任务耗时 -13%、SREGym 中位诊断耗时 -35%；Continual Learning Bench 编码任务含学习在内的模型成本 -14% 且两个策略解决全部 issue（自述，未见第三方复现）。</li>
+    <li>论文：<span class="link">https://<a href="https://arxiv.org/abs/2611.00463" target="_blank" rel="noopener">arxiv.org/abs/2611.00463</a></span>（v1 Submitted 30 Oct 2026，Tue-03 批次公告）</li>
+  </ul>
+
+  <p class="muted">独立运行模型成本：-12~-53% vs Codex/Pi ｜ 迁移运行模型成本：-45~-82% ｜ AppWorld 平均任务耗时：-13% ｜ SREGym 中位诊断耗时：-35%</p>
+  <p><span class="tag" style="color:#8b949e;border-color:#8b949e">#RSI</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#Agent基础设施</span></p>
+</div>
+
+<div class="card priority-2" id="entry-2" data-tags="AI Coding ComputerUseAgent" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="NorthCUA 技术报告：经验飞轮 + 递归自我改进 + 桌面/网页联合 RL，开源 CUA 模型家族 Nano/Mini/Pro/Ultrafast" data-link="https://arxiv.org/abs/2611.02102">复制</button>
+  <h2>2. NorthCUA 技术报告：经验飞轮 + 递归自我改进 + 桌面/网页联合 RL，开源 CUA 模型家族 Nano/Mini/Pro/Ultrafast <span class="src">（arXiv 2611.02102 · Tue-03 批次 | 2026-11-03 BJ 13:00 公告）</span></h2>
+
+  <h3>事件概述</h3>
+  <p>NorthCUA 发布集成系统技术报告：Experience Flywheel 供给多样可执行任务 → NorthCUA Harness 维持长程交互、记录决策并核验任务结果 → 从记录中策展已验证轨迹；未解决任务走递归自我改进——演化可复用技能并保留已验证里程碑，使后续尝试在先前进度上继续。Staged Learning 将经验与 grounding 数据结合做 mid-training 与长程 SFT，策略再经桌面/网页联合强化学习在同一 Harness 内从新尝试中学习。模型 v1 提交于 11-01（周末顺延），随 Tue-03 批次公开（北京 11-03 13:00，窗口内）。</p>
+
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：把「经验生产」与「策略改进」闭环在同一 harness 内打通：harness 同时是执行环境、记录器与结果核验器，使 RL 训练信号（任务是否真完成）与部署时分布一致；递归自我改进以「技能库 + 里程碑保留」形式组织，避免每次从零试探。产出 Nano/Mini/Pro/Ultrafast 四档——Ultrafast 在 pre-RL Nano 上配对直选动作与开放式生成，给出实测质量-延迟折衷。</li>
+    <li><b>实际影响</b>：Nano/Mini/Pro 家族在 GUI grounding、桌面执行、网页交互三类评测的所报设置下取得开源模型 SOTA；第三方（AI Weekly）称 NorthCUA Pro 397B 超越 Qwen3.8-Max 与 Kimi-K3 等闭源对手（转述口径，待核实）。CUA 竞赛从「单点模型」转向「飞轮 + harness + 模型」的系统能力。</li>
+  </ul>
+
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>模型家族</td><td>Nano / Mini / Pro（397B，转述）/ Ultrafast</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>开源 SOTA 范围</td><td>GUI grounding · 桌面执行 · 网页交互</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>训练闭环</td><td>经验飞轮 → 递归技能演化 → 桌面网页联合 RL</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <ul>
+    <li>评测/性能：开源模型 SOTA（自述口径，评测设置以论文为准）；「Pro 397B 超越 Qwen3.8-Max/Kimi-K3」来自第三方 AI Weekly 转述（待核实）；具体分数字表本跑未逐一核对。</li>
+    <li>论文：<span class="link">https://<a href="https://arxiv.org/abs/2611.02102" target="_blank" rel="noopener">arxiv.org/abs/2611.02102</a></span>（v1 Submitted 1 Nov 2026，Tue-03 批次公告）</li>
+  </ul>
+
+  <p class="muted">模型家族：Nano / Mini / Pro（397B，转述）/ Ultrafast ｜ 开源 SOTA 范围：GUI grounding · 桌面执行 · 网页交互 ｜ 训练闭环：经验飞轮 → 递归技能演化 → 桌面网页联合 RL</p>
+  <p><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#ComputerUseAgent</span></p>
+</div>
+
+<div class="card priority-3" id="entry-3" data-tags="世界模型 自动驾驶" style="border-left:3px solid #bc8cff"><button class="copy-btn" data-title="小米汽车发布 Auto World Model 2.0：统一流式因果世界模型覆盖真实驾驶与具身智能，VTA+多视角 RoPE+WorldRec 2.0 前向重建" data-link="https://arxiv.org/abs/2611.01677">复制</button>
+  <h2>3. 小米汽车发布 Auto World Model 2.0：统一流式因果世界模型覆盖真实驾驶与具身智能，VTA+多视角 RoPE+WorldRec 2.0 前向重建 <span class="src">（arXiv 2611.01677 · Tue-03 批次 | 2026-11-03 BJ 13:00 公告）</span></h2>
+
+  <h3>事件概述</h3>
+  <p>小米汽车团队（22 人署名）发布 Auto World Model 2.0——面向 Physical AI 的统一流式因果世界模型：建模并生成真实世界的因果物理演化，统一异构条件输入实现视角一致生成。架构以 View-Temporal Attention（VTA）捕获跨视角空间依赖与时序动态，以多视角旋转位置编码（RoPE）编码跨视角/跨时位置关系；WorldRec 2.0 从多视角、多时刻观测单次前向重建静态与动态 3D 高斯，以其渲染作为显式场景上下文保障长时程生成的几何与外观；VTA 时序层引入门控线性注意力（GLA）降低多视角 rollout 的计算与 KV-cache 开销。v1 提交于 11-01，随 Tue-03 批次公开（北京 11-03 13:00，窗口内）。</p>
+
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：一个模型同时服务「驾驶世界模型」与「具身智能」两条线——预训练混合大规模视频与异构视觉模态学视觉/几何/动态先验，mid-train 跨视角配置训练「动作与物体状态如何塑造后续场景演化」，蒸馏式 post-train 后进入闭环仿真评估；配套物理交互数据管线覆盖多样交互与长尾事件。WorldRec 2.0 的「单次前向 → 3D 高斯 → 显式场景上下文」是把重建结果直接当作生成的几何锚，缓解长时程漂移。</li>
+    <li><b>实际影响</b>：车厂级世界模型从「驾驶专用」走向「Physical AI 通用底座」的公开技术报告样本；GLA 进时序层给出流式推理的开销量化路径。闭环仿真与实车指标未在摘要级给出（以论文正文为准）。</li>
+  </ul>
+
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>统一范围</td><td>真实驾驶 + 具身智能（Physical AI）</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>重建形态</td><td>WorldRec 2.0：多视角多时刻 → 3D 高斯，单次前向</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>流式开销</td><td>GLA 进 VTA 时序层：降计算与 KV-cache</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <ul>
+    <li>评测/性能：摘要级未给出闭环仿真/实车量化数字（待核实，以论文正文为准）；架构组件 VTA / 多视角 RoPE / WorldRec 2.0 / GLA 均为官方自述。</li>
+    <li>论文：<span class="link">https://<a href="https://arxiv.org/abs/2611.01677" target="_blank" rel="noopener">arxiv.org/abs/2611.01677</a></span>（v1 Submitted 1 Nov 2026，Tue-03 批次公告）</li>
+  </ul>
+
+  <p class="muted">统一范围：真实驾驶 + 具身智能（Physical AI） ｜ 重建形态：WorldRec 2.0 单次前向 3D 高斯 ｜ 流式开销：GLA 进 VTA 时序层，降计算与 KV-cache</p>
+  <p><span class="tag" style="color:#bc8cff;border-color:#bc8cff">#世界模型</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#自动驾驶</span></p>
+</div>
+
+<div class="card priority-4" id="entry-4" data-tags="具身智能 人形机器人" style="border-left:3px solid #3fb950"><button class="copy-btn" data-title="Archon Robotics 发布 Anchor 1：人形全身操作控制器 + 分级基准，真实世界追踪误差较全基线降 30–80%" data-link="https://arxiv.org/abs/2611.00193">复制</button>
+  <h2>4. Archon Robotics 发布 Anchor 1：人形全身操作控制器 + 分级基准，真实世界追踪误差较全基线降 30–80% <span class="src">（arXiv 2611.00193 · Tue-03 批次 | 2026-11-03 BJ 13:00 公告）</span></h2>
+
+  <h3>事件概述</h3>
+  <p>Archon Robotics（25 人署名，含 Yu Qiao、Hongyang Li 等）发布 Anchor 1——面向「精准且稳定的人形全身操作」的全身控制器，并配套覆盖多样协调需求的基准。方法三件套：① 校准稀疏运动参考——保留任务相关的人体运动结构、免在线关节空间重定向，为精准控制留出运动学自由度；② 离线策展「机器人运动 × 校准稀疏参考」配对分布，把训练分布塑形至稳定、物理合理的全身协调；③ 显式误差反馈与运动编码解耦——提升控制精度的同时支持灵活指令接口。v1 提交于 10-30，随 Tue-03 批次公开（北京 11-03 13:00，窗口内）。</p>
+
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：抓住全身操作的独特难点——执行偏差敏感（小误差或意外迈步即失败）。与「全身跟踪优先」路线不同，Anchor 1 把「任务相关的稀疏参考」与「自由度」分离：参考只锚定任务所需结构，其余关节留给优化器，再以解耦的误差反馈通道约束漂移。基准沿精准度、持续执行稳定性、可达性三轨评估。</li>
+    <li><b>实际影响</b>：最严苛真实世界全局评分设置下，追踪误差较全部既有基线降 30–80%，且前瞻输入更少、免重定向；仿真与真机双验证。人形从「运动技能展示」转向「操作可用性」的控制器层竞品开始出现。</li>
+  </ul>
+
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>真实世界追踪误差</td><td>-30~-80%（最严全局设置）</td><td><div class="bar"><span style="width:80%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>前瞻输入</td><td>更少（对比全基线）</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>在线重定向</td><td>不需要</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <ul>
+    <li>评测/性能：真实世界追踪误差 -30%~-80%（最严全局评分设置，自述，真机+仿真双验证）；具体基线对比表以论文为准。</li>
+    <li>论文：<span class="link">https://<a href="https://arxiv.org/abs/2611.00193" target="_blank" rel="noopener">arxiv.org/abs/2611.00193</a></span>（v1 Submitted 30 Oct 2026，Tue-03 批次公告）</li>
+  </ul>
+
+  <p class="muted">真实世界追踪误差：-30~-80%（最严全局设置） ｜ 前瞻输入：更少（对比全基线） ｜ 在线重定向：不需要</p>
+  <p><span class="tag" style="color:#3fb950;border-color:#3fb950">#具身智能</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#人形机器人</span></p>
+</div>
+
+<div class="card priority-5" id="entry-5" data-tags="具身智能 Agent基础设施" style="border-left:3px solid #3fb950"><button class="copy-btn" data-title="Auriga 技术报告：任务无关具身 agent harness 零样本关闭 RoboDojo 68.3% 规划-执行鸿沟" data-link="https://arxiv.org/abs/2611.01112">复制</button>
+  <h2>5. Auriga 技术报告：任务无关具身 agent harness 零样本关闭 RoboDojo 68.3% 规划-执行鸿沟 <span class="src">（arXiv 2611.01112 · Tue-03 批次 | 2026-11-03 BJ 13:00 公告）</span></h2>
+
+  <h3>事件概述</h3>
+  <p>Auriga 团队（21 人署名，Chang Xu 组）量化了具身 VLM 的规划-执行鸿沟：在 RoboDojo 上，GPT-6 Astra 在参考控制接口下操作成功率仅 22.5%，移除手臂执行环节即升至 76.2%——差距不在「会不会想」而在「能不能动」。Auriga 作为任务无关 harness 零样本（无目标任务试跑、无重置）关闭该鸿沟的 68.3%：模型在显式任务信念上做全部任务决策，经直接工具调用或合成多步 Python 程序行动；harness 提供校准 3D 测量、指端参考双臂控制与通往机器人的单一准入网关；运动前模型在仿真暂停态检视视觉轨迹预览。v1 提交于 10-31，随 Tue-03 批次公开（北京 11-03 13:00，窗口内）。</p>
+
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：与 NorthCUA「经验飞轮喂 RL」不同，Auriga 不训练模型，纯靠 harness 工程弥合鸿沟：校准测量替代 VLM 的几何瞎猜、指端参考替代关节空间抽象、单一准入网关收口安全、轨迹预览把「执行后才发现错」提前到「执行前」。这是「harness 即产品」路线在具身方向的对照实验。</li>
+    <li><b>实际影响</b>：给「VLM 直接当机器人策略」这一流行叙事给出量化反驳（22.5% vs 76.2%），并证明零样本 harness 可回收近七成差距；对 agent harness 设计（信念状态、准入网关、预览门控）给出可迁移组件。</li>
+  </ul>
+
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>规划-执行鸿沟</td><td>22.5% vs 76.2%（GPT-6 Astra，RoboDojo）</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>零样本鸿沟回收</td><td>68.3%</td><td><div class="bar"><span style="width:68%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>目标任务试跑</td><td>0 次（免试跑免重置）</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <ul>
+    <li>评测/性能：RoboDojo 零样本关闭鸿沟 68.3%（自述，未见第三方复现）；GPT-6 Astra 22.5% → 76.2%（移除手臂执行环节）为其量化论据。</li>
+    <li>论文：<span class="link">https://<a href="https://arxiv.org/abs/2611.01112" target="_blank" rel="noopener">arxiv.org/abs/2611.01112</a></span>（v1 Submitted 31 Oct 2026，Tue-03 批次公告）</li>
+  </ul>
+
+  <p class="muted">规划-执行鸿沟：22.5% vs 76.2%（GPT-6 Astra，RoboDojo） ｜ 零样本鸿沟回收：68.3% ｜ 目标任务试跑：0 次</p>
+  <p><span class="tag" style="color:#3fb950;border-color:#3fb950">#具身智能</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#Agent基础设施</span></p>
+</div>
+
+<div class="card priority-6" id="entry-6" data-tags="世界模型 具身智能" style="border-left:3px solid #bc8cff"><button class="copy-btn" data-title="WorldSketch：VLM 不再生成动作、转而「搭建世界模型」——自改进运动学世界模型实现零样本移动操作" data-link="https://arxiv.org/abs/2611.00513">复制</button>
+  <h2>6. WorldSketch：VLM 不再生成动作、转而「搭建世界模型」——自改进运动学世界模型实现零样本移动操作 <span class="src">（arXiv 2611.00513 · Tue-03 批次 | 2026-11-03 BJ 13:00 公告）</span></h2>
+
+  <h3>事件概述</h3>
+  <p>WorldSketch（Jiaming Wang）提出 agentic robotics 新范式：VLM 不编排预定义技能、也不直接生成动作，而是作为 agent 主动查询感知工具，搭建并可视化校验一个「最小运动学世界模型」——只捕获任务相关物体、交互几何与可能运动；几何规划器随后在该模型上联合优化接触与全身运动。世界模型本身可自改进：执行反馈核验结果、更新不确定假设，使 agent 能力随部署累积。随 Tue-03 批次公开（北京 11-03 13:00，窗口内）。</p>
+
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：在「技能编排（受技能库限制）」与「VLM 直出动作（要求 VLM 精通几何与接触）」两难之外开出第三条路：VLM 出「世界模型 + 约束」，几何规划器出「动作」——分工使 VLM 回避其最弱项（精确几何/接触推理），并把错误面收窄到可校验的显式模型上。</li>
+    <li><b>实际影响</b>：零样本移动操作（无需目标场景演示）+ 世界模型随执行自改进，与 Exo（运行时自我改进）、NorthCUA（技能递归演化）同日构成「自改进」在 harness/世界模型/技能库三个层面的完整样本；单作者工作，工程可复现性待第三方验证。</li>
+  </ul>
+
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>范式</td><td>VLM 建模世界 → 几何规划器出动作</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>世界模型</td><td>最小运动学 · 任务相关 · 自改进</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>演示需求</td><td>零样本移动操作</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <ul>
+    <li>评测/性能：零样本移动操作设定（摘要级未列分数字，以论文为准，自述）。</li>
+    <li>论文：<span class="link">https://<a href="https://arxiv.org/abs/2611.00513" target="_blank" rel="noopener">arxiv.org/abs/2611.00513</a></span>（Tue-03 批次公告）</li>
+  </ul>
+
+  <p class="muted">范式：VLM 建模世界 → 几何规划器出动作 ｜ 世界模型：最小运动学 · 任务相关 · 自改进 ｜ 演示需求：零样本移动操作</p>
+  <p><span class="tag" style="color:#bc8cff;border-color:#bc8cff">#世界模型</span><span class="tag" style="color:#3fb950;border-color:#3fb950">#具身智能</span></p>
+</div>
+
+<hr class="divider">
+
+<details class="excl"><summary class="fold-summary">去重说明（审计明细，点击展开）</summary>
+
+<div class="excl">
+  <p><b>7 天扫描</b>：工作区根现存 11-01 1548 ~ 11-03 0845 共 6 份报告（第 122–126 跑，含 11-01 双线并行）；更早报告滚出工作区，缺口以记忆执行记录补全（第 111–125 跑条目全录）。本跑与第 125 跑（GDPx/阿里云 Memory/Qovest）、第 126 跑（复旦 RSI-Nav/Anthropic S-1/A/智元 Worken）比对无重叠。</p>
+
+  <h4>实体去重（dedup_check.py）</h4>
+  <p>入选 6 条均 is_dup:false（Exo 0.060/0.193、NorthCUA 0.0/0.0、小米 AWM 2.0 0.090/0.404、Anchor 1 0.0/0.0、Auriga 0.113/0.484、WorldSketch 0.0/0.0，均低于 0.45 阈值）。<b>与第 124 跑待核实项关联披露</b>：Exo 即第 124 跑「Google Research Exo 运行时自我改进（仅 Arena X 转述）」——本跑以 arXiv 元数据确证实际作者为 Krentsel/Ratnasamy/Stoica/Casado/Goyal（非 Google Research，当时转述误归因），backlog 项随之补全闭环。</p>
+
+  <h4>时间戳纪律排除（本期重点：2 组高质量近失）</h4>
+  <ul>
+    <li><b>OpenAI Pando Git 后端</b>（自研 Git 后端承载 monorepo 全部流量，Rust 编写、日传输近 1 PB、push 延迟中位数约 -80%）：官方公告页 <a href="https://openai.com/index/scaling-git-at-openai" target="_blank" rel="noopener">openai.com/index/scaling-git-at-openai</a> 经 aihot 标注 2026-11-02T15:30Z——早于窗口起点 9 小时；窗口内 Greg Brockman（01:54Z）与 thsottiaux（00:26Z）X 帖、IT之家/MarkTechPost 稿均为发布后传播。按第一信源纪律排除，列近失（AI Coding infra 高价值，本体动作在窗外）。</li>
+    <li><b>MIT CSAIL「权重空间编程」</b>（GPT-6 Astra 直接读写 Qwen3.5-0.8B 权重，仅改 131,072 个权重 ≈0.016%，MATH-500 7.9→48.1、GSM8K 13.8→67.1、指令遵循 3x）：第一信源为作者博客 <a href="https://rikiyat.github.io" target="_blank" rel="noopener">rikiyat.github.io</a>（date-level 2026-11-02，无精确时刻），最早 X 传播 00:35:50Z 早于窗口起点 9 分钟，Latent Space/IT之家/知乎均在窗内但属二手；知乎文指出「6 倍」口径存在误读，原论文亦未在 Tue-03 批次检索到 → 排除，列近失 + 待核实。</li>
+    <li>另：<b>Zyphra ZHA 分层注意力</b>（官方页 11-01T16:00Z，窗外 2 天，MarkTechPost 11-03 为迟到报道）→ 排除；<b>Anthropic S-1/A RSI 警示</b>（第 126 跑已报同主体同动作）；<b>Waymo×丰田 bZ4X 日本测试</b>（第 120 跑已报，aihot 整点时刻条目为再传播）；<b>商汤 SenseNova 6.8 Flash 正式版</b>（Flash Lite Preview 早在 8-11 上线，正式版发布未经官方渠道取证 → 待核实）。</li>
+  </ul>
+
+  <h4>门槛/焦点排除</h4>
+  <ul>
+    <li>版本流水/技巧：Claude Code v2.1.317（例行）、Kimi Code Desktop 进阶用法、Addy Osmani 批判性思维（观点文）、Simon Willison OSINT 定位法（非 AI 焦点）。</li>
+    <li>产品/消费/创意：即梦短剧工作室、可灵 4.0 创作者实战、Luma Expression Sheet、Meshy N1 Texture、Grok Bot 改进/代打车险（产品宣传）、Apple Watch Audio Intelligence beta、Apple 第三方 AI 应用（传闻）、面壁 MiniCPM-OCR×Nativ（端侧部署无基准）。</li>
+    <li>政策/公司/资本：ChatGPT Classic 停服（产品政策）、OpenAI 安全冲刺与漏洞赏金上调（安全政策）、Meta Muse 漏洞赏金超百万美元（安全项目披露）、高盛限制 Claude Code（传闻级）、发改委 AI 就业监测（政策）、高通 AI Hub 中国开放（业务）、蔡崇信千问开源 470 款（演讲）、Tobi Lütke 访谈、摩根大通/摩根士丹利估值言论（财经）、NYT 等诉 Brave（法律）、ao3.life 关站（版权争议）、伪造签名薅算力判刑（社会新闻）。</li>
+    <li>同批次近失（Tue-03 批次内未入选）：SIMIT（测试时自改进）、Compositional Self-Improvement（研究分析型）、When LLMs Modify Themselves、X-World 1.6、AuroraWorld、AgiWorld 等（同主题多篇，选代表性强的 6 条）。</li>
+  </ul>
+
+  <h4>结构性说明</h4>
+  <ul>
+    <li>信源健康 ok=3 / warn=0 / error=0（aihot v1 API 本期改为 api/v1/items?mode=all&amp;window=7d&amp;limit=100，旧端点 404 已适配）；窗口 8h10m（北京周一白天 = 美东周日晚间，本应低供给，但 arXiv Tue-03 批次公告 BJ 13:00 落在窗口内，恰逢周末提交积压集中公告 → 学术首发 6 条全部来自该批次，占满本期版面）。</li>
+    <li>窗口内 aihot 44 条逐一过筛（含 Pando/WSP/ZHA 三组高质量近失证伪）；HN 本期未做独立扫描（美东周日晚间 + aihot 覆盖充分，结构性披露）；12 跟踪仓与 hf-mirror 未发现窗口内实质 release。</li>
+    <li>五大焦点覆盖：RSI ×2（Exo、NorthCUA 递归技能演化）、AI Coding ×1（NorthCUA）、世界模型 ×2（小米 AWM 2.0、WorldSketch）、具身智能 ×2（Anchor 1、Auriga）、infra/重大开源 ×1（NorthCUA 开源家族）——本期为五焦点满覆盖的学术批次集中窗口。</li>
+  </ul>
+</div></details>
+
+<hr class="divider">
+
+<div class="section-title">待核实</div>
+
+<div class="excl">
+  <ul>
+    <li><b>1. NorthCUA 机构归属与「397B/超越 Qwen3.8-Max、Kimi-K3」</b>：arXiv 元数据未署机构，30 人作者列表未逐一核对；「Pro 397B、开源、超越闭源对手」来自 AI Weekly 转述。缺：机构确认 + 官方模型卡/权重仓库 + 榜单原始评测表。</li>
+    <li><b>2. 小米 Auto World Model 2.0 闭环/实车指标</b>：摘要级无量化数字，闭环仿真评估与真机部署规模未取证。缺：论文正文评测表 + 官方口径。</li>
+    <li><b>3. Exo 全部基准</b>：-12~53%/-45~82%/-35~61% 等均为自述，未见第三方复现；受保护机制层具体实现未在摘要级披露。缺：第三方复现 + 机制层实现细节。</li>
+    <li><b>4. MIT CSAIL 权重空间编程第一信源精确时刻与「6 倍」口径</b>：作者博客仅 date-level 2026-11-02；知乎文指出「6 倍」表述存在误读。缺：博客/论文精确发布时刻 + 原始基准表。若下跑取证为窗口内首发，可补报。</li>
+    <li><b>5. 商汤 SenseNova 6.8 Flash 正式版发布时刻</b>：Flash Lite Preview 系 8-11 上线，11-03 IT之家条目无官方渠道时刻佐证。缺：商汤官网/公众号发布记录。</li>
+    <li><b>6. Google×港大 VeriCUA 论文第一信源</b>：仅 Rohan Paul X 转述，论文未在 Tue-03 批次检索到。缺：arXiv 编号/项目页。</li>
+    <li><b>7. OpenAI Pando 官方公告精确时刻</b>：aihot 标注 11-02T15:30Z（整点半，疑为同步时刻），<a href="https://openai.com" target="_blank" rel="noopener">openai.com</a> 页直取 403。若实际上线晚于 11-03 00:45Z 则本跑排除有误，下跑 CDX 复核。缺：官方页时刻取证。</li>
+  </ul>
+</div>
+
+<footer>每日 AI 前沿技术精选 · 自动生成 · 时效窗口以报告头为准</footer>
+
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>

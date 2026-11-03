@@ -3,7 +3,91 @@
 <title>每日 AI 前沿技术精选</title>
 <link>https://local.invalid/ai-news</link>
 <description>每日 AI 前沿技术精选 · 结构化条目流</description>
-<lastBuildDate>Mon, 02 Nov 2026 01:59:34 -0000</lastBuildDate>
+<lastBuildDate>Tue, 03 Nov 2026 09:19:53 -0000</lastBuildDate>
+<item>
+<title>Exo：把优化循环折叠进任务执行的 agent 运行时自我改进架构——在岗学习中同时修订 harness 与策略，模型成本对 Codex 降 12–53%</title>
+<link>每日AI新闻推送_20261103_1655.html</link>
+<guid isPermaLink="false">20261103_1655-Exo：把优化循环折叠进任务执行的 agent 运行时自我改进架构——在岗学习中同时修订 harness 与策略，模型成本对 Codex 降 12–53%</guid>
+<pubDate>2026-11-03</pubDate>
+<category>RSI、Agent基础设施</category>
+</item>
+<item>
+<title>NorthCUA 技术报告：经验飞轮 + 递归自我改进 + 桌面/网页联合 RL，开源 CUA 模型家族 Nano/Mini/Pro/Ultrafast</title>
+<link>每日AI新闻推送_20261103_1655.html</link>
+<guid isPermaLink="false">20261103_1655-NorthCUA 技术报告：经验飞轮 + 递归自我改进 + 桌面/网页联合 RL，开源 CUA 模型家族 Nano/Mini/Pro/Ultrafast</guid>
+<pubDate>2026-11-03</pubDate>
+<category>AI Coding、ComputerUseAgent</category>
+</item>
+<item>
+<title>小米汽车发布 Auto World Model 2.0：统一流式因果世界模型覆盖真实驾驶与具身智能，VTA+多视角 RoPE+WorldRec 2.0 前向重建</title>
+<link>每日AI新闻推送_20261103_1655.html</link>
+<guid isPermaLink="false">20261103_1655-小米汽车发布 Auto World Model 2.0：统一流式因果世界模型覆盖真实驾驶与具身智能，VTA+多视角 RoPE+WorldRec 2.0 前向重建</guid>
+<pubDate>2026-11-03</pubDate>
+<category>世界模型、自动驾驶</category>
+</item>
+<item>
+<title>Archon Robotics 发布 Anchor 1：人形全身操作控制器 + 分级基准，真实世界追踪误差较全基线降 30–80%</title>
+<link>每日AI新闻推送_20261103_1655.html</link>
+<guid isPermaLink="false">20261103_1655-Archon Robotics 发布 Anchor 1：人形全身操作控制器 + 分级基准，真实世界追踪误差较全基线降 30–80%</guid>
+<pubDate>2026-11-03</pubDate>
+<category>具身智能、人形机器人</category>
+</item>
+<item>
+<title>Auriga 技术报告：任务无关具身 agent harness 零样本关闭 RoboDojo 68.3% 规划-执行鸿沟</title>
+<link>每日AI新闻推送_20261103_1655.html</link>
+<guid isPermaLink="false">20261103_1655-Auriga 技术报告：任务无关具身 agent harness 零样本关闭 RoboDojo 68.3% 规划-执行鸿沟</guid>
+<pubDate>2026-11-03</pubDate>
+<category>具身智能、Agent基础设施</category>
+</item>
+<item>
+<title>WorldSketch：VLM 不再生成动作、转而「搭建世界模型」——自改进运动学世界模型实现零样本移动操作</title>
+<link>每日AI新闻推送_20261103_1655.html</link>
+<guid isPermaLink="false">20261103_1655-WorldSketch：VLM 不再生成动作、转而「搭建世界模型」——自改进运动学世界模型实现零样本移动操作</guid>
+<pubDate>2026-11-03</pubDate>
+<category>世界模型、具身智能</category>
+</item>
+<item>
+<title>复旦 RSI-Nav：基于 Qwen3.5-9B 的数据中心化递归自我改进机器人导航</title>
+<link>每日AI新闻推送_20261103_0845.html</link>
+<guid isPermaLink="false">20261103_0845-复旦 RSI-Nav：基于 Qwen3.5-9B 的数据中心化递归自我改进机器人导航</guid>
+<pubDate>2026-11-03</pubDate>
+<category>递归自我改进、具身智能、视觉语言导航</category>
+</item>
+<item>
+<title>Anthropic 修订 S-1/A 招股书：首次警告已逼近 RSI 递归自我改进阈值</title>
+<link>每日AI新闻推送_20261103_0845.html</link>
+<guid isPermaLink="false">20261103_0845-Anthropic 修订 S-1/A 招股书：首次警告已逼近 RSI 递归自我改进阈值</guid>
+<pubDate>2026-11-03</pubDate>
+<category>递归自我改进、AI治理、安全对齐</category>
+</item>
+<item>
+<title>智元提出 Worken「有效智能工时」：人形机器人开始按「干活」结算</title>
+<link>每日AI新闻推送_20261103_0845.html</link>
+<guid isPermaLink="false">20261103_0845-智元提出 Worken「有效智能工时」：人形机器人开始按「干活」结算</guid>
+<pubDate>2026-11-03</pubDate>
+<category>具身智能、产业落地、物理AI</category>
+</item>
+<item>
+<title>SemiAnalysis 发布 GDPx 通用智能体能力基准：11 个高价值专业域覆盖含 RSI，最佳模型仅 12%</title>
+<link>每日AI新闻推送_20261102_1619.html</link>
+<guid isPermaLink="false">20261102_1619-SemiAnalysis 发布 GDPx 通用智能体能力基准：11 个高价值专业域覆盖含 RSI，最佳模型仅 12%</guid>
+<pubDate>2026-11-02</pubDate>
+<category>AI Coding、智能体评测、RSI</category>
+</item>
+<item>
+<title>阿里云 Memory 服务升级：面向 Personal Agent 增强长期记忆与个性化，HaluMem/PersonaMem 双榜第一</title>
+<link>每日AI新闻推送_20261102_1619.html</link>
+<guid isPermaLink="false">20261102_1619-阿里云 Memory 服务升级：面向 Personal Agent 增强长期记忆与个性化，HaluMem/PersonaMem 双榜第一</guid>
+<pubDate>2026-11-02</pubDate>
+<category>AI Coding、Agent记忆、基础设施</category>
+</item>
+<item>
+<title>阿里云发布 AI 投研工作台 Qovest：一句话研究需求 + 自研金融 Agent Harness</title>
+<link>每日AI新闻推送_20261102_1619.html</link>
+<guid isPermaLink="false">20261102_1619-阿里云发布 AI 投研工作台 Qovest：一句话研究需求 + 自研金融 Agent Harness</guid>
+<pubDate>2026-11-02</pubDate>
+<category>AI Coding、Agent工程、垂直落地</category>
+</item>
 <item>
 <title>微软 AI 负责人 Mustafa Suleyman 发文《Don't build conscious superintelligence》：主张只造无意识、无权利、无内在动机的系统，训练中若现意识迹象应叫停</title>
 <link>每日AI新闻推送_20261102_0936.html</link>
