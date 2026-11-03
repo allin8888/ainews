@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-11-03</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --card2:#1c2230; --border:#2d3340;
+    --fg:#e6edf3; --muted:#9aa7b4; --accent:#3fb950; --accent2:#58a6ff; --warn:#f0883e;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:-apple-system,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.65;padding:28px 16px;}
+  .wrap{max-width:880px;margin:0 auto;}
+  h1{font-size:26px;margin:0 0 6px;}
+  .meta{color:var(--muted);font-size:14px;margin-bottom:4px;}
+  .window{color:var(--accent2);font-weight:600;}
+  hr{border:none;border-top:1px solid var(--border);margin:18px 0;}
+  h2{font-size:20px;margin:24px 0 12px;border-left:4px solid var(--accent);padding-left:10px;}
+  .item{background:var(--card);border:1px solid var(--border);border-radius:12px;
+    padding:18px 20px;margin:16px 0;}
+  .item h3{margin:0 0 10px;font-size:18px;color:#fff;}
+  .item h3 .src{color:var(--muted);font-size:13px;font-weight:400;}
+  .label{color:var(--accent);font-weight:700;margin-right:6px;}
+  .val{color:var(--fg);}
+  .block{margin:10px 0;}
+  .block .bt{color:var(--accent2);font-weight:600;font-size:14px;display:block;margin-bottom:4px;}
+  ul{margin:6px 0;padding-left:20px;}
+  li{margin:4px 0;}
+  .tag{display:inline-block;background:var(--card2);border:1px solid var(--border);
+    color:var(--accent2);border-radius:20px;padding:2px 10px;font-size:12px;margin:4px 6px 0 0;}
+  .arch{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin-top:14px;font-size:14px;}
+  .arch code{background:#0b0f14;padding:2px 6px;border-radius:5px;color:var(--accent);font-size:12px;}
+  .note{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin-top:14px;font-size:14px;}
+  .note h2{border-left-color:var(--warn);}
+  a{color:var(--accent2);}
+  .metrics{background:#0b0f14;border:1px solid var(--border);border-radius:8px;padding:10px 12px;margin:8px 0;font-size:13px;}
+  .metrics .mrow{margin:3px 0;}
+  .metrics .mbar{display:inline-block;height:8px;background:var(--accent);border-radius:4px;vertical-align:middle;margin-left:6px;}
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>每日 AI 前沿技术精选</h1>
+  <div class="meta">日期：2026-11-03 ｜ 时间：08:45 ｜ 精选条数：3 条</div>
+  <div class="meta">时效窗口：<span class="window">2026-11-02 16:19 – 2026-11-03 08:45</span>（严格24小时；增量模式，上次执行 2026-11-02 16:19）</div>
+
+  <hr>
+
+  <h2>今日精选</h2>
+
+  <div class="item">
+    <h3>1. 复旦 RSI-Nav：基于 Qwen3.5-9B 的数据中心化递归自我改进机器人导航 <span class="src">（智猩猩 论文作者投稿 ｜ 2026-11-03 00:42）</span></h3>
+    <div class="block"><span class="bt">事件概述</span>复旦大学提出 RSI-Nav（Data-Centric Recursive Self-Improvement for Navigation），用一个 Qwen3.5-9B 模型同时承担「语言导航（VL2A）」「轨迹生成指令（VA2L）」与「空间理解」三项任务，并通过真实执行反馈筛选数据、闭环更新自身，实现无标注轨迹下的持续进化。</div>
+    <div class="block"><span class="bt">技术与工程价值</span>
+      <ul>
+        <li><span class="label">核心机制：</span><span class="val">打破「固定生成器一次性补指令 + 旧策略数据」的离线数据飞轮，改为由当前模型即时生成指令、亲自执行验证、筛选有效数据再学习，消除生成监督与当前策略之间的 Policy Gap；三任务共享同一套参数，无需额外大模型或任务专用输出头。</span></li>
+        <li><span class="label">实际影响：</span><span class="val">在连续视觉语言导航（VLN-CE）未见场景上，R2R-CE 68.6%、RxR-CE 72.4%，较自进化前分别 +15.7 / +17.7 个百分点；已部署至 DEEP Robotics M20 四足机器人，完成真实室内外闭环导航。</span></li>
+      </ul>
+    </div>
+    <div class="block"><span class="bt">关键指标/资源</span>
+      <ul>
+        <li>评测/性能：R2R-CE 68.6%（+15.7pp）、RxR-CE 72.4%（+17.7pp），均于未见验证集（自述数据，未见第三方复现）</li>
+        <li>代码/论文：论文、代码、模型与数据均已公开（arXiv/GitHub 链接待核实）</li>
+        <li>基座：Qwen3.5-9B；真机：DEEP Robotics M20</li>
+      </ul>
+      <div class="metrics">
+        <div class="mrow">R2R-CE 自进化后：68.6<span class="mbar" style="width:69px"></span></div>
+        <div class="mrow">RxR-CE 自进化后：72.4<span class="mbar" style="width:72px"></span></div>
+        <div class="mrow">R2R-CE 提升：+15.7pp ｜ RxR-CE 提升：+17.7pp</div>
+      </div>
+    </div>
+    <div><span class="tag" style="color:#8b949e;border-color:#8b949e">#递归自我改进</span><span class="tag" style="color:#3fb950;border-color:#3fb950">#具身智能</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#视觉语言导航</span></div>
+  </div>
+
+  <div class="item">
+    <h3>2. Anthropic 修订 S-1/A 招股书：首次警告已逼近 RSI 递归自我改进阈值 <span class="src">（SEC S-1/A filing / Theo Bearman 等核心账号 ｜ 2026-11-02 23:26）</span></h3>
+    <div class="block"><span class="bt">事件概述</span>正冲刺纳斯达克 IPO 的 Anthropic 于 11 月 2 日向 SEC 递交修订版 S-1/A，在风险因素章节首次明确写入：按内部估算与对未来模型的预期（而非当前模型表现），公司「可能即将（imminently）达到」其《负责任扩展政策》（RSP）中「由 AI 带来的显著加速进展」门槛的定义——即 RSI 临界线。</div>
+    <div class="block"><span class="bt">技术与工程价值</span>
+      <ul>
+        <li><span class="label">核心机制：</span><span class="val">S-1/A 第 29 页两处关键修改——① 将首版「可能无法在加速发生前识别」改写为「过去就曾未能识别、且未来也可能无法识别」；② 首次预警未来模型可能很快撞上「AI 显著加速研发」红线（1 年完成 2018–2024 基线速度下 2 年的研发进度）。文件承认过去已出现、未来也可能出现「加速发生之后才察觉」的滞后指标盲区。</span></li>
+        <li><span class="label">实际影响：</span><span class="val">头部实验室在公开法律文件中正式承认逼近 AI 自主进化临界点，将 RSI 风险从理论探讨拉入实质性治理考量；Anthropic 同步强调目前无任何模型越线，并承诺在可预见未来把人类留在研发流程中，正考虑修订 RSP 要求关键决策经人类审查签字。</span></li>
+      </ul>
+    </div>
+    <div class="block"><span class="bt">关键指标/资源</span>
+      <ul>
+        <li>评测/性能：内部口径——截至 9 月内部代码库超 90% 由 Claude 编写；1–9 月内部 Claude 调用开销（按目录价）暴涨 250×+，4 月起单月 Token 账单已超全员现金薪资（自述数据，来自招股书披露）</li>
+        <li>代码/论文：SEC S-1/A 修订版（<a href="https://sec.gov" target="_blank" rel="noopener">sec.gov</a>）；首发解读见 Theo Bearman / Andrew Curran 等 X 账号 2026-11-02 23:26</li>
+      </ul>
+      <div class="metrics">
+        <div class="mrow">内部代码 Claude 占比(9月)：90%+</div>
+        <div class="mrow">内部 Claude 开销增幅(1-9月)：250x+</div>
+        <div class="mrow">自进化加速红线：1年 ≈ 2年研发</div>
+      </div>
+    </div>
+    <div><span class="tag" style="color:#8b949e;border-color:#8b949e">#递归自我改进</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI治理</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#安全对齐</span></div>
+  </div>
+
+  <div class="item">
+    <h3>3. 智元提出 Worken「有效智能工时」：人形机器人开始按「干活」结算 <span class="src">（证券时报 访谈 / 智元创新日后续 ｜ 2026-11-03）</span></h3>
+    <div class="block"><span class="bt">事件概述</span>智元联合创始人彭志辉（稚晖君）在 11 月 3 日访谈中系统提出物理 AI 价值度量单位 Worken = 活跃机器人数量 × 自主工作时长 × 产出效能比，主张机器人服务可按「Worken 工时」计费，推动人形机器人从「卖本体」走向「按交付价值结算」。</div>
+    <div class="block"><span class="bt">技术与工程价值</span>
+      <ul>
+        <li><span class="label">核心机制：</span><span class="val">Worken 把具身智能的部署价值拆解为「规模 × 时长 × 效能」三因子，为真实工位上的持续产出提供可量化、可计费框架；方法论归结为「全栈」——硬件（第三代架构 AHA3 融合运动/作业/交互三智能）、模型（AGILE 框架 + 运动智能自进化智能体 + GO-3 Preview 基座）、生态（灵渠 OS 1.0 拟捐赠开放原子基金会）协同。</span></li>
+        <li><span class="label">实际影响：</span><span class="val">若 Worken 成为行业计费标准，订单、运维、保险与数据回传逻辑将整体重写，标志具身智能从技术展示进入「按效果付费」产业化下半场；与 10-29 创新日发布的 GO-3 / WITA-OMNI / 灵渠 OS 形成「模型—交互—计费」闭环。</span></li>
+      </ul>
+    </div>
+    <div class="block"><span class="bt">关键指标/资源</span>
+      <ul>
+        <li>评测/性能：Worken 公式为方法论指标，无 SOTA 数值；关联产能——智元已下线 2 万台人形机器人（厂商口径，待核实）</li>
+        <li>代码/论文：灵渠 OS 1.0 拟年底全面开源并捐赠开放原子开源基金会（官方口径，待核实具体仓库）</li>
+      </ul>
+      <div class="metrics">
+        <div class="mrow">Worken 三因子：规模 × 时长 × 效能</div>
+      </div>
+    </div>
+    <div><span class="tag" style="color:#3fb950;border-color:#3fb950">#具身智能</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#产业落地</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#物理AI</span></div>
+  </div>
+
+  <div class="arch">
+    <h2 style="margin-top:0">归档状态说明</h2>
+    <div>· 工作区 Markdown：<code>每日AI新闻推送_20261103_0845.md</code></div>
+    <div>· 工作区 HTML：<code>每日AI新闻推送_20261103_0845.html</code></div>
+    <div>· 网盘归档：<code>O:/quark/automation/每日 AI 新闻推送/</code></div>
+    <div>· GitHub 发布：<a href="https://github.com/allin8888/ainews" target="_blank" rel="noopener">https://github.com/allin8888/ainews</a> （main 分支，经 tools/git_publish.sh）</div>
+    <div>· Cloudflare Pages：<a href="https://ainews-3rw.pages.dev" target="_blank" rel="noopener">https://ainews-3rw.pages.dev</a> （git_publish.sh 末尾自动触发 tools/cf_publish.sh 直传）</div>
+    <div>· 执行状态：[待归档与护栏校验后回填 ✅/⚠️]</div>
+  </div>
+
+  <div class="note">
+    <h2>去重说明</h2>
+    <ul>
+      <li><b>去重基线：</b>扫描工作区最近 7 天（2026-10-27 ~ 2026-11-03）全部 <code>每日AI新闻推送_*.md</code>，提取标题构建已报道集合；对 3 条候选逐一执行 <code>dedup_check.py</code> 均判定 <code>is_dup=false</code>。</li>
+      <li><b>排除项：</b>超衍智能 Apex-35B-V1.0（首发 10-28，窗口外）；美团 LongCat-2.5（11-02 发布，精确时刻未确认 ≥16:19，按「第一信源时刻未确认不入选」暂缓，不扩展窗口）；乌镇「互联网之光」博览会（开幕时刻未确认在窗口内，且属展会非技术首发，暂缓）；智元 Worken 与 10-29 智元创新日同主体不同动作，dedup 判定非重复，予以收录。</li>
+      <li><b>结构性说明：</b>信源健康全绿（aihot_items 0.2h 前、aihot_dailies 2026-11-03、arXiv Mon 2 Nov 批次可达），本期未受影响。</li>
+    </ul>
+  </div>
+
+  <div class="note">
+    <h2>待核实</h2>
+    <ul>
+      <li>复旦 RSI-Nav 的 arXiv 论文编号与 GitHub 仓库地址：检索仅得智猩猩「论文作者投稿」报道，文中称论文/代码/模型/数据均已公开但未给出确切链接，需补第一信源链接。</li>
+      <li>智元 Worken 关联的「2 万台人形机器人下线」「灵渠 OS 1.0 开源仓库」：均来自厂商口径/访谈，待官方仓库与第三方核实。</li>
+      <li>Anthropic S-1/A 内部指标（90% 代码占比、Token 账单超薪资）：来自招股书披露，属厂商自述，未见独立审计。</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
