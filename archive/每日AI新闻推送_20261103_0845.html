@@ -163,7 +163,10 @@ details[open] > summary.fold-summary { color: #e6edf3; }
     <div>· 网盘归档：<code>O:/quark/automation/每日 AI 新闻推送/</code></div>
     <div>· GitHub 发布：<a href="https://github.com/allin8888/ainews" target="_blank" rel="noopener">https://github.com/allin8888/ainews</a> （main 分支，经 tools/git_publish.sh）</div>
     <div>· Cloudflare Pages：<a href="https://ainews-3rw.pages.dev" target="_blank" rel="noopener">https://ainews-3rw.pages.dev</a> （git_publish.sh 末尾自动触发 tools/cf_publish.sh 直传）</div>
-    <div>· 执行状态：[待归档与护栏校验后回填 ✅/⚠️]</div>
+    <div>· 执行状态：✅ 成功（网盘归档 + guardian 校验 + finalize 固化均通过）</div>
+    <div>· GitHub 发布：✅ 已推送 main（commit 23ae34e）</div>
+    <div>· Cloudflare Pages：⚠️ 直传失败（wrangler OAuth 已过期：CLOUDFLARE_API_TOKEN 未设置 / 刷新失败；git 推送部分已成功，不计入归档失败）。处置：本机执行 <code>npx wrangler@4.152.0 login</code> 后重跑 <code>tools/cf_publish.sh</code>，或创建 Pages:Edit Token 存入 <code>~/.workbuddy/cf_api_token.txt</code></div>
+    <div>· 收尾固化：5 ok / 0 failed / 0 skipped（kb / rss / index / backlog / health 五步全过）</div>
   </div>
 
   <div class="note">
