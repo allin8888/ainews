@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-11-04 16:31</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --card2:#1c2230; --border:#30363d;
+    --fg:#e6edf3; --muted:#9aa7b4; --accent:#58a6ff; --green:#3fb950; --orange:#f0883e;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.7;padding:32px 16px;}
+  .wrap{max-width:920px;margin:0 auto;}
+  h1{font-size:28px;margin:0 0 4px;letter-spacing:.5px;}
+  .meta{color:var(--muted);font-size:14px;margin-bottom:24px;}
+  .meta b{color:var(--fg);font-weight:600;}
+  .divider{height:1px;background:var(--border);margin:24px 0;}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;
+    padding:22px 24px;margin-bottom:22px;}
+  .card h2{font-size:19px;margin:0 0 12px;color:var(--accent);}
+  .sec-title{font-size:14px;font-weight:700;color:var(--green);margin:16px 0 6px;
+    text-transform:uppercase;letter-spacing:.5px;}
+  .kv{font-size:14px;color:var(--muted);margin:2px 0;}
+  .kv b{color:var(--fg);}
+  ul{margin:6px 0 6px 0;padding-left:20px;}
+  li{margin:4px 0;font-size:15px;}
+  .tags{margin-top:14px;}
+  .tag{display:inline-block;background:var(--card2);border:1px solid var(--border);
+    color:var(--orange);font-size:12px;padding:3px 10px;border-radius:20px;margin-right:6px;}
+  .metrics{background:var(--card2);border:1px solid var(--border);border-radius:8px;
+    padding:12px 14px;margin-top:12px;font-size:13px;}
+  .metrics .row{display:flex;align-items:center;gap:10px;margin:5px 0;}
+  .metrics .lab{width:200px;color:var(--muted);flex-shrink:0;}
+  .metrics .barbg{flex:1;background:#0d1117;border-radius:6px;height:10px;overflow:hidden;}
+  .metrics .bar{height:10px;background:linear-gradient(90deg,var(--accent),var(--green));}
+  .metrics .val{width:60px;text-align:right;color:var(--fg);font-variant-numeric:tabular-nums;}
+  .note{font-size:12px;color:var(--muted);margin-top:6px;}
+  .badge{display:inline-block;font-size:11px;padding:1px 7px;border-radius:5px;margin-left:6px;}
+  .badge.self{background:#3a2a12;color:var(--orange);border:1px solid #5a3f1d;}
+  .badge.third{background:#0f2a1a;color:var(--green);border:1px solid #1d4a2f;}
+  .footer{color:var(--muted);font-size:13px;margin-top:28px;}
+  .footer code{background:var(--card2);padding:1px 6px;border-radius:4px;color:var(--fg);}
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>每日 AI 前沿技术精选</h1>
+  <div class="meta">
+    <b>日期</b>：2026-11-04 &nbsp;·&nbsp; <b>时间</b>：16:31 &nbsp;·&nbsp; <b>精选条数</b>：3 条<br>
+    <b>时效窗口</b>：2026-11-04 08:42 – 2026-11-04 16:31（增量收敛：上次执行 08:42 起，严格不扩展至 24h 外）
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="开源大模型">开源大模型</button>
+<button class="filter-chip" data-tag="AI Coding">AI Coding</button>
+<button class="filter-chip" data-tag="多模态Agent">多模态Agent</button>
+<button class="filter-chip" data-tag="具身智能">具身智能</button>
+<button class="filter-chip" data-tag="世界模型">世界模型</button>
+<button class="filter-chip" data-tag="仿真器">仿真器</button>
+<button class="filter-chip" data-tag="自动驾驶">自动驾驶</button>
+<button class="filter-chip" data-tag="物理AI">物理AI</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. 腾讯混元 Hy4 正式发布：770B MoE 引入视觉与电脑操作，跻身最强开源模型之列</a><a class="toc-item" href="#entry-2">2. 启元 PrimeSim 世界模型仿真器发布：登顶 EWMBench 与 WorldSimProbe，11 月 6 日开源</a><a class="toc-item" href="#entry-3">3. 百度 Apollo World 世界模型披露：智能体驱动全模态，萝卜快跑全无人运营超百万公里</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="开源大模型 AI Coding 多模态Agent" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="腾讯混元 Hy4 正式发布：770B MoE 引入视觉与电脑操作，跻身最强开源模型之列" data-link="https://hy.tencent.com/research/hy4">复制</button>
+    <h2>1. 腾讯混元 Hy4 正式发布：770B MoE 引入视觉与电脑操作，跻身最强开源模型之列</h2>
+    <div class="kv"><b>来源</b>：腾讯混元官方博客 · 2026-11-04</div>
+    <div class="sec-title">事件概述</div>
+    <p>腾讯混元于 11 月 4 日正式发布 Hy4 正式版。相比 8 月的 Hy4 preview，新模型显著扩大预训练与后训练规模，首次引入视觉理解能力，并新增 Computer Use（电脑操作）能力，重点强化指令遵循、长文理解、长程 Agent 与真实生产力任务。混元团队称 Hy4 已跻身全球第一梯队开源模型，模型权重将于近期开源并发布系统卡片。</p>
+    <div class="sec-title">技术与工程价值</div>
+    <ul>
+      <li><b>核心机制</b>：视觉-文本联合表征（无需额外 ViT 分支）；Computer Use 将命令行与图形界面协同，面向 Blender/CAD 等专业软件与跨应用长程任务专项训练；与腾讯内部产品做 Co-Design 协同；并启动 RSI 预备——用 Hy4 配合 Hyra 2.0 研发框架协同优化小模型预训练基础设施、自动完成模型训练（已辅助产出 HyCell 与 HyPDE）；网络安全训练仅纳入防守性内容。</li>
+      <li><b>实际影响</b>：应用边界从「会回答」扩展到「会执行」工作流；开源权重 + 系统卡片 + 负责任开源（玄武/科恩实验室审计），为代码不出域的国内企业提供可自托管前沿底座。</li>
+    </ul>
+    <div class="sec-title">关键指标 / 资源</div>
+    <div class="kv">评测/性能：WorkBuddy 办公场景 83.18 分、通过率 96.15%（12 场景 9 个国内第一）；金融众测 3.04（高于 Kimi K3.1 Pro 2.68 / GLM-5.3 2.68 / DeepSeek-V4.1-Flash-1017 2.97）；GameDev/GameLogic +19.1% / +9.8%；幻觉率 12.95%→7.2%；上下文 1M tokens，总参 770B（激活 49B）。<span class="note">（多为腾讯自建/内部评测，自述数据，未见第三方复现）</span></div>
+    <div class="kv">代码/论文：<a href="https://<a href="https://hy.tencent.com/research/hy4" target="_blank" rel="noopener">hy.tencent.com/research/hy4</a>" style="color:var(--accent)">h<a href="https://y.tencent.com/research/hy4" target="_blank" rel="noopener">y.tencent.com/research/hy4</a></a>；API 已接入 OpenRouter / Hermes / OpenCode</div>
+    <div class="kv">定价（自述）：输入 ¥6 / 百万 tokens，输出 ¥18 / 百万 tokens，缓存命中 ¥0.3</div>
+    <div class="metrics">
+      <div class="row"><span class="lab">Hy4 办公任务通过率</span><span class="barbg"><span class="bar" style="width:96%"></span></span><span class="val">96.15</span></div>
+      <div class="row"><span class="lab">Hy4 金融众测(3.04)</span><span class="barbg"><span class="bar" style="width:60%"></span></span><span class="val">3.04</span></div>
+      <div class="row"><span class="lab">DeepSeek-V4.1-Flash 金融(2.97)</span><span class="barbg"><span class="bar" style="width:59%"></span></span><span class="val">2.97</span></div>
+      <div class="row"><span class="lab">Kimi K3.1 Pro 金融(2.68)</span><span class="barbg"><span class="bar" style="width:54%"></span></span><span class="val">2.68</span></div>
+      <span class="note">数据口径：Hy4 为自述（self）；对比基线为第三方评测（third）</span>
+    </div>
+    <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#开源大模型</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#多模态Agent</span></div>
+  </div>
+
+  <div class="card priority-2" id="entry-2" data-tags="具身智能 世界模型 仿真器" style="border-left:3px solid #3fb950"><button class="copy-btn" data-title="启元 PrimeSim 世界模型仿真器发布：登顶 EWMBench 与 WorldSimProbe，11 月 6 日开源" data-link="https://primebottech.github.io/PrimeSim-website/">复制</button>
+    <h2>2. 启元 PrimeSim 世界模型仿真器发布：登顶 EWMBench 与 WorldSimProbe，11 月 6 日开源</h2>
+    <div class="kv"><b>来源</b>：启元具身研究中心 / 澎湃新闻 · 2026-11-04</div>
+    <div class="sec-title">事件概述</div>
+    <p>11 月 4 日，启元具身研究中心发布面向机器人操纵任务的世界模型仿真器 PrimeSim。该产品基于预训练视频生成模型，经「中训练 + 后训练」两阶段改造，具备替代传统仿真器的交互推演能力，可作为机器人控制策略的虚拟训练底座。相关权重、推理代码与训练代码将于 11 月 6 日开源。</p>
+    <div class="sec-title">技术与工程价值</div>
+    <ul>
+      <li><b>核心机制</b>：中训练使用 30110 小时、覆盖 22 种异构本体（人形 54.8%、真实数据 84%）演示数据，围绕统一动作表征、帧对齐双路径条件注入、视角感知交错注意力实现跨本体兼容；后训练通过高速生成链路、自条件稳定性、分层时序记忆实现超上下文窗口长时序推演；一致性蒸馏 + DMD 将去噪步数压至 4 步。</li>
+      <li><b>实际影响</b>：解决「动作可控、多视角一致、长时序连贯」三类仿真器核心问题；与原生物理仿真器策略成功率相关系数 0.99，内部 RL 策略在真实仿真环境成功率 +11.5%，降低对真机数据与定制仿真依赖。</li>
+    </ul>
+    <div class="sec-title">关键指标 / 资源</div>
+    <div class="kv">评测/性能：EWMBench 综合 6.09（第一，HSD 1.000 / nDTW 1.000 / BLEU 0.570 / CLIP 0.954 / Logics 1.000）；WorldSimProbe(LIBERO) 全局轨迹覆盖 67.9、动作来源行为保持 72.3、交互动态 37.1 三项登顶；单卡 A100 经 4 步去噪 10.12 FPS，较 50 步基线 1.12 FPS 提速约 9 倍；新本体适配仅需百级梯度步数。<span class="note">（发布方自述基准，权重 11-06 待开源，未见第三方复现）</span></div>
+    <div class="kv">代码/论文：<a href="https://<a href="https://primebottech.github.io/PrimeSim-website/" target="_blank" rel="noopener">primebottech.github.io/PrimeSim-website/</a>" style="color:var(--accent)">p<a href="https://rimebottech.github.io/PrimeSim-website/" target="_blank" rel="noopener">rimebottech.github.io/PrimeSim-website/</a></a>（开源 11-06）</div>
+    <div class="metrics">
+      <div class="row"><span class="lab">PrimeSim EWMBench 综合</span><span class="barbg"><span class="bar" style="width:61%"></span></span><span class="val">6.09</span></div>
+      <div class="row"><span class="lab">PrimeSim WorldSimProbe 交互动态</span><span class="barbg"><span class="bar" style="width:37%"></span></span><span class="val">37.1</span></div>
+      <div class="row"><span class="lab">PrimeSim 单卡A100 FPS(4步)</span><span class="barbg"><span class="bar" style="width:33%"></span></span><span class="val">10.12</span></div>
+      <div class="row"><span class="lab">基线50步去噪 FPS</span><span class="barbg"><span class="bar" style="width:4%"></span></span><span class="val">1.12</span></div>
+      <span class="note">数据口径：均为发布方自述（self）</span>
+    </div>
+    <div class="tags"><span class="tag" style="color:#3fb950;border-color:#3fb950">#具身智能</span><span class="tag" style="color:#bc8cff;border-color:#bc8cff">#世界模型</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#仿真器</span></div>
+  </div>
+
+  <div class="card priority-3" id="entry-3" data-tags="世界模型 自动驾驶 物理AI" style="border-left:3px solid #bc8cff"><button class="copy-btn" data-title="百度 Apollo World 世界模型披露：智能体驱动全模态，萝卜快跑全无人运营超百万公里" data-link="https://finance.sina.com.cn/tob/2026-11-04/doc-inixqhks9357310.shtml">复制</button>
+    <h2>3. 百度 Apollo World 世界模型披露：智能体驱动全模态，萝卜快跑全无人运营超百万公里</h2>
+    <div class="kv"><b>来源</b>：新浪科技 / 百度 AI Day Apollo 专场 · 2026-11-04 16:07</div>
+    <div class="sec-title">事件概述</div>
+    <p>11 月 4 日下午，在百度 AI Day Apollo 专场上，百度 Apollo 首次披露面向物理 AI 的智能体驱动全模态世界模型 Apollo World，并提出世界模型「2+3」判断标准。目前该模型已用于萝卜快跑全球化测试与验证，端到端全无人运营超百万公里，助力无人驾驶规模化落地。</p>
+    <div class="sec-title">技术与工程价值</div>
+    <ul>
+      <li><b>核心机制</b>：将虚拟场景内所有交通参与者建模为具备决策与交互能力的 AI 智能体，支持无人车在虚拟城市任意起终点通行、提前验证「无限未来」的虚拟场景订单；AI Driver 在虚拟环境学习/验证/迭代；真实运营高价值场景提取为虚拟测试、结果反哺车端，形成真实-虚拟闭环。</li>
+      <li><b>实际影响</b>：解决长尾场景难覆盖、新区域部署成本高与试错风险大的「不可能三角」；一天虚拟路测里程相当于配安全员实车连续测试约三年，把测试成本与部署风险留在虚拟世界先行消化。</li>
+    </ul>
+    <div class="sec-title">关键指标 / 资源</div>
+    <div class="kv">评测/规模：萝卜快跑落地全球 28 城、累计超 2300 万次出行、自动驾驶总里程破 3.5 亿公里、全无人里程超 2.4 亿公里，已在左右舵市场实践。<span class="note">（百度自述运营数据，待核实）</span></div>
+    <div class="kv">代码/论文：<a href="https://<a href="https://finance.sina.com.cn/tob/2026-11-04/doc-inixqhks9357310.shtml" target="_blank" rel="noopener">finance.sina.com.cn/tob/2026-11-04/doc-inixqhks9357310.shtml</a>" style="color:var(--accent)">新浪科技报道</a>（本期尚无开源仓库披露）</div>
+    <div class="metrics">
+      <div class="row"><span class="lab">全无人里程(亿公里)</span><span class="barbg"><span class="bar" style="width:69%"></span></span><span class="val">2.4</span></div>
+      <div class="row"><span class="lab">总自动驾驶里程(亿公里)</span><span class="barbg"><span class="bar" style="width:100%"></span></span><span class="val">3.5</span></div>
+      <div class="row"><span class="lab">落地城市(座)</span><span class="barbg"><span class="bar" style="width:28%"></span></span><span class="val">28</span></div>
+      <span class="note">数据口径：均为百度自述（self），待核实</span>
+    </div>
+    <div class="tags"><span class="tag" style="color:#bc8cff;border-color:#bc8cff">#世界模型</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#自动驾驶</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#物理AI</span></div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="footer">
+    <p><b>去重说明</b>：与上次执行（2026-11-04 08:42）无重复；ReTerm（arXiv 2610 属 10 月）、MIT 权重空间编程（首发 11-02）因第一信源在窗口外已排除；Kimi K3.1 Pro 权重开放缺官方一手确认、属既有故事线，未入选（见待核实）。三条候选 dedup_check 均 is_dup:false。</p>
+    <p><b>待核实</b>：Hy4 / PrimeSim 多项评测为发布方自述、未见第三方复现；Apollo World 运营数据（28 城 / 3.5 亿 / 全无人 2.4 亿公里）为百度自述、待核实；Kimi K3.1 Pro 权重开放待后续窗口核实官方仓库。</p>
+    <p><b>归档</b>：工作区 <code>每日AI新闻推送_20261104_1631.md</code> / <code>.html</code> → 网盘 <code>O:/quark/automation/每日 AI 新闻推送/</code> → GitHub <code>allin8888/ainews</code> → Cloudflare Pages <code>a<a href="https://inews-3rw.pages.dev" target="_blank" rel="noopener">inews-3rw.pages.dev</a></code></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
