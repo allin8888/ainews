@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-11-04</title>
+<style>
+  :root { color-scheme: dark; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0d1117; color: #e6edf3; font-family: -apple-system, "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif; line-height: 1.75; padding: 24px 16px 48px; }
+  .wrap { max-width: 860px; margin: 0 auto; }
+  header { text-align: center; padding: 28px 12px 20px; border-bottom: 1px solid #21262d; margin-bottom: 28px; }
+  header h1 { font-size: 26px; letter-spacing: 1px; color: #e6edf3; }
+  header h1 .accent { color: #58a6ff; }
+  .meta { margin-top: 14px; font-size: 14px; color: #8b949e; }
+  .meta .win { color: #d29922; font-weight: 600; }
+  .meta span { margin: 0 10px; }
+  .card { background: #161b22; border: 1px solid #21262d; border-radius: 12px; padding: 24px 26px; margin-bottom: 22px; }
+  .card h2 { font-size: 19px; color: #e6edf3; line-height: 1.5; margin-bottom: 10px; }
+  .card h2 .num { color: #58a6ff; margin-right: 8px; }
+  .src-line { font-size: 13px; color: #8b949e; margin-bottom: 14px; }
+  .src-line a { color: #58a6ff; text-decoration: none; }
+  .sec { margin-top: 14px; }
+  .sec h3 { font-size: 14px; color: #3fb950; margin-bottom: 6px; letter-spacing: 0.5px; }
+  .sec p, .sec li { font-size: 14.5px; color: #c9d1d9; }
+  .sec ul { padding-left: 20px; }
+  .sec li { margin-bottom: 6px; }
+  .sec li b { color: #e6edf3; }
+  .sec a { color: #58a6ff; text-decoration: none; word-break: break-all; }
+  .metric-note { font-size: 12.5px; color: #d29922; margin-top: 4px; }
+  .tags { margin-top: 16px; }
+  .tag { display: inline-block; font-size: 12px; color: #58a6ff; background: rgba(88,166,255,0.12); border: 1px solid rgba(88,166,255,0.35); border-radius: 20px; padding: 2px 12px; margin-right: 8px; }
+  .note-block { background: #161b22; border: 1px solid #21262d; border-left: 3px solid #d29922; border-radius: 10px; padding: 20px 24px; margin-bottom: 22px; }
+  .note-block h2 { font-size: 17px; color: #d29922; margin-bottom: 12px; }
+  .note-block ol { padding-left: 22px; }
+  .note-block li { font-size: 14px; color: #c9d1d9; margin-bottom: 8px; }
+  .note-block li b { color: #e6edf3; }
+  footer { text-align: center; font-size: 12.5px; color: #6e7681; padding-top: 26px; border-top: 1px solid #21262d; }
+  @media (max-width: 640px) { .card { padding: 18px 16px; } header h1 { font-size: 21px; } }
+  @media print { body { background: #fff; color: #111; } .card, .note-block { border-color: #ccc; background: #fff; } .card h2, .sec li b { color: #111; } .sec p, .sec li, .note-block li { color: #333; } }
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>每日 AI 前沿技术<span class="accent">精选</span></h1>
+  <div class="meta">
+    <span>2026-11-04 08:42</span>·<span>精选 5 条</span>·<span class="win">时效窗口 2026-11-03 16:55 – 2026-11-04 08:42</span>
+  </div>
+</header>
+
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="AI Coding">AI Coding</button>
+<button class="filter-chip" data-tag="模型辅助工程">模型辅助工程</button>
+<button class="filter-chip" data-tag="Agent 工程">Agent 工程</button>
+<button class="filter-chip" data-tag="世界模型">世界模型</button>
+<button class="filter-chip" data-tag="推理加速">推理加速</button>
+<button class="filter-chip" data-tag="插件生态">插件生态</button>
+<button class="filter-chip" data-tag="基础架构">基础架构</button>
+<button class="filter-chip" data-tag="可观测性">可观测性</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. OpenAI 公开模型辅助工程设计进展：GPT-6 Astra 不到一周从零设计出 Codex 语音设备原型</a><a class="toc-item" href="#entry-2">2. LangChain 公开 Deep Agents 浏览器工具优化复盘：七套工具对比选定 Stagehand，WebVoyager 90% 通过仅 $1.98</a><a class="toc-item" href="#entry-3">3. Hao AI Lab 将 Pika H3 Flex 接入 FastVideo：NVFP4 量化推理最高快 7 倍，GB200 5.8 秒生成 5 秒 480p 视频+音频</a><a class="toc-item" href="#entry-4">4. Perplexity Computer 支持 Agent Plugins：连接器之上打包应用与技能，可从 GitHub 导入并跨 Agent 复用</a><a class="toc-item" href="#entry-5">5. Claude Platform 支持原生 OpenTelemetry：Agent trace 直发 Databricks MLflow</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="AI Coding 模型辅助工程" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="OpenAI 公开模型辅助工程设计进展：GPT-6 Astra 不到一周从零设计出 Codex 语音设备原型" data-link="https://openai.com/index/accelerating-engineering-for-the-physical-world">复制</button>
+  <h2><span class="num">01</span>OpenAI 公开模型辅助工程设计进展：GPT-6 Astra 不到一周从零设计出 Codex 语音设备原型</h2>
+  <div class="src-line">OpenAI 官方博客 / 官方 X ｜ 2026-11-03</div>
+  <div class="sec"><h3>事件概述</h3>
+  <p>OpenAI 发布官方博客，展示模型辅助机械、电气与系统设计的工程进展：内部硬件团队以 GPT-6 定义需求，由 Astra 完成外观、外壳、PCB 布局与元件选型布线、固件和用户界面，两名成员不到一周从零做出一款可与 Codex 编码智能体对话的语音设备原型；代工厂不到一个月产出小批量样机。</div>
+  <div class="sec"><h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：把「需求定义 → 工业设计 → 电路设计 → 固件/UI → 送样」的完整硬件工程链交给模型协同完成——GPT-6 承担需求与规格定义，Astra 负责跨域产出，人只在评审节点介入；官方同步声明原型距可制造仍需数轮评审与迭代。</li>
+    <li><b>实际影响</b>：AI Coding 从软件域外推到物理工程域的标杆案例——若「周级原型 → 月级小批量」节奏可复制，硬件初创验证成本结构将被重写；对具身智能硬件团队是可借鉴的模型辅助设计流水线。</li>
+  </ul></div>
+  <div class="sec"><h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>原型设计周期</td><td>&lt;1 周</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>小批量样机周期</td><td>&lt;1 个月</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <ul>
+    <li>评测/性能：原型设计周期 &lt;1 周；小批量样机 &lt;1 个月<span class="metric-note">（自述数据，未见第三方复现）</span></li>
+    <li>代码/论文：<a href="https://<a href="https://openai.com/index/accelerating-engineering-for-the-physical-world" target="_blank" rel="noopener">openai.com/index/accelerating-engineering-for-the-physical-world</a>">o<a href="https://penai.com/index/accelerating-engineering-for-the-physical-world" target="_blank" rel="noopener">penai.com/index/accelerating-engineering-for-the-physical-world</a></a> ｜ <a href="https://<a href="https://x.com/OpenAI/status/2117692477947641954" target="_blank" rel="noopener">x.com/OpenAI/status/2117692477947641954</a>">官方 X 帖</a>（2026-11-03 18:56:46Z）</li>
+  </ul></div>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#模型辅助工程</span></div>
+</div>
+
+<div class="card priority-2" id="entry-2" data-tags="AI Coding Agent 工程" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="LangChain 公开 Deep Agents 浏览器工具优化复盘：七套工具对比选定 Stagehand，WebVoyager 90% 通过仅 $1.98" data-link="https://www.langchain.com/blog/how-we-optimized-browser-use-for-deep-agents">复制</button>
+  <h2><span class="num">02</span>LangChain 公开 Deep Agents 浏览器工具优化复盘：七套工具对比选定 Stagehand，WebVoyager 90% 通过仅 $1.98</h2>
+  <div class="src-line">LangChain 官方博客 ｜ 2026-11-03</div>
+  <div class="sec"><h3>事件概述</h3>
+  <p>LangChain 发布工程复盘，对比七套浏览器工具集后为 Deep Agents 选定 Stagehand（Browserbase）并重建浏览器工具层：代码模式 run（Playwright 式链式调用，中间上下文不进模型窗口）、以 accessibility tree 快照替代截图、settle wait（固定 sleep 改为页面静默 500ms 即返回）、结构化 JSON 输出与单往返批处理，并公布三套基准的完整对比数据。</div>
+  <div class="sec"><h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：Agent 浏览器瓶颈不在模型而在工具层往返开销——快照中位 117 字符 vs 托管工具 ~17,000 字符、单任务模型轮次 10 vs 26、8 秒固定等待压缩到 0.6 秒；把浏览器动作编译成代码块批量执行是 token 成本下降一个数量级的关键。</li>
+    <li><b>实际影响</b>：为 Agent 浏览器工具选型提供可复用的评测方法学（WebVoyager / HardBench / WebTailBench 三基准 + 成本口径），Playwright MCP 与代码模式工具的 13 倍成本差是 Agent 工程选型的直接参考。</li>
+  </ul></div>
+  <div class="sec"><h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>Stagehand WebVoyager 通过率</td><td>90%</td><td><div class="bar"><span style="width:90%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>Playwright MCP 通过率</td><td>78%</td><td><div class="bar"><span style="width:78%"></span></div></td><td><span class="badge compare">对比</span></td></tr><tr><td>Stagehand 100 任务总成本</td><td>$1.98</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>Playwright MCP 总成本</td><td>$26.71</td><td></td><td><span class="badge compare">对比</span></td></tr><tr><td>HardBench 代码模式通过</td><td>30/38</td><td><div class="bar"><span style="width:79%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>HardBench CLI 基线</td><td>21/38</td><td><div class="bar"><span style="width:55%"></span></div></td><td><span class="badge compare">对比</span></td></tr></table></div>
+  <ul>
+    <li>评测/性能：WebVoyager 100 任务（Claude Sonnet 5.5）：Stagehand <b>90% 通过 / $1.98 总成本 / 中位 17.4s 每任务</b>，对比 Playwright MCP 78% / $26.71（约 13× 成本、3× 单任务耗时）；HardBench 38 核心任务：代码模式 30/38 vs CLI 21/38<span class="metric-note">（自述数据，未见第三方复现；Browserbase「token 效率 +80%」为厂商口径）</span></li>
+    <li>代码/论文：<a href="https://<a href="https://www.langchain.com/blog/how-we-optimized-browser-use-for-deep-agents" target="_blank" rel="noopener">www.langchain.com/blog/how-we-optimized-browser-use-for-deep-agents</a>">l<a href="https://angchain.com/blog/how-we-optimized-browser-use-for-deep-agents" target="_blank" rel="noopener">angchain.com/blog/how-we-optimized-browser-use-for-deep-agents</a></a></li>
+  </ul></div>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#Agent 工程</span></div>
+</div>
+
+<div class="card priority-3" id="entry-3" data-tags="世界模型 推理加速" style="border-left:3px solid #bc8cff"><button class="copy-btn" data-title="Hao AI Lab 将 Pika H3 Flex 接入 FastVideo：NVFP4 量化推理最高快 7 倍，GB200 5.8 秒生成 5 秒 480p 视频+音频" data-link="https://x.com/haoailab/status/2117704073248174180">复制</button>
+  <h2><span class="num">03</span>Hao AI Lab 将 Pika H3 Flex 接入 FastVideo：NVFP4 量化推理最高快 7 倍，GB200 5.8 秒生成 5 秒 480p 视频+音频</h2>
+  <div class="src-line">@haoailab 官方 X ｜ 2026-11-03</div>
+  <div class="sec"><h3>事件概述</h3>
+  <p>UCSD Hao AI Lab 宣布 Pika 于 10 月底开源的视频+同步音频生成 adapter「MiniMax H3 Flex」正式进入 FastVideo 推理栈：NVFP4 量化（QAD 权重）与内核优化后，较 Pika 官方开源推理代码最高快 7 倍；单卡 GB200 上 5.8 秒生成 5 秒 480p 视频+音频，单台 DGX Spark 桌面端 59.5 秒完成同任务，覆盖 Blackwell 全系到 RTX 5090。</div>
+  <div class="sec"><h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：NVFP4 4-bit 浮点量化在视频扩散模型上「提速不掉质量」的公开实证——配合 FastVideo 注意力内核与首尾帧流水线，把开源视频生成从「H100 级」拉到「单卡数据中心」乃至「桌面 DGX Spark」可达区间。</li>
+    <li><b>实际影响</b>：开放权重 + 完整训练配方 + 复现教程，是开源视频生成推理侧迄今最完整的可复现包之一；对世界模型 / 视频生成方向的端侧部署路径有直接参考价值。</li>
+  </ul></div>
+  <div class="sec"><h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>GB200 生成 5s 480p+音频</td><td>5.8s</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>DGX Spark 同任务</td><td>59.5s</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>较官方推理代码提速</td><td>7x</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <ul>
+    <li>评测/性能：较官方开源推理代码最高 7×；GB200 单卡 5.8 秒；DGX Spark 59.5 秒<span class="metric-note">（自述数据，未见第三方复现）</span></li>
+    <li>代码/论文：<a href="https://<a href="https://x.com/haoailab/status/2117704073248174180" target="_blank" rel="noopener">x.com/haoailab/status/2117704073248174180</a>">官方 X 帖</a>（2026-11-03 19:42:50Z）｜ 权重：<a href="https://<a href="https://huggingface.co/FastVideo/Pika-H3-Flex-NVFP4-QAD" target="_blank" rel="noopener">huggingface.co/FastVideo/Pika-H3-Flex-NVFP4-QAD</a>">FastVideo/Pika-H3-Flex-NVFP4-QAD</a> ｜ <a href="https://<a href="https://github.com/hao-ai-lab/FastVideo" target="_blank" rel="noopener">github.com/hao-ai-lab/FastVideo</a>">GitHub: hao-ai-lab/FastVideo</a></li>
+  </ul></div>
+  <div class="tags"><span class="tag" style="color:#bc8cff;border-color:#bc8cff">#世界模型</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#推理加速</span></div>
+</div>
+
+<div class="card priority-4" id="entry-4" data-tags="Agent 工程 插件生态" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Perplexity Computer 支持 Agent Plugins：连接器之上打包应用与技能，可从 GitHub 导入并跨 Agent 复用" data-link="https://x.com/AravSrinivas/status/2117725519982784940（snowflake">复制</button>
+  <h2><span class="num">04</span>Perplexity Computer 支持 Agent Plugins：连接器之上打包应用与技能，可从 GitHub 导入并跨 Agent 复用</h2>
+  <div class="src-line">官方 X（Perplexity CEO）｜ 2026-11-03</div>
+  <div class="sec"><h3>事件概述</h3>
+  <p>Perplexity CEO Aravind Srinivas 宣布其 Agent 框架 Computer 支持 Agent Plugins：在单个连接器之上引入「应用包 + 技能」抽象层，插件可打包应用连接与对应技能来完成工作；用户可浏览现成插件库，或从 GitHub 仓库 / .zip 文件导入自定义插件，官方称插件可与其他 Agent 兼容。</div>
+  <div class="sec"><h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：把 MCP 式「连接器」再向上抽象为「应用级插件包」——连接 + 技能 + 触发方式一并分发，降低 Agent 装配颗粒度；GitHub/.zip 导入与跨 Agent 兼容声明指向「插件即通用分发单元」的生态卡位。</li>
+    <li><b>实际影响</b>：Agent 插件生态从「工具调用注册」走向「应用包分发」的又一步；与 Claude 插件自动连接、Managed Agents 生态同期推进，Agent 装配层标准化竞争升温。</li>
+  </ul></div>
+  <div class="sec"><h3>关键指标/资源</h3>
+  <ul>
+    <li>评测/性能：无公开基准；「与其他 Agent 兼容」的具体互操作范围待核实</li>
+    <li>代码/论文：<a href="https://<a href="https://x.com/AravSrinivas/status/2117725519982784940" target="_blank" rel="noopener">x.com/AravSrinivas/status/2117725519982784940</a>">官方 X 帖</a>（2026-11-03 21:08:04Z）｜ 入口：<a href="https://<a href="https://perplexity.ai/computer/plugins" target="_blank" rel="noopener">perplexity.ai/computer/plugins</a>">p<a href="https://erplexity.ai/computer/plugins" target="_blank" rel="noopener">erplexity.ai/computer/plugins</a></a></li>
+  </ul></div>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#Agent 工程</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#插件生态</span></div>
+</div>
+
+<div class="card priority-5" id="entry-5" data-tags="基础架构 可观测性" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Claude Platform 支持原生 OpenTelemetry：Agent trace 直发 Databricks MLflow" data-link="https://www.databricks.com/blog/claude-platform-now-supports-native-opentelemetry-observability-databricks-mlflow（官方">复制</button>
+  <h2><span class="num">05</span>Claude Platform 支持原生 OpenTelemetry：Agent trace 直发 Databricks MLflow</h2>
+  <div class="src-line">Databricks 官方博客 ｜ 2026-11-03</div>
+  <div class="sec"><h3>事件概述</h3>
+  <p>Databricks 宣布 Claude Platform 原生支持 OpenTelemetry 可观测性导出：使用 Anthropic SDK、Messages API 与 Managed Agents 的开发者可将原生 trace 数据直接发送至 Databricks，在 MLflow 中调试智能体并评估改动。</div>
+  <div class="sec"><h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：Agent 平台可观测性从「各家私有 trace 格式 + 导出脚本」转向 OTel 标准协议原生输出——SDK / API / Managed Agents 三层统一埋点，观测数据与模型调用同源。</li>
+    <li><b>实际影响</b>：Agent 生产环境的调试与回归评估基建再补一块：trace 进 MLflow 后可与实验追踪、评估集联动，为「Agent 改动 → 评估 → 回滚」闭环提供标准数据面。</li>
+  </ul></div>
+  <div class="sec"><h3>关键指标/资源</h3>
+  <ul>
+    <li>评测/性能：无基准数据（基础设施互通发布）</li>
+    <li>代码/论文：<a href="https://<a href="https://www.databricks.com/blog/claude-platform-now-supports-native-opentelemetry-observability-databricks-mlflow" target="_blank" rel="noopener">www.databricks.com/blog/claude-platform-now-supports-native-opentelemetry-observability-databricks-mlflow</a>">d<a href="https://atabricks.com/blog/claude-platform-now-supports-native-opentelemetry-observability-databricks-mlflow" target="_blank" rel="noopener">atabricks.com/blog/claude-platform-now-supports-native-opentelemetry-observability-databricks-mlflow</a></a></li>
+  </ul></div>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#基础架构</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#可观测性</span></div>
+</div>
+
+<div class="note-block">
+  <h2>待核实</h2>
+  <ol>
+    <li><b>OpenAI 设备工程口径</b>：设计周期与样机周期均为 OpenAI 自述，原型实物未公开，未见第三方复现。</li>
+    <li><b>FastVideo 提速与端侧数字</b>：7× / 5.8s / 59.5s 均为 Hao AI Lab 自述；本跑网络受限未能直接核验 HF 权重页在线状态。</li>
+    <li><b>LangChain 三基准</b>：均为 LangChain 自家 harness 口径；Browserbase「token 效率 +80%」为厂商宣称。</li>
+    <li><b>Perplexity 插件跨 Agent 兼容</b>：兼容对象与互操作标准未披露。</li>
+    <li><b>存量待核实</b>：NorthCUA 机构归属与 397B Pro 口径、小米 AWM 2.0 闭环指标、Exo 第三方复现、MIT WSP 首方精确时刻、OpenAI Pando CDX 复核（承接第 127 跑 backlog，open 295）。</li>
+  </ol>
+</div>
+
+<div class="note-block" style="border-left-color:#58a6ff;">
+  <h2 style="color:#58a6ff;">去重与筛选说明</h2>
+  <ol>
+    <li><b>时间戳纪律排除 6 组</b>（旧闻新热 / 再传播）：Anthropic FlashProve（repo 10-30 公开、官方博客 11-02、官方 X 11-03 迟到宣传）；Mistral Large 4 × Open Math OS（转述帖 10-27 在先，官方 X 为回顾）；斯坦福 RoboArchitect（arXiv 10-30 提交）；Meta×Duke reward hacking 传播（arXiv 10-09）；NVIDIA DGX Spark MoE 三法（官方博客 11-02）；卡兹克 Agent-Autoloop（repo 创建早窗起点 53 分钟）。</li>
+    <li><b>人工覆判保留 2 条</b>：LangChain 浏览器工具优化（与第 110 跑 v0.10 发布同工作线——功能发布 vs 优化+基准复盘，动作不同）；Hao AI Lab FastVideo（与第 110/119 跑 H3 Flex 开源本体不同——第三方集成优化 7×）。</li>
+    <li><b>门槛/焦点排除</b>：fal / Traversal 融资、AMD / Palantir 财报、Meta 债券与 AI 泡沫分析、S-1 算力占比（同文件主体已报）、ChatGPT 搜索量 20%（数据点）、Netflix / Apple / YouTube / Steam 产品动态、人事变动、观点类（Musk 电力 / Tao 外包 / Stanford 44%）、Crouton Alpha（无法核实）、窃听设备传闻（无第一信源）等。</li>
+    <li><b>结构性说明</b>：arXiv 本跑无新批次（Tue-03 批次早于窗起点已由第 127 跑覆盖，Wed-04 批次未发布）；HN 窗内无 &gt;40 分帖子；aihot 窗内 88 条逐一过筛；信源健康 ok=3 / warn=0 / error=0。</li>
+  </ol>
+</div>
+
+<footer>每日 AI 前沿技术精选 · 自动生成 · 时效窗口以报告头为准</footer>
+
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
