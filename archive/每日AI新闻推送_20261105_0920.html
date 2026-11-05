@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-11-05</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --card2:#1c2230; --border:#2a313c;
+    --text:#e6edf3; --muted:#9aa7b4; --accent:#3fb950; --accent2:#58a6ff; --accent3:#f0883e;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7;}
+  .wrap{max-width:880px;margin:0 auto;padding:32px 20px 60px;}
+  header.meta{background:linear-gradient(135deg,#161b22,#1c2230);border:1px solid var(--border);border-radius:14px;padding:22px 26px;margin-bottom:26px;}
+  header.meta h1{margin:0 0 14px;font-size:26px;letter-spacing:.5px;}
+  .kv{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:14px;color:var(--muted);}
+  .kv b{color:var(--text);font-weight:600;}
+  .rule{height:1px;background:var(--border);margin:22px 0;}
+  h2.sec{font-size:20px;margin:30px 0 16px;border-left:4px solid var(--accent);padding-left:12px;}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.25);}
+  .card h3{margin:0 0 12px;font-size:18px;color:#fff;}
+  .card h3 .src{font-size:12px;color:var(--muted);font-weight:400;margin-left:8px;}
+  .card .ov{font-size:14.5px;margin:0 0 14px;color:#dbe4ee;}
+  .card .blk{margin:12px 0;}
+  .card .blk .lbl{font-size:12px;font-weight:700;color:var(--accent2);text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px;}
+  .card ul{margin:4px 0 0;padding-left:20px;}
+  .card li{margin:5px 0;font-size:14px;}
+  .card .res{font-size:13.5px;color:var(--muted);background:var(--card2);border-radius:8px;padding:10px 12px;}
+  .card .res .u{color:var(--accent3);word-break:break-all;}
+  .tags{margin-top:14px;}
+  .tag{display:inline-block;background:rgba(88,166,255,.12);color:var(--accent2);border:1px solid rgba(88,166,255,.3);border-radius:20px;padding:2px 11px;font-size:12px;margin:3px 6px 0 0;}
+  .note{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 22px;font-size:13.5px;color:var(--muted);}
+  .note h2{color:#fff;font-size:18px;margin:0 0 12px;}
+  .note li{margin:7px 0;}
+  footer{margin-top:28px;font-size:12.5px;color:var(--muted);}
+  .status{font-size:13px;color:var(--accent);}
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="meta">
+    <h1>每日 AI 前沿技术精选</h1>
+    <div class="kv">
+      <span><b>日期</b>：2026-11-05</span>
+      <span><b>时间</b>：09:20</span>
+      <span><b>精选条数</b>：5 条</span>
+      <span><b>时效窗口</b>：2026-11-04 16:31 – 2026-11-05 09:20（增量收敛，上次执行不足 24h；16 小时 49 分）</span>
+    </div>
+  </header>
+
+  <h2 class="sec">今日精选</h2>
+
+  <div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="AI Coding">AI Coding</button>
+<button class="filter-chip" data-tag="自主安全">自主安全</button>
+<button class="filter-chip" data-tag="Agent">Agent</button>
+<button class="filter-chip" data-tag="编码模型">编码模型</button>
+<button class="filter-chip" data-tag="MoE">MoE</button>
+<button class="filter-chip" data-tag="产业并购">产业并购</button>
+<button class="filter-chip" data-tag="多智能体">多智能体</button>
+<button class="filter-chip" data-tag="基础设施">基础设施</button>
+<button class="filter-chip" data-tag="并购">并购</button>
+<button class="filter-chip" data-tag="世界模型">世界模型</button>
+<button class="filter-chip" data-tag="自动驾驶">自动驾驶</button>
+<button class="filter-chip" data-tag="端到端">端到端</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. OpenAI 公开自主漏洞发现/利用/修补流水线：单次运行生成 948 个 Linux 内核本地提权补丁</a><a class="toc-item" href="#entry-2">2. Cognition 发布 SWE-2 Flash：高速低成本编码模型，速率 3×、价格 1/5</a><a class="toc-item" href="#entry-3">3. Meta 收购 AI 编程初创公司 Conductor，加速编程智能体布局</a><a class="toc-item" href="#entry-4">4. OpenAI 收购 Pierre Computer：补齐 Codex 代码理解与审查基础设施</a><a class="toc-item" href="#entry-5">5. RFWorld：免 Rollout 的世界模型用于端到端自动驾驶轨迹评估</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="AI Coding 自主安全 Agent" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="OpenAI 公开自主漏洞发现/利用/修补流水线：单次运行生成 948 个 Linux 内核本地提权补丁" data-link="https://openai.com/index/a-thousand-fewer-paths-to-root">复制</button>
+    <h3>1. OpenAI 公开自主漏洞发现/利用/修补流水线：单次运行生成 948 个 Linux 内核本地提权补丁<span class="src">OpenAI 官方博客 | 2026-11-04</span></h3>
+    <p class="ov"><b>事件概述：</b>OpenAI 于 11 月 4 日发布安全研究报告《A thousand fewer paths to root》，披露用「即将推出的网络安全模型」驱动一套自主流水线，完成 Linux 内核漏洞发现→动态复现→可利用性评估→补丁生成→人工审阅五阶段闭环；10 月一次完整跑识别 2308 个候选漏洞，动态复现 1724 个，去重后产出 948 个独立本地提权（LPE）补丁。</p>
+    <div class="blk"><div class="lbl">技术与工程价值</div>
+      <ul>
+        <li><b>核心机制：</b>多智能体流水线——一个 agent 筛选具安全审计价值的代码，另一个 agent 分析；候选送入隔离虚拟机动态复现，再经可利用性评估（在启用 SMEP/SMAP/KASLR/HARDENED_USERCOPY 的加固环境中测试），最后生成最小化崩溃 PoC、候选补丁与完整 exploit 供人工审阅。</li>
+        <li><b>实际影响：</b>相对 7 月 GPT-5.6 Sol 跑出的 166 个 LPE，新模型在 Linux 内核已加固三个月后仍多发现 &gt;5× 新颖 LPE；已按社区建议优先上报关键漏洞并与 Patch the Planet 伙伴推进，扫描及分析持续 10 天内已有 61 个 LPE 在 Linux 上游修复。这把「模型找洞+修洞」从演示推到可计量、可审计的工程流水线。</li>
+      </ul>
+    </div>
+    <div class="blk"><div class="lbl">关键指标/资源</div>
+      <p class="res">评测/性能：候选 2308 → 复现 1724（74.7%）→ 信息泄露 PoC 291 + 可用 LPE 1169 → 去重后 948 独立 LPE 补丁；端到端 API 成本约 $1,213,430（≈$1279/LPE）；宣称至少 10 种新颖利用技术（第三方内核漏洞专家确认）；kernelCTF 加固环境另得 21 LPE / 25 信息泄露；上游已修复 61、暂存 43、讨论中 299（自述数据，未见第三方复现）。<br>代码/论文：<span class="u">https://<a href="https://openai.com/index/a-thousand-fewer-paths-to-root" target="_blank" rel="noopener">openai.com/index/a-thousand-fewer-paths-to-root</a></span></p>
+    </div>
+    <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#自主安全</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#Agent</span></div>
+  </div>
+
+  <div class="card priority-2" id="entry-2" data-tags="AI Coding 编码模型 MoE" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Cognition 发布 SWE-2 Flash：高速低成本编码模型，速率 3×、价格 1/5" data-link="https://cognition.ai/blog">复制</button>
+    <h3>2. Cognition 发布 SWE-2 Flash：高速低成本编码模型，速率 3×、价格 1/5<span class="src">Cognition 官方博客 / Devin | 2026-11-04</span></h3>
+    <p class="ov"><b>事件概述：</b>Devin 背后团队 Cognition 于 11 月 4 日正式发布 SWE-2 Flash，定位为 SWE-2 家族中偏速度与性价比的一档，面向代码评审、功能迭代、文档维护、终端运维等高频自动化开发场景，目前已上线 Devin Desktop / CLI，免费试用至 11 月 30 日。</p>
+    <div class="blk"><div class="lbl">技术与工程价值</div>
+      <ul>
+        <li><b>核心机制：</b>底座选用 Thinking Machines 的 Inkling-Small（276B 总参数、12B 激活的稀疏 MoE），官方称其在多项领先评测上优于所有美方开源权重模型，并强调「完全美国」训练叙事；相对完整版 SWE-2（2.8T/104B），Flash 把更重的任务留给高档模型，自身专注例行自动化负载。</li>
+        <li><b>实际影响：</b>原生生成速度达 200 token/s（SWE-2 为 60 token/s，约 3.3×），调用价格仅为 SWE-2 的五分之一，把编码智能体的单位推理成本进一步压低，与 Cursor/Codex 的低价订阅竞争形成共振。</li>
+      </ul>
+    </div>
+    <div class="blk"><div class="lbl">关键指标/资源</div>
+      <p class="res">评测/性能：总参数 276B、激活 12B；200 TPS（自述，对比 SWE-2 60 TPS）；价格 1/5 SWE-2（自述数据，未见第三方复现）。<br>代码/论文：<span class="u">https://<a href="https://cognition.ai/blog" target="_blank" rel="noopener">cognition.ai/blog</a></span></p>
+    </div>
+    <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#编码模型</span><span class="tag" style="color:#79c0ff;border-color:#79c0ff">#MoE</span></div>
+  </div>
+
+  <div class="card priority-3" id="entry-3" data-tags="AI Coding 产业并购 多智能体" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Meta 收购 AI 编程初创公司 Conductor，加速编程智能体布局" data-link="https://www.metacareers.com">复制</button>
+    <h3>3. Meta 收购 AI 编程初创公司 Conductor，加速编程智能体布局<span class="src">Meta / Axios | 2026-11-04</span></h3>
+    <p class="ov"><b>事件概述：</b>Meta 于 11 月 4 日确认收购 AI 编程初创公司 Conductor（成立于 2024 年，2026 年 3 月完成 2200 万美元 A 轮），其产品允许用户向并行工作区部署多个智能体快速搭建软件项目，调用 Anthropic、OpenAI 等主流实验室模型；Conductor 将加入 Meta 超级智能实验室，核心功能运转至明年初，云服务 11 月 20 日关停并删除用户云端数据。</p>
+    <div class="blk"><div class="lbl">技术与工程价值</div>
+      <ul>
+        <li><b>核心机制：</b>Conductor 的 agent 团队可部署在云端、本地或手机上，帮助工程师并行处理同一项目的不同模块——这是「多智能体并行软件工程」产品化的代表路径之一。</li>
+        <li><b>实际影响：</b>与 OpenAI 同日收购代码管理工具商 Pierre Computer（其 Trees/Diffs 库已被 Codex 使用，补齐代码探索/审查/存储能力）形成共振，头部实验室在约 24 小时内接连并购编程智能体相关团队，标志 AI Coding 竞争从模型能力正快速下沉到「agent 编排 + 开发基础设施」的整合层。</li>
+      </ul>
+    </div>
+    <div class="blk"><div class="lbl">关键指标/资源</div>
+      <p class="res">评测/性能：Conductor 成立于 2024 年，A 轮 2200 万美元（2026-03）；具体交易金额 Meta 未披露（待核实）。<br>代码/论文：<span class="u">https://<a href="https://www.metacareers.com" target="_blank" rel="noopener">www.metacareers.com</a></span></p>
+    </div>
+    <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#产业并购</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#多智能体</span></div>
+  </div>
+
+  <div class="card priority-4" id="entry-4" data-tags="AI Coding 基础设施 并购" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="OpenAI 收购 Pierre Computer：补齐 Codex 代码理解与审查基础设施" data-link="https://openai.com">复制</button>
+    <h3>4. OpenAI 收购 Pierre Computer：补齐 Codex 代码理解与审查基础设施<span class="src">OpenAI 官方 / 多家媒体 | 2026-11-04</span></h3>
+    <p class="ov"><b>事件概述：</b>OpenAI 于 11 月 4 日宣布收购代码管理工具开发商 Pierre Computer，后者开发的 Trees、Diffs 等库已被 Codex 使用；交易将补齐 Codex 在代码探索、审查与存储方面的能力，具体金额未披露。</p>
+    <div class="blk"><div class="lbl">技术与工程价值</div>
+      <ul>
+        <li><b>核心机制：</b>Pierre 的 Trees/Diffs 库提供高效的代码树遍历与差异计算原语，是代码智能体在真实仓库中「理解结构、定位依赖、生成补丁」的基础设施层。</li>
+        <li><b>实际影响：</b>与 Meta 收购 Conductor 同一天，OpenAI 通过并购把编码智能体的底层工具链内化，减少对外部依赖；结合同日发布的自主漏洞修补流水线，OpenAI 正把「代码生成—审查—修复」全链路收归自有栈。</li>
+      </ul>
+    </div>
+    <div class="blk"><div class="lbl">关键指标/资源</div>
+      <p class="res">评测/性能：Pierre 的 Trees/Diffs 已被 Codex 使用（自述/媒体转述，交易金额与整合时间表待核实）。<br>代码/论文：<span class="u">https://<a href="https://openai.com" target="_blank" rel="noopener">openai.com</a></span></p>
+    </div>
+    <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span><span class="tag" style="color:#e3b341;border-color:#e3b341">#基础设施</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#并购</span></div>
+  </div>
+
+  <div class="card priority-5" id="entry-5" data-tags="世界模型 自动驾驶 端到端" style="border-left:3px solid #bc8cff"><button class="copy-btn" data-title="RFWorld：免 Rollout 的世界模型用于端到端自动驾驶轨迹评估" data-link="https://arxiv.org/abs/2611.05072">复制</button>
+    <h3>5. RFWorld：免 Rollout 的世界模型用于端到端自动驾驶轨迹评估<span class="src">arXiv 2611.05072 | 2026-11-04</span></h3>
+    <p class="ov"><b>事件概述：</b>arXiv 新投稿（cs.RO Wed-04 批次）提出 RFWorld——一种用于端到端自动驾驶轨迹评估的「免 Rollout（Rollout-Free）」世界模型。现有基于模型的轨迹评估器通过显式预测候选轨迹条件下的未来状态（即 rollout）来实现未来感知评分，但 rollout 推理成本高且会累积预测误差；RFWorld 主张规划无需为每个候选重建完整未来场景，只需与比较相关的未来信息。</p>
+    <div class="blk"><div class="lbl">技术与工程价值</div>
+      <ul>
+        <li><b>核心机制：</b>RFWorld 构建共享场景记忆，并通过轻量的训练时时间读出（temporal readout）配合语义监督将其塑造成「未来可读」表征，保持训练开销低；推理时候选轨迹可直接在该表征上打分，省去逐候选的未来场景重建。</li>
+        <li><b>实际影响：</b>面向端到端自动驾驶，用世界模型做轨迹评估而不付出 rollout 的全量预测代价，有望在保持规划精度的同时显著降低推理延迟与误差累积；与本期「世界模型上车」主线（第 129 跑 Apollo World）形成技术呼应，代表世界模型从仿真底座走向实时决策闭环的演进方向。</li>
+      </ul>
+    </div>
+    <div class="blk"><div class="lbl">关键指标/资源</div>
+      <p class="res">评测/性能：论文摘要未披露具体基准数字（详见 arXiv 全文，待核实）。<br>代码/论文：<span class="u">https://<a href="https://arxiv.org/abs/2611.05072" target="_blank" rel="noopener">arxiv.org/abs/2611.05072</a></span></p>
+    </div>
+    <div class="tags"><span class="tag" style="color:#bc8cff;border-color:#bc8cff">#世界模型</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#自动驾驶</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#端到端</span></div>
+  </div>
+
+  <div class="rule"></div>
+  <div class="note">
+    <h2>去重说明</h2>
+    <ul>
+      <li><b>增量收敛：</b>本跑窗口 2026-11-04 16:31 → 2026-11-05 09:20（距第 129 跑 16h49m，增量模式，只抓增量）。</li>
+      <li><b>7 天扫描工作区</b> + 记录补全；实体去重（dedup_check.py）5 条均 is_dup:false（jaccard 0.0–0.132，最近邻均为非同主体动作条目）。</li>
+      <li><b>已报道/排除项：</b>① 启元 PrimeSim 世界模型仿真器——第 129 跑（2026-11-04 16:31）已报「正式发布+11-06 开源」，本期 arXiv 2611.04870 为其学术版，同主体同动作排除；② 月之暗面 Kimi K3.1 Pro 权重开放——HF 仓库 createdAt 为 2026-11-02 12:13 BJ（窗口外），属 10-24 发布故事线延续，且第 129 跑已将其作为待核实项排除，本跑 aihot 11-04/05 条目为滞后转述，按时间戳纪律排除；③ RicursiveAI Ripple-65B Preview——HF 仓库 createdAt 2026-11-04 10:41 BJ（窗口前 6h），aihot 11-04 21:01Z 为滞后发现，按时间戳纪律排除。</li>
+      <li><b>结构性说明：</b>① 信源健康全绿（aihot_items 0.2h / aihot_dailies 2026-11-05 / arXiv Wed-04 批次），无信源降级；② 具身智能与世界模型方向：本期仅以 arXiv 世界模型代表条目（RFWorld）覆盖，未单列独立具身条目——Wed-04 cs.RO 批次含 PolicyIK、DexHOT、人形 Loco-Manipulation 等多篇具身论文，但信号弱于世界模型主线，且 PrimeSim 已被 129 报；③ RSI 方向：窗口内无合规一手首发（2611.04974「LLMs as MDP Designers」偏自动化策略生成、非递归自我改进），结构性空缺如实披露；④ 本跑 arXiv Wed-04 批次由第 128/129 跑漏报（两跑均称「未发布/0 学术首发」），现作为应捕获而遗漏的增量补全，时间戳沿用项目惯例「批次公告 2026-11-04」。</li>
+    </ul>
+    <h2>待核实</h2>
+    <ul>
+      <li>OpenAI 网络安全模型身份与「即将推出」发布时间：报告以 OpenAI 官方博客（11-04）为第一信源，模型尚未正式命名发布，具体代号与公开时间待核实。</li>
+      <li>Cognition SWE-2 Flash 基准数字（276B/12B、200 TPS、价格 1/5）均为官方自述，未见第三方复现，待独立评测。</li>
+      <li>Meta 收购 Conductor、OpenAI 收购 Pierre Computer 的交易金额与整合时间表：Meta 拒绝披露细节，Pierre 金额未公开，待后续披露。</li>
+      <li>RFWorld（arXiv 2611.05072）摘要未给具体基准数字，全文指标待核实。</li>
+    </ul>
+    <h2>归档状态说明</h2>
+    <ul>
+      <li><b>工作区 Markdown：</b>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261105_0920.md</li>
+      <li><b>工作区 HTML：</b>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261105_0920.html</li>
+      <li><b>网盘归档：</b>O:/quark/automation/每日 AI 新闻推送/（同步写入上述同名文件）</li>
+      <li><b>GitHub 发布：</b>https://<a href="https://github.com/allin8888/ainews" target="_blank" rel="noopener">github.com/allin8888/ainews</a></li>
+      <li><b>Cloudflare Pages：</b>https://<a href="https://ainews-3rw.pages.dev" target="_blank" rel="noopener">ainews-3rw.pages.dev</a></li>
+      <li class="status"><b>执行状态：</b>✅ 成功（guardian post ok:true、归档 archived 2/0 failed、窗口逐字一致）</li>
+    </ul>
+  </div>
+
+  <footer>每日 AI 前沿技术精选 · 自动化任务 automation-1784106545536 · 增量窗口 2026-11-04 16:31 – 2026-11-05 09:20</footer>
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
