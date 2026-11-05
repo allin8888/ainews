@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日 AI 前沿技术精选 · 2026-11-05 17:45</title>
+<style>
+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#9da7b1;--blue:#58a6ff;--green:#3fb950;--orange:#f0883e;}
+*{box-sizing:border-box;}
+body{margin:0;padding:32px 18px 64px;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.78;font-size:15px;}
+.wrap{max-width:960px;margin:0 auto;}
+h1{font-size:28px;letter-spacing:.5px;margin:0 0 16px;color:#fff;}
+.meta{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin:0 0 22px;font-size:14px;color:var(--muted);}
+.meta b{color:var(--text);font-weight:650;}
+.meta .row{margin:3px 0;}
+.meta .win{color:var(--green);}
+hr.divider{border:0;border-top:1px solid var(--border);margin:26px 0;}
+.section-title{font-size:19px;font-weight:700;color:#fff;margin:0 0 14px;padding-left:10px;border-left:3px solid var(--blue);}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px 22px;margin:0 0 18px;}
+.card h2{font-size:19px;line-height:1.55;margin:0 0 6px;color:#fff;font-weight:680;}
+.source{font-size:13px;color:var(--muted);margin:0 0 16px;}
+.card h3{font-size:14px;margin:18px 0 6px;color:var(--blue);font-weight:650;letter-spacing:.3px;}
+.card p{margin:0 0 8px;}
+.card ul{margin:0 0 8px;padding-left:20px;}
+.card li{margin:6px 0;}
+.card strong{color:#fff;}
+.card code{background:#21262d;padding:1px 5px;border-radius:4px;font-size:13px;}
+.card a{color:var(--blue);word-break:break-all;}
+.tags{margin-top:14px;padding-top:12px;border-top:1px solid var(--border);}
+.tag{display:inline-block;background:#21262d;border:1px solid var(--border);color:var(--blue);font-size:12px;padding:3px 9px;border-radius:12px;margin:3px 6px 3px 0;}
+.excl,.notes{background:#11161d;border:1px solid var(--border);border-radius:10px;padding:14px 20px;margin:0 0 18px;font-size:14px;color:var(--muted);}
+.excl li,.notes li{margin:8px 0;}
+.excl b,.notes b{color:var(--text);}
+.footer{margin-top:30px;padding-top:16px;border-top:1px solid var(--border);font-size:13px;color:var(--muted);text-align:center;}
+@media(max-width:640px){body{padding:20px 12px 40px;}h1{font-size:23px;}.card{padding:16px;}.card h2{font-size:17px;}}
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>每日 AI 前沿技术精选</h1>
+<div class="meta">
+<div class="row"><b>日期</b>：2026-11-05 &nbsp;·&nbsp; <b>时间</b>：17:45 &nbsp;·&nbsp; <b>精选条数</b>：5 条</div>
+<div class="row"><b>时效窗口</b>：<span class="win">2026-11-05 09:20 – 2026-11-05 17:45</span>（增量收敛，上次执行不足 24h；8 小时 25 分）</div>
+</div>
+
+<hr class="divider">
+<div class="section-title">今日精选</div>
+
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="基础架构">基础架构</button>
+<button class="filter-chip" data-tag="开源模型">开源模型</button>
+<button class="filter-chip" data-tag="AI Coding">AI Coding</button>
+<button class="filter-chip" data-tag="Agent 编排">Agent 编排</button>
+<button class="filter-chip" data-tag="Harness">Harness</button>
+<button class="filter-chip" data-tag="RSI">RSI</button>
+<button class="filter-chip" data-tag="具身智能">具身智能</button>
+<button class="filter-chip" data-tag="离线强化学习">离线强化学习</button>
+<button class="filter-chip" data-tag="世界模型">世界模型</button>
+<button class="filter-chip" data-tag="评测">评测</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. 百度开源 ERNIE 5.5 Flash Base：280B/14B 激活 MoE 预训练终点权重，混合稀疏注意力与 Multi-Router Latent MoE</a><a class="toc-item" href="#entry-2">2. 月之暗面发布 Kimi Hosted Agents：把 Agent Harness 做成云端服务（Harness as a Service）</a><a class="toc-item" href="#entry-3">3. Compounding Physical RSI：把执行失败转成可继承能力的自进化策略，RoboDojo-Sim 42 任务登顶</a><a class="toc-item" href="#entry-4">4. PyRUA-REAL：真实世界具身递归自我改进，coding agent 把交互经验沉淀为持久记忆与可复用技能</a><a class="toc-item" href="#entry-5">5. Calibrated Relational World Models：用校准关系世界模型检测「静默动作接口失配」</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="基础架构 开源模型 AI Coding" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="百度开源 ERNIE 5.5 Flash Base：280B/14B 激活 MoE 预训练终点权重，混合稀疏注意力与 Multi-Router Latent MoE" data-link="https://ernie.baidu.com/release/ernie-5-5-flash-base/">复制</button>
+<h2>1. 百度开源 ERNIE 5.5 Flash Base：280B/14B 激活 MoE 预训练终点权重，混合稀疏注意力与 Multi-Router Latent MoE</h2>
+<div class="source">百度文心官方技术博客 | 2026-11-05</div>
+<h3>事件概述</h3>
+<p>百度文心于 11 月 5 日发布并开放 ERNIE-5.5-Flash-Base 权重——一个总参数 280B、每 token 激活 14B 的稀疏 MoE 基座语言模型，在 33.5T tokens 上从零完成预训练，训练上下文最长 128K、微调与推理支持 1M tokens。本次开放的是<strong>预训练终点 checkpoint</strong>（未经中训练与后训练），FP8 与 BF16 两套 safetensors 已上架 Hugging Face，并同步提供 vLLM / SGLang 部署示例与 NVIDIA Megatron-Bridge 微调示例。</p>
+<h3>技术与工程价值</h3>
+<ul>
+<li><strong>核心机制</strong>：43 层 Transformer，围绕「单位激活参数、单位 KV cache 字节的效果」逐组件重构。① Latent-Gated Sparse Attention：37 层采用 HCA 重度压缩注意力（每 128 个 token 压成 1 条缓存），仅 6 层用 MLA+DSA 逐 token 稀疏访问全上下文；低秩门控改用各层本就生成的 query latent 计算输出门，门投影权重参数减少 75%；另有 VHA 跨头低秩混合。② Multi-Router Latent MoE：多个独立初始化的 sigmoid 路由器共同打分，针对「单一路由器打分与专家实际效用仅弱相关、落选专家拿不到梯度致错误自强化」；512 个路由专家选 10 外加 1 共享专家，专家在 2048 维隐空间计算，dispatch/combine 通信量与专家 FLOPs 约减半。③ ECHO：复用主干最后一层做多步预测、取代独立 MTP 模块，多步损失直接作用于生成下一 token 的参数，作投机解码草稿模型时涌现外推特性。另有 MultiMax 输出头、mHC（4 条并行残差流）与 R2L 数字分词（词表约 200K）。训练侧用分布式 Muon + FP8，Dense/MoE 同号卡通信融合为单次集合通信；FlashMask-4 基于 CuTe-DSL 支持 SM90/SM100、head dim 最高 576/512，SM100 上相对 FlashAttention-4 MaskMod 前向最高提升 175%、反向 74%。</li>
+<li><strong>实际影响</strong>：把「Base 权重」作为阶段明确、可对照的公共研究基线开放，配合统一 checkpoint 让不同后训练方法的增益可直接比较，降低领域适配、指令微调、强化学习与 Agent 行为塑造的起步成本。预训练语料特别加强仓库级代码与软件演化数据（commit、issue、pull request、代码评审、需求→PR 与多 commit 轨迹、自动生成测试、经 CI 验证的修复），明确面向仓库级推理与 Agent 软件工程能力。</li>
+</ul>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>总参数 B</td><td>280</td><td><div class="bar"><span style="width:90%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>每 token 激活 B</td><td>14</td><td><div class="bar"><span style="width:6%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>预训练 T tokens</td><td>33.5</td><td><div class="bar"><span style="width:67%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>门投影参数降幅 %</td><td>75</td><td><div class="bar"><span style="width:75%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>FlashMask-4 前向提升 %</td><td>175</td><td><div class="bar"><span style="width:100%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+<ul>
+<li><strong>评测/性能</strong>：总参数 280B、每 token 激活 14B、33.5T tokens、训练上下文 128K / 微调推理 1M；官方在 30 项 Benchmark 上评测并称同尺寸 SOTA（对比 DeepSeek-V4-Flash-Base 284B-A13B、Hy3-preview-Base 295B-A21B、MiMo-V2.5-Base 310B-A15B，四者均用各自公开 checkpoint、同一套评测框架；自述数据，未见第三方复现）；长上下文侧 43 层中 37 层做 128 倍压缩注意力，仅 6 层 MLA-DSA 支撑细粒度检索；门投影参数减少 75%，FlashMask-4 前向最高提升 175%（自述数据，未见第三方复现）。</li>
+<li><strong>代码/论文</strong>：<a href="https://ernie.baidu.com/release/ernie-5-5-flash-base/" target="_blank" rel="noopener">https://ernie.baidu.com/release/ernie-5-5-flash-base/</a> ；<a href="https://huggingface.co/baidu/ERNIE-5.5-Flash-Base" target="_blank" rel="noopener">https://huggingface.co/baidu/ERNIE-5.5-Flash-Base</a></li>
+</ul>
+<div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#基础架构</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#开源模型</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span></div>
+</div>
+
+<div class="card priority-2" id="entry-2" data-tags="AI Coding Agent 编排 Harness" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="月之暗面发布 Kimi Hosted Agents：把 Agent Harness 做成云端服务（Harness as a Service）" data-link="https://platform.kimi.com/docs/hosted-agents/quickstart">复制</button>
+<h2>2. 月之暗面发布 Kimi Hosted Agents：把 Agent Harness 做成云端服务（Harness as a Service）</h2>
+<div class="source">Kimi 开放平台官方发布 / 官方文档 | 2026-11-05</div>
+<h3>事件概述</h3>
+<p>月之暗面于 11 月 5 日正式发布 Kimi Hosted Agents（托管智能体），把支撑 Agent 运行的 Harness 作为云端服务提供给企业与开发者，提供 7×24 小时托管环境，支持长程任务执行与多智能体高效协作，企业无需自行搭建和维护运行框架。官方同步上线快速开始、定价、API 参考文档及首批 8 个金融 Agent 模板。</p>
+<h3>技术与工程价值</h3>
+<ul>
+<li><strong>核心机制</strong>：Kimi Durable Harness Core 把会话历史、工具执行、沙箱、失败恢复、超时重试五层由「应用方自建」转为「平台托管」——事件溯源 + 断点续跑（平台故障后自动接管并恢复到中断前状态）、可定制 Agent Loop（Ralph loop、planner-executor-verifier、coordinator agent team 等编排范式）、上下文工程（工具按需加载、长任务压缩、追求 token 效率与 cache rate）、隔离云沙箱与网络访问控制、项目级凭证库与预算限制、执行留痕可审计导出。安全侧提供 Kimi Inference Hook：在每次模型推理前由企业自建/自采安全服务器对初始提示词与工具返回内容做 allow/deny 裁决，平台不留存提示与响应、仅记录裁决与时间戳（当前仅对企业认证用户定向开放）。</li>
+<li><strong>实际影响</strong>：把 Agent 从原型验证到生产上线的工程门槛压缩为「定义任务 + 接入工具」，底层运行环境的维护与升级由平台承担；配套 140+ Skills 与 30+ 插件，覆盖联网检索、专业数据查询、办公文档处理、内容生成，并已接入 Wind、iFinD、东方财富、S&amp;P Global、SEC EDGAR 等金融数据源，企业亦可挂接自有工具、数据源与内部 MCP。这标志 B 端商业化从「卖模型推理 API」向「卖智能体运行时」延伸，与本期 ERNIE Base 权重开放共同构成「基座—运行时」两层的分工。</li>
+</ul>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>官方 Skills 数</td><td>140</td><td><div class="bar"><span style="width:70%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>官方插件数</td><td>30</td><td><div class="bar"><span style="width:15%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>首批金融 Agent 模板</td><td>8</td><td><div class="bar"><span style="width:8%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+<ul>
+<li><strong>评测/性能</strong>：官方披露 140+ Skills、30+ 插件、首批 8 个金融 Agent 模板（投研建模、深度研究、晨报生成、港股 IPO 扫描、组合复盘、法规索引、监管判例日报、基金对账）；7×24 托管、独立沙箱、网络访问控制、审计导出为功能口径，官方未给出公开基准分数、SLA 或长程任务成功率（待核实）。</li>
+<li><strong>代码/论文</strong>：<a href="https://platform.kimi.com/docs/hosted-agents/quickstart" target="_blank" rel="noopener">https://platform.kimi.com/docs/hosted-agents/quickstart</a></li>
+</ul>
+<div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#Agent 编排</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#Harness</span></div>
+</div>
+
+<div class="card priority-3" id="entry-3" data-tags="RSI 具身智能 离线强化学习" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Compounding Physical RSI：把执行失败转成可继承能力的自进化策略，RoboDojo-Sim 42 任务登顶" data-link="https://arxiv.org/abs/2611.06654">复制</button>
+<h2>3. Compounding Physical RSI：把执行失败转成可继承能力的自进化策略，RoboDojo-Sim 42 任务登顶</h2>
+<div class="source">arXiv 2611.06654 · cs.RO Thu-05 公告批次 | 2026-11-05</div>
+<h3>事件概述</h3>
+<p>提出「复利式物理 RSI（Compounding Physical RSI）」自进化策略框架，把策略执行中的失败转化为可遗传给下一代的能力；在 RoboDojo-Sim 基准全部 42 个任务上，CSU-AI-07 以三 seed 均值 Overall Score 26.15、Success Rate 20.70% 位列榜首。</p>
+<h3>技术与工程价值</h3>
+<ul>
+<li><strong>核心机制</strong>：论文先指出物理环境中阻断「复利」的三个瓶颈——终局执行反馈很少能定位是哪个阶段导致失败、失败轨迹本身不提供纠正动作、更新共享参数会退化已掌握技能；由于任务完成率近似各阶段通过率的乘积，代际增益本可相乘放大。对应设计三阶段闭环：① 自动化能力缺口评估把失败 rollout 追溯到进度中断的任务阶段，并生成结构化改进目标；② remedy 阶段按该目标筛选已验证的阶段相关经验，用行为正则化离线强化学习精炼策略，无需在每个优化步做昂贵的在线 rollout；③ retention 阶段在「继承的参考策略」与「精炼后策略」之间构造权重空间候选，跨任务集评估后把最佳候选晋升为下一代参考状态，以守护既有技能。</li>
+<li><strong>实际影响</strong>：把「执行 → 诊断 → 自我更新」的物理 RSI 从概念推进到可计量、可离线运行的闭环，并显式处理「学新不忘旧」这一持续训练的核心工程难点；对长时序分阶段操作任务的策略迭代与部署给出可复用流程，也与本期 PyRUA-REAL 的「技能资产沉淀」路线形成互补。</li>
+</ul>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>Overall Score</td><td>26.15</td><td><div class="bar"><span style="width:26%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>Success Rate %</td><td>20.70</td><td><div class="bar"><span style="width:21%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>领先次名 分</td><td>5.92</td><td><div class="bar"><span style="width:6%"></span></div></td><td><span class="badge compare">对比</span></td></tr><tr><td>领先次名 百分点</td><td>5.82</td><td><div class="bar"><span style="width:6%"></span></div></td><td><span class="badge compare">对比</span></td></tr></table></div>
+<ul>
+<li><strong>评测/性能</strong>：RoboDojo-Sim 全部 42 个任务，三 seed 均值 Overall Score 26.15、Success Rate 20.70%，领先次名 5.92 分与 5.82 个百分点（论文自述，未见第三方复现）；摘要未给出代码仓库链接。</li>
+<li><strong>代码/论文</strong>：<a href="https://arxiv.org/abs/2611.06654" target="_blank" rel="noopener">https://arxiv.org/abs/2611.06654</a></li>
+</ul>
+<div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#RSI</span><span class="tag" style="color:#3fb950;border-color:#3fb950">#具身智能</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#离线强化学习</span></div>
+</div>
+
+<div class="card priority-4" id="entry-4" data-tags="RSI 具身智能 AI Coding" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="PyRUA-REAL：真实世界具身递归自我改进，coding agent 把交互经验沉淀为持久记忆与可复用技能" data-link="https://arxiv.org/abs/2611.06768">复制</button>
+<h2>4. PyRUA-REAL：真实世界具身递归自我改进，coding agent 把交互经验沉淀为持久记忆与可复用技能</h2>
+<div class="source">arXiv 2611.06768 · cs.RO Thu-05 公告批次 | 2026-11-05</div>
+<h3>事件概述</h3>
+<p>以 GPT-6-Astra 级 coding agent 为驱动，研究真实世界中的具身递归自我改进：PyRUA-REAL 让编码智能体把物理交互经验保留为持久记忆与可复用的可执行技能，用于指导后续探索与代码精炼；在 8 个真实世界任务上平均成功率 91.1%，在 RoboDojo 基准 42 个任务上平均成功率 84.4%。</p>
+<h3>技术与工程价值</h3>
+<ul>
+<li><strong>核心机制</strong>：不同于「每轮从零开始」的在线 agent 循环，框架把探索、执行反馈、代码精炼、部署四步产出的经验固化为两类可继承资产——持久记忆与可执行技能（程序），后续轮次的探索、改进与任务迁移可直接调用。研究系统考察了智能体如何协作、哪类执行反馈真正支撑有效的代码精炼、任务规格与既有技能如何影响鲁棒性与任务迁移；并额外评估「脱离在线 agent 决策、只部署最终程序」时产出程序的效率与能力，即把自我改进成果固化为可独立运行的交付物。</li>
+<li><strong>实际影响</strong>：把 RSI 从「参数或策略自更新」扩展到「程序与技能资产自沉淀」，且验证沉淀结果可离线部署，降低真实机器人持续运行对在线大模型的依赖；为「物理探索 → 可复用机器人技能」提供实证指导，是本期 AI Coding 与具身智能、RSI 三条主线的交汇点。</li>
+</ul>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>真实任务成功率 %</td><td>91.1</td><td><div class="bar"><span style="width:91%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>RoboDojo 成功率 %</td><td>84.4</td><td><div class="bar"><span style="width:84%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>真实任务数</td><td>8</td><td><div class="bar"><span style="width:8%"></span></div></td><td><span class="badge compare">对比</span></td></tr><tr><td>RoboDojo 任务数</td><td>42</td><td><div class="bar"><span style="width:42%"></span></div></td><td><span class="badge compare">对比</span></td></tr></table></div>
+<ul>
+<li><strong>评测/性能</strong>：8 个真实世界任务平均成功率 91.1%；RoboDojo 基准 42 个任务平均成功率 84.4%（论文自述，未见第三方复现）；摘要未给出代码仓库链接。</li>
+<li><strong>代码/论文</strong>：<a href="https://arxiv.org/abs/2611.06768" target="_blank" rel="noopener">https://arxiv.org/abs/2611.06768</a></li>
+</ul>
+<div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#RSI</span><span class="tag" style="color:#3fb950;border-color:#3fb950">#具身智能</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span></div>
+</div>
+
+<div class="card priority-5" id="entry-5" data-tags="世界模型 具身智能 评测" style="border-left:3px solid #bc8cff"><button class="copy-btn" data-title="Calibrated Relational World Models：用校准关系世界模型检测「静默动作接口失配」" data-link="https://arxiv.org/abs/2611.06653">复制</button>
+<h2>5. Calibrated Relational World Models：用校准关系世界模型检测「静默动作接口失配」</h2>
+<div class="source">arXiv 2611.06653 · cs.RO Thu-05 公告批次 | 2026-11-05</div>
+<h3>事件概述</h3>
+<p>把学到的「状态—动作—效果」关系当作离线契约，用于检测机器人动作在形状与量程都合规、但语义错误（坐标轴置换、符号反转、旋转重标定、夹爪极性反接）的「静默动作接口失配」，并对最可能出错的字段排序。论文被 CoRL 2026「机器人世界模型不确定性建模」Workshop 收录。</p>
+<h3>技术与工程价值</h3>
+<ul>
+<li><strong>核心机制</strong>：用干净留出的转移样本校准告警阈值，配合固定逆词汇表做闭集定位；在 10 个 LIBERO Spatial 任务、432 条源 episode 上做容量受控对比，于 2.5% 经验干净误报率下比较三种打分：ridge 前向残差、四分量联合高斯混合、以及同一混合的精确条件分布。结果显示条件分布召回最高，而联合打分在定位上更优，呈现明确的「检测—定位权衡」。</li>
+<li><strong>实际影响</strong>：为机器人部署前与运行中的接口语义校验提供不依赖在线试错的离线诊断手段，把「世界模型」用于可审计的安全校验而非仅用于生成画面。更值得关注的是评测纪律：作者明确声明这些是回顾性诊断、不是部署校准保证，且 DROID、HYDRA 全部三个任务、短时故障、小偏移、精确修复与模拟缓解均未通过各自 gate，xArm 仅贡献 1 个任务——结论仅支持「有界离线诊断 + 检测定位权衡」，不构成联合密度方法优越或跨机器人安全性的证据。这种完整披露负面边界的写法，对世界模型落地讨论比又一组 SOTA 数字更有参考价值。</li>
+</ul>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>ridge 残差召回 %</td><td>46.1</td><td><div class="bar"><span style="width:46%"></span></div></td><td><span class="badge compare">对比</span></td></tr><tr><td>联合高斯混合召回 %</td><td>61.0</td><td><div class="bar"><span style="width:61%"></span></div></td><td><span class="badge compare">对比</span></td></tr><tr><td>精确条件分布召回 %</td><td>65.7</td><td><div class="bar"><span style="width:66%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>经验干净误报率 %</td><td>2.5</td><td><div class="bar"><span style="width:3%"></span></div></td><td><span class="badge compare">对比</span></td></tr></table></div>
+<ul>
+<li><strong>评测/性能</strong>：2.5% 经验干净误报率下召回率 ridge 前向残差 46.1%、四分量联合高斯混合 61.0%、同一混合精确条件分布 65.7%；联合打分较 ridge 高 14.9 个百分点，条件化再提升 4.7 点；定位 95.8% 对 94.6%（论文标注为回顾性诊断、非部署校准保证；自述数据，未见第三方复现）。</li>
+<li><strong>代码/论文</strong>：<a href="https://arxiv.org/abs/2611.06653" target="_blank" rel="noopener">https://arxiv.org/abs/2611.06653</a></li>
+</ul>
+<div class="tags"><span class="tag" style="color:#bc8cff;border-color:#bc8cff">#世界模型</span><span class="tag" style="color:#3fb950;border-color:#3fb950">#具身智能</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#评测</span></div>
+</div>
+
+<hr class="divider">
+<details class="excl"><summary class="fold-summary">去重说明（审计明细，点击展开）</summary>
+<div class="excl">
+<ul>
+<li><b>增量收敛</b>：本跑窗口 2026-11-05 09:20 → 2026-11-05 17:45，距第 130 跑（09:20）8 小时 25 分，增量模式，只抓该区间增量，未重复覆盖已报道时段，未启用任何 48 小时降级策略。</li>
+<li><b>7 天扫描 + 实体去重</b>：扫描工作区 2026-10-29 起 17 份报告的全部条目标题构建关键词集合；5 条候选逐条执行实体去重，全部判定非重复（Jaccard 0.076–0.173，最近邻均为不同主体或不同动作条目）。</li>
+<li><b>时间戳纪律排除（本期重点）</b>：① LiberAI Liber-0（220 万小时人类经验、600 次零样本真机测试）——11-05 媒体密集深度稿，但官方技术 Blog 资源文件名 liber0-launch-final-20261104.mp4、网易「11 月 4 日消息」、AI 科技评论 2026-11-04 11:55 及多家 11-04 首发稿均指向 11 月 4 日，属 T-1 事件被 T 日转载，排除；② Together AI Together Compiler（最高 2.6× TPS）——官方博客标 Published 11/4/2026，Unite.AI / Blockchain.News / HPCwire 于 11-04 21:00–23:17 已报道，11-05 报道为 T+1 解读，排除；③ 魔芯科技 MoWorld 2.0 4D 世界模型——乌镇论坛 11-04 首发，11-05 为 T-1 转载且缺公开基准与代码；④ 京东 300 万台机器人采购 / 智元上半年营收 20 亿元——分别为 11-04 论坛演讲与 10-29 创新日数据的 T 日转述，属订单与财务口径；⑤ OpenAI 948 个 LPE 补丁、Cognition SWE-2 Flash、Meta 收购 Conductor、OpenAI 收购 Pierre Computer、腾讯混元 Hy4、RFWorld——前几跑已报，同主体同动作排除；⑥ ChatGPT Images 2.6、Hy4 第三方榜单评分、Brockman 访谈等属产品迭代、二级评分或观点，未达入选门槛。</li>
+<li><b>观察项</b>：窗内一手发布集中在「基座权重开放 + Agent 运行时托管 + arXiv Thu-05 批次」三条线；窗内 T-1 转载密度显著高于真实首发（Liber-0、Together Compiler、MoWorld 2.0 均被 T 日媒体重新包装）。</li>
+<li><b>结构性说明</b>：① 信源健康全绿（条目池最新 0.2h、日报 2026-11-05、arXiv 当前公告批次 Thu, 5 Nov 2026 共 62 篇可达），ok=3 / warn=0 / error=0；② arXiv 口径：3 条学术条目均来自 cs.RO Thu-05 公告批次（BJ 13:00 公告，落在窗内），v1 提交时刻为 11-04 15:30–18:38 UTC，沿用项目惯例以「批次公告」为首发可见时刻；③ 窗内其他高价值信号（受 5 条上限未单列）：arXiv 2611.06863「Rethinking Self-Repair in Code-as-Policy Agents」——252 个初始失败上五次重试恢复 85.3%，而同上限单纯重采样已达 68.3%，提示「失败特定反馈」收益可能被高估；arXiv 2611.06881 VABAR（6 类变分自动化操作任务、33 个技能库、Newton 物理引擎的开放式 Agentic Robotics 基准）；④ 焦点覆盖：AI Coding ×3、具身智能 ×3、世界模型 ×1、RSI ×2、基础架构与重大开源 ×1；窗内无更重量级的一手世界模型发布（MoWorld 2.0 与 Liber-0 均为 11-04），如实披露。</li>
+</ul>
+</div></details>
+
+<hr class="divider">
+<div class="section-title">待核实</div>
+<div class="notes">
+<ul>
+<li>ERNIE 5.5 Flash Base 的 30 项 Benchmark 具体分数与「同尺寸 SOTA」结论：来自官方博客与模型卡自述、虽称统一评测框架但未见第三方复跑；本报告未引用图表 OCR 数值，待独立评测。</li>
+<li>Kimi Hosted Agents 的 140+ Skills、30+ 插件、8 个模板均为官方口径；托管环境的实际长程任务成功率、SLA、计费与 Inference Hook 开放范围缺公开数据，待核实。</li>
+<li>Compounding Physical RSI（26.15 / 20.70%）、PyRUA-REAL（91.1% / 84.4%）、Calibrated Relational World Models（65.7% 召回）均为论文自述，未见第三方复现；三篇摘要均未给出代码仓库链接，开源状态待核实。</li>
+<li>Calibrated Relational World Models 的 2.5% 误报率与召回率系回顾性诊断（作者明确声明非部署校准保证），DROID / HYDRA / xArm 等多项 gate 未通过，跨机器人泛化能力待核实。</li>
+<li>本期 3 条 arXiv 条目的 v1 提交时刻（11-04 15:30–18:38 UTC）与 Thu-05 批次公告（11-05 BJ 13:00）存在时间差，本报告以公告批次为首发口径；若后续核查要求严格按 v1 提交时刻判定，需重新评估其窗口归属。</li>
+</ul>
+</div>
+
+<div class="footer">每日 AI 前沿技术精选 · 自动生成 · 时效窗口以报告头为准</div>
+
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
