@@ -214,7 +214,7 @@ details[open] > summary.fold-summary { color: #e6edf3; }
     <li><b>核心机制</b>：① 云端 VM + 浏览器隔离执行环境，本地设备关机不影响任务连续性；② 继承 Claude 账号既有记忆、技能与应用连接，通过 Claude Marketplace 6,000+ 连接器零配置接入 Gmail、Slack、QuickBooks、Stripe、Shopify 等；③ 凭据处理沿用 Claude Managed Agents 设计——Agent 从不直接看到密码与登录令牌；④ 新增专用分类器 + 安全系统提示词逐条检查外发消息，拒绝分享信用卡号、政府证件等最高敏感级信息，健康与个人财务信息仅在用户明确指示时放行；⑤ 动作由 auto mode 分类器审批，证券交易与账户间转账即使用户同意也一律禁止；⑥ 支付经 Stripe Link / Shop Pay 虚拟卡完成，形成「用户批准 + 钱包端确认」双重闸门。红队、外部机构渗透测试与公开漏洞赏金覆盖。</li>
     <li><b>实际影响</b>：继 Meta Muse（上线后登顶美区 App Store）与 OpenAI Dots 之后，个人 Agent 赛道形成三强格局；竞争壁垒从模型能力扩展到记忆、工具连接与安全架构三层。官方坦言预览版仍可能误判信息紧急程度、个人事务（如订票）能力偏弱，暂不支持 Microsoft 365，语音模式仅转写。</li>
   </ul>
-  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>Marketplace 连接器</td><td>6000+</td><td><div class="bar"><span style="width:100%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>后台巡检周期</td><td>约数小时</td><td><div class="bar"><span style="width:30%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>Marketplace 连接器</td><td>6000+</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>后台巡检周期</td><td>约数小时</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
   <ul>
     <li>连接器规模：6,000+（Claude Marketplace）；可用性：美国 Pro/Max 候补制，包含在套餐内、与其他功能共享用量额度；巡检周期约数小时一次</li>
     <li>官方博客：<a href="https://<a href="https://claude.com/resources/articles/claude-duet" target="_blank" rel="noopener">claude.com/resources/articles/claude-duet</a>">https://<a href="https://claude.com/resources/articles/claude-duet" target="_blank" rel="noopener">claude.com/resources/articles/claude-duet</a></a>（Date: October 21, 2026）</li>
@@ -234,7 +234,7 @@ details[open] > summary.fold-summary { color: #e6edf3; }
     <li><b>核心机制</b>：五步流水线——① 团队在 Chopin（GitHub Next 的多人实时智能体规划工具，2026-09 研究原型）中共同规划功能；② PDD Kit 与代码对话、推断意图并生成 Verus 形式化规格；③ 人工批准的是规格而非代码；④ Verus 证明器自动验证智能体代码对每个输入满足规格；⑤ 无法完全证明时回退到测试 + 计算机使用智能体（CUA）实证检查；⑥ 输出已验证 PR。GitHub 官方定位为「verified software factory，工程师评审规格而非代码」，并称其「让团队无需逐行评审即可交付 AI 生成代码，保障强于单纯代码评审与测试」（厂商表述）。</li>
     <li><b>实际影响</b>：Microsoft Research verus-proof-synthesis 仓库（AutoVerus 150 项 / VeruSAGE 849 项验证任务）的证明合成研究线首次被包装进「规划→PR」产品工作流，形式化验证从专门技术变为智能体工作流中的按钮式环节。边界清晰：仅支持 Rust，且仅覆盖可形式化表达的属性（I/O 契约、不变量、状态机转换）；UI 行为与多数 I/O 密集型逻辑仍走回退路径。GitHub Universe（10-28/29）将首次对真实代码公开演示。</li>
   </ul>
-  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>VeruSAGE 验证任务</td><td>849</td><td><div class="bar"><span style="width:85%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>AutoVerus 验证任务</td><td>150</td><td><div class="bar"><span style="width:30%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>VeruSAGE 验证任务</td><td>849</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>AutoVerus 验证任务</td><td>150</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
   <ul>
     <li>底层研究基准：AutoVerus 150 项 / VeruSAGE 849 项验证任务（Microsoft Research 仓库，第一方数据）</li>
     <li>官宣 X：<a href="https://<a href="https://x.com/GitHubNext/status/2112936525457740139" target="_blank" rel="noopener">x.com/GitHubNext/status/2112936525457740139</a>">https://<a href="https://x.com/GitHubNext/status/2112936525457740139" target="_blank" rel="noopener">x.com/GitHubNext/status/2112936525457740139</a></a>（10-21 15:58 UTC = 北京 10-21 23:58，窗口内）；GitHub 官方账号同步：<a href="https://<a href="https://x.com/github/status/2112938664959562081" target="_blank" rel="noopener">x.com/github/status/2112938664959562081</a>">https://<a href="https://x.com/github/status/2112938664959562081" target="_blank" rel="noopener">x.com/github/status/2112938664959562081</a></a></li>
@@ -254,7 +254,7 @@ details[open] > summary.fold-summary { color: #e6edf3; }
     <li><b>核心机制</b>：针对国产芯片显存与带宽受限，训练侧采用长程任务动态并行训练（按任务长度自适应分配计算资源，官方称超长上下文训练效率提升约 4 倍）；推理侧采用国产异构算力分布式推理 + 首个基于全国产设备的四层 KV Cache + 中间结果复用（官方称整体推理效率提升约 4.5 倍）。端云协同分工：约 60% 常规任务端侧完成（数据不出域、零 Token 成本）、30% 端云协同、10% 交云端大模型。</li>
     <li><b>实际影响</b>：把「国产算力能否训出有竞争力的大模型」变成公开可检验的命题——训练效率、推理缓存、端侧小模型与定价一次性落地；对信创与国产替代需求的企业新增一个可自行基准测试的选项。代码与智能体基准（SWE Pro 77.3 / SWE Multilingual 95.0 / SWE Verified 95.4）均为厂商自述，未见第三方复现；SWE Verified 上略低于 DeepSeek-V4.1-Flash（95.4 vs 95.6）。</li>
   </ul>
-  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>SWE Pro</td><td>77.3</td><td><div class="bar"><span style="width:77%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>SWE Multilingual</td><td>95.0</td><td><div class="bar"><span style="width:95%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>SWE Verified</td><td>95.4</td><td><div class="bar"><span style="width:95%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>DeepSeek-V4.1-Flash SWE Verified</td><td>95.6</td><td><div class="bar"><span style="width:96%"></span></div></td><td><span class="badge compare">对比</span></td></tr></table></div>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>SWE Pro</td><td>77.3</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>SWE Multilingual</td><td>95.0</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>SWE Verified</td><td>95.4</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>DeepSeek-V4.1-Flash SWE Verified</td><td>95.6</td><td></td><td><span class="badge compare">对比</span></td></tr></table></div>
   <ul>
     <li>架构/上下文：293B-A30B MoE，1M tokens；限时推理定价：输入 ¥0.9/百万 tokens、缓存命中 ¥0.08/百万、输出 ¥3.6/百万；端侧 X2.6-4B 开源、推理限时免费（前代 X2.5-4B 自 9-01 开源以来下载量进入全球端侧模型前四，厂商自述）</li>
     <li>第一信源：2026 科大讯飞全球 1024 开发者节主论坛（2026-10-22，北京）；IT 之家等多家媒体当日报道</li>
@@ -273,7 +273,7 @@ details[open] > summary.fold-summary { color: #e6edf3; }
     <li><b>核心机制</b>：闭环框架把机器人控制建模为工具调用——模型输出目标末端执行器位姿与夹爪命令而非连续动作 token；每回合执行后有测试/判定反馈。实验发现提高推理强度普遍提升操作表现但增加推理成本；任务间差异显著——模型在物体放置类任务表现较好，在精确空间排布与复杂多步交互上明显挣扎；单轮成绩不足以刻画交互式操作能力（不同交互预算下排名会变化）。</li>
     <li><b>实际影响</b>：首次在标准化机器人基准上给出「前沿通用模型零样本直控」的系统对照数据：44% 距实用尚远，但证明了纯推理路线可行性；评测框架与全部实验结果开源，为「推理能力→物理动作」转化提供可复现基线。与本期 AW-0（世界动作模型输出技能程序）形成路线对照：端到端直控 vs 代码即技能。</li>
   </ul>
-  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>GPT-6 Astra 成功率</td><td>44</td><td><div class="bar"><span style="width:44%"></span></div></td><td><span class="badge third">第三方</span></td></tr><tr><td>Gemini-4 Argon 成功率</td><td>43</td><td><div class="bar"><span style="width:43%"></span></div></td><td><span class="badge third">第三方</span></td></tr></table></div>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>GPT-6 Astra 成功率</td><td>44</td><td></td><td><span class="badge third">第三方</span></td></tr><tr><td>Gemini-4 Argon 成功率</td><td>43</td><td></td><td><span class="badge third">第三方</span></td></tr></table></div>
   <ul>
     <li>评测规模：6 模型 × 3 推理档 = 18 配置、1,800 回合；最佳成功率 44%（GPT-6 Astra）/ 43%（Gemini-4 Argon）</li>
     <li>论文：<a href="https://<a href="https://arxiv.org/abs/2610.30051" target="_blank" rel="noopener">arxiv.org/abs/2610.30051</a>">https://<a href="https://arxiv.org/abs/2610.30051" target="_blank" rel="noopener">arxiv.org/abs/2610.30051</a></a>（v1 10-21 17:11 UTC = 北京 10-22 01:11，10-22 公告批次）</li>
@@ -333,16 +333,6 @@ details[open] > summary.fold-summary { color: #e6edf3; }
 </section>
 
 <hr class="sep">
-
-<section class="notes">
-  <h2>归档状态说明</h2>
-  <ul>
-    <li><b>工作区 Markdown</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261022_1959.md</code></li>
-    <li><b>工作区 HTML</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261022_1959.html</code></li>
-    <li><b>网盘归档</b>：O:/quark/automation/每日 AI 新闻推送/（同步写入上述同名文件）</li>
-    <li><b>执行状态</b>：<span class="status-ok">✅ 成功</span></li>
-  </ul>
-</section>
 
 <footer>每日 AI 前沿技术精选 · 时效窗口 2026-10-21 22:07 – 2026-10-22 19:59 · 严格 24 小时增量窗口</footer>
 

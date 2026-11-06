@@ -3,7 +3,133 @@
 <title>每日 AI 前沿技术精选</title>
 <link>https://local.invalid/ai-news</link>
 <description>每日 AI 前沿技术精选 · 结构化条目流</description>
-<lastBuildDate>Tue, 03 Nov 2026 09:19:53 -0000</lastBuildDate>
+<lastBuildDate>Thu, 05 Nov 2026 10:07:40 -0000</lastBuildDate>
+<item>
+<title>百度开源 ERNIE 5.5 Flash Base：280B/14B 激活 MoE 预训练终点权重，混合稀疏注意力与 Multi-Router Latent MoE</title>
+<link>每日AI新闻推送_20261105_1745.html</link>
+<guid isPermaLink="false">20261105_1745-百度开源 ERNIE 5.5 Flash Base：280B/14B 激活 MoE 预训练终点权重，混合稀疏注意力与 Multi-Router Latent MoE</guid>
+<pubDate>2026-11-05</pubDate>
+<category>基础架构、开源模型、AI Coding</category>
+</item>
+<item>
+<title>月之暗面发布 Kimi Hosted Agents：把 Agent Harness 做成云端服务（Harness as a Service）</title>
+<link>每日AI新闻推送_20261105_1745.html</link>
+<guid isPermaLink="false">20261105_1745-月之暗面发布 Kimi Hosted Agents：把 Agent Harness 做成云端服务（Harness as a Service）</guid>
+<pubDate>2026-11-05</pubDate>
+<category>AI Coding、Agent 编排、Harness</category>
+</item>
+<item>
+<title>Compounding Physical RSI：把执行失败转成可继承能力的自进化策略，RoboDojo-Sim 42 任务登顶</title>
+<link>每日AI新闻推送_20261105_1745.html</link>
+<guid isPermaLink="false">20261105_1745-Compounding Physical RSI：把执行失败转成可继承能力的自进化策略，RoboDojo-Sim 42 任务登顶</guid>
+<pubDate>2026-11-05</pubDate>
+<category>RSI、具身智能、离线强化学习</category>
+</item>
+<item>
+<title>PyRUA-REAL：真实世界具身递归自我改进，coding agent 把交互经验沉淀为持久记忆与可复用技能</title>
+<link>每日AI新闻推送_20261105_1745.html</link>
+<guid isPermaLink="false">20261105_1745-PyRUA-REAL：真实世界具身递归自我改进，coding agent 把交互经验沉淀为持久记忆与可复用技能</guid>
+<pubDate>2026-11-05</pubDate>
+<category>RSI、具身智能、AI Coding</category>
+</item>
+<item>
+<title>Calibrated Relational World Models：用校准关系世界模型检测「静默动作接口失配」</title>
+<link>每日AI新闻推送_20261105_1745.html</link>
+<guid isPermaLink="false">20261105_1745-Calibrated Relational World Models：用校准关系世界模型检测「静默动作接口失配」</guid>
+<pubDate>2026-11-05</pubDate>
+<category>世界模型、具身智能、评测</category>
+</item>
+<item>
+<title>OpenAI 公开自主漏洞发现/利用/修补流水线：单次运行生成 948 个 Linux 内核本地提权补丁</title>
+<link>每日AI新闻推送_20261105_0920.html</link>
+<guid isPermaLink="false">20261105_0920-OpenAI 公开自主漏洞发现/利用/修补流水线：单次运行生成 948 个 Linux 内核本地提权补丁</guid>
+<pubDate>2026-11-05</pubDate>
+<category>AI Coding、自主安全、Agent</category>
+</item>
+<item>
+<title>Cognition 发布 SWE-2 Flash：高速低成本编码模型，速率 3×、价格 1/5</title>
+<link>每日AI新闻推送_20261105_0920.html</link>
+<guid isPermaLink="false">20261105_0920-Cognition 发布 SWE-2 Flash：高速低成本编码模型，速率 3×、价格 1/5</guid>
+<pubDate>2026-11-05</pubDate>
+<category>AI Coding、编码模型、MoE</category>
+</item>
+<item>
+<title>Meta 收购 AI 编程初创公司 Conductor，加速编程智能体布局</title>
+<link>每日AI新闻推送_20261105_0920.html</link>
+<guid isPermaLink="false">20261105_0920-Meta 收购 AI 编程初创公司 Conductor，加速编程智能体布局</guid>
+<pubDate>2026-11-05</pubDate>
+<category>AI Coding、产业并购、多智能体</category>
+</item>
+<item>
+<title>OpenAI 收购 Pierre Computer：补齐 Codex 代码理解与审查基础设施</title>
+<link>每日AI新闻推送_20261105_0920.html</link>
+<guid isPermaLink="false">20261105_0920-OpenAI 收购 Pierre Computer：补齐 Codex 代码理解与审查基础设施</guid>
+<pubDate>2026-11-05</pubDate>
+<category>AI Coding、基础设施、并购</category>
+</item>
+<item>
+<title>RFWorld：免 Rollout 的世界模型用于端到端自动驾驶轨迹评估</title>
+<link>每日AI新闻推送_20261105_0920.html</link>
+<guid isPermaLink="false">20261105_0920-RFWorld：免 Rollout 的世界模型用于端到端自动驾驶轨迹评估</guid>
+<pubDate>2026-11-05</pubDate>
+<category>世界模型、自动驾驶、端到端</category>
+</item>
+<item>
+<title>腾讯混元 Hy4 正式发布：770B MoE 引入视觉与电脑操作，跻身最强开源模型之列</title>
+<link>每日AI新闻推送_20261104_1631.html</link>
+<guid isPermaLink="false">20261104_1631-腾讯混元 Hy4 正式发布：770B MoE 引入视觉与电脑操作，跻身最强开源模型之列</guid>
+<pubDate>2026-11-04</pubDate>
+<category>开源大模型、AI Coding、多模态Agent</category>
+</item>
+<item>
+<title>启元 PrimeSim 世界模型仿真器发布：登顶 EWMBench 与 WorldSimProbe，11 月 6 日开源</title>
+<link>每日AI新闻推送_20261104_1631.html</link>
+<guid isPermaLink="false">20261104_1631-启元 PrimeSim 世界模型仿真器发布：登顶 EWMBench 与 WorldSimProbe，11 月 6 日开源</guid>
+<pubDate>2026-11-04</pubDate>
+<category>具身智能、世界模型、仿真器</category>
+</item>
+<item>
+<title>百度 Apollo World 世界模型披露：智能体驱动全模态，萝卜快跑全无人运营超百万公里</title>
+<link>每日AI新闻推送_20261104_1631.html</link>
+<guid isPermaLink="false">20261104_1631-百度 Apollo World 世界模型披露：智能体驱动全模态，萝卜快跑全无人运营超百万公里</guid>
+<pubDate>2026-11-04</pubDate>
+<category>世界模型、自动驾驶、物理AI</category>
+</item>
+<item>
+<title>OpenAI 公开模型辅助工程设计进展：GPT-6 Astra 不到一周从零设计出 Codex 语音设备原型</title>
+<link>每日AI新闻推送_20261104_0842.html</link>
+<guid isPermaLink="false">20261104_0842-OpenAI 公开模型辅助工程设计进展：GPT-6 Astra 不到一周从零设计出 Codex 语音设备原型</guid>
+<pubDate>2026-11-04</pubDate>
+<category>AI Coding、模型辅助工程</category>
+</item>
+<item>
+<title>LangChain 公开 Deep Agents 浏览器工具优化复盘：七套工具对比选定 Stagehand，WebVoyager 90% 通过仅 $1.98</title>
+<link>每日AI新闻推送_20261104_0842.html</link>
+<guid isPermaLink="false">20261104_0842-LangChain 公开 Deep Agents 浏览器工具优化复盘：七套工具对比选定 Stagehand，WebVoyager 90% 通过仅 $1.98</guid>
+<pubDate>2026-11-04</pubDate>
+<category>AI Coding、Agent 工程</category>
+</item>
+<item>
+<title>Hao AI Lab 将 Pika H3 Flex 接入 FastVideo：NVFP4 量化推理最高快 7 倍，GB200 5.8 秒生成 5 秒 480p 视频+音频</title>
+<link>每日AI新闻推送_20261104_0842.html</link>
+<guid isPermaLink="false">20261104_0842-Hao AI Lab 将 Pika H3 Flex 接入 FastVideo：NVFP4 量化推理最高快 7 倍，GB200 5.8 秒生成 5 秒 480p 视频+音频</guid>
+<pubDate>2026-11-04</pubDate>
+<category>世界模型、推理加速</category>
+</item>
+<item>
+<title>Perplexity Computer 支持 Agent Plugins：连接器之上打包应用与技能，可从 GitHub 导入并跨 Agent 复用</title>
+<link>每日AI新闻推送_20261104_0842.html</link>
+<guid isPermaLink="false">20261104_0842-Perplexity Computer 支持 Agent Plugins：连接器之上打包应用与技能，可从 GitHub 导入并跨 Agent 复用</guid>
+<pubDate>2026-11-04</pubDate>
+<category>Agent 工程、插件生态</category>
+</item>
+<item>
+<title>Claude Platform 支持原生 OpenTelemetry：Agent trace 直发 Databricks MLflow</title>
+<link>每日AI新闻推送_20261104_0842.html</link>
+<guid isPermaLink="false">20261104_0842-Claude Platform 支持原生 OpenTelemetry：Agent trace 直发 Databricks MLflow</guid>
+<pubDate>2026-11-04</pubDate>
+<category>基础架构、可观测性</category>
+</item>
 <item>
 <title>Exo：把优化循环折叠进任务执行的 agent 运行时自我改进架构——在岗学习中同时修订 harness 与策略，模型成本对 Codex 降 12–53%</title>
 <link>每日AI新闻推送_20261103_1655.html</link>

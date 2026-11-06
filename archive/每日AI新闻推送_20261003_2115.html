@@ -337,12 +337,7 @@
   </ol>
 </div>
 
-<h2 class="sec">归档状态说明</h2>
-
 <div class="section-card arch">
-  <div><b>工作区 Markdown</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261003_2115.md</code></div>
-  <div><b>工作区 HTML</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20261003_2115.html</code></div>
-  <div><b>网盘归档</b>：<code>O:/quark/automation/每日 AI 新闻推送/</code>（同步写入上述同名文件）</div>
   <div><b>执行状态</b>：<span style="color:var(--orange);font-weight:700">⚠️ 部分成功</span>——HTML 已按规范名归档（<code>每日AI新闻推送_20261003_2115.html</code>，27322B，字节校验一致）；Markdown 的规范名在首次 <code>shutil.copy2</code> 尝试时触发 davfs <code>Errno 13 Permission denied</code>，并留下 <b>0 字节残渣导致该文件名被锁定</b>（davfs 拒绝覆盖，删除被 safe-delete shim 拦截），故改用替代名 <code>每日AI新闻推送_20261003_2115.md.tmp</code> 落盘，内容与本地源完全一致（19009B，md5 校验通过）。工作区双格式文件为权威交付物。</div>
   <div><b>待人工清理</b>：<code>每日AI新闻推送_20261003_2115.md</code>（0 字节残渣）；如需规范名，将 <code>.md.tmp</code> 重命名为 <code>.md</code> 即可生效。</div>
 </div>

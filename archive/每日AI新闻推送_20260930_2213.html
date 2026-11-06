@@ -225,12 +225,8 @@
   </ul>
 </div>
 
-<h2 class="sec-title">归档状态说明</h2>
 <div class="note">
   <ul>
-    <li><b>工作区 Markdown</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20260930_2213.md</code></li>
-    <li><b>工作区 HTML</b>：<code>C:\Users\suiwen\WorkBuddy\automation-2026-07-15-17-09-05\每日AI新闻推送_20260930_2213.html</code></li>
-    <li><b>网盘归档</b>：<code>O:/quark/automation/每日 AI 新闻推送/</code></li>
     <li><b>执行状态</b>：⚠️ 部分失败——规范同名文件未能写入 O: 盘。两个目标路径写入时返回 <code>[Errno 13] Permission denied</code>，且失败尝试在目录中留下 <b>0 字节残留</b>；该残留随后既无法覆盖也无法删除（Bash <code>rm</code>、Python <code>os.remove</code>、PowerShell <code>Remove-Item</code> 三通道均被 safe-delete 的 genie-trash 拦截，报 <code>CanonicalizePath</code> 失败，属 davfs / OpenList 服务端对已建条目的锁定，与第 74/75 跑同源）。</li>
     <li><b>失败原因逐条</b>：① <code>每日AI新闻推送_20260930_2213.md</code> → Errno 13；② <code>每日AI新闻推送_20260930_2213.html</code> → Errno 13；③ <code>.html.tmp</code> / <code>.html.bak</code> 变体 → Errno 13（同一文件名前缀索引冲突）。</li>
     <li><b>替代归档（已落盘并校验通过，字节数与 md5 一致）</b>：Markdown → <code>每日AI新闻推送_20260930_2213.md.tmp</code>（16539 B）；HTML → <code>每日AI新闻推送_20260930_2213_html.tmp</code> / <code>.html.part</code> / <code>_O.html</code>（各 21882 B）。待 O: 挂载恢复或残渣被手动清理后，将 <code>.md.tmp</code>→<code>.md</code>、<code>_html.tmp</code>→<code>.html</code> 重命名即生效。</li>
