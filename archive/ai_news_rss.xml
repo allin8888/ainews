@@ -3,7 +3,133 @@
 <title>每日 AI 前沿技术精选</title>
 <link>https://local.invalid/ai-news</link>
 <description>每日 AI 前沿技术精选 · 结构化条目流</description>
-<lastBuildDate>Thu, 05 Nov 2026 10:07:40 -0000</lastBuildDate>
+<lastBuildDate>Sat, 07 Nov 2026 14:24:14 -0000</lastBuildDate>
+<item>
+<title>OpenCode 正式发布 Browse：MCP 服务器 + Chromium 扩展把「真实浏览器」交给编码智能体，登录/2FA/支付可人工接管</title>
+<link>每日AI新闻推送_20261107_2210.html</link>
+<guid isPermaLink="false">20261107_2210-OpenCode 正式发布 Browse：MCP 服务器 + Chromium 扩展把「真实浏览器」交给编码智能体，登录/2FA/支付可人工接管</guid>
+<pubDate>2026-11-07</pubDate>
+<category>AI-Coding、Agent工具链、ComputerUse</category>
+</item>
+<item>
+<title>Strata 0.2.12 发布：12GB 显卡提示词读取提速约 3 倍，并把编码 Agent 的强制工具调用从 0/24 修到 24/24</title>
+<link>每日AI新闻推送_20261107_2210.html</link>
+<guid isPermaLink="false">20261107_2210-Strata 0.2.12 发布：12GB 显卡提示词读取提速约 3 倍，并把编码 Agent 的强制工具调用从 0/24 修到 24/24</guid>
+<pubDate>2026-11-07</pubDate>
+<category>AI-Coding、推理加速、开源</category>
+</item>
+<item>
+<title>眸深智能在进博会一次发布「深悟」具身原生模型、FWM 家用世界模型与「深枢」交付 Infra：把动作生成、神经符号记忆与数据回流合成一条工程闭环</title>
+<link>每日AI新闻推送_20261107_2210.html</link>
+<guid isPermaLink="false">20261107_2210-眸深智能在进博会一次发布「深悟」具身原生模型、FWM 家用世界模型与「深枢」交付 Infra：把动作生成、神经符号记忆与数据回流合成一条工程闭环</guid>
+<pubDate>2026-11-07</pubDate>
+<category>具身智能、世界模型、工程闭环</category>
+</item>
+<item>
+<title>OpenRouter 重建 Auto Router 并首推编码专用 Auto Code：11 因子选模，每任务成本较 Claude Opus 5.5 低 74%</title>
+<link>每日AI新闻推送_20261107_0907.html</link>
+<guid isPermaLink="false">20261107_0907-OpenRouter 重建 Auto Router 并首推编码专用 Auto Code：11 因子选模，每任务成本较 Claude Opus 5.5 低 74%</guid>
+<pubDate>2026-11-07</pubDate>
+<category>AI-Coding、基础设施、Agent编排</category>
+</item>
+<item>
+<title>Ai2 开源 ToyBlocks / FoundationWorlds：受控机器人学习世界，85,336 条长时演示 + Agent 自写技能描述把成功率从 24% 抬到 63%</title>
+<link>每日AI新闻推送_20261107_0907.html</link>
+<guid isPermaLink="false">20261107_0907-Ai2 开源 ToyBlocks / FoundationWorlds：受控机器人学习世界，85,336 条长时演示 + Agent 自写技能描述把成功率从 24% 抬到 63%</guid>
+<pubDate>2026-11-07</pubDate>
+<category>具身智能、世界模型、RSI、开源</category>
+</item>
+<item>
+<title>Amp 推出 Spaces：主 Agent 自主拆解目标、创建并协调并行 Agent 线程</title>
+<link>每日AI新闻推送_20261107_0907.html</link>
+<guid isPermaLink="false">20261107_0907-Amp 推出 Spaces：主 Agent 自主拆解目标、创建并协调并行 Agent 线程</guid>
+<pubDate>2026-11-07</pubDate>
+<category>AI-Coding、Agent编排、开发工具</category>
+</item>
+<item>
+<title>Anthropic《The components of agent memory》：用「做梦」离线整理跨会话记忆，形成自我纠错的学习闭环</title>
+<link>每日AI新闻推送_20261107_0907.html</link>
+<guid isPermaLink="false">20261107_0907-Anthropic《The components of agent memory》：用「做梦」离线整理跨会话记忆，形成自我纠错的学习闭环</guid>
+<pubDate>2026-11-07</pubDate>
+<category>Agent记忆、RSI、长程任务</category>
+</item>
+<item>
+<title>GitHub《Beyond code generation》：单周 12 亿 commit 与 PR 评审耗时 +441% 的诊断，提出 Plan–Build–Verify–Observe 四阶段智能体工程</title>
+<link>每日AI新闻推送_20261107_0907.html</link>
+<guid isPermaLink="false">20261107_0907-GitHub《Beyond code generation》：单周 12 亿 commit 与 PR 评审耗时 +441% 的诊断，提出 Plan–Build–Verify–Observe 四阶段智能体工程</guid>
+<pubDate>2026-11-07</pubDate>
+<category>AI-Coding、Agent编排、开发工具</category>
+</item>
+<item>
+<title>GPWM：把世界建模为 3D 粒子运动，一套权重统一刚体/可变形体/布料/颗粒六类物理域</title>
+<link>每日AI新闻推送_20261106_1954.html</link>
+<guid isPermaLink="false">20261106_1954-GPWM：把世界建模为 3D 粒子运动，一套权重统一刚体/可变形体/布料/颗粒六类物理域</guid>
+<pubDate>2026-11-06</pubDate>
+<category>世界模型、物理仿真、机器人规划</category>
+</item>
+<item>
+<title>La-JEPA：在 V-JEPA 2.1 潜空间从零训练策略 transformer，用控制导向架构替代生成式策略主干</title>
+<link>每日AI新闻推送_20261106_1954.html</link>
+<guid isPermaLink="false">20261106_1954-La-JEPA：在 V-JEPA 2.1 潜空间从零训练策略 transformer，用控制导向架构替代生成式策略主干</guid>
+<pubDate>2026-11-06</pubDate>
+<category>世界模型、具身智能、策略架构</category>
+</item>
+<item>
+<title>OopsieRecover：用溯因推断纠正意图，让 VLA 从少量语义干预学会可迁移的失败恢复</title>
+<link>每日AI新闻推送_20261106_1954.html</link>
+<guid isPermaLink="false">20261106_1954-OopsieRecover：用溯因推断纠正意图，让 VLA 从少量语义干预学会可迁移的失败恢复</guid>
+<pubDate>2026-11-06</pubDate>
+<category>具身智能、VLA、失败恢复</category>
+</item>
+<item>
+<title>HITCH：全身 Harness 接口让 VLM 直接操控人形机器人，Unitree G1 零真实训练数据搬箱走向目标</title>
+<link>每日AI新闻推送_20261106_1954.html</link>
+<guid isPermaLink="false">20261106_1954-HITCH：全身 Harness 接口让 VLM 直接操控人形机器人，Unitree G1 零真实训练数据搬箱走向目标</guid>
+<pubDate>2026-11-06</pubDate>
+<category>具身智能、人形机器人、Sim2Real</category>
+</item>
+<item>
+<title>RoboImagine：用「候选未来对比 + 语义/视觉双反馈」后训练自回归机器人世界模型</title>
+<link>每日AI新闻推送_20261106_1954.html</link>
+<guid isPermaLink="false">20261106_1954-RoboImagine：用「候选未来对比 + 语义/视觉双反馈」后训练自回归机器人世界模型</guid>
+<pubDate>2026-11-06</pubDate>
+<category>RSI、世界模型、自监督反馈</category>
+</item>
+<item>
+<title>GitHub 公开 Project Rubicon：为「数千并发 Agent 写同一个仓库」重构 Git 存储，实测单仓库 7200 次 push/秒</title>
+<link>每日AI新闻推送_20261106_0834.html</link>
+<guid isPermaLink="false">20261106_0834-GitHub 公开 Project Rubicon：为「数千并发 Agent 写同一个仓库」重构 Git 存储，实测单仓库 7200 次 push/秒</guid>
+<pubDate>2026-11-06</pubDate>
+<category>AI Coding、基础架构、Git 存储</category>
+</item>
+<item>
+<title>Microsoft Research 发布 PDD Kit：把开发者意图编译成 Verus 规约，用确定性数学证明约束智能体生成的代码</title>
+<link>每日AI新闻推送_20261106_0834.html</link>
+<guid isPermaLink="false">20261106_0834-Microsoft Research 发布 PDD Kit：把开发者意图编译成 Verus 规约，用确定性数学证明约束智能体生成的代码</guid>
+<pubDate>2026-11-06</pubDate>
+<category>AI Coding、形式化验证、Agent 安全</category>
+</item>
+<item>
+<title>Cursor 上线 Build Live Apps：一句话完成脚手架、Postgres、鉴权与托管部署，把 AI Coding 的交付边界推到「线上可访问」</title>
+<link>每日AI新闻推送_20261106_0834.html</link>
+<guid isPermaLink="false">20261106_0834-Cursor 上线 Build Live Apps：一句话完成脚手架、Postgres、鉴权与托管部署，把 AI Coding 的交付边界推到「线上可访问」</guid>
+<pubDate>2026-11-06</pubDate>
+<category>AI Coding、Agent 编排、IDE 集成</category>
+</item>
+<item>
+<title>NVIDIA 开源 Cosmos 3 四个交互式世界模拟权重：16B、OpenMDW 1.1 许可，最多 11 路相机 RGB–LiDAR 联合生成</title>
+<link>每日AI新闻推送_20261106_0834.html</link>
+<guid isPermaLink="false">20261106_0834-NVIDIA 开源 Cosmos 3 四个交互式世界模拟权重：16B、OpenMDW 1.1 许可，最多 11 路相机 RGB–LiDAR 联合生成</guid>
+<pubDate>2026-11-06</pubDate>
+<category>世界模型、具身智能、开源权重</category>
+</item>
+<item>
+<title>NVIDIA VFlash：以「并行视觉图元」替换逐 token 坐标解码，机器人端到端推理加速 5.1×、3D 轨迹误差降 61%</title>
+<link>每日AI新闻推送_20261106_0834.html</link>
+<guid isPermaLink="false">20261106_0834-NVIDIA VFlash：以「并行视觉图元」替换逐 token 坐标解码，机器人端到端推理加速 5.1×、3D 轨迹误差降 61%</guid>
+<pubDate>2026-11-06</pubDate>
+<category>具身智能、推理加速、视觉规划</category>
+</item>
 <item>
 <title>百度开源 ERNIE 5.5 Flash Base：280B/14B 激活 MoE 预训练终点权重，混合稀疏注意力与 Multi-Router Latent MoE</title>
 <link>每日AI新闻推送_20261105_1745.html</link>

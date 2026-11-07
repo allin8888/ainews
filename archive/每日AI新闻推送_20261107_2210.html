@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日 AI 前沿技术精选 · 2026-11-07 22:10</title>
+<style>
+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#9da7b1;--blue:#58a6ff;--green:#3fb950;--orange:#f0883e;}
+*{box-sizing:border-box;}
+body{margin:0;padding:32px 18px 64px;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.78;font-size:15px;}
+.wrap{max-width:960px;margin:0 auto;}
+h1{font-size:28px;letter-spacing:.5px;margin:0 0 16px;color:#fff;}
+.meta{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin:0 0 22px;font-size:14px;color:var(--muted);}
+.meta b{color:var(--text);font-weight:650;}
+.meta .row{margin:3px 0;}
+.meta .win{color:var(--green);}
+hr.divider{border:0;border-top:1px solid var(--border);margin:26px 0;}
+.section-title{font-size:19px;font-weight:700;color:#fff;margin:0 0 14px;padding-left:10px;border-left:3px solid var(--blue);}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px 22px;margin:0 0 18px;}
+.card h2{font-size:19px;line-height:1.55;margin:0 0 6px;color:#fff;font-weight:680;}
+.source{font-size:13px;color:var(--muted);margin:0 0 16px;}
+.card h3{font-size:14px;margin:18px 0 6px;color:var(--blue);font-weight:650;letter-spacing:.3px;}
+.card p{margin:0 0 8px;}
+.card ul{margin:0 0 8px;padding-left:20px;}
+.card li{margin:6px 0;}
+.card strong{color:#fff;}
+.card code{background:#21262d;padding:1px 5px;border-radius:4px;font-size:13px;}
+.card a{color:var(--blue);word-break:break-all;}
+.tags{margin-top:14px;padding-top:12px;border-top:1px solid var(--border);}
+.tag{display:inline-block;background:#21262d;border:1px solid var(--border);color:var(--blue);font-size:12px;padding:3px 9px;border-radius:12px;margin:3px 6px 3px 0;}
+.excl,.notes{background:#11161d;border:1px solid var(--border);border-radius:10px;padding:14px 20px;margin:0 0 18px;font-size:14px;color:var(--muted);}
+.excl li,.notes li{margin:8px 0;}
+.excl b,.notes b{color:var(--text);}
+.excl code,.notes code{background:#21262d;padding:1px 5px;border-radius:4px;font-size:12px;}
+.excl a,.notes a{color:var(--blue);word-break:break-all;}
+.footer{margin-top:30px;padding-top:16px;border-top:1px solid var(--border);font-size:13px;color:var(--muted);text-align:center;}
+@media(max-width:640px){body{padding:20px 12px 40px;}h1{font-size:23px;}.card{padding:16px;}.card h2{font-size:17px;}}
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>每日 AI 前沿技术精选</h1>
+<div class="meta">
+<div class="row"><b>日期</b>：2026-11-07 &nbsp;·&nbsp; <b>时间</b>：22:10 &nbsp;·&nbsp; <b>精选条数</b>：3 条</div>
+<div class="row"><b>时效窗口</b>：<span class="win">2026-11-07 09:07 – 2026-11-07 22:10</span>（增量收敛，上次执行不足 24h；13 小时 03 分）</div>
+</div>
+
+<hr class="divider">
+<div class="section-title">今日精选</div>
+
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="AI-Coding">AI-Coding</button>
+<button class="filter-chip" data-tag="Agent工具链">Agent工具链</button>
+<button class="filter-chip" data-tag="ComputerUse">ComputerUse</button>
+<button class="filter-chip" data-tag="推理加速">推理加速</button>
+<button class="filter-chip" data-tag="开源">开源</button>
+<button class="filter-chip" data-tag="具身智能">具身智能</button>
+<button class="filter-chip" data-tag="世界模型">世界模型</button>
+<button class="filter-chip" data-tag="工程闭环">工程闭环</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. OpenCode 正式发布 Browse：MCP 服务器 + Chromium 扩展把「真实浏览器」交给编码智能体，登录/2FA/支付可人工接管</a><a class="toc-item" href="#entry-2">2. Strata 0.2.12 发布：12GB 显卡提示词读取提速约 3 倍，并把编码 Agent 的强制工具调用从 0/24 修到 24/24</a><a class="toc-item" href="#entry-3">3. 眸深智能在进博会一次发布「深悟」具身原生模型、FWM 家用世界模型与「深枢」交付 Infra：把动作生成、神经符号记忆与数据回流合成一条工程闭环</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="AI-Coding Agent工具链 ComputerUse" style="border-left:3px solid #58a6ff"><button class="copy-btn" data-title="OpenCode 正式发布 Browse：MCP 服务器 + Chromium 扩展把「真实浏览器」交给编码智能体，登录/2FA/支付可人工接管" data-link="https://opencode.ai/product/browse">复制</button>
+<h2>1. OpenCode 正式发布 Browse：MCP 服务器 + Chromium 扩展把「真实浏览器」交给编码智能体，登录/2FA/支付可人工接管</h2>
+<div class="source">OpenCode 官方 X / 产品页 / GitHub anomalyco/browse | 2026-11-07</div>
+<h3>事件概述</h3>
+<p>OpenCode 官方 X <code>@opencode</code> 于 <code>2026-11-07T02:35:40Z</code>（BJ 10:35）宣布 Browse 正式可用，同日 GitHub <code>anomalyco/browse</code> 有 <code>store-listing</code> 上架提交（<code>11:43:21Z</code>，BJ 19:43）。产品由一个 MCP server 加一个 Chromium 扩展组成，让任意 MCP 客户端的 Agent 直接驱动用户日常使用的浏览器，复用已有的标签页、登录态与扩展，而不是另起一个干净的无头沙箱。</p>
+<h3>技术与工程价值</h3>
+<ul>
+<li><strong>核心机制</strong>：① 接到用户真实 profile——Agent 用 Playwright 打开并驱动标签页，标签在后台以折叠分组呈现，不抢占用户当前窗口；②「Lend a tab」把用户当下已打开的标签直接交给 Agent，无需重新登录或注入密钥；③ 人机交接（Handoffs）：遇到登录、2FA 或支付这 <strong>3 类高风险动作</strong>时把标签交还用户，用户点 Continue 后 Agent 从中断点继续；④ 站点 Allowlists 把单次会话可访问的域名限制在用户点名的范围；⑤ 观测能力给出 <strong>3 类观测产物</strong>（截图、屏幕录制、网络流量 HAR）；⑥ 与 MCP 客户端解耦，OpenCode / Claude Code / Cursor / Codex / Zed 等任意 MCP client 可调用，覆盖 <strong>8 类 Chromium 系浏览器</strong>（Chrome / Edge / Brave / Arc / Helium / Vivaldi / Opera / Chromium）；安装走 Chrome 商店扩展 + <code>npm install -g @opencode/browse</code>（另有 curl / PowerShell / bun 脚本）。仓库 MIT 许可。</li>
+<li><strong>实际影响</strong>：把「浏览器自动化」的前提从「给 Agent 一个隔离环境」翻转为「让 Agent 在用户已有的身份与会话里工作」，省掉密钥管理与重复登录这一层工程成本；同时把高风险动作显式留给人类、用 allowlist 缩小爆炸半径，是接入层而非模型层的增量。与同窗内 Vercel <code>agent-desktop</code> 所代表的「OS 无障碍树」路线对照：Browse 走浏览器内 Playwright / CDP，<code>agent-desktop</code> 走系统级 accessibility tree，二者是「把 GUI 接进 Agent」命题的两层不同切法。注意官方未给出成功率、延迟、并发标签数任何量化基准，也未说明扩展权限范围与后台标签的隔离边界；这是产品可用性与开源仓库层面的发布，不是能力跃升的评测报告。</li>
+</ul>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>支持 Chromium 系浏览器(官方清单)</td><td>8</td><td><div class="bar"><span style="width:8%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>观测产物类型</td><td>3</td><td><div class="bar"><span style="width:3%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>人工交接高风险动作类型</td><td>3</td><td><div class="bar"><span style="width:3%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>公开量化基准数</td><td>0</td><td><div class="bar"><span style="width:0%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+<ul>
+<li><strong>评测/性能</strong>：<strong>无公开量化基准</strong>（产品页只给能力清单，未见第三方复现）。可核验的结构性数字：支持 8 类 Chromium 系浏览器、3 类观测产物、3 类人工交接动作、任意 MCP 客户端；Chrome 扩展 ID <code>mfnicocicmmlkpjnaffgihfjhdgjkdjg</code>。</li>
+<li><strong>代码/论文</strong>：<a href="https://opencode.ai/product/browse" target="_blank" rel="noopener">https://opencode.ai/product/browse</a> · <a href="https://github.com/anomalyco/browse" target="_blank" rel="noopener">https://github.com/anomalyco/browse</a> （MIT；<code>npm install -g @opencode/browse &amp;&amp; browse install</code>）</li>
+</ul>
+<div class="tags"><span class="tag" style="color:#58a6ff;border-color:#58a6ff">#AI-Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#Agent工具链</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#ComputerUse</span></div>
+</div>
+
+<div class="card priority-2" id="entry-2" data-tags="AI-Coding 推理加速 开源" style="border-left:3px solid #58a6ff"><button class="copy-btn" data-title="Strata 0.2.12 发布：12GB 显卡提示词读取提速约 3 倍，并把编码 Agent 的强制工具调用从 0/24 修到 24/24" data-link="https://github.com/Niko1221/Strata/releases/tag/v0.2.12">复制</button>
+<h2>2. Strata 0.2.12 发布：12GB 显卡提示词读取提速约 3 倍，并把编码 Agent 的强制工具调用从 0/24 修到 24/24</h2>
+<div class="source">GitHub Niko1221/Strata Release v0.2.12 | 2026-11-07</div>
+<h3>事件概述</h3>
+<p>GitHub Release <code>v0.2.12</code> 的 <code>published_at = 2026-11-07T08:54:40Z</code>（BJ 16:54）落在本窗内，是本期唯一有权威平台时间戳的一手首发。Strata 是 MIT 许可的本地推理引擎（C++，基于 llama.cpp / ggml 部分组件），让 MoE 模型 Qwen3.8-Flash-Next 在 12GB 消费级显卡 + 系统内存 + SSD 上跑起来；本版重点是调优 DFlash2 草稿模型、预算 GPU 的 prompt kernel，以及一整批面向 Claude Code / Codex CLI / OpenCode 的工具调用协议修复。</p>
+<h3>技术与工程价值</h3>
+<ul>
+<li><strong>核心机制</strong>：① 专家分层——每 token 都需要的 attention / DeltaNet 混合器、路由器、共享专家、KV cache 与 MTP 草稿层常驻显存，其余专家 pinned 在系统内存由 CPU 与 GPU 并行计算，SSD 上放约 28.8GB 的 n-gram 查找表，两侧互不等待；② 12GB Linux 卡的第二次启动检查不再把引擎自身内存算作空闲，0.2.11 在 RTX 3060 上 3 次启动有 3 次误切到慢速文件缓存，0.2.12 为 0/3；③ 调优 DFlash2 草稿模型（0.34GB，Intel Arc 为 0.52GB，基于 Inco AI 的 Apache-2.0 权重）并扩大 Auto 启用范围，但在 AMD gfx1201（R9700 / RX 9070）上因 0.2.11 有 11/50 个引擎在 prompt 阶段卡死而默认回退到自研 MTP，界面明示原因，仍可 <code>--drafting dflash2</code> 强制；④ 工具调用协议层修复：<code>#4828</code> 多工具下强制 <code>tool_choice</code> 从 0/24 次成功到 24/24；<code>#4832</code> Anthropic tool result 正确跟随 <code>tool_use_id</code>；<code>#5312</code> Claude Desktop 的 <code>claude-5-5-sonnet</code> 映射到已加载模型；<code>#5409</code> / <code>#5276</code> / <code>#5281</code> 补齐 <code>&lt;function=tools&gt;</code>、<code>&lt;toolcall&gt;</code>、MCP 末段匹配等解析；新增 <code>undeclared_tool_calls</code>（默认 <code>text</code>，<code>call</code> 需显式开启）。</li>
+<li><strong>实际影响</strong>：把「本地跑大 MoE」从可行性演示推向可被 coding harness 直接当作后端的工程件——引擎在 <code>127.0.0.1:8080</code> 同时提供 OpenAI <code>/v1</code>、Anthropic <code>/v1/messages</code> 与 Responses 风格接口，Claude Code 只需改 <code>ANTHROPIC_BASE_URL</code>。更值得记的是发布说明主动列出回归：RTX 3060 上 JSON 抽取 -18.9%、Strix Halo 工具调用 -9.5%（定位来自调优草稿模型）、双卡 peer 模式约 4% 冷启动首请求故障、gfx1201 强制 DFlash2 仍可能卡 prompt；并写明测量方法（同机 0.2.11 / 0.2.12 并排、2–3 轮、每轮交换顺序、每轮冷启动、greedy 300 token），同时保持 10 个工具调用 issue 开放。在普遍只报增益的自述基准里，把损失与口径一起发布是少见的工程纪律。</li>
+</ul>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>RTX3060 2K prompt 0.2.11 tok/s</td><td>87</td><td><div class="bar"><span style="width:33%"></span></div></td><td><span class="badge compare">对比</span></td></tr><tr><td>RTX3060 2K prompt 0.2.12 tok/s</td><td>264</td><td><div class="bar"><span style="width:100%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>RTX3060 32K prompt 0.2.11 tok/s</td><td>361</td><td><div class="bar"><span style="width:37%"></span></div></td><td><span class="badge compare">对比</span></td></tr><tr><td>RTX3060 32K prompt 0.2.12 tok/s</td><td>981</td><td><div class="bar"><span style="width:100%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>强制工具调用成功(24 次中)</td><td>24</td><td><div class="bar"><span style="width:100%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>强制工具调用基线(24 次中)</td><td>0</td><td><div class="bar"><span style="width:0%"></span></div></td><td><span class="badge compare">对比</span></td></tr><tr><td>RTX3060 JSON 抽取回归 %</td><td>-18.9</td><td><div class="bar"><span style="width:18%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+<ul>
+<li><strong>评测/性能</strong>（<strong>均为发布方自述，未见第三方复现</strong>）：RTX 3060 12GB + UD-IQ4_XS-v31，prompt 2K 从 87 提到 264 tok/s、32K 从 361 提到 981 tok/s（约 3×），code +37% / agent +34%，但 JSON 抽取 -18.9%；Mac M5 Max 4K 1,406→1,605、32K 1,350→1,524 tok/s，输出 +12.7%；Strix Halo 4K 690→1,220、597→1,267 tok/s，但 tool call -9.5% / -5.8%；Radeon R9700 32K 3,076→3,304 tok/s（+8.6%~+11.6%）；调优 DFlash2 在 RTX PRO 5000 / DGX Spark 上 decode +2.4%~+5.0%；强制工具调用 0/24 → 24/24。发布 42 个文件共 9.70 GiB，附 <code>SHA256SUMS.txt</code>。</li>
+<li><strong>代码/论文</strong>：<a href="https://github.com/Niko1221/Strata/releases/tag/v0.2.12" target="_blank" rel="noopener">https://github.com/Niko1221/Strata/releases/tag/v0.2.12</a> （MIT；<code>curl -fsSL <a href="https://github.com/Niko1221/Strata/releases/latest/download/install.sh" target="_blank" rel="noopener">https://github.com/Niko1221/Strata/releases/latest/download/install.sh</a> | sh</code>）</li>
+</ul>
+<div class="tags"><span class="tag" style="color:#58a6ff;border-color:#58a6ff">#AI-Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#推理加速</span><span class="tag" style="color:#3fb950;border-color:#3fb950">#开源</span></div>
+</div>
+
+<div class="card priority-3" id="entry-3" data-tags="具身智能 世界模型 工程闭环" style="border-left:3px solid #3fb950"><button class="copy-btn" data-title="眸深智能在进博会一次发布「深悟」具身原生模型、FWM 家用世界模型与「深枢」交付 Infra：把动作生成、神经符号记忆与数据回流合成一条工程闭环" data-link="https://www.cls.cn/detail/2528059">复制</button>
+<h2>3. 眸深智能在进博会一次发布「深悟」具身原生模型、FWM 家用世界模型与「深枢」交付 Infra：把动作生成、神经符号记忆与数据回流合成一条工程闭环</h2>
+<div class="source">财联社现场报道 / 眸深智能战略发布会 | 2026-11-07</div>
+<h3>事件概述</h3>
+<p>财联社 11 月 7 日现场电（进博会期间「具身智能产业生态共建交流会暨眸深智能战略发布会」）披露，眸深智能一次发布三件底座：具身原生模型「眸深·深悟」、家用世界模型 FWM、具身智能 Infra 架构「眸深·深枢」；同场由 42 家企业与机构（含眸深智能、复旦大学未来信息创新学院、国家地方共建人形机器人创新中心、宇树科技、优必选等）启动「通用具身大脑产业创新联合体」。当日多家行业日报（AI 热点 Top10、机器人电报晚报、星智智库晚报）交叉收录该场发布会，为本窗内具身智能与世界模型方向唯一的一手发布动作。</p>
+<h3>技术与工程价值</h3>
+<ul>
+<li><strong>核心机制</strong>：①「深悟」把动作生成从多步自回归改为<strong>一步生成</strong>，减少多步串行等待，并采用视觉与动作「按层交叠」——对应视觉特征就绪后动作层即可开始计算，不必等整帧视觉编码完成；② FWM 围绕感知、长效记忆神经符号引擎、操作 <strong>3 大模块</strong>构建，把神经记忆与符号状态库做双向印证、交叉校验与修正，目标是抑制长时程家用场景里的状态漂移；③「深枢」衔接数据、仿真、模型配置、芯片部署、本体控制、场景交付 <strong>6 条管线</strong>，标准产物逐级流转，并通过现场数据回流形成「再训练—再部署」迭代。</li>
+<li><strong>实际影响</strong>：三点合起来把竞争点从单点模型演示移到「模型—世界模型—交付管线」的工程闭环：一步动作生成针对端到端延迟，神经符号双记忆针对家庭长时程一致性，6 管线与数据回流针对项目交付确定性。与本期 Browse、Strata 放在一起看，窗内三条分别落在「接入层（Agent 用谁的身份）」「执行层（模型跑在哪、工具调用协议对不对）」「交付层（现场数据能否回到下一版模型）」，共同指向同一件事——2026 下半年 Agent / 具身侧的增量主要不在权重，而在 harness 与工程闭环。</li>
+<li><strong>边界</strong>：三款产品均<strong>未公开权重、代码、论文、评测集或任何量化基准</strong>，效果全部为发布会自述；「一步生成动作」的端到端延迟与失败重试率、FWM 的长时程一致性增益、「深枢」6 管线的项目周期改善、42 家联合体的分工与产出，均无可核验数据。本报告按「产业 / 工程落地」门槛收录，但<strong>不将其视为技术突破已证实</strong>。</li>
+</ul>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>同场发布产品数</td><td>3</td><td><div class="bar"><span style="width:3%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>FWM 架构模块数</td><td>3</td><td><div class="bar"><span style="width:3%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>深枢交付管线数</td><td>6</td><td><div class="bar"><span style="width:6%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>联合体成员数</td><td>42</td><td><div class="bar"><span style="width:42%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>公开量化基准数</td><td>0</td><td><div class="bar"><span style="width:0%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+<ul>
+<li><strong>评测/性能</strong>：<strong>无公开量化基准</strong>（发布会自述，未见第三方复现）。可核验的结构性数字：同场发布 3 款产品（1 具身原生模型 + 1 家用世界模型 + 1 Infra 架构）、FWM 3 大模块、「深枢」6 条管线、联合体 42 家企业及机构；公开量化基准 0 项。</li>
+<li><strong>代码/论文</strong>：财联社 <a href="https://www.cls.cn/detail/2528059" target="_blank" rel="noopener">https://www.cls.cn/detail/2528059</a> （原始报道）；<strong>无官方技术博客、GitHub 仓库或论文链接</strong>。</li>
+</ul>
+<div class="tags"><span class="tag" style="color:#3fb950;border-color:#3fb950">#具身智能</span><span class="tag" style="color:#bc8cff;border-color:#bc8cff">#世界模型</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#工程闭环</span></div>
+</div>
+
+<hr class="divider">
+<details class="excl"><summary class="fold-summary">去重说明（审计明细，点击展开）</summary>
+<div class="excl">
+<ul>
+<li><b>增量收敛</b>：本跑窗口 <code>2026-11-07 09:07 → 2026-11-07 22:10</code>，距第 134 跑（09:07）13 小时 03 分，只抓该区间增量，未重复覆盖已报道时段；<b>未启用任何 48 小时降级策略</b>。</li>
+<li><b>7 天扫描 + 实体去重</b>：扫描 2026-10-31 至 11-07 共 15 份历史报告（1012 / 2146 / 1548 / 2247 / 0936 / 1619 / 0845 / 1655 / 0842 / 1631 / 0920 / 1745 / 0834 / 1954 / 0907），提取 56 条已报道标题构建关键词集合；3 条候选逐条执行 <code>dedup_check.py</code>，全部 <code>is_dup:false</code>（Jaccard 0.0–0.088）。其中 OpenCode Browse 弱命中第 20261031_2146「OpenCode Operation Cheepseek」（共享词仅 <code>opencode</code>，Jaccard 0.088、confidence 0.46），<b>人工覆判保留</b>——历史条目主体为订阅额度补贴，本期为浏览器 MCP 工具发布，主体与动作均不同；Strata 弱命中第 20261030_0954「Unsloth Mistral Large 4 1-bit GGUF」（共享词仅 <code>gb</code>），同理保留。</li>
+<li><b>时间戳纪律排除（本期最集中，共 11 组）</b>：① <b>Buoyant Kinference</b>——官方博客《Introducing Kinference》明确标 <b>November 4, 2026</b>，GitHub 仓库 created 10-05 / pushed 11-06 / releases 为空；MarkTechPost 11-07 16:16 与聚合站 08:16Z 均为二手扩散 → 排除。② <b>CMU / DOE「Into the Unknown」基准</b>——论文 arXiv:2610.19159（10 月），代码仓库 <code>prometheus-eval/into-the-unknown</code> created 2026-09-24 / pushed 2026-10-20，The Decoder 11-07 才首发报道 → 排除。③ <b>PSI 证明 Aaronson–Ambainis 猜想</b>——PSI 官方发布 <b>November 6</b>，IT之家 BJ 16:10 为 T-1 转载，无窗内小时级官方时刻 → 排除。④ <b>METR「Anthropic 研发提速」</b>——11-05（第 134 跑已排除）→ 排除。⑤ <b>Nous Research Arete-27B</b>——Hugging Face「11 月 6 日晚」上线，The Decoder BJ 20:32 为报道 → 排除。⑥ <b>Mistral Studio Managed Agents</b>——官方 release notes <b>November 5</b>，11-07 多家媒体转述 → 排除。⑦ <b>ACE-Brain-0.6 空间锚定</b>——10-30 技术日报已载 API 开放与 75.41 分，11-07 18:20 网易 / Xbotics 为社区复盘 → 排除。⑧ <b>苹果 HALO</b>——arXiv:2611.06908，当地时间 11-04 提交，11-07 中文媒体转载 → 排除。⑨ <b>NVIDIA Cosmos 3 四权重</b>——11-05 Hugging Face 上线，且第 20261106_0834 跑已报 → 首发出窗 + 同主体同动作双重排除。⑩ <b>已报条目（第 129–134 跑）</b>：Cognition SWE-2 Flash、Amp Spaces、Anthropic agent memory、GitHub《Beyond code generation》、OpenRouter Auto Code、Ai2 ToyBlocks、Cursor Voice Chat（11-06 宣布）、腾讯混元 Hy4、ERNIE 5.5 Flash Base、Kimi Hosted Agents、Meta Muse Wonder 主动记忆、Perplexity Teammates、Gemini Omni 1.2 Flash、GPT-6 Cyber、源策未来 Anchor 1、蚂蚁 Ling-3.2-flash、World Labs Frameboy、Ripple-65B、GPWM / La-JEPA / OopsieRecover / HITCH / RoboImagine → 按同主体同动作排除。⑪ <b>门槛 / 一手缺失排除</b>：Dash 实测 agent-desktop 后台计算机使用通过率（X <code>@dashhuang</code> 02:18:40Z，窗内一手实测，但主体 <code>agent-desktop</code> v1.2.0 于 11-05 发布、且属「反驳性实测」不满足三项入选门槛）、可灵 Kling 4.0 Keyframes（官方 X 12:35:06Z，视频生成功能，缺技术细节与基准，非四大主线）、AgentDescent（GitHub repo created 7-24，11-07 仅 trend 收录与 push，非首发）、吉利交通气象大模型、Google 收购 Crusoe 数据中心、OpenAI 110 亿融资、Anthropic IPO 估值、工信部智能体终端规范、网信整治等（产品 / 资本 / 监管动作，非技术突破或高价值开源）。</li>
+<li><b>观察项（5 条上限未单列）</b>：① Dash 实测 MacOS 后台 computer use 通过率 <code>agent-desktop</code> 20% / Codex 33% / Cua Driver 58%，若取得官方复现与样本口径可单列；② PSI 的 Lean 形式化证明（Lean 4.33 + Mathlib v4.33.0、四个公开定理、经 lean4lean 复检）尚待同行评审；③ Into the Unknown leaderboard 后续迭代与 GPT-6 Astra 作为评分者的自评偏差；④ Buoyant Kinference alpha 版尚未交付的 token 限流 / 语义分类器 / Anthropic <code>/v1/messages</code>，以及其 -95% TTFT 只相对随机 Kubernetes Service 路由；⑤ 眸深「深悟」端到端延迟、FWM 权重开放与联合体官方成员名单。以上因首发时刻出窗、已是续报或缺技术细节，均未单列。</li>
+<li><b>结构性说明</b>：① 信源健康全绿（<code>ok=3 / warn=0 / error=0 / manual=1</code>：aihot_items 最新条目 1.0h 前、aihot_dailies 2026-11-07、arXiv 当前公告批次 <code>Fri, 6 Nov 2026</code> 共 81 篇可达），无信源降级需披露。② <b>arXiv 口径</b>：Fri-06 批次公告（BJ 11-06 13:00＝05:00Z）落在<b>第 133 跑窗口</b>并被该跑采用；本期为周六、无新公告批次，不复用该批次，改以官方博客 / 官方 X / GitHub Release 为窗内一手来源。③ <b>候选稀少的结构性原因</b>：本窗为 BJ 09:07–22:10，对应 UTC 01:07–14:10（美国 11-06 夜间至 11-07 上午），大厂官方首发多落在前一自然日；AI HOT items <code>window=24h</code>、<code>limit=100</code>、游标 <code>nextCursor</code>（位于响应 <code>page</code> 对象内）翻 2 页取 160 条、其中窗内 28 条，逐条以官方博客 / 官方 X / GitHub / arXiv 复核首发时刻后，仅 3 条同时满足「一手时刻落窗内 + 至少一项入选门槛」。<b>未扩展窗口、未复用旧批次、未降低门槛凑数</b>，故本期精选 3 条（符合 3–5 条下限）。④ <b>焦点覆盖</b>：AI Coding ×2（Browse / Strata）、具身智能 ×1（深悟）、世界模型 ×1（FWM）、基础架构与重大开源 ×1（Strata MIT）；<b>RSI 与自我改进本窗无合规一手首发</b>（Into the Unknown / PSI / METR / AgentDescent 均因首发出窗或非首发排除），如实披露。⑤ <b>口径平衡</b>：3 条中仅 Strata 提供成组量化对比且为发布方自述，Browse 与眸深均无公开基准；已就地标注并集中列入「待核实」。</li>
+</ul>
+</div></details>
+
+<hr class="divider">
+<div class="section-title">待核实</div>
+<div class="notes">
+<ul>
+<li><b>总体</b>：3 条均无独立第三方复现；Strata 数字全部来自 GitHub Release 自测，Browse 与眸深为产品页 / 发布会自述。本报告未引用图表 OCR 数值，中文二级来源转述的数字已逐项标注来源层级。</li>
+<li><b>OpenCode Browse</b>：官方 X 宣布时刻 <code>2026-11-07T02:35:40Z</code> 取自聚合站记录，未直接核对 X 帖原始时间戳；仓库 <code>anomalyco/browse</code> created 2026-10-27、已有 <code>v0.0.14</code> tag，「正式可用」与开发期仓库的时间关系需以官方 changelog 复核。无任何成功率、延迟、并发标签数基准；allowlist 粒度、扩展权限范围，以及后台标签是否可能读到非目标站点内容，官方页未给安全模型说明。</li>
+<li><b>Strata 0.2.12</b>：87→264 / 361→981 tok/s、+12.7%、+2.4%~+5.0%、0/24→24/24、-18.9%、11/50 卡死、4% peer 冷启动故障均为发布方自测，测量方法已公开但无第三方复现；Qwen3.8-Flash-Next 参数口径在二级报道中不一致（「180B 总 / 125B 激活」与仓库侧「24,576 个专家、每 token 激活 10 个」并存，且「125B 激活」与「1250 亿参数」被混用），本报告只采用仓库侧可核对的专家分层描述，参数总量待核实。引擎最终 0.1.58 包未重测速度（发布说明称仅改版本号与两处旧卡构建修复）。</li>
+<li><b>眸深智能</b>：财联社 11-07 电未给小时级发布时刻，本报告以发布会当日 + 多家 11-07 行业日报交叉收录为窗内依据，若要求严格按官方页面时间戳判定需复核；三款产品无权重 / 代码 / 论文 / 评测集 / 量化基准，「一步生成动作」「视觉动作按层交叠」「神经符号双向印证」「6 管线数据回流」均为发布会口径；42 家联合体成员名单来自行业日报转述，未见官方完整名单。</li>
+<li><b>观察项</b>：Dash 实测 20% / 33% / 58% 的样本量、任务集与判定口径未公开；PSI 证明尚无同行评审且模型型号、prompt、token 量与运行日志均未公开；Into the Unknown 论文 / 代码的 9–10 月时间戳与 11-07 报道时点差异需核；Buoyant Kinference 的 -95% TTFT 基线为随机 Kubernetes Service 路由而非 cache-aware 路由器，且 alpha 版多项能力未交付——本期已按时间戳出窗排除，不列入正文指标。</li>
+</ul>
+</div>
+
+<div class="footer">每日 AI 前沿技术精选 · 自动生成 · 时效窗口以报告头为准</div>
+
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
