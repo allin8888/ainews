@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-11-08 晚间</title>
+<style>
+  :root { color-scheme: dark; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0d1117; color: #e6edf3; font-family: -apple-system, "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif; line-height: 1.75; padding: 24px 16px 48px; }
+  .wrap { max-width: 860px; margin: 0 auto; }
+  header { text-align: center; padding: 28px 12px 20px; border-bottom: 1px solid #21262d; margin-bottom: 28px; }
+  header h1 { font-size: 26px; letter-spacing: 1px; color: #e6edf3; }
+  header h1 .accent { color: #58a6ff; }
+  .meta { margin-top: 14px; font-size: 14px; color: #8b949e; }
+  .meta .win { color: #d29922; font-weight: 600; }
+  .meta span { margin: 0 10px; }
+  .lowvol { max-width: 760px; margin: 18px auto 0; font-size: 13.5px; color: #d29922; background: rgba(210,153,34,0.08); border: 1px solid rgba(210,153,34,0.35); border-radius: 8px; padding: 10px 16px; }
+  .card { background: #161b22; border: 1px solid #21262d; border-radius: 12px; padding: 24px 26px; margin-bottom: 22px; }
+  .card h2 { font-size: 19px; color: #e6edf3; line-height: 1.5; margin-bottom: 10px; }
+  .card h2 .num { color: #58a6ff; margin-right: 8px; }
+  .sec { margin-top: 14px; }
+  .sec h3 { font-size: 14px; color: #3fb950; margin-bottom: 6px; letter-spacing: 0.5px; }
+  .sec p, .sec li { font-size: 14.5px; color: #c9d1d9; }
+  .sec ul, .sec ol { padding-left: 22px; }
+  .sec li { margin-bottom: 6px; }
+  .sec li b { color: #e6edf3; }
+  .empty { background: #161b22; border: 1px solid #21262d; border-radius: 12px; padding: 28px 26px; margin-bottom: 22px; text-align: center; }
+  .empty h2 { font-size: 18px; color: #e6edf3; margin-bottom: 10px; }
+  .empty p { font-size: 14px; color: #8b949e; max-width: 620px; margin: 0 auto; }
+  .note-block { background: #161b22; border: 1px solid #21262d; border-left: 3px solid #d29922; border-radius: 10px; padding: 20px 24px; margin-bottom: 22px; }
+  .note-block h2 { font-size: 17px; color: #d29922; margin-bottom: 12px; }
+  .note-block ol, .note-block ul { padding-left: 22px; }
+  .note-block li { font-size: 14px; color: #c9d1d9; margin-bottom: 8px; }
+  .note-block li b { color: #e6edf3; }
+  footer { text-align: center; font-size: 12.5px; color: #6e7681; padding-top: 26px; border-top: 1px solid #21262d; }
+  @media (max-width: 640px) { .card, .empty { padding: 18px 16px; } header h1 { font-size: 21px; } }
+  @media print { body { background: #fff; color: #111; } .card, .empty, .note-block { border-color: #ccc; background: #fff; } .card h2, .empty h2, .sec li b { color: #111; } .sec p, .sec li, .note-block li, .empty p { color: #333; } }
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>每日 AI 前沿技术<span class="accent">精选</span></h1>
+  <div class="meta">
+    <span>2026-11-08 18:22</span>·<span>精选 0 条</span>·<span class="win">时效窗口 2026-11-08 09:28 – 2026-11-08 18:22</span>
+  </div>
+  <div class="lowvol"><b>⚠️ 今日新闻不足3条，已严格筛选24小时内首发内容</b>：本窗（美东周六 20:28 → 周日 05:22）为全球 AI 发布供给最冷时段，窗内全部高热候选经第一信源取证后 0 条合规；arXiv 周末无新公告批次。未扩展窗口、未复用旧批次、未降低门槛凑数。</div>
+</header>
+
+<div class="empty">
+  <h2>本期无合规一手首发条目</h2>
+  <p>所有高热候选均因第一信源时刻出窗、属迟转述或未达入选门槛被排除，取证明细见下方「去重与筛选说明」。下一批 arXiv 公告为 Mon-09，具身智能 / 世界模型 / RSI 学术供给预计回补。</p>
+</div>
+
+<div class="note-block">
+  <h2>去重与筛选说明</h2>
+  <ol>
+    <li><b>增量收敛</b>：窗口 2026-11-08 09:28 → 18:22（距第 136 跑 8 小时 54 分），只抓该区间增量；未启用任何 48 小时降级策略。7 天扫描 15 份历史报告构建去重基线，本期 0 条入选。</li>
+    <li><b>时间戳纪律排除 5 组</b>（第一信源取证证伪）：GPT-6.1 Sol 小鼠脑手术（一手为 Exin Therapeutics CEO X 帖 11-05，T-3 出窗，且非 OpenAI 官方发布、未同行评议）；《Goodbye Claude, Hello Pi》（HN 317 分，原文 Created 2026-09-21，7 周后晚提交）；Nous Arete-27B（HF 11-06 晚，第 135 跑已排除，迟转述双重排除）；Menlo《2026: The State of Enterprise AI》（官方发布 11-03，T-5 出窗，市场分析报告）；Sutton「苦涩教训 2.0」（中国行演讲言论转述，观点类无窗内一手）。</li>
+    <li><b>门槛/焦点排除</b>：美司法部 AI 诈骗起诉（法律）、Bernstein OpenAI 算力支出估算（资本分析）、ChatGPT 账号停用（服务事件）、GitHub 故障帖（八卦）、消费级脑电头显隐私（二级转述、非焦点）、OpenAI Pro 档位说明（产品说明）。</li>
+    <li><b>结构性说明</b>：美东周六深夜至周日清晨为供给最冷时段；aihot 合并池 100 条中窗内 8 条逐一复核一手时刻 0 条合规；HN &gt;25 分 AI 相关 3 条全部出窗；arXiv rss 通道 pubDate 虽更新至 Sun 08 Nov 但 items 为空，cs.RO recent 顶 ID 仍为 Fri-06 批次 2611.08462（第 133 跑已覆盖），下一批 Mon-09；GitHub 跟踪仓抽查无新 release；aihot_dailies 2026-11-08 新鲜。焦点覆盖 0/5——纯供给空窗，<b>未扩展窗口、未复用旧批次、未降低门槛凑数</b>。</li>
+  </ol>
+</div>
+
+<div class="note-block" style="border-left-color:#58a6ff;">
+  <h2 style="color:#58a6ff;">待核实</h2>
+  <ol>
+    <li><b>GPT-6.1 Sol 手术叙事</b>：Exin 11-05 X 帖为唯一一手，手术全程录像/原始数据未公开、未同行评议——若后续出现论文或官方技术报告需重新评估。</li>
+    <li><b>Menlo 2026 报告 89% 口径</b>：官方摘要页未直接展示该数字，分母与统计范围需报告全文复核（一手 11-03 出窗，仅留档）。</li>
+    <li><b>存量待核实</b>（承接第 136 跑 backlog，open 303）：Karpathy TristanTube one-shot 口径、NorthCUA / 小米 AWM 2.0 / Exo 复现 / MIT WSP / OpenAI Pando；OpenCode Browse changelog、Strata 第三方复现、眸深「深悟」延迟与 FWM 权重开放；MaxxBench 研究页口径、apiiro 首捕证据链。</li>
+  </ol>
+</div>
+
+<footer>每日 AI 前沿技术精选 · 自动生成 · 时效窗口以报告头为准</footer>
+
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
