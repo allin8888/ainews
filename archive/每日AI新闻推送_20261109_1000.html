@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 新闻推送 · 第 138 跑</title>
+<style>
+body{margin:0;padding:24px 12px;background:#0d1117;color:#c9d1d9;font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;line-height:1.7;}
+.wrap{max-width:860px;margin:0 auto;}
+header{border-bottom:1px solid #30363d;padding-bottom:16px;margin-bottom:20px;}
+h1{color:#f0f6fc;font-size:1.6em;margin:0 0 8px;}
+.win{color:#8b949e;font-size:.95em;}
+.lowvol{background:#161b22;border-left:4px solid #d29922;border-radius:8px;padding:14px 18px;margin:18px 0;color:#e3b341;}
+.card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:20px 22px;margin:18px 0;}
+.card h2{color:#f0f6fc;font-size:1.18em;margin:0 0 4px;}
+.num{color:#58a6ff;margin-right:8px;}
+.src-line{color:#8b949e;font-size:.88em;margin-bottom:12px;}
+.sec h3{color:#58a6ff;font-size:.98em;margin:14px 0 6px;}
+.sec p{margin:6px 0;}
+.sec ul{margin:6px 0;padding-left:20px;}
+.sec li{margin:6px 0;}
+.tags{margin-top:14px;}
+.tag{display:inline-block;background:#21262d;border:1px solid #30363d;color:#58a6ff;border-radius:12px;padding:2px 10px;font-size:.82em;margin-right:8px;}
+.note-block{background:#161b22;border-left:4px solid #d29922;border-radius:8px;padding:16px 20px;margin:18px 0;}
+.note-block h2{color:#e3b341;font-size:1.1em;margin:0 0 10px;}
+.note-block ol{margin:0;padding-left:22px;}
+.note-block li{margin:8px 0;}
+footer{color:#8b949e;text-align:center;font-size:.85em;margin-top:24px;padding-top:14px;border-top:1px solid #30363d;}
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>每日 AI 新闻推送 · 第 138 跑</h1>
+  <div class="win">时效窗口：2026-11-08 18:22 – 2026-11-09 10:00（增量收敛，15 小时 38 分；UTC 11-08 10:22 → 11-09 02:00）</div>
+</header>
+
+<div class="lowvol">⚠️ <b>今日新闻不足3条</b>：本窗口为周末时段（美东周六白天 + 周日白天），经六信源扫描与逐条首发取证，仅 2 条通过时间戳纪律与去重门槛，特此声明。</div>
+
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="AI Coding">AI Coding</button>
+<button class="filter-chip" data-tag="SQLite">SQLite</button>
+<button class="filter-chip" data-tag="评测基准">评测基准</button>
+<button class="filter-chip" data-tag="模型校准">模型校准</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. Simon Willison 用 Claude 对比 C 与 Rust 实现 parse_number() SQLite 扩展</a><a class="toc-item" href="#entry-2">2. Artificial Analysis 发布 Decision Index v2：头条指标奖励置信度校准，私有集占比翻近一倍</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="AI Coding SQLite" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Simon Willison 用 Claude 对比 C 与 Rust 实现 parse_number() SQLite 扩展" data-link="https://simonwillison.net/2026/Nov/8/sqlite-parse-number-c-vs-rust/">复制</button>
+  <h2><span class="num">01</span>Simon Willison 用 Claude 对比 C 与 Rust 实现 parse_number() SQLite 扩展</h2>
+  <div class="src-line">Simon Willison 博客 ｜ 2026-11-08 22:26 UTC</div>
+  <div class="sec"><h3>事件概述</h3>
+  <p>Simon Willison 发布博客《parse_number() as a SQLite extension: C vs Rust》：遛狗时起意尝试编写 SQLite C 扩展，用 Claude 聊天（Opus 5.5）实现 parse_number()（将 -$1,234.56、12.5% 等格式化字符串转为可求和/排序的数值），随后横向对比同一功能的 C 与 Rust 实现，并把全程整理为研究报告发布于 simonw/research 仓库。</div>
+  <div class="sec"><h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：同一功能三路实现基准对比——初版 Rust 二进制 298–321 KB vs C 14 KB；Rust 版反而运行更快，遂再让 Claude 写优化版 C 解析器；最终优化 C 在混合数据上达 19 ns/row，其余实现 46–67 ns。完整呈现「LLM 对话式原型 → 基准驱动迭代 → 报告留档」的单人工程闭环。</li>
+    <li><b>实际影响</b>：单人凭聊天模型一次会话完成带基准对比的原生扩展工程全流程，再次验证「Claude 单会话 = 小型原生工程任务」的现实上限；simonw/research 的报告范式（问题动机 → 多实现对比 → 基准数字 → 结论）可作为可复用模板。</li>
+  </ul></div>
+  <div class="sec"><h3>关键指标/资源</h3>
+  <ul>
+    <li>评测/性能：C 扩展 14 KB vs Rust 298–321 KB；优化 C 19 ns/row vs 46–67 ns（作者自测口径，未见第三方复现）</li>
+    <li>代码/论文：<a href="https://simonwillison.net/2026/Nov/8/sqlite-parse-number-c-vs-rust/" target="_blank" rel="noopener">https://simonwillison.net/2026/Nov/8/sqlite-parse-number-c-vs-rust/</a> ｜ 研究报告：<a href="https://github.com/simonw/research" target="_blank" rel="noopener">https://github.com/simonw/research</a></li>
+  </ul></div>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#SQLite</span></div>
+</div>
+
+<div class="card priority-2" id="entry-2" data-tags="评测基准 模型校准" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Artificial Analysis 发布 Decision Index v2：头条指标奖励置信度校准，私有集占比翻近一倍" data-link="https://x.com/ArtificialAnlys/status/2119578471559213411">复制</button>
+  <h2><span class="num">02</span>Artificial Analysis 发布 Decision Index v2：头条指标奖励置信度校准，私有集占比翻近一倍</h2>
+  <div class="src-line">Artificial Analysis 官方 X ｜ 2026-11-08 23:51 UTC</div>
+  <div class="sec"><h3>事件概述</h3>
+  <p>Artificial Analysis 发布 Decision Index v2：新增头条指标 Decision Score，同时奖励答案正确性与校准置信度（每题 0–100 计分：答对 &gt;50、答错 &lt;50，置信度在半区内移动分值）；私有数据集占比从 v1 的 25% 提升至 45%，并新增私有基准 AA-Paperclip（占 30% 权重，1,500 份简历/收据/发票/AI 论文文档的决策与事实抽取）。当前榜首 Drex Max v1.1（NaceAI）73 分，领先 GLiDE v1.2（fastinoAI）与 Mammoth 27B（baselabs）不足 1 分。</div>
+  <div class="sec"><h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：把「校准误差」纳入头条指标——不只考对错，还惩罚过度自信与不自信，从计分规则上直接对冲 benchmark gaming；私有集 45% + AA-Paperclip 新增私有基准，抬高刷榜成本。</li>
+    <li><b>实际影响</b>：第三方评测从准确率单一维度走向「正确性 × 校准」复合口径；决策模型赛道（Drex/GLiDE/Mammoth）首次出现三强 1 分内贴身排名，该细分榜单影响力上升。</li>
+  </ul></div>
+  <div class="sec"><h3>关键指标/资源</h3>
+  <ul>
+    <li>评测/性能：Decision Score 0–100 计分制；私有集占比 25% → 45%；AA-Paperclip 1,500 文档 / 30% 权重；榜首 73 分、三强差 &lt;1 分（均为官方自述口径）</li>
+    <li>代码/论文：<a href="https://x.com/ArtificialAnlys/status/2119578471559213411" target="_blank" rel="noopener">https://x.com/ArtificialAnlys/status/2119578471559213411</a> ｜ 榜单入口：<a href="https://artificialanalysis.ai" target="_blank" rel="noopener">https://artificialanalysis.ai</a></li>
+  </ul></div>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#评测基准</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#模型校准</span></div>
+</div>
+
+<div class="note-block">
+  <h2>待核实</h2>
+  <ol>
+    <li><b>AA Decision Index v2 全部数字</b>：45% 私有集、AA-Paperclip 30% 权重与 1,500 文档、榜首 73 分三强口径均为官方 X 自述，未核对 <a href="https://artificialanalysis.ai" target="_blank" rel="noopener">artificialanalysis.ai</a> 榜单页；Drex/GLiDE/Mammoth 为小众决策模型，第三方可核验材料有限。</li>
+    <li><b>Simon Willison 基准数字</b>：19 ns/row、46–67 ns、14 KB 等均为作者自测口径；simonw/research 仓库内报告原文未逐项复核。</li>
+    <li><b>存量待核实</b>：NorthCUA 机构归属与 397B Pro 口径、小米 AWM 2.0 闭环指标、Exo 第三方复现、MIT WSP 首方精确时刻、OpenAI Pando CDX 复核；DeepSeek Harness 日活口径新增 Bloomberg「154 万」转述数字，未获官方确认。</li>
+  </ol>
+</div>
+
+<div class="note-block" style="border-left-color:#58a6ff;">
+  <h2 style="color:#58a6ff;">去重与筛选说明</h2>
+  <ol>
+    <li><b>时间戳纪律排除 8 组</b>（旧闻新热 / 再传播）：Google Elephant-Goldfish（repo 09-13 建仓、官方博客 10 月，T-56 天）；上海交大 AutoDNA 登 Nature（校方官宣 11-06，T-2 天+）；清华 TraceMRT（arXiv 11-05，T-3 天）；清华×Moonshot TCSExam（arXiv 11-05，T-3 天）；斯坦福×DeepMind TURTLE/AlphaEvolve 基准（arXiv 十月提交，T-2 周）；Meta AgentA/B（arXiv 2025-04 提交，T-18 月）；Goldman Sachs 撤下 Claude Code（Bloomberg 原报 11-02，HN 迟到提交，T-6 天）；Karpathy HackerTube（主体已报 + 10-31 公开记录）。</li>
+    <li><b>人工覆判排除 1 条</b>：Lauren Tan 形式化验证 /statechart 技能提示词（官方 X 窗内首发，但第 124 跑已报同主体同工作线，本条为衍生分发）。</li>
+    <li><b>门槛/焦点排除</b>：Nvidia 黄仁勋调查 ×6、Apple 代理式 Siri ×2、腾讯元器停服、Suno 诉讼、Anthropic 34 亿美元发电机采购、OpenAI $11B 融资、蚂蚁灵光 2000 万用户、GPT-Image-2.6 自媒体实测、PixVerse、n8n 教程、CS146S 访谈 ×2、Sutton/Anil Seth/姚顺雨/Mistral CEO/Larry Page/Chamath/ChinaTalk 观点类、卡兹克 Token羊毛、富士电视台生成式 AI 剧集、DeepSeek Harness 日活 154 万（单一数据点）、Perplexity 队友写书（续闻）。</li>
+    <li><b>无第一信源排除 2 条</b>：Amazon 审计 9 政策决策基准（原始论文未定位）；MarkTechPost MoE 路由对比（引用文献全部 ≤2025-08 科普汇编）。</li>
+    <li><b>结构性说明</b>：arXiv 无新批次（cs.RO 顶部仍 2611.08462 = Fri-06 批，Mon-09 批次晚于窗终点）；HN 窗内 &gt;25 分 40 条过筛、AI 焦点首发 0；GitHub 窗内新建 &gt;80 stars 仓库 0；aihot 窗内 41 条过筛；信源健康 ok=3 / warn=0 / error=0。</li>
+  </ol>
+</div>
+
+<footer>每日 AI 前沿技术精选 · 自动生成 · 时效窗口以报告头为准</footer>
+
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
