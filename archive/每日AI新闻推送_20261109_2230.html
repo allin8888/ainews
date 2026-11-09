@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 新闻推送 · 第 139 跑</title>
+<style>
+body{margin:0;padding:24px 12px;background:#0d1117;color:#c9d1d9;font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;line-height:1.7;}
+.wrap{max-width:860px;margin:0 auto;}
+header{border-bottom:1px solid #30363d;padding-bottom:16px;margin-bottom:20px;}
+h1{color:#f0f6fc;font-size:1.6em;margin:0 0 8px;}
+.win{color:#8b949e;font-size:.95em;}
+.card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:20px 22px;margin:18px 0;}
+.card h2{color:#f0f6fc;font-size:1.18em;margin:0 0 4px;}
+.num{color:#58a6ff;margin-right:8px;}
+.src-line{color:#8b949e;font-size:.88em;margin-bottom:12px;}
+.sec h3{color:#58a6ff;font-size:.98em;margin:14px 0 6px;}
+.sec p{margin:6px 0;}
+.sec ul{margin:6px 0;padding-left:20px;}
+.sec li{margin:6px 0;}
+.tags{margin-top:14px;}
+.tag{display:inline-block;background:#21262d;border:1px solid #30363d;color:#58a6ff;border-radius:12px;padding:2px 10px;font-size:.82em;margin-right:8px;}
+.note-block{background:#161b22;border-left:4px solid #d29922;border-radius:8px;padding:16px 20px;margin:18px 0;}
+.note-block h2{color:#e3b341;font-size:1.1em;margin:0 0 10px;}
+.note-block ol,.note-block ul{margin:0;padding-left:22px;}
+.note-block li{margin:8px 0;}
+footer{color:#8b949e;text-align:center;font-size:.85em;margin-top:24px;padding-top:14px;border-top:1px solid #30363d;}
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>每日 AI 新闻推送 · 第 139 跑</h1>
+  <div class="win">时效窗口：2026-11-09 10:00 – 2026-11-09 22:30（增量收敛，12 小时 30 分；UTC 11-09 02:00 → 14:30） · 精选条数：9 条</div>
+</header>
+
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="AI Coding">AI Coding</button>
+<button class="filter-chip" data-tag="具身智能">具身智能</button>
+<button class="filter-chip" data-tag="权重编程">权重编程</button>
+<button class="filter-chip" data-tag="机器人操纵">机器人操纵</button>
+<button class="filter-chip" data-tag="RSI">RSI</button>
+<button class="filter-chip" data-tag="自动研究">自动研究</button>
+<button class="filter-chip" data-tag="人机交互">人机交互</button>
+<button class="filter-chip" data-tag="强化学习">强化学习</button>
+<button class="filter-chip" data-tag="世界模型">世界模型</button>
+<button class="filter-chip" data-tag="物理仿真">物理仿真</button>
+<button class="filter-chip" data-tag="视触融合">视触融合</button>
+<button class="filter-chip" data-tag="重大开源">重大开源</button>
+<button class="filter-chip" data-tag="MoE">MoE</button>
+<button class="filter-chip" data-tag="基础设施">基础设施</button>
+<button class="filter-chip" data-tag="智能体算力">智能体算力</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. Can LLMs Debug Robots by Editing Their Weights? GPT-6 Astra 仅编辑 65 行 embedding 修复 π0.5 指令跟随</a><a class="toc-item" href="#entry-2">2. Apple AMP1：通用模型直接驱动机械臂，基准超越 VLA 与世界动作模型</a><a class="toc-item" href="#entry-3">3. 百度发布 ERNIE Evolve 自动化研究系统：双层循环 + 独立评测器把关，官方定调迈向 RSI</a><a class="toc-item" href="#entry-4">4. MIT×NYU FLEX：机器人从自然语言指令推理未言明偏好</a><a class="toc-item" href="#entry-5">5. STRIDE：人形机器人仅凭机载 IMU 奖励、数分钟真机样本学会运动</a><a class="toc-item" href="#entry-6">6. MIT×UBC WorldParticle：单一模型统一模拟沙粒流动到蛋白质折叠</a><a class="toc-item" href="#entry-7">7. MDF++：视触世界动作模型端到端表征学习</a><a class="toc-item" href="#entry-8">8. 美团开源 LongCat-2.5：1.6 万亿参数原生多模态 MoE，MIT 协议支持商用</a><a class="toc-item" href="#entry-9">9. Google TPU 8i Max 与 8tx：第八代产品线年内扩至四款，面向智能体时代</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="AI Coding 具身智能 权重编程" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Can LLMs Debug Robots by Editing Their Weights? GPT-6 Astra 仅编辑 65 行 embedding 修复 π0.5 指令跟随" data-link="https://arxiv.org/abs/2611.09376">复制</button>
+  <h2><span class="num">01</span>Can LLMs Debug Robots by Editing Their Weights? GPT-6 Astra 仅编辑 65 行 embedding 修复 π0.5 指令跟随</h2>
+  <div class="src-line">arXiv 2611.09376 ｜ 2026-11-09 arXiv 公告</div>
+  <div class="sec"><h3>事件概述</h3>
+  <p>论文把 weight-space programming 引入机器人基础策略：GPT-6 Astra 读取 π0.5 策略权重，仅编辑 65 行 token embedding 即修复其词汇指令接地错误——无梯度更新、无新演示，只靠 CPU 工作区与预算内仿真器反馈。</div>
+  <div class="sec"><h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：LLM 定位指令接地失败对应的 embedding 行并直接改写权重值；三次独立会话在 765 条 held-out 释义上全部提升成功率，最佳一次 86.3% → 92.0%（48 次修复、4 次回归，exact paired p=1.31×10⁻¹⁰）。</li>
+    <li><b>实际影响</b>：机器人策略的「调试」语义从改提示词/工具延伸到直接改策略权重——修复成本从重训练降到分钟级权重编辑；同时反证 VLA 的行为错误高度集中在极少数 embedding 行。</li>
+    <li><b>适用限制</b>：单一 π0.5 策略、仿真器反馈预算约束；成功率与 p 值均为作者自测口径，未见第三方复现。</li>
+  </ul></div>
+  <div class="sec"><h3>关键指标/资源</h3>
+  <ul>
+    <li>评测/性能：65 embedding 行；765 条释义 86.3% → 92.0%（自述数据，未见第三方复现）</li>
+    <li>代码/论文：<a href="https://arxiv.org/abs/2611.09376" target="_blank" rel="noopener">https://arxiv.org/abs/2611.09376</a></li>
+  </ul></div>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI Coding</span><span class="tag" style="color:#3fb950;border-color:#3fb950">#具身智能</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#权重编程</span></div>
+</div>
+
+<div class="card priority-2" id="entry-2" data-tags="具身智能 机器人操纵" style="border-left:3px solid #3fb950"><button class="copy-btn" data-title="Apple AMP1：通用模型直接驱动机械臂，基准超越 VLA 与世界动作模型" data-link="https://arxiv.org/abs/2611.09892">复制</button>
+  <h2><span class="num">02</span>Apple AMP1：通用模型直接驱动机械臂，基准超越 VLA 与世界动作模型</h2>
+  <div class="src-line">arXiv 2611.09892，Apple AI/ML Research ｜ 2026-11-09 arXiv 公告</div>
+  <div class="sec"><h3>事件概述</h3>
+  <p>Apple AI/ML Research 发表《On Agentic Manipulation Policies》：系统分析让通用大模型直接指挥机械臂的 agentic 操纵策略（AMP），提出参考 harness AMP1——单臂、双臂、移动操纵三种本体上不改一行即可运行，基准成绩 SOTA，结论是通用模型比 VLA、WAM 等专才策略更可靠。视频与代码已公开。</div>
+  <div class="sec"><h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：通用模型绕过演示训练的专才策略直接输出动作，随任务展开自适应调整；AMP1 harness 统一三种操纵形态的执行环境。</li>
+    <li><b>实际影响</b>：与「VLA 是机器人基础模型终态」的主流叙事正面竞争——若通用模型 + 正确 harness 在操纵上更可靠，机器人侧的模型选型与训练投资逻辑将被改写；Apple 具身方向少见的公开系统性表态。</li>
+    <li><b>适用限制</b>：基准构成、对比对象版本与硬件配置需查论文正文；SOTA 口径为作者自述，未见第三方复现。</li>
+  </ul></div>
+  <div class="sec"><h3>关键指标/资源</h3>
+  <ul>
+    <li>评测/性能：单臂/双臂/移动操纵统一 harness，基准 SOTA（自述数据，未见第三方复现）</li>
+    <li>代码/论文：<a href="https://arxiv.org/abs/2611.09892" target="_blank" rel="noopener">https://arxiv.org/abs/2611.09892</a> ｜ 项目页：<a href="https://apple-aiml-research.github.io/ml-amp/" target="_blank" rel="noopener">https://apple-aiml-research.github.io/ml-amp/</a></li>
+  </ul></div>
+  <div class="tags"><span class="tag" style="color:#3fb950;border-color:#3fb950">#具身智能</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#机器人操纵</span></div>
+</div>
+
+<div class="card priority-3" id="entry-3" data-tags="RSI 自动研究" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="百度发布 ERNIE Evolve 自动化研究系统：双层循环 + 独立评测器把关，官方定调迈向 RSI" data-link="https://ernie.baidu.com/zh/research/posts/ernie-evolve/">复制</button>
+  <h2><span class="num">03</span>百度发布 ERNIE Evolve 自动化研究系统：双层循环 + 独立评测器把关，官方定调迈向 RSI</h2>
+  <div class="src-line">百度 ERNIE 官方研究博客 ｜ 2026-11-09</div>
+  <div class="sec"><h3>事件概述</h3>
+  <p>百度发布自动化研究系统 ERNIE Evolve：给定真实代码仓库、优化目标与评测标准后，自主提出研究方向、修改代码并在隔离环境实验，仅保留通过独立评测与复核的改进。官方博客明确把 RSI（递归自我迭代）定位为「模型制造商的关键竞争力」。在 NanoChat AutoResearch、NanoGPT Speedrun、SOL-ExecBench 三项公开 AI 研发任务上均明显超基线，其中两项超过公开验证的最好结果；并已用于 ERNIE-5.5-Flash 推理效率优化，改进获生产级验证。</div>
+  <div class="sec"><h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：双层循环——外层 Director 从经验库/知识库决定「研究什么」（多条研究线并行、各维护候选树）；内层 Selector 每轮选起点与假设、Executor 在隔离环境改码产出候选；Evaluator 是固定评测程序，置于被优化仓库之外、对所有智能体不可见、提升超噪声阈值才接受；Reviewer 对照改动与评测结果，偏离方向的版本不能成为最优、利用评测漏洞的版本直接作废。</li>
+    <li><b>实际影响</b>：自动研究从「给定方向反复搜索」走向「同时回答研究什么与如何做好」；生产侧落地（ERNIE-5.5-Flash）：确定性 GPU 推理吞吐 +33.7%、单请求解码提速 14.9%（昆仑芯 P800 低时延场景，官方口径）——一线厂商首次披露带独立评测门的 RSI 生产部署。</li>
+    <li><b>适用限制</b>：全部数字为官方自述，未见第三方复现；两项任务「超公开最优」的具体基线与成绩未随博客披露。</li>
+  </ul></div>
+  <div class="sec"><h3>关键指标/资源</h3>
+  <ul>
+    <li>评测/性能：确定性推理吞吐 +33.7%、解码提速 14.9%；NanoChat AutoResearch / NanoGPT Speedrun 超公开最优（均为自述数据，未见第三方复现）</li>
+    <li>代码/论文：<a href="https://ernie.baidu.com/zh/research/posts/ernie-evolve/" target="_blank" rel="noopener">https://ernie.baidu.com/zh/research/posts/ernie-evolve/</a> ｜ 官方 X：<a href="https://x.com/Baidu_Inc/status/2119765512238637559（雪花反推" target="_blank" rel="noopener">https://x.com/Baidu_Inc/status/2119765512238637559（雪花反推</a> 2026-11-09 12:14:16Z）</li>
+  </ul></div>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#RSI</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#自动研究</span></div>
+</div>
+
+<div class="card priority-4" id="entry-4" data-tags="具身智能 人机交互" style="border-left:3px solid #3fb950"><button class="copy-btn" data-title="MIT×NYU FLEX：机器人从自然语言指令推理未言明偏好" data-link="https://news.mit.edu/2026/ai-assisted-learning-platform-helps-robots-reason-beyond-literal-commands-1109">复制</button>
+  <h2><span class="num">04</span>MIT×NYU FLEX：机器人从自然语言指令推理未言明偏好</h2>
+  <div class="src-line">MIT News 官方 ｜ 2026-11-09，CoRL 2026</div>
+  <div class="sec"><h3>事件概述</h3>
+  <p>MIT 与 NYU 研究者推出 FLEX——机器人运动规划的特征编辑流程，让机器人从自然语言指令中推理出未明确说明的偏好（言外之意），本月 CoRL 上发表。</div>
+  <div class="sec"><h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：三步流水线——Add 将用户提及的物体加入特征列表；Generalize 借助 GPT-4o 从已有特征泛化出更高层规则（如由「避开笔记本电脑」泛化到避开其他电子产品）；Mask 用视觉系统删除环境中已不存在的物体；全流程约 5 秒。</li>
+    <li><b>实际影响</b>：家用/辅助机器人交互自然化：指令不必穷举，机器人自行泛化偏好；特征列表可解释、可编辑，为后续规划提供结构化约束。</li>
+    <li><b>适用限制</b>：泛化依赖 GPT-4o；约 5 秒延迟对高频实时控制场景仍偏高（MIT News 口径）。</li>
+  </ul></div>
+  <div class="sec"><h3>关键指标/资源</h3>
+  <ul>
+    <li>评测/性能：全流程约 5 秒（MIT News 口径）；CoRL 2026 报告</li>
+    <li>代码/论文：<a href="https://news.mit.edu/2026/ai-assisted-learning-platform-helps-robots-reason-beyond-literal-commands-1109" target="_blank" rel="noopener">https://news.mit.edu/2026/ai-assisted-learning-platform-helps-robots-reason-beyond-literal-commands-1109</a></li>
+  </ul></div>
+  <div class="tags"><span class="tag" style="color:#3fb950;border-color:#3fb950">#具身智能</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#人机交互</span></div>
+</div>
+
+<div class="card priority-5" id="entry-5" data-tags="具身智能 强化学习" style="border-left:3px solid #3fb950"><button class="copy-btn" data-title="STRIDE：人形机器人仅凭机载 IMU 奖励、数分钟真机样本学会运动" data-link="https://arxiv.org/abs/2611.08857">复制</button>
+  <h2><span class="num">05</span>STRIDE：人形机器人仅凭机载 IMU 奖励、数分钟真机样本学会运动</h2>
+  <div class="src-line">arXiv 2611.08857，TU Darmstadt ｜ 2026-11-09 arXiv 公告</div>
+  <div class="sec"><h3>事件概述</h3>
+  <p>直接在真实人形机器人上学习运动：STRIDE 用只依赖机载 IMU 的加速度跟踪奖励（替代需要外部动捕或高精度标定状态估计器的速度跟踪奖励），从数分钟量级的真机样本学会 humanoid locomotion，从源头绕开 sim-to-real gap。</div>
+  <div class="sec"><h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：奖励从「跟踪基座速度」改为「跟随指令加速度轮廓」——IMU 可直接测量，无需动捕系统或精确速度估计；真机在线 RL，分钟级收敛。</li>
+    <li><b>实际影响</b>：人形机器人 RL 的真机数据成本从小时/天级降到分钟级；无外部定位系统的现场部署现实性显著提升。</li>
+    <li><b>适用限制</b>：技能范围与长期稳定性边界需查正文；「minutes」口径为作者自述，未见第三方复现。</li>
+  </ul></div>
+  <div class="sec"><h3>关键指标/资源</h3>
+  <ul>
+    <li>评测/性能：数分钟真机样本、IMU-only 奖励（自述数据，未见第三方复现）</li>
+    <li>代码/论文：<a href="https://arxiv.org/abs/2611.08857" target="_blank" rel="noopener">https://arxiv.org/abs/2611.08857</a></li>
+  </ul></div>
+  <div class="tags"><span class="tag" style="color:#3fb950;border-color:#3fb950">#具身智能</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#强化学习</span></div>
+</div>
+
+<div class="card priority-6" id="entry-6" data-tags="世界模型 物理仿真" style="border-left:3px solid #bc8cff"><button class="copy-btn" data-title="MIT×UBC WorldParticle：单一模型统一模拟沙粒流动到蛋白质折叠" data-link="https://news.mit.edu/2026/single-ai-model-simulates-many-substances-behavior-1109">复制</button>
+  <h2><span class="num">06</span>MIT×UBC WorldParticle：单一模型统一模拟沙粒流动到蛋白质折叠</h2>
+  <div class="src-line">MIT News 官方 ｜ 2026-11-09</div>
+  <div class="sec"><h3>事件概述</h3>
+  <p>MIT、UBC 等机构提出统一深度学习系统 WorldParticle：把材料表示为大量粒子，由神经网络逐步预测粒子位置与属性，用同一套架构模拟从流动沙粒到蛋白质折叠的多种物理现象，无需为每种现象手写方程与求解器。团队演示可变形物体、颗粒材料、蛋白质等六类现象。</div>
+  <div class="sec"><h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：粒子表示 + 自回归逐步预测（「类似 ChatGPT 的架构，但预测的是粒子每一步如何移动」——Peter Yichen Chen）；一套权重覆盖六类现象。</li>
+    <li><b>实际影响</b>：通用物理仿真器路线再进一步：软体机器人设计、药物分子模拟等场景可复用同一架构，替代为每个问题单独定制的数值求解器拼盘。</li>
+    <li><b>适用限制</b>：「精度高于数值模拟方法」为 MIT News 转述团队口径，缺跨现象统一基准数字；论文与代码链接未随新闻稿给出。</li>
+  </ul></div>
+  <div class="sec"><h3>关键指标/资源</h3>
+  <ul>
+    <li>评测/性能：六类现象统一模拟（自述数据，未见第三方复现）</li>
+    <li>代码/论文：<a href="https://news.mit.edu/2026/single-ai-model-simulates-many-substances-behavior-1109" target="_blank" rel="noopener">https://news.mit.edu/2026/single-ai-model-simulates-many-substances-behavior-1109</a></li>
+  </ul></div>
+  <div class="tags"><span class="tag" style="color:#bc8cff;border-color:#bc8cff">#世界模型</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#物理仿真</span></div>
+</div>
+
+<div class="card priority-7" id="entry-7" data-tags="世界模型 视触融合" style="border-left:3px solid #bc8cff"><button class="copy-btn" data-title="MDF++：视触世界动作模型端到端表征学习" data-link="https://arxiv.org/abs/2611.09293">复制</button>
+  <h2><span class="num">07</span>MDF++：视触世界动作模型端到端表征学习</h2>
+  <div class="src-line">arXiv 2611.09293，UMich ｜ 2026-11-09 arXiv 公告，CoRL 2026</div>
+  <div class="sec"><h3>事件概述</h3>
+  <p>世界动作模型（WAM）现有实现通常依赖冻结的重建式预训练编码器，其表征未必适配机器人控制。MDF++ 提出端到端学习物理接地、控制相关的多模态潜表征，联合建模动作生成与未来观测预测，覆盖视觉与触觉。</div>
+  <div class="sec"><h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：视觉 + 触觉双模态端到端表征学习（替代冻结编码器）；动作生成与结果预测联合训练，使模型既能行动又能预判行动后果。</li>
+    <li><b>实际影响</b>：WAM 表征质量首次与控制目标对齐；触觉接入让接触富集操作的任务预测更可靠，对灵巧手与装配场景有直接意义。</li>
+    <li><b>适用限制</b>：CoRL 2026 接收论文；基准与消融细节需查正文。</li>
+  </ul></div>
+  <div class="sec"><h3>关键指标/资源</h3>
+  <ul>
+    <li>评测/性能：联合建模动作与未来观测（论文口径）</li>
+    <li>代码/论文：<a href="https://arxiv.org/abs/2611.09293" target="_blank" rel="noopener">https://arxiv.org/abs/2611.09293</a> ｜ 项目页：<a href="http://jointmdf.github.io" target="_blank" rel="noopener">http://jointmdf.github.io</a></li>
+  </ul></div>
+  <div class="tags"><span class="tag" style="color:#bc8cff;border-color:#bc8cff">#世界模型</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#视触融合</span></div>
+</div>
+
+<div class="card priority-8" id="entry-8" data-tags="重大开源 MoE" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="美团开源 LongCat-2.5：1.6 万亿参数原生多模态 MoE，MIT 协议支持商用" data-link="https://mp.weixin.qq.com/s/EGLDrPxND-xGTyStJIDXrw">复制</button>
+  <h2><span class="num">08</span>美团开源 LongCat-2.5：1.6 万亿参数原生多模态 MoE，MIT 协议支持商用</h2>
+  <div class="src-line">美团 LongCat 官方公众号 ｜ 2026-11-09 14:00 UTC</div>
+  <div class="sec"><h3>事件概述</h3>
+  <p>美团龙猫 LongCat 正式开源面向长程智能体任务的原生多模态模型 LongCat-2.5：总参数 1.6 万亿、每 token 激活约 480 亿，1M 上下文，MIT 协议、支持商用推理部署与二次训练、无需额外授权；官方称复杂代码库开发、Visual Coding 与专业办公场景的端到端交付能力提升。</div>
+  <div class="sec"><h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：MoE 稀疏激活（1.6T 总参 / ~48B 激活）；原生多模态；面向长程智能体任务（代码库级工程 + Visual Coding）的取向设计。</li>
+    <li><b>实际影响</b>：开源 MoE 第一梯队再添一员——1.6T 量级 + MIT 许可 + 1M 上下文的组合，在智能体工程任务方向与 Kimi、DeepSeek、GLM 开源线直接竞争；商用无授权门槛降低企业采用阻力。</li>
+    <li><b>适用限制</b>：本跑 HF/GitHub 直连受限，权重页面在线状态未能直接核验（待核实）；基准数字未随公告披露。</li>
+  </ul></div>
+  <div class="sec"><h3>关键指标/资源</h3>
+  <ul>
+    <li>评测/性能：1.6T 总参 / ~48B 激活 / 1M 上下文（官方公告口径，基准数字未披露）</li>
+    <li>代码/论文：官方公告：<a href="https://mp.weixin.qq.com/s/EGLDrPxND-xGTyStJIDXrw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/EGLDrPxND-xGTyStJIDXrw</a> ｜ HF org：<a href="https://huggingface.co/meituan-longcat（待核实" target="_blank" rel="noopener">https://huggingface.co/meituan-longcat（待核实</a>）</li>
+  </ul></div>
+  <div class="tags"><span class="tag" style="color:#8b949e;border-color:#8b949e">#重大开源</span><span class="tag" style="color:#79c0ff;border-color:#79c0ff">#MoE</span></div>
+</div>
+
+<div class="card priority-9" id="entry-9" data-tags="基础设施 智能体算力" style="border-left:3px solid #e3b341"><button class="copy-btn" data-title="Google TPU 8i Max 与 8tx：第八代产品线年内扩至四款，面向智能体时代" data-link="https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/">复制</button>
+  <h2><span class="num">09</span>Google TPU 8i Max 与 8tx：第八代产品线年内扩至四款，面向智能体时代</h2>
+  <div class="src-line">Google 官方博客 ｜ 2026-11-09</div>
+  <div class="sec"><h3>事件概述</h3>
+  <p>Google 扩展第八代 TPU 产品线：TPU 8i Max 面向超大上下文窗口与单机架最高算力密度，TPU 8tx 面向安全与机密推理（硬件级安全）。与 4 月发布的 8t（大规模训练）与 8i（实时推理）合并，一年内在同一代际发布四款系统，覆盖智能体生命周期各阶段；TPU 客户已近 100 家。</div>
+  <div class="sec"><h3>技术与工程价值</h3>
+  <ul>
+    <li><b>核心机制</b>：按智能体工作负载分段专用化——大规模训练（8t）/ 实时推理（8i）/ 超大上下文 + 机架密度（8i Max）/ 机密推理（8tx，硬件级安全）。</li>
+    <li><b>实际影响</b>：「智能体时代」负载的专用加速器产品化：长上下文多轮 Agent 会话与机密数据推理获得专属硬件档位；对 Nvidia 同代产品线形成更细粒度的竞争，自建数据中心的 TPU 直售路线同步扩张。</li>
+    <li><b>适用限制</b>：8i Max / 8tx 具体规格（算力、内存带宽、互联）与价格未随博客披露；8t 2.7× 训练性能与 8i 80% 推理性价比提升为 Google 自述对比上一代。</li>
+  </ul></div>
+  <div class="sec"><h3>关键指标/资源</h3>
+  <ul>
+    <li>评测/性能：一年四款；8t 训练性能最高 2.7×、8i 推理性价比 +80%（均为官方自述对比上一代）</li>
+    <li>代码/论文：https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/ ｜ 官方 X：<a href="https://x.com/Google/status/2119788086490001906（雪花反推" target="_blank" rel="noopener">https://x.com/Google/status/2119788086490001906（雪花反推</a> 2026-11-09 13:43:58Z）</li>
+  </ul></div>
+  <div class="tags"><span class="tag" style="color:#e3b341;border-color:#e3b341">#基础设施</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#智能体算力</span></div>
+</div>
+
+<div class="note-block">
+  <h2>待核实</h2>
+  <ol>
+    <li><b>LongCat-2.5 权重开放页面</b>：HF（meituan-longcat）与 GitHub 仓库本跑直连受限未能核验在线状态；1.6T/48B/1M ctx/MIT 均为官方公告口径，基准数字未随公告披露。</li>
+    <li><b>ERNIE Evolve 全部数字</b>：+33.7%/+14.9% 与两项任务「超公开最优」均为官方自述，未见第三方复现；具体成绩与基线未随博客披露。</li>
+    <li><b>Apple AMP1 SOTA 口径</b>：基准构成与对比对象版本需查论文正文，未见第三方复现。</li>
+    <li><b>WorldParticle「精度高于数值模拟」</b>：MIT News 转述团队口径，缺跨现象统一基准数字；论文/代码页未随新闻稿给出。</li>
+    <li><b>STRIDE「分钟级」与 LLM-Debug-Weights 成功率提升</b>：均为作者自述口径，未见第三方复现。</li>
+    <li><b>存量待核实</b>：NorthCUA 机构归属与 397B Pro 口径、小米 AWM 2.0 闭环指标、Exo 第三方复现、MIT WSP 首方精确时刻、OpenAI Pando CDX 复核（本跑 Aspen 条为其第三方实现旁证：reason-machines/aspen 建仓 11-05，自述独立实现 Pando 设计）、DeepSeek Harness 日活口径。</li>
+  </ol>
+</div>
+
+<div class="note-block" style="border-left-color:#58a6ff;">
+  <h2 style="color:#58a6ff;">去重与筛选说明</h2>
+  <ol>
+    <li><b>dedup_check 入选 9 条</b>：ERNIE Evolve（0.462，同主体不同动作覆判保留）；Apple AMP1（0.463，泛词）；LLM-Debug-Weights（0.924，命中第 128 跑 GPT-6 Astra 工程设计——仅共享模型名，主体为学术论文，覆判保留）；FLEX（0.389，泛词 flex）；STRIDE / WorldParticle / MDF++ 零命中；LongCat-2.5（0.307，泛词 moe）；TPU 8i Max/8tx（0.812，命中第 128 跑 Suncatcher——共享 google/tpu，主体动作不同，覆判保留）。</li>
+    <li><b>人工覆判排除 1 条</b>：Simon Willison《Three.js → 原生 JS + WebGL 移植》（作者博客 11-09 04:32Z 窗内首发，但 is_dup:true conf 1.0 命中第 138 跑 parse_number 条——同主体同动作 24h 内连发，按续闻处置；留档：77KB → 98KB，Opus 5.5 Medium）。</li>
+    <li><b>时间戳纪律排除 4 组</b>：ChatGPT Desktop 转发 SSH agent（第一信源 openai/codex PR #28131 评论 2026-06-14，T-5 月）；Reason Machines Aspen（repo 建仓 11-05，T-4；自述独立实现 OpenAI Pando 设计——backlog 旁证）；Next-Concept Modeling（arXiv 2610.14162 十月，T-3 周）；Asahi Linux 转 GPL（官方公告时刻未核，非 AI 焦点）。</li>
+    <li><b>无第一信源排除 2 条</b>：UC Berkeley harness evolution 论文（Rohan X 转述，原始论文未定位）；UCLA 18% token 浪费（同前）。</li>
+    <li><b>门槛/焦点排除</b>：字节 Seedream 5.5、Lovable 收购 Radish AI、NVIDIA 韩国主权 AI ×4、Opus 5.5 nerfed 传闻、Apple $200 AI 日预算、Graphite 流量 81%、Firebase Studio 关停、千问办公 2.0 / Shizuku-Duplex / Kling 4.0 / PixVerse、观点类（O'Reilly / GPUI / 纳德拉 / 瑞银）、融资传闻（Sakana IPO / Anthropic 估值）、黄仁勋系列 ×3、政治类 ×3、燃气轮机供应链、网信办备案、微软直播语音专利、芝大 Claude 误删笔记、Anthropic 科学家报告、LG K-EXAONE 2.5 API、阿里云调价、Token羊毛、韩国高考 AI 眼镜、Ginux、Flide、LLM 推理笔记 repo、小红书 DeCoRL 等。</li>
+    <li><b>结构性说明</b>：arXiv Mon-09 批次首次落窗（cs.RO 60 条、cs.AI 50 条，Fri-06 迟交论文 BJ 13:00 公告）；<a href="https://export.arxiv.org" target="_blank" rel="noopener">export.arxiv.org</a> API 空响应改用 list/abs 页面；HF 直连持续 SSL 失败；HN &gt;25 分 22 条过筛；aihot 窗内 50 条过筛；GitHub 窗内新建 &gt;80 stars 仓库 0；信源健康 ok=3 / warn=0 / error=0 / manual=1。</li>
+  </ol>
+</div>
+
+<footer>每日 AI 前沿技术精选 · 自动生成 · 时效窗口以报告头为准</footer>
+
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
