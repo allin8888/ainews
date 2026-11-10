@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 第 140 跑</title>
+<style>
+body{margin:0;padding:24px 12px;background:#0d1117;color:#c9d1d9;font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;line-height:1.7;}
+.wrap{max-width:860px;margin:0 auto;}
+header{border-bottom:1px solid #30363d;padding-bottom:16px;margin-bottom:20px;}
+h1{color:#f0f6fc;font-size:1.6em;margin:0 0 8px;}
+.win{color:#8b949e;font-size:.95em;}
+.card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:20px 22px;margin:18px 0;}
+.card h2{color:#f0f6fc;font-size:1.18em;margin:0 0 4px;}
+.num{color:#58a6ff;margin-right:8px;}
+.src-line{color:#8b949e;font-size:.9em;margin-bottom:12px;}
+.sec{color:#58a6ff;font-size:.95em;font-weight:600;margin:12px 0 4px;}
+.card p,.card li{margin:6px 0;}
+.card ul{padding-left:20px;margin:6px 0;}
+.hl{color:#7ee787;}
+.note{color:#d29922;}
+.note-block{border-left:3px solid #d29922;background:#161b22;padding:14px 18px;margin:18px 0;border-radius:0 8px 8px 0;}
+.note-block h2{color:#d29922;font-size:1.1em;margin:0 0 8px;}
+.trend{border-left:3px solid #58a6ff;background:#161b22;padding:14px 18px;margin:18px 0;border-radius:0 8px 8px 0;}
+.trend h2{color:#58a6ff;font-size:1.1em;margin:0 0 8px;}
+footer{color:#8b949e;text-align:center;font-size:.85em;margin-top:28px;padding-top:14px;border-top:1px solid #30363d;}
+code{background:#21262d;padding:1px 5px;border-radius:4px;font-size:.92em;}
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>每日 AI 前沿技术精选 · 第 140 跑</h1>
+  <div class="win">时效窗口：2026-11-09 22:30 – 2026-11-10 08:29（增量收敛，约 10 小时，隔夜增量） · 精选条数：5 条 · 覆盖：AI Coding / 基础设施与重大开源 / 具身智能（触觉）/ 机器人边缘推理</div>
+</header>
+
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="AI Coding">AI Coding</button>
+<button class="filter-chip" data-tag="模型发布">模型发布</button>
+<button class="filter-chip" data-tag="具身智能">具身智能</button>
+<button class="filter-chip" data-tag="基础设施">基础设施</button>
+<button class="filter-chip" data-tag="小模型">小模型</button>
+<button class="filter-chip" data-tag="触觉">触觉</button>
+<button class="filter-chip" data-tag="重大开源">重大开源</button>
+<button class="filter-chip" data-tag="开发环境">开发环境</button>
+<button class="filter-chip" data-tag="机器人">机器人</button>
+<button class="filter-chip" data-tag="边缘推理">边缘推理</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. Anthropic 发布 Claude Fable 5.2 与 Claude Mythos 5.2：同底模双品牌、降价 20%，agentic coding 与机器人仿真基准跃升</a><a class="toc-item" href="#entry-2">2. Meta 发布最小高效 Agent 模型 Muse Ember：$0.10/$0.50 每百万 token，Artificial Analysis 口径效率前沿</a><a class="toc-item" href="#entry-3">3. 蚂蚁灵波开源触觉基础模型 LingBot-Touch：JEPA 统一异构触觉表征，跨传感器/灵巧手零训练迁移</a><a class="toc-item" href="#entry-4">4. OpenAI Codex 支持连接多台本地计算机并按任务选用执行机器</a><a class="toc-item" href="#entry-5">5. DeepX 二代边缘 AI 芯片 DX-M2 流片：LPDDR5X-PIM 协同，5W 内运行至多 100B 参数模型</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="AI Coding 模型发布 具身智能" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Anthropic 发布 Claude Fable 5.2 与 Claude Mythos 5.2：同底模双品牌、降价 20%，agentic coding 与机器人仿真基准跃升" data-link="https://www.anthropic.com/claude-fable-and-mythos-5-2">复制</button>
+  <h2><span class="num">01</span>Anthropic 发布 Claude Fable 5.2 与 Claude Mythos 5.2：同底模双品牌、降价 20%，agentic coding 与机器人仿真基准跃升</h2>
+  <div class="src-line">Anthropic 官方 ｜ 2026-11-09（官方 X 18:57:59 UTC，窗内）</div>
+  <p><strong>事件概述</strong>：Fable 5.2 与 Mythos 5.2 为同一底层模型的两个发行版——Mythos 5.2 去除部分网络安全/生物防护、面向合格机构开放，Fable 5.2 保留防护面向全体用户。主打 agentic coding、推理与视觉，输出提速至多 30%，价格降至 $8/$40 每百万 token（fast mode 2.5x 提速档 $16/$80）。</p>
+  <div class="sec">技术与工程价值</div>
+  <ul>
+    <li><strong>核心机制</strong>：同底模双品牌安全分级发行；preserved thinking 防蒸馏覆盖全部账号（阻止编辑先前上下文提取推理链）；Effort 分档默认 Medium；官方披露 Orchestrator 模式可将简单任务委派给更小模型。</li>
+    <li><strong>实际影响</strong>：官方自测 FrontierCode 2.0 <span class="hl">49.1%</span>（Xhigh，5.1 为 32.4%）、FrontierSWE v2 69.9%、Terminal-Bench-Science 0.1 74.6%；机器人仿真 <span class="hl">RoboDojo Sim 64.9%</span>（5.1 为 27.6%、Opus 5.5 为 39.4%）；费马大定理 Lean 形式化 <span class="hl">30 小时</span>完成（研究版旧纪录 11 天，Opus 5.5 完成 26–27%）；CVE 2026-10 批次 1,829 例全档位超 5.1 与 Opus 5.5；误报拦截约 -55%（网络安全 -60%、生物 -40%）。</li>
+    <li><strong>适用限制</strong>：官方自测口径（自述数据，未见第三方复现，第三方项另行标注）；RoboDojo Sim 为仿真评测，非真机；OSWorld 2.1 为 offline partial 子集。</li>
+    <li><strong>第三方核验</strong>：Artificial Analysis Intelligence Index v5 <span class="hl">65 分登顶</span>（AA 专文称「首个公开的 Mythos 级模型」）；ARC Prize 官方 <span class="hl">ARC-AGI-2 93.8%</span>；Arena Code Arena WebDev 1832 分登顶；官方页转引 Perplexity WANDR——Medium effort 约 40% 单任务成本匹配 Opus 5.5 最高分。</li>
+    <li><strong>生态</strong>：Claude Code v2.1.321 将 Fable 5.2 设为默认（GitHub Release 11-09）；上线 Cursor（CursorBench 默认档 56.9%）、Devin、OpenRouter（上架信息列 1M 上下文，待核实）、Perplexity、Google Cloud、Microsoft Foundry。</li>
+    <li><strong>来源</strong>：<a href="https://www.anthropic.com/claude-fable-and-mythos-5-2" target="_blank" rel="noopener">www.anthropic.com/claude-fable-and-mythos-5-2</a> ｜ 系统卡 <a href="https://assets.claude.com/27d60918d218125e7504bc7354c4b4626ec56b11.pdf（含" target="_blank" rel="noopener">assets.claude.com/27d60918d218125e7504bc7354c4b4626ec56b11.pdf（含</a> METR 预部署评估引用；METR 独立评估博客为 11-05，窗外）</li>
+  </ul>
+  <p class="note">标签：#AI Coding #模型发布 #具身智能</p>
+</div>
+
+<div class="card priority-2" id="entry-2" data-tags="AI Coding 基础设施 小模型" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Meta 发布最小高效 Agent 模型 Muse Ember：$0.10/$0.50 每百万 token，Artificial Analysis 口径效率前沿" data-link="https://research.meta.ai/blog/muse-ember">复制</button>
+  <h2><span class="num">02</span>Meta 发布最小高效 Agent 模型 Muse Ember：$0.10/$0.50 每百万 token，AA 口径效率前沿</h2>
+  <div class="src-line">Meta AI Research 官方博客 ｜ 2026-11-09（HN 01:58 BJ，232 分）</div>
+  <p><strong>事件概述</strong>：Meta 发布其最小、最高效模型 Muse Ember，面向 Agent 全天重复劳动：工具调用、编码子任务、路由、抽取与长文档解析。即日上架 Meta Model API，输入 $0.10、输出 $0.50 每百万 token；Muse Ember、Muse Wonder、Muse Spark 1.3 同步上线 Google Cloud（官方 X 21:58 UTC，窗内）。</p>
+  <div class="sec">技术与工程价值</div>
+  <ul>
+    <li><strong>核心机制</strong>：小模型承接 Agent 高频重复子任务，与旗舰构成分层执行——与条目 1 的 Orchestrator 委派模式互为印证（两大厂商同周给出同向架构证据）。</li>
+    <li><strong>实际影响</strong>：AA 口径（官方博客转引 2026-11-09 数据）下，匹配 Claude Haiku 5.5 最佳得分仅用约 <span class="hl">1/3 成本</span>、胜过 GPT-6 Luna 全部档位，位于 AA 全榜效率前沿（无模型以更低单任务成本得更高分）。官方内部评测 best result：Coding Agent Index-AA 46（vs Haiku 37 / Luna 31）、Agents' Last Exam 61.6、AutomationBench-AA 37.8。</li>
+    <li><strong>适用限制</strong>：AA 成本按 proposed pricing 估算，参数量与最终定价未披露；内部评测自述口径；AA 原始页面未经直接核验。</li>
+    <li><strong>来源</strong>：<a href="https://research.meta.ai/blog/muse-ember" target="_blank" rel="noopener">research.meta.ai/blog/muse-ember</a> ｜ 补充：Box（合同逐条审查）、Cline 等合作伙伴早期测试引述</li>
+  </ul>
+  <p class="note">标签：#AI Coding #基础设施 #小模型</p>
+</div>
+
+<div class="card priority-3" id="entry-3" data-tags="具身智能 触觉 重大开源" style="border-left:3px solid #3fb950"><button class="copy-btn" data-title="蚂蚁灵波开源触觉基础模型 LingBot-Touch：JEPA 统一异构触觉表征，跨传感器/灵巧手零训练迁移" data-link="https://github.com/Robbyant/lingbot-touch">复制</button>
+  <h2><span class="num">03</span>蚂蚁灵波开源触觉基础模型 LingBot-Touch：JEPA 统一异构触觉表征，跨传感器/灵巧手零训练迁移</h2>
+  <div class="src-line">Robbyant 官方 X @robbyant_brain ｜ 2026-11-09 19:11:40 UTC（雪花解码复核一致）</div>
+  <p><strong>事件概述</strong>：基于近 5,000 小时真实触觉数据预训练的 JEPA 触觉表征模型，统一磁传感器、压阻阵列与视触觉三类异构信号，支持跨传感器、跨灵巧手、跨任务与跨动作模型迁移。代码 Apache-2.0，Tiny/Small 权重发布于 Hugging Face 与 ModelScope。</p>
+  <div class="sec">技术与工程价值</div>
+  <ul>
+    <li><strong>核心机制</strong>：模态专属 tokenizer（磁/压阻/视触觉）+ 共享 Haptic Transformer（5D RoPE 时空地址）+ EMA target encoder，潜空间掩码预测；token 携带时间/手指/空间地址，官方推荐 attention-based querying 读取而非逐 token 池化。</li>
+    <li><strong>实际影响</strong>：触觉信号首次进入「基础模型化」开源轨道。官方四性质：统一（多源异构互增强）、可迁移（预训练与下游传感器/真机手完全不同仍零训练迁移）、高效（最小 ViT 高频推理）、可扩展（数据增益持续）。</li>
+    <li><strong>适用限制</strong>：推理发布（frozen target encoder），未放训练代码；权重需账号权限下载；「近 5,000 小时」为官方 X 口径；GitHub 仓库 created_at 为公告前约 10 小时静默创建，首发以官方公告计。</li>
+    <li><strong>来源</strong>：<a href="https://github.com/Robbyant/lingbot-touch" target="_blank" rel="noopener">github.com/Robbyant/lingbot-touch</a> ｜ 项目页 <a href="https://technology.robbyant.com/lingbot-touch" target="_blank" rel="noopener">technology.robbyant.com/lingbot-touch</a> ｜ 论文 PDF 随仓库发布</li>
+  </ul>
+  <p class="note">标签：#具身智能 #触觉 #重大开源</p>
+</div>
+
+<div class="card priority-4" id="entry-4" data-tags="AI Coding 开发环境" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="OpenAI Codex 支持连接多台本地计算机并按任务选用执行机器" data-link="https://x.com/OpenAIDevs/status/2119883176726409645">复制</button>
+  <h2><span class="num">04</span>OpenAI Codex 支持连接多台本地计算机并按任务选用执行机器</h2>
+  <div class="src-line">OpenAI Developers 官方 X @OpenAIDevs ｜ 2026-11-09 20:01:49 UTC（雪花解码复核一致）</div>
+  <p><strong>事件概述</strong>：Codex/dot 新能力——多台本地计算机接入同一 dot 实例，按任务选择执行机器：在专用机器上构建与测试应用的同时，开发者继续在笔记本上写代码。</p>
+  <div class="sec">技术与工程价值</div>
+  <ul>
+    <li><strong>核心机制</strong>：Agent 执行环境从单机走向多机编排——本地算力池化 + 任务级机器路由，构建/测试负载与开发负载物理隔离。</li>
+    <li><strong>适用限制</strong>：官方短公告，配额、平台支持与安全模型细节未披露；按 AI Coding 最高优先级收录，作为执行环境形态信号。</li>
+    <li><strong>来源</strong>：<a href="https://x.com/OpenAIDevs/status/2119883176726409645" target="_blank" rel="noopener">x.com/OpenAIDevs/status/2119883176726409645</a></li>
+  </ul>
+  <p class="note">标签：#AI Coding #开发环境</p>
+</div>
+
+<div class="card priority-5" id="entry-5" data-tags="基础设施 机器人 边缘推理" style="border-left:3px solid #e3b341"><button class="copy-btn" data-title="DeepX 二代边缘 AI 芯片 DX-M2 流片：LPDDR5X-PIM 协同，5W 内运行至多 100B 参数模型" data-link="https://www.eetimes.com/deepx-tapes-out-second-gen-chip-projects-6-7x-performance-gain-with-lpddr5x-pim/">复制</button>
+  <h2><span class="num">05</span>DeepX 二代边缘 AI 芯片 DX-M2 流片：LPDDR5X-PIM 协同，5W 内运行至多 100B 参数模型</h2>
+  <div class="src-line">EE Times 专访 ｜ 2026-11-09（HN 提交 18:33 UTC，136 分；官网新闻页暂无对应条目）</div>
+  <p><strong>事件概述</strong>：韩国边缘 AI 芯片公司 DeepX 完成二代加速器 DX-M2 流片，搭配三星定制 LPDDR5x-PIM：在一代 DX-M1 相同的 5W 功耗预算内运行 20B–100B 参数模型（约 3B–20B 激活）达 10–30 tokens/s，并将机器人库 Newton 定位为 Nvidia Isaac 的 API 兼容替换。</p>
+  <div class="sec">技术与工程价值</div>
+  <ul>
+    <li><strong>核心机制</strong>：内存带宽 50→150 GB/s；NPU 效率经设计改进与 2nm 制程各翻倍；GEMV 卸载至 PIM 仿真下 Llama3.1-8B tokens/s <span class="hl">6.7x</span>（需 2.7x 总功耗，同功耗内预计 2x）；支持投机解码与 TurboQuant，80 TOPS。</li>
+    <li><strong>实际影响</strong>：官方称 5W 可进入无人机与一切电池供电设备；Isaac 管线 API 切换至 Newton 官方称续航约 20x、切换 &lt;1 秒；PIM 将成 LPDDR6 JEDEC 标准，DX-M3（2028，chiplet）原生支持。</li>
+    <li><strong>适用限制</strong>：全部指标为 DeepX 仿真/自述（自述数据，未见第三方复现）；PIM 编译器未完成（现需大量手工优化，原型编译器仅运行于仿真）；6.7x 附带功耗条件，不得与同功耗方案直接排名；样品 2027-03、量产 2027 秋均为计划口径。</li>
+    <li><strong>来源</strong>：<a href="https://eetimes.com/deepx-tapes-out-second-gen-chip-projects-6-7x-performance-gain-with-lpddr5x-pim/" target="_blank" rel="noopener">eetimes.com/deepx-tapes-out-second-gen-chip-projects-6-7x-performance-gain-with-lpddr5x-pim/</a></li>
+  </ul>
+  <p class="note">标签：#基础设施 #机器人 #边缘推理</p>
+</div>
+
+<div class="trend">
+  <h2>趋势简评</h2>
+  <ul>
+    <li><strong>同底模双品牌与安全分级产品化</strong>（条目 01）：Fable/Mythos 5.2 把安全配置差异做成发行版维度，preserved thinking 把防蒸馏做成全账号 API 特性。事实为官方页明确表述；对 API 市场定价与合规策略的影响属编辑判断，需后续观察 Mythos 级模型实际开放范围。</li>
+    <li><strong>Agent 分层执行的经济学成型</strong>（条目 01、02）：Orchestrator 委派 + $0.10/$0.50 小模型定价锚点 + AA 效率前沿背书，「旗舰推理 + 小模型子任务」从架构描述变成有公开报价的产品分层。限制：两家评测口径互不兼容，成本对比仅在各自引用的 AA 数据内成立。</li>
+    <li><strong>具身智能非视觉模态进入基础模型化轨道</strong>（条目 01、03）：触觉 JEPA 开源 + 通用模型 RoboDojo Sim 代际内翻倍至 64.9%，触觉表征与通用策略模型的组合可能是下一个工程整合点。限制：前者为官方声明、后者为仿真评测，真机闭环证据本期均缺。</li>
+    <li><strong>推理硬件竞赛转向「每 token/每瓦」</strong>（条目 05）：DX-M2 以 PIM 换带宽、5W 锚定电池设备，与云端机密推理 TPU 形成两端。限制：DX-M2 全部为仿真口径且样品在 2027 年，量产前不宜推断格局变化。</li>
+  </ul>
+</div>
+
+<div class="note-block">
+  <h2>去重说明</h2>
+  <ul>
+    <li><strong>七天扫描</strong>：工作区最近 7 天共 12 份历史报告（2026-11-02 16:19 → 2026-11-09 22:30），标题全集构建，覆盖连续无缺口。</li>
+    <li><strong>实体去重</strong>：5 条候选全量执行实体查重——LingBot-Touch、DX-M2 零命中；Fable 5.2（conf 0.663，命中 10-28 药物研发条目，共享 anthropic/claude）与 Codex 多机（conf 0.672，命中 11-05 Pierre 收购条目，共享 openai/codex）经人工覆判均为不同主体-动作，保留。</li>
+    <li><strong>排除项</strong>：Apple AMP1 / TPU 8i / ERNIE Evolve 上一跑已完整报道（二手转述排除）；UC Berkeley Evolving Agent Teams 为 10 月批次论文、11-02 已宣传（首发窗外）；Inkling 2 Small OpenRouter 限时免费（可用性促销）；Seedream 5.5 与 Apple Usage Packs（非焦点领域）；黄仁勋系列与 Morningstar 估值（非技术）；OpenAI Control Room（无可核查技术细节）；HN/Reddit 讨论帖（非首发）。</li>
+    <li><strong>结构性说明</strong>：arXiv 当前批次仍为 Mon 11-09（Tue 批次 BJ 13:00 公告，窗外），本期无 arXiv 新条目；信源健康 ok=3 / warn=0 / error=0 / manual=1；<a href="https://huggingface.co" target="_blank" rel="noopener">huggingface.co</a> 连续两跑 SSL 失败（影响权重页核验）；EE Times 直连被拒经 WebFetch 取得全文；DeepX 官网 feed 最新为 2026-07。</li>
+  </ul>
+</div>
+
+<div class="note-block">
+  <h2>待核实</h2>
+  <ul>
+    <li>Fable 5.2 官方自测基准（FrontierCode 2.0、FrontierSWE v2、Terminal-Bench-Science、RoboDojo Sim、OSWorld 2.1、CVE 1,829、费马 30h、误报 -55%）缺第三方复现；第三方核验仅 AA 65 分、ARC-AGI-2 93.8%、Arena 1832、WANDR 成本比四项。</li>
+    <li>OpenRouter 上架信息列 1M 上下文，官方发布页未见同表述 —— 待核实。</li>
+    <li>Muse Ember 参数量未披露、定价为 proposed pricing 估算、AA 数据由官方博客转引 —— 待核实。</li>
+    <li>LingBot-Touch HF/ModelScope 权重页可达性与权重完整性（HF SSL 失败 + 需账号权限）；「近 5,000 小时」论文精确数字未核验 —— 待核实。</li>
+    <li>DeepX DX-M2 全部指标为仿真/自述（6.7x 附 2.7x 功耗条件）；官网无对应官方稿，EE Times 为唯一来源 —— 待核实。</li>
+    <li>Codex 多机能力的配额、平台支持与安全模型细节官方未披露 —— 待核实。</li>
+  </ul>
+</div>
+
+<footer>每日 AI 前沿技术精选 · 自动生成 · 时效窗口以报告头为准</footer>
+
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
