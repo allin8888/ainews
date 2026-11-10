@@ -3,7 +3,147 @@
 <title>每日 AI 前沿技术精选</title>
 <link>https://local.invalid/ai-news</link>
 <description>每日 AI 前沿技术精选 · 结构化条目流</description>
-<lastBuildDate>Sat, 07 Nov 2026 14:24:14 -0000</lastBuildDate>
+<lastBuildDate>Tue, 10 Nov 2026 15:01:03 -0000</lastBuildDate>
+<item>
+<title>AlphaProof Code：多智能体把 Signal 安全性质验证到 AArch64 机器码</title>
+<link>每日AI新闻推送_20261110_2241.html</link>
+<guid isPermaLink="false">20261110_2241-AlphaProof Code：多智能体把 Signal 安全性质验证到 AArch64 机器码</guid>
+<pubDate>2026-11-10</pubDate>
+<category>AI-Coding、形式化验证、多智能体、研究工具</category>
+</item>
+<item>
+<title>n8n Nod 研究预览：本机个人 Agent 公开发布并更新至 v0.6.1</title>
+<link>每日AI新闻推送_20261110_2241.html</link>
+<guid isPermaLink="false">20261110_2241-n8n Nod 研究预览：本机个人 Agent 公开发布并更新至 v0.6.1</guid>
+<pubDate>2026-11-10</pubDate>
+<category>Agent、AI基础设施、开源工具、本地运行</category>
+</item>
+<item>
+<title>Gemini for healthcare 美国预览：把权限继承与可追溯引用接入医疗 Agent 工作流</title>
+<link>每日AI新闻推送_20261110_2241.html</link>
+<guid isPermaLink="false">20261110_2241-Gemini for healthcare 美国预览：把权限继承与可追溯引用接入医疗 Agent 工作流</guid>
+<pubDate>2026-11-10</pubDate>
+<category>Agent、AI基础设施、行业应用、权限治理</category>
+</item>
+<item>
+<title>Anthropic 发布 Claude Fable 5.2 与 Claude Mythos 5.2：同底模双品牌、降价 20%，agentic coding 与机器人仿真基准跃升</title>
+<link>每日AI新闻推送_20261110_0829.html</link>
+<guid isPermaLink="false">20261110_0829-Anthropic 发布 Claude Fable 5.2 与 Claude Mythos 5.2：同底模双品牌、降价 20%，agentic coding 与机器人仿真基准跃升</guid>
+<pubDate>2026-11-10</pubDate>
+<category>AI Coding、模型发布、具身智能</category>
+</item>
+<item>
+<title>Meta 发布最小高效 Agent 模型 Muse Ember：$0.10/$0.50 每百万 token，Artificial Analysis 口径效率前沿</title>
+<link>每日AI新闻推送_20261110_0829.html</link>
+<guid isPermaLink="false">20261110_0829-Meta 发布最小高效 Agent 模型 Muse Ember：$0.10/$0.50 每百万 token，Artificial Analysis 口径效率前沿</guid>
+<pubDate>2026-11-10</pubDate>
+<category>AI Coding、基础设施、小模型</category>
+</item>
+<item>
+<title>蚂蚁灵波开源触觉基础模型 LingBot-Touch：JEPA 统一异构触觉表征，跨传感器/灵巧手零训练迁移</title>
+<link>每日AI新闻推送_20261110_0829.html</link>
+<guid isPermaLink="false">20261110_0829-蚂蚁灵波开源触觉基础模型 LingBot-Touch：JEPA 统一异构触觉表征，跨传感器/灵巧手零训练迁移</guid>
+<pubDate>2026-11-10</pubDate>
+<category>具身智能、触觉、重大开源</category>
+</item>
+<item>
+<title>OpenAI Codex 支持连接多台本地计算机并按任务选用执行机器</title>
+<link>每日AI新闻推送_20261110_0829.html</link>
+<guid isPermaLink="false">20261110_0829-OpenAI Codex 支持连接多台本地计算机并按任务选用执行机器</guid>
+<pubDate>2026-11-10</pubDate>
+<category>AI Coding、开发环境</category>
+</item>
+<item>
+<title>DeepX 二代边缘 AI 芯片 DX-M2 流片：LPDDR5X-PIM 协同，5W 内运行至多 100B 参数模型</title>
+<link>每日AI新闻推送_20261110_0829.html</link>
+<guid isPermaLink="false">20261110_0829-DeepX 二代边缘 AI 芯片 DX-M2 流片：LPDDR5X-PIM 协同，5W 内运行至多 100B 参数模型</guid>
+<pubDate>2026-11-10</pubDate>
+<category>基础设施、机器人、边缘推理</category>
+</item>
+<item>
+<title>Can LLMs Debug Robots by Editing Their Weights? GPT-6 Astra 仅编辑 65 行 embedding 修复 π0.5 指令跟随</title>
+<link>每日AI新闻推送_20261109_2230.html</link>
+<guid isPermaLink="false">20261109_2230-Can LLMs Debug Robots by Editing Their Weights? GPT-6 Astra 仅编辑 65 行 embedding 修复 π0.5 指令跟随</guid>
+<pubDate></pubDate>
+<category>AI Coding、具身智能、权重编程</category>
+</item>
+<item>
+<title>Apple AMP1：通用模型直接驱动机械臂，基准超越 VLA 与世界动作模型</title>
+<link>每日AI新闻推送_20261109_2230.html</link>
+<guid isPermaLink="false">20261109_2230-Apple AMP1：通用模型直接驱动机械臂，基准超越 VLA 与世界动作模型</guid>
+<pubDate></pubDate>
+<category>具身智能、机器人操纵</category>
+</item>
+<item>
+<title>百度发布 ERNIE Evolve 自动化研究系统：双层循环 + 独立评测器把关，官方定调迈向 RSI</title>
+<link>每日AI新闻推送_20261109_2230.html</link>
+<guid isPermaLink="false">20261109_2230-百度发布 ERNIE Evolve 自动化研究系统：双层循环 + 独立评测器把关，官方定调迈向 RSI</guid>
+<pubDate></pubDate>
+<category>RSI、自动研究</category>
+</item>
+<item>
+<title>MIT×NYU FLEX：机器人从自然语言指令推理未言明偏好</title>
+<link>每日AI新闻推送_20261109_2230.html</link>
+<guid isPermaLink="false">20261109_2230-MIT×NYU FLEX：机器人从自然语言指令推理未言明偏好</guid>
+<pubDate></pubDate>
+<category>具身智能、人机交互</category>
+</item>
+<item>
+<title>STRIDE：人形机器人仅凭机载 IMU 奖励、数分钟真机样本学会运动</title>
+<link>每日AI新闻推送_20261109_2230.html</link>
+<guid isPermaLink="false">20261109_2230-STRIDE：人形机器人仅凭机载 IMU 奖励、数分钟真机样本学会运动</guid>
+<pubDate></pubDate>
+<category>具身智能、强化学习</category>
+</item>
+<item>
+<title>MIT×UBC WorldParticle：单一模型统一模拟沙粒流动到蛋白质折叠</title>
+<link>每日AI新闻推送_20261109_2230.html</link>
+<guid isPermaLink="false">20261109_2230-MIT×UBC WorldParticle：单一模型统一模拟沙粒流动到蛋白质折叠</guid>
+<pubDate></pubDate>
+<category>世界模型、物理仿真</category>
+</item>
+<item>
+<title>MDF++：视触世界动作模型端到端表征学习</title>
+<link>每日AI新闻推送_20261109_2230.html</link>
+<guid isPermaLink="false">20261109_2230-MDF++：视触世界动作模型端到端表征学习</guid>
+<pubDate></pubDate>
+<category>世界模型、视触融合</category>
+</item>
+<item>
+<title>美团开源 LongCat-2.5：1.6 万亿参数原生多模态 MoE，MIT 协议支持商用</title>
+<link>每日AI新闻推送_20261109_2230.html</link>
+<guid isPermaLink="false">20261109_2230-美团开源 LongCat-2.5：1.6 万亿参数原生多模态 MoE，MIT 协议支持商用</guid>
+<pubDate></pubDate>
+<category>重大开源、MoE</category>
+</item>
+<item>
+<title>Google TPU 8i Max 与 8tx：第八代产品线年内扩至四款，面向智能体时代</title>
+<link>每日AI新闻推送_20261109_2230.html</link>
+<guid isPermaLink="false">20261109_2230-Google TPU 8i Max 与 8tx：第八代产品线年内扩至四款，面向智能体时代</guid>
+<pubDate></pubDate>
+<category>基础设施、智能体算力</category>
+</item>
+<item>
+<title>Simon Willison 用 Claude 对比 C 与 Rust 实现 parse_number() SQLite 扩展</title>
+<link>每日AI新闻推送_20261109_1000.html</link>
+<guid isPermaLink="false">20261109_1000-Simon Willison 用 Claude 对比 C 与 Rust 实现 parse_number() SQLite 扩展</guid>
+<pubDate></pubDate>
+<category>AI Coding、SQLite</category>
+</item>
+<item>
+<title>Artificial Analysis 发布 Decision Index v2：头条指标奖励置信度校准，私有集占比翻近一倍</title>
+<link>每日AI新闻推送_20261109_1000.html</link>
+<guid isPermaLink="false">20261109_1000-Artificial Analysis 发布 Decision Index v2：头条指标奖励置信度校准，私有集占比翻近一倍</guid>
+<pubDate></pubDate>
+<category>评测基准、模型校准</category>
+</item>
+<item>
+<title>Karpathy 用 Claude Code 一次生成 TristanTube：4.7 万视频站 3 分钟 one-shot</title>
+<link>每日AI新闻推送_20261108_0928.html</link>
+<guid isPermaLink="false">20261108_0928-Karpathy 用 Claude Code 一次生成 TristanTube：4.7 万视频站 3 分钟 one-shot</guid>
+<pubDate>2026-11-08</pubDate>
+<category>AI Coding、Claude Code</category>
+</item>
 <item>
 <title>OpenCode 正式发布 Browse：MCP 服务器 + Chromium 扩展把「真实浏览器」交给编码智能体，登录/2FA/支付可人工接管</title>
 <link>每日AI新闻推送_20261107_2210.html</link>
