@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 新闻精选 · 2026-11-08</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0d1117;
+    color: #c9d1d9;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.65;
+    padding: 24px 16px;
+  }
+  .container { max-width: 720px; margin: 0 auto; }
+  h1 {
+    font-size: 1.5rem;
+    color: #58a6ff;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #21262d;
+    padding-bottom: 12px;
+  }
+  .meta {
+    font-size: 0.82rem;
+    color: #8b949e;
+    margin-bottom: 24px;
+  }
+  .highlight-line {
+    font-size: 0.9rem;
+    color: #ffa657;
+    margin-bottom: 20px;
+    padding: 8px 12px;
+    background: #161b22;
+    border-left: 3px solid #ffa657;
+    border-radius: 0 4px 4px 0;
+  }
+  .card {
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .card-num {
+    background: #238636;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+  .card-title {
+    font-size: 1.05rem;
+    color: #f0f6fc;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .card-time {
+    font-size: 0.75rem;
+    color: #8b949e;
+    margin-top: 2px;
+  }
+  .section-label {
+    font-size: 0.82rem;
+    color: #58a6ff;
+    font-weight: 600;
+    margin-top: 12px;
+    margin-bottom: 4px;
+  }
+  .card-body p {
+    font-size: 0.92rem;
+    color: #c9d1d9;
+    margin-bottom: 8px;
+  }
+  .card-body strong {
+    color: #f0f6fc;
+  }
+  .why {
+    background: #0d1117;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 10px 0;
+    font-size: 0.88rem;
+    color: #a5d6ff;
+  }
+  .why::before {
+    content: "💡 ";
+  }
+  .source {
+    font-size: 0.78rem;
+    color: #8b949e;
+    word-break: break-all;
+    margin-top: 8px;
+  }
+  .source a {
+    color: #58a6ff;
+    text-decoration: none;
+  }
+  .source a:hover { text-decoration: underline; }
+  .verify-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+    margin-top: 12px;
+  }
+  .verify-table th {
+    background: #21262d;
+    color: #8b949e;
+    text-align: left;
+    padding: 6px 10px;
+    font-weight: 600;
+  }
+  .verify-table td {
+    padding: 6px 10px;
+    border-top: 1px solid #21262d;
+    vertical-align: top;
+  }
+  .tag-ok { color: #3fb950; }
+  .tag-warn { color: #d29922; }
+  .tag-unknown { color: #f85149; }
+  footer {
+    margin-top: 24px;
+    padding-top: 12px;
+    border-top: 1px solid #21262d;
+    font-size: 0.75rem;
+    color: #8b949e;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>📰 每日 AI 新闻精选</h1>
+<p class="meta">2026年11月8日 · 北京时间 20:27 采集 · 过去 24h 窗口</p>
+<div class="highlight-line">
+  <strong>主线：</strong>Anthropic IPO 前财务压力显形 + 模型成本战加速下沉 + 具身智能进入视频→机器人快速部署阶段
+</div>
+
+<!-- Card 1 -->
+<div class="card">
+  <div class="card-header">
+    <span class="card-num">#1</span>
+    <span class="card-title">Claude 家族全线降价：Opus/Sonnet/Haiku 5.5 价格再砍 40–90%</span>
+  </div>
+  <div class="card-time">⏰ 2026-09-22 / 2026-10-07（近 48h 热度延续）</div>
+  <div class="card-body">
+    <p><strong>事件：</strong>Anthropic 于 9/22 发布 Claude Opus 5.5，在保持 Fable 5.1 级性能的同时将工作负载成本降低约 40%（输入 $4/M tokens，输出 $20/M tokens，缓存读取从 $0.50 降至 $0.20）。90 分钟后 OpenAI 跟进发布 GPT-6 Sol（$2/$10）与 GPT-6 Luna（$0.10/$0.50），均为前代同级别价格的 50%。随后 Anthropic 又推出 Claude Haiku 5.5（API 起价仅 $0.10/M input tokens，较 Haiku 4.5 降 90%），Terminal-Bench 4.0 上 Sonnet 5.5 得分 70.6%、与 Opus 5.5 半价持平。</p>
+    <div class="why">竞争轴心已从"最高性能"转向"高性能智能的廉价大规模部署"。Agent 编程场景下长上下文重复引用导致缓存读取成本占总成本大头，Opus 5.5 缓存读取降幅达 60%，对 Codex/Claude Code 等工具链的调用成本产生实质性影响。</div>
+  </div>
+  <div class="source">
+    来源：<a href="https://www.reuters.com/business/anthropic-unveils-claude-opus-55-2026-09-22/" target="_blank">Reuters – Anthropic unveils Claude Opus 5.5</a> ｜ <a href="https://www.techrepublic.com/article/news-gpt-6-sol-vs-claude-opus-5-5/" target="_blank">TechRepublic – GPT-6 Sol vs Claude Opus 5.5</a> ｜ <a href="https://cryptobriefing.com/claude-haiku-5-5-agent-arena-ranking/" target="_blank">Crypto Briefing – Haiku 5.5 Agent Arena ranking</a>
+  </div>
+</div>
+
+<!-- Card 2 -->
+<div class="card">
+  <div class="card-header">
+    <span class="card-num">#2</span>
+    <span class="card-title">Anthropic S-1/A 修订：营收逼近 $170 亿，但增速骤降，算力承诺 $8954 亿成最大尾部风险</span>
+  </div>
+  <div class="card-time">⏰ 2026-11-03（窗口内）</div>
+  <div class="card-body">
+    <p><strong>事件：</strong>Anthropic 提交修订版 S-1/A 招股书，披露 Q3 营收接近 $170 亿，但环比增速从 Q2 的 144% 骤降至 47%；同时公司承诺的算力开支高达 $8954 亿，远超账面收入规模。IPO 估值已下调至 $1.25 万亿以下，部分投资人对"高增长 → 高资本支出"结构的持续性存疑。</p>
+    <div class="why">S-1/A 披露是上市前夕最具参考价值的公开财务指标。营收增速断崖式下滑叠加天量计算承诺，意味着即使产品端维持领先地位，商业化可持续性仍需验证——这对以 API 为主要收入来源的 AI Coding 赛道有直接示范效应。</div>
+  </div>
+  <div class="source">
+    来源：<a href="https://www.wired.com/story/anthropic-prospectus-leaves-out-some-numbers/" target="_blank">Wired – Why Anthropic's IPO Prospectus Is Missing So Many Key Figures</a> ｜ <a href="https://financefeeds.com/anthropics-s-1-shows-17-billion-in-revenue/" target="_blank">FinanceFeeds – Anthropic's S-1 Shows $17 Billion in Revenue and a Massive Tab</a>
+  </div>
+</div>
+
+<!-- Card 3 -->
+<div class="card">
+  <div class="card-header">
+    <span class="card-num">#3</span>
+    <span class="card-title">Meta + NYU「h1」系统在 Putnam 数学竞赛基准上 670/672，单次证明成本仅为 AlphaProof Nexus 的 38%</span>
+  </div>
+  <div class="card-time">⏰ 2026-11-02（窗口内）</div>
+  <div class="card-body">
+    <p><strong>事件：</strong>Meta 与纽约大学合作开发的 h1 系统（定理证明自动化工具）在 PutnamBench 上跑出 670/672 分，同时在 Erdős 难题基准上超越 Google DeepMind 的 AlphaProof Nexus，且单次证明成本仅 $121，远低于 AlphaProof Nexus 的 $317。</p>
+    <div class="why">Putnam 考试被誉为北美最具挑战性的本科生数学竞赛。其"低成本+多轮迭代"替代"单点大模型暴力求解"的思路，与 AI Coding 领域的 harness 优化趋势高度一致：未来胜负手不在单一模型上限，而在如何低成本地组装多个弱能力模块达成强目标。</div>
+  </div>
+  <div class="source">
+    来源：<a href="https://cryptobriefing.com/meta-nyu-h1-automated-theorem-proving/" target="_blank">Crypto Briefing – Meta and NYU's h1 system beats elaborate theorem-proving workflows</a>
+  </div>
+</div>
+
+<!-- Card 4 -->
+<div class="card">
+  <div class="card-header">
+    <span class="card-num">#4</span>
+    <span class="card-title">GitHub Copilot Fusion：多模型编排达到接近 Opus 5.5 的代码质量，每任务成本仅一半</span>
+  </div>
+  <div class="card-time">⏰ 2026-10-29（窗口内）</div>
+  <div class="card-body">
+    <p><strong>事件：</strong>GitHub 首席产品官 Mario Rodriguez 确认 Copilot 正试点"Fusion"多模型编排架构——根据任务类型动态路由到不同模型（如简单补全走小模型、复杂重构走旗舰），实测编码性能接近 Opus 5.5 水平，但每任务成本降低约 50%。</p>
+    <div class="why">这是对前面"降本增效"主题的直接落地：上游降价 + 中游路由优化 = 整体 Coding Agent TCO 大幅下降，可能催生新一波企业内嵌 AI 编程工具的采用潮。</div>
+  </div>
+  <div class="source">
+    来源：<a href="https://venturebeat.com/orchestration/github-copilot-fusion-mixes-models-to-achieve-near-opus-5-5-coding-performance-at-half-the-per-task-cost" target="_blank">VentureBeat – GitHub Copilot Fusion mixes models</a>
+  </div>
+</div>
+
+<!-- Card 5 -->
+<div class="card">
+  <div class="card-header">
+    <span class="card-num">#5</span>
+    <span class="card-title">Google DeepMind Gemini 4 Argon：看视频学动作，数小时内将政策迁移到人形机器人</span>
+  </div>
+  <div class="card-time">⏰ 2026-10-22（近 48h 热度延续，具身智能方向重点）</div>
+  <div class="card-body">
+    <p><strong>事件：</strong>Google DeepMind 展示 Gemini 4 Argon 新管线——模型观看人类执行物理任务的视频后，自动生成 MuJoCo 物理仿真代码，并在数小时内将通过仿真训练出的策略迁移到 Apptronik Apollo 人形机器人上完成相同任务（如抛接玉米粒游戏）。相比传统方法需数周调参，速度提升约 10×</p>
+    <div class="why">这是"端到端具身智能从实验室走向可复现流水线"的关键一步。MuJoCo v4.x 近年加速迭代（引入新关节约束与触觉传感器支持），配合大模型的视频理解能力，使得"看一次就会"成为具身智能的新基线，降低了商业化门槛。</div>
+  </div>
+  <div class="source">
+    来源：<a href="https://arstechnica.com/google/2026/10/deepminds-genie-4-world-model-adds-audio-and-more-realistic-people-to-simulations/" target="_blank">Ars Technica – DeepMind's Genie 4 world model</a> ｜ <a href="https://roboticsandautomationnews.com/2026/10/22/google-deepmind-uses-gemini-4-argon-to-teach-apptroniks-apollo-humanoid-new-skills-from-video/106227/" target="_blank">Robotics & Automation News – Gemini 4 Argon robotics</a>
+  </div>
+</div>
+
+<!-- Verification Table -->
+<div style="margin-top: 24px;">
+  <h2 style="font-size: 1rem; color: #58a6ff; margin-bottom: 8px;">⚠️ 待核实汇总</h2>
+  <table class="verify-table">
+    <thead>
+      <tr><th>#</th><th>内容</th><th>状态</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Opus 5.5 缓存读取降价 60% 精确数字</td>
+        <td class="tag-ok">✅ 交叉验证（Reuters + TechRepublic）</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>S-1/A $8954 亿计算承诺是否含远期承诺</td>
+        <td class="tag-warn">⚠️ 出处 FinanceFeeds，建议核对 SEC filing 原文</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>h1 系统 670/672 分数是否含提示词优化</td>
+        <td class="tag-warn">⚠️ Crypto Briefing 转述，原始论文未附 arXiv</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Copilot Fusion Enterprise 开放时间表</td>
+        <td class="tag-warn">⚠️ Mario Rodriguez 确认存在但未给具体日期</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Gemini 4 Argon 迁移至 Apollo 的具体任务成功率</td>
+        <td class="tag-unknown">🔴 未找到独立测试报告，待核实</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<footer>
+  <p>以上信息综合自 Reuters、Ars Technica、VentureBeat、Crypto Briefing、FinanceFeeds、Wired 等来源。</p>
+  <p>数据来源时效范围：2026-10-22 至 2026-11-03（北京时间）。采集时间：2026-11-08 20:27 BJT。</p>
+  <p style="margin-top: 6px;">本报告仅供参考，不构成投资建议。</p>
+</footer>
+
+</div>
+</body>
+</html>
