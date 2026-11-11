@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日AI新闻推送 2026-11-11（第4期）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0d1117;
+    color: #c9d1d9;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    padding: 24px;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 {
+    color: #58a6ff;
+    font-size: 22px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #21262d;
+    padding-bottom: 12px;
+  }
+  .meta {
+    color: #8b949e;
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+  .card {
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  .card h2 {
+    color: #f0f6fc;
+    font-size: 16px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .card h2 a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .card h2 a:hover { text-decoration: underline; }
+  .tag {
+    display: inline-block;
+    background: #1f6feb22;
+    color: #58a6ff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-right: 6px;
+    border: 1px solid #1f6feb44;
+  }
+  .section-label {
+    color: #8b949e;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+    margin-top: 12px;
+  }
+  .section-label:first-child { margin-top: 0; }
+  .section-text {
+    color: #c9d1d9;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .source-link {
+    color: #58a6ff;
+    font-size: 13px;
+    text-decoration: none;
+  }
+  .source-link:hover { text-decoration: underline; }
+  .divider {
+    border: none;
+    border-top: 1px solid #21262d;
+    margin: 24px 0;
+  }
+  .footer {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid #21262d;
+  }
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>📰 每日AI新闻推送 2026-11-11（第4期）</h1>
+  <p class="meta">北京时间 2026-11-11 20:28 CST · 精选 3 条 · 时效窗口：过去 24 小时</p>
+
+  <nav class="toc">
+<a class="toc-item" href="#entry-1">1. Apple AMP1：用通用 AI 模型通过 Python 代码控制机械臂，无需微调</a><a class="toc-item" href="#entry-2">2. Cisco 集成 Anthropic Claude Mythos 5.2 强化 AI Agent 安全红队测试</a><a class="toc-item" href="#entry-3">3. Anthropic 发布 Claude Fable 5.2 / Mythos 5.2：编程与推理双升级，定价下调</a>
+</nav>
+<div class="card priority-1" id="entry-1"><button class="copy-btn" data-title="Apple AMP1：用通用 AI 模型通过 Python 代码控制机械臂，无需微调" data-link="https://cryptobriefing.com/apple-amp1-ai-models-control-robot-arms/">复制</button>
+    <h2>1️⃣ Apple AMP1：用通用 AI 模型通过 Python 代码控制机械臂，无需微调</h2>
+    <span class="tag">具身智能</span>
+    <span class="tag">Apple</span>
+    <span class="tag">CoRL 2026</span>
+    <p class="section-label">事件</p>
+    <p class="section-text">Apple 发布 AMP1（AI Model Protocol v1），允许通用大语言模型通过 Python 代码直接控制机器人手臂，无需针对特定硬件进行微调。测试结果显示，通用 AI 模型的机械臂操控表现甚至优于专门为机器人设计的专业模型。该技术已在 CoRL 2026 会议上展示。</p>
+    <p class="section-label">为何值得关注</p>
+    <p class="section-text">AMP1 的核心突破在于「通用模型 + 代码接口」范式——不再需要为每种机器人硬件训练专用策略网络，而是让通用 LLM 通过编写和执行 Python 代码来驱动物理动作。这对具身智能的工程落地路径有重大影响：降低了多模态感知到运动控制的适配成本，使小型团队也能快速原型化机器人应用。此前 NVIDIA GR00T 2 走的是世界模型路线（从视频学习），Apple 则走了代码中介路线，两条路径正在收敛。</p>
+    <p class="section-label">来源</p>
+    <a class="source-link" href="https://<a href="https://cryptobriefing.com/apple-amp1-ai-models-control-robot-arms/" target="_blank" rel="noopener">cryptobriefing.com/apple-amp1-ai-models-control-robot-arms/</a>" target="_blank">Crypto Briefing →</a>
+  </div>
+
+  <div class="card priority-2" id="entry-2"><button class="copy-btn" data-title="Cisco 集成 Anthropic Claude Mythos 5.2 强化 AI Agent 安全红队测试" data-link="https://www.marketscreener.com/news/cisco-announces-frontier-ai-red-teaming-and-agent-observability-to-secure-the-agentic-enterprise-ce785edade8df32c">复制</button>
+    <h2>2️⃣ Cisco 集成 Anthropic Claude Mythos 5.2 强化 AI Agent 安全红队测试</h2>
+    <span class="tag">AI安全</span>
+    <span class="tag">Anthropic</span>
+    <span class="tag">企业AI</span>
+    <p class="section-label">事件</p>
+    <p class="section-text">Cisco 在 Cisco Live APJC 大会上宣布将 Anthropic Claude Mythos 5.2 纳入其 AI Defense 平台，用于对 AI 应用程序和自主 Agent 进行前沿红队测试与安全可观测性评估。这是企业级安全厂商首次将专用安全模型直接嵌入自动化漏洞发现流程。</p>
+    <p class="section-label">为何值得关注</p>
+    <p class="section-text">AI Agent 的安全问题正从理论担忧变为工程现实——Microsoft Research 近期证明只需修改不到 10 个神经元即可植入后门触发 Agent 执行恶意命令。Cisco 的举措标志着企业安全栈开始真正接纳「以 AI 测试 AI」的对抗性防御思路，同时也说明 Claude Mythos 作为安全专项模型已进入主流基础设施层。对 AI Coding 领域的启示：Agent 安全工具链正在形成独立赛道。</p>
+    <p class="section-label">来源</p>
+    <a class="source-link" href="https://<a href="https://www.marketscreener.com/news/cisco-announces-frontier-ai-red-teaming-and-agent-observability-to-secure-the-agentic-enterprise-ce785edade8df32c" target="_blank" rel="noopener">www.marketscreener.com/news/cisco-announces-frontier-ai-red-teaming-and-agent-observability-to-secure-the-agentic-enterprise-ce785edade8df32c</a>" target="_blank">MarketScreener →</a>
+  </div>
+
+  <div class="card priority-3" id="entry-3"><button class="copy-btn" data-title="Anthropic 发布 Claude Fable 5.2 / Mythos 5.2：编程与推理双升级，定价下调" data-link="https://www.online-tech-tips.com/anthropic-claude-fable-5-2-mythos-5-2/">复制</button>
+    <h2>3️⃣ Anthropic 发布 Claude Fable 5.2 / Mythos 5.2：编程与推理双升级，定价下调</h2>
+    <span class="tag">大模型</span>
+    <span class="tag">Anthropic</span>
+    <span class="tag">AI Coding</span>
+    <p class="section-label">事件</p>
+    <p class="section-text">Anthropic 于 11 月 9 日正式发布 Claude Fable 5.2（主力模型）与 Claude Mythos 5.2（安全专项模型）。相比上一代，新版在编码和逻辑推理任务上性能显著提升，安全防护误报率降低 55%（即更少被安全机制拦截），同时 API 定价进一步下调。Pro 订阅用户在 11 月 17 日前可享 50% 限额体验。</p>
+    <p class="section-label">为何值得关注</p>
+    <p class="section-text">Fable 5.2 直接对标 OpenAI GPT-6.2 与 Google Gemini 3.0，是 Anthropic 冲击纳斯达克 IPO 前的关键技术卡位。对 AI Coding 领域，Mythos 5.2 的内嵌意味着未来的 Agent 安全沙箱可能不再依赖外部工具，而是直接在模型层实现。结合今日 Cisco 的集成动作，「模型即安全层」的趋势已确立。</p>
+    <p class="section-label">来源</p>
+    <a class="source-link" href="https://<a href="https://www.online-tech-tips.com/anthropic-claude-fable-5-2-mythos-5-2/" target="_blank" rel="noopener">www.online-tech-tips.com/anthropic-claude-fable-5-2-mythos-5-2/</a>" target="_blank">Online Tech Tips →</a>
+  </div>
+
+  <hr class="divider">
+  <p class="footer">本报告仅供参考，不构成投资建议。&nbsp;|&nbsp;生成时间：2026-11-11 20:28 CST</p>
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
