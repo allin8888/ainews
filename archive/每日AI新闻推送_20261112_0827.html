@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 新闻推送 — 2026-11-12</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --card-bg: #161b22;
+  --border: #30363d;
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --accent: #58a6ff;
+  --accent-dim: #1f6feb22;
+  --green: #3fb950;
+  --red: #f85149;
+  --yellow: #d29922;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+}
+.container { max-width: 800px; margin: 0 auto; }
+.header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+.header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.header .meta {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+.badge {
+  display: inline-block;
+  background: var(--accent-dim);
+  color: var(--accent);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  margin-right: 8px;
+}
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+.card h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+.card h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+.card h2 a:hover {
+  color: var(--accent);
+}
+.section-label {
+  color: var(--text-secondary);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+  margin-top: 12px;
+}
+.section-content {
+  color: var(--text-primary);
+  font-size: 14px;
+}
+.source-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 14px;
+}
+.source-link:hover {
+  text-decoration: underline;
+}
+.tag {
+  display: inline-block;
+  background: var(--border);
+  color: var(--text-secondary);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-right: 6px;
+  margin-top: 8px;
+}
+.footer {
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  margin-top: 24px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  text-align: center;
+}
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>📰 每日AI新闻推送</h1>
+    <div class="meta">
+      <span class="badge">第5期</span>
+      <span>北京时间 2026-11-12 08:27 CST</span>
+      <br>
+      <span style="color: var(--text-secondary); font-size: 13px;">时效窗口：2026-11-11 08:27 – 2026-11-12 08:27（北京时间）· 精选条数：3 条 + 1 条48h补充</span>
+    </div>
+  </div>
+
+  <!-- Card 1 -->
+  <nav class="toc">
+<a class="toc-item" href="#entry-1">1. Meta 发布轻量模型 Muse Ember，大幅降低 AI Agent 运行成本</a><a class="toc-item" href="#entry-2">2. Google 将开源 AI Agent 沙箱 Runtime「Agent Substrate」捐给 Linux 基金会 CNCF</a><a class="toc-item" href="#entry-3">3. Anthropic IPO 前债券市场亮红灯：信用利差扩大引发投资人警惕</a><a class="toc-item" href="#entry-4">4. [48h 热度补充] Claude Fable 5.2 构建完整操作系统：1000 个 Agent 协同八天交付可运行 OS</a>
+</nav>
+<div class="card priority-1" id="entry-1"><button class="copy-btn" data-title="Meta 发布轻量模型 Muse Ember，大幅降低 AI Agent 运行成本" data-link="https://siliconangle.com/2026/11/09/meta-introduces-muse-ember-to-power-cost-efficient-ai-agents/">复制</button>
+    <h2><a href="https://<a href="https://siliconangle.com/2026/11/09/meta-introduces-muse-ember-to-power-cost-efficient-ai-agents/" target="_blank" rel="noopener">siliconangle.com/2026/11/09/meta-introduces-muse-ember-to-power-cost-efficient-ai-agents/</a>" target="_blank">1. Meta 发布轻量模型 Muse Ember，大幅降低 AI Agent 运行成本</a></h2>
+    <div class="section-label">事件</div>
+    <div class="section-content">
+      Meta AI Research 于 11 月 9 日发布 Muse Ember——其最小的开源模型系列之一，专为低成本 AI Agent 和编码任务设计。API 定价为输入 $0.10/百万 token、输出 $0.50/百万 token，同时支持 1M-token 上下文窗口。Model API 与 Google Cloud 同步上线，支持直接调用 Wonder / Spark / Ember 全系列模型。
+    </div>
+    <div class="section-label">为何值得关注</div>
+    <div class="section-content">
+      Muse Ember 填补了「高成本低效 Agent」的生态位——此前用 Claude Haiku 或 GPT-4o-mini 跑批量 Agent 时单 token 成本仍显著。$0.10/Mi input 比现有最廉价选项低一个量级，配合 Muse 系列的 Active Memory 机制（长期记忆+主动专注），有望推动企业级 Agent 批量化部署。定价策略本身也是 Meta 对抗 Anthropic/OpenAI API 溢价的明确信号。
+    </div>
+    <div>
+      <span class="tag">Meta</span>
+      <span class="tag">Agent</span>
+      <span class="tag">成本优化</span>
+      <span class="tag">Muse</span>
+    </div>
+    <a class="source-link" href="https://<a href="https://siliconangle.com/2026/11/09/meta-introduces-muse-ember-to-power-cost-efficient-ai-agents/" target="_blank" rel="noopener">siliconangle.com/2026/11/09/meta-introduces-muse-ember-to-power-cost-efficient-ai-agents/</a>" target="_blank">🔗 SiliconANGLE</a> · 
+    <a class="source-link" href="https://<a href="https://cryptobriefing.com/meta-muse-models-google-cloud/" target="_blank" rel="noopener">cryptobriefing.com/meta-muse-models-google-cloud/</a>" target="_blank">Crypto Briefing</a>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card priority-2" id="entry-2"><button class="copy-btn" data-title="Google 将开源 AI Agent 沙箱 Runtime「Agent Substrate」捐给 Linux 基金会 CNCF" data-link="https://www.msn.com/en-us/news/other/google-donates-ai-agent-sandbox-to-linux-foundations-cncf-agent-substrate-lacks-gpu-passthrough/ar-AA2gRKy7">复制</button>
+    <h2><a href="https://<a href="https://www.msn.com/en-us/news/other/google-donates-ai-agent-sandbox-to-linux-foundations-cncf-agent-substrate-lacks-gpu-passthrough/ar-AA2gRKy7" target="_blank" rel="noopener">www.msn.com/en-us/news/other/google-donates-ai-agent-sandbox-to-linux-foundations-cncf-agent-substrate-lacks-gpu-passthrough/ar-AA2gRKy7</a>" target="_blank">2. Google 将开源 AI Agent 沙箱 Runtime「Agent Substrate」捐给 Linux 基金会 CNCF</a></h2>
+    <div class="section-label">事件</div>
+    <div class="section-content">
+      Google 将其内部 AI Agent 沙箱运行时 Agent Substrate 捐赠至 CNCF（Cloud Native Computing Foundation），与 gVisor 同属安全隔离基础设施线。初始版本尚未支持 GPU passthrough 和 live CUDA 热插拔，定位偏向 CPU-bound Agent sandbox（类似容器隔离），文档标注「first release coming soon」。
+    </div>
+    <div class="section-label">为何值得关注</div>
+    <div class="section-content">
+      这是 OpenClaw / Devin / Claude Code 等 Coding Agent 走向生产化之后必然遇到的基础设施问题——谁来保障 Agent 执行代码的沙箱？CNCF 托管意味着未来可能形成行业标准接口，且与 gVisor 兼容栈叠加能覆盖从 kernel namespace 到 container runtime 的完整隔离层次。对具身智能侧启示：仿真→真实部署的安全边界同样需要标准化沙箱，Google 此步先手值得持续跟踪。
+    </div>
+    <div>
+      <span class="tag">Google</span>
+      <span class="tag">Agent</span>
+      <span class="tag">CNCF</span>
+      <span class="tag">安全沙箱</span>
+      <span class="tag">基础设施</span>
+    </div>
+    <a class="source-link" href="https://<a href="https://www.msn.com/en-us/news/other/google-donates-ai-agent-sandbox-to-linux-foundations-cncf-agent-substrate-lacks-gpu-passthrough/ar-AA2gRKy7" target="_blank" rel="noopener">www.msn.com/en-us/news/other/google-donates-ai-agent-sandbox-to-linux-foundations-cncf-agent-substrate-lacks-gpu-passthrough/ar-AA2gRKy7</a>" target="_blank">🔗 Tech Times / MSN</a>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card priority-3" id="entry-3"><button class="copy-btn" data-title="Anthropic IPO 前债券市场亮红灯：信用利差扩大引发投资人警惕" data-link="https://finance.yahoo.com/technology/ai/articles/bad-news-theres-red-flag-122602196.html">复制</button>
+    <h2><a href="https://<a href="https://finance.yahoo.com/technology/ai/articles/bad-news-theres-red-flag-122602196.html" target="_blank" rel="noopener">finance.yahoo.com/technology/ai/articles/bad-news-theres-red-flag-122602196.html</a>" target="_blank">3. Anthropic IPO 前债券市场亮红灯：信用利差扩大引发投资人警惕</a></h2>
+    <div class="section-label">事件</div>
+    <div class="section-content">
+      据 Motley Fool 报道，Anthropic 即将 IPO（目标纳斯达克，此前披露估值达 $2 trillion / $200B 营收年化）之际，其私募债市场出现罕见利差走阔信号——反映机构对 AI 估值泡沫的审慎态度。与此同时，Bond Market 分析人士指出当前 AI 板块整体市盈率已超历史均值 2σ，IPO 定价若偏离基本面将加剧波动风险。
+    </div>
+    <div class="section-label">为何值得关注</div>
+    <div class="section-content">
+      Anthropic 是硅谷最受瞩目的未上市 AI 公司之一，Fable 5.2 / Mythos 5.2 刚在上周发布并领跑 Artificial Analysis 排名，资本市场预期极高。债券市场的警示虽非决定因素，但对关注 AI 赛道配置的用户而言是一个宏观温度计——若 IPO 定价被证伪，可能引发连锁抛售；反之则强化头部集中度。
+    </div>
+    <div>
+      <span class="tag">Anthropic</span>
+      <span class="tag">IPO</span>
+      <span class="tag">投资</span>
+      <span class="tag">风险评估</span>
+    </div>
+    <a class="source-link" href="https://<a href="https://finance.yahoo.com/technology/ai/articles/bad-news-theres-red-flag-122602196.html" target="_blank" rel="noopener">finance.yahoo.com/technology/ai/articles/bad-news-theres-red-flag-122602196.html</a>" target="_blank">🔗 Motley Fool / Yahoo Finance</a>
+  </div>
+
+  <!-- Card 4 (Supplementary) -->
+  <div class="card" style="opacity: 0.85;"><button class="copy-btn" data-title="[48h 热度补充] Claude Fable 5.2 构建完整操作系统：1000 个 Agent 协同八天交付可运行 OS" data-link="https://www.msn.com/en-us/news/other/claude-fable-52-builds-a-working-operating-system-with-1000-agents-in-eight-days/ar-AA2h5osD">复制</button>
+    <h2><a href="https://<a href="https://www.msn.com/en-us/news/other/claude-fable-52-builds-a-working-operating-system-with-1000-agents-in-eight-days/ar-AA2h5osD" target="_blank" rel="noopener">www.msn.com/en-us/news/other/claude-fable-52-builds-a-working-operating-system-with-1000-agents-in-eight-days/ar-AA2h5osD</a>" target="_blank">4. [48h 热度补充] Claude Fable 5.2 构建完整操作系统：1000 个 Agent 协同八天交付可运行 OS</a></h2>
+    <div class="section-label">事件</div>
+    <div class="section-content">
+      据 Interesting Engineering 报道，Anthropic Claude Fable 5.2 团队完成了一项里程碑测试——使用 1000 个并行 AI Agent 协作，在 8 天内从零构建出一个功能完整、可运行的操作系统内核原型。该项目由 Anthropic 开源技术团队主导，代码仓库已公开，后续将用于评测多 Agent 协作极限。
+    </div>
+    <div class="section-label">为何值得关注</div>
+    <div class="section-content">
+      这是一次对「AI 能否独立完成复杂系统工程」的压力测试。传统观点认为 LLM 擅长片段生成、不擅长全局架构；但 1000-Agent 并发验证了分治+一致性校验的有效性。对 AI Coding 领域直接影响：未来 IDE 内置的 Agent 编程环境可能不再局限于单轮补全，而是支持跨文件级重构与子模块并行生成。
+    </div>
+    <div>
+      <span class="tag">Anthropic</span>
+      <span class="tag">Claude</span>
+      <span class="tag">多Agent</span>
+      <span class="tag">OS开发</span>
+    </div>
+    <a class="source-link" href="https://<a href="https://www.msn.com/en-us/news/other/claude-fable-52-builds-a-working-operating-system-with-1000-agents-in-eight-days/ar-AA2h5osD" target="_blank" rel="noopener">www.msn.com/en-us/news/other/claude-fable-52-builds-a-working-operating-system-with-1000-agents-in-eight-days/ar-AA2h5osD</a>" target="_blank">🔗 Interesting Engineering / MSN</a>
+  </div>
+
+  <div class="footer">
+    ⚠️ 本报告仅供参考，不构成投资建议。
+  </div>
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
