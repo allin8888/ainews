@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>每日 AI 前沿技术精选 · 2026-11-12 23:07</title><style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;padding:36px 20px 56px;background:#0d1117;color:#e6edf3;font:15px/1.85 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}.container{max-width:1020px;margin:auto}header{margin-bottom:30px}h1{font-size:32px;line-height:1.35;letter-spacing:-.5px;margin:8px 0 20px}.eyebrow{color:#58a6ff;letter-spacing:2px;font-size:12px}header p{margin:4px 0}strong{font-weight:650;color:#f0f6fc}.section-title{font-size:20px;font-weight:700;margin:32px 0 16px}.card,.panel,.excl{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:24px;margin:0 0 20px;overflow-wrap:anywhere}.card h2{font-size:22px;line-height:1.55;margin:0 0 20px;padding-right:40px}.card h3{font-size:16px;margin:20px 0 8px}p{margin:12px 0}a{color:#58a6ff;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #79c0ff;outline-offset:4px}li{margin:10px 0}ul,ol{padding-left:24px}blockquote{border-left:3px solid #d29922;padding:12px 16px;margin:20px 0;background:#161b22;color:#c9d1d9}.tag{display:inline-block;font-size:12px;border:1px solid #484f58;border-radius:12px;padding:1px 8px;margin:3px;color:#a5d6ff}code{background:#21262d;border-radius:4px;padding:1px 5px;font-size:13px;color:#a5d6ff}footer{color:#8b949e;font-size:12px;text-align:center;margin-top:32px}@media(max-width:640px){h1{font-size:26px}.section-title{font-size:18px}.panel,.excl{padding:16px}.metrics td{min-width:95px}}
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style></head><body><main class="container"><header><p class="eyebrow">AI FRONTIER · DAILY BRIEF</p><h1>每日 AI 前沿技术精选</h1><p><strong>日期</strong>：2026-11-12</p><p><strong>时间</strong>：23:07（北京时间）</p><p><strong>精选条数</strong>：4 条</p><p><strong>时效窗口</strong>：2026-11-11 23:07 – 2026-11-12 23:07</p><p><strong>窗口口径</strong>：基准 24 小时，对应 UTC 2026-11-11 15:07–2026-11-12 15:07；上次执行为 11-10 22:41，距本次超过 24 小时，不触发增量收敛；窗口不随后续核验耗时延长。</p>
+<p><strong>覆盖领域</strong>：决策模型与推理架构、AI Coding、Agent 权限与可观测性、扩散模型服务化、异构硬件后端。具身智能、世界模型与 RSI / Self-Play 已完整检索，但本窗口内没有同时满足「第一信源窗内首发」与「技术机制可核查」的条目，逐项排除理由见「去重说明」，不以转载时间或论文提交时间补足数量。</p>
+<blockquote>本期保留 4 个独立事件：均有官方第一信源、明确技术机制与窗内发布时间。所有性能数字区分厂商/作者自述、独立复现与外推值；凡自述且未见第三方复现者，均就地标注。未启用 48 小时扩窗。</blockquote></header>
+<div class="section-title">头部重点</div>
+<div class="panel"><ul>
+<li><strong>把「打分」从「生成」里拆出来</strong>：Gemini Decision 1 不做 token-by-token 解码，单次前向传播给候选选项算概率，把路由、策略检查这类高频小决策压到 150–250 ms 与 $0.10/1M 输入 token。见第 1 条。</li>
+<li><strong>AI Coding 的产出正在变成「后端集成」而非「代码补全」</strong>：IBM 两人团队用智能体在不到一周内产出约 1,500 行 SGLang-on-Spyre 插件；LiveKit 则把控制台操作开放给智能体，但用短时令牌与角色权限约束其边界。见第 2、3 条。</li>
+<li><strong>推理优化的收益来自全链路而非单点算子</strong>：vLLM-Omni 把 4K 扩散生成压到 0.87 秒，靠的是 MXFP8 + SP4 + AdaLN 缓存 + VAE 分块 CUDA Graph/多流叠加，其中 VAE 解码一项就带来 2.5× 端到端提升。见第 4 条。</li>
+</ul></div>
+<div class="section-title">决策与推理架构 · 把分类从生成解码里拆出来</div>
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="决策模型">决策模型</button>
+<button class="filter-chip" data-tag="推理架构">推理架构</button>
+<button class="filter-chip" data-tag="Agent路由">Agent路由</button>
+<button class="filter-chip" data-tag="多模态">多模态</button>
+<button class="filter-chip" data-tag="API">API</button>
+<button class="filter-chip" data-tag="AI-Coding">AI-Coding</button>
+<button class="filter-chip" data-tag="推理框架">推理框架</button>
+<button class="filter-chip" data-tag="异构加速器">异构加速器</button>
+<button class="filter-chip" data-tag="开源">开源</button>
+<button class="filter-chip" data-tag="Agent工程">Agent工程</button>
+<button class="filter-chip" data-tag="Agent权限">Agent权限</button>
+<button class="filter-chip" data-tag="可观测性">可观测性</button>
+<button class="filter-chip" data-tag="REST-API">REST-API</button>
+<button class="filter-chip" data-tag="安全治理">安全治理</button>
+<button class="filter-chip" data-tag="推理优化">推理优化</button>
+<button class="filter-chip" data-tag="扩散模型">扩散模型</button>
+<button class="filter-chip" data-tag="开源权重">开源权重</button>
+<button class="filter-chip" data-tag="异构硬件">异构硬件</button>
+<button class="filter-chip" data-tag="服务化">服务化</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. Google 发布 Gemini Decisions API 与 Gemini Decision 1：单次前向传播完成最多 1,000 项封闭式多模态决策</a><a class="toc-item" href="#entry-2">2. PyTorch 与 IBM 用 AI 编程智能体不到一周把 SGLang 接入 Spyre：约 1,500 行插件、约 3.6× 吞吐</a><a class="toc-item" href="#entry-3">3. LiveKit Cloud API 开放 beta：编码智能体以「用户身份」代办控制台操作</a><a class="toc-item" href="#entry-4">4. vLLM-Omni 在 Vera Rubin 上实现 MiniMax H3-Image Day-0 支持：4K 生成中位 0.87 秒</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="决策模型 推理架构 Agent路由 多模态 API" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Google 发布 Gemini Decisions API 与 Gemini Decision 1：单次前向传播完成最多 1,000 项封闭式多模态决策" data-link="https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/">复制</button><h2>1. Google 发布 Gemini Decisions API 与 Gemini Decision 1：单次前向传播完成最多 1,000 项封闭式多模态决策（Google）</h2>
+<p><strong>第一信源</strong>：<a href="https://blog&#46;google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/" target="_blank" rel="noopener noreferrer">Google 官方发布</a>；<a href="https://aistudio&#46;google&#46;com/docs/decisions-api" target="_blank" rel="noopener noreferrer">Decisions API 文档</a>；<a href="https://ai&#46;google&#46;dev/gemini-api/docs/changelog#11-11-2026" target="_blank" rel="noopener noreferrer">Gemini API 更新日志</a>；<a href="https://openrouter&#46;ai/google/gemini-decision-1" target="_blank" rel="noopener noreferrer">OpenRouter 模型页</a>。</p>
+<p><strong>首发时间</strong>：2026-11-11 18:00 UTC / 2026-11-12 02:00 北京时间，取官方文章结构化字段 <code>datePublished</code> 与官方博客 RSS 条目；页面可见文本仅显示 <code>Nov 11, 2026</code>，不据此虚构时分。同批官方 X 帖集中在 18:15–18:26 UTC，作为交叉印证，不替代文章首发时刻。</p>
+<p><strong>发生了什么</strong>：Google 在 Gemini API 中新增 <code>decisions</code> 端点，底层模型为 <code>gemini-decision-1</code>。它面向工具选择、策略检查、模型路由、内容分级等「有界选择」，不是新的通用生成模型；一次请求可携带一份多模态输入与最多 1,000 个彼此独立的问题，返回概率与置信度。官方同时列出 OpenRouter、LangChain、Vercel、LiteLLM、Pydantic AI、Pipecat、LiveKit、OpenCode 的集成正在 rollout，<code>google-genai</code> SDK 已可用。</p>
+<p><strong>技术机制</strong>：核心是取消逐 token 解码，在单次前向传播中对候选选项打分。三类问题原语：<code>noul</code>（是/否条件成立的概率，可附真假判据）、<code>choice</code>（2–255 个候选，返回赢家与每个候选的归一化概率）、<code>score</code>（从 0 起的有序 rubric，返回连续加权分与各级概率）；三类可在同一请求内混用，共享同一份 <code>input</code>。<code>input</code> 沿用 Interactions API 的 <code>Content</code> 块格式，支持文本、图像、音频、视频、PDF，图像与视频可调分辨率以控制视觉细节与 token 成本。每个答案带 0–1 置信度，供代码把模糊样本转交回退或人工复核。共享输入每请求只计费一次，每题只增加自身的 instruction 与 criteria token。</p>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>单次请求问题上限</td><td>1,000 项（官方规格）</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>输入上下文上限</td><td>256K tokens（官方规格）</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>端到端延迟</td><td>150–250 ms（自述数据，未见第三方复现）</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>模型计算中位延迟</td><td>50–100 ms（自述数据，未见第三方复现）</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>输入 / 输出计费</td><td>$0.10 / 1M 输入，$0 输出（官方定价）</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>相对 Flash-Lite 成本</td><td>近 5× 更便宜（自述数据，未见第三方复现）</td><td></td><td><span class="badge compare">对比</span></td></tr><tr><td>命名基准分数与校准误差数值</td><td>官方正文未披露</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+<p><strong>为什么重要</strong>：把高频、可枚举的判断从生成式调用下沉为打分调用，是 Agent 控制平面的一条明确工程路径——路由与合规检查不必再为「生成一个答案」付出解码延迟与输出 token 成本。共享输入只计费一次的设计，也让「一次输入、批量判定」在成本上成立。可借鉴的是问题原语与置信度接口，而不是把 1,000 题或 5× 成本优势直接外推到自有负载。</p>
+<p><strong>限制</strong>：官方正文没有给出 JeeBench、MMAU 等命名基准的逐项分数（第三方转述与社媒图片中的数字本期不采信），也没有给出 calibration error 的具体值；「high efficacy」对抗评测、「in milliseconds」等表述缺可复现数值。150–250 ms 是官方测试口径，非任意网络与负载下的 SLA。端点目前通过 Gemini API / AI Studio 提供，<code>v1beta</code>，Gemini in Google Cloud 支持标注为 coming soon；生态集成处于 rollout，不等于各框架已全面可用。本期未运行任何复现实验。</p>
+<p><strong>开放与许可</strong>：API 服务与 SDK，非开源权重；Google AI Studio 提供 no-cost tier 供原型开发，额度与配额官方未披露。模型权重、训练细节未公开，「校准」结论无法通过权重或数据独立审计。</p>
+<p><strong>标签</strong>：<span class="tag" style="color:#8b949e;border-color:#8b949e">#决策模型</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#推理架构</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#Agent路由</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#多模态</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#API</span></p>
+</div>
+<div class="section-title">AI Coding · 智能体接管硬件后端与云控制台</div>
+<div class="card priority-2" id="entry-2" data-tags="AI-Coding 推理框架 异构加速器 开源 Agent工程" style="border-left:3px solid #58a6ff"><button class="copy-btn" data-title="PyTorch 与 IBM 用 AI 编程智能体不到一周把 SGLang 接入 Spyre：约 1,500 行插件、约 3.6× 吞吐" data-link="https://pytorch.org/blog/integrating-sglang-into-spyre-in-under-a-week-with-ai/">复制</button><h2>2. PyTorch 与 IBM 用 AI 编程智能体不到一周把 SGLang 接入 Spyre：约 1,500 行插件、约 3.6× 吞吐（PyTorch / IBM / RadixArk）</h2>
+<p><strong>第一信源</strong>：<a href="https://pytorch&#46;org/blog/integrating-sglang-into-spyre-in-under-a-week-with-ai/" target="_blank" rel="noopener noreferrer">PyTorch 官方博客</a>；<a href="https://github&#46;com/torch-spyre/torch-spyre" target="_blank" rel="noopener noreferrer">torch-spyre 仓库</a>；<a href="https://github&#46;com/torch-spyre/spyre-inference" target="_blank" rel="noopener noreferrer">vLLM Spyre 后端参考实现</a>。</p>
+<p><strong>首发时间</strong>：2026-11-12 06:45:25 −08:00，即 14:45:25 UTC / 22:45 北京时间，取官方页面 <code>datePublished</code>；官方博客 RSS 抓取时间与之吻合。页面另有 03:16:04 −08:00 字段，本期不把它当作首发时刻。</p>
+<p><strong>发生了什么</strong>：IBM 两人团队借助 AI coding agents，在不到一周内把 SGLang 服务栈（含内置前缀共享）接入 IBM Spyre 加速器，产出一个约 1,500 行的开源插件与 4 个小补丁。文章把这件事定位为「集成」而非新硬件、新模型或新框架发布，并披露了智能体所依赖的参考代码来源与 SGLang 扩展点结构。</p>
+<p><strong>技术机制</strong>：可行性来自两层既有抽象——<code>torch-spyre</code> 把 Spyre 注册为 PyTorch 设备并接到 <code>t<a href="https://orch.com" target="_blank" rel="noopener">orch.com</a>pile</code>，用标准 PyTorch API 暴露算子；SGLang 则提供 platform registration、attention backend、KV pool、operator dispatch 四类边界清晰的扩展点。AI coding agents 以既有 vLLM Spyre 后端（约 3,500 行）及其中 PyTorch 版算子实现为参考代码，把适配工作收敛到接口对齐：复用 attention 基类，只覆写内层 scaled dot-product attention；RMSNorm、SiLU、GeLU、rotary embedding、linear 接到 SGLang 算子分发；KV pool 因设备无关，只需覆写一个 buffer 创建方法，原先依赖 Triton 的分配改由 PyTorch 处理。4 个补丁中 2 个让既有执行路径摆脱 CUDA 专属依赖（可惠及其他加速器），2 个把 Spyre 注册为受支持设备与「不使用 Triton」的 attention backend。RadixCache 的前缀共享在 SGLang 调度层完成，抵达加速器之前即已解析，因此无需任何 Spyre 专用改动。官方示例为 <code>sgl.Engine(model_path=..., device="spyre", attention_backend="spyre_paged", dtype="float16", page_size=64, max_running_requests=1, disable_cuda_graph=True)</code>。</p>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>团队规模 / 耗时</td><td>2 人 / 不到 1 周（自述数据，未见第三方复现）</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>插件规模</td><td>约 1,500 行 + 4 个补丁（自述数据）</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>相对参考实现吞吐</td><td>约 3.6×（自述数据，未见第三方复现）</td><td></td><td><span class="badge compare">对比</span></td></tr><tr><td>与 vLLM 对比</td><td>两模型已测负载上持平（自述数据，未见第三方复现）</td><td></td><td><span class="badge compare">对比</span></td></tr><tr><td>vLLM Spyre 后端对照</td><td>约 3,500 行（自述数据）</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+<p><strong>为什么重要</strong>：这是「AI Coding 产出可度量」的一个具体样本——价值不在智能体写了多少行，而在于当底层编译器与上层服务框架都提供了稳定扩展点时，集成任务可被压缩为有界的接口适配。对维护异构后端的团队，可复用的结论是「把硬件实现留在 PyTorch 层、把集成代码收敛到框架扩展点」，这样后续编译器与运行时改进能同时进入两条服务栈。</p>
+<p><strong>限制</strong>：3.6× 是相对 <code>torch-spyre</code> 参考实现的比值，不是相对 vLLM、GPU 或其他加速器的通用加速比；「与 vLLM 持平」只覆盖两个模型、官方选定的负载，官方未提供原始数值表。文章明确列出后续待办：动态 shape 支持、Triton 支持、在其上启用 RadixAttention，说明当前版本仍需形状管理、未启用 RadixAttention。用「一周」衡量集成成本时不应忽略已有 torch-spyre 与 vLLM 后端这两个前置投入。</p>
+<p><strong>开放与许可</strong>：插件与兼容补丁随上游 SGLang 以开源形式提供；<code>torch-spyre</code> 与 <code>spyre-inference</code> 为公开仓库。本期未逐文件核验各仓库许可证分项条款，复用前需按文件确认。</p>
+<p><strong>标签</strong>：<span class="tag" style="color:#58a6ff;border-color:#58a6ff">#AI-Coding</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#推理框架</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#异构加速器</span> <span class="tag" style="color:#3fb950;border-color:#3fb950">#开源</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#Agent工程</span></p>
+</div>
+<div class="card priority-3" id="entry-3" data-tags="AI-Coding Agent权限 可观测性 REST-API 安全治理" style="border-left:3px solid #58a6ff"><button class="copy-btn" data-title="LiveKit Cloud API 开放 beta：编码智能体以「用户身份」代办控制台操作" data-link="https://livekit.com/blog/introducing-livekit-cloud-api">复制</button><h2>3. LiveKit Cloud API 开放 beta：编码智能体以「用户身份」代办控制台操作（LiveKit）</h2>
+<p><strong>第一信源</strong>：<a href="https://livekit&#46;com/blog/introducing-livekit-cloud-api" target="_blank" rel="noopener noreferrer">LiveKit 官方博客</a>；<a href="https://docs&#46;livekit&#46;io/reference/api/" target="_blank" rel="noopener noreferrer">API Reference</a>；<a href="https://docs&#46;livekit&#46;io/reference/developer-tools/livekit-cli/#updates" target="_blank" rel="noopener noreferrer">CLI 更新说明</a>。</p>
+<p><strong>首发时间</strong>：2026-11-12 00:00:00 UTC / 08:00 北京时间，取官方页面 <code>datePublished</code>；该时刻为日粒度，本期不反推更精确的发布时分。</p>
+<p><strong>发生了什么</strong>：LiveKit 把原本只能在 Cloud 控制台完成的操作开放为 REST API 与 CLI 能力，进入 open beta。编码智能体现在可以创建/配置项目、选择数据区域、开启 PII redaction 与 Agent Observability、邀请成员、添加 webhook 并发送测试事件；在开启 Observability 的项目里，还能读取会话的 transcript、logs、traces、metrics 与 recording。官方定位是「让 coding agent 跑（几乎）整个 LiveKit Cloud」，而非发布新的实时通信模型或协议。</p>
+<p><strong>技术机制</strong>：权限模型是本次设计的核心。旧方式 <code>lk cloud auth</code> 在本机保存一把可对该项目做任何事的项目 API key；新方式 <code>lk cloud auth --user-auth</code> 通过浏览器登录建立与用户账户绑定的会话（默认 30 天，可随时 <code>--revoke</code>），每条命令换取短时令牌并按该用户在项目中的角色校验。敏感动作（读取转录/录音、创建 API key）限定项目 admin；账单相关动作（开启 Observability、购买号码、跑仿真）要求智能体先向用户确认；PII redaction 若项目已开启，智能体拿到的就是与控制台一致的脱敏转录。数据面提供 <code>lk analytics session list|transcript|logs|traces|metrics|recording --user-auth</code> 六类子命令。技能侧用 <code>lk skills install --global</code> 把命令教给 Claude Code、Codex、Cursor 等编码智能体，CLI 需 ≥2.19.4。登录步骤必须在用户自己的终端完成（需浏览器确认），智能体无法代办。</p>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>内部实测会话量</td><td>4,321 个会话（自述数据，未见第三方复现）</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>产出与耗时</td><td>约 30 分钟 / 8 个排序问题（自述数据，未见第三方复现）</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>登录会话有效期</td><td>30 天（官方产品设置）</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>最低 CLI 版本</td><td>2.19.4（官方要求）</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>API 请求费用</td><td>免费、按套餐限流（官方产品说明）</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+<p><strong>为什么重要</strong>：这是把「Agent 能做什么」从代码编辑扩展到生产控制台时，一份比较完整的权限设计样本——用短时令牌 + 角色继承替代长期全权 key，把敏感读取收窄到 admin，把计费动作显式交还人类确认，并让脱敏策略在数据面自动继承。对正在设计 Agent 工具权限的团队，这比「给 agent 一个 API key」更值得参照；同时它明示「give it a bad call and ask what went wrong」，把可观测性数据接成了智能体的调试输入。</p>
+<p><strong>限制</strong>：官方明确这是 beta，端点在稳定版前仍可能变化；会话数据依赖 Agent Observability，通过 API 新建的项目默认关闭该功能；仅项目 admin 可读取会话内容。官方直言「尚不适合 CI」——每次调用都以登录人身份运行，且登录需每 30 天在浏览器续期，因此无人值守流水线不可直接使用。4,321 会话案例是单次内部演示，不能当作准确率或效率基准。</p>
+<p><strong>开放与许可</strong>：REST API 与 CLI 属商业云服务能力，非开源协议发布；端点清单见官方 API Reference。项目数据、转录与录音的访问受账户角色与套餐约束，不由本报告推断其数据驻留或合规范围。</p>
+<p><strong>标签</strong>：<span class="tag" style="color:#58a6ff;border-color:#58a6ff">#AI-Coding</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#Agent权限</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#可观测性</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#REST-API</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#安全治理</span></p>
+</div>
+<div class="section-title">基础架构 · 扩散模型的服务化边界</div>
+<div class="card priority-4" id="entry-4" data-tags="推理优化 扩散模型 开源权重 异构硬件 服务化" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="vLLM-Omni 在 Vera Rubin 上实现 MiniMax H3-Image Day-0 支持：4K 生成中位 0.87 秒" data-link="https://vllm.ai/blog/2026-11-12-minimax-h3-image-rubin">复制</button><h2>4. vLLM-Omni 在 Vera Rubin 上实现 MiniMax H3-Image Day-0 支持：4K 生成中位 0.87 秒（vLLM / MiniMax）</h2>
+<p><strong>第一信源</strong>：<a href="https://vllm&#46;ai/blog/2026-11-12-minimax-h3-image-rubin" target="_blank" rel="noopener noreferrer">vLLM 官方博客</a>；<a href="https://huggingface&#46;co/MiniMaxAI/MiniMax-H3-Image" target="_blank" rel="noopener noreferrer">H3-Image 开源权重</a>；<a href="https://vllm&#46;ai/assets/figures/minimax-h3-image-rubin/api-workload-results&#46;csv" target="_blank" rel="noopener noreferrer">基准数据 CSV</a>；<a href="https://vllm&#46;ai/assets/figures/minimax-h3-image-rubin/vae-decoding-control&#46;json" target="_blank" rel="noopener noreferrer">VAE 对照测量</a>；<a href="https://github&#46;com/vllm-project/vllm-omni/tree/main/recipes/MiniMaxAI" target="_blank" rel="noopener noreferrer">AMD / XPU / NPU / MUSA recipes</a>。</p>
+<p><strong>首发时间</strong>：官方文章标注 <code>November 12, 2026</code>（<code>datePublished</code> 为日粒度）；官方博客 RSS 聚合时间 <code>2026-11-12T00:00:00Z</code>，落在窗口内。本期按官方日期入窗，不把日粒度时间反推为具体发布时分，也不使用转载时刻替代。</p>
+<p><strong>发生了什么</strong>：vLLM-Omni 在 NVIDIA Vera Rubin 上完成开源权重模型 MiniMax H3-Image 的 Day-0 推理支持。H3-Image 用一个 checkpoint 同时承担文生图与图像编辑，六步采样原生输出高分辨率图像（无需超分），最多支持 16 张参考图。此次工作同时给出 10 种 NVIDIA 硬件的实测，以及 AMD、Intel、华为昇腾、摩尔线程的可运行 recipe，属于推理引擎对新硬件与新模型的适配发布，不是新模型发布。</p>
+<p><strong>技术机制</strong>：模型由 Qwen3-VL 编码器、33.1B dense DiT 与图像 VAE 组成；一张原生 4096×4096 图对应 16,384 个目标图像 token，需跨六步去噪，再经 VAE 解码，因此优化聚焦三处。① DiT：Blackwell/Rubin 上对 eligible 线性层启用 MXFP8 GEMM（Rubin 用 FlashInfer CuTe-DSL kernel，attention 用 <code>TRTLLM_ATTN</code>），Ulysses SP4 把序列切到四卡、DiT TP1 保持权重复制，AdaLN caching 复用输入输出与权重完全一致的 conditioning 投影；编码器与 VAE 保持原精度，Hopper/Ampere 走 BF16。② 解码：VAE 独立图块跨 GPU 分发，再用 CUDA Graph replay 叠加多 CUDA stream，让各图块重叠执行。③ 显存：单卡部署用 layerwise CPU offload（RTX 5090/5080 卸载 DiT 与文本编码器、VAE eager 解码；RTX 6000D / PRO 6000 让 DiT 常驻并用 VAE CUDA Graph）。Rubin bringup 还修了一处反复 4K 请求触发的输出传输 stall：把最终图像布局转换移到 CPU、在传完 uint8 张量之后执行，并用回归检查确认像素不变。次级收益来自 SP4 / SP2×DP2 / SP1×DP4 三种并行配置的分别调优，而非单一「最优配置」。</p>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>4K 中位延迟（SP4, 并发 1）</td><td>0.866 s / p95 0.944 s（自述数据，未见第三方复现）</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>相对 GB200 / GB300 延迟</td><td>2.21× / 1.64×（自述数据，未见第三方复现）</td><td></td><td><span class="badge compare">对比</span></td></tr><tr><td>峰值吞吐（SP1×DP4）</td><td>6,115 images/hour（自述数据，未见第三方复现）</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>VAE 解码优化</td><td>2.635 s → 0.213 s，端到端 2.5×（自述数据，未见第三方复现）</td><td></td><td><span class="badge compare">对比</span></td></tr><tr><td>日产能</td><td>146,755 张/天（速率外推，非 24h 压测）</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>推算毛收入</td><td>$105.16 / $78.87 每 GPU 小时（假设售价外推，未扣成本）</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+<p><strong>为什么重要</strong>：这条工作把「4K 扩散模型能否进入交互式服务」拆成了可核查的工程分解——序列并行、低精度 GEMM、条件投影缓存、VAE 图块并行与图重放各自贡献多少，以及延迟最优（SP4）与吞吐最优（SP1×DP4）是两个不同工作点。官方主动声明两类数字来自不同 prompt 语料、HTTP client 与统计量（短 prompt serving benchmark vs. 1,292 字符 coffee-product prompt 三 seed 均值），并给出 CSV 与 JSON 原始数据，这种口径披露方式本身值得推理服务报告借鉴。跨 NVIDIA / AMD / Intel / 昇腾 / 摩尔线程的 recipe 也降低了非 CUDA 环境复现门槛。</p>
+<p><strong>限制</strong>：官方明确这些数字比较的是「已部署系统」而非隔离 GPU 架构——GPU 数、精度、显存放位、allocator 设置均随配置变化；1K 检查实际在 2048×2048 生成后缩放，不代表原生 1K 扩散计算量。0.87 s 与 6,115 images/hour 分别来自 SP4 与 SP1×DP4，不能同时成立。收入与日产能均为外推，且实际托管 API 计费随文本 token 用量变化。AMD / Intel / 昇腾 / 摩尔线程部分为社区各自工作负载下的验证，不与 NVIDIA 匹配性能数字直接可比。本期未复跑任何基准。</p>
+<p><strong>开放与许可</strong>：vLLM-Omni 及 recipes 为公开仓库；H3-Image 为开源权重模型，权重托管于 Hugging Face。具体许可证须按权重卡与代码仓库分别核对，本期不将「开源权重」等同于统一开源许可或可商用授权。</p>
+<p><strong>标签</strong>：<span class="tag" style="color:#8b949e;border-color:#8b949e">#推理优化</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#扩散模型</span> <span class="tag" style="color:#79c0ff;border-color:#79c0ff">#开源权重</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#异构硬件</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#服务化</span></p>
+</div>
+<div class="section-title">趋势简评</div>
+<div class="panel"><ul>
+<li><strong>Agent 的成本结构正在被重新切分</strong>：Gemini Decisions API 把高频判断变成便宜的打分调用，LiveKit 把低频控制台操作交给人授权的智能体，PyTorch/IBM 案例则显示后端集成的人力成本在压缩。三者共同指向「按动作风险与频率分配模型、权限与人类审批」，而不是让一个通用模型包办所有环节。</li>
+<li><strong>权限边界比能力清单更值得读</strong>：LiveKit 的短时令牌、admin 限定与计费动作确认，与 PyTorch 案例里「参考实现 + 稳定扩展点」的约束，都是把智能体能力关进可审计边界的做法。能力变强时，边界设计是否同步，是后续观察重点。</li>
+<li><strong>推理数字必须带工作点</strong>：vLLM 的 0.87 s 与 6,115 张/小时不能同时引用，Gemini 的 150–250 ms 也只在官方特定上下文范围内近乎持平。把「最优延迟」「最优吞吐」「外推产能」混作一个指标，是当前推理服务报道最常见的失真来源。</li>
+</ul></div>
+<details class="panel"><summary class="fold-summary">去重说明（审计明细，点击展开）</summary>
+<div class="panel"><ul>
+<li><strong>窗口纪律</strong>：仅处理 2026-11-11 23:07 – 2026-11-12 23:07（UTC 11-11 15:07 – 11-12 15:07）基准 24 小时窗口；上次执行 11-10 22:41 已超过 24 小时，不收敛为增量，也未启用已废止的 48 小时扩窗。入窗一律取官方第一信源时间，中文媒体、聚合站与二次传播的转载时间只作线索。</li>
+<li><strong>七天全量扫描</strong>：读取工作区 2026-11-05 至 11-12 范围内全部规范命名的 <code>每日AI新闻推送_*.md</code>（含 11-08 1822 的零精选报告）标题与正文；并额外纳入远端 <code>origin/main</code> 并行线 4 期（11-11 0828 / 2028、11-12 0827 / 2027）的标题基线。四条正式候选逐条执行实体去重，结果均为 <code>is_dup=false</code>（confidence 依次为 0.717 / 0.000 / 0.477 / 0.369 / 0.344，其中第 1 条高置信来自共享「Google / Gemini / 发布」等通用词，经人工覆判为不同主体不同动作，不构成重复）。</li>
+<li><strong>观察项1</strong>：Runway 开源 27B 世界动作模型 Praxis-1 官方 <code>datePublished</code> 为 2026-11-11T15:00:00Z，比窗口起点 15:07Z 早 7 分钟；11-12 的中文报道与 11-11T23:25Z 聚合条目均为转载，按第一信源规则排除；该模型属世界模型 / 具身方向，排除属时间口径而非价值判断。</li>
+<li><strong>观察项2</strong>：Google A2UI 1.0 官方 Google Developers Blog RSS 首发为 2026-11-10T16:00:00Z，页面 <code>datePublished</code> 亦为 2026-11-11 之前的日粒度；11-12 的 IT之家等中文报道为转载，GitHub releases（a2ui-core 0.6.0 / agent-sdk 0.11.0 / CLI 0.3.0）均在 11-10 22:14Z–11-11 01:57Z，全部窗前；AWS Emulator 11-11T14:30Z 早于窗口起点 37 分钟，同样排除。</li>
+<li><strong>观察项3</strong>：Gemini Robotics 2.5 首发为 11-10 当地日期，中文媒体 11-11 01:35Z 前已报道；窗内 11-11T16:08Z 的 @Google 推文属二次传播，不作为首发证据；X Square 11-12T14:17Z 的 WALL-OSS 0.5 官宣对应 LeRobot v0.7.0（GitHub release 2026-11-05T17:13:20Z）既有事实的转述，无新权重或技术报告；昆仑万维 Matrix-Game 4.0 Reactor 官方 X 首发 11-07，11-12 为公众号转载。以上四条均以「事件已有更早第一信源」排除。</li>
+<li><strong>观察项4</strong>：arXiv <code>cs.RO/recent</code> 最新公告批次仍为 <code>Wed, 11 Nov 2026</code>，11-12 批次未公告；批量核查 11 篇世界模型 / 具身候选（如 2611.14257 Elastic-WAM、2611.14048 LaST0.5、2611.13034 RoboACE、2611.13524 RSI Tax、2611.14488 VLA temporal shortcut）的 v1 提交时间落在 11-08 至 11-10 UTC，窗前；按纪律不以论文提交时间或批次构建时间充当窗内首发，也不把公告批次日期反推为精确公开时刻。</li>
+<li><strong>观察项5</strong>：百度 ERNIE 5.5 Flash Preview（1M 上下文 / 混合稀疏注意力）虽在窗内有官方线索，但实体去重 confidence 0.74、匹配到历史「ERNIE 5.5 Flash Base」条目，且精确首发时刻证据不足，按「同主体 + 同动作」从严排除；Nvidia CEO 变动、Fireworks AI 入侵、融资与备案类消息均缺技术机制与可核查实测，属产业/公关信息，不纳入。</li>
+<li><strong>领域覆盖结论</strong>：具身智能、世界模型、RSI / Self-Play 与推理时搜索四个方向均已按关键词与官方列表完整检索（含 AI HOT 24h 多轮关键词扫描、arXiv recent 批次、GitHub releases、官方博客与官方 X），本窗口内未出现同时满足「第一信源窗内首发 + 技术机制可核查 + 至少一项技术突破/高价值开源/工程落地」的条目；此为空窗结论，不是缩减检索范围，也不宣称这些方向没有进展。</li>
+<li><strong>结构性说明</strong>：信源健康检查为 <code>ok=3 warn=0 error=0 manual=1</code>，无 warn/error 需披露；manual 项为工具型 WebSearch，由人工按第一信源逐条核验。AI HOT 24h 线索按 <code>all/24h</code> 及具身、世界模型、VLA、RSI、coding、agent 等多组关键词交叉扫描，聚合条目的时间戳仅用于定位，不用于入窗判断；官方页面日粒度 <code>datePublished</code> 一律标注为日粒度，不编造时分。</li>
+</ul></div></details>
+<div class="section-title">待核实</div>
+<div class="panel"><ol>
+<li><strong>Gemini Decisions API</strong>：150–250 ms 端到端、50–100 ms 模型计算、近 5× 成本优势、Gemini Notebook 最多 40% 延迟下降均为 Google 自述数据，未见第三方复现；官方未披露命名基准分数与 calibration error 具体值，社媒转述的 JeeBench / MMAU 数字本期不采信。需按自有负载复测延迟—问题数曲线、置信度校准与实际账单。复核入口：<a href="https://blog&#46;google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/" target="_blank" rel="noopener noreferrer">官方发布</a>、<a href="https://aistudio&#46;google&#46;com/docs/decisions-api" target="_blank" rel="noopener noreferrer">API 文档</a>。</li>
+<li><strong>PyTorch / SGLang on Spyre</strong>：约 3.6× 吞吐与「与 vLLM 持平」为作者团队自述实测，未见第三方复现，且缺绝对吞吐、批大小、序列长度与完整环境配置；需核对插件仓库许可证分项与复跑条件。复核入口：<a href="https://pytorch&#46;org/blog/integrating-sglang-into-spyre-in-under-a-week-with-ai/" target="_blank" rel="noopener noreferrer">PyTorch 官方博客</a>、<a href="https://github&#46;com/torch-spyre/torch-spyre" target="_blank" rel="noopener noreferrer">torch-spyre</a>、<a href="https://github&#46;com/torch-spyre/spyre-inference" target="_blank" rel="noopener noreferrer">spyre-inference</a>。</li>
+<li><strong>LiveKit Cloud API</strong>：4,321 会话 / 约 30 分钟 / 8 个排序问题为厂商单次内部案例，未见第三方复现，缺模型、token 成本与问题清单准确率；beta 端点可能变化，需核实各套餐限流、数据驻留与 30 天登录续期对自动化的实际影响。复核入口：<a href="https://livekit&#46;com/blog/introducing-livekit-cloud-api" target="_blank" rel="noopener noreferrer">官方博客</a>、<a href="https://docs&#46;livekit&#46;io/reference/api/" target="_blank" rel="noopener noreferrer">API Reference</a>。</li>
+<li><strong>vLLM-Omni H3-Image</strong>：全部延迟、吞吐、加速比与 VAE 对照数据为作者实测，未见第三方复现；146,755 张/天与 $105.16 / $78.87 每 GPU 小时分别是速率外推与假设售价外推（未扣运营成本、非 24h 压测）。需按同一 prompt 语料独立复跑 SP4 与 SP1×DP4 两个工作点，并逐项核对权重卡与代码仓库许可证。复核入口：<a href="https://vllm&#46;ai/blog/2026-11-12-minimax-h3-image-rubin" target="_blank" rel="noopener noreferrer">官方博客</a>、<a href="https://vllm&#46;ai/assets/figures/minimax-h3-image-rubin/api-workload-results&#46;csv" target="_blank" rel="noopener noreferrer">基准 CSV</a>、<a href="https://vllm&#46;ai/assets/figures/minimax-h3-image-rubin/vae-decoding-control&#46;json" target="_blank" rel="noopener noreferrer">VAE 对照 JSON</a>。</li>
+<li><strong>日粒度首发时刻</strong>：vLLM 与 LiveKit 官方 <code>datePublished</code> 为日粒度或 <code>00:00:00Z</code> 占位，只能确认落在窗内，不能据此断言具体发布时分；若后续取得更精确官方记录，应更新本期首发时间口径。A2UI 1.0 官方 RSS 与页面日期存在日粒度差异，本期按更早的 RSS 首发时刻从严排除，该差异仍待核实。</li>
+</ol></div>
+<div class="section-title">Sources</div>
+<div class="panel"><ul>
+<li><a href="https://blog&#46;google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/" target="_blank" rel="noopener noreferrer">Google：Gemini Decisions API 官方发布</a></li>
+<li><a href="https://aistudio&#46;google&#46;com/docs/decisions-api" target="_blank" rel="noopener noreferrer">Google AI Studio：Decisions API 文档</a></li>
+<li><a href="https://ai&#46;google&#46;dev/gemini-api/docs/changelog#11-11-2026" target="_blank" rel="noopener noreferrer">Gemini API 更新日志</a></li>
+<li><a href="https://pytorch&#46;org/blog/integrating-sglang-into-spyre-in-under-a-week-with-ai/" target="_blank" rel="noopener noreferrer">PyTorch：Integrating SGLang into Spyre in Under a Week with AI</a></li>
+<li><a href="https://livekit&#46;com/blog/introducing-livekit-cloud-api" target="_blank" rel="noopener noreferrer">LiveKit：Introducing the LiveKit Cloud API</a></li>
+<li><a href="https://docs&#46;livekit&#46;io/reference/api/" target="_blank" rel="noopener noreferrer">LiveKit API Reference</a></li>
+<li><a href="https://vllm&#46;ai/blog/2026-11-12-minimax-h3-image-rubin" target="_blank" rel="noopener noreferrer">vLLM：H3-Image Day-0 Support: 4K in 0.87s with Vera Rubin</a></li>
+<li><a href="https://huggingface&#46;co/MiniMaxAI/MiniMax-H3-Image" target="_blank" rel="noopener noreferrer">MiniMax H3-Image 开源权重</a></li>
+<li><a href="https://github&#46;com/vllm-project/vllm-omni/tree/main/recipes/MiniMaxAI" target="_blank" rel="noopener noreferrer">vLLM-Omni 跨平台 recipes</a></li>
+<li><a href="https://developers&#46;googleblog&#46;com/a2ui-10-build-delightful-fast-reliable-agentic-experiences/" target="_blank" rel="noopener noreferrer">Google Developers Blog：A2UI 1.0（窗前，仅用于去重核验）</a></li>
+<li><a href="https://runwayml&#46;com/news/company-news/praxis-1-is-now-available" target="_blank" rel="noopener noreferrer">Runway：Praxis-1（窗前，仅用于去重核验）</a></li>
+<li><a href="https://github&#46;com/huggingface/lerobot/releases" target="_blank" rel="noopener noreferrer">Hugging Face LeRobot Releases（窗前，仅用于去重核验）</a></li>
+</ul></div>
+<footer>每日 AI 前沿技术精选 · 第一信源核验 · 自述数据与外推值已就地标注</footer></main>
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body></html>
