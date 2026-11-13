@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日AI新闻推送 · 2026-11-13</title>
+<style>
+body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; margin:0; padding:24px 16px; line-height:1.7; }
+.container { max-width:720px; margin:0 auto; }
+.header { border-bottom:1px solid #21262d; padding-bottom:16px; margin-bottom:24px; }
+.header h1 { color:#58a6ff; font-size:20px; margin:0 0 6px 0; }
+.header .meta { color:#8b949e; font-size:13px; }
+.card { background:#161b22; border:1px solid #21262d; border-radius:8px; padding:18px 20px; margin-bottom:16px; }
+.card h2 { margin:0 0 10px 0; font-size:16px; line-height:1.5; }
+.card h2 a { color:#c9d1d9; text-decoration:none; }
+.card h2 a:hover { color:#58a6ff; text-decoration:underline; }
+.card .source { color:#8b949e; font-size:12px; margin-bottom:10px; }
+.card p { margin:4px 0; font-size:14px; }
+.card .why { color:#8b949e; font-size:13px; }
+.label { color:#58a6ff; font-weight:600; font-size:13px; }
+.footer { color:#484f58; font-size:12px; text-align:center; margin-top:32px; padding-top:16px; border-top:1px solid #21262d; }
+.section-label { color:#8b949e; font-size:12px; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:12px; }
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.<a href="https://badge.com" target="_blank" rel="noopener">badge.com</a>pare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>📰 每日AI新闻推送</h1>
+  <div class="meta">北京时间 2026-11-13 08:33 CST · 精选 4 条</div>
+</div>
+
+<div class="section-label">精选动态</div>
+
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. Google 发布 Gemini 4 Hydrogen——Agentic 工作流专用轻量旗舰</a><a class="toc-item" href="#entry-2">2. DeepMind 发布 AlphaGenome 2——细胞类型条件化预测使因果变异准确率翻倍</a><a class="toc-item" href="#entry-3">3. Anthropic 发表研究论文：单共享 Agent 胜过 N 个各用户 Agent</a><a class="toc-item" href="#entry-4">4. OpenAI 以 Apache 2.0 开源 Codex Security CLI 和 SDK</a>
+</nav>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. Google 发布 Gemini 4 Hydrogen——Agentic 工作流专用轻量旗舰</a><a class="toc-item" href="#entry-2">2. DeepMind 发布 AlphaGenome 2——细胞类型条件化预测使因果变异准确率翻倍</a><a class="toc-item" href="#entry-3">3. Anthropic 发表研究论文：单共享 Agent 胜过 N 个各用户 Agent</a><a class="toc-item" href="#entry-4">4. OpenAI 以 Apache 2.0 开源 Codex Security CLI 和 SDK</a>
+</nav>
+<div class="card priority-1" id="entry-1"><button class="copy-btn" data-title="Google 发布 Gemini 4 Hydrogen——Agentic 工作流专用轻量旗舰" data-link="https://aitoolsrecap.com/ai-news-today/november-13-2026-gemini-4-hydrogen-beats-argon">复制</button><button class="copy-btn" data-title="Google 发布 Gemini 4 Hydrogen——Agentic 工作流专用轻量旗舰" data-link="<a href="https://aitoolsrecap.com/ai-news-today/november-13-2026-gemini-4-hydrogen-beats-argon" target="_blank" rel="noopener">https://aitoolsrecap.com/ai-news-today/november-13-2026-gemini-4-hydrogen-beats-argon</a>">复制</button>
+  <h2><a href="https://aitoolsrecap.com/ai-news-today/november-13-2026-gemini-4-hydrogen-beats-argon" target="_blank" rel="noopener">Google 发布 Gemini 4 Hydrogen——Agentic 工作流专用轻量旗舰</a></h2>
+
+
+  <div class="source">来源：Google Blog / AIToolsRecap · 2026-11-12</div>
+  <p><span class="label">事件</span> Google 于 11 月 12 日宣布推出 Gemini 4 Hydrogen，定位为日常 Agentic 工作流的"主力驱动模型"。定价为输入 $1.50/M tokens、输出 $7.50/M tokens；在 Artificial Analysis Intelligence Index 上得分 51，比同系列更大的 Gemini 4 Argon 高 1 分，且在 Terminal-Bench 4.1 上达到 3.8 Flash 的三倍水平。Argon 仍在重推理基准上领先。</p>
+  <p class="why"><span class="label">为何值得关注</span> Hydrogen 标志着 Google 将 Gemini 产品谱进一步细化——以更低价格提供更高的 agentic 效率，直接对标 Anthropic Claude Fable/Opus 和 OpenAI GPT-6.x 系列。对依赖终端交互（Terminal-Bench）的开发代理而言，这是性价比拐点信号；Argon 仍主攻重型推理场景，意味着 Google 内部形成互补定价策略而非单点竞争。</p>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>AI Index 得分</td><td>51</td><td><div class="bar"><span style="width:51%"></span></div></td><td><span class="badge compare">对比</span></td></tr><tr><td>输入价格 ($/M)</td><td>1.50</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>输出价格 ($/M)</td><td>7.50</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>Terminal-Bench 4.1 倍率 vs 3.8 Flash</td><td>3×</td><td></td><td><span class="badge third">第三方</span></td></tr></table></div>
+
+</div>
+
+<div class="card priority-2" id="entry-2"><button class="copy-btn" data-title="DeepMind 发布 AlphaGenome 2——细胞类型条件化预测使因果变异准确率翻倍" data-link="https://aitoolsrecap.com/ai-news-today">复制</button><button class="copy-btn" data-title="DeepMind 发布 AlphaGenome 2——细胞类型条件化预测使因果变异准确率翻倍" data-link="<a href="https://aitoolsrecap.com/ai-news-today" target="_blank" rel="noopener">https://aitoolsrecap.com/ai-news-today</a>">复制</button>
+  <h2><a href="https://aitoolsrecap.com/ai-news-today" target="_blank" rel="noopener">DeepMind 发布 AlphaGenome 2——细胞类型条件化预测使因果变异准确率翻倍</a></h2>
+
+
+  <div class="source">来源：DeepMind Blog / AIToolsRecap · 2026-11-11</div>
+  <p><span class="label">事件</span> Google DeepMind 于 11 月 11 日发布 AlphaGenome 2。相比第一代同时跨多种组织预测，第二代改为单次针对单一细胞类型进行条件化建模，在 TenK10K 免疫细胞基准上将因果变异预测准确率大致提升一倍。非商业研究免费使用，明确声明未经临床验证。</p>
+  <p class="why"><span class="label">为何值得关注</span> 这是 AlphaFold 之后 DeepMind 在生物科学 AI 领域的又一里程碑式突破——从"结构预测"走向"功能调控理解"。条件化建模思路的可迁移性值得注意：若扩展到多组学整合与药物靶点发现，将直接影响 AI-for-Science 的工作流架构设计，也提示 AI Coding Agent 在科研脚本生成场景中需要更强的专业领域知识底座。</p>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>TenK10K 免疫细胞基准准确率</td><td>≈2× Gen1</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>使用许可</td><td>非商业免费</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>临床验证状态</td><td>未验证</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+
+</div>
+
+<div class="card priority-3" id="entry-3"><button class="copy-btn" data-title="Anthropic 发表研究论文：单共享 Agent 胜过 N 个各用户 Agent" data-link="https://aitoolsrecap.com/ai-news-today">复制</button><button class="copy-btn" data-title="Anthropic 发表研究论文：单共享 Agent 胜过 N 个各用户 Agent" data-link="<a href="https://aitoolsrecap.com/ai-news-today" target="_blank" rel="noopener">https://aitoolsrecap.com/ai-news-today</a>">复制</button>
+  <h2><a href="https://aitoolsrecap.com/ai-news-today" target="_blank" rel="noopener">Anthropic 发表研究论文：单共享 Agent 胜过 N 个各用户 Agent</a></h2>
+
+
+  <div class="source">来源：Anthropic Research Blog · 2026-11-11</div>
+  <p><span class="label">事件</span> Anthropic Fellows 于 11 月 11 日发表论文，实证发现多用户多 Agent 协作团队的表现比单个共享协调者 Agent 低 10–45 个百分点。随着群组规模扩大，Agent 逐渐停止参与，且在超过半数的协作 episode 中编造了关于其他用户的虚假主张；两种低成本缓解手段基本恢复了性能损失。</p>
+  <p class="why"><span class="label">为何值得关注</span> 这是对当前「多 Agent 并发协作」热潮的最直接冷思考。Claude Code、Cursor Agent、Devin 等工具正推动 AI Coding Agent 从单人提效走向团队协作场景，但该研究表明简单堆叠 Agent 数量反而带来协同退化——与 Forbes 此前讨论的 "agentic hairball" 危机相呼应。对于正在构建或引入多 Agent 工作流的工程团队而言，这是一份关键的架构反模式参考。</p>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>多 Agent vs 单 Coordinator 性能差距</td><td>-10% ~ -45%</td><td></td><td><span class="badge third">第三方</span></td></tr><tr><td>虚假主张出现率（超半数 episodes）</td><td>&gt;50%</td><td></td><td><span class="badge third">第三方</span></td></tr><tr><td>低成本缓解手段效果</td><td>基本恢复</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+
+</div>
+
+<div class="card priority-4" id="entry-4"><button class="copy-btn" data-title="OpenAI 以 Apache 2.0 开源 Codex Security CLI 和 SDK" data-link="https://aitoolsrecap.com/ai-news-today">复制</button><button class="copy-btn" data-title="OpenAI 以 Apache 2.0 开源 Codex Security CLI 和 SDK" data-link="<a href="https://aitoolsrecap.com/ai-news-today" target="_blank" rel="noopener">https://aitoolsrecap.com/ai-news-today</a>">复制</button>
+  <h2><a href="https://aitoolsrecap.com/ai-news-today" target="_blank" rel="noopener">OpenAI 以 Apache 2.0 开源 Codex Security CLI 和 SDK</a></h2>
+
+
+  <div class="source">来源：OpenAI Blog / AIToolsRecap · 2026-11-13</div>
+  <p><span class="label">事件</span> OpenAI 将 Codex Security CLI 及 SDK 以 Apache 2.0 许可证开源。该客户端可在代码提交前扫描仓库并审查变更，且能在 CI merge 阶段按设定严重程度门槛进行门禁拦截。分析服务本身仍为闭源，访问限于公开 beta 阶段。</p>
+  <p class="why"><span class="label">为何值得关注</span> Codex Security CLI 的开源是 OpenAI 在 AI Coding 安全运维层的重要一步——将安全扫描能力下放给开发者自主集成，形成类似传统 SAST/DAST 工具的 AI 原生版本。虽然分析后端仍由 OpenAI 控制，但客户端开源降低了企业部署门槛，也为第三方安全工具链（如 GitHub Advanced Security、Snyk）的替代方案提供了参考原型。对关注 AI Coding 工具链完整性的工程师而言，这是继 Claude Code、Cursor 之后的又一个重要选手入场。</p>
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>许可证</td><td>Apache 2.0</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>访问方式</td><td>公开 Beta（有限制）</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>分析服务状态</td><td>闭源</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+
+</div>
+
+<div class="footer">
+  本报告仅供参考，不构成投资建议。
+</div>
+
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
