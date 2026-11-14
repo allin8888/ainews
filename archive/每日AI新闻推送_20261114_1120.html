@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-11-14</title>
+
+<style class="an-baseline">
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;padding:36px 20px 56px;background:#0d1117;color:#e6edf3;font:15px/1.85 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}.container{max-width:1020px;margin:auto}header{margin-bottom:30px}h1{font-size:32px;line-height:1.35;letter-spacing:-.5px;margin:8px 0 20px}.eyebrow{color:#58a6ff;letter-spacing:2px;font-size:12px}header p{margin:4px 0}strong{font-weight:650;color:#f0f6fc}.section-title{font-size:20px;font-weight:700;margin:32px 0 16px}.card,.panel,.excl{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:24px;margin:0 0 20px;overflow-wrap:anywhere}.card h2{font-size:22px;line-height:1.55;margin:0 0 20px;padding-right:40px}.card h3{font-size:16px;margin:20px 0 8px}p{margin:12px 0}a{color:#58a6ff;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #79c0ff;outline-offset:4px}li{margin:10px 0}ul,ol{padding-left:24px}blockquote{border-left:3px solid #d29922;padding:12px 16px;margin:20px 0;background:#161b22;color:#c9d1d9}.tag{display:inline-block;font-size:12px;border:1px solid #484f58;border-radius:12px;padding:1px 8px;margin:3px;color:#a5d6ff}code{background:#21262d;border-radius:4px;padding:1px 5px;font-size:13px;color:#a5d6ff}footer{color:#8b949e;font-size:12px;text-align:center;margin-top:32px}@media(max-width:640px){h1{font-size:26px}.section-title{font-size:18px}.panel,.excl{padding:16px}.metrics td{min-width:95px}}
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.<a href="https://badge.com" target="_blank" rel="noopener">badge.com</a>pare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<header>
+<h1>每日 AI 前沿技术精选</h1>
+<p><strong>日期</strong>：2026-11-14　<strong>时间</strong>：11:20　<strong>精选条数</strong>：5 条</p>
+<p><strong>时效窗口</strong>：2026-11-13 11:20 – 2026-11-14 11:20（严格24小时）</p>
+<hr>
+</header>
+
+<main>
+
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="AI-Coding">AI-Coding</button>
+<button class="filter-chip" data-tag="Agent编排">Agent编排</button>
+<button class="filter-chip" data-tag="模型发布">模型发布</button>
+<button class="filter-chip" data-tag="世界模型">世界模型</button>
+<button class="filter-chip" data-tag="具身智能">具身智能</button>
+<button class="filter-chip" data-tag="开源权重">开源权重</button>
+<button class="filter-chip" data-tag="AI-for-Science">AI-for-Science</button>
+<button class="filter-chip" data-tag="RSI治理">RSI治理</button>
+<button class="filter-chip" data-tag="递归自改进">递归自改进</button>
+<button class="filter-chip" data-tag="基础设施">基础设施</button>
+<button class="filter-chip" data-tag="开发工具">开发工具</button>
+<button class="filter-chip" data-tag="API开放">API开放</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. Google Gemini 4 Hydrogen 发布：面向日常编码与智能体工作流的高速执行模型</a><a class="toc-item" href="#entry-2">2. 西湖大学 Awomo-0.5「概念世界模型」：4B 参数登顶 6 项物理推理与机器人操作评测</a><a class="toc-item" href="#entry-3">3. RSI-PDEbench 与 RSI-PDE：递归自改进智能体在 PDE 求解上的基准与 Harness</a><a class="toc-item" href="#entry-4">4. DeepSeek 开放「全家桶」应用 API：深度思考搜索、文件输入与 OCR/ASR/TTS 独立接口</a><a class="toc-item" href="#entry-5">5. 无界前沿开源 Fx-Bio-1031：125B MoE 生信模型把 RSI 带进生命科学</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="AI-Coding Agent编排 模型发布" style="border-left:3px solid #58a6ff"><button class="copy-btn" data-title="Google Gemini 4 Hydrogen 发布：面向日常编码与智能体工作流的高速执行模型" data-link="https://onthewire.ai/article/google-releases-gemini-4-hydrogen-a-faster-gemini-4-model-it-pitches-for-everyda">复制</button>
+<h2>1. Google Gemini 4 Hydrogen 发布：面向日常编码与智能体工作流的高速执行模型</h2>
+<p><strong>事件概述</strong>：Google 发布 Gemini 4 系列的「高速执行档」模型 Gemini 4 Hydrogen，定位为日常编码与智能体任务中的低成本、高吞吐执行层，并同步在 Antigravity 中推出多模型编排功能 Orchestrator。</p>
+<p><strong>技术与工程价值</strong>：</p>
+<ul>
+<li><strong>核心机制</strong>：Hydrogen 设 low / medium / high（默认）/ xhigh 四档思考深度，可在单一上下文内按需权衡推理深度、延迟与成本；原生支持 100 万 token 输入与 100 万 token 输出。配套的 Orchestrator 在单次会话内于规划模型（Carbon / Argon）与执行模型（Hydrogen）间自动交接控制权——规划模型先探查代码库、识别依赖、产出方案，Hydrogen 负责改文件、写代码、跑构建与测试，遇阻再交还规划模型修订；并行智能体场景下 Carbon 协调、Hydrogen 驱动 worker / verifier 在隔离工作区并行构建与验证。</li>
+<li><strong>实际影响</strong>：对 AI Coding 工作流，Hydrogen 把「轻量执行 + 重规划」分层落地为可一键启用的产品形态；Orchestrator 在 Terminal-Bench 4.0 上接近 Carbon 的任务成功率，同时平均配额消耗降 24%、完成速度提升 19%，为大型工程团队压降 AI 编码成本提供可预测路径（也带来模型级审计 / 归因的新治理问题）。</li>
+</ul>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>AA 智能指数 (Hydrogen, high)</td><td>51</td><td><div class="bar"><span style="width:51%"></span></div></td><td><span class="badge third">第三方</span></td></tr><tr><td>AA 智能指数 (Argon)</td><td>50</td><td><div class="bar"><span style="width:50%"></span></div></td><td><span class="badge third">第三方</span></td></tr><tr><td>Terminal-Bench 4.1 (Hydrogen)</td><td>57%</td><td><div class="bar"><span style="width:57%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>Terminal-Bench 4.1 (3.8 Flash)</td><td>18.2%</td><td><div class="bar"><span style="width:18%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+<ul>
+<li><strong>评测/性能</strong>：Artificial Analysis 智能指数默认 high 档 51（xhigh 54），高于 Argon 的 50（第三方口径）；官方称相对 Gemini 3.8 Flash 默认 high 档任务完成速度提升 2.5×，Terminal-Bench 4.1 得分 18.2% → 57%（自述数据，未见第三方复现）；原生支持并行读文件 / 搜索以处理大型代码库。</li>
+<li><strong>代码/论文</strong>：Google「Introducing Gemini 4 Hydrogen」官方博客（参考报道 <a href="https://onthewire.ai/article/google-releases-gemini-4-hydrogen-a-faster-gemini-4-model-it-pitches-for-everyda" target="_blank" rel="noopener">https://onthewire.ai/article/google-releases-gemini-4-hydrogen-a-faster-gemini-4-model-it-pitches-for-everyda</a>）；Google Antigravity Orchestrator 文档；Gemini 4 Hydrogen 模型卡与评测方法学（PDF）。</li>
+</ul>
+<p><strong>标签</strong>：<span class="tag" style="color:#58a6ff;border-color:#58a6ff">#AI-Coding</span> <span class="tag" style="color:#f0883e;border-color:#f0883e">#Agent编排</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#模型发布</span></p>
+</div>
+
+<div class="card priority-2" id="entry-2" data-tags="世界模型 具身智能 开源权重" style="border-left:3px solid #bc8cff"><button class="copy-btn" data-title="西湖大学 Awomo-0.5「概念世界模型」：4B 参数登顶 6 项物理推理与机器人操作评测" data-link="https://www.leiphone.com/category/academic/nhzldlwI6rJVyXIl.html">复制</button>
+<h2>2. 西湖大学 Awomo-0.5「概念世界模型」：4B 参数登顶 6 项物理推理与机器人操作评测</h2>
+<p><strong>事件概述</strong>：西湖大学成立世界模型研究中心（施一公揭牌），同步发布首版基础模型 Awomo-0.5——一款仅 40 亿参数的「通用物理世界模型」，在 6 项国际公开评测的不同榜单中同时登顶，覆盖物理推理、机器人操作与泛化。</p>
+<p><strong>技术与工程价值</strong>：</p>
+<ul>
+<li><strong>核心机制</strong>：采用「概念世界模型（Concept World Model）」路线——不把逐帧生成画面作为核心目标，而是在隐空间构建可组合、可复用的物理概念（物体属性、空间关系、材质、接触状态），每个概念同时对应语言描述与物理现象，再基于概念推演后续状态。该路线与 LeCun 推动的 JEPA 同属隐空间家族，但把潜空间内容显式定义为可组合物理概念。</li>
+<li><strong>实际影响</strong>：以极小参数量在物理推理与零样本机器人操作上证明「结构化概念表征优于堆参数」，为具身 / 世界模型在真实机器人迁移提供低成本路径；两项关键泛化测试——RoboTwin-c2r（50 项双臂任务、布局打乱）成功率 80.6%，MolmoSpaces（AI2 零样本操作硬核基准，23 万+ 场景、13 万+ 物体）73.4%。</li>
+</ul>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>RoboTwin-c2r (Awomo-0.5)</td><td>80.6%</td><td><div class="bar"><span style="width:81%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>MolmoSpaces 零样本 (Awomo-0.5)</td><td>73.4%</td><td><div class="bar"><span style="width:73%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+<ul>
+<li><strong>评测/性能</strong>：4B 参数；RoboTwin-c2r 80.6%、MolmoSpaces 73.4% 零样本（团队自报，未见第三方复现）；6 项国际公开评测登顶（物理推理 / 机器人操作 / 泛化）。</li>
+<li><strong>代码/论文</strong>：西湖大学世界模型研究中心（AutoLab 自主智能实验室）；雷峰网报道《40 亿参数模型拿下 6 个评测第一》（2026-11-13 18:10，链接 <a href="https://www.leiphone.com/category/academic/nhzldlwI6rJVyXIl.html" target="_blank" rel="noopener">https://www.leiphone.com/category/academic/nhzldlwI6rJVyXIl.html</a>）；截至发稿未检索到公开权重或 arXiv 论文，模型卡 / 论文链接待核实。</li>
+</ul>
+<p><strong>标签</strong>：<span class="tag" style="color:#bc8cff;border-color:#bc8cff">#世界模型</span> <span class="tag" style="color:#3fb950;border-color:#3fb950">#具身智能</span> <span class="tag" style="color:#79c0ff;border-color:#79c0ff">#开源权重</span></p>
+</div>
+
+<div class="card priority-3" id="entry-3" data-tags="AI-for-Science RSI治理 递归自改进" style="border-left:3px solid #39c5cf"><button class="copy-btn" data-title="RSI-PDEbench 与 RSI-PDE：递归自改进智能体在 PDE 求解上的基准与 Harness" data-link="https://arxiv.org/abs/2611.14949">复制</button>
+<h2>3. RSI-PDEbench 与 RSI-PDE：递归自改进智能体在 PDE 求解上的基准与 Harness</h2>
+<p><strong>事件概述</strong>：一篇 11 月 13 日提交 arXiv 的论文提出 RSI-PDEbench——面向偏微分方程（PDE）求解的递归自改进（RSI）智能体基准，以及配套 Harness RSI-PDE，验证「带验证门的递归自改进」可显著提升科学计算智能体的效率。</p>
+<p><strong>技术与工程价值</strong>：</p>
+<ul>
+<li><strong>核心机制</strong>：RSI-PDE 先以残差损失初筛候选方程，再用相对 L2 反馈精化系数与数值求解器，并以 validation gate 约束策略与记忆更新；在三大设置（Full 无噪 / Noisy 高斯噪声 RMS=50% / Hard-OOD 未见模板与偏移系数）下闭环自改进。基准含 1,001 个案例、42 个方程模板，跨 4 个前沿模型对比。</li>
+<li><strong>实际影响</strong>：在科学计算这一「结果可验证」的高价值领域，为 RSI 闭环提供量化证据：相对单次运行基线，pass rate 平均提升 106.5%–181.9%；相对原生 Harness（Claude Code / Codex）提升 3.0%–19.6%，同时总模型调用减少 46.9%（12 个模型-设置对），指向「更少调用、更稳收敛」的自改进范式。</li>
+</ul>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>pass rate 相对单次基线提升</td><td>106.5–181.9%</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>总模型调用减少</td><td>46.9%</td><td><div class="bar"><span style="width:47%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+<ul>
+<li><strong>评测/性能</strong>：pass rate 相对单次基线 +106.5%~+181.9%、相对原生 Harness +3.0%~+19.6%、模型调用 −46.9%（论文自报，未见独立复现）；1,001 cases / 42 templates。</li>
+<li><strong>代码/论文</strong>：arXiv:2611.14949（2026-11-13 提交，论文链接 <a href="https://arxiv.org/abs/2611.14949" target="_blank" rel="noopener">https://arxiv.org/abs/2611.14949</a>）；基准与 RSI-PDE Harness（论文未附公开仓库链接，待核实）。</li>
+</ul>
+<p><strong>标签</strong>：<span class="tag" style="color:#39c5cf;border-color:#39c5cf">#AI-for-Science</span> <span class="tag" style="color:#f85149;border-color:#f85149">#RSI治理</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#递归自改进</span></p>
+</div>
+
+<div class="card priority-4" id="entry-4" data-tags="基础设施 开发工具 API开放" style="border-left:3px solid #e3b341"><button class="copy-btn" data-title="DeepSeek 开放「全家桶」应用 API：深度思考搜索、文件输入与 OCR/ASR/TTS 独立接口" data-link="https://m.thepaper.cn/newsDetail_forward_34470944">复制</button>
+<h2>4. DeepSeek 开放「全家桶」应用 API：深度思考搜索、文件输入与 OCR/ASR/TTS 独立接口</h2>
+<p><strong>事件概述</strong>：DeepSeek 宣布在原有 API 中开启对应参数即可获得深度思考搜索、文件输入等对话功能，并将语音及相关底层能力开放为独立接口（OCR / ASR / TTS），开发者可近乎 1:1 复刻完整 DeepSeek App。</p>
+<p><strong>技术与工程价值</strong>：</p>
+<ul>
+<li><strong>核心机制</strong>：在 Messages、Responses 与 Chat Completions 三大接口下，基于 V4.1-Flash（deepseek-flash）支持：① 非思考模式联网搜索（deepseek_web_search）自动搜网页 / 图片并附引用；② 思考模式深度思考搜索（多步推理中自主联网并阅读链接）；③ 文件输入（PDF / Office / 图片，文本提取或图文混排解析后拼入上下文）；④ 阅读链接（deepseek_read_url 自动抓网页）；⑤ 模型安全（开启安全校验参数，命中风险返回拒答）；上述能力及语音经服务端自动完成工具调用与上下文拼接。OCR / ASR / TTS 可作为独立端点单独或组合调用。</li>
+<li><strong>实际影响</strong>：将 DeepSeek App 背后的交互能力整体商品化为可调用的工具层，把「应用外壳」与「模型推理」解耦，降低开发者复刻复杂对话产品的门槛，延续 10 月 Search / Fetch API 之后的工具接口开放节奏——属「AI 应用层进一步商品化」信号（自述）。</li>
+</ul>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>联网搜索 / 抓取单价</td><td>5元/千次</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>语音合成单价</td><td>1.5元/万字符</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+<ul>
+<li><strong>评测/性能</strong>：无公开基准数字；工具调用定价为文字 / 图片搜索 5 元/千次、网页抓取 5 元/千次、文字识别 1.5 元/千页、语音识别 0.39 元/小时、语音合成 1.5 元/万字符（厂商自述）。</li>
+<li><strong>代码/论文</strong>：DeepSeek 官方公告；澎湃新闻《DeepSeek 宣布开放全家桶应用 API》（2026-11-13，链接 <a href="https://m.thepaper.cn/newsDetail_forward_34470944" target="_blank" rel="noopener">https://m.thepaper.cn/newsDetail_forward_34470944</a>）。</li>
+</ul>
+<p><strong>标签</strong>：<span class="tag" style="color:#e3b341;border-color:#e3b341">#基础设施</span> <span class="tag" style="color:#f0883e;border-color:#f0883e">#开发工具</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#API开放</span></p>
+</div>
+
+<div class="card priority-5" id="entry-5" data-tags="AI-for-Science 开源权重 RSI治理" style="border-left:3px solid #39c5cf"><button class="copy-btn" data-title="无界前沿开源 Fx-Bio-1031：125B MoE 生信模型把 RSI 带进生命科学" data-link="https://huggingface.co/endless-frontier/Fx-Bio-1031">复制</button>
+<h2>5. 无界前沿开源 Fx-Bio-1031：125B MoE 生信模型把 RSI 带进生命科学</h2>
+<p><strong>事件概述</strong>：无界前沿（Endless Frontier，中科院院士发起、上海交大 / 上海算法创新研究院 / 深势科技联合孵化）于 11 月 13 日官宣开源生物信息大模型 Fx-Bio-1031 完整权重，基于 Qwen3.8-Flash-Next 做 RSI 后训练，在 Anthropic BioMysteryBench 困难子集上超越 GPT-6-Astra 与 Opus-5。</p>
+<p><strong>技术与工程价值</strong>：</p>
+<ul>
+<li><strong>核心机制</strong>：125B MoE（每 token 激活约 6B）、原生 512K 上下文、Qwen Community License 1.0；核心为自演进体系 RSI-OS 三层飞轮——评估层（联合深势 BioMaster 团队，114 内部任务 × 3 轮 = 342 题次、2 万+ 模型请求独立验证）、数据层（AI 针对短板自主造题 / 求解 / 审查）、环境层（AI 编写修复生信脚本、打磨 Harness）。模型被直接置入真实 Linux 工具环境与数百万行原始数据，自主写代码、调数据库、做交叉验证。</li>
+<li><strong>实际影响</strong>：高难盲测中，模型在乳腺癌队列任务主动加做 14 项敏感性分析与阴性对照并划出结论失效边界；在 ATAC-seq 盲测中跨库推理还原 9 份无标签样本分组；在突变签名任务连跑 76 步抓出乳腺癌头号元凶，并在细菌测序质检中揪出底层坏记录后连续 258 步交付可追溯报告——为「垂域 RSI + 可审计智能体」提供开源底座。</li>
+</ul>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>BioMysteryBench Difficult Pass@5 (Fx-Bio-1031)</td><td>70.59%</td><td><div class="bar"><span style="width:71%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>BioMysteryBench Difficult Pass@5 (GPT-6-Astra)</td><td>47.06%</td><td><div class="bar"><span style="width:47%"></span></div></td><td><span class="badge third">第三方</span></td></tr><tr><td>BioMysteryBench Difficult Pass@5 (Opus-5)</td><td>52.94%</td><td><div class="bar"><span style="width:53%"></span></div></td><td><span class="badge third">第三方</span></td></tr><tr><td>BiomniBench Pass@3 (Fx-Bio-1031)</td><td>89.50%</td><td><div class="bar"><span style="width:90%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+<ul>
+<li><strong>评测/性能</strong>：BioMysteryBench Difficult Pass@5 70.59%（对比 GPT-6-Astra 47.06%、Opus-5 52.94%）、BiomniBench Pass@3 89.50%（均为厂商自报、内部评测框架、未见第三方复现）；BixBench3 45.76% 落后于 GPT-6-Astra 48.70（厂商自曝短板）。</li>
+<li><strong>代码/论文</strong>：Hugging Face 模型卡 endless-frontier/Fx-Bio-1031（<a href="https://huggingface.co/endless-frontier/Fx-Bio-1031" target="_blank" rel="noopener">https://huggingface.co/endless-frontier/Fx-Bio-1031</a>）；量子位授权刊载发布稿、TPS Report 英文报道（2026-11-13）。</li>
+</ul>
+<p><strong>标签</strong>：<span class="tag" style="color:#39c5cf;border-color:#39c5cf">#AI-for-Science</span> <span class="tag" style="color:#79c0ff;border-color:#79c0ff">#开源权重</span> <span class="tag" style="color:#f85149;border-color:#f85149">#RSI治理</span></p>
+</div>
+
+</main>
+
+<section>
+<h2>待核实</h2>
+<ul>
+<li><strong>Gemini 4 Hydrogen 基准</strong>：Terminal-Bench 4.1 的 57% vs 18.2%、2.5× 速度、安全性指标（越界行为 −81% 等）均为 Google 自述，未见第三方独立复现；AA 智能指数 51 / 54 为第三方口径。另：Google 两篇帖子对 Orchestrator 所用基准版本标注不一致（主公告写 Terminal-Bench 4.0、Antigravity 博客写 4.1）。</li>
+<li><strong>Gemini 4 Hydrogen 发布时刻</strong>：中文媒体统一标注 11 月 13 日（部分报道时刻 07:36 / 10:57 北京时间，早于本窗口起点 11:20）；个别二级来源称 FoneArena 报道于 04:31 UTC（≈ 北京时间 12:31）。第一信源（Google 官方博客）未提供精确北京时间，本期按「11 月 13 日发布公告」纳入，精确发布小时待核实。</li>
+<li><strong>Awomo-0.5</strong>：RoboTwin-c2r 80.6%、MolmoSpaces 73.4% 及 6 项登顶均为西湖大学团队自报；截至发稿未检索到公开权重或 arXiv 论文，模型卡 / 论文链接待核实。</li>
+<li><strong>Fx-Bio-1031 参数口径</strong>：主流信源称总参数 125B（每 token 激活 6B）；另有微生物组日报援引模型卡称含 51B n-gram embedding + 4B MTP，总参数约 180B。两种口径并存，以官方模型卡为准，待核实。BixBench3 落后对照模型属厂商自曝短板，引用时不应只引 Difficult 子集。</li>
+<li><strong>RSI-PDEbench</strong>：pass rate 提升与调用减少为论文作者自报，未见独立复现；论文未附公开仓库链接，Harness 代码可用性待核实。</li>
+</ul>
+</section>
+
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
