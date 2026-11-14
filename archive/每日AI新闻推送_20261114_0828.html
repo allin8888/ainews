@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日AI新闻推送 2026-11-14</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d1117;
+    color: #c9d1d9;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    padding: 24px;
+  }
+  .container { max-width: 760px; margin: 0 auto; }
+  h1 {
+    color: #58a6ff;
+    font-size: 22px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #21262d;
+    padding-bottom: 12px;
+  }
+  .meta { color: #8b949e; font-size: 13px; margin-bottom: 24px; }
+  .card {
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  h2 { font-size: 16px; margin-bottom: 12px; }
+  h2 a {
+    color: #58a6ff;
+    text-decoration: none;
+  }
+  h2 a:hover { text-decoration: underline; }
+  .card-meta { color: #8b949e; font-size: 12px; margin-bottom: 10px; }
+  .section-label {
+    color: #f0883e;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 12px;
+    margin-bottom: 4px;
+  }
+  .section-text { color: #c9d1d9; font-size: 14px; margin-bottom: 8px; }
+  .why-label { color: #3fb950; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 10px; margin-bottom: 4px; }
+  .why-text { color: #c9d1d9; font-size: 14px; }
+  .source-link { display: inline-block; margin-top: 10px; color: #58a6ff; font-size: 13px; text-decoration: none; }
+  .source-link:hover { text-decoration: underline; }
+  .verify-list { background: #161b22; border: 1px solid #21262d; border-radius: 8px; padding: 16px 20px; margin-top: 8px; }
+  .verify-title { color: #f0883e; font-weight: 600; font-size: 14px; margin-bottom: 8px; }
+  .verify-item { color: #8b949e; font-size: 13px; margin-bottom: 4px; padding-left: 8px; }
+  .disclaimer { color: #484f58; font-size: 12px; margin-top: 24px; text-align: center; }
+  .entry-num { color: #58a6ff; font-size: 13px; font-weight: 600; margin-right: 6px; }
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>每日AI新闻推送</h1>
+  <div class="meta">2026-11-14 · <strong>时效窗口</strong>：2026-11-13 08:28 – 2026-11-14 08:28（北京时间）· <strong>精选条数</strong>：4 条</div>
+
+  <nav class="toc">
+<a class="toc-item" href="#entry-1">1. Mirendil 融资 $10 亿——前 Anthropic 研究者打造 AI 自主研发平台</a><a class="toc-item" href="#entry-2">2. OpenAI 解散独立机器人团队，押注通用模型直接控制机器人</a><a class="toc-item" href="#entry-3">3. 四大非营利组织诉五家前沿 AI 实验室，请求法院冻结模型升级</a><a class="toc-item" href="#entry-4">4. Paperclip AI 获 11.3 万 GitHub Star——跨厂商多 Agent 协同编程框架走红</a>
+</nav>
+<div class="card priority-1" id="entry-1"><button class="copy-btn" data-title="Mirendil 融资 $10 亿——前 Anthropic 研究者打造 AI 自主研发平台" data-link="https://mlq.ai/news/ex-anthropic-researchers-startup-mirendil-raises-1-billion-to-let-ai-agents-do-the-work-of-an-ai-lab">复制</button>
+    <h2><a href="https://mlq.ai/news/ex-anthropic-researchers-startup-mirendil-raises-1-billion-to-let-ai-agents-do-the-work-of-an-ai-lab" target="_blank" rel="noopener">Mirendil 融资 $10 亿——前 Anthropic 研究者打造 AI 自主研发平台</a></h2>
+
+    <div class="card-meta"><button class="copy-btn" data-title="OpenAI 解散独立机器人团队，押注通用模型直接控制机器人" data-link="https://fourweekmba.com/ai-openai-disbands-robotics-team-as-gpt-6-astra-runs-robots">复制</button>WSJ / <a href="https://MLQ.ai" target="_blank" rel="noopener">MLQ.ai</a> · 2026-11-13</div>
+    <div class="section-label">事件</div>
+    <div class="section-text">由前 Anthropic 研究员 Behnam Neyshabur 与 Harsh Mehta 创办的 AI Lab Mirendil 宣布完成 $10 亿 Series A，Kleiner Perkins 与 Clearlake Capital 联合领投，Battery Ventures、Doerr Capital、Google、M13 等跟投。其内部平台 Lor 可同时运行数百个 AI Agent，自动写代码、跑实验、provision GPU 并跨子 Agent 分发任务；公司称其最小模型训练算力成本不足 $1000 万，仅用"一名研究人员 + 3.5 个月"即完成训练。团队约 20 人，来自 Anthropic、xAI、Google DeepMind、OpenAI。</div>
+    <div class="why-label">为何值得关注</div>
+    <div class="why-text">这是目前最激进地实践"Agent 替代人类做科研"的融资案例之一——$10 亿估值背后是"用 AI Agent 构建下一代 AI"的范式赌注。若成功，将重塑 AI 研发的人力密度模型；若失败，则验证了当前 Agent 在长周期、高不确定性探索中的局限性。</div>
+    <a class="source-link" href="https://mlq.ai/news/ex-anthropic-researchers-startup-mirendil-raises-1-billion-to-let-ai-agents-do-the-work-of-an-ai-lab" target="_blank" rel="noopener">mlq.ai/news/ex-anthropic-researchers-startup-mirendil-raises-1-billion-to-let-ai-agents-do-the-work-of-an-ai-lab</a>">查看原文 →</a>
+  </div><div class="card-meta" id="entry-2"><button class="copy-btn" data-title="四大非营利组织诉五家前沿 AI 实验室，请求法院冻结模型升级" data-link="https://www.justsecurity.org/164494/nonprofits-lawsuit-freeze-frontier-ai-development">复制</button>WSJ / <a href="https://MLQ.ai" target="_blank" rel="noopener">MLQ.ai</a> · 2026-11-13</div>
+    <div class="section-label">事件</div>
+    <div class="section-text">由前 Anthropic 研究员 Behnam Neyshabur 与 Harsh Mehta 创办的 AI Lab Mirendil 宣布完成 $10 亿 Series A，Kleiner Perkins 与 Clearlake Capital 联合领投，Battery Ventures、Doerr Capital、Google、M13 等跟投。其内部平台 Lor 可同时运行数百个 AI Agent，自动写代码、跑实验、provision GPU 并跨子 Agent 分发任务；公司称其最小模型训练算力成本不足 $1000 万，仅用"一名研究人员 + 3.5 个月"即完成训练。团队约 20 人，来自 Anthropic、xAI、Google DeepMind、OpenAI。</div>
+    <div class="why-label">为何值得关注</div>
+    <div class="why-text">这是目前最激进地实践"Agent 替代人类做科研"的融资案例之一——$10 亿估值背后是"用 AI Agent 构建下一代 AI"的范式赌注。若成功，将重塑 AI 研发的人力密度模型；若失败，则验证了当前 Agent 在长周期、高不确定性探索中的局限性。</div>
+    <a class="source-link" href="https://mlq.ai/news/ex-anthropic-researchers-startup-mirendil-raises-1-billion-to-let-ai-agents-do-the-work-of-an-ai-lab" target="_blank" rel="noopener">mlq.ai/news/ex-anthropic-researchers-startup-mirendil-raises-1-billion-to-let-ai-agents-do-the-work-of-an-ai-lab</a>">查看原文 →</a>
+  </div><div class="card-meta" id="entry-2"><button class="copy-btn" data-title="Paperclip AI 获 11.3 万 GitHub Star——跨厂商多 Agent 协同编程框架走红" data-link="https://pasqualepillitteri.it/en/news/33213/paperclip-ai-what-it-is-how-it-works">复制</button>WSJ / <a href="https://MLQ.ai" target="_blank" rel="noopener">MLQ.ai</a> · 2026-11-13</div>
+    <div class="section-label">事件</div>
+    <div class="section-text">由前 Anthropic 研究员 Behnam Neyshabur 与 Harsh Mehta 创办的 AI Lab Mirendil 宣布完成 $10 亿 Series A，Kleiner Perkins 与 Clearlake Capital 联合领投，Battery Ventures、Doerr Capital、Google、M13 等跟投。其内部平台 Lor 可同时运行数百个 AI Agent，自动写代码、跑实验、provision GPU 并跨子 Agent 分发任务；公司称其最小模型训练算力成本不足 $1000 万，仅用"一名研究人员 + 3.5 个月"即完成训练。团队约 20 人，来自 Anthropic、xAI、Google DeepMind、OpenAI。</div>
+    <div class="why-label">为何值得关注</div>
+    <div class="why-text">这是目前最激进地实践"Agent 替代人类做科研"的融资案例之一——$10 亿估值背后是"用 AI Agent 构建下一代 AI"的范式赌注。若成功，将重塑 AI 研发的人力密度模型；若失败，则验证了当前 Agent 在长周期、高不确定性探索中的局限性。</div>
+    <a class="source-link" href="https://mlq.ai/news/ex-anthropic-researchers-startup-mirendil-raises-1-billion-to-let-ai-agents-do-the-work-of-an-ai-lab" target="_blank" rel="noopener">mlq.ai/news/ex-anthropic-researchers-startup-mirendil-raises-1-billion-to-let-ai-agents-do-the-work-of-an-ai-lab</a>">查看原文 →</a>
+  </div>
+
+  <div class="card priority-3" id="entry-3">
+    <h2><a href="https://fourweekmba.com/ai-openai-disbands-robotics-team-as-gpt-6-astra-runs-robots" target="_blank" rel="noopener">Paperclip AI 获 11.3 万 GitHub Star——跨厂商多 Agent 协同编程框架走红</a></h2>
+
+    <div class="card-meta">Fortune / Benzinga · 2026-11-13</div>
+    <div class="section-label">事件</div>
+    <div class="section-text">据 Fortune 报道，OpenAI 已将独立机器人团队解散，研究侧并入 CRO Mark Chen 麾下，硬件与应用侧划入 Greg Brockman 领导的 Applied 组织。公司引用 Nvidia 仿真数据：GPT-6 Astra 智能体在模拟任务中达成 74.8% 成功率，显著高于专用模型平均 51%。此举被视为 OpenAI 对"通用前沿模型足以覆盖机器人控制"路线的再次确认。</div>
+    <div class="why-label">为何值得关注</div>
+    <div class="why-text">与 Google DeepMind（Gemini Robotics 2.5 发布）、Figure AI（持续独立建队）形成鲜明对比。两条路线——通用模型直控 vs 专用机器人架构——的竞争结果将决定未来 2-3 年具身智能的产业格局。</div>
+    <a class="source-link" href="https://fourweekmba.com/ai-openai-disbands-robotics-team-as-gpt-6-astra-runs-robots" target="_blank" rel="noopener">fourweekmba.com/ai-openai-disbands-robotics-team-as-gpt-6-astra-runs-robots</a>">查看原文 →</a>
+  </div><div class="card-meta" id="entry-5">Fortune / Benzinga · 2026-11-13</div>
+    <div class="section-label">事件</div>
+    <div class="section-text">据 Fortune 报道，OpenAI 已将独立机器人团队解散，研究侧并入 CRO Mark Chen 麾下，硬件与应用侧划入 Greg Brockman 领导的 Applied 组织。公司引用 Nvidia 仿真数据：GPT-6 Astra 智能体在模拟任务中达成 74.8% 成功率，显著高于专用模型平均 51%。此举被视为 OpenAI 对"通用前沿模型足以覆盖机器人控制"路线的再次确认。</div>
+    <div class="why-label">为何值得关注</div>
+    <div class="why-text">与 Google DeepMind（Gemini Robotics 2.5 发布）、Figure AI（持续独立建队）形成鲜明对比。两条路线——通用模型直控 vs 专用机器人架构——的竞争结果将决定未来 2-3 年具身智能的产业格局。</div>
+    <a class="source-link" href="https://fourweekmba.com/ai-openai-disbands-robotics-team-as-gpt-6-astra-runs-robots" target="_blank" rel="noopener">fourweekmba.com/ai-openai-disbands-robotics-team-as-gpt-6-astra-runs-robots</a>">查看原文 →</a>
+  </div><div class="card-meta" id="entry-4">Fortune / Benzinga · 2026-11-13</div>
+    <div class="section-label">事件</div>
+    <div class="section-text">据 Fortune 报道，OpenAI 已将独立机器人团队解散，研究侧并入 CRO Mark Chen 麾下，硬件与应用侧划入 Greg Brockman 领导的 Applied 组织。公司引用 Nvidia 仿真数据：GPT-6 Astra 智能体在模拟任务中达成 74.8% 成功率，显著高于专用模型平均 51%。此举被视为 OpenAI 对"通用前沿模型足以覆盖机器人控制"路线的再次确认。</div>
+    <div class="why-label">为何值得关注</div>
+    <div class="why-text">与 Google DeepMind（Gemini Robotics 2.5 发布）、Figure AI（持续独立建队）形成鲜明对比。两条路线——通用模型直控 vs 专用机器人架构——的竞争结果将决定未来 2-3 年具身智能的产业格局。</div>
+    <a class="source-link" href="https://fourweekmba.com/ai-openai-disbands-robotics-team-as-gpt-6-astra-runs-robots" target="_blank" rel="noopener">fourweekmba.com/ai-openai-disbands-robotics-team-as-gpt-6-astra-runs-robots</a>">查看原文 →</a>
+  </div>
+
+  <div class="card priority-5" id="entry-5">
+    <h2><a href="https://www.justsecurity.org/164494/nonprofits-lawsuit-freeze-frontier-ai-development" target="_blank" rel="noopener">本期条目 7</a></h2>
+
+    <div class="card-meta">Just Security / <a href="https://Shattered.io" target="_blank" rel="noopener">Shattered.io</a> · 2026-11-13</div>
+    <div class="section-label">事件</div>
+    <div class="section-text">2026-11-12，Irreplaceable Education Fund、Public Citizen、Heat Initiative 与 Alliance for Secure AI 四家非营利组织在旧金山高等法院起诉 OpenAI、Anthropic、Google、Meta 及 SpaceX AI，援引加州《不公平竞争法》（UCL），请求法院禁令禁止被告开发或部署比现有更先进的人工智能系统。诉状 63 页，由前新泽西州总检察长 Matthew Platkin 代理。截至发稿尚无法官裁决。</div>
+    <div class="why-label">为何值得关注</div>
+    <div class="why-text">这是美国首次以 UCL 为法律依据、直接针对前沿 AI 模型升级节奏提出司法冻结的请求。若法院受理，将为 AI 安全监管开辟全新诉讼路径；即便败诉，也将推动国会层面的立法讨论。</div>
+    <a class="source-link" href="https://www.justsecurity.org/164494/nonprofits-lawsuit-freeze-frontier-ai-development" target="_blank" rel="noopener">www.justsecurity.org/164494/nonprofits-lawsuit-freeze-frontier-ai-development</a>">查看原文 →</a>
+  </div><div class="card-meta" id="entry-8">Just Security / <a href="https://Shattered.io" target="_blank" rel="noopener">Shattered.io</a> · 2026-11-13</div>
+    <div class="section-label">事件</div>
+    <div class="section-text">2026-11-12，Irreplaceable Education Fund、Public Citizen、Heat Initiative 与 Alliance for Secure AI 四家非营利组织在旧金山高等法院起诉 OpenAI、Anthropic、Google、Meta 及 SpaceX AI，援引加州《不公平竞争法》（UCL），请求法院禁令禁止被告开发或部署比现有更先进的人工智能系统。诉状 63 页，由前新泽西州总检察长 Matthew Platkin 代理。截至发稿尚无法官裁决。</div>
+    <div class="why-label">为何值得关注</div>
+    <div class="why-text">这是美国首次以 UCL 为法律依据、直接针对前沿 AI 模型升级节奏提出司法冻结的请求。若法院受理，将为 AI 安全监管开辟全新诉讼路径；即便败诉，也将推动国会层面的立法讨论。</div>
+    <a class="source-link" href="https://www.justsecurity.org/164494/nonprofits-lawsuit-freeze-frontier-ai-development" target="_blank" rel="noopener">www.justsecurity.org/164494/nonprofits-lawsuit-freeze-frontier-ai-development</a>">查看原文 →</a>
+  </div><div class="card-meta" id="entry-6">Just Security / <a href="https://Shattered.io" target="_blank" rel="noopener">Shattered.io</a> · 2026-11-13</div>
+    <div class="section-label">事件</div>
+    <div class="section-text">2026-11-12，Irreplaceable Education Fund、Public Citizen、Heat Initiative 与 Alliance for Secure AI 四家非营利组织在旧金山高等法院起诉 OpenAI、Anthropic、Google、Meta 及 SpaceX AI，援引加州《不公平竞争法》（UCL），请求法院禁令禁止被告开发或部署比现有更先进的人工智能系统。诉状 63 页，由前新泽西州总检察长 Matthew Platkin 代理。截至发稿尚无法官裁决。</div>
+    <div class="why-label">为何值得关注</div>
+    <div class="why-text">这是美国首次以 UCL 为法律依据、直接针对前沿 AI 模型升级节奏提出司法冻结的请求。若法院受理，将为 AI 安全监管开辟全新诉讼路径；即便败诉，也将推动国会层面的立法讨论。</div>
+    <a class="source-link" href="https://www.justsecurity.org/164494/nonprofits-lawsuit-freeze-frontier-ai-development" target="_blank" rel="noopener">www.justsecurity.org/164494/nonprofits-lawsuit-freeze-frontier-ai-development</a>">查看原文 →</a>
+  </div>
+
+  <div class="card priority-7" id="entry-7">
+    <h2><a href="https://pasqualepillitteri.it/en/news/33213/paperclip-ai-what-it-is-how-it-works">Paperclip AI 获 11.3 万 GitHub Star——跨厂商多 Agent 协同编程框架走红</a></h2>
+    <div class="card-meta">Pasquale Pillitteri · 2026-11-13</div>
+    <div class="section-label">事件</div>
+    <div class="section-text">开源项目 paperclipai/paperclip 自 2026-03-02 创建以来，至 11 月 13 日已达 113,619 Star / 18,856 Fork。该项目定位为多 Agent 编排层，可同时运行 Claude Code、Codex、Gemini CLI 等不同厂商的 AI 编程智能体，分配差异化任务并统一管控。最新 v2026.1106.0 引入 Paperclip Runner（防 prompt injection + OTLP 可观测性）。</div>
+    <div class="why-label">为何值得关注</div>
+    <div class="why-text">GitHub Copilot 本周已原生支持 Fable 5.2 与 Gemini 4 Carbon 双模型切换，但厂商锁定的多 Agent 协作仍是空白。Paperclip 填补了这一生态位，反映开发者群体对"混合多家 Agent 各取所长"的强烈需求。</div>
+    <a class="source-link" href="https://pasqualepillitteri.it/en/news/33213/paperclip-ai-what-it-is-how-it-works">查看原文 →</a>
+  </div><div class="card-meta" id="entry-11">Pasquale Pillitteri · 2026-11-13</div>
+    <div class="section-label">事件</div>
+    <div class="section-text">开源项目 paperclipai/paperclip 自 2026-03-02 创建以来，至 11 月 13 日已达 113,619 Star / 18,856 Fork。该项目定位为多 Agent 编排层，可同时运行 Claude Code、Codex、Gemini CLI 等不同厂商的 AI 编程智能体，分配差异化任务并统一管控。最新 v2026.1106.0 引入 Paperclip Runner（防 prompt injection + OTLP 可观测性）。</div>
+    <div class="why-label">为何值得关注</div>
+    <div class="why-text">GitHub Copilot 本周已原生支持 Fable 5.2 与 Gemini 4 Carbon 双模型切换，但厂商锁定的多 Agent 协作仍是空白。Paperclip 填补了这一生态位，反映开发者群体对"混合多家 Agent 各取所长"的强烈需求。</div>
+    <a class="source-link" href="https://pasqualepillitteri.it/en/news/33213/paperclip-ai-what-it-is-how-it-works">查看原文 →</a>
+  </div><div class="card-meta" id="entry-8">Pasquale Pillitteri · 2026-11-13</div>
+    <div class="section-label">事件</div>
+    <div class="section-text">开源项目 paperclipai/paperclip 自 2026-03-02 创建以来，至 11 月 13 日已达 113,619 Star / 18,856 Fork。该项目定位为多 Agent 编排层，可同时运行 Claude Code、Codex、Gemini CLI 等不同厂商的 AI 编程智能体，分配差异化任务并统一管控。最新 v2026.1106.0 引入 Paperclip Runner（防 prompt injection + OTLP 可观测性）。</div>
+    <div class="why-label">为何值得关注</div>
+    <div class="why-text">GitHub Copilot 本周已原生支持 Fable 5.2 与 Gemini 4 Carbon 双模型切换，但厂商锁定的多 Agent 协作仍是空白。Paperclip 填补了这一生态位，反映开发者群体对"混合多家 Agent 各取所长"的强烈需求。</div>
+    <a class="source-link" href="https://pasqualepillitteri.it/en/news/33213/paperclip-ai-what-it-is-how-it-works">查看原文 →</a>
+  </div>
+
+  <div class="verify-list">
+    <div class="verify-title">待核实清单</div>
+    <div class="verify-item">⏳ Mirendil "一名研究人员+3.5月+$1000万完成训练"为公司自述数据，未经第三方验证</div>
+    <div class="verify-item">⏳ OpenAI Nvidia 仿真 74.8% vs 51% 数据源为 Fortune 引用，未见原始论文或 Nvidia 官方文档</div>
+    <div class="verify-item">⏳ 前沿 AI 诉讼案尚未有法官裁决，进展动态需后续跟踪</div>
+  </div>
+
+  <div class="disclaimer">本报告仅供参考，不构成投资建议。</div>
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
