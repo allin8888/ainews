@@ -3,7 +3,21 @@
 <title>每日 AI 前沿技术精选</title>
 <link>https://allin8888.github.io/ainews/archive/</link>
 <description>每日 AI 前沿技术精选 · 结构化条目流</description>
-<lastBuildDate>Sat, 14 Nov 2026 15:59:29 -0000</lastBuildDate>
+<lastBuildDate>Sun, 15 Nov 2026 03:10:13 -0000</lastBuildDate>
+<item>
+<title>datasette-vega 0.7 发布：Datasette 图表插件时隔八年四个月首次更新</title>
+<link>https://allin8888.github.io/ainews/archive/每日AI新闻推送_20261115_1047.html</link>
+<guid isPermaLink="false">20261115_1047-datasette-vega 0.7 发布：Datasette 图表插件时隔八年四个月首次更新</guid>
+<pubDate>2026-11-15</pubDate>
+<category>开源、数据可视化</category>
+</item>
+<item>
+<title>datasette-llm 0.1a11 发布：新增 OpenAI 兼容端点，本地模型一行命令驱动 Datasette Agent</title>
+<link>https://allin8888.github.io/ainews/archive/每日AI新闻推送_20261115_1047.html</link>
+<guid isPermaLink="false">20261115_1047-datasette-llm 0.1a11 发布：新增 OpenAI 兼容端点，本地模型一行命令驱动 Datasette Agent</guid>
+<pubDate>2026-11-15</pubDate>
+<category>开源、本地LLM、数据工具</category>
+</item>
 <item>
 <title>Google Gemini 4 Hydrogen 发布：面向日常编码与智能体工作流的高速执行模型</title>
 <link>https://allin8888.github.io/ainews/archive/每日AI新闻推送_20261114_1120.html</link>

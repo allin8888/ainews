@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 AI 前沿技术精选 · 2026-11-15</title>
+
+
+<style class="an-baseline">
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;padding:36px 20px 56px;background:#0d1117;color:#e6edf3;font:15px/1.85 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}.container{max-width:1020px;margin:auto}header{margin-bottom:30px}h1{font-size:32px;line-height:1.35;letter-spacing:-.5px;margin:8px 0 20px}.eyebrow{color:#58a6ff;letter-spacing:2px;font-size:12px}header p{margin:4px 0}strong{font-weight:650;color:#f0f6fc}.section-title{font-size:20px;font-weight:700;margin:32px 0 16px}.card,.panel,.excl{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:24px;margin:0 0 20px;overflow-wrap:anywhere}.card h2{font-size:22px;line-height:1.55;margin:0 0 20px;padding-right:40px}.card h3{font-size:16px;margin:20px 0 8px}p{margin:12px 0}a{color:#58a6ff;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #79c0ff;outline-offset:4px}li{margin:10px 0}ul,ol{padding-left:24px}blockquote{border-left:3px solid #d29922;padding:12px 16px;margin:20px 0;background:#161b22;color:#c9d1d9}.tag{display:inline-block;font-size:12px;border:1px solid #484f58;border-radius:12px;padding:1px 8px;margin:3px;color:#a5d6ff}code{background:#21262d;border-radius:4px;padding:1px 5px;font-size:13px;color:#a5d6ff}footer{color:#8b949e;font-size:12px;text-align:center;margin-top:32px}@media(max-width:640px){h1{font-size:26px}.section-title{font-size:18px}.panel,.excl{padding:16px}.metrics td{min-width:95px}}
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.badge.compare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+<p class="eyebrow">每日 AI 前沿技术精选 · 第 145 跑</p>
+<h1>每日 AI 前沿技术精选</h1>
+<p><strong>日期</strong>：2026-11-15　<strong>时间</strong>：10:47　<strong>精选条数</strong>：2 条</p>
+<p><strong>时效窗口</strong>：2026-11-14 23:24 – 2026-11-15 10:47（增量收敛，11 小时 23 分；UTC 11-14 15:24 → 11-15 02:47）</p>
+<p><strong>窗口规则</strong>：严格不超过24小时；本期为增量收敛窗口（距上次执行时刻 11 小时 23 分，窗口收敛为上次执行时刻 → 本次执行时刻）</p>
+<p><strong>覆盖领域</strong>：基础设施与重大开源（Datasette 开源插件生态双发）；AI Coding、机器人硬件、具身智能、世界模型、递归自我改进与自主研究、投融资与产业合作本期无窗内合格首发</p>
+<hr>
+</header>
+
+<blockquote>⚠️ <strong>今日新闻不足3条</strong>，已严格筛选24小时内首发内容：本窗口为周日晨间增量（11 小时 23 分），arXiv 周末无新批次；经聚合站 27 条窗内线索、9 路 RSS 横扫、HN 窗内 &gt;25 分 22 帖、GitHub 窗内新建高星仓库 439 条逐一第一信源取证，仅 2 条通过首发时间戳纪律与去重门槛，按实输出不凑数。</blockquote>
+
+<div class="section-title">头部重点</div>
+<div class="panel">
+<ol>
+<li><strong>datasette-llm 0.1a11：本地模型一行命令驱动 Datasette Agent</strong>——Datasette 的 LLM 配置中枢插件新增 OpenAI 兼容端点支持，LM Studio / Ollama / llama.cpp v1.0.0 等本地运行时可直接接入。<a href="#entry-2">→ 条目 2</a></li>
+<li><strong>datasette-vega 0.7：Datasette 图表插件时隔八年四个月首次更新</strong>——适配最新 Datasette alpha，并随 Datasette Lite 浏览器端 JS 插件能力提供零安装实机演示。<a href="#entry-1">→ 条目 1</a></li>
+</ol>
+</div>
+
+<div class="section-title">分领域精选 · 基础设施与重大开源</div>
+
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="开源">开源</button>
+<button class="filter-chip" data-tag="数据可视化">数据可视化</button>
+<button class="filter-chip" data-tag="本地LLM">本地LLM</button>
+<button class="filter-chip" data-tag="数据工具">数据工具</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. datasette-vega 0.7 发布：Datasette 图表插件时隔八年四个月首次更新</a><a class="toc-item" href="#entry-2">2. datasette-llm 0.1a11 发布：新增 OpenAI 兼容端点，本地模型一行命令驱动 Datasette Agent</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="开源 数据可视化" style="border-left:3px solid #3fb950"><button class="copy-btn" data-title="datasette-vega 0.7 发布：Datasette 图表插件时隔八年四个月首次更新" data-link="https://github.com/simonw/datasette-vega/releases/tag/0.7">复制</button>
+<h2>1. datasette-vega 0.7 发布：Datasette 图表插件时隔八年四个月首次更新（Simon Willison 官方博客 + GitHub Release | 2026-11-14）</h2>
+<p><strong>事件概述</strong>：Simon Willison 发布 Datasette 图表渲染插件 datasette-vega 0.7：为 Datasette 的数据表与自定义 SQL 查询结果渲染 Vega-Lite 图表。该插件上一个版本 0.6.1 停留于 2018 年 7 月 10 日，本次时隔八年四个月重启维护，作者称之为「Datasette 最久未动的插件」。本次更新适配最新 Datasette alpha 版本，并随 Datasette Lite（浏览器 Pyodide/WASM 形态）新获得的 JavaScript 插件加载能力提供在线实机演示。</p>
+<p><strong>首发时间</strong>：GitHub Release published_at 2026-11-14T17:09:09Z（官方仓库 simonw/datasette-vega），与作者博客文章发布时刻（2026-11-14 17:09 UTC）一致；窗口为 UTC 2026-11-14 15:24 → 11-15 02:47，落入窗内。</p>
+<h3>技术与工程价值</h3>
+<ul>
+<li><strong>核心机制</strong>：0.7 版本完成对最新 Datasette alpha 的兼容性重建，并利用 Datasette Lite 新增的 JS 插件机制实现浏览器端渲染——README 实机演示直接链接到 Datasette Lite 在线实例，无需本地安装即可体验。</li>
+<li><strong>实际影响</strong>：Datasette 生态的可视化能力重新接上主线；「浏览器内跑插件」路径有了首个官方演示用例，为数据工具的零安装分享场景（教学、报告、公开数据集探索）提供参照。</li>
+<li><strong>适用限制</strong>：目标运行环境为 Datasette alpha 版本，API 尚未冻结；本条为维护性更新，未披露可比量化指标。</li>
+</ul>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>距上个版本 0.6.1 发布间隔</td><td>8 年 4 个月（2018-07-10 → 2026-11-14）</td><td></td><td><span class="badge compare">对比</span></td></tr></table></div>
+<ul>
+<li>评测/性能：未披露可比量化指标（维护性更新，无基准评测）。</li>
+<li>代码/权重/许可：Apache-2.0 开源，仓库 <a href="https://github.com/simonw/datasette-vega" target="_blank" rel="noopener">github.com/simonw/datasette-vega</a>" target="_blank" rel="noopener">simonw/datasette-vega</a>（65 stars，2026-11-15 GitHub API 查询）。</li>
+<li>论文/官方来源：Release <a href="https://github.com/simonw/datasette-vega/releases/tag/0.7" target="_blank" rel="noopener">github.com/simonw/datasette-vega/releases/tag/0.7</a>" target="_blank" rel="noopener">g<a href="https://ithub.com/simonw/datasette-vega/releases/tag/0.7" target="_blank" rel="noopener">ithub.com/simonw/datasette-vega/releases/tag/0.7</a></a> ｜ 官方博客 <a href="https://simonwillison.net/2026/Nov/14/datasette-vega/" target="_blank" rel="noopener">simonwillison.net/2026/Nov/14/datasette-vega/</a>" target="_blank" rel="noopener">s<a href="https://imonwillison.net/2026/Nov/14/datasette-vega/" target="_blank" rel="noopener">imonwillison.net/2026/Nov/14/datasette-vega/</a></a></li>
+<li>补充证据：作者博客披露 Datasette Lite 于近日获得 JavaScript 插件加载能力（仓库 11-13/11-14 密集提交可证，官方深度文章尚未发布，见「待核实」）。</li>
+</ul>
+<p><strong>标签</strong>：<span class="tag" style="color:#3fb950;border-color:#3fb950">#开源</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#数据可视化</span></p>
+</div>
+
+<div class="card priority-2" id="entry-2" data-tags="开源 本地LLM 数据工具" style="border-left:3px solid #3fb950"><button class="copy-btn" data-title="datasette-llm 0.1a11 发布：新增 OpenAI 兼容端点，本地模型一行命令驱动 Datasette Agent" data-link="https://github.com/datasette/datasette-llm/releases/tag/0.1a11">复制</button>
+<h2>2. datasette-llm 0.1a11 发布：新增 OpenAI 兼容端点，本地模型一行命令驱动 Datasette Agent（Simon Willison 官方博客 + GitHub Release | 2026-11-14）</h2>
+<p><strong>事件概述</strong>：Simon Willison 发布 datasette-llm 0.1a11：Datasette 的中间层插件（供其他插件依赖以统一配置 LLM），本次新增 OpenAI 兼容端点支持——任何实现 OpenAI 伪标准协议的模型服务均可作为后端，覆盖 LM Studio、Ollama、llama.cpp（刚发布 v1.0.0）等本地运行时。作者给出一条 uvx 命令演示：以本地 LM Studio 运行的 qwen3.8-27b 经 datasette-agent 启动一个完整 Datasette Agent 实例。</p>
+<p><strong>首发时间</strong>：GitHub Release published_at 2026-11-14T23:59:28Z（仓库 datasette/datasette-llm，Datasette 官方 org），与作者博客文章发布时刻（2026-11-14 23:59 UTC）一致；落入窗内。</p>
+<h3>技术与工程价值</h3>
+<ul>
+<li><strong>核心机制</strong>：datasette-llm 定位为「intermediate plugin」——不直接面向用户，而是为其他 Datasette 插件提供统一的 LLM 配置面；0.1a11 增加 api_base 配置使 OpenAI 兼容端点（本地或远程）成为一等公民，插件生态无需各自适配即可共享模型配置。</li>
+<li><strong>实际影响</strong>：把「私有数据 + 本地模型 + Agent」的启动成本压缩到一条命令（wget 数据库 → uvx --with datasette-agent datasette --root --secret ... -s plugins.datasette-llm.default_model），对数据不出域的分析场景有直接工程价值。</li>
+<li><strong>适用限制</strong>：仍为 0.1 alpha 第 11 个迭代（a11），API 稳定性未承诺；演示为作者自测口径，未见第三方复现；依赖的 datasette-agent 包同处 alpha（0.5a0）。</li>
+</ul>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>距上个 alpha 0.1a10 发布间隔</td><td>10 天（2026-11-04 → 2026-11-14）</td><td></td><td><span class="badge compare">对比</span></td></tr></table></div>
+<ul>
+<li>评测/性能：未披露可比量化指标。</li>
+<li>代码/权重/许可：Apache-2.0 开源，仓库 <a href="https://github.com/datasette/datasette-llm" target="_blank" rel="noopener">github.com/datasette/datasette-llm</a>" target="_blank" rel="noopener">datasette/datasette-llm</a>（Datasette 官方 org，20 stars，2026-11-15 GitHub API 查询）；依赖 PyPI 包 datasette-agent 0.5a0（作者同生态）。</li>
+<li>论文/官方来源：Release <a href="https://github.com/datasette/datasette-llm/releases/tag/0.1a11" target="_blank" rel="noopener">github.com/datasette/datasette-llm/releases/tag/0.1a11</a>" target="_blank" rel="noopener">g<a href="https://ithub.com/datasette/datasette-llm/releases/tag/0.1a11" target="_blank" rel="noopener">ithub.com/datasette/datasette-llm/releases/tag/0.1a11</a></a> ｜ 官方博客 <a href="https://simonwillison.net/2026/Nov/14/datasette-llm/" target="_blank" rel="noopener">simonwillison.net/2026/Nov/14/datasette-llm/</a>" target="_blank" rel="noopener">s<a href="https://imonwillison.net/2026/Nov/14/datasette-llm/" target="_blank" rel="noopener">imonwillison.net/2026/Nov/14/datasette-llm/</a></a></li>
+<li>补充证据：正文引用的 llama.cpp v1.0.0 发布于 2026-11-13T10:20Z（GitHub Release），早于本窗口起点 29 小时，仅作背景引用，不构成独立条目。</li>
+</ul>
+<p><strong>标签</strong>：<span class="tag" style="color:#3fb950;border-color:#3fb950">#开源</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#本地LLM</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#数据工具</span></p>
+</div>
+
+<div class="section-title">趋势简评</div>
+<div class="panel">
+<ol>
+<li><strong>观察</strong>：本期两条入选均为 Datasette 生态的维护重启——datasette-vega 时隔八年四个月首次更新（条目 1），datasette-llm 十天内连发两个 alpha（条目 2），后者直接把 LM Studio / Ollama / llama.cpp 等 OpenAI 兼容本地运行时纳入统一配置面。<strong>判断</strong>：「本地 OpenAI 兼容端点」正在成为个人数据工具链的默认集成假设——私有数据库 + 本地模型 + Agent 一条命令拉起，数据不出域的分析工作流有了开源参照实现，与依赖专有 API 的闭源工具形成对照。<strong>限制</strong>：两者均为 alpha/维护性版本，均未披露可比量化指标，稳定性与能力上限待正式版验证。</li>
+<li><strong>观察</strong>：作者在条目 1 中披露 Datasette Lite（浏览器 Pyodide/WASM 形态）「刚获得运行 JavaScript 插件的能力」，仓库 11-13/11-14 出现 ASGI service worker 架构改造、Python 3.14 / Pyodide 升级、流式响应等密集提交（属仓库事件，无 release、无官宣文章）。<strong>判断</strong>：Datasette 正向桌面 / 服务器 / 浏览器三形态并行的插件架构收敛，浏览器端插件加载是数据工具零安装化的关键一步。<strong>限制</strong>：该能力以仓库提交为准，官方深度说明尚未发布（作者自述「稍后撰文」），功能边界与稳定性待官宣，不宜据此推断成熟度。</li>
+</ol>
+</div>
+
+<details class="excl"><summary class="fold-summary">去重说明（审计明细，点击展开）</summary>
+<div class="excl">
+<ul>
+<li><strong>七天扫描</strong>：工作区 2026-11-08 10:47 → 2026-11-15 10:47 全部 27 份报告（79 条标题）构建已报道标题关键词集合。</li>
+<li><strong>实体去重</strong>：2 条入选候选均执行 dedup_check.py——datasette-vega 0.7（is_dup:false，零命中）；datasette-llm 0.1a11（is_dup:false，最强历史命中仅共享 openai 一词，jaccard 0.099 / conf 0.33，远低于判重阈值）。</li>
+<li><strong>跨线比对</strong>：并行线 20261115_0833 期（GitHub ebf9a48，Tavily 源）同日发布 4 条——Claude Code Code Mode、n8n Nod、llama.cpp v1.0.0、Cloudflare Kitesurf，与本期 2 条零交叠；按第一信源口径 Code Mode 官方 changelog 日期为 2026-11-12（v2.1.323，并行线标注 11-14 有误）、llama.cpp v1.0.0 为 11-13、Kitesurf 首次公开捕获为 11-12，均早于本窗口起点，n8n Nod 已由第 141 跑报道。本期不受并行线产出影响。</li>
+<li><strong>时间戳纪律排除 6 组</strong>（全部完成第一信源取证证伪）：① llama.cpp v1.0.0——GitHub Release 2026-11-13T10:20Z，T-29h；② Gemini 4 Carbon——Google 官方博客 datePublished 2026-10-28T17:00Z，聚合条目实为 MathArena 榜单收录；③ Seedream 5.0 Pro——字节官方博客日期 2026-07-08，聚合条目实为 fal 平台分发动态；④ cmpnd-ai/dspy-wsp——建仓 2026-11-02、最后 push 11-13T15:43Z、无 release；⑤ google-research/harness2——建仓 2026-10-06、arXiv 2610.14224 十月提交，23.9k stars 属早已公开；⑥ Crissy Field「Lovable 应用泄露敏感数据」研究——主体首发为 Handelsblatt 2026-11-02（研究页自注），英文更新页无独立首发时点，HN 675 分提交属再传播。</li>
+<li><strong>门槛/焦点排除</strong>：LangChain《Goal Engineering: How to Design Goals》（Harrison Chase × Actively AI，2026-11-14T16:00Z 窗内首发，但为设计方法论观点文，无代码/基准/产品发布，按入选门槛剔除）；Anthropic「提示词习惯」（The Decoder 转述 <a href="https://claude.com" target="_blank" rel="noopener">claude.com</a> 资源页更新，文档动态且无第一方时刻）；Nvidia 黄仁勋系列 4 条（11-12 事件续闻）；超聚变 IPO（无 AI 技术实质）；Grok 打电话 / 整合 SpaceX（消费功能动态）；Coxon 访谈与言论 ×2（人物访谈）；Addy Osmani、「最小改动可能有害」、AI 坟场（评论观点）；Fable 5.2 vs Opus 5.5 实测（第三方评测）；TechCrunch Nvidia 话题 ×4。</li>
+<li><strong>无第一信源排除 3 条</strong>：MIT×DeepMind「AI 顾问偏向上级」（聚合时点 23:35Z，检索未果）；浙大「弱模型教练」（18:59Z，检索未果）；Meta「跨视角一致性」论文（21:23Z，检索未果）——转待核实承接。</li>
+<li><strong>结构性说明</strong>：arXiv 周日无新批次（Fri-13 批次已由第 144 跑覆盖，下一批 Mon-16 北京 13:00 后）；HN 窗内 &gt;25 分 22 帖逐一过筛，AI 焦点首发 0（PyPI 项目页改版为 11-06 官方博客的迟到提交；Lovable 安全研究主体首发 11-02）；GitHub 窗内新建 &gt;80 stars 仓库 439 条，但头部 30 名全部为 IPTV_Player_2.0 / GitHub-Copilot-app / ai--manus2.0 三套模板的镜像刷星簇，无合法 AI 开源首发；信源健康 ok=3 / warn=0 / error=0 / manual=1；Techmeme 直连与 WebFetch 双通道均不可达，已披露，未据其缺席下结论；langchain / anthropic_news / mistral 三个 RSS feed URL 404，已改用官方博客 RSS 与页面直抓补核。</li>
+</ul>
+</div></details>
+
+<div class="section-title">待核实</div>
+<div class="panel">
+<ol>
+<li><strong>datasette-vega 0.7 兼容范围</strong>：所适配的 Datasette alpha 具体版本号未逐项核对 README/CHANGELOG；Datasette Lite 实机演示的功能边界以作者博客链接为准，未独立操作验证。</li>
+<li><strong>datasette-llm 0.1a11 演示配置</strong>：uvx 命令、api_base 配置参数与 datasette-agent 0.5a0 的依赖关系均为作者博客自述口径（自述数据，未见第三方复现）；llama.cpp v1.0.0 的 release notes 细节未逐项核对。</li>
+<li><strong>Datasette Lite JS 插件能力</strong>：目前仅有仓库提交（11-13/11-14）与作者博客一句话披露，官方文章未发布，功能完整度与安全边界待官宣核实。</li>
+<li><strong>新增待定位线索</strong>：MIT×DeepMind「AI 顾问偏向上级」、浙大「弱模型教练」、Meta「跨视角一致性」三条聚合线索经检索未定位第一信源，待后续窗口追查。</li>
+<li><strong>存量待核实（承接 backlog）</strong>：以 tools/kb/verification_backlog.json 与 待核实追踪.md 现行口径为准（含 Gemini Decisions API、PyTorch/SGLang on Spyre、LiveKit Cloud API、vLLM-Omni H3-Image、日粒度首发时刻等既有条目）。</li>
+</ol>
+</div>
+
+</div>
+<footer style="margin-top:28px;padding-top:14px;border-top:1px solid #30363d;color:#9da7b1;font-size:13px">发现错误或有建议？<a href="https://github.com/allin8888/ainews/issues/new?title=%E5%8F%8D%E9%A6%88%2F%E7%BA%A0%E9%94%99&body=" target="_blank" rel="noopener" style="color:#58a6ff;text-decoration:none">在 GitHub Issues 提交反馈/纠错</a>（需 GitHub 账号）。</footer>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
