@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日AI新闻推送</title>
+<link rel="stylesheet" href="tools/style_baseline.css">
+
+<style class="an-baseline">
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;padding:36px 20px 56px;background:#0d1117;color:#e6edf3;font:15px/1.85 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}.container{max-width:1020px;margin:auto}header{margin-bottom:30px}h1{font-size:32px;line-height:1.35;letter-spacing:-.5px;margin:8px 0 20px}.eyebrow{color:#58a6ff;letter-spacing:2px;font-size:12px}header p{margin:4px 0}strong{font-weight:650;color:#f0f6fc}.section-title{font-size:20px;font-weight:700;margin:32px 0 16px}.card,.panel,.excl{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:24px;margin:0 0 20px;overflow-wrap:anywhere}.card h2{font-size:22px;line-height:1.55;margin:0 0 20px;padding-right:40px}.card h3{font-size:16px;margin:20px 0 8px}p{margin:12px 0}a{color:#58a6ff;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #79c0ff;outline-offset:4px}li{margin:10px 0}ul,ol{padding-left:24px}blockquote{border-left:3px solid #d29922;padding:12px 16px;margin:20px 0;background:#161b22;color:#c9d1d9}.tag{display:inline-block;font-size:12px;border:1px solid #484f58;border-radius:12px;padding:1px 8px;margin:3px;color:#a5d6ff}code{background:#21262d;border-radius:4px;padding:1px 5px;font-size:13px;color:#a5d6ff}footer{color:#8b949e;font-size:12px;text-align:center;margin-top:32px}@media(max-width:640px){h1{font-size:26px}.section-title{font-size:18px}.panel,.excl{padding:16px}.metrics td{min-width:95px}}
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.<a href="https://badge.com" target="_blank" rel="noopener">badge.com</a>pare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <div class="eyebrow">DAILY AI NEWS DIGEST</div>
+  <h1>每日AI新闻推送</h1>
+  <p><strong>时效窗口</strong>：2026-11-15 20:28 – 2026-11-16 20:28（北京时间）· 4 条精选</p>
+  <p>生成时刻：2026-11-16 20:28 CST | 来源：Tavily MCP</p>
+</header>
+
+<nav class="toc" aria-label="目录">
+  <a class="toc-item" href="#entry-1">🤖 NVIDIA GR00T 2</a>
+  <a class="toc-item" href="#entry-2">🦾 Embodied AI AIR</a>
+  <a class="toc-item" href="#entry-3">⌨️ UiPath AI 编码 Agent</a>
+  <a class="toc-item" href="#entry-4">🔒 Amazon MadPot 钓鱼行动</a>
+</nav>
+
+<div class="filterbar" id="filterbar">
+  <span class="filter-chip" data-tag="EmbodiedAI">EmbodiedAI</span>
+  <span class="filter-chip" data-tag="Robotics">Robotics</span>
+  <span class="filter-chip" data-tag="WorldModel">WorldModel</span>
+  <span class="filter-chip" data-tag="AICoding">AICoding</span>
+  <span class="filter-chip" data-tag="AgenticDevelopment">AgenticDevelopment</span>
+  <span class="filter-chip" data-tag="AISecurity">AISecurity</span>
+  <span class="filter-chip" data-tag="ThreatIntel">ThreatIntel</span>
+  <span class="filter-chip" data-tag="IndustrialAutomation">IndustrialAutomation</span>
+</div>
+
+<!-- Entry 1 -->
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="EmbodiedAI">EmbodiedAI</button>
+<button class="filter-chip" data-tag="Robotics">Robotics</button>
+<button class="filter-chip" data-tag="WorldModel">WorldModel</button>
+<button class="filter-chip" data-tag="NVIDIA">NVIDIA</button>
+<button class="filter-chip" data-tag="HumanoidRobot">HumanoidRobot</button>
+<button class="filter-chip" data-tag="IndustrialAutomation">IndustrialAutomation</button>
+<button class="filter-chip" data-tag="AICoding">AICoding</button>
+<button class="filter-chip" data-tag="AgenticDevelopment">AgenticDevelopment</button>
+<button class="filter-chip" data-tag="RPA">RPA</button>
+<button class="filter-chip" data-tag="UiPath">UiPath</button>
+<button class="filter-chip" data-tag="AISecurity">AISecurity</button>
+<button class="filter-chip" data-tag="AgentSecurity">AgentSecurity</button>
+<button class="filter-chip" data-tag="ThreatIntel">ThreatIntel</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. NVIDIA GR00T 2：World-Action Models 实现物理世界预测与灵巧操作统一框架</a><a class="toc-item" href="#entry-2">2. Embodied AI 发布 AIR 肌腱驱动工厂人形机器人，工业线缆操作可靠度达 98%</a><a class="toc-item" href="#entry-3">3. UiPath 正式发布 AI 编码 Agent，集成 Claude Code 与 OpenAI Codex</a><a class="toc-item" href="#entry-4">4. Amazon 发现 AI Agent 钓鱼行动：伪装 LLM 服务的 MadPot 诱捕网络窃取 LiteLLM/Dify API Key</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="EmbodiedAI Robotics WorldModel NVIDIA" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="NVIDIA GR00T 2：World-Action Models 实现物理世界预测与灵巧操作统一框架" data-link="https://research.nvidia.com/labs/gear/gr00t-2`（2026-11-16，论文预计">复制</button>
+  <button class="copy-btn" onclick="copyCard(this)" title="复制卡片内容">复制</button>
+  <h2><a href="https://research.nvidia.com/labs/gear/gr00t-2">NVIDIA GR00T 2：World-Action Models 实现物理世界预测与灵巧操作统一框架（NVIDIA GEAR Research | 2026-11-16）</a></h2>
+  <p class="entry-meta"><span class="badge self">自述</span> · EmbodiedAI · Robotics · WorldModel · NVIDIA</p>
+
+  <h3>事件概述</h3>
+  <section class="section-content">
+    <p>NVIDIA GEAR 实验室发布 GR00T 2，新一代世界-动作基础模型（World-Action Model, WAM），可同时预测机器人未来视频帧和关节动作。模型在并行夹爪、灵巧手和人形机器人上均通过微调验证。GR00T 2 Turbo 版本仅 2B 参数，使用更高压缩比视频编码器，适合机载部署——G1 人形机器人实测成功完成 popcorn 舀取服务、液体清理、多物桌面整理等任务。加入模拟数据后，GR00T 2 Turbo 分布外成功率从 6.7% 跃升至 63.3%，GR00T 1.7 同步提升至 40.0%。论文全文与代码将于 12 月开源。</p>
+  </section>
+
+  <h3>技术与工程价值</h3>
+  <section class="section-content">
+    <ul>
+      <li><strong>核心机制</strong>：与传统 VLA 只预测动作不同，GR00T 2 联合建模"世界如何变化"和"机器人如何行动"，实现 X-Adaptability——在非接触式示范（如人类用遥控器控制设备）中学到的技能可直接迁移到从未见过的形态（机械臂、轮式底盘、穿戴设备）。</li>
+      <li><strong>实际影响</strong>：世界-动作联合建模显著缓解 sim-to-real 鸿沟；Turbo 版已实现在 Tesla Optimus G1 上人机协同作业，标志着 WAM 架构进入工业级机器人验证阶段。</li>
+    </ul>
+  </section>
+
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>YAM 固定管道装配</td><td>90%</td><td><div class="bar"><span style="width:90%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>YAM breaker 线插入</td><td>100%</td><td><div class="bar"><span style="width:100%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>G1 分布外成功率 (sim 增强)</td><td>63.3%</td><td><div class="bar"><span style="width:63%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <section class="metrics">
+    <table>
+      <tr><th>指标</th><th>数值</th><th>类型</th><th>进度条</th></tr>
+      <tr><td>YAM 固定管道装配</td><td>90%</td><td><span class="badge self">自述</span></td><td><div class="bar"><span style="width:90%"></span></div></td></tr>
+      <tr><td>YAM breaker 线插入</td><td>100%</td><td><span class="badge self">自述</span></td><td><div class="bar"><span style="width:100%"></span></div></td></tr>
+      <tr><td>G1 分布外成功率 (sim 增强)</td><td>63.3%</td><td><span class="badge self">自述</span></td><td><div class="bar"><span style="width:63%"></span></div></td></tr>
+    </table>
+    <p style="margin-top:8px;font-size:12px;color:#8b949e;">来源：<a href="https://research.nvidia.com/labs/gear/gr00t-2"><a href="https://research.nvidia.com/labs/gear/gr00t-2</a>（论文预计" target="_blank" rel="noopener">https://research.nvidia.com/labs/gear/gr00t-2</a>（论文预计</a> 12 月开放）</p>
+  </section>
+</div>
+
+<!-- Entry 2 -->
+<div class="card priority-2" id="entry-2" data-tags="EmbodiedAI HumanoidRobot IndustrialAutomation" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Embodied AI 发布 AIR 肌腱驱动工厂人形机器人，工业线缆操作可靠度达 98%" data-link="https://aiweekly.co/alerts/embodied-ai-debuts-air-tendon-driven-factory-humanoid-hits-98-reliability-on`">复制</button>
+  <button class="copy-btn" onclick="copyCard(this)" title="复制卡片内容">复制</button>
+  <h2><a href="https://aiweekly.co/alerts/embodied-ai-debuts-air-tendon-driven-factory-humanoid-hits-98-reliability-on">Embodied AI 发布 AIR 肌腱驱动工厂人形机器人，工业线缆操作可靠度达 98%（Humanoid Europe 2026 | <a href="https://roboticsandautomationnews.com" target="_blank" rel="noopener">roboticsandautomationnews.com</a> | 2026-11-16）</a></h2>
+  <p class="entry-meta"><span class="badge third">第三方</span> · EmbodiedAI · HumanoidRobot · IndustrialAutomation</p>
+
+  <h3>事件概述</h3>
+  <section class="section-content">
+    <p>瑞士洛桑初创 Embodied AI（创始人含 MIT/EPFL/ETH Zurich 前研究员 Francesco Stella、Kai Junge）在慕尼黑 Humanoid Europe 2026 发布 AIR——双臂轮式人形机器人，采用肌腱驱动手臂结构。在工业线缆处理测试中达成 98% 可靠度（目标值 90%），能从录制演示视频约一个月内学会新任务，设计符合 ISO/TS 15066:2016 安全标准，计划 2027 年取得 CE 认证量产。</p>
+  </section>
+
+  <h3>技术与工程价值</h3>
+  <section class="section-content">
+    <ul>
+      <li><strong>核心机制</strong>：肌腱驱动架构模仿人类手部精密运动，兼顾力控柔顺性与高带宽响应；双 Arm + 轮式底盘组合适合工厂狭窄通道场景。</li>
+      <li><strong>实际影响</strong>：AIR 将人形机器人可靠性指标推向工业生产可用门槛（90%+），为汽车线束、电子制造等重复精度要求高的场景提供新选项。</li>
+    </ul>
+  </section>
+
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>线缆操作可靠度</td><td>98%</td><td><div class="bar"><span style="width:98%"></span></div></td><td><span class="badge third">第三方</span></td></tr><tr><td>目标可靠度</td><td>90%</td><td><div class="bar"><span style="width:90%"></span></div></td><td><span class="badge compare">对比</span></td></tr><tr><td>学习周期</td><td>~1 month</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <section class="metrics">
+    <table>
+      <tr><th>指标</th><th>数值</th><th>类型</th><th>进度条</th></tr>
+      <tr><td>线缆操作可靠度</td><td>98%</td><td><span class="badge third">第三方</span></td><td><div class="bar"><span style="width:98%"></span></div></td></tr>
+      <tr><td>目标可靠度</td><td>90%</td><td><span class="badge compare">对比基线</span></td><td><div class="bar"><span style="width:90%"></span></div></td></tr>
+      <tr><td>学习周期</td><td>~1 month</td><td><span class="badge self">自述</span></td><td>—</td></tr>
+    </table>
+    <p style="margin-top:8px;font-size:12px;color:#8b949e;">来源：<a href="https://aiweekly.co/alerts/embodied-ai-debuts-air-tendon-driven-factory-humanoid-hits-98-reliability-on"><a href="https://aiweekly.co/alerts/embodied-ai-debuts-air-tendon-driven-factory-humanoid-hits-98-reliability-on</a></p>" target="_blank" rel="noopener">https://aiweekly.co/alerts/embodied-ai-debuts-air-tendon-driven-factory-humanoid-hits-98-reliability-on</a></p></a>
+  </section>
+</div>
+
+<!-- Entry 3 -->
+<div class="card priority-3" id="entry-3" data-tags="AICoding AgenticDevelopment RPA UiPath" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="UiPath 正式发布 AI 编码 Agent，集成 Claude Code 与 OpenAI Codex" data-link="https://finance.biggo.com/news/39539374-ae15-4185-a742-e2b91e72ee50`">复制</button>
+  <button class="copy-btn" onclick="copyCard(this)" title="复制卡片内容">复制</button>
+  <h2><a href="https://finance.biggo.com/news/39539374-ae15-4185-a742-e2b91e72ee50">UiPath 正式发布 AI 编码 Agent，集成 Claude Code 与 OpenAI Codex（BigGo Finance | 2026-11-16）</a></h2>
+  <p class="entry-meta"><span class="badge self">自述</span> · AICoding · AgenticDevelopment · RPA · UiPath</p>
+
+  <h3>事件概述</h3>
+  <section class="section-content">
+    <p>企业 RPA 龙头 UiPath 于 11 月 16 日正式推出 AI 编码 Agent，将其整合 Anthropic Claude Code 与 OpenAI Codex CLI 作为底层引擎，面向开发自动化流程设计与维护场景。产品附带 AI 开发工作流、数据连接管理、安全管控三大模块，定位为"低代码向全代码过渡的桥梁"。</p>
+  </section>
+
+  <h3>技术与工程价值</h3>
+  <section class="section-content">
+    <ul>
+      <li><strong>核心机制</strong>：Agent 以自然语言描述业务逻辑，自动编排 RPA 流程并生成可执行 Python/C# 代码；内置安全审查层对生成的脚本进行合规扫描。</li>
+      <li><strong>实际影响</strong>：RPA 市场主流厂商首次全面拥抱 Agentic Coding 范式，意味着大量存量企业流程可借助 LLM 完成从"录播回放"到"意图驱动"的代际升级，同时也打开了 Cursor / Windsurf 等独立编码 Agent 向企业 B2B 渗透的新路径。</li>
+    </ul>
+  </section>
+
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>底层模型支持</td><td>Claude Code + Codex</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>产品状态</td><td>正式发布</td><td><div class="bar"><span style="width:100%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <section class="metrics">
+    <table>
+      <tr><th>指标</th><th>数值</th><th>类型</th><th>进度条</th></tr>
+      <tr><td>底层模型支持</td><td>Claude Code + Codex</td><td><span class="badge self">自述</span></td><td>—</td></tr>
+      <tr><td>产品状态</td><td>正式发布</td><td><span class="badge self">自述</span></td><td><div class="bar"><span style="width:100%"></span></div></td></tr>
+    </table>
+    <p style="margin-top:8px;font-size:12px;color:#8b949e;">来源：<a href="https://finance.biggo.com/news/39539374-ae15-4185-a742-e2b91e72ee50"><a href="https://finance.biggo.com/news/39539374-ae15-4185-a742-e2b91e72ee50</a></p>" target="_blank" rel="noopener">https://finance.biggo.com/news/39539374-ae15-4185-a742-e2b91e72ee50</a></p></a>
+  </section>
+</div>
+
+<!-- Entry 4 -->
+<div class="card priority-4" id="entry-4" data-tags="AISecurity AgentSecurity ThreatIntel" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Amazon 发现 AI Agent 钓鱼行动：伪装 LLM 服务的 MadPot 诱捕网络窃取 LiteLLM/Dify API Key" data-link="https://thehackernews.com/2026/11/amazon-uncovers-ai-agent-campaign.html`">复制</button>
+  <button class="copy-btn" onclick="copyCard(this)" title="复制卡片内容">复制</button>
+  <h2><a href="https://thehackernews.com/2026/11/amazon-uncovers-ai-agent-campaign.html">Amazon 发现 AI Agent 钓鱼行动：伪装 LLM 服务的 MadPot 诱捕网络窃取 LiteLLM/Dify API Key（The Hacker News | 2026-11-16）</a></h2>
+  <p class="entry-meta"><span class="badge third">第三方</span> · AISecurity · AgentSecurity · ThreatIntel</p>
+
+  <h3>事件概述</h3>
+  <section class="section-content">
+    <p>亚马逊安全团队公布一项跨期攻击（10 月初至本周）：威胁行为者部署了名为 MadPot 的蜜罐服务器群，伪装成流行 LLM 服务（LiteLLM、Dify 等），诱使运行中的 AI Agent 主动发送请求。由于多数 Agent 会将完整历史上下文（包括操作员指令与工具调用结果）一并携带，攻击者成功从中提取了真实 API Key 和部分用户配置信息。</p>
+  </section>
+
+  <h3>技术与工程价值</h3>
+  <section class="section-content">
+    <ul>
+      <li><strong>核心机制</strong>：利用 AI Agent "持续工作记忆"特性——Agent 在长时间任务链中会反复携带 credentials，一旦接入假服务即泄漏敏感上下文；区别于传统社会工程学，此次无需诱导真人交互。</li>
+      <li><strong>实际影响</strong>：该事件警示所有生产环境 AI Agent（尤其是云端部署型如 Claude Code / Codex / Dify）须启用请求级 credential 隔离与最小权限原则；企业安全防护套件（CrowdStrike Falcon Guardian GA、Microsoft Defender Agent Runtime Protection Preview）正快速补齐此类检测能力。</li>
+    </ul>
+  </section>
+
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>攻击持续时间</td><td>≥ 6 weeks</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>防护产品状态</td><td>CrowdStrike GA / Defender Preview</td><td></td><td><span class="badge third">第三方</span></td></tr></table></div>
+  <section class="metrics">
+    <table>
+      <tr><th>指标</th><th>数值</th><th>类型</th><th>进度条</th></tr>
+      <tr><td>攻击持续时间</td><td>≥ 6 weeks</td><td><span class="badge self">自述</span></td><td>—</td></tr>
+      <tr><td>CrowdStrike Falcon Guardian</td><td>GA（2026-09）</td><td><span class="badge third">第三方</span></td><td>—</td></tr>
+      <tr><td>Defender Agent Runtime Protection</td><td>Preview</td><td><span class="badge third">第三方</span></td><td>—</td></tr>
+    </table>
+    <p style="margin-top:8px;font-size:12px;color:#8b949e;">来源：<a href="https://thehackernews.com/2026/11/amazon-uncovers-ai-agent-campaign.html"><a href="https://thehackernews.com/2026/11/amazon-uncovers-ai-agent-campaign.html</a></p>" target="_blank" rel="noopener">https://thehackernews.com/2026/11/amazon-uncovers-ai-agent-campaign.html</a></p></a>
+  </section>
+</div>
+
+<!-- Dedup section -->
+<div class="panel">
+  <div class="section-title">去重说明</div>
+  <ul>
+    <li><strong>观察项</strong>：NVIDIA GR00T 2 与 11-11 期 GR00T 2 开源消息属同一事件后续（详细性能数据披露）；UiPath AI 编码 Agent 与 11-12 期 AWS UA EF 评测框架无实体重叠，判定独立；AI Rudder CALL-E 语音通话发布（11-13 首发，11-16 多篇转载）因信源重复且技术深度不足未入选；Mercor $750M 融资（$20B 估值）为行业资金流向信号，技术密度略低，留待后续跟踪。</li>
+  </ul>
+</div>
+
+<footer>
+  <p>数据来源：Tavily MCP · 时效窗口：2026-11-15 20:28 – 2026-11-16 20:28（北京时间）</p>
+  <p>本报告仅供参考，不构成投资建议。</p>
+</footer>
+
+</div>
+
+<script>
+// filterbar logic
+document.querySelectorAll('.filter-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    chip.classList.toggle('active');
+    const active = [...document.querySelectorAll('.filter-chip.active')].map(c => c.dataset.tag);
+    document.querySelectorAll('.card').forEach(card => {
+      if (active.length === 0) { card.style.display = ''; return; }
+      const tags = card.textContent.match(/#[\w]+/g) || [];
+      card.style.display = active.some(t => tags.includes('#' + t)) ? '' : 'none';
+    });
+  });
+});
+function copyCard(btn) {
+  const card = btn.closest('.card');
+  const text = card.innerText.replace('复制', '').trim();
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '已复制';
+    setTimeout(() => btn.textContent = '复制', 1500);
+  });
+}
+</script>
+<footer style="margin-top:28px;padding-top:14px;border-top:1px solid #30363d;color:#9da7b1;font-size:13px">发现错误或有建议？<a href="https://github.com/allin8888/ainews/issues/new?title=%E5%8F%8D%E9%A6%88%2F%E7%BA%A0%E9%94%99&body=" target="_blank" rel="noopener" style="color:#58a6ff;text-decoration:none">在 GitHub Issues 提交反馈/纠错</a>（需 GitHub 账号）。</footer>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
