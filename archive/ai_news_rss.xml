@@ -3,7 +3,42 @@
 <title>每日 AI 前沿技术精选</title>
 <link>https://allin8888.github.io/ainews/archive/</link>
 <description>每日 AI 前沿技术精选 · 结构化条目流</description>
-<lastBuildDate>Mon, 16 Nov 2026 03:45:46 -0000</lastBuildDate>
+<lastBuildDate>Tue, 17 Nov 2026 14:59:48 -0000</lastBuildDate>
+<item>
+<title>商汤 SenseNova Loop-9B 全量开源发布：32 层权重共享执行 56 次、512K 上下文的 9B Agent 编码模型</title>
+<link>https://allin8888.github.io/ainews/archive/每日AI新闻推送_20261117_2219.html</link>
+<guid isPermaLink="false">20261117_2219-商汤 SenseNova Loop-9B 全量开源发布：32 层权重共享执行 56 次、512K 上下文的 9B Agent 编码模型</guid>
+<pubDate>2026-11-17</pubDate>
+<category>AI-Coding、开源工程、Agent</category>
+</item>
+<item>
+<title>FlagOpen 发布 HumanCOIN：LeRobot 生态首个覆盖 EEG/EMG 的人形操作人类信号数据基础设施</title>
+<link>https://allin8888.github.io/ainews/archive/每日AI新闻推送_20261117_2219.html</link>
+<guid isPermaLink="false">20261117_2219-FlagOpen 发布 HumanCOIN：LeRobot 生态首个覆盖 EEG/EMG 的人形操作人类信号数据基础设施</guid>
+<pubDate>2026-11-17</pubDate>
+<category>具身智能、数据基础设施、机器人</category>
+</item>
+<item>
+<title>Liquid AI 发布 d1.2/d1.2-ultra 决策模型：全模态输入登顶 AA Decision Index v2.1，校准误差 0.8</title>
+<link>https://allin8888.github.io/ainews/archive/每日AI新闻推送_20261117_2219.html</link>
+<guid isPermaLink="false">20261117_2219-Liquid AI 发布 d1.2/d1.2-ultra 决策模型：全模态输入登顶 AA Decision Index v2.1，校准误差 0.8</guid>
+<pubDate>2026-11-17</pubDate>
+<category>决策模型、基础设施、全模态</category>
+</item>
+<item>
+<title>OVHcloud 首个 LLM 家族 Olala 开源：mini 7A1B 混合 MoE 架构 8GB 显存可跑，欧洲公共超算训练</title>
+<link>https://allin8888.github.io/ainews/archive/每日AI新闻推送_20261117_2219.html</link>
+<guid isPermaLink="false">20261117_2219-OVHcloud 首个 LLM 家族 Olala 开源：mini 7A1B 混合 MoE 架构 8GB 显存可跑，欧洲公共超算训练</guid>
+<pubDate>2026-11-17</pubDate>
+<category>开源工程、基础设施、MoE</category>
+</item>
+<item>
+<title>Isomorphic Labs 完成 $5B Series C：Sequoia 与 Greenoaks 领投</title>
+<link>https://allin8888.github.io/ainews/archive/每日AI新闻推送_20261117_2219.html</link>
+<guid isPermaLink="false">20261117_2219-Isomorphic Labs 完成 $5B Series C：Sequoia 与 Greenoaks 领投</guid>
+<pubDate>2026-11-17</pubDate>
+<category>投融资、AI4Science、产业合作</category>
+</item>
 <item>
 <title>阿里 Qwen4-Max 正式发布：2.4T 参数骨干 MoE、1M 上下文与长程智能体，Agent Arena 中国模型第一</title>
 <link>https://allin8888.github.io/ainews/archive/每日AI新闻推送_20261116_1109.html</link>
