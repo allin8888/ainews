@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日AI新闻推送</title>
+
+<style class="an-baseline">
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;padding:36px 20px 56px;background:#0d1117;color:#e6edf3;font:15px/1.85 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}.container{max-width:1020px;margin:auto}header{margin-bottom:30px}h1{font-size:32px;line-height:1.35;letter-spacing:-.5px;margin:8px 0 20px}.eyebrow{color:#58a6ff;letter-spacing:2px;font-size:12px}header p{margin:4px 0}strong{font-weight:650;color:#f0f6fc}.section-title{font-size:20px;font-weight:700;margin:32px 0 16px}.card,.panel,.excl{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:24px;margin:0 0 20px;overflow-wrap:anywhere}.card h2{font-size:22px;line-height:1.55;margin:0 0 20px;padding-right:40px}.card h3{font-size:16px;margin:20px 0 8px}p{margin:12px 0}a{color:#58a6ff;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #79c0ff;outline-offset:4px}li{margin:10px 0}ul,ol{padding-left:24px}blockquote{border-left:3px solid #d29922;padding:12px 16px;margin:20px 0;background:#161b22;color:#c9d1d9}.tag{display:inline-block;font-size:12px;border:1px solid #484f58;border-radius:12px;padding:1px 8px;margin:3px;color:#a5d6ff}code{background:#21262d;border-radius:4px;padding:1px 5px;font-size:13px;color:#a5d6ff}footer{color:#8b949e;font-size:12px;text-align:center;margin-top:32px}@media(max-width:640px){h1{font-size:26px}.section-title{font-size:18px}.panel,.excl{padding:16px}.metrics td{min-width:95px}}
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.<a href="https://badge.com" target="_blank" rel="noopener">badge.com</a>pare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>每日AI新闻推送</h1>
+
+<nav class="toc"><a class="toc-item" href="#entry-1">1. Nasiko 发布 TokenOps——AI Agent 花费追踪与预算控制工具</a><a class="toc-item" href="#entry-2">2. SlashVibe 开源 AI Agent 桌面控制器——带独立屏幕与语音控制的物理交互层</a><a class="toc-item" href="#entry-3">3. Anthropic Claude Code 创始人 Boris Cherny 接受 CNN 专访——深入剖析 AI 编程代理的构建哲学</a></nav>
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="AIcoding">AIcoding</button>
+<button class="filter-chip" data-tag="Agent">Agent</button>
+<button class="filter-chip" data-tag="成本管控">成本管控</button>
+<button class="filter-chip" data-tag="TokenOps">TokenOps</button>
+<button class="filter-chip" data-tag="具身智能">具身智能</button>
+<button class="filter-chip" data-tag="开源硬件">开源硬件</button>
+<button class="filter-chip" data-tag="Anthropic">Anthropic</button>
+<button class="filter-chip" data-tag="ClaudeCode">ClaudeCode</button>
+<button class="filter-chip" data-tag="IPO">IPO</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. Nasiko 发布 TokenOps——AI Agent 花费追踪与预算控制工具</a><a class="toc-item" href="#entry-2">2. SlashVibe 开源 AI Agent 桌面控制器——带独立屏幕与语音控制的物理交互层</a><a class="toc-item" href="#entry-3">3. Anthropic Claude Code 创始人 Boris Cherny 接受 CNN 专访——深入剖析 AI 编程代理的构建哲学</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="AIcoding Agent 成本管控 TokenOps" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Nasiko 发布 TokenOps——AI Agent 花费追踪与预算控制工具" data-link="https://cryptobriefing.com/nasiko-tokenops-ai-agent-budget-controls/">复制</button><h2><a href="https://cryptobriefing.com/nasiko-tokenops-ai-agent-budget-controls/" target="_blank" rel="noopener">Nasiko 发布 TokenOps——AI Agent 花费追踪与预算控制工具</a></h2><p style="color:#8b949e;font-size:12px;margin:0 0 14px;">Crypto Briefing&nbsp;|&nbsp;2026-11-13</p>
+<h3>事件概述</h3>
+<p>Nasiko 推出 TokenOps，一款面向多 Agent 场景的花费追踪平台，可按 Agent、团队、模型三个维度实时统计 token 消耗。系统在花费达到预算 80% 时自动告警，到达上限则暂停对应 Agent 执行。</p>
+<h3>技术与工程价值</h3>
+<p><strong>核心机制：</strong>围绕「Agent 调用链路的费用可视性」这一痛点，提供分级告警+自动熔断策略，填补当前 AI Coding Agent 运维中缺乏细粒度成本控制工具的空白。<br><strong>实际影响：</strong>当企业同时运行多个编码/自动化 Agent 时，TokenOps 可避免单点失控导致的账单爆炸；其多 Agent 聚合视角对 FinOps 向 TokenOps 演进有直接参考价值。</p>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>功能覆盖度</td><td>三维度追踪 + 自动熔断</td><td><div class="bar"><span style="width:70%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>市场信号</td><td>新兴品类，待验证</td><td><div class="bar"><span style="width:40%"></span></div></td><td><span class="badge third">第三方</span></td></tr></table></div>
+<ul>
+<li>追踪维度：按 Agent / 团队 / 模型三级隔离</li>
+<li>告警阈值：80%（可配置）；熔断阈值：100%</li>
+<li>发布时间：2026-11-13</li>
+<li>来源：<a href="https://cryptobriefing.com/nasiko-tokenops-ai-agent-budget-controls/" target="_blank" rel="noopener">Crypto Briefing</a></li>
+</ul>
+<p><code>#AIcoding</code> <code>#Agent</code> <code>#成本管控</code> <code>#TokenOps</code></p>
+<pre class="metrics_fence">[{"label":"功能覆盖度","value":"三维度追踪 + 自动熔断","kind":"self","bar":70},{"label":"市场信号","value":"新兴品类，待验证","kind":"third","bar":40}]</pre></div>
+<div class="card priority-2" id="entry-2" data-tags="AIcoding 具身智能 开源硬件 Agent" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="SlashVibe 开源 AI Agent 桌面控制器——带独立屏幕与语音控制的物理交互层" data-link="https://the-gadgeteer.com/2026/11/15/slashvibe-open-source-ai-agent-desk-controller/">复制</button><h2><a href="https://the-gadgeteer.com/2026/11/15/slashvibe-open-source-ai-agent-desk-controller/" target="_blank" rel="noopener">SlashVibe 开源 AI Agent 桌面控制器——带独立屏幕与语音控制的物理交互层</a></h2><p style="color:#8b949e;font-size:12px;margin:0 0 14px;">The Gadgeteer&nbsp;|&nbsp;2026-11-15</p>
+<h3>事件概述</h3>
+<p>SlashVibe 是一个开源 AI Agent 桌面工作站控制器，配备独立小屏（显示 Agent 状态/进度）及可拆卸语音控制器，内置 Node.js 与 Python SDK，支持开发者自定义 Agent 工作流。Kickstarter 早鸟价 $189（零售价 $249），预计 2027 年 3 月发货。</p>
+<h3>技术与工程价值</h3>
+<p><strong>核心机制：</strong>为多 Agent 并行工作的场景提供「物理可见层」——通过专属屏幕与语音交互，让 Agent 执行状态从「黑盒进程」变为「可视化仪表盘」。开源 SDK 降低自定义集成门槛。<br><strong>实际影响：</strong>与 Vercel agent-desktop（纯软件方案）形成硬件互补，适合希望本地优先、离线可用的 AI 开发者和团队。</p>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>Kickstarter 早鸟价</td><td>$189</td><td><div class="bar"><span style="width:0%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>SDK 语言</td><td>Node.js + Python</td><td><div class="bar"><span style="width:60%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>发货预期</td><td>2027-03</td><td><div class="bar"><span style="width:0%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+<ul>
+<li>SDK 语言：Node.js + Python 双栈</li>
+<li>硬件形态：桌面控制器 + 可拆卸语音模块</li>
+<li>Kickstarter 时间：2026-11-15 上线</li>
+<li>发货预期：2027-03</li>
+<li>来源：<a href="https://the-gadgeteer.com/2026/11/15/slashvibe-open-source-ai-agent-desk-controller/" target="_blank" rel="noopener">The Gadgeteer</a></li>
+</ul>
+<p><code>#AIcoding</code> <code>#具身智能</code> <code>#开源硬件</code> <code>#Agent</code></p>
+<pre class="metrics_fence">[{"label":"Kickstarter 早鸟价","value":"$189","kind":"self","bar":0},{"label":"SDK 语言","value":"Node.js + Python","kind":"self","bar":60},{"label":"发货预期","value":"2027-03","kind":"self","bar":0}]</pre></div>
+<div class="card priority-3" id="entry-3" data-tags="AIcoding Anthropic ClaudeCode IPO" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Anthropic Claude Code 创始人 Boris Cherny 接受 CNN 专访——深入剖析 AI 编程代理的构建哲学" data-link="https://www.cnn.com/2026/11/15/tech/anthropic-claude-code-boris-cherny">复制</button><h2><a href="https://www.cnn.com/2026/11/15/tech/anthropic-claude-code-boris-cherny" target="_blank" rel="noopener">Anthropic Claude Code 创始人 Boris Cherny 接受 CNN 专访——深入剖析 AI 编程代理的构建哲学</a></h2><p style="color:#8b949e;font-size:12px;margin:0 0 14px;">CNN&nbsp;|&nbsp;2026-11-15</p>
+<h3>事件概述</h3>
+<p>CNN 于 11 月 15 日发布对 Boris Cherny 的专访，Boris 是 Claude Code（Anthropic 旗舰 AI 编程代理）的核心创建者。文章回顾了他如何带领团队将 Claude Code 打造成 Anthropic 最畅销产品，并探讨其在即将到来的 IPO 前的战略定位。</p>
+<h3>技术与工程价值</h3>
+<p><strong>核心机制：</strong>访谈披露了 Claude Code 的架构设计理念——以「上下文理解+安全沙箱」为核心的 Agent 工作流，区别于传统 IDE 插件式的补全模式。<br><strong>实际影响：</strong>作为首个由大模型公司自建、深度集成自身模型的编程代理成功案例，Claude Code 的工程实践（错误处理、权限边界、用户确认机制）对同类产品的开发具有重要参考意义。</p>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>产品地位</td><td>Anthropic 最畅销产品</td><td><div class="bar"><span style="width:90%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>公司估值</td><td>~$965B（待核实）</td><td><div class="bar"><span style="width:0%"></span></div></td><td><span class="badge third">第三方</span></td></tr><tr><td>技术影响力</td><td>高（定义编程代理范式）</td><td><div class="bar"><span style="width:80%"></span></div></td><td><span class="badge third">第三方</span></td></tr></table></div>
+<ul>
+<li>人物：Boris Cherny（Claude Code 核心创建者）</li>
+<li>背景：Anthropic 预计即将启动史上最大规模 IPO 之一（估值约 9650 亿美元，待核实）</li>
+<li>来源：<a href="https://www.cnn.com/2026/11/15/tech/anthropic-claude-code-boris-cherny" target="_blank" rel="noopener">CNN</a></li>
+</ul>
+<p><code>#AIcoding</code> <code>#Anthropic</code> <code>#ClaudeCode</code> <code>#IPO</code></p>
+<pre class="metrics_fence">[{"label":"产品地位","value":"Anthropic 最畅销产品","kind":"self","bar":90},{"label":"公司估值","value":"~$965B（待核实）","kind":"third","bar":0},{"label":"技术影响力","value":"高（定义编程代理范式）","kind":"third","bar":80}]</pre></div>
+</div>
+<footer>
+<p>本报告仅供参考，不构成投资建议。数据来源：Crypto Briefing、The Gadgeteer、CNN 等公开信源。</p>
+</footer>
+<footer style="margin-top:28px;padding-top:14px;border-top:1px solid #30363d;color:#9da7b1;font-size:13px">发现错误或有建议？<a href="https://github.com/allin8888/ainews/issues/new?title=%E5%8F%8D%E9%A6%88%2F%E7%BA%A0%E9%94%99&body=" target="_blank" rel="noopener" style="color:#58a6ff;text-decoration:none">在 GitHub Issues 提交反馈/纠错</a>（需 GitHub 账号）。</footer>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
