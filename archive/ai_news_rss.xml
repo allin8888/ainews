@@ -3,7 +3,42 @@
 <title>每日 AI 前沿技术精选</title>
 <link>https://allin8888.github.io/ainews/archive/</link>
 <description>每日 AI 前沿技术精选 · 结构化条目流</description>
-<lastBuildDate>Tue, 17 Nov 2026 14:59:48 -0000</lastBuildDate>
+<lastBuildDate>Wed, 18 Nov 2026 03:09:03 -0000</lastBuildDate>
+<item>
+<title>OpenAI 发布 GPT-6.2 Astra 与 Sol：Astra 成为首个获评「高」级 AI 自我改进能力的前沿模型</title>
+<link>https://allin8888.github.io/ainews/archive/每日AI新闻推送_20261118_1100.html</link>
+<guid isPermaLink="false">20261118_1100-OpenAI 发布 GPT-6.2 Astra 与 Sol：Astra 成为首个获评「高」级 AI 自我改进能力的前沿模型</guid>
+<pubDate>2026-11-18</pubDate>
+<category>AI-Coding、RSI、前沿模型</category>
+</item>
+<item>
+<title>微软 Ignite 2026 一次发布七款自研 MAI 模型：MAI Code 2 主打「5% 成本达 Opus 5.5 约 96% 性能」</title>
+<link>https://allin8888.github.io/ainews/archive/每日AI新闻推送_20261118_1100.html</link>
+<guid isPermaLink="false">20261118_1100-微软 Ignite 2026 一次发布七款自研 MAI 模型：MAI Code 2 主打「5% 成本达 Opus 5.5 约 96% 性能」</guid>
+<pubDate>2026-11-18</pubDate>
+<category>AI-Coding、开源工程、Agent</category>
+</item>
+<item>
+<title>Perplexity 上线 Multiagent：主智能体把任务拆分给运行不同前沿模型的多个智能体并合并结果</title>
+<link>https://allin8888.github.io/ainews/archive/每日AI新闻推送_20261118_1100.html</link>
+<guid isPermaLink="false">20261118_1100-Perplexity 上线 Multiagent：主智能体把任务拆分给运行不同前沿模型的多个智能体并合并结果</guid>
+<pubDate>2026-11-18</pubDate>
+<category>Agent、多智能体编排、AI-Coding</category>
+</item>
+<item>
+<title>AnythingLLM v1.20.0 发布：MCP 服务器可接收调用方身份与工作区上下文，浏览器扩展升级为完整聊天侧边栏</title>
+<link>https://allin8888.github.io/ainews/archive/每日AI新闻推送_20261118_1100.html</link>
+<guid isPermaLink="false">20261118_1100-AnythingLLM v1.20.0 发布：MCP 服务器可接收调用方身份与工作区上下文，浏览器扩展升级为完整聊天侧边栏</guid>
+<pubDate>2026-11-18</pubDate>
+<category>Agent、MCP、开源工程</category>
+</item>
+<item>
+<title>Open WebUI v0.13.4 发布：Tether 取代 Direct Connections 打通本地 Ollama/LM Studio/MCP 与终端，编码智能体可作为聊天模型接入</title>
+<link>https://allin8888.github.io/ainews/archive/每日AI新闻推送_20261118_1100.html</link>
+<guid isPermaLink="false">20261118_1100-Open WebUI v0.13.4 发布：Tether 取代 Direct Connections 打通本地 Ollama/LM Studio/MCP 与终端，编码智能体可作为聊天模型接入</guid>
+<pubDate>2026-11-18</pubDate>
+<category>Agent、开源工具链、AI-Coding</category>
+</item>
 <item>
 <title>商汤 SenseNova Loop-9B 全量开源发布：32 层权重共享执行 56 次、512K 上下文的 9B Agent 编码模型</title>
 <link>https://allin8888.github.io/ainews/archive/每日AI新闻推送_20261117_2219.html</link>
