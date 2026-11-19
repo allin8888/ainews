@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>每日AI新闻推送</title>
+
+
+<style class="an-baseline">
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;padding:36px 20px 56px;background:#0d1117;color:#e6edf3;font:15px/1.85 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}.container{max-width:1020px;margin:auto}header{margin-bottom:30px}h1{font-size:32px;line-height:1.35;letter-spacing:-.5px;margin:8px 0 20px}.eyebrow{color:#58a6ff;letter-spacing:2px;font-size:12px}header p{margin:4px 0}strong{font-weight:650;color:#f0f6fc}.section-title{font-size:20px;font-weight:700;margin:32px 0 16px}.card,.panel,.excl{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:24px;margin:0 0 20px;overflow-wrap:anywhere}.card h2{font-size:22px;line-height:1.55;margin:0 0 20px;padding-right:40px}.card h3{font-size:16px;margin:20px 0 8px}p{margin:12px 0}a{color:#58a6ff;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #79c0ff;outline-offset:4px}li{margin:10px 0}ul,ol{padding-left:24px}blockquote{border-left:3px solid #d29922;padding:12px 16px;margin:20px 0;background:#161b22;color:#c9d1d9}.tag{display:inline-block;font-size:12px;border:1px solid #484f58;border-radius:12px;padding:1px 8px;margin:3px;color:#a5d6ff}code{background:#21262d;border-radius:4px;padding:1px 5px;font-size:13px;color:#a5d6ff}footer{color:#8b949e;font-size:12px;text-align:center;margin-top:32px}@media(max-width:640px){h1{font-size:26px}.section-title{font-size:18px}.panel,.excl{padding:16px}.metrics td{min-width:95px}}
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.<a href="https://badge.com" target="_blank" rel="noopener">badge.com</a>pare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<span class="eyebrow">DAILY AI NEWS ROUNDUP</span>
+<h1>每日AI新闻推送</h1>
+<p><strong>时效窗口</strong>：2026-11-19 08:28 ~ 2026-11-19 20:28（北京时间）· 3 条精选</p>
+</header>
+
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. Gemini 4 Neon</a>
+<a class="toc-item" href="#entry-2">2. Claude Code 安全漏洞</a>
+<a class="toc-item" href="#entry-3">3. Robotera 人形机器人部署</a>
+</nav>
+
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="AICoding">AICoding</button>
+<button class="filter-chip" data-tag="EmbodiedAI">EmbodiedAI</button>
+<button class="filter-chip" data-tag="AISecurity">AISecurity</button>
+<button class="filter-chip" data-tag="Robotics">Robotics</button>
+<button class="filter-chip" data-tag="LLMRelease">LLMRelease</button>
+<button class="filter-chip" data-tag="HumanoidRobot">HumanoidRobot</button>
+<button class="filter-chip" data-tag="SecretLeak">SecretLeak</button>
+<button class="filter-chip" data-tag="Logistics">Logistics</button>
+<button class="filter-chip" data-tag="ChinaRobotics">ChinaRobotics</button>
+<button class="filter-chip" data-tag="GitHub">GitHub</button>
+<button class="filter-chip" data-tag="API">API</button>
+</div>
+
+<!-- Entry 1 -->
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="AICoding">AICoding</button>
+<button class="filter-chip" data-tag="Gemini4">Gemini4</button>
+<button class="filter-chip" data-tag="LLMRelease">LLMRelease</button>
+<button class="filter-chip" data-tag="API">API</button>
+<button class="filter-chip" data-tag="AISecurity">AISecurity</button>
+<button class="filter-chip" data-tag="ClaudeCode">ClaudeCode</button>
+<button class="filter-chip" data-tag="SecretLeak">SecretLeak</button>
+<button class="filter-chip" data-tag="GitHub">GitHub</button>
+<button class="filter-chip" data-tag="EmbodiedAI">EmbodiedAI</button>
+<button class="filter-chip" data-tag="HumanoidRobot">HumanoidRobot</button>
+<button class="filter-chip" data-tag="Logistics">Logistics</button>
+<button class="filter-chip" data-tag="ChinaRobotics">ChinaRobotics</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. Google 发布 Gemini 4 Neon——Carbon 级推理 + 3× 速度，API 单价降 25%</a><a class="toc-item" href="#entry-2">2. Claude Code「不再询问」功能泄漏超 2,500 个凭证到公开 GitHub 仓库</a><a class="toc-item" href="#entry-3">3. Robotera 人形机器人在中国 8 个城市邮政枢纽规模化部署</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="AICoding LLMRelease API" data-tags="AICoding Gemini4 LLMRelease API" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Google 发布 Gemini 4 Neon——Carbon 级推理 + 3× 速度，API 单价降 25%" data-link="https://venturebeat.com/technology/google-launches-gemini-4-neon-with-opus-5-5-level-coding-performance-at-25-lower-api-token-prices">复制</button>
+<button class="copy-btn" data-title="Google 发布 Gemini 4 Neon——Carbon 级推理 + 3× 速度，API 单价降 25%" data-link="https://venturebeat.com/technology/google-launches-gemini-4-neon-with-opus-5-5-level-coding-performance-at-25-lower-api-token-prices">复制</button>
+<h2><a href="https://venturebeat.com/technology/google-launches-gemini-4-neon-with-opus-5-5-level-coding-performance-at-25-lower-api-token-prices">Gemini 4 Neon：Carbon 级推理 + 3× 速度，API 降价 25%</a></h2>
+<div class="section-label">事件概述</div>
+<div class="section-content">
+Google 于 2026 年 11 月 18 日正式发布 Gemini 4 Neon，定位 Carbon 与 Hydrogen 之间的中档旗舰模型。官方声称在编程、科学工作流和复杂分析任务上性能与 Carbon 持平，速度提升约 3 倍；API 输入定价 $3/百万 Token、输出 $15/百万 Token，较竞品低约 25%，同时保持一百万 Token 上下文窗口与四档思考深度调节能力。
+</div>
+<div class="section-label">技术与工程价值</div>
+<div class="section-content">
+<ul>
+<li><strong>核心机制</strong>：Neon 作为 Gemini 4 家族第四款模型，填补「旗舰推理」与「日常速用」之间的空白，面向 SWE-bench 等编程基准场景做了专门优化；四档 thinking level 允许用户在延迟敏感型任务（如实时代码补全）与高推理任务间动态切换</li>
+<li><strong>实际影响</strong>：API 成本下降叠加速度提升，有望推动 AI Coding Agent 在高频开发场景中的规模化部署，对 Cursor、Copilot、Codex 等主流编程代理构成直接竞争压力</li>
+</ul>
+</div>
+<div class="section-label">关键指标/资源</div>
+<div class="section-content">
+<div class="metrics">
+<table>
+<tr><th>指标</th><th>值</th><th>类型</th></tr>
+<tr><td>相对速度提升</td><td>3×</td><td><span class="badge self">厂商自述</span></td></tr>
+<tr><td>API 降价幅度</td><td>-25%</td><td><span class="badge self">厂商自述</span></td></tr>
+<tr><td>SWE-bench 排名</td><td>Top 3 global</td><td><span class="badge third">第三方评测</span></td></tr>
+</table>
+</div>
+<p>代码/论文：<a href="https://venturebeat.com/technology/google-launches-gemini-4-neon-with-opus-5-5-level-coding-performance-at-25-lower-api-token-prices">VentureBeat · Kucoin News</a></p>
+<p style="font-size:12px;color:#8b949e;">API 价格：$3/M input · $15/M output | 上下文窗口：1M tokens</p>
+</div>
+<div>
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#AICoding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#Gemini4</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#LLMRelease</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#API</span>
+</div>
+</div>
+
+<!-- Entry 2 -->
+<div class="card priority-1" id="entry-2" data-tags="AISecurity SecretLeak GitHub ClaudeCode" data-tags="AISecurity ClaudeCode SecretLeak GitHub" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Claude Code「不再询问」功能泄漏超 2,500 个凭证到公开 GitHub 仓库" data-link="https://arstechnica.com/ai/2026/11/claude-code-settings-files-expose-thousands-of-secrets-on-github/">复制</button>
+<button class="copy-btn" data-title="Claude Code「不再询问」功能泄漏超 2,500 个凭证到公开 GitHub 仓库" data-link="https://arstechnica.com/ai/2026/11/claude-code-settings-files-expose-thousands-of-secrets-on-github/">复制</button>
+<h2><a href="https://arstechnica.com/ai/2026/11/claude-code-settings-files-expose-thousands-of-secrets-on-github/">Claude Code 「Don't ask again」功能泄漏 2,539 个凭证到 GitHub</a></h2>
+<div class="section-label">事件概述</div>
+<div class="section-content">
+安全公司 Apiiro 在 2026 年 11 月发现，Anthropic Claude Code 的「Don't ask again」设置文件在处理不当的情况下被提交至公开 GitHub 仓库，涉及 1,994 个公共仓库共 2,539 个敏感凭证（含数据库密码、API Key、SSH 密钥）。Darktrace 进一步演示了利用被盗 Claude API Key 将 Claude Code 转化为远端受控植入物的攻击链，可在不触发用户感知的情况下通过内存存储导出达 1GB 数据文件。
+</div>
+<div class="section-label">技术与工程价值</div>
+<div class="section-content">
+<ul>
+<li><strong>核心机制</strong>：Claude Code 在用户选择「不再询问」后会将决策写入本地 settings 配置文件（JSON），若该配置被意外提交 Git 且未正确排除，则敏感凭据随 diff 暴露；结合盗取的 API Key，攻击者可通过 memory store 注入指令实现远程控制</li>
+<li><strong>实际影响</strong>：此漏洞揭示了 AI Coding Agent 在自动化交互便利性与信息安全之间的结构性张力；提示企业需建立「Agent 设置文件 .gitignore + API Key Vaulting + Secret Scanning 扫描 CI 流水线」三道防线</li>
+</ul>
+</div>
+<div class="section-label">关键指标/资源</div>
+<div class="section-content">
+<div class="metrics">
+<table>
+<tr><th>指标</th><th>值</th><th>类型</th></tr>
+<tr><td>受影响 GitHub 仓库数</td><td>1,994</td><td><span class="badge third">第三方调查</span></td></tr>
+<tr><td>泄露凭证总量</td><td>2,539</td><td><span class="badge third">第三方调查</span></td></tr>
+<tr><td>MITRE ATT&CK 对应战术</td><td>T1552 (Credential Access)</td><td><span class="badge third">安全研究</span></td></tr>
+</table>
+</div>
+<p>代码/论文：<a href="https://arstechnica.com/ai/2026/11/claude-code-settings-files-expose-thousands-of-secrets-on-github/">Ars Technica</a> · <a href="https://cryptobriefing.com/claude-code-leaks-secrets-github/">Crypto Briefing</a></p>
+</div>
+<div>
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#AISecurity</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#ClaudeCode</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#SecretLeak</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#GitHub</span>
+</div>
+</div>
+
+<!-- Entry 3 -->
+<div class="card priority-2" id="entry-3" data-tags="EmbodiedAI HumanoidRobot Logistics ChinaRobotics" data-tags="EmbodiedAI HumanoidRobot Logistics ChinaRobotics" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Robotera 人形机器人在中国 8 个城市邮政枢纽规模化部署" data-link="https://www.unite.ai/robotera-deploys-humanoid-robots-at-11-postal-hubs-in-guangdong/">复制</button>
+<button class="copy-btn" data-title="Robotera 人形机器人在中国 8 个城市邮政枢纽规模化部署" data-link="https://www.unite.ai/robotera-deploys-humanoid-robots-at-11-postal-hubs-in-guangdong/">复制</button>
+<h2><a href="https://www.unite.ai/robotera-deploys-humanoid-robots-at-11-postal-hubs-in-guangdong/">Robotera 人形机器人广东邮政 8 城市 11 枢纽规模化部署</a></h2>
+<div class="section-label">事件概述</div>
+<div class="section-content">
+Robotera 于 2026 年 11 月 17 日宣布，其人形机器人已在中国邮政集团广东省分公司网络完成规模化部署，覆盖广东全省 8 个城市共 11 个邮政分拨中心，成为迄今为止该公司最大规模实体落地项目。同期 Robotera 获邀连续第二年参加 APEC CEO Summit，展示真实世界具身智能应用场景。
+</div>
+<div class="section-label">技术与工程价值</div>
+<div class="section-content">
+<ul>
+<li><strong>核心机制</strong>：面向物流分拣、包裹递送等结构化场景，Robotera 的人形形态使其能直接复用人类现有基础设施（楼梯、传送带、操作台），无需改造场地即可部署；该案例验证了通用人形机器人在工业级重复性劳动场景的工程可行性</li>
+<li><strong>实际影响</strong>：标志中国具身智能赛道从「实验室 Demo → 规模化商用」迈出一大步；与 Genesis AI、Agibot 等玩家共同构成 Physical AI 数据采集 + 部署闭环的商业生态，为后续更多垂直场景复制提供参考路径</li>
+</ul>
+</div>
+<div class="section-label">关键指标/资源</div>
+<div class="section-content">
+<div class="metrics">
+<table>
+<tr><th>指标</th><th>值</th><th>类型</th></tr>
+<tr><td>部署城市数</td><td>8</td><td><span class="badge self">厂商公告</span></td></tr>
+<tr><td>覆盖枢纽数</td><td>11</td><td><span class="badge self">厂商公告</span></td></tr>
+<tr><td>H1 2026 中国厂商市占率（Top 2）</td><td>~74%</td><td><span class="badge third">行业基准</span></td></tr>
+</table>
+</div>
+<p>代码/论文：<a href="https://www.unite.ai/robotera-deploys-humanoid-robots-at-11-postal-hubs-in-guangdong/">Unite.AI</a> · <a href="https://www.msn.com/en-sg/news/other/robotera-s-humanoid-robots-now-deployed-across-8-guangdong-cities/ar-AA2hFriH">MSN Frontier Enterprise</a></p>
+<p style="font-size:12px;color:#8b949e;">行业背景：H1 2026 全球人形机器人出货 ~22,000 台（AGIBOT 43%、Unitree 31%）</p>
+</div>
+<div>
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#EmbodiedAI</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#HumanoidRobot</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#Logistics</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#ChinaRobotics</span>
+</div>
+</div>
+
+<div class="panel">
+<h3 class="section-title">去重说明</h3>
+<p>Gemini 4 Neon 本次报道聚焦模型本身发布与定价策略；此前已报道过 Genie 4（世界模型，2026-11-18 早间版）及 Gemini Robotics 2.5（CoRL 会议论文，2026-11-13 版），三者主题不同无重叠；Claude Code 凭证泄漏问题在本报告周期内尚未出现，属新情报；Robotera 广东邮政部署亦为本期新增事件，未见于近期档案；以上三条均为独立事件，无重复报道。</p>
+</div>
+
+<footer>
+<p>数据来源：VentureBeat / Ars Technica / Unite.AI / Kucoin / MSN | 时效窗口：2026-11-19 08:28 ~ 2026-11-19 20:28（北京时间）</p>
+<p>本报告仅供参考，不构成投资建议。</p>
+</footer>
+</div>
+<footer style="margin-top:28px;padding-top:14px;border-top:1px solid #30363d;color:#9da7b1;font-size:13px">发现错误或有建议？<a href="https://github.com/allin8888/ainews/issues/new?title=%E5%8F%8D%E9%A6%88%2F%E7%BA%A0%E9%94%99&body=" target="_blank" rel="noopener" style="color:#58a6ff;text-decoration:none">在 GitHub Issues 提交反馈/纠错</a>（需 GitHub 账号）。</footer>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
