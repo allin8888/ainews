@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>每日AI新闻推送</title>
+
+<style class="an-baseline">
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;padding:36px 20px 56px;background:#0d1117;color:#e6edf3;font:15px/1.85 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}.container{max-width:1020px;margin:auto}header{margin-bottom:30px}h1{font-size:32px;line-height:1.35;letter-spacing:-.5px;margin:8px 0 20px}.eyebrow{color:#58a6ff;letter-spacing:2px;font-size:12px}header p{margin:4px 0}strong{font-weight:650;color:#f0f6fc}.section-title{font-size:20px;font-weight:700;margin:32px 0 16px}.card,.panel,.excl{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:24px;margin:0 0 20px;overflow-wrap:anywhere}.card h2{font-size:22px;line-height:1.55;margin:0 0 20px;padding-right:40px}.card h3{font-size:16px;margin:20px 0 8px}p{margin:12px 0}a{color:#58a6ff;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #79c0ff;outline-offset:4px}li{margin:10px 0}ul,ol{padding-left:24px}blockquote{border-left:3px solid #d29922;padding:12px 16px;margin:20px 0;background:#161b22;color:#c9d1d9}.tag{display:inline-block;font-size:12px;border:1px solid #484f58;border-radius:12px;padding:1px 8px;margin:3px;color:#a5d6ff}code{background:#21262d;border-radius:4px;padding:1px 5px;font-size:13px;color:#a5d6ff}footer{color:#8b949e;font-size:12px;text-align:center;margin-top:32px}@media(max-width:640px){h1{font-size:26px}.section-title{font-size:18px}.panel,.excl{padding:16px}.metrics td{min-width:95px}}
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.<a href="https://badge.com" target="_blank" rel="noopener">badge.com</a>pare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>每日AI新闻推送</h1>
+
+<nav class="toc"><a class="toc-item" href="#entry-1">1. Google DeepMind Genie 4：可编辑交互式世界模型，已面向 Google AI Ultra 订阅用户开放</a><a class="toc-item" href="#entry-2">2. Postman 2026 API 报告：AI Agent 已进入生产环境，但大多数 API 未就绪</a><a class="toc-item" href="#entry-3">3. Humyn Labs 融资 4700 万美元：为物理 AI 机器人采集真实世界训练数据</a></nav>
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="WorldModel">WorldModel</button>
+<button class="filter-chip" data-tag="EmbodiedAI">EmbodiedAI</button>
+<button class="filter-chip" data-tag="GenerativeAI">GenerativeAI</button>
+<button class="filter-chip" data-tag="DeepMind">DeepMind</button>
+<button class="filter-chip" data-tag="AICoding">AICoding</button>
+<button class="filter-chip" data-tag="APIGateway">APIGateway</button>
+<button class="filter-chip" data-tag="MCP">MCP</button>
+<button class="filter-chip" data-tag="AISecurity">AISecurity</button>
+<button class="filter-chip" data-tag="PhysicalAI">PhysicalAI</button>
+<button class="filter-chip" data-tag="Funding">Funding</button>
+<button class="filter-chip" data-tag="DataCollection">DataCollection</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. Google DeepMind Genie 4：可编辑交互式世界模型，已面向 Google AI Ultra 订阅用户开放</a><a class="toc-item" href="#entry-2">2. Postman 2026 API 报告：AI Agent 已进入生产环境，但大多数 API 未就绪</a><a class="toc-item" href="#entry-3">3. Humyn Labs 融资 4700 万美元：为物理 AI 机器人采集真实世界训练数据</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="WorldModel EmbodiedAI GenerativeAI DeepMind" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Google DeepMind Genie 4：可编辑交互式世界模型，已面向 Google AI Ultra 订阅用户开放" data-link="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie">复制</button><h2><a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie">Google DeepMind Genie 4：可编辑交互式世界模型，已面向 Google AI Ultra 订阅用户开放</a></h2><div class="section-label">事件概述</div>
+<div class="section-content">Google DeepMind 宣布 Genie 4（Project Genie 新一代交互世界模型）正式向 Google AI Ultra 订阅用户开放。Genie 4 支持在会话进行中通过自然语言提示实时修改场景——切换天气、添加角色或重定向剧情，并首次将视觉与原生实时音频同步生成。</div>
+<div class="section-label">技术与工程价值</div>
+<div class="section-content">
+<ul>
+<li><strong>核心机制</strong>：Genie 4 是首个支持「mid-session 文本编辑 + 实时原生音频」的世界模型；配合新的 Project Genie Agent，可通过对话协作构建世界并自动生成背景配乐</li>
+<li><strong>实际影响</strong>：突破 Genie 3 固定时长限制（新 Genie 3 支持 3 分钟会话、360°全景、可链接多世界）；标志着交互世界模型从「单次生成」走向「持续编辑+声音同步」的下一代形态，对训练仿真和物理 AI 有直接复用价值</li>
+</ul>
+</div>
+<div class="section-label">关键指标/资源</div>
+<div class="section-content">
+<table class="metrics-table">
+<tr><th>指标</th><th>值</th></tr>
+<tr><td>会话最长时长</td><td>3 min</td></tr>
+<tr><td>音频模式</td><td>Real-time native</td></tr>
+</table>
+<p>代码/论文：<a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie" style="color:#58a6ff;">Google Blog</a></p>
+<p style="font-size:12px;color:#8b949e;">所有生成内容带 SynthID 水印并通过安全筛查</p>
+</div>
+<div><span class="tag" style="color:#8b949e;border-color:#8b949e">#WorldModel</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#EmbodiedAI</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#GenerativeAI</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#DeepMind</span></div></div>
+<div class="card priority-2" id="entry-2" data-tags="AICoding APIGateway MCP AISecurity" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Postman 2026 API 报告：AI Agent 已进入生产环境，但大多数 API 未就绪" data-link="https://blog.postman.com/the-2026-state-of-the-api-report-agents-are-in-production-and-most-apis-arent-ready">复制</button><h2><a href="https://blog.postman.com/the-2026-state-of-the-api-report-agents-are-in-production-and-most-apis-arent-ready">Postman 2026 API 报告：AI Agent 已进入生产环境，但大多数 API 未就绪</a></h2><div class="section-label">事件概述</div>
+<div class="section-content">Postman 发布《2026 State of the API Report》，核心发现是 AI Agent 正在大规模投入生产使用，但企业 API 在身份认证、短效凭证和流量治理层面远未准备好承接 Agent 流量。</div>
+<div class="section-label">技术与工程价值</div>
+<div class="section-content">
+<ul>
+<li><strong>核心机制</strong>：Postman 平台数据显示其 MCP Server 的 AI Agent 请求量从 5 月到 10 月增长 3.3 倍（月均 200 万+），调用人数增 2.2 倍至近 3.3 万人；其中超过一半的工具调用是写操作（创建/修改集合和请求），而非只读</li>
+<li><strong>实际影响</strong>：Agent 不再只是「查看」API，而是主动改变状态；仅 19.1% 的组织将 Agent/MCP 流量路由到网关；报告指出修复方案并不复杂——身份隔离、短效凭证和前置控制点即可显著降低风险</li>
+</ul>
+</div>
+<div class="section-label">关键指标/资源</div>
+<div class="section-content">
+<table class="metrics-table">
+<tr><th>指标</th><th>值</th></tr>
+<tr><td>MCP Agent 请求月增速</td><td>3.3x</td></tr>
+<tr><td>Agent 路由至网关比例</td><td>19.1%</td></tr>
+<tr><td>写操作工具调用占比</td><td>51%</td></tr>
+</table>
+<p>代码/论文：<a href="https://blog.postman.com/the-2026-state-of-the-api-report-agents-are-in-production-and-most-apis-arent-ready" style="color:#58a6ff;">Postman Blog</a></p>
+</div>
+<div><span class="tag" style="color:#8b949e;border-color:#8b949e">#AICoding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#APIGateway</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#MCP</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#AISecurity</span></div></div>
+<div class="card priority-3" id="entry-3" data-tags="PhysicalAI EmbodiedAI Funding DataCollection" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Humyn Labs 融资 4700 万美元：为物理 AI 机器人采集真实世界训练数据" data-link="https://techcrunch.com/2026/11/18/accel-backs-indias-humyn-labs-to-supply-training-data-needed-by-u-s-robotics-ai-developers/">复制</button><h2><a href="https://techcrunch.com/2026/11/18/accel-backs-indias-humyn-labs-to-supply-training-data-needed-by-u-s-robotics-ai-developers/">Humyn Labs 融资 4700 万美元：为物理 AI 机器人采集真实世界训练数据</a></h2><div class="section-label">事件概述</div>
+<div class="section-content">印度创业公司 Humyn Labs 完成 4700 万美元 Series A 融资（含 2100 万美元风债），用于建设覆盖新兴市场的行为数据采集网络，帮助美国 AI 与机器人公司获取训练 Physical AI 所需的真实世界人类行为数据。</div>
+<div class="section-label">技术与工程价值</div>
+<div class="section-content">
+<ul>
+<li><strong>核心机制</strong>：Humyn 通过合作者网络 KGeN 在家庭环境中录制日常任务视频，形成面向物理 AI/具身智能的训练数据集；本轮包括 Trifecta Capital 跟投、Lighthouse Canton Growth Debt Fund II 领投的风债</li>
+<li><strong>实际影响</strong>：印度正成为 Physical AI 数据采集枢纽（Human Archive、BuildAI 等同赛道玩家已涌现）；解决机器人训练「数据饥渴」问题的同时凸显高质量真实行为数据的稀缺性与商业价值</li>
+</ul>
+</div>
+<div class="section-label">关键指标/资源</div>
+<div class="section-content">
+<table class="metrics-table">
+<tr><th>指标</th><th>值</th></tr>
+<tr><td>融资金额</td><td>$47M</td></tr>
+<tr><td>风债部分</td><td>$21M</td></tr>
+</table>
+<p>代码/论文：<a href="https://techcrunch.com/2026/11/18/accel-backs-indias-humyn-labs-to-supply-training-data-needed-by-u-s-robotics-ai-developers/" style="color:#58a6ff;">TechCrunch</a></p>
+</div>
+<div><span class="tag" style="color:#8b949e;border-color:#8b949e">#PhysicalAI</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#EmbodiedAI</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#Funding</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#DataCollection</span></div></div>
+</div>
+<footer>
+<p>数据来源：Google DeepMind Blog、Postman Blog、TechCrunch | 数据窗口：2026-11-18 20:28 ~ 2026-11-19 08:28（北京时间）</p>
+<p>合规声明：本报告仅供参考，不构成投资建议。</p>
+</footer>
+<footer style="margin-top:28px;padding-top:14px;border-top:1px solid #30363d;color:#9da7b1;font-size:13px">发现错误或有建议？<a href="https://github.com/allin8888/ainews/issues/new?title=%E5%8F%8D%E9%A6%88%2F%E7%BA%A0%E9%94%99&body=" target="_blank" rel="noopener" style="color:#58a6ff;text-decoration:none">在 GitHub Issues 提交反馈/纠错</a>（需 GitHub 账号）。</footer>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
