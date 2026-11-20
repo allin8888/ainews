@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日AI新闻推送</title>
+
+<style class="an-baseline">
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;padding:36px 20px 56px;background:#0d1117;color:#e6edf3;font:15px/1.85 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}.container{max-width:1020px;margin:auto}header{margin-bottom:30px}h1{font-size:32px;line-height:1.35;letter-spacing:-.5px;margin:8px 0 20px}.eyebrow{color:#58a6ff;letter-spacing:2px;font-size:12px}header p{margin:4px 0}strong{font-weight:650;color:#f0f6fc}.section-title{font-size:20px;font-weight:700;margin:32px 0 16px}.card,.panel,.excl{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:24px;margin:0 0 20px;overflow-wrap:anywhere}.card h2{font-size:22px;line-height:1.55;margin:0 0 20px;padding-right:40px}.card h3{font-size:16px;margin:20px 0 8px}p{margin:12px 0}a{color:#58a6ff;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #79c0ff;outline-offset:4px}li{margin:10px 0}ul,ol{padding-left:24px}blockquote{border-left:3px solid #d29922;padding:12px 16px;margin:20px 0;background:#161b22;color:#c9d1d9}.tag{display:inline-block;font-size:12px;border:1px solid #484f58;border-radius:12px;padding:1px 8px;margin:3px;color:#a5d6ff}code{background:#21262d;border-radius:4px;padding:1px 5px;font-size:13px;color:#a5d6ff}footer{color:#8b949e;font-size:12px;text-align:center;margin-top:32px}@media(max-width:640px){h1{font-size:26px}.section-title{font-size:18px}.panel,.excl{padding:16px}.metrics td{min-width:95px}}
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.<a href="https://badge.com" target="_blank" rel="noopener">badge.com</a>pare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="eyebrow">Daily AI News Digest</div>
+<h1>每日AI新闻推送</h1>
+<div class="meta">时效窗口：2026-11-20 08:28 ~ 2026-11-20 20:27（北京时间）· 3 条精选</div>
+</header>
+
+<nav id="toc">
+<h2>目录</h2>
+<ol>
+<li><a href="#entry-1">Microsoft 发布 MAI Code 2 / MAI Code 2 Flash——企业编码模型，宣称 96% Claude Opus 5.5 性能仅 5% 成本</a></li>
+<li><a href="#entry-2">Eclipse Foundation 发布 Enclave 1.0——首个开源 vendor-neutral AI Coding Agent 沙箱运行时</a></li>
+<li><a href="#entry-3">Bloomberg 评论：Apple AI Agent 项目动向引发 Anthropic 股价盘后跌 6%</a></li>
+</ol>
+</nav>
+
+<div class="filterbar">
+<span>#AICoding</span>
+<span>#LLM</span>
+<span>#Microsoft</span>
+<span>#EnterpriseAI</span>
+<span>#AISecurity</span>
+<span>#AgentInfrastructure</span>
+<span>#OpenSource</span>
+<span>#AIIndustry</span>
+<span>#Apple</span>
+<span>#AIAgent</span>
+<span>#MarketImpact</span>
+</div>
+
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="AICoding">AICoding</button>
+<button class="filter-chip" data-tag="LLM">LLM</button>
+<button class="filter-chip" data-tag="Microsoft">Microsoft</button>
+<button class="filter-chip" data-tag="EnterpriseAI">EnterpriseAI</button>
+<button class="filter-chip" data-tag="AISecurity">AISecurity</button>
+<button class="filter-chip" data-tag="AgentInfrastructure">AgentInfrastructure</button>
+<button class="filter-chip" data-tag="OpenSource">OpenSource</button>
+<button class="filter-chip" data-tag="AIIndustry">AIIndustry</button>
+<button class="filter-chip" data-tag="Apple">Apple</button>
+<button class="filter-chip" data-tag="AIAgent">AIAgent</button>
+<button class="filter-chip" data-tag="MarketImpact">MarketImpact</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. Microsoft 发布 MAI Code 2 / MAI Code 2 Flash——企业编码模型，宣称 96% Claude Opus 5.5 性能仅 5% 成本</a><a class="toc-item" href="#entry-2">2. Eclipse Foundation 发布 Enclave 1.0——首个开源 vendor-neutral AI Coding Agent 沙箱运行时</a><a class="toc-item" href="#entry-3">3. Bloomberg 评论：Apple AI Agent 项目动向引发 Anthropic 股价盘后跌 6%</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="AICoding LLM Microsoft EnterpriseAI" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Microsoft 发布 MAI Code 2 / MAI Code 2 Flash——企业编码模型，宣称 96% Claude Opus 5.5 性能仅 5% 成本" data-link="https://www.unite.ai/microsoft-ai-releases-mai-code-2-and-mai-code-2-flash-for-enterprises/">复制</button>
+<h2><a href="https://www.unite.ai/microsoft-ai-releases-mai-code-2-and-mai-code-2-flash-for-enterprises/">Microsoft 发布 MAI Code 2 / MAI Code 2 Flash——企业编码模型，宣称 96% Claude Opus 5.5 性能仅 5% 成本</a></h2>
+
+<h3>事件概述</h3>
+<p>Microsoft 于 2026 年 11 月 17–18 日 Ignite 大会期间正式发布两款自研编码大模型 MAI Code 2 与 MAI Code 2 Flash，定位企业级代码生成与安全任务。微软宣称 MAI Code 2 在多项编码基准上达到 Claude Opus 5.5 约 96% 的性能，但 API 单价仅为后者的约 5%。同时发布的还有七款新 MAI 系列模型，覆盖网络安全、图像生成等垂直场景。</p>
+
+<h3>技术与工程价值</h3>
+<ul>
+<li><strong>核心机制</strong>：MAI Code 2 采用微软自有训练数据与指令微调流程，针对 GitHub Copilot 与企业 IDE 工作流优化；价格对比基于公开 API 标价而非实际使用成本，基准选择性引用可能高估真实差距</li>
+<li><strong>实际影响</strong>：若定价验证成立，将直接冲击 Anthropic / OpenAI 在企业开发者市场的定价锚点；与已有开源方案（如 DeepSeek Coder V2、Qwen-Coder）形成第三极竞争格局，加速企业选型从「功能竞赛」向「性价比竞赛」转移</li>
+</ul>
+
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>Claude Opus 5.5 性能占比</td><td>~96%</td><td><div class="bar"><span style="width:96%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>相对成本声称</td><td>~5%</td><td><div class="bar"><span style="width:5%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+<table class="metrics-table">
+<thead><tr><th>指标</th><th>数值</th><th>来源类型</th><th class="bar-cell">相对值</th></tr></thead>
+<tbody>
+<tr><td>Claude Opus 5.5 性能占比</td><td>~96%</td><td>厂商自述 (self)</td><td><div class="bar-bg"><div class="bar-fill" style="width:96%"></div></div></td></tr>
+<tr><td>相对成本声称</td><td>~5%</td><td>厂商自述 (self)</td><td><div class="bar-bg"><div class="bar-fill" style="width:5%"></div></div></td></tr>
+</tbody>
+</table>
+<ul>
+<li><a class="source-link" href="https://www.unite.ai/microsoft-ai-releases-mai-code-2-and-mai-code-2-flash-for-enterprises/">Unite.AI</a> · <a class="source-link" href="https://finance.yahoo.com/news/microsoft-expands-mai-portfolio-seven-100915966.html">Yahoo Finance</a></li>
+<li>配套模型：MAI Cyber 2 Flash、Work Flash 等共 7 款</li>
+</ul>
+
+<div class="tags">
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#AICoding</span>
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#LLM</span>
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#Microsoft</span>
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#EnterpriseAI</span>
+</div>
+</div>
+
+<div class="card priority-2" id="entry-2" data-tags="AISecurity AICoding AgentInfrastructure OpenSource" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Eclipse Foundation 发布 Enclave 1.0——首个开源 vendor-neutral AI Coding Agent 沙箱运行时" data-link="https://markets.businessinsider.com/news/stocks/eclipse-foundation-launches-eclipse-enclave-1-0-bringing-security-and-choice-to-autonomous-ai-coding-1036783189">复制</button>
+<h2><a href="https://markets.businessinsider.com/news/stocks/eclipse-foundation-launches-eclipse-enclave-1-0-bringing-security-and-choice-to-autonomous-ai-coding-1036783189">Eclipse Foundation 发布 Enclave 1.0——首个开源 vendor-neutral AI Coding Agent 沙箱运行时</a></h2>
+
+<h3>事件概述</h3>
+<p>Eclipse Foundation 于 2026 年 11 月 19 日正式发布 Eclipse Enclave 1.0，这是一个开源、供应商中立的运行时与沙箱环境，支持 Claude Code、OpenAI Codex、OpenCode 等主流 AI 编程 Agent 在隔离环境中自主执行命令、修改代码、安装依赖，同时对文件访问、凭据暴露与外部网络调用进行细粒度管控。该项目被视为 AI Agent 基础设施层从「各自为政」走向「行业标准」的关键一步。</p>
+
+<h3>技术与工程价值</h3>
+<ul>
+<li><strong>核心机制</strong>：Enclave 提供进程级隔离 + 策略驱动的权限网关（类似 Linux namespaces + seccomp），Agent 在执行敏感操作（shell 命令、密钥读取、外网请求）前须通过策略引擎校验；支持 RBAC 与审计日志导出，兼容 CI/CD 集成</li>
+<li><strong>实际影响</strong>：填补了当前 AI Coding Agent 生态中「安全边界标准化」的空白——此前各家 Agent 自行管理权限，缺乏跨工具通用的治理框架；Enclave 可作为企业部署的前置条件，降低 SaaS Agent 接入内部系统的合规风险</li>
+</ul>
+
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>支持的主流 Agent 数量</td><td>≥4</td><td><div class="bar"><span style="width:60%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>GPU Passthrough 支持</td><td>暂无</td><td><div class="bar"><span style="width:0%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+<table class="metrics-table">
+<thead><tr><th>指标</th><th>数值</th><th>来源类型</th><th class="bar-cell">相对值</th></tr></thead>
+<tbody>
+<tr><td>支持的主流 Agent 数量</td><td>≥4</td><td>厂商自述 (self)</td><td><div class="bar-bg"><div class="bar-fill" style="width:60%"></div></div></td></tr>
+<tr><td>GPU Passthrough 支持</td><td>暂无</td><td>厂商自述 (self)</td><td><div class="bar-bg"><div class="bar-fill" style="width:0%"></div></div></td></tr>
+</tbody>
+</table>
+<ul>
+<li><a class="source-link" href="https://markets.businessinsider.com/news/stocks/eclipse-foundation-launches-eclipse-enclave-1-0-bringing-security-and-choice-to-autonomous-ai-coding-1036783189">Markets Insider</a> · <a class="source-link" href="https://www.infoworld.com/article/4251051/ai-coding-agents-need-a-safe-place-to-work-eclipse-is-building-the-sandbox-to-give-it-to-them.html">InfoWorld</a></li>
+<li>许可：Apache 2.0 开源</li>
+<li>第一阶段特性：进程隔离、策略网关、审计日志；GPU passthrough 暂不支持（Google CNCF 捐赠的 Agent Substrate 亦存在此限制）</li>
+</ul>
+
+<div class="tags">
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#AISecurity</span>
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#AICoding</span>
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#AgentInfrastructure</span>
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#OpenSource</span>
+</div>
+</div>
+
+<div class="card priority-3" id="entry-3" data-tags="AIIndustry Apple AIAgent MarketImpact" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Bloomberg 评论：Apple AI Agent 项目动向引发 Anthropic 股价盘后跌 6%" data-link="https://www.bloomberg.com/opinion/articles/2026-11-20/an-apple-agent-is-something-to-fear-for-ai-rivals">复制</button>
+<h2><a href="https://www.bloomberg.com/opinion/articles/2026-11-20/an-apple-agent-is-something-to-fear-for-ai-rivals">Bloomberg 评论：Apple AI Agent 项目动向引发 Anthropic 股价盘后跌 6%</a></h2>
+
+<h3>事件概述</h3>
+<p>2026 年 11 月 20 日 Bloomberg Opinion 刊发评论文章《An Apple Agent Is Something to Fear for AI Rivals》，报道 Apple 正招聘高级工程经理开发内置 Mac 的自主 AI Agent，可浏览网页、控制应用、编写代码，预计最早 2027 年底上线。同日 Anthropic 盘后股价下跌超 6%，市场担忧 Apple 生态内嵌 Agent 将对 Anthropic API 业务形成侧翼威胁。与此同时，Apple 宣布 macOS 27.3 收紧 Full Disk Access 权限以应对 AI Agent 滥用风险（Ars Technica 报道）。</p>
+
+<h3>技术与工程价值</h3>
+<ul>
+<li><strong>核心机制</strong>：Apple 策略从「开放 API 调用第三方 Agent」转向「系统级原生 Agent」，利用 Metal / Core ML 直接在设备端运行推理，减少对外部 LLM 提供商的依赖；此举可能被解读为 Apple 有意构建垂直整合的 Agent 栈（OS + 硬件 + 模型），类似 Google Gemini 嵌入 Pixel 的策略</li>
+<li><strong>实际影响</strong>：对 Anthropic / OpenAI 构成「平台风险」——若 Apple Agent 优先调用自家模型（或已采购的第三方模型），API 调用量增长可能不及预期；另一方面，Apple 收紧磁盘权限也表明生态管理者开始正视 Agent 滥用问题，或将推动行业制定设备端 Agent 安全规范</li>
+</ul>
+
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>Anthropic 盘后跌幅</td><td>&gt;6%</td><td></td><td><span class="badge third">第三方</span></td></tr><tr><td>预计上市窗口</td><td>2027 年底</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+<table class="metrics-table">
+<thead><tr><th>指标</th><th>数值</th><th>来源类型</th><th class="bar-cell">相对值</th></tr></thead>
+<tbody>
+<tr><td>Anthropic 盘后跌幅</td><td>&gt;6%</td><td>第三方 (third)</td><td><div class="bar-bg"><div class="bar-fill" style="width:6%;background:#f85149"></div></div></td></tr>
+<tr><td>预计上市窗口</td><td>2027 年底</td><td>待核实</td><td></td></tr>
+</tbody>
+</table>
+<ul>
+<li><a class="source-link" href="https://www.bloomberg.com/opinion/articles/2026-11-20/an-apple-agent-is-something-to-fear-for-ai-rivals">Bloomberg Opinion</a> · <a class="source-link" href="https://arstechnica.com/security/2026/10/apple-changes-full-disk-access-permissions-to-curb-abuse-from-ai-agents/">Ars Technica</a> · <a class="source-link" href="https://blockonomi.com/apple-eyes-2027-launch-for-computer-use-ai-agent-reports-shows/">Blockonomi</a></li>
+<li>配套政策：macOS 27.3 新增 App 权限细分管控</li>
+</ul>
+
+<div class="tags">
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#AIIndustry</span>
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#Apple</span>
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#AIAgent</span>
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#MarketImpact</span>
+</div>
+</div>
+
+<div class="dedup-note">
+<h3>去重说明</h3>
+<ul>
+<li><strong>观察项</strong>：Microsoft MAI Code 2 与 20261118_2030 期「Microsoft 安全博客：AI 编程 Agent 的设备码认证风险」虽同属微软 AI 产品线，但前者为产品发布、后者为安全风险提示，主题与信源均不重合，Jaccard 相似度 0.209、confidence 0.435，判定为不同条目；</li>
+<li><strong>观察项</strong>：Eclipse Enclave 1.0 在 2026-11-13 有预热报道，本次 2026-11-19 正式版发布为独立事件，dedup_check 返回 is_dup=false；</li>
+<li><strong>观察项</strong>：Apple AI Agent 报道链自 2026-11-08 持续至今，本期 Bloomberg Opinion（2026-11-20）为全新媒体视角叠加股价联动信息，与前次 Apple AMP1（机械臂控制）无内容重叠，dedup_check Jaccard=0.146、confidence=0.507，保留。</li>
+</ul>
+</div>
+
+<footer>
+<p>数据来源：ddgs (DuckDuckGo News) 搜索 · 第一信源为官方博客/GitHub/arXiv/核心作者报道</p>
+<p>数据窗口：2026-11-20 08:28 ~ 2026-11-20 20:27（北京时间）</p>
+<p>合规声明：本报告仅供参考，不构成投资建议。</p>
+</footer>
+</div>
+<footer style="margin-top:28px;padding-top:14px;border-top:1px solid #30363d;color:#9da7b1;font-size:13px">发现错误或有建议？<a href="https://github.com/allin8888/ainews/issues/new?title=%E5%8F%8D%E9%A6%88%2F%E7%BA%A0%E9%94%99&body=" target="_blank" rel="noopener" style="color:#58a6ff;text-decoration:none">在 GitHub Issues 提交反馈/纠错</a>（需 GitHub 账号）。</footer>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
