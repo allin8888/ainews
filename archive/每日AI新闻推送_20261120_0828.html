@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日AI新闻推送</title>
+<link rel="stylesheet" href="tools/style_baseline.css">
+
+<style class="an-baseline">
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;padding:36px 20px 56px;background:#0d1117;color:#e6edf3;font:15px/1.85 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}.container{max-width:1020px;margin:auto}header{margin-bottom:30px}h1{font-size:32px;line-height:1.35;letter-spacing:-.5px;margin:8px 0 20px}.eyebrow{color:#58a6ff;letter-spacing:2px;font-size:12px}header p{margin:4px 0}strong{font-weight:650;color:#f0f6fc}.section-title{font-size:20px;font-weight:700;margin:32px 0 16px}.card,.panel,.excl{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:24px;margin:0 0 20px;overflow-wrap:anywhere}.card h2{font-size:22px;line-height:1.55;margin:0 0 20px;padding-right:40px}.card h3{font-size:16px;margin:20px 0 8px}p{margin:12px 0}a{color:#58a6ff;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #79c0ff;outline-offset:4px}li{margin:10px 0}ul,ol{padding-left:24px}blockquote{border-left:3px solid #d29922;padding:12px 16px;margin:20px 0;background:#161b22;color:#c9d1d9}.tag{display:inline-block;font-size:12px;border:1px solid #484f58;border-radius:12px;padding:1px 8px;margin:3px;color:#a5d6ff}code{background:#21262d;border-radius:4px;padding:1px 5px;font-size:13px;color:#a5d6ff}footer{color:#8b949e;font-size:12px;text-align:center;margin-top:32px}@media(max-width:640px){h1{font-size:26px}.section-title{font-size:18px}.panel,.excl{padding:16px}.metrics td{min-width:95px}}
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.<a href="https://badge.com" target="_blank" rel="noopener">badge.com</a>pare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="eyebrow">DAILY AI NEWS PICKS</div>
+<h1>每日AI新闻推送</h1>
+<p><strong>时效窗口</strong>：2026-11-19 08:28 ~ 2026-11-20 08:28（北京时间）· 5 条精选</p>
+<p><strong>精选条数</strong>：5 条</p>
+</header>
+
+<nav class="toc" aria-label="目录">
+<a class="toc-item" href="#entry-1">1. OpenAI 编码 Agent 完成率 46%</a>
+<a class="toc-item" href="#entry-2">2. Reva.AI Coding Agent Security</a>
+<a class="toc-item" href="#entry-3">3. XPENG AI Day IRON 量产</a>
+<a class="toc-item" href="#entry-4">4. Snorkel Paper2Agent</a>
+<a class="toc-item" href="#entry-5">5. Codenamotary AgentMon Live</a>
+</nav>
+
+<div class="filterbar" aria-label="标签筛选">
+<span class="filter-chip" data-tag="AICoding">#AICoding</span>
+<span class="filter-chip" data-tag="Agent">#Agent</span>
+<span class="filter-chip" data-tag="EmbodiedAI">#EmbodiedAI</span>
+<span class="filter-chip" data-tag="HumanoidRobot">#HumanoidRobot</span>
+<span class="filter-chip" data-tag="AISecurity">#AISecurity</span>
+<span class="filter-chip" data-tag="MCP">#MCP</span>
+<span class="filter-chip" data-tag="OpenSource">#OpenSource</span>
+<span class="filter-chip" data-tag="ChinaRobotics">#ChinaRobotics</span>
+</div>
+
+<!-- Entry 1 -->
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="AICoding">AICoding</button>
+<button class="filter-chip" data-tag="Agent">Agent</button>
+<button class="filter-chip" data-tag="OpenAI">OpenAI</button>
+<button class="filter-chip" data-tag="Benchmark">Benchmark</button>
+<button class="filter-chip" data-tag="AISecurity">AISecurity</button>
+<button class="filter-chip" data-tag="AgentSecurity">AgentSecurity</button>
+<button class="filter-chip" data-tag="DevSecOps">DevSecOps</button>
+<button class="filter-chip" data-tag="EmbodiedAI">EmbodiedAI</button>
+<button class="filter-chip" data-tag="HumanoidRobot">HumanoidRobot</button>
+<button class="filter-chip" data-tag="XPENG">XPENG</button>
+<button class="filter-chip" data-tag="PhysicalAI">PhysicalAI</button>
+<button class="filter-chip" data-tag="ChinaRobotics">ChinaRobotics</button>
+<button class="filter-chip" data-tag="OpenSource">OpenSource</button>
+<button class="filter-chip" data-tag="MCP">MCP</button>
+<button class="filter-chip" data-tag="AIAgents">AIAgents</button>
+<button class="filter-chip" data-tag="Research">Research</button>
+<button class="filter-chip" data-tag="AIObservability">AIObservability</button>
+<button class="filter-chip" data-tag="AgentMonitoring">AgentMonitoring</button>
+<button class="filter-chip" data-tag="AWS">AWS</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. OpenAI 发布内部研究《Research acceleration: The jagged frontier》——编码 Agent 任务完成率从 23% 跃升至 46%</a><a class="toc-item" href="#entry-2">2. Reva.AI 推出 Coding Agent Security——运行时授权与审计日志覆盖 Claude Code / Codex / Copilot / Kiro</a><a class="toc-item" href="#entry-3">3. XPENG AI Day 2026 定档 11 月 25 日广州——IRON 人形机器人量产下线，Robotics 业务估值超 63 亿美元</a><a class="toc-item" href="#entry-4">4. Snorkel AI 发布 Paper2Agent——将研究论文自动转化为 MCP Server 格式的交互式 AI Agent</a><a class="toc-item" href="#entry-5">5. Codenamotary 扩展 AgentMon Live AI Agent 监控平台至 OpenAI Codex 与 AWS Kiro</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="AICoding Agent OpenAI Benchmark" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="OpenAI 发布内部研究《Research acceleration: The jagged frontier》——编码 Agent 任务完成率从 23% 跃升至 46%" data-link="https://emergent.sh/news/openai-coding-agents-hit-46-task-completion">复制</button>
+<h2><a href="https://emergent.sh/news/openai-coding-agents-hit-46-task-completion">OpenAI 发布内部研究《Research acceleration: The jagged frontier》——编码 Agent 任务完成率从 23% 跃升至 46%</a></h2>
+
+<h3>事件概述</h3>
+<p>OpenAI 于 2026 年 11 月 18 日发布内部研究报告，披露其编码 Agent 在 2-4 小时研究类任务上的独立完成率已达 46%，较 2026 年 3 月的 23% 翻番。报告同时指出安全与对齐研究的工作周产出同比提升 77%，显示 Agent 正推动更高难度的研究议程而非替代人类研究者。日均中位支出约 $2,400，经济模型在实验室规模下可行。</p>
+
+<h3>技术与工程价值</h3>
+<ul>
+<li><strong>核心机制</strong>：报告首次系统量化了 Agent 自主性的边际曲线——结构化、可分解的工程任务到达 46% 的实用阈值，但开放式、定义模糊的任务仍存在显著能力断层（"jagged frontier"），增量改进将来自更细粒度的任务拆解与编排策略</li>
+<li><strong>实际影响</strong>：为业界判断 AI Coding Agent 何时可进入生产级使用提供了首个厂商内部基准数据；$2,400/日支出的经济性验证意味着规模化部署已跨越盈亏线，预计将加速企业级 Agent 采购决策</li>
+</ul>
+
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>任务完成率（Nov vs Mar）</td><td>23% → 46%</td><td><div class="bar"><span style="width:46%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>安全研究产出增幅</td><td>+77%</td><td><div class="bar"><span style="width:77%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>日均中位支出</td><td>$2,400</td><td><div class="bar"><span style="width:50%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+<section-label>代码/论文</section-label>
+<div class="source-list">
+<a href="https://emergent.sh/news/openai-coding-agents-hit-46-task-completion">Emergent Sh — OpenAI Coding Agents Hit 46% Task Completion Rate</a>
+</div>
+<ul>
+<li>任务完成率（2-4h 研究任务）：23% → 46%（March→Nov 2026）</li>
+<li>日均中位支出：~$2,400</li>
+<li>安全研究产出增幅：+77%（Jan→Sep 2026）</li>
+</ul>
+
+<section-label>指标看板</section-label>
+<div class="metrics">
+<table>
+<thead><tr><th>指标</th><th>数值</th><th>来源类型</th><th>相对强度</th></tr></thead>
+<tbody>
+<tr><td>任务完成率（Nov vs Mar）</td><td>23% → 46%</td><td><span class="badge self">self</span></td><td><div class="bar"><span style="width:46%"></span></div></td></tr>
+<tr><td>安全研究产出增幅</td><td>+77%</td><td><span class="badge self">self</span></td><td><div class="bar"><span style="width:77%"></span></div></td></tr>
+<tr><td>日均中位支出</td><td>$2,400</td><td><span class="badge self">self</span></td><td><div class="bar"><span style="width:50%"></span></div></td></tr>
+</tbody>
+</table>
+</div>
+
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#AICoding</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#Agent</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#OpenAI</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#Benchmark</span>
+</div>
+
+<!-- Entry 2 -->
+<div class="card priority-2" id="entry-2" data-tags="AISecurity AICoding AgentSecurity DevSecOps" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Reva.AI 推出 Coding Agent Security——运行时授权与审计日志覆盖 Claude Code / Codex / Copilot / Kiro" data-link="https://securitybrief.asia/story/reva-ai-launches-security-tool-for-coding-agents">复制</button>
+<h2><a href="https://securitybrief.asia/story/reva-ai-launches-security-tool-for-coding-agents">Reva.AI 推出 Coding Agent Security——运行时授权与审计日志覆盖 Claude Code / Codex / Copilot / Kiro</a></h2>
+
+<h3>事件概述</h3>
+<p>Reva.AI 于 2026 年 11 月 19 日正式发布 Coding Agent Security，面向 AI 编程 Agent 提供运行时授权管控与完整审计日志，支持 Claude Code、OpenAI Codex、GitHub Copilot 和 AWS Kiro。产品提供自服务 15 天试用，针对 Agent 执行文件编辑、Shell 命令、调用内部工具等行为链进行实时可见性管控。</p>
+
+<h3>技术与工程价值</h3>
+<ul>
+<li><strong>核心机制</strong>：将传统 CI/CD 中的权限模型前移至 Agent 运行时层——在 Agent 发起操作之前校验授权策略，并记录每条 action 到不可篡改的审计日志，解决 Agent 行为黑盒化导致的安全盲区</li>
+<li><strong>实际影响</strong>：标志着 AI Coding Agent 生态从「功能竞争」转向「安全合规竞争」的分水岭；Veracode 2025 报告显示 45% 的 AI 生成代码存在 OWASP Top 10 漏洞，此类工具将成为企业 Agent 部署的前置条件</li>
+</ul>
+
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>兼容主流 Agent 数量</td><td>4</td><td><div class="bar"><span style="width:60%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>AI 代码安全漏洞率（Veracode 2025）</td><td>45%</td><td><div class="bar"><span style="width:45%"></span></div></td><td><span class="badge third">第三方</span></td></tr></table></div>
+<section-label>代码/论文</section-label>
+<div class="source-list">
+<a href="https://securitybrief.asia/story/reva-ai-launches-security-tool-for-coding-agents">SecurityBrief Asia — Reva.AI launches security tool for coding agents</a>
+<a href="https://securitybrief.com.au/story/reva-ai-launches-security-tool-for-coding-agents">SecurityBrief Australia（镜像）</a>
+</div>
+<ul>
+<li>兼容 Agent：Claude Code / OpenAI Codex / GitHub Copilot / AWS Kiro</li>
+<li>试用模式：15 天自服务试用</li>
+<li>背景数据：Veracode 2025 GenAI 代码安全报告——45% AI 生成代码样本未通过安全测试</li>
+</ul>
+
+<section-label>指标看板</section-label>
+<div class="metrics">
+<table>
+<thead><tr><th>指标</th><th>数值</th><th>来源类型</th><th>相对强度</th></tr></thead>
+<tbody>
+<tr><td>已支持主流 Agent</td><td>4</td><td><span class="badge self">self</span></td><td><div class="bar"><span style="width:60%"></span></div></td></tr>
+<tr><td>AI 代码安全漏洞率（Veracode 2025）</td><td>45%</td><td><span class="badge third">third</span></td><td><div class="bar"><span style="width:45%"></span></div></td></tr>
+</tbody>
+</table>
+</div>
+
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#AISecurity</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#AICoding</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#AgentSecurity</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#DevSecOps</span>
+</div>
+
+<!-- Entry 3 -->
+<div class="card priority-3" id="entry-3" data-tags="EmbodiedAI HumanoidRobot XPENG PhysicalAI ChinaRobotics" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="XPENG AI Day 2026 定档 11 月 25 日广州——IRON 人形机器人量产下线，Robotics 业务估值超 63 亿美元" data-link="https://www.globenewswire.com/news-release/2026/11/19/3406484/0/en/xpeng-to-showcase-its-physical-ai-push-at-annual-ai-day-featuring-its-latest-humanoid-robot-in-action-1036784481">复制</button>
+<h2><a href="https://www.globenewswire.com/news-release/2026/11/19/3406484/0/en/xpeng-to-showcase-its-physical-ai-push-at-annual-ai-day-featuring-its-latest-humanoid-robot-in-action-1036784481">XPENG AI Day 2026 定档 11 月 25 日广州——IRON 人形机器人量产下线，Robotics 业务估值超 63 亿美元</a></h2>
+
+<h3>事件概述</h3>
+<p>XPeng Inc. 宣布将于 2026 年 11 月 25 日在广州举办 2026 AI Day，重点展示 Physical AI 全栈进展：IRON 人形机器人已于 2026 年 9 月 8 日在新投产产线正式下线（历经八年研发），同时呈现 L2-L4 智能驾驶体验及飞行汽车规划更新。XPeng Robotics 业务于 2026 年 8 月完成超 9 亿美元股权融资，投后估值突破 63 亿美元，为中国具身智能领域单轮融资纪录。</p>
+
+<h3>技术与工程价值</h3>
+<ul>
+<li><strong>核心机制</strong>：XPENG 的 Physical AI 战略打通「车载感知算法 × 人形机器人运动控制 × 飞行器飞控」三大领域的技术复用路径，IRON 机器人搭载的感知-决策-执行链路与其智驾系统共享底层算法框架，降低边际研发成本</li>
+<li><strong>实际影响</strong>：63 亿美元估值印证资本市场对 China Embodied AI 赛道的持续加码；IRON 量产下线标志中国人形机器人从 Demo 阶段进入可交付阶段，11 月 25 日 AI Day 将是年度最重要的具身智能产业信号之一</li>
+</ul>
+
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>Robotics 融资额</td><td>&gt;$900M</td><td><div class="bar"><span style="width:85%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>投后估值</td><td>&gt;$6.3B</td><td><div class="bar"><span style="width:90%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>八年研发周期至量产</td><td>2018→2026</td><td><div class="bar"><span style="width:70%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+<section-label>代码/论文</section-label>
+<div class="source-list">
+<a href="https://www.globenewswire.com/news-release/2026/11/19/3406484/0/en/xpeng-to-showcase-its-physical-ai-push-at-annual-ai-day-featuring-its-latest-humanoid-robot-in-action-1036784481">GlobeNewswire — XPENG to Showcase Its Physical AI Push at Annual AI Day</a>
+</div>
+<ul>
+<li>融资金额：&gt;$900M（2026年8月）</li>
+<li>投后估值：&gt;$6.3B</li>
+<li>IRON 量产时间：2026年9月8日</li>
+</ul>
+
+<section-label>指标看板</section-label>
+<div class="metrics">
+<table>
+<thead><tr><th>指标</th><th>数值</th><th>来源类型</th><th>相对强度</th></tr></thead>
+<tbody>
+<tr><td>Robotics 融资额</td><td>$900M+</td><td><span class="badge self">self</span></td><td><div class="bar"><span style="width:85%"></span></div></td></tr>
+<tr><td>投后估值</td><td>$6.3B+</td><td><span class="badge self">self</span></td><td><div class="bar"><span style="width:90%"></span></div></td></tr>
+<tr><td>研发至量产周期</td><td>8 年（2018→2026）</td><td><span class="badge self">self</span></td><td><div class="bar"><span style="width:70%"></span></div></td></tr>
+</tbody>
+</table>
+</div>
+
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#EmbodiedAI</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#HumanoidRobot</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#XPENG</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#PhysicalAI</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#ChinaRobotics</span>
+</div>
+
+<!-- Entry 4 -->
+<div class="card priority-4" id="entry-4" data-tags="OpenSource MCP AIAgents Research AICoding" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Snorkel AI 发布 Paper2Agent——将研究论文自动转化为 MCP Server 格式的交互式 AI Agent" data-link="https://snorkel.ai/blog/paper2agent-reimagining-research-papers-as-interactive-and-reliable-ai-agents">复制</button>
+<h2><a href="https://snorkel.ai/blog/paper2agent-reimagining-research-papers-as-interactive-and-reliable-ai-agents">Snorkel AI 发布 Paper2Agent——将研究论文自动转化为 MCP Server 格式的交互式 AI Agent</a></h2>
+
+<h3>事件概述</h3>
+<p>Snorkel AI 开源 Paper2Agent 框架，通过多 Agent 流水线自动定位论文代码库、搭建运行环境、执行教程，并将复现的方法封装为标准 MCP Server（含 tools、resources、prompts 三层组件）。用户可通过 Claude Code 等编码 Agent 以自然语言交互调用复现结果。框架包含工具验证与自动修复逻辑——失败的工具会被修复或剔除，团队正在探索在无代码库时直接从论文文本生成代码的路径。</p>
+
+<h3>技术与工程价值</h3>
+<ul>
+<li><strong>核心机制</strong>：Paper2Agent 填补了学术研究向工程实践转化的最后一环——多数论文因代码不完整、文档欠缺而无法被直接复用，该框架通过自动化管道将论文方法包装为标准化 MCP 接口，使任何支持 MCP 的编码 Agent（Claude Code 原生支持）均可零配置调用</li>
+<li><strong>实际影响</strong>：极大降低了复现前沿研究的技术门槛；随着 MCP 协议成为 Agent 工具调用的事实标准，Paper2Agent 有望催生「论文即 API」的新范式，加速学术成果向工业界的渗透速度</li>
+</ul>
+
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>MCP 组件层级</td><td>3（tools/resources/prompts）</td><td><div class="bar"><span style="width:65%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>论文→Agent 自动化程度</td><td>全流程，待核实</td><td><div class="bar"><span style="width:70%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+<section-label>代码/论文</section-label>
+<div class="source-list">
+<a href="https://snorkel.ai/blog/paper2agent-reimagining-research-papers-as-interactive-and-reliable-ai-agents">Snorkel Blog — Paper2Agent: Turning Research Papers Into AI Agents</a>
+</div>
+<ul>
+<li>输出格式：MCP Server（tools + resources + prompts，共 3 层）</li>
+<li>输入：学术论文 + 代码库（可选）</li>
+<li>依赖：Claude Code / 任意 OpenAI-compatible Agent</li>
+</ul>
+
+<section-label>指标看板</section-label>
+<div class="metrics">
+<table>
+<thead><tr><th>指标</th><th>数值</th><th>来源类型</th><th>相对强度</th></tr></thead>
+<tbody>
+<tr><td>MCP 组件层级数</td><td>3（tools/resources/prompts）</td><td><span class="badge self">self</span></td><td><div class="bar"><span style="width:65%"></span></div></td></tr>
+<tr><td>论文→Agent 自动化程度</td><td>全流程（待核实端到端成功率）</td><td><span class="badge self">self</span></td><td><div class="bar"><span style="width:70%"></span></div></td></tr>
+</tbody>
+</table>
+</div>
+
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#OpenSource</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#MCP</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#AIAgents</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#Research</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#AICoding</span>
+</div>
+
+<!-- Entry 5 -->
+<div class="card priority-5" id="entry-5" data-tags="AIObservability AgentMonitoring OpenAI AWS AICoding" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Codenamotary 扩展 AgentMon Live AI Agent 监控平台至 OpenAI Codex 与 AWS Kiro" data-link="https://www.devopsdigest.com/codenotary-expands-agentmon-live-ai-agent-monitoring-openai-codex-and-aws-kiro">复制</button>
+<h2><a href="https://www.devopsdigest.com/codenotary-expands-agentmon-live-ai-agent-monitoring-openai-codex-and-aws-kiro">Codenamotary 扩展 AgentMon Live AI Agent 监控平台至 OpenAI Codex 与 AWS Kiro</a></h2>
+
+<h3>事件概述</h3>
+<p>Codenamotary 于 2026 年 11 月 19 日宣布将其 AI Agent 实时监控平台 AgentMon Live 的支持范围扩展至 OpenAI Codex 和 AWS Kiro，与已有的 Claude Code 支持形成三足鼎立格局。报告同时引用 Uber 案例——Uber 2026 年 3 月披露 70% 提交代码为 AI 生成，同年 4 月即耗尽其全年 Claude Code + Cursor 预算，5 月承认无法将使用量统计与实际功能产出关联。</p>
+
+<h3>技术与工程价值</h3>
+<ul>
+<li><strong>核心机制</strong>：AgentMon Live 提供 Agent 行为的实时可视化监控面板，弥补传统 observability 工具（APM、日志）无法追踪 AI Agent 多步骤推理链与工具调用轨迹的能力空白；扩展支持 Codex 和 Kiro 意味着跨厂商 Agent 的统一可观测性底座正在成型</li>
+<li><strong>实际影响</strong>：Uber 的案例暴露了当前企业 AI 投入的测量困境——使用量高≠价值产出大；可观测性工具的普及将帮助企业建立 Agent ROI 评估体系，推动行业从「用量焦虑」转向「效果度量」</li>
+</ul>
+
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>已支持 Agent 数量</td><td>3</td><td><div class="bar"><span style="width:55%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>Uber AI 生成代码占比</td><td>~70%</td><td><div class="bar"><span style="width:70%"></span></div></td><td><span class="badge third">第三方</span></td></tr></table></div>
+<section-label>代码/论文</section-label>
+<div class="source-list">
+<a href="https://www.devopsdigest.com/codenotary-expands-agentmon-live-ai-agent-monitoring-openai-codex-and-aws-kiro">DEVOPSdigest — Codenamotary Expands AgentMon Live AI Agent Monitoring</a>
+</div>
+<ul>
+<li>支持 Agent：Claude Code / OpenAI Codex / AWS Kiro（共 3 个）</li>
+<li>Uber AI 代码占比：~70%（2026年3月）</li>
+<li>Uber Claude Code + Cursor 年度预算消耗周期：仅 4 个月</li>
+</ul>
+
+<section-label>指标看板</section-label>
+<div class="metrics">
+<table>
+<thead><tr><th>指标</th><th>数值</th><th>来源类型</th><th>相对强度</th></tr></thead>
+<tbody>
+<tr><td>已支持 Agent 数量</td><td>3</td><td><span class="badge self">self</span></td><td><div class="bar"><span style="width:55%"></span></div></td></tr>
+<tr><td>Uber AI 生成代码占比</td><td>~70%</td><td><span class="badge third">third</span></td><td><div class="bar"><span style="width:70%"></span></div></td></tr>
+</tbody>
+</table>
+</div>
+
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#AIObservability</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#AgentMonitoring</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#OpenAI</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#AWS</span> <span class="tag" style="color:#8b949e;border-color:#8b949e">#AICoding</span>
+</div>
+
+<hr>
+
+<h2 class="section-title">去重说明</h2>
+<div class="dup-note">
+<ul>
+<li><strong>观察项</strong>：OpenAI 编码 Agent 完成率报告本报告周期内未出现，属全新内部研究数据发布；Reva.AI Coding Agent Security 与本期无重复（上期报道的是 Cursor 凭证泄漏事件，主题不同）；XPENG AI Day 上期的 Robotera 邮政部署为独立事件，IRON 量产信息本期新增；Paper2Agent 与上期 Paperclip AI（11-14）同为开源 Agent 框架但方向不同（前者论文转 Agent、后者多 Agent 协同编程）；Codenamotary AgentMon 与 Reva.AI 同属 Agent 安全/可观测性赛道但分属监控 vs 权限管控两个子领域，不重复。</li>
+</ul>
+</div>
+
+<footer>
+<p><strong>数据来源</strong>：Tavily Web Search · 发布时间窗口：北京时间 2026-11-19 08:28 ~ 2026-11-20 08:28</p>
+<p><strong>数据口径</strong>：优先采用官方博客/GitHub/arXiv/核心作者第一信源；不确定处标注「待核实」</p>
+<p>本报告仅供参考，不构成投资建议。</p>
+</footer>
+</div>
+<footer style="margin-top:28px;padding-top:14px;border-top:1px solid #30363d;color:#9da7b1;font-size:13px">发现错误或有建议？<a href="https://github.com/allin8888/ainews/issues/new?title=%E5%8F%8D%E9%A6%88%2F%E7%BA%A0%E9%94%99&body=" target="_blank" rel="noopener" style="color:#58a6ff;text-decoration:none">在 GitHub Issues 提交反馈/纠错</a>（需 GitHub 账号）。</footer>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
