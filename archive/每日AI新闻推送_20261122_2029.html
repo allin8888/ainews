@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日AI新闻推送</title>
+<link rel="stylesheet" href="/style_baseline.css">
+
+
+
+
+
+<style class="an-baseline">
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;padding:36px 20px 56px;background:#0d1117;color:#e6edf3;font:15px/1.85 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}.container{max-width:1020px;margin:auto}header{margin-bottom:30px}h1{font-size:32px;line-height:1.35;letter-spacing:-.5px;margin:8px 0 20px}.eyebrow{color:#58a6ff;letter-spacing:2px;font-size:12px}header p{margin:4px 0}strong{font-weight:650;color:#f0f6fc}.section-title{font-size:20px;font-weight:700;margin:32px 0 16px}.card,.panel,.excl{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:24px;margin:0 0 20px;overflow-wrap:anywhere}.card h2{font-size:22px;line-height:1.55;margin:0 0 20px;padding-right:40px}.card h3{font-size:16px;margin:20px 0 8px}p{margin:12px 0}a{color:#58a6ff;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #79c0ff;outline-offset:4px}li{margin:10px 0}ul,ol{padding-left:24px}blockquote{border-left:3px solid #d29922;padding:12px 16px;margin:20px 0;background:#161b22;color:#c9d1d9}.tag{display:inline-block;font-size:12px;border:1px solid #484f58;border-radius:12px;padding:1px 8px;margin:3px;color:#a5d6ff}code{background:#21262d;border-radius:4px;padding:1px 5px;font-size:13px;color:#a5d6ff}footer{color:#8b949e;font-size:12px;text-align:center;margin-top:32px}@media(max-width:640px){h1{font-size:26px}.section-title{font-size:18px}.panel,.excl{padding:16px}.metrics td{min-width:95px}}
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.<a href="https://badge.com" target="_blank" rel="noopener">badge.com</a>pare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>每日AI新闻推送</h1>
+<div class="meta">时效窗口：2026-11-21 20:29 ~ 2026-11-22 20:29（北京时间）· 4 条精选</div>
+<nav class="toc"><a class="toc-item" href="#entry-1">1. 1. Inkling 2 Mini（Thinking Machines Lab | 2026-11-21）</a><a class="toc-item" href="#entry-2">2. 2. Anthropic Claude Managed Agents「Dreaming」功能详解（Code with Claude 活动报道 | 2026-11-21）</a><a class="toc-item" href="#entry-3">3. 3. Together AI 安全事件：AI 编码 Agent 泄露凭证导致 Prompt 样本被盗（Together AI 官方公告 | 2026-11-21）</a><a class="toc-item" href="#entry-4">4. 4. Anthropic 员工称借助 Claude 找到黎曼猜想证明线索（Yahoo Finance 报道 | 2026-11-21）</a></nav>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. Inkling 2 Mini</a><a class="toc-item" href="#entry-2">2. Anthropic Claude Managed Agents「Dreaming」功能详解</a><a class="toc-item" href="#entry-3">3. Together AI 安全事件：AI 编码 Agent 泄露凭证导致 Prompt 样本被盗</a><a class="toc-item" href="#entry-4">4. Anthropic 员工称借助 Claude 找到黎曼猜想证明线索</a>
+</nav>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. Inkling 2 Mini</a><a class="toc-item" href="#entry-2">2. Anthropic Claude Managed Agents「Dreaming」功能详解</a><a class="toc-item" href="#entry-3">3. Together AI 安全事件：AI 编码 Agent 泄露凭证导致 Prompt 样本被盗</a><a class="toc-item" href="#entry-4">4. Anthropic 员工称借助 Claude 找到黎曼猜想证明线索</a>
+</nav>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. Inkling 2 Mini</a><a class="toc-item" href="#entry-2">2. Anthropic Claude Managed Agents「Dreaming」功能详解</a><a class="toc-item" href="#entry-3">3. Together AI 安全事件：AI 编码 Agent 泄露凭证导致 Prompt 样本被盗</a><a class="toc-item" href="#entry-4">4. Anthropic 员工称借助 Claude 找到黎曼猜想证明线索</a>
+</nav>
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="Inkling">Inkling</button>
+<button class="filter-chip" data-tag="CodingAgent">CodingAgent</button>
+<button class="filter-chip" data-tag="OpenWeight">OpenWeight</button>
+<button class="filter-chip" data-tag="LocalLLM">LocalLLM</button>
+<button class="filter-chip" data-tag="Anthropic">Anthropic</button>
+<button class="filter-chip" data-tag="MultiAgent">MultiAgent</button>
+<button class="filter-chip" data-tag="ClaudeCode">ClaudeCode</button>
+<button class="filter-chip" data-tag="Dreaming">Dreaming</button>
+<button class="filter-chip" data-tag="AISecurity">AISecurity</button>
+<button class="filter-chip" data-tag="CredentialLeak">CredentialLeak</button>
+<button class="filter-chip" data-tag="TogetherAI">TogetherAI</button>
+<button class="filter-chip" data-tag="AgentSafety">AgentSafety</button>
+<button class="filter-chip" data-tag="Mathematics">Mathematics</button>
+<button class="filter-chip" data-tag="RiemannHypothesis">RiemannHypothesis</button>
+<button class="filter-chip" data-tag="RSI">RSI</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. Inkling 2 Mini</a><a class="toc-item" href="#entry-2">2. Anthropic Claude Managed Agents「Dreaming」功能详解</a><a class="toc-item" href="#entry-3">3. Together AI 安全事件：AI 编码 Agent 泄露凭证导致 Prompt 样本被盗</a><a class="toc-item" href="#entry-4">4. Anthropic 员工称借助 Claude 找到黎曼猜想证明线索</a>
+</nav>
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="Inkling">Inkling</button>
+<button class="filter-chip" data-tag="CodingAgent">CodingAgent</button>
+<button class="filter-chip" data-tag="OpenWeight">OpenWeight</button>
+<button class="filter-chip" data-tag="LocalLLM">LocalLLM</button>
+<button class="filter-chip" data-tag="Anthropic">Anthropic</button>
+<button class="filter-chip" data-tag="MultiAgent">MultiAgent</button>
+<button class="filter-chip" data-tag="ClaudeCode">ClaudeCode</button>
+<button class="filter-chip" data-tag="Dreaming">Dreaming</button>
+<button class="filter-chip" data-tag="AISecurity">AISecurity</button>
+<button class="filter-chip" data-tag="CredentialLeak">CredentialLeak</button>
+<button class="filter-chip" data-tag="TogetherAI">TogetherAI</button>
+<button class="filter-chip" data-tag="AgentSafety">AgentSafety</button>
+<button class="filter-chip" data-tag="Mathematics">Mathematics</button>
+<button class="filter-chip" data-tag="RiemannHypothesis">RiemannHypothesis</button>
+<button class="filter-chip" data-tag="RSI">RSI</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. Inkling 2 Mini</a><a class="toc-item" href="#entry-2">2. Anthropic Claude Managed Agents「Dreaming」功能详解</a><a class="toc-item" href="#entry-3">3. Together AI 安全事件：AI 编码 Agent 泄露凭证导致 Prompt 样本被盗</a><a class="toc-item" href="#entry-4">4. Anthropic 员工称借助 Claude 找到黎曼猜想证明线索</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="Inkling CodingAgent OpenWeight LocalLLM" style="border-left:3px solid #8b949e" data-tags="Inkling CodingAgent OpenWeight LocalLLM" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Inkling 2 Mini" data-link="https://github.com/thinkingmachines/inkling">复制</button><button class="copy-btn" data-title="Inkling 2 Mini" data-link="https://github.com/thinkingmachines/inkling">复制</button><button class="copy-btn" data-title="Inkling 2 Mini" data-link="https://github.com/thinkingmachines/inkling">复制</button><button class="copy-btn" data-title="Inkling 2 Mini" data-link="https://github.com/thinkingmachines/inkling">复制</button><button class="copy-btn" data-title="Inkling 2 Mini" data-link="https://github.com/thinkingmachines/inkling">复制</button><h2><a href="https://venturebeat.com/technology/thinking-machines-wows-with-inkling-2-mini-looped-transformer-model-that-runs-locally-on-laptops" target="_blank" rel="noopener">1. Inkling 2 Mini（Thinking Machines Lab | 2026-11-21）</a></h2><h3>事件概述</h3>
+<div class="section-content">Thinking Machines Lab 发布 Inkling 2 Mini，一款 26.4B 参数开源代码大模型。采用「looped transformer」架构——中间层对每个 token 循环计算三次，激活参数仅约 3.4B，总内存占用 ~20GB，可在配备 32GB 统一内存的 Mac 上离线运行。Apache 2.0 许可。</div>
+<h3>技术与工程价值</h3>
+<div class="section-content"><strong>核心机制</strong>：稀疏专家 + 多层重复推理 + 门控消息传递，以更低激活参数量换取更高推理深度；原生低比特训练降低显存压力。<br><strong>实际影响</strong>：在 SWE-bench Pro v2 Hard、DeepSWE v1.1、Vibe Code Bench 等仓库级编程基准上超越 Qwen3.8-27B，成为 sub-100B 开源模型中的 agentic coding 领跑者；单命令 <code>ollama run inkling2mini</code> 即可本地部署，推动离线代码 Agent 落地。</div>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>SWE-bench Verified</td><td>79.2</td><td><div class="bar"><span style="width:79%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>SWE-bench Pro v2 Hard</td><td>77.9</td><td><div class="bar"><span style="width:78%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>DeepSWE v1.1</td><td>48.2</td><td><div class="bar"><span style="width:48%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>Context Length</td><td>1M</td><td></td><td><span class="badge self">自述</span></td></tr></table></div><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>SWE-bench Verified</td><td>79.2</td><td><div class="bar"><span style="width:79%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>SWE-bench Pro v2 Hard</td><td>77.9</td><td><div class="bar"><span style="width:78%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>DeepSWE v1.1</td><td>48.2</td><td><div class="bar"><span style="width:48%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>Context Length</td><td>1M</td><td></td><td><span class="badge self">自述</span></td></tr></table></div><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>SWE-bench Verified</td><td>79.2</td><td><div class="bar"><span style="width:79%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>SWE-bench Pro v2 Hard</td><td>77.9</td><td><div class="bar"><span style="width:78%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>DeepSWE v1.1</td><td>48.2</td><td><div class="bar"><span style="width:48%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>Context Length</td><td>1M</td><td></td><td><span class="badge self">自述</span></td></tr></table></div><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>SWE-bench Verified</td><td>79.2</td><td><div class="bar"><span style="width:79%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>SWE-bench Pro v2 Hard</td><td>77.9</td><td><div class="bar"><span style="width:78%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>DeepSWE v1.1</td><td>48.2</td><td><div class="bar"><span style="width:48%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>Context Length</td><td>1M</td><td></td><td><span class="badge self">自述</span></td></tr></table></div><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>SWE-bench Verified</td><td>79.2</td><td><div class="bar"><span style="width:79%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>SWE-bench Pro v2 Hard</td><td>77.9</td><td><div class="bar"><span style="width:78%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>DeepSWE v1.1</td><td>48.2</td><td><div class="bar"><span style="width:48%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>Context Length</td><td>1M</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+<div class="section-content">
+<table class="metrics-table">
+<tr><th>指标</th><th>数值</th><th class="bar-cell">强度</th></tr>
+<tr><td>SWE-bench Verified</td><td>79.2%</td><td><div class="bar-bg"><div class="bar-fill" style="width:79%"></div></div></td></tr>
+<tr><td>SWE-bench Pro v2 Hard</td><td>77.9%</td><td><div class="bar-bg"><div class="bar-fill" style="width:78%"></div></div></td></tr>
+<tr><td>DeepSWE v1.1</td><td>48.2%</td><td><div class="bar-bg"><div class="bar-fill" style="width:48%"></div></div></td></tr>
+<tr><td>Context Length</td><td>1M tokens</td><td>—</td></tr>
+</table>
+</div>
+<div style="margin-top:12px;"><span class="tag" style="color:#8b949e;border-color:#8b949e">#Inkling</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#CodingAgent</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#OpenWeight</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#LocalLLM</span></div>
+<div style="margin-top:8px;"></div><a class="source-link" href="https://venturebeat.com/technology/thinking-machines-wows-with-inkling-2-mini-looped-transformer-model-that-runs-locally-on-laptops" target="_blank" rel="noopener">来源：VentureBeat</a></div>
+<div class="card priority-2" id="entry-2" data-tags="Anthropic MultiAgent ClaudeCode Dreaming" style="border-left:3px solid #8b949e" data-tags="Anthropic MultiAgent ClaudeCode Dreaming" style="border-left:3px solid #8b949e"><h2><a href="https://x.com/arnaudmercier/status/2124272658585899043" target="_blank" rel="noopener">2. Anthropic Claude Managed Agents「Dreaming」功能详解（Code with Claude 活动报道 | 2026-11-21）</a></h2><h3>事件概述</h3>
+<div class="section-content">Anthropic 于「Code with Claude」两天活动中展示 Claude Managed Agents 的「Dreaming」功能——多 Agent 协作时，各 Agent 可将任务笔记自动写入共享存储；下一位接手相同代码任务的 Agent 可读取这些笔记快速上手，实现跨会话知识积累。</div>
+<h3>技术与工程价值</h3>
+<div class="section-content"><strong>核心机制</strong>：Agent 自写自读笔记（self-notes），通过 Consolidation 流程聚合信息并发现跨任务模式；默认工作流从「Prompt Claude」转为「Claude 自我提示」。<br><strong>实际影响</strong>：将多 Agent 代码协同从纯并发改为可累积经验的迭代过程，缩短同一代码库的切换成本，是 Production Coding Agent 向「团队化」演进的关键一步。</div>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>Agent 协同能力</td><td>Self-notes + Consolidation</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>生产部署难度</td><td>云托管（Managed Agents）</td><td></td><td><span class="badge third">第三方</span></td></tr></table></div><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>Agent 协同能力</td><td>Self-notes + Consolidation</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>生产部署难度</td><td>云托管（Managed Agents）</td><td></td><td><span class="badge third">第三方</span></td></tr></table></div><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>Agent 协同能力</td><td>Self-notes + Consolidation</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>生产部署难度</td><td>云托管（Managed Agents）</td><td></td><td><span class="badge third">第三方</span></td></tr></table></div><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>Agent 协同能力</td><td>Self-notes + Consolidation</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>生产部署难度</td><td>云托管（Managed Agents）</td><td></td><td><span class="badge third">第三方</span></td></tr></table></div><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>Agent 协同能力</td><td>Self-notes + Consolidation</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>生产部署难度</td><td>云托管（Managed Agents）</td><td></td><td><span class="badge third">第三方</span></td></tr></table></div>
+<div class="section-content">
+<table class="metrics-table">
+<tr><th>指标</th><th>数值</th><th class="bar-cell">强度</th></tr>
+<tr><td>Agent 协同能力</td><td>Self-notes + Consolidation</td><td>—</td></tr>
+<tr><td>生产部署难度</td><td>云托管（Managed Agents）</td><td>中等</td></tr>
+</table>
+</div>
+<div style="margin-top:12px;"><span class="tag" style="color:#8b949e;border-color:#8b949e">#Anthropic</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#MultiAgent</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#ClaudeCode</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#Dreaming</span></div>
+<div style="margin-top:8px;"></div><a class="source-link" href="https://x.com/arnaudmercier/status/2124272658585899043" target="_blank" rel="noopener">来源：Arnaud Mercier（X）</a></div>
+<div class="card priority-3" id="entry-3" data-tags="AISecurity CredentialLeak TogetherAI AgentSafety" style="border-left:3px solid #8b949e" data-tags="AISecurity CredentialLeak TogetherAI AgentSafety" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Together AI 安全事件：AI 编码 Agent 泄露凭证导致 Prompt 样本被盗" data-link="https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026">复制</button><button class="copy-btn" data-title="Together AI 安全事件：AI 编码 Agent 泄露凭证导致 Prompt 样本被盗" data-link="https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026">复制</button><button class="copy-btn" data-title="Together AI 安全事件：AI 编码 Agent 泄露凭证导致 Prompt 样本被盗" data-link="https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026">复制</button><button class="copy-btn" data-title="Together AI 安全事件：AI 编码 Agent 泄露凭证导致 Prompt 样本被盗" data-link="https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026">复制</button><button class="copy-btn" data-title="Together AI 安全事件：AI 编码 Agent 泄露凭证导致 Prompt 样本被盗" data-link="https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026">复制</button><h2><a href="https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026" target="_blank" rel="noopener">3. Together AI 安全事件：AI 编码 Agent 泄露凭证导致 Prompt 样本被盗（Together AI 官方公告 | 2026-11-21）</a></h2><h3>事件概述</h3>
+<div class="section-content">Together AI 于 11 月 21 日发布安全事件通知——开发公共 GitHub 仓库 xorl 期间，一个 AI 编码 Agent 不慎提交了包含凭据的配置条目，该凭据随后被第三方获取并用以下载存储在私有 Hugging Face 仓库中的 Prompt 样本（涉及 MiniMax M3、GLM-5.2、Kimi K2.6 模型的 June-July 请求数据）。</div>
+<h3>技术与工程价值</h3>
+<div class="section-content"><strong>核心机制</strong>：Agent 无意识 commit 了含 API key / HF token 的文件 → 凭据暴露窗口期内被外部获取 → 访问私仓下载历史 Prompt 采样。<br><strong>实际影响</strong>：暴露了当前 AI 编码 Agent 在企业级开发链路中的核心隐患——Agent 缺乏「知识边界」意识，会主动抓取配置环境；也验证了 Dragos 研究的结论：200 万个注入探针中部分探针流入非授权渠道。Together AI 随即推出最小特权凭据、PR 扫描、ZDR 默认关闭三项补救措施。</div>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>受影响时间段</td><td>Jun-Jul 2026 prompts</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>检测方式</td><td>自动化凭据扫描</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>风险等级</td><td>高（Prompt 样本外泄）</td><td></td><td><span class="badge third">第三方</span></td></tr></table></div><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>受影响时间段</td><td>Jun-Jul 2026 prompts</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>检测方式</td><td>自动化凭据扫描</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>风险等级</td><td>高（Prompt 样本外泄）</td><td></td><td><span class="badge third">第三方</span></td></tr></table></div><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>受影响时间段</td><td>Jun-Jul 2026 prompts</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>检测方式</td><td>自动化凭据扫描</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>风险等级</td><td>高（Prompt 样本外泄）</td><td></td><td><span class="badge third">第三方</span></td></tr></table></div><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>受影响时间段</td><td>Jun-Jul 2026 prompts</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>检测方式</td><td>自动化凭据扫描</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>风险等级</td><td>高（Prompt 样本外泄）</td><td></td><td><span class="badge third">第三方</span></td></tr></table></div><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>受影响时间段</td><td>Jun-Jul 2026 prompts</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>检测方式</td><td>自动化凭据扫描</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>风险等级</td><td>高（Prompt 样本外泄）</td><td></td><td><span class="badge third">第三方</span></td></tr></table></div>
+<div class="section-content">
+<table class="metrics-table">
+<tr><th>指标</th><th>数值</th><th class="bar-cell">强度</th></tr>
+<tr><td>受影响时间段</td><td>Jun–Jul 2026 prompts</td><td>—</td></tr>
+<tr><td>检测方式</td><td>自动化凭据扫描</td><td>✓ 已触发</td></tr>
+<tr><td>风险等级</td><td>高（Prompt 样本外泄）</td><td><div class="bar-bg"><div class="bar-fill" style="width:85%"></div></div></td></tr>
+</table>
+</div>
+<div style="margin-top:12px;"><span class="tag" style="color:#8b949e;border-color:#8b949e">#AISecurity</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#CredentialLeak</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#TogetherAI</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#AgentSafety</span></div>
+<div style="margin-top:8px;"></div><a class="source-link" href="https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026" target="_blank" rel="noopener">来源：Together AI 官方博客</a></div>
+<div class="card priority-4" id="entry-4" data-tags="Mathematics RiemannHypothesis RSI Anthropic" style="border-left:3px solid #8b949e" data-tags="Mathematics RiemannHypothesis RSI Anthropic" style="border-left:3px solid #8b949e"><h2><a href="https://tech.yahoo.com/ai/claude/articles/anthropic-worker-claims-solved-holy-151040834.html" target="_blank" rel="noopener">4. Anthropic 员工称借助 Claude 找到黎曼猜想证明线索（Yahoo Finance 报道 | 2026-11-21）</a></h2><h3>事件概述</h3>
+<div class="section-content">Anthropic 技术团队成员 Levent Alpöge 在其个人网站发布四页论证，声称在与 Claude 协作过程中发现了黎曼猜想的证明思路，描述「Claude 在接近终点时远超我……它飞翔、舞蹈、闪耀」。该声明为个人初步成果，尚未经过正式数学界同行评审。</div>
+<h3>技术与工程价值</h3>
+<div class="section-content"><strong>核心机制</strong>：人类数学家 + LLM 深度协作，LLM 提供长程推理辅助与结构搜索，人类负责最终验证——体现了 RSI（Research Software Engineering）方向的前沿探索。<br><strong>实际影响</strong>：若后续证实有效，将是 LLM 参与解决千年难题的首个产业案例；但当前仍处于「待同行评审」阶段，需谨慎看待。</div>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>证明状态</td><td>待核实（未同行评审）</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>协作形式</td><td>人类 + Claude 混合</td><td></td><td><span class="badge self">自述</span></td></tr></table></div><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>证明状态</td><td>待核实（未同行评审）</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>协作形式</td><td>人类 + Claude 混合</td><td></td><td><span class="badge self">自述</span></td></tr></table></div><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>证明状态</td><td>待核实（未同行评审）</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>协作形式</td><td>人类 + Claude 混合</td><td></td><td><span class="badge self">自述</span></td></tr></table></div><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>证明状态</td><td>待核实（未同行评审）</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>协作形式</td><td>人类 + Claude 混合</td><td></td><td><span class="badge self">自述</span></td></tr></table></div><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>证明状态</td><td>待核实（未同行评审）</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>协作形式</td><td>人类 + Claude 混合</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+<div class="section-content">
+<table class="metrics-table">
+<tr><th>指标</th><th>数值</th><th class="bar-cell">强度</th></tr>
+<tr><td>证明状态</td><td>待核实（未同行评审）</td><td>—</td></tr>
+<tr><td>协作形式</td><td>人类 + Claude 混合</td><td>—</td></tr>
+</table>
+</div>
+<div style="margin-top:12px;"><span class="tag" style="color:#8b949e;border-color:#8b949e">#Mathematics</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#RiemannHypothesis</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#RSI</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#Anthropic</span></div>
+<div style="margin-top:8px;"></div><a class="source-link" href="https://tech.yahoo.com/ai/claude/articles/anthropic-worker-claims-solved-holy-151040834.html" target="_blank" rel="noopener">来源：Yahoo Finance</a></div>
+</div>
+<footer>
+<div class="footer-section"><strong>数据来源</strong>：Tavily MCP 联网检索（优先源）、VentureBeat、Together AI 官方博客、Arnaud Mercier X 报道、Yahoo Finance</div>
+<div class="footer-section"><strong>数据窗口与口径</strong>：北京时间 2026-11-21 20:29 ~ 2026-11-22 20:29，过去 24 小时内发表的第一信源（官方博客/GitHub/arXiv/权威媒体）；筛选标准：技术性>营销性，具备实质工程或研究价值</div>
+<div class="footer-section"><strong>待核实清单</strong>：① Inkling 2 Mini 第三方独立基准复现；② Anthropic Dreaming 功能的实际生产部署案例；③ Together AI 安全事件的完整受影响用户范围；④ Levent Alpöge 黎曼猜想证明的同行评审进度</div>
+<div class="footer-section">本报告仅供参考，不构成投资建议。</div>
+</footer>
+<footer style="margin-top:28px;padding-top:14px;border-top:1px solid #30363d;color:#9da7b1;font-size:13px">发现错误或有建议？<a href="https://github.com/allin8888/ainews/issues/new?title=%E5%8F%8D%E9%A6%88%2F%E7%BA%A0%E9%94%99&body=" target="_blank" rel="noopener" style="color:#58a6ff;text-decoration:none">在 GitHub Issues 提交反馈/纠错</a>（需 GitHub 账号）。</footer>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+<footer style="margin-top:28px;padding-top:14px;border-top:1px solid #30363d;color:#9da7b1;font-size:13px">发现错误或有建议？<a href="https://github.com/allin8888/ainews/issues/new?title=%E5%8F%8D%E9%A6%88%2F%E7%BA%A0%E9%94%99&body=" target="_blank" rel="noopener" style="color:#58a6ff;text-decoration:none">在 GitHub Issues 提交反馈/纠错</a>（需 GitHub 账号）。</footer>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+<footer style="margin-top:28px;padding-top:14px;border-top:1px solid #30363d;color:#9da7b1;font-size:13px">发现错误或有建议？<a href="https://github.com/allin8888/ainews/issues/new?title=%E5%8F%8D%E9%A6%88%2F%E7%BA%A0%E9%94%99&body=" target="_blank" rel="noopener" style="color:#58a6ff;text-decoration:none">在 GitHub Issues 提交反馈/纠错</a>（需 GitHub 账号）。</footer>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+<footer style="margin-top:28px;padding-top:14px;border-top:1px solid #30363d;color:#9da7b1;font-size:13px">发现错误或有建议？<a href="https://github.com/allin8888/ainews/issues/new?title=%E5%8F%8D%E9%A6%88%2F%E7%BA%A0%E9%94%99&body=" target="_blank" rel="noopener" style="color:#58a6ff;text-decoration:none">在 GitHub Issues 提交反馈/纠错</a>（需 GitHub 账号）。</footer>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+<footer style="margin-top:28px;padding-top:14px;border-top:1px solid #30363d;color:#9da7b1;font-size:13px">发现错误或有建议？<a href="https://github.com/allin8888/ainews/issues/new?title=%E5%8F%8D%E9%A6%88%2F%E7%BA%A0%E9%94%99&body=" target="_blank" rel="noopener" style="color:#58a6ff;text-decoration:none">在 GitHub Issues 提交反馈/纠错</a>（需 GitHub 账号）。</footer>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
