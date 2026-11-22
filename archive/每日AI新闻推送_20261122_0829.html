@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日AI新闻推送</title>
+
+<style class="an-baseline">
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;padding:36px 20px 56px;background:#0d1117;color:#e6edf3;font:15px/1.85 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}.container{max-width:1020px;margin:auto}header{margin-bottom:30px}h1{font-size:32px;line-height:1.35;letter-spacing:-.5px;margin:8px 0 20px}.eyebrow{color:#58a6ff;letter-spacing:2px;font-size:12px}header p{margin:4px 0}strong{font-weight:650;color:#f0f6fc}.section-title{font-size:20px;font-weight:700;margin:32px 0 16px}.card,.panel,.excl{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:24px;margin:0 0 20px;overflow-wrap:anywhere}.card h2{font-size:22px;line-height:1.55;margin:0 0 20px;padding-right:40px}.card h3{font-size:16px;margin:20px 0 8px}p{margin:12px 0}a{color:#58a6ff;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #79c0ff;outline-offset:4px}li{margin:10px 0}ul,ol{padding-left:24px}blockquote{border-left:3px solid #d29922;padding:12px 16px;margin:20px 0;background:#161b22;color:#c9d1d9}.tag{display:inline-block;font-size:12px;border:1px solid #484f58;border-radius:12px;padding:1px 8px;margin:3px;color:#a5d6ff}code{background:#21262d;border-radius:4px;padding:1px 5px;font-size:13px;color:#a5d6ff}footer{color:#8b949e;font-size:12px;text-align:center;margin-top:32px}@media(max-width:640px){h1{font-size:26px}.section-title{font-size:18px}.panel,.excl{padding:16px}.metrics td{min-width:95px}}
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.<a href="https://badge.com" target="_blank" rel="noopener">badge.com</a>pare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>每日AI新闻推送</h1>
+<div class="meta">时效窗口：2026-11-21 08:27 ~ 2026-11-22 08:27（北京时间）· 4 条精选</div>
+<nav class="toc"><a class="toc-item" href="#entry-1">1. Google Gemini 4 Neon 正式发布：编码性能追平 Claude Fable 5.2，成本再降 17%</a><a class="toc-item" href="#entry-2">2. Anthropic IPO 定价敲定：每股 $83，估值 $813 亿，首日交易下跌 9.1%</a><a class="toc-item" href="#entry-3">3. Parallel Code 发布：多 AI 编码 Agent 并行编排工具</a><a class="toc-item" href="#entry-4">4. Slack 新功能：让 Claude Code 与 Codex 接入团队历史对话上下文</a></nav>
+<div class="card priority-1" id="entry-1"><h2><a href="https://cryptobriefing.com/google-deepmind-gemini-4-neon-launch/">Google Gemini 4 Neon 正式发布：编码性能追平 Claude Fable 5.2，成本再降 17%</a></h2><h3>事件概述</h3>
+    <div class="section-content">Google DeepMind 于 2026 年 11 月 19–20 日推出 Gemini 4 系列第四款模型 Neon，面向 AI Pro/Ultra 订阅用户开放。独立评测将其列为全球智能指数第三，编程能力与 Claude Fable 5.2 相当，任务成本较上一代 Carbon 再降约 17%，API 定价为输入 $3/百万 token、输出 $15/百万 token。</div>
+    <h3>技术与工程价值</h3>
+    <div class="section-content">Neon 在 Carbon 基础上优化推理效率，采用更激进的蒸馏策略压缩计算图，在保留前代 Carbon 级代码生成准确率的同时进一步降低延迟与费用；对依赖 Gemini 的开发者而言，Neon 以接近旗舰的成本提供可替代 Fable 5.2 的编程能力，有望加速开源模型与闭源模型的竞争。</div>
+    <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>全球智能排名</td><td>3</td><td><div class="bar"><span style="width:50%"></span></div></td><td><span class="badge third">第三方</span></td></tr><tr><td>API输入价格(USD/M)</td><td>3</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>API输出价格(USD/M)</td><td>15</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>相对Carbon降幅</td><td>17%</td><td><div class="bar"><span style="width:17%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+    <table class="metrics-table">
+      <tr><th>指标</th><th>值</th><th>来源</th></tr>
+      <tr><td>Global Intelligence Rank</td><td>#3</td><td>第三方评测</td></tr>
+      <tr><td>MKA 基准</td><td>与 Fable 5.2 持平</td><td>第三方</td></tr>
+      <tr><td>API 输入价格 (USD/M tokens)</td><td>$3</td><td>厂商自述</td></tr>
+      <tr><td>API 输出价格 (USD/M tokens)</td><td>$15</td><td>厂商自述</td></tr>
+      <tr><td>相对 Carbon 成本降幅</td><td>~17%</td><td>厂商自述</td></tr>
+    </table>
+    <div style="margin-top:10px"><span class="tag" style="color:#8b949e;border-color:#8b949e">#Gemini</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#GoogleDeepMind</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#AI模型</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#成本优化</span></div></div>
+<div class="card priority-2" id="entry-2"><h2><a href="https://www.webtech360.com/detail/anthropics-81-35bn-ipo-what-its-listing-means-for-en-trend-hp2-99920684.html">Anthropic IPO 定价敲定：每股 $83，估值 $813 亿，首日交易下跌 9.1%</a></h2><h3>事件概述</h3>
+    <div class="section-content">Anthropic 于 2026 年 11 月 19–20 日完成 IPO 定价，发行价每股 $83，对应市值约 $813 亿（$81.3B）。11 月 20 日上市首日，ANT 股价收于 $88.30，较开盘价下跌约 9.1%（注：具体首日夜盘波动有待核实）。Google 同期增持约 1.35 亿股 Anthropic 股份，斥资超 $100 亿。</div>
+    <h3>技术与工程价值</h3>
+    <div class="section-content">Anthropic 以 $83 定价远低于此前市场传闻的 $100+，反映一级市场对其 AI 安全投入回报周期的审慎预期；Anthropic 正式成为上市公司，OpenRouter（其开源网关业务）亦同步获得更明确的资本支撑框架。</div>
+    <h3>关键指标/资源</h3>
+    <table class="metrics-table">
+      <tr><th>指标</th><th>值</th><th>来源</th></tr>
+      <tr><td>IPO 发行价</td><td>$83/股</td><td>厂商自述</td></tr>
+      <tr><td>首日报收</td><td>$88.30（跌 9.1%）</td><td>第三方</td></tr>
+      <tr><td>IPO 估值</td><td>$813 亿</td><td>第三方</td></tr>
+      <tr><td>Alphabet 持股市值</td><td>>=$1000 亿</td><td>第三方</td></tr>
+    </table>
+    <div style="margin-top:10px"><span class="tag" style="color:#8b949e;border-color:#8b949e">#Anthropic</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#IPO</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#Claude</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#投资</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#公开市场</span></div></div>
+<div class="card priority-3" id="entry-3"><h2><a href="https://emergent.sh/news/parallel-code-launches-multi-agent-cli-claude">Parallel Code 发布：多 AI 编码 Agent 并行编排工具</a></h2><h3>事件概述</h3>
+    <div class="section-content">Parallel Code 于 2026 年 11 月 21 日正式发布，是一款开源多 Agent CLI 编排工具，可在隔离的 Git worktree 中同时运行多个 AI 编码助手（Claude Code、GitHub Codex、GitHub Copilot Agent），支持同步对比模式和异步流式模式。</div>
+    <h3>技术与工程价值</h3>
+    <div class="section-content">利用 Git worktree 实现各 Agent 任务的完全隔离与独立版本控制；为团队评估多种 AI 编码工具性能差异提供标准化基准测试平台，也支持融合多个 Agent 输出的「投票式」实用场景。</div>
+    <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>支持Agent数</td><td>3</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>安装方式</td><td>npm/Homebrew/Binary</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>支持的OS</td><td>macOS/Linux/Windows</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>隔离机制</td><td>Git worktree</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+    <table class="metrics-table">
+      <tr><th>指标</th><th>值</th><th>来源</th></tr>
+      <tr><td>支持 Agent 数</td><td>3（Claude Code / Codex / Copilot）</td><td>厂商自述</td></tr>
+      <tr><td>安装方式</td><td>npm / Homebrew / 二进制</td><td>厂商自述</td></tr>
+      <tr><td>隔离机制</td><td>Git worktree</td><td>厂商自述</td></tr>
+      <tr><td>官网</td><td>parallelcode.app</td><td>第三方</td></tr>
+    </table>
+    <div style="margin-top:10px"><span class="tag" style="color:#8b949e;border-color:#8b949e">#多Agent</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#ClaudeCode</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#Codex</span><span class="tag" style="color:#f0883e;border-color:#f0883e">#开发工具</span><span class="tag" style="color:#3fb950;border-color:#3fb950">#开源</span></div></div>
+<div class="card priority-4" id="entry-4"><h2><a href="https://www.forbes.com/sites/victordey/2026/11/19/slack-evp-says-ai-coding-agents-need-the-conversation-behind-the-code/">Slack 新功能：让 Claude Code 与 Codex 接入团队历史对话上下文</a></h2><h3>事件概述</h3>
+    <div class="section-content">2026 年 11 月 19 日，Forbes 报道 Slack 推出新功能，允许 AI 编码 Agent（如 Anthropic Claude Code、OpenAI Codex）访问团队在 Slack 中的过往讨论记录，理解团队的编码决策背景与设计意图。</div>
+    <h3>技术与工程价值</h3>
+    <div class="section-content">通过 MCP-compatible 集成或 Slack API 权限扩展，将频道历史消息作为 Agent 可读取的上下文注入——解决当前 AI 编码 Agent 最大的痛点之一：脱离组织知识孤岛，显著提升大模型代码建议的相关性与正确性。</div>
+    <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>支持Agent</td><td>Claude Code / Codex</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>集成方式</td><td>Slack API / MCP</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>上下文类型</td><td>频道历史消息</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+    <table class="metrics-table">
+      <tr><th>指标</th><th>值</th><th>来源</th></tr>
+      <tr><td>支持 Agent</td><td>Claude Code / Codex</td><td>厂商自述</td></tr>
+      <tr><td>集成方式</td><td>Slack API / MCP</td><td>第三方推测</td></tr>
+      <tr><td>上下文类型</td><td>频道历史消息</td><td>厂商自述</td></tr>
+    </table>
+    <div style="margin-top:10px"><span class="tag" style="color:#8b949e;border-color:#8b949e">#Slack</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#ClaudeCode</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#Codex</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#MCP</span><span class="tag" style="color:#8b949e;border-color:#8b949e">#开发者体验</span></div></div>
+</div>
+<footer>
+    <div>数据来源：Forbes · Crypto Briefing · Emergent · Google DeepMind Blog · WEBTECH 360（截至 2026-11-22 08:27 北京时间）</div>
+    <div style="margin-top:4px">本报告仅供参考，不构成投资建议。</div>
+  </footer>
+</body>
+</html>
