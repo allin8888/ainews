@@ -1,0 +1,141 @@
+{
+  "source_md": "/opt/data/tmp/每日AI新闻推送_20261123_2029.md",
+  "source_html": "/opt/data/tmp/每日AI新闻推送_20261123_2029.html",
+  "entry_count": 4,
+  "observed": [
+    "「NVIDIA Isaac Lab 3.0」与前次报告（20261116_2028「NVIDIA GR00T 2」）共享 NVIDIA 关键词但事件类型不同（前者为软硬件一体平台 GA、后者为 World-Action Model 研究论文），判定非重复",
+    "「WALL-OSS-1.0」前代 WALL-OSS-0.5（arXiv:2605.30877）已在历史知识库中记录，本次为首发新闻窗口新报道，非重复",
+    "「OYMotion D 轮」未出现在最近 7 天任何已归档条目中",
+    "「LingSante-3.1-flash」与前次「Qwen4-Max」（20261122_2029）共享 MoE 模式但分属蚂蚁与阿里两条产品线，判定非重复"
+  ],
+  "entries": [
+    {
+      "priority": 1,
+      "title": "NVIDIA Isaac Lab 3.0 GA 与 Agile ONE SN 参考人形机",
+      "source": "NVIDIA Blog / Robotics & Automation News | 2026-11-23",
+      "tags": [
+        "NVIDIA",
+        "Isaac",
+        "EmbodiedAI",
+        " humanoid",
+        " GTC2026"
+      ],
+      "link": "",
+      "metrics": [
+        {
+          "label": "Isaac Lab 3.0",
+          "value": "GA 发布",
+          "kind": "self",
+          "bar": 85
+        },
+        {
+          "label": "Toyota 调试时间缩减",
+          "value": "~50%",
+          "kind": "third",
+          "bar": 50
+        }
+      ]
+    },
+    {
+      "priority": 2,
+      "title": "X Square Robot 发布 WALL-OSS-1.0 VLA 原生预训练基础模型",
+      "source": "X Square Robot / GlobeNewsWire | 2026-11-23",
+      "tags": [
+        "EmbodiedAI",
+        "VLA",
+        "自变量机器人",
+        "具身智能",
+        "FoundationModel"
+      ],
+      "link": "",
+      "metrics": [
+        {
+          "label": "零样本真实任务成功率",
+          "value": "55.1%",
+          "kind": "self",
+          "bar": 55
+        },
+        {
+          "label": "X2Real 仿真基准",
+          "value": "67.55/100",
+          "kind": "self"
+        },
+        {
+          "label": "最强开源基线对比",
+          "value": "Lingbot-VLA-2.0 40.94",
+          "kind": "compare"
+        }
+      ]
+    },
+    {
+      "priority": 3,
+      "title": "OYMotion 完成数亿元 D 轮融资，加速灵巧手供应链布局",
+      "source": "Dealroom / BigGo Finance / 36Kr | 2026-11-23",
+      "tags": [
+        "EmbodiedAI",
+        "灵巧手",
+        "融资",
+        "具身智能供应链",
+        "D 轮"
+      ],
+      "link": "",
+      "metrics": [
+        {
+          "label": "累计融资金额（D 轮前）",
+          "value": "$80.5M",
+          "kind": "third",
+          "bar": 70
+        },
+        {
+          "label": "2026 年内融资次数",
+          "value": "2 轮（C+D）",
+          "kind": "self",
+          "bar": 60
+        }
+      ]
+    },
+    {
+      "priority": 4,
+      "title": "蚂蚁集团低调开源 LingSante-3.1-flash 560B 医疗 MoE 模型",
+      "source": "Ant Ling / Artificial Analysis / Emergent.sh | 2026-11-22",
+      "tags": [
+        "MedicalAI",
+        "OpenSource",
+        "MoE",
+        "蚂蚁集团",
+        "LingSante"
+      ],
+      "link": "",
+      "metrics": [
+        {
+          "label": "HealthBench Professional",
+          "value": "65.72",
+          "kind": "self",
+          "bar": 66
+        },
+        {
+          "label": "BrowseComp",
+          "value": "94.10",
+          "kind": "self",
+          "bar": 94
+        },
+        {
+          "label": "MLCR-AA 长上下文医疗推理",
+          "value": "23.3%",
+          "kind": "third",
+          "bar": 23
+        },
+        {
+          "label": "总参数 / 每 token 活跃",
+          "value": "560B / 25B",
+          "kind": "self"
+        },
+        {
+          "label": "上下文长度",
+          "value": "1M tokens",
+          "kind": "self"
+        }
+      ]
+    }
+  ]
+}
