@@ -3,7 +3,42 @@
 <title>每日 AI 前沿技术精选</title>
 <link>https://allin8888.github.io/ainews/archive/</link>
 <description>每日 AI 前沿技术精选 · 结构化条目流</description>
-<lastBuildDate>Sat, 21 Nov 2026 15:05:27 -0000</lastBuildDate>
+<lastBuildDate>Tue, 24 Nov 2026 15:26:48 -0000</lastBuildDate>
+<item>
+<title>Anthropic 推出 Claude Ship：Code Review 正式 GA，PR Steward + Claude Approvals 把审批权交给 AI Agent</title>
+<link>https://allin8888.github.io/ainews/archive/每日AI新闻推送_20261124_2321.html</link>
+<guid isPermaLink="false">20261124_2321-Anthropic 推出 Claude Ship：Code Review 正式 GA，PR Steward + Claude Approvals 把审批权交给 AI Agent</guid>
+<pubDate>2026-11-24</pubDate>
+<category>AI-Coding、Agent-编排、代码审查、交付治理</category>
+</item>
+<item>
+<title>OpenAI × Cisco 开源 Shirudo：eBPF 运行时「自防御」盾牌，Codex 生成防护无重启拦截 Java4Shell</title>
+<link>https://allin8888.github.io/ainews/archive/每日AI新闻推送_20261124_2321.html</link>
+<guid isPermaLink="false">20261124_2321-OpenAI × Cisco 开源 Shirudo：eBPF 运行时「自防御」盾牌，Codex 生成防护无重启拦截 Java4Shell</guid>
+<pubDate>2026-11-24</pubDate>
+<category>AI-Coding、Agent-安全、开源、eBPF</category>
+</item>
+<item>
+<title>蚂蚁开源 Ling-3.2-air：1240 亿参数原生多模态 MoE、每 token 激活 55 亿，SWE-bench Pro 26.40→58.28</title>
+<link>https://allin8888.github.io/ainews/archive/每日AI新闻推送_20261124_2321.html</link>
+<guid isPermaLink="false">20261124_2321-蚂蚁开源 Ling-3.2-air：1240 亿参数原生多模态 MoE、每 token 激活 55 亿，SWE-bench Pro 26.40→58.28</guid>
+<pubDate>2026-11-24</pubDate>
+<category>AI-Coding、开源模型、多模态、Agent</category>
+</item>
+<item>
+<title>Google DeepMind 开源量子程序形式化验证框架：Gemini 4 Agent 团队用 Lean 证明，arcsin 提速 290×、聚变模拟降本 11.8×</title>
+<link>https://allin8888.github.io/ainews/archive/每日AI新闻推送_20261124_2321.html</link>
+<guid isPermaLink="false">20261124_2321-Google DeepMind 开源量子程序形式化验证框架：Gemini 4 Agent 团队用 Lean 证明，arcsin 提速 290×、聚变模拟降本 11.8×</guid>
+<pubDate>2026-11-24</pubDate>
+<category>RSI、自主科学发现、形式化验证、开源</category>
+</item>
+<item>
+<title>智源 REAL 物理 AI 开放日：悟界·Innata-0 原生具身世界系统 + Physis-V1 基座模型，开放 HumanCOIN 与第一人称意图数据</title>
+<link>https://allin8888.github.io/ainews/archive/每日AI新闻推送_20261124_2321.html</link>
+<guid isPermaLink="false">20261124_2321-智源 REAL 物理 AI 开放日：悟界·Innata-0 原生具身世界系统 + Physis-V1 基座模型，开放 HumanCOIN 与第一人称意图数据</guid>
+<pubDate>2026-11-24</pubDate>
+<category>具身智能、世界模型、开源数据集、评测</category>
+</item>
 <item>
 <title>Thinking Machines 开源 Inkling 2 Mini：26.4B 循环 MoE、约 20GB 可在 32GB Mac 本地跑，SWE-bench Verified 79.2%</title>
 <link>https://allin8888.github.io/ainews/archive/每日AI新闻推送_20261121_2258.html</link>
