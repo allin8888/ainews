@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日AI新闻推送</title>
+
+<style class="an-baseline">
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;padding:36px 20px 56px;background:#0d1117;color:#e6edf3;font:15px/1.85 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}.container{max-width:1020px;margin:auto}header{margin-bottom:30px}h1{font-size:32px;line-height:1.35;letter-spacing:-.5px;margin:8px 0 20px}.eyebrow{color:#58a6ff;letter-spacing:2px;font-size:12px}header p{margin:4px 0}strong{font-weight:650;color:#f0f6fc}.section-title{font-size:20px;font-weight:700;margin:32px 0 16px}.card,.panel,.excl{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:24px;margin:0 0 20px;overflow-wrap:anywhere}.card h2{font-size:22px;line-height:1.55;margin:0 0 20px;padding-right:40px}.card h3{font-size:16px;margin:20px 0 8px}p{margin:12px 0}a{color:#58a6ff;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #79c0ff;outline-offset:4px}li{margin:10px 0}ul,ol{padding-left:24px}blockquote{border-left:3px solid #d29922;padding:12px 16px;margin:20px 0;background:#161b22;color:#c9d1d9}.tag{display:inline-block;font-size:12px;border:1px solid #484f58;border-radius:12px;padding:1px 8px;margin:3px;color:#a5d6ff}code{background:#21262d;border-radius:4px;padding:1px 5px;font-size:13px;color:#a5d6ff}footer{color:#8b949e;font-size:12px;text-align:center;margin-top:32px}@media(max-width:640px){h1{font-size:26px}.section-title{font-size:18px}.panel,.excl{padding:16px}.metrics td{min-width:95px}}
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.<a href="https://badge.com" target="_blank" rel="noopener">badge.com</a>pare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<p class="eyebrow">Daily AI News Roundup</p>
+<h1>每日AI新闻推送</h1>
+<p class="meta">时效窗口：2026-11-23 08:28 ~ 2026-11-24 08:28（北京时间）· 3 条精选</p>
+</header>
+
+<div class="filterbar">
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#AIAgent</span>
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#Security</span>
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#WebSec</span>
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#CodingAgent</span>
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#SupplyChain</span>
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#Netflix</span>
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#SDLC</span>
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#CodeReview</span>
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#EnterpriseAI</span>
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#WorldModel</span>
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#EmbodiedAI</span>
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#Dreamer</span>
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#a16z</span>
+<span class="tag" style="color:#8b949e;border-color:#8b949e">#Robotics</span>
+</div>
+
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="AIAgent">AIAgent</button>
+<button class="filter-chip" data-tag="Security">Security</button>
+<button class="filter-chip" data-tag="WebSec">WebSec</button>
+<button class="filter-chip" data-tag="CodingAgent">CodingAgent</button>
+<button class="filter-chip" data-tag="SupplyChain">SupplyChain</button>
+<button class="filter-chip" data-tag="Netflix">Netflix</button>
+<button class="filter-chip" data-tag="SDLC">SDLC</button>
+<button class="filter-chip" data-tag="CodeReview">CodeReview</button>
+<button class="filter-chip" data-tag="EnterpriseAI">EnterpriseAI</button>
+<button class="filter-chip" data-tag="WorldModel">WorldModel</button>
+<button class="filter-chip" data-tag="EmbodiedAI">EmbodiedAI</button>
+<button class="filter-chip" data-tag="Dreamer">Dreamer</button>
+<button class="filter-chip" data-tag="a16z">a16z</button>
+<button class="filter-chip" data-tag="Robotics">Robotics</button>
+<button class="filter-chip" data-tag="DanijarHafner">DanijarHafner</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. WebSec Benchmark：AI编程代理从Web搜索索引获取恶意结果</a><a class="toc-item" href="#entry-2">2. Netflix在QConSF 2026分享SDLC改造经验：让AI编码代理与工程师安全协作</a><a class="toc-item" href="#entry-3">3. a16z领投Embo：Danijar Hafner携Dreamer世界模型进军人形机器人大脑</a>
+</nav>
+<div class="card priority-1" id="entry-1" data-tags="AIAgent Security WebSec CodingAgent SupplyChain" style="border-left:3px solid #8b949e">
+<h2><a href="https://thehackernews.com/expert-insights/2026/11/ai-coding-agents-are-getting-malicious.html?m=1">WebSec Benchmark：AI编程代理从Web搜索索引获取恶意结果（AIR Research Lab | 2026-11-23）</a></h2>
+<h3>事件概述</h3>
+<p>AIR Research Lab发布WebSec Benchmark，对4,719个真实编程代理任务搜索词投放到Firecrawl、Tavily、Perplexity、Brave等八家主流搜索API，发现返回的282,000+结果中大量包含已知恶意内容（prompt injection、恶意外部域注册攻击）。Google扫描Common Crawl快照发现，2025年11月至2026年2月恶意提示注入相对增长32%。此前Web Hole研究对约2,000个日常开发者查询发现36个结果指向已过期可注册域名，攻击者可植入任意内容供后续代理执行。</p>
+<h3>技术与工程价值</h3>
+<ul>
+<li><strong>核心机制</strong>：AI编程代理遇到错误时会直接信任搜索Top结果并执行（安装推荐包、运行README命令），不同于人类开发者的判断环节；所有被测搜索API均返回已知恶意内容，暴露了RAG型工作流的供应链安全盲区。</li>
+<li><strong>实际影响</strong>：该基准首次量化"搜索引擎→代码执行"链路的劫持风险，为MCP工具调用审查、沙箱隔离、结果可信度验证提供评估基线；对企业引入AI编码代理需配套安全审计机制发出明确预警。</li>
+</ul>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>被投测试验数</td><td>4,719</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>搜索结果总数</td><td>282,000+</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>Google恶意注入增幅</td><td>32% (2025.11→2026.2)</td><td></td><td><span class="badge third">第三方</span></td></tr><tr><td>过期域名命中率(Web Hole)</td><td>36/2,000</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+<table class="metrics-table">
+<thead><tr><th>指标</th><th>数值</th><th class="bar-cell">可视化</th></tr></thead>
+<tbody>
+<tr><td>被投测试验数</td><td>4,719</td><td><div class="bar-wrap"><div class="bar-fill" style="width:47%;background:#58a6ff"></div></div></td></tr>
+<tr><td>搜索结果总数</td><td>282,000+</td><td><div class="bar-wrap"><div class="bar-fill" style="width:100%;background:#58a6ff"></div></div></td></tr>
+<tr><td>Google恶意注入增幅</td><td>32% (2025.11→2026.2)</td><td><div class="bar-wrap"><div class="bar-fill" style="width:32%;background:#f0883e"></div></div></td></tr>
+<tr><td>过期域名命中率(Web Hole)</td><td>36/2,000 (1.8%)</td><td><div class="bar-wrap"><div class="bar-fill" style="width:18%;background:#f0883e"></div></div></td></tr>
+</tbody>
+</table>
+<a class="source-link" href="https://thehackernews.com/expert-insights/2026/11/ai-coding-agents-are-getting-malicious.html?m=1">🔗 原始来源：The Hacker News</a>
+</div>
+
+<div class="card priority-2" id="entry-2" data-tags="CodingAgent Netflix SDLC CodeReview EnterpriseAI" style="border-left:3px solid #8b949e">
+<h2><a href="https://www.infoq.com/news/2026/11/netflix-sdlc-ai-coding-agents">Netflix在QConSF 2026分享SDLC改造经验：让AI编码代理与工程师安全协作（InfoQ / Mark Khuzam | 2026-11-23）</a></h2>
+<h3>事件概述</h3>
+<p>Necflix Commerce团队高级工程师Mark Khuzam在QConSF 2026介绍如何将软件工程生命周期适配AI编码代理：review代理针对文档和ADR预审PR，首轮留下23条评论（含"Overall this PR looks great!"等无效噪音），经调优后仅发布附带证据、修复方案与ADR规则引用的verified blockers；工程师可打revise标签让代理自行修改进同一PR，但更改不自动合入，工程师保留最终决定权。结果是2026年核心服务无Sev 1事故，PR数量同比增32%，开发者NPS从-3升至+25。</p>
+<h3>技术与工程价值</h3>
+<ul>
+<li><strong>核心机制</strong>：重点解决跨服务变更时的上下文管理——加载全部仓库内存不足、Git submodules脆弱、Git MCP server只见文件不见系统、共享副本易过期；结论是改造审查流程而非试图全量索引代码库。</li>
+<li><strong>实际影响</strong>：提供了企业级AI编码代理部署的可量化先例：文档/一致性/审查比代理本身更重要；对采用Claude Code/Codex/Cursor等工具的teams可直接参考其ADR驱动审查与revise-label模式。</li>
+</ul>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>Sev 1事故数</td><td>0 (2026)</td><td><div class="bar"><span style="width:0%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>PR年增长</td><td>+32%</td><td><div class="bar"><span style="width:65%"></span></div></td><td><span class="badge self">自述</span></td></tr><tr><td>开发者NPS提升</td><td>−3→+25</td><td><div class="bar"><span style="width:64%"></span></div></td><td><span class="badge self">自述</span></td></tr></table></div>
+<table class="metrics-table">
+<thead><tr><th>指标</th><th>数值</th><th class="bar-cell">可视化</th></tr></thead>
+<tbody>
+<tr><td>Sev 1事故数</td><td>0 (2026)</td><td><div class="bar-wrap"><div class="bar-fill" style="width:0%;background:#3fb950"></div></div></td></tr>
+<tr><td>PR年增长</td><td>+32%</td><td><div class="bar-wrap"><div class="bar-fill" style="width:65%;background:#3fb950"></div></div></td></tr>
+<tr><td>开发者NPS提升</td><td>−3 → +25</td><td><div class="bar-wrap"><div class="bar-fill" style="width:64%;background:#3fb950"></div></div></td></tr>
+</tbody>
+</table>
+<a class="source-link" href="https://www.infoq.com/news/2026/11/netflix-sdlc-ai-coding-agents">🔗 原始来源：InfoQ</a>
+</div>
+
+<div class="card priority-3" id="entry-3" data-tags="WorldModel EmbodiedAI Dreamer a16z Robotics DanijarHafner" style="border-left:3px solid #8b949e">
+<h2><a href="https://a16z.com/announcement/investing-in-embo">a16z领投Embo：Danijar Hafner携Dreamer世界模型进军人形机器人大脑（Andreessen Horowitz | 2026-11-23）</a></h2>
+<h3>事件概述</h3>
+<p>a16z宣布投资Embo，由世界模型研究者Danijar Hafner创立。Hafner博士论文《Embodied Intelligence Through World Models》奠定理论基础，其Dreamer系列让智能体在learned world model内部通过想象练习学习行为——Dreamer 4最近用先前收集的数据在Minecraft中从零学会获取钻石，全程无需物理交互。Embo正构建统一多模态模型，结合互联网规模预训练与现实世界强化学习，早期训练源为海量互联网视频（记录物体运动、材料互动、人类动作），目标是让人形机器人具备超越硬件演示数据的一般性知识。</p>
+<h3>技术与工程价值</h3>
+<ul>
+<li><strong>核心机制</strong>：传统机器人学习受限于物理演示数据稀缺且无法捕获失败场景；Embo利用video foundation model将互联网视频作为"imagined experience"训练源，再通过RL在想象与现实双空间中学习恢复策略，理论上可无限扩展训练经验池。</li>
+<li><strong>实际影响</strong>：若世界模型+VLA路线兑现，将对当前以π0、WALL-OSS为代表的数据驱动端到端策略构成范式竞争；a16z背书代表顶级风投对"world model for robotics"路径的认可，预计催化更多资金涌入。</li>
+</ul>
+<h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>Dreamer 4 Minecraft成就</td><td>从无到有获取钻石</td><td><div class="bar"><span style="width:80%"></span></div></td><td><span class="badge third">第三方</span></td></tr><tr><td>训练数据源</td><td>互联网视频+机器人示范</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>投资方</td><td>a16z</td><td></td><td><span class="badge third">第三方</span></td></tr></table></div>
+<table class="metrics-table">
+<thead><tr><th>指标</th><th>数值</th><th class="bar-cell">可视化</th></tr></thead>
+<tbody>
+<tr><td>Dreamer 4 Minecraft成就</td><td>从无到有获取钻石</td><td><div class="bar-wrap"><div class="bar-fill" style="width:80%;background:#a371f7"></div></div></td></tr>
+<tr><td>训练数据源</td><td>互联网视频 + 机器人示范</td><td><div class="bar-wrap"><div class="bar-fill" style="width:100%;background:#a371f7"></div></div></td></tr>
+<tr><td>投资方</td><td>a16z</td><td><div class="bar-wrap"><div class="bar-fill" style="width:100%;background:#a371f7"></div></div></td></tr>
+</tbody>
+</table>
+<a class="source-link" href="https://a16z.com/announcement/investing-in-embo">🔗 原始来源：Andreessen Horowitz</a>
+</div>
+
+<div class="dedup-section">
+<h2>去重说明</h2>
+<ul>
+<li><strong>观察项</strong>：XPeng AI Day 2026已于2026-11-20报道（IRON人形机器人量产下线、估值超63亿美元），本日同主题重复排除；今日三条均为新事件，时间戳均来自第一信源官方博客/GitHub/arXiv/权威媒体发布页。</li>
+<li><strong>观察项</strong>：WebSec Benchmark（AIR）与之前提及的安全议题不重叠，属于全新基准发布；Netflix SDLC改造为企业case study首例公开量化数据；a16z×Embo为纯新闻事件无历史交集。</li>
+</ul>
+</div>
+
+<footer>
+<p>数据来源：The Hacker News · InfoQ · Andreessen Horowitz · AIR Research Lab ｜ 数据窗口：2026-11-23 08:28 ~ 2026-11-24 08:28（北京时间）</p>
+<p>本报告仅供参考，不构成投资建议。</p>
+</footer>
+</div>
+<footer style="margin-top:28px;padding-top:14px;border-top:1px solid #30363d;color:#9da7b1;font-size:13px">发现错误或有建议？<a href="https://github.com/allin8888/ainews/issues/new?title=%E5%8F%8D%E9%A6%88%2F%E7%BA%A0%E9%94%99&body=" target="_blank" rel="noopener" style="color:#58a6ff;text-decoration:none">在 GitHub Issues 提交反馈/纠错</a>（需 GitHub 账号）。</footer>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
