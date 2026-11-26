@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日AI新闻推送</title>
+
+<style class="an-baseline">
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;padding:36px 20px 56px;background:#0d1117;color:#e6edf3;font:15px/1.85 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}.container{max-width:1020px;margin:auto}header{margin-bottom:30px}h1{font-size:32px;line-height:1.35;letter-spacing:-.5px;margin:8px 0 20px}.eyebrow{color:#58a6ff;letter-spacing:2px;font-size:12px}header p{margin:4px 0}strong{font-weight:650;color:#f0f6fc}.section-title{font-size:20px;font-weight:700;margin:32px 0 16px}.card,.panel,.excl{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:24px;margin:0 0 20px;overflow-wrap:anywhere}.card h2{font-size:22px;line-height:1.55;margin:0 0 20px;padding-right:40px}.card h3{font-size:16px;margin:20px 0 8px}p{margin:12px 0}a{color:#58a6ff;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #79c0ff;outline-offset:4px}li{margin:10px 0}ul,ol{padding-left:24px}blockquote{border-left:3px solid #d29922;padding:12px 16px;margin:20px 0;background:#161b22;color:#c9d1d9}.tag{display:inline-block;font-size:12px;border:1px solid #484f58;border-radius:12px;padding:1px 8px;margin:3px;color:#a5d6ff}code{background:#21262d;border-radius:4px;padding:1px 5px;font-size:13px;color:#a5d6ff}footer{color:#8b949e;font-size:12px;text-align:center;margin-top:32px}@media(max-width:640px){h1{font-size:26px}.section-title{font-size:18px}.panel,.excl{padding:16px}.metrics td{min-width:95px}}
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 14px 16px;
+       background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+.toc-item { font-size: 13px; color: #58a6ff; text-decoration: none;
+            padding: 4px 10px; background: #21262d; border-radius: 6px; }
+.toc-item:hover { background: #30363d; }
+.card.priority-1 { border-left: 3px solid #f0883e; }
+.card a { color: #58a6ff; word-break: break-all; }
+details > summary.fold-summary { cursor: pointer; font-size: 15px; font-weight: 650;
+            color: #9da7b1; padding: 4px 0; }
+details[open] > summary.fold-summary { color: #e6edf3; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.filter-chip { font-size: 12.5px; color: #58a6ff; background: #21262d;
+            border: 1px solid #30363d; border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.filter-chip.active { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+.copy-btn { float: right; font-size: 12px; color: #9da7b1; background: #21262d;
+            border: 1px solid #30363d; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.copy-btn:hover { color: #e6edf3; border-color: #58a6ff; }
+.metrics { margin: 10px 0; overflow-x: auto; }
+.metrics table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.metrics th, .metrics td { border: 1px solid #30363d; padding: 4px 10px; text-align: left; }
+.metrics th { color: #9da7b1; font-weight: 600; }
+.metrics .bar { background: #21262d; border-radius: 4px; height: 12px; min-width: 120px; }
+.metrics .bar span { display: block; height: 12px; border-radius: 4px; background: #1f6feb; }
+.badge { font-size: 11.5px; border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+.badge.self { color: #d29922; border: 1px solid #d29922; }
+.badge.third { color: #3fb950; border: 1px solid #3fb950; }
+.<a href="https://badge.com" target="_blank" rel="noopener">badge.com</a>pare { color: #58a6ff; border: 1px solid #58a6ff; }
+@media (max-width: 640px) { body { padding: 16px 10px 32px; }
+  .container { max-width: 100%; }
+  .card { padding: 16px 14px; }
+  .card h2 { font-size: 16px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .toc, .filterbar { padding: 10px; } }
+@media print { body { background: #fff; color: #000; }
+               .card { border: 1px solid #ccc; } .toc { display: none; }
+               .filterbar, .copy-btn { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <p class="eyebrow">每日精选</p>
+  <h1>每日 AI 新闻推送 — 2026-11-26</h1>
+  <p class="meta">时效窗口：2026-11-25 08:28 ~ 2026-11-26 08:28（北京时间）· 3 条精选</p>
+</header>
+
+<div class="filterbar" id="tagfilter">
+<button class="filter-chip active" data-tag="__all">全部</button>
+<button class="filter-chip" data-tag="Anthropic">Anthropic</button>
+<button class="filter-chip" data-tag="ClaudeShip">ClaudeShip</button>
+<button class="filter-chip" data-tag="AI编码">AI编码</button>
+<button class="filter-chip" data-tag="PR自动化">PR自动化</button>
+<button class="filter-chip" data-tag="Meta">Meta</button>
+<button class="filter-chip" data-tag="Muse">Muse</button>
+<button class="filter-chip" data-tag="AI代理">AI代理</button>
+<button class="filter-chip" data-tag="电子商务">电子商务</button>
+<button class="filter-chip" data-tag="人形机器人">人形机器人</button>
+<button class="filter-chip" data-tag="具身智能">具身智能</button>
+<button class="filter-chip" data-tag="太空探索">太空探索</button>
+<button class="filter-chip" data-tag="Roscosmos">Roscosmos</button>
+</div>
+<nav class="toc">
+<a class="toc-item" href="#entry-1">1. Anthropic 发布 Claude Ship Beta——三代理协作自动化 PR 审查与合入</a><a class="toc-item" href="#entry-2">2. Meta Muse AI Agent 登陆英国市场，面向成年人提供购物与任务自动化服务</a><a class="toc-item" href="#entry-3">3. Roscosmos 发射 Teledroid 人形机器人至国际空间站</a>
+</nav>
+<div class="card priority-1" id="card-1" id="entry-1" data-tags="Anthropic ClaudeShip AI编码 PR自动化" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Anthropic 发布 Claude Ship Beta——三代理协作自动化 PR 审查与合入" data-link="https://www.reuters.com/technology/artificial-intelligence/">复制</button>
+  <h2><a href="https://www.reuters.com/technology/artificial-intelligence/" target="_blank">Anthropic 发布 Claude Ship Beta——三代理协作自动化 PR 审查与合入</a></h2>
+  
+  <h3>事件概述</h3>
+  <p>Anthropic 于 11 月 23 日宣布推出 Claude Ship 的 Beta 版本，这是一个专为 GitHub PR 工作流设计的多智能体套件。系统包含三个独立代理角色：代码审阅者（Review Agent）、修复者（Fix Agent）和审批者（Approval Agent）。Review Agent 扫描 PR 变更并生成结构化评论；Fix Agent 根据评论自动编写补丁代码并推送到 PR；Approval Agent 则依据团队预设策略规则（branch 保护、CI 状态等）做出是否合入的最终决策。</p>
+  
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><strong>核心机制</strong>：Claude Ship 首次实现了从「辅助编码」到「自主决策」的关键跨越——三个代理形成串行流水线：写代码 → 审代码 → 修代码 → 批代码，人类工程师退居为策略制定者与异常仲裁者。Approval Agent 的策略引擎支持条件分支（如"安全团队审批阈值""测试覆盖率门槛"），允许不同仓库/团队配置差异化合入标准。</li>
+    <li><strong>实际影响</strong>：将 PR 生命周期中耗时最长的人工审查环节完全自动化——对高频率提交场景可消除大部分重复性审阅工作量。但安全分析师提醒，自动合入仍存在误判风险，建议灰度启用或设置人工复核兜底。</li>
+  </ul>
+  
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>代理数量</td><td>3</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>产品类型</td><td>Beta</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>适用场景</td><td>GitHub PR 工作流</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <table class="metrics-table">
+    <tr><th>指标</th><th>数值</th><th>类型</th></tr>
+    <tr><td>代理数量</td><td>3</td><td>厂商自述</td></tr>
+    <tr><td>产品类型</td><td>Beta</td><td>厂商自述</td></tr>
+    <tr><td>适用场景</td><td>GitHub PR 工作流</td><td>厂商自述</td></tr>
+  </table>
+  <p>来源链接：<a href="https://www.reuters.com/technology/artificial-intelligence/" target="_blank">Reuters</a> · <a href="https://www.theverge.com/ai-artificial-intelligence/1040134/anthropic-claude-ship-ai-pull-requests" target="_blank">The Verge</a> · <a href="https://www.infoworld.com/article/4252505/anthropic-launches-claude-ship-extending-ai-assisted-development-to-pull-request-approvals.html" target="_blank">InfoWorld</a></p>
+  
+  <span class="tag" style="color:#8b949e;border-color:#8b949e">#Anthropic</span>
+  <span class="tag" style="color:#8b949e;border-color:#8b949e">#ClaudeShip</span>
+  <span class="tag" style="color:#8b949e;border-color:#8b949e">#AI编码</span>
+  <span class="tag" style="color:#8b949e;border-color:#8b949e">#PR自动化</span>
+</div>
+
+<div class="card priority-2" id="card-2" id="entry-2" data-tags="Meta Muse AI代理 电子商务" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Meta Muse AI Agent 登陆英国市场，面向成年人提供购物与任务自动化服务" data-link="https://www.unite.ai/meta-brings-muse-personal-ai-agent-to-uk-with-purchase-controls/">复制</button>
+  <h2><a href="https://www.unite.ai/meta-brings-muse-personal-ai-agent-to-uk-with-purchase-controls/" target="_blank">Meta Muse AI Agent 登陆英国市场，面向成年人提供购物与任务自动化服务</a></h2>
+  
+  <h3>事件概述</h3>
+  <p>Meta 于 11 月 25 日正式在英国推出其个人 AI Agent「Muse」，首发即与 Sainsbury's、Argos、Marks & Spencer 等零售巨头达成集成合作，支持用户通过自然语言指令完成商品搜索、比价、下单全流程。服务仅限年满 18 岁的英国居民注册使用，且每次交易前需明确确认。与此同时，Walmart 在美国同步宣布接入 Muse 平台。</p>
+  
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><strong>核心机制</strong>：Muse 采用对话式意图识别+多商户 API 聚合架构，用户只需声明需求（如"为下周家庭聚餐购买食材，预算 £50"），系统自动拆解为多步骤子任务：跨平台比价→库存确认→加入购物车→引导支付授权。关键设计在于"人在回路"——每个消费动作均需最终确认后执行。</li>
+    <li><strong>实际影响</strong>：标志着 Meta 在个人 agent 赛道正式进入商业化落地阶段，区别于此前仅美国内测的局限；英国作为欧盟外最大英语区，验证了跨境合规适配能力。零售端合作意味着 Muse 是具备真实交易闭环能力的消费级产品。</li>
+  </ul>
+  
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>首发市场</td><td>英国</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>首批合作零售</td><td>5家</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>年龄限制</td><td>18+</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <table class="metrics-table">
+    <tr><th>指标</th><th>数值</th><th>类型</th></tr>
+    <tr><td>首发市场</td><td>英国</td><td>厂商自述</td></tr>
+    <tr><td>首批合作零售</td><td>5家</td><td>厂商自述</td></tr>
+    <tr><td>年龄限制</td><td>18+</td><td>厂商自述</td></tr>
+  </table>
+  <p>来源链接：<a href="https://www.unite.ai/meta-brings-muse-personal-ai-agent-to-uk-with-purchase-controls/" target="_blank">Unite.AI</a> · <a href="https://thenextweb.com/news/meta-muse-uk-launch" target="_blank">The Next Web</a></p>
+  
+  <span class="tag" style="color:#8b949e;border-color:#8b949e">#Meta</span>
+  <span class="tag" style="color:#8b949e;border-color:#8b949e">#Muse</span>
+  <span class="tag" style="color:#8b949e;border-color:#8b949e">#AI代理</span>
+  <span class="tag" style="color:#8b949e;border-color:#8b949e">#电子商务</span>
+</div>
+
+<div class="card priority-3" id="card-3" id="entry-3" data-tags="人形机器人 具身智能 太空探索 Roscosmos" style="border-left:3px solid #8b949e"><button class="copy-btn" data-title="Roscosmos 发射 Teledroid 人形机器人至国际空间站" data-link="https://www.unite.ai/roscosmos-launches-teledroid-humanoid-robot-on-progress-ms-36/">复制</button>
+  <h2><a href="https://www.unite.ai/roscosmos-launches-teledroid-humanoid-robot-on-progress-ms-36/" target="_blank">Roscosmos 发射 Teledroid 人形机器人至国际空间站</a></h2>
+  
+  <h3>事件概述</h3>
+  <p>俄罗斯国家航天集团 Roscosmos 于 11 月 24 日通过进步 MS-36 货运飞船将人形机器人 Teledroid 送入国际空间站。Teledroid 由俄罗斯初创公司 Techno Dynamics 研发，高度约 1.8 米，重约 70 千克，设计目标是在微重力环境下协助宇航员执行舱内巡检、设备维护及应急反应任务。该机器人搭载了基于视觉的语言模型（VLM），可通过语音指令理解并执行复杂操作序列。</p>
+  
+  <h3>技术与工程价值</h3>
+  <ul>
+    <li><strong>核心机制</strong>：Teledroid 的核心创新在于「空间适应型具身智能」——针对微重力环境重新设计了运动控制算法与抓握策略。地面版机器人依赖足部摩擦力维持姿态，而 Teledroid 利用磁力吸附鞋底+反作用飞轮组合实现无依托移动；视觉-语言模型处理三维场景理解后输出细粒度关节轨迹。</li>
+    <li><strong>实际影响</strong>：标志着人形机器人正式迈入载人航天应用场景，若成功验证将开启商业太空服务的新市场。该技术路线也可反向迁移至地面高危作业场景（核电站、深海、灾难现场），具有军民两用潜力。</li>
+  </ul>
+  
+  <h3>关键指标/资源</h3><div class="metrics"><table><tr><th>指标</th><th>数值</th><th></th><th>口径</th></tr><tr><td>机器人高度</td><td>1.8m</td><td></td><td><span class="badge third">第三方</span></td></tr><tr><td>任务类型</td><td>ISS舱内巡检</td><td></td><td><span class="badge self">自述</span></td></tr><tr><td>预期服役时长</td><td>待核实</td><td></td><td><span class="badge self">自述</span></td></tr></table></div>
+  <table class="metrics-table">
+    <tr><th>指标</th><th>数值</th><th>类型</th></tr>
+    <tr><td>机器人高度</td><td>1.8m</td><td>第三方核实</td></tr>
+    <tr><td>任务类型</td><td>ISS舱内巡检</td><td>厂商自述</td></tr>
+    <tr><td>预期服役时长</td><td>待核实</td><td>待核实</td></tr>
+  </table>
+  <p>来源链接：<a href="https://www.unite.ai/roscosmos-launches-teledroid-humanoid-robot-on-progress-ms-36/" target="_blank">Unite.AI</a> · <a href="https://www.roscosmos.ru/" target="_blank">Roscosmos 官方</a></p>
+  
+  <span class="tag" style="color:#8b949e;border-color:#8b949e">#人形机器人</span>
+  <span class="tag" style="color:#3fb950;border-color:#3fb950">#具身智能</span>
+  <span class="tag" style="color:#8b949e;border-color:#8b949e">#太空探索</span>
+  <span class="tag" style="color:#8b949e;border-color:#8b949e">#Roscosmos</span>
+</div>
+
+<div class="dedup-section">
+<h3>去重说明</h3>
+<ul>
+<li><strong>观察项</strong>：Netflix SDLC 改造经验已于 2026-11-24 刊期收录；Cisco OpenAI Shirudo 开源安全防护框架已于 2026-11-24 刊期收录；Together AI Prompt 泄露事件已于 2026-11-22 刊期收录。本期候选清单均通过 dedup_check.py 验证，confidence 均低于 0.4 判定为非重复。</li>
+</ul>
+</div>
+
+<footer class="footer">
+<p>数据来源：Unite.AI / Reuters / The Verge / TechCrunch / Roscosmos 官方公告 等公开信源 | 时效窗口 2026-11-25 08:28 ~ 2026-11-26 08:28（北京时间）</p>
+<p>本报告仅供参考，不构成投资建议</p>
+</footer>
+</div>
+<footer style="margin-top:28px;padding-top:14px;border-top:1px solid #30363d;color:#9da7b1;font-size:13px">发现错误或有建议？<a href="https://github.com/allin8888/ainews/issues/new?title=%E5%8F%8D%E9%A6%88%2F%E7%BA%A0%E9%94%99&body=" target="_blank" rel="noopener" style="color:#58a6ff;text-decoration:none">在 GitHub Issues 提交反馈/纠错</a>（需 GitHub 账号）。</footer>
+
+<script>
+(function(){
+  var bar = document.getElementById('tagfilter');
+  if (bar) {
+    bar.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.filter-chip');
+      if (!btn) return;
+      var tag = btn.getAttribute('data-tag');
+      bar.querySelectorAll('.filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.card[data-tags]').forEach(function(card){
+        var tags = (card.getAttribute('data-tags')||'').split(' ');
+        card.style.display = (tag === '__all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = (b.getAttribute('data-title')||'') + ' ' + (b.getAttribute('data-link')||'');
+      var done = function(){ b.textContent = '已复制'; setTimeout(function(){ b.textContent = '复制'; }, 1500); };
+      var fallback = function(){
+        var ta = document.createElement('textarea'); ta.value = text;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
