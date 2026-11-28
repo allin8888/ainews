@@ -3,7 +3,35 @@
 <title>每日 AI 前沿技术精选</title>
 <link>https://allin8888.github.io/ainews/archive/</link>
 <description>每日 AI 前沿技术精选 · 结构化条目流</description>
-<lastBuildDate>Tue, 24 Nov 2026 15:26:48 -0000</lastBuildDate>
+<lastBuildDate>Sat, 28 Nov 2026 15:22:36 -0000</lastBuildDate>
+<item>
+<title>MiniMax 公布内部模型逆向工程能力评估：自主编排 2000 个子智能体、生成约 200 万行 Rust 等价复刻闭源二进制软件，VMProtect/Themida 逻辑还原率超 90%</title>
+<link>https://allin8888.github.io/ainews/archive/每日AI新闻推送_20261128_2311.html</link>
+<guid isPermaLink="false">20261128_2311-MiniMax 公布内部模型逆向工程能力评估：自主编排 2000 个子智能体、生成约 200 万行 Rust 等价复刻闭源二进制软件，VMProtect/Themida 逻辑还原率超 90%</guid>
+<pubDate>2026-11-28</pubDate>
+<category>AI安全、Agent编排、逆向工程、RSI</category>
+</item>
+<item>
+<title>OpenCode 开放 Rune 早期 dev build：Rust 从零重写桌面应用、无 Electron/无 Chromium 启动，宣称快 10–100 倍并支持 WebGPU 浏览器端</title>
+<link>https://allin8888.github.io/ainews/archive/每日AI新闻推送_20261128_2311.html</link>
+<guid isPermaLink="false">20261128_2311-OpenCode 开放 Rune 早期 dev build：Rust 从零重写桌面应用、无 Electron/无 Chromium 启动，宣称快 10–100 倍并支持 WebGPU 浏览器端</guid>
+<pubDate>2026-11-28</pubDate>
+<category>AI-Coding、开源、IDE集成、Rust</category>
+</item>
+<item>
+<title>SemiAnalysis 发表 Trainium3 推理与微架构深度实测：UBenchX 显示小消息即达峰值 HBM 利用率，AgentX 下利润率 73.5% 优于 GB300 的 53%</title>
+<link>https://allin8888.github.io/ainews/archive/每日AI新闻推送_20261128_2311.html</link>
+<guid isPermaLink="false">20261128_2311-SemiAnalysis 发表 Trainium3 推理与微架构深度实测：UBenchX 显示小消息即达峰值 HBM 利用率，AgentX 下利润率 73.5% 优于 GB300 的 53%</guid>
+<pubDate>2026-11-28</pubDate>
+<category>推理芯片、基准评测、基础设施、开源</category>
+</item>
+<item>
+<title>OpenRouter 量化拆解每 token 实际价格年内下降 83%：缓存改善贡献 47%、开源权重迁移 30%，直接降价不足 1%</title>
+<link>https://allin8888.github.io/ainews/archive/每日AI新闻推送_20261128_2311.html</link>
+<guid isPermaLink="false">20261128_2311-OpenRouter 量化拆解每 token 实际价格年内下降 83%：缓存改善贡献 47%、开源权重迁移 30%，直接降价不足 1%</guid>
+<pubDate>2026-11-28</pubDate>
+<category>推理成本、Agent基础设施、开源、数据</category>
+</item>
 <item>
 <title>Anthropic 推出 Claude Ship：Code Review 正式 GA，PR Steward + Claude Approvals 把审批权交给 AI Agent</title>
 <link>https://allin8888.github.io/ainews/archive/每日AI新闻推送_20261124_2321.html</link>
